@@ -17,7 +17,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.melee = true;
 			projectile.penetrate = -1;
-			projectile.timeLeft = 600;
+			projectile.timeLeft = 400;
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
@@ -40,6 +40,26 @@ namespace ForgottenMemories.Projectiles
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 14, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
+			}
+			if (Main.rand.Next(5) == 0)
+			{
+				projectile.velocity.Y *= 0.9f;
+				projectile.velocity.X *= 0.9f;
+			}
+			if (Main.rand.Next(5) == 0)
+			{
+				projectile.velocity.Y *= 1.1f;
+				projectile.velocity.X *= 1.1f;
+			}
+			if (Main.rand.Next(10) == 0)
+			{
+				projectile.velocity.Y *= 1.1f;
+				projectile.velocity.X *= 0.9f;
+			}
+			if (Main.rand.Next(10) == 0)
+			{
+				projectile.velocity.Y *= 0.9f;
+				projectile.velocity.X *= 1.1f;
 			}
 		}
 		}

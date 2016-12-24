@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items
 		public override void SetDefaults()
 		{
 			item.name = "Impurity";
-			item.damage = 166;
+			item.damage = 136;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
@@ -62,6 +62,12 @@ namespace ForgottenMemories.Items
 				int dust4 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 64);
 				Main.dust[dust4].scale = 1.5f;
 				Main.dust[dust4].noGravity = true;
+			}
+			if (Main.rand.Next(10) == 0)
+			{
+				int dust5 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 61);
+				Main.dust[dust5].scale = 1.5f;
+				Main.dust[dust5].noGravity = true;
 			}
 		}
 
