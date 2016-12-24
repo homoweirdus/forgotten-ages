@@ -37,6 +37,22 @@ namespace ForgottenMemories.Items
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
+		
+		public override void MeleeEffects(Player player, Rectangle hitbox)
+		{
+			if (Main.rand.Next(4) == 0)
+			{
+				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 67);
+				Main.dust[dust].noGravity = true;
+				Main.dust[dust].scale = 1.2f;
+			}
+			if (Main.rand.Next(10) == 0)
+			{
+				int dust2 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 59);
+				Main.dust[dust2].scale = 1.2f;
+			}
+		}
+		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			if (Main.rand.Next(4) < 2)

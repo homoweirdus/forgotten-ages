@@ -23,6 +23,21 @@ namespace ForgottenMemories.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
+			item.useTurn = true;
+		}
+		
+		public override void MeleeEffects(Player player, Rectangle hitbox)
+		{
+			if (Main.rand.Next(2) == 0)
+			{
+				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 5);
+				Main.dust[dust].noGravity = true;
+			}
+			if (Main.rand.Next(10) == 0)
+			{
+				int dust2 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 5);
+				Main.dust[dust2].scale = 2.5f;
+			}
 		}
 		
 	}

@@ -18,6 +18,7 @@ public class starproj : ModProjectile
 		projectile.alpha = 100;
 		projectile.timeLeft = 200;
 		projectile.tileCollide = false;
+		projectile.light = 0.5f;
 	}
 	
 	public override void Kill(int timeLeft)
@@ -29,5 +30,14 @@ public class starproj : ModProjectile
 			Main.dust[dust].noGravity = true;
         }
     }
+	
+	public override void AI()
+		{
+			if (Main.rand.Next(5) == 0)
+			{
+				int dust;
+				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			}
+		}
 }
 }	
