@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items
 	{
 		public override void SetDefaults()
 		{
-			item.name = "PixieSaber";
+			item.name = "Pixie Saber";
 			item.damage = 47;
 			item.melee = true;
 			item.width = 88;
