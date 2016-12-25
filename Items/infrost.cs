@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items
 			item.width = 62;
 			item.height = 70;
 			item.toolTip = "You should be frozen just by touching this thing!";
-			item.useTime = 32;
-			item.useAnimation = 32;
+			item.useTime = 48;
+			item.useAnimation = 16;
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 10000;

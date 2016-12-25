@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items
 			item.width = 88;
 			item.height = 88;
 			item.toolTip = "A beautiful nightmare... the blood is beautiful...";
-			item.useTime = 26;
-			item.useAnimation = 26;
+			item.useTime = 30;
+			item.useAnimation = 20;
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 10000;

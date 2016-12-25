@@ -16,15 +16,24 @@ namespace ForgottenMemories.Projectiles
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.melee = true;
-			projectile.penetrate = -1;
-			projectile.timeLeft = 600;
-			projectile.alpha = 255;
+			projectile.penetrate = 3;
+			projectile.timeLeft = 150;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
 			aiType = ProjectileID.Bullet;
 			projectile.tileCollide = false;
 		}
 		
+		
+		public override void Kill(int timeLeft)
+		{
+			for (int i = 0; i < 20; i++)
+			{
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 57);
+				Main.dust[dust].scale = 2.5f;
+				Main.dust[dust].noGravity = true;
+			}
+		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
