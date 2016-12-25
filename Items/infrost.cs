@@ -31,6 +31,8 @@ namespace ForgottenMemories.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Frostbrand, 1);
+			recipe.AddIngredient(ItemID.IceBlade, 1);
+			recipe.AddIngredient(ItemID.FrostCore, 3);
 			recipe.AddIngredient(ItemID.SnowBlock, 100);
 			recipe.AddIngredient(ItemID.IceBlock, 250);
 			recipe.AddTile(TileID.IceMachine);
