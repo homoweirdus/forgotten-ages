@@ -16,7 +16,7 @@ public class pinkstar : ModProjectile
 		projectile.melee = true;
 		projectile.friendly = true;
 		projectile.alpha = 100;
-		projectile.timeLeft = 100;
+		projectile.timeLeft = 200;
 		projectile.tileCollide = false;
 		projectile.light = 0.5f;
 	}

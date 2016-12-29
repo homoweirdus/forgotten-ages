@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items
 			item.width = 88;
 			item.height = 88;
 			item.toolTip = "Fires homing bolts";
-			item.useTime = 20;
+			item.useTime = 15;
 			item.useAnimation = 10;
 			item.useStyle = 1;
 			item.knockBack = 6;

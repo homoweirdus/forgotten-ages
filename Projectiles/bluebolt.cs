@@ -21,6 +21,7 @@ namespace ForgottenMemories.Projectiles
             projectile.penetrate = 1;
             projectile.timeLeft = 200;
 			projectile.alpha = 255;
+			projectile.tileCollide = false;
         }
 		
 		   public override void AI()
@@ -43,6 +44,7 @@ namespace ForgottenMemories.Projectiles
                     float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
                     if (distanceTo < distance)
                     {
+						newMove.Normalize();
                         move = newMove;
                         distance = distanceTo;
                         target = true;
@@ -51,17 +53,7 @@ namespace ForgottenMemories.Projectiles
             }
             if (target)
             {
-                AdjustMagnitude(ref move);
-                projectile.velocity = (10 * projectile.velocity + move) / 11f;
-                AdjustMagnitude(ref projectile.velocity);
-            }
-        }
-                private void AdjustMagnitude(ref Vector2 vector)
-        {
-            float magnitude = (float)Math.Sqrt(vector.X * vector.X + vector.Y * vector.Y);
-            if (magnitude > 6f)
-            {
-                vector *= 15f / magnitude;
+                projectile.velocity = (move * 20f);
             }
         }
 		

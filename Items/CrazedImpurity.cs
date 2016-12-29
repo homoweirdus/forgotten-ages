@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items
 		public override void SetDefaults()
 		{
 			item.name = "Crazed Impurity";
-			item.damage = 145;
+			item.damage = 140;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;

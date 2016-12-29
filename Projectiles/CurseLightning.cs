@@ -20,6 +20,7 @@ namespace ForgottenMemories.Projectiles
             projectile.timeLeft = 100;
             projectile.extraUpdates = 100;
 			projectile.alpha = 255;
+			projectile.tileCollide = false;
         }
 		
 		   public override void AI()
