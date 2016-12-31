@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items
         public override void SetDefaults()
         {
             item.name = "Damnation Staff";
-            item.damage = 45;
+            item.damage = 60;
             item.magic = true;
             item.mana = 8;
             item.width = 25;
