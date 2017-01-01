@@ -16,7 +16,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.aiStyle = 2;
 			projectile.friendly = true;
 			projectile.melee = true;
-			projectile.penetrate = 3;
+			projectile.penetrate = 1;
 			projectile.timeLeft = 1000;
 			projectile.light = 0.5f;
 			Main.projFrames[projectile.type] = 4;
