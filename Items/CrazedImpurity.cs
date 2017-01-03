@@ -34,6 +34,7 @@ namespace ForgottenMemories.Items
 			recipe.AddIngredient(ItemID.StarWrath, 1);
 			recipe.AddIngredient(3458, 30);
 			recipe.AddIngredient(3457, 30);
+			recipe.AddIngredient(3467, 10);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

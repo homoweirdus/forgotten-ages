@@ -5,17 +5,17 @@ using Microsoft.Xna.Framework;
 
 namespace ForgottenMemories.Items
 {
-	public class perfectpurity : ModItem
+	public class PlanetaryBlade : ModItem
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Perfect Purity";
-			item.damage = 100;
+			item.name = "Planetary Blade";
+			item.damage = 120;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Fires homing bolts";
-			item.useTime = 15;
+			item.toolTip = "Fires seeds and a gigantic wave";
+			item.useTime = 30;
 			item.useAnimation = 10;
 			item.useStyle = 1;
 			item.knockBack = 6;
@@ -23,17 +23,17 @@ namespace ForgottenMemories.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("lightning");
-			item.shootSpeed = 10;
+			item.shoot = mod.ProjectileType("PlanetaryWave");
+			item.shootSpeed = 20;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Purity", 1);
-			recipe.AddIngredient(ItemID.Meowmere, 1);
+			recipe.AddIngredient(ItemID.TerraBlade, 1);
+			recipe.AddIngredient(ItemID.Seedler, 1);
 			recipe.AddIngredient(3458, 30);
-			recipe.AddIngredient(3459, 30);
+			recipe.AddIngredient(3456, 30);
 			recipe.AddIngredient(3467, 10);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
@@ -46,42 +46,36 @@ namespace ForgottenMemories.Items
             float sY = speedY;
             sX += (float)Main.rand.Next(-60, 61) * 0.05f;
             sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-            Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("pinkbolt"), damage, knockBack, player.whoAmI);
+            Projectile.NewProjectile(position.X, position.Y, sX, sY, 483, damage, knockBack, player.whoAmI);
 			
 			float sX2 = speedX;
             float sY2 = speedY;
             sX2 += (float)Main.rand.Next(-60, 61) * 0.05f;
             sY2 += (float)Main.rand.Next(-60, 61) * 0.05f;
-            Projectile.NewProjectile(position.X, position.Y, sX2, sY2, mod.ProjectileType("bluebolt"), damage, knockBack, player.whoAmI);
+            Projectile.NewProjectile(position.X, position.Y, sX2, sY2, 483, damage, knockBack, player.whoAmI);
 			
-			return false;
+			return true;
     }
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
 			if (Main.rand.Next(4) == 0)
 			{
-				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 59);
+				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 2);
 				Main.dust[dust].scale = 2f;
 				Main.dust[dust].noGravity = true;
 			}
 			if (Main.rand.Next(4) == 0)
 			{
-				int dust5 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 62);
+				int dust5 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 61);
 				Main.dust[dust5].scale = 2f;
 				Main.dust[dust5].noGravity = true;
 			}
 			if (Main.rand.Next(4) == 0)
 			{
-				int dust2 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 10);
+				int dust2 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 128);
 				Main.dust[dust2].scale = 1.5f;
 				Main.dust[dust2].noGravity = true;
-			}
-			if (Main.rand.Next(4) == 0)
-			{
-				int dust3 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 11);
-				Main.dust[dust3].scale = 1.5f;
-				Main.dust[dust3].noGravity = true;
 			}
 		}
 
