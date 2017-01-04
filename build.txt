@@ -1,5 +1,5 @@
 author = Crimsoneye495 and his filthy minions
 
-version = 0.0.2.3
+version = 0.0.2.8
 
 displayName = Forgotten Memories
