@@ -19,6 +19,20 @@ namespace ForgottenMemories {
 
             TerraUI.Utilities.UIUtils.Mod = this;
         }
+		
+			public override void AddRecipeGroups()
+		{
+			RecipeGroup group = new RecipeGroup(() => Lang.misc[37] + (" Phaseblade"), new int[]
+			{
+				198,
+				199,
+				200,
+				201,
+				202,
+				203
+			});
+			RecipeGroup.RegisterGroup("AnyPhaseblade", group);
+		}
 
         public override void PostDrawInterface(SpriteBatch spriteBatch) {
             DrawSlots(spriteBatch);
