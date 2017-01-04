@@ -37,6 +37,7 @@ namespace ForgottenMemories.Items.Souls.throwing
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "soul", 200);
+			recipe.AddIngredient(null, "ChampionCrystal", 5);
 			recipe.AddIngredient(null, "thro2", 1);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
