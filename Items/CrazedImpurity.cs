@@ -45,11 +45,11 @@ namespace ForgottenMemories.Items
 		Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
 		if (Main.rand.Next(5) == 0)
 		{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("IchorLightning"), damage + 50, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("IchorLightning"), damage * 2, knockBack, player.whoAmI);
 		}
 		if (Main.rand.Next(5) == 0)
 		{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("CurseLightning"), damage + 50, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("CurseLightning"), damage * 2, knockBack, player.whoAmI);
 		}
         return false;
     }
