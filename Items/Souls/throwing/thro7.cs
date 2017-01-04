@@ -37,6 +37,7 @@ namespace ForgottenMemories.Items.Souls.throwing
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "soul", 1000);
+			recipe.AddIngredient(null, "ExterminationCrystal", 5);
 			recipe.AddIngredient(null, "thro6", 1);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
