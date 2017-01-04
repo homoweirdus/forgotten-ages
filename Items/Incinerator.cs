@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Devils Flame";
+			item.name = "Devil's Flame";
 			item.damage = 35;
 			item.melee = true;
 			item.width = 88;
