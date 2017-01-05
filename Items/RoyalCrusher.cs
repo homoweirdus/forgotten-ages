@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items
 			item.useAnimation = 20;
 			item.useStyle = 1;
 			item.knockBack = 6;
-			item.value = 10000;
+			item.value = 20000;
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;

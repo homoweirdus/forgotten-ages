@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items
             item.shoot = 3;
             item.useAmmo = 40;
             item.knockBack = 1;
-            item.value = 1000;
+            item.value = 100000;
             item.rare = 3;
             item.UseSound = SoundID.Item5;
             item.autoReuse = true;

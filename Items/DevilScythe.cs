@@ -23,8 +23,8 @@ namespace ForgottenMemories.Items
             item.noMelee = true;
             item.knockBack = 7;
             Item.staff[item.type] = true;
-            item.value = 10000;
-            item.rare = 2;
+            item.value = 100000;
+            item.rare = 3;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("scythe");
             item.shootSpeed = 1f;

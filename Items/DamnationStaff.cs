@@ -24,8 +24,8 @@ namespace ForgottenMemories.Items
             item.noMelee = true;
             item.knockBack = 7;
             Item.staff[item.type] = true;
-            item.value = 10000;
-            item.rare = 2;
+            item.value = 200000;
+            item.rare = 5;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("hellorb");
             item.shootSpeed = 16f;

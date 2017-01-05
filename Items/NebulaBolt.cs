@@ -18,8 +18,8 @@ public class NebulaBolt : ModItem
         item.useAnimation = 10;
         item.useStyle = 5;
         item.knockBack = 3;
-        item.value = 10000;
-        item.rare = 1;
+        item.value = 500000;
+		item.rare = 10;
         item.UseSound = SoundID.Item20;
         item.autoReuse = true;
 		item.toolTip = "Summons flames at your cursor";

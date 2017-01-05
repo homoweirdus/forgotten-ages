@@ -19,8 +19,8 @@ namespace ForgottenMemories.Items
 			item.useAnimation = 16;
 			item.useStyle = 1;
 			item.knockBack = 6;
-			item.value = 10000;
-			item.rare = 2;
+			item.value = 200000;
+            item.rare = 5;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("infrost");
