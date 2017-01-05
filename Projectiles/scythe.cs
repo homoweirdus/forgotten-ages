@@ -12,8 +12,8 @@ namespace ForgottenMemories.Projectiles
         public override void SetDefaults()
         {
             projectile.name = "Scythe";
-            projectile.width = 14;
-			projectile.height = 14;
+            projectile.width = 28;
+			projectile.height = 28;
             projectile.magic = true;
             projectile.friendly = true;
             projectile.hostile = false;
