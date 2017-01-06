@@ -24,13 +24,16 @@ namespace ForgottenMemories.Projectiles
             projectile.timeLeft = 200;
 			projectile.tileCollide = false;
 			Main.projFrames[projectile.type] = 4;
+			projectile.scale = 1.2f;
         }
 		
 		   public override void AI()
 		{
 			int dust;
-			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 242, 0f, 0f);
+			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 242, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			Main.dust[dust].scale = 1.2f;
 			Main.dust[dust].noGravity = true;
+			
 			timer++;
 			
 			projectile.frameCounter++;
