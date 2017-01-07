@@ -38,7 +38,7 @@ namespace ForgottenMemories.Items.Souls
 	{
 		public override void NPCLoot(NPC npc)
 		{
-			if (npc.lifeMax >= 50 && Main.rand.Next(5) == 0)
+			if (npc.lifeMax >= 50 && Main.rand.Next(3) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("soul"), 1);
 			}
