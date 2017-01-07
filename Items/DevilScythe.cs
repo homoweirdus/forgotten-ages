@@ -22,7 +22,6 @@ namespace ForgottenMemories.Items
             item.useStyle = 5;
             item.noMelee = true;
             item.knockBack = 7;
-            Item.staff[item.type] = true;
             item.value = 100000;
             item.rare = 3;
             item.autoReuse = true;
