@@ -120,6 +120,36 @@ namespace ForgottenMemories.NPCs.TitanRock
 				{
 					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("TitanBat"));
 				}
+				
+				if (timer == 100 || timer == 200)
+				{	
+					for (int i = 0; i < 4; ++i)
+					{
+						Vector2 direction = Main.player[npc.target].Center - npc.Center;
+						direction.Normalize();
+						float sX = direction.X * 4f;
+						float sY = direction.Y * 4f;
+						sX += (float)Main.rand.Next(-60, 61) * 0.02f;
+						sY += (float)Main.rand.Next(-60, 61) * 0.02f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Ball"), 12, 1, Main.myPlayer, 0, 0);
+					}
+				}
+				if (timer == 50 || timer == 150 || timer == 250)
+				{	
+					if (npc.life <= 1000 && Main.expertMode)
+					{
+						for (int i = 0; i < 2; ++i)
+						{
+							Vector2 direction = Main.player[npc.target].Center - npc.Center;
+							direction.Normalize();
+							float sX = direction.X * 4f;
+							float sY = direction.Y * 4f;
+							sX += (float)Main.rand.Next(-60, 61) * 0.02f;
+							sY += (float)Main.rand.Next(-60, 61) * 0.02f;
+							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Ball"), 12, 1, Main.myPlayer, 0, 0);
+						}
+					}
+				}
 			}
 			
 			
@@ -141,8 +171,14 @@ namespace ForgottenMemories.NPCs.TitanRock
 				
 				if (timer2 >= 5)
 				{
-					Vector2 newVect = gayvector.RotatedBy(System.Math.PI / 30);
-					Vector2 newVect2 = homovector.RotatedBy(System.Math.PI / 30);
+					Vector2 newVect = gayvector.RotatedBy(System.Math.PI / 35);
+					Vector2 newVect2 = homovector.RotatedBy(System.Math.PI / 35);
+					
+					if (npc.life <= 1000 && Main.expertMode)
+					{
+						newVect = gayvector.RotatedBy(System.Math.PI / 27);
+						newVect2 = homovector.RotatedBy(System.Math.PI / 27);
+					}
 					gayvector = newVect;
 					homovector = newVect2;
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, gayvector.X, gayvector.Y, mod.ProjectileType("Ball"), 22, 1, Main.myPlayer, 0, 0);
@@ -180,6 +216,10 @@ namespace ForgottenMemories.NPCs.TitanRock
 					public override void FindFrame(int frameHeight)
 		{
 			npc.frameCounter += 0.1f; 
+			if (npc.life <= 1000 && Main.expertMode)
+			{
+				npc.frameCounter += 0.1f;
+			}
 			npc.frameCounter %= Main.npcFrameCount[npc.type]; 
 			int frame = (int)npc.frameCounter; 
 			npc.frame.Y = frame * frameHeight; 
