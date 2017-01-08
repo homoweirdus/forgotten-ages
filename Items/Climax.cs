@@ -35,4 +35,17 @@ namespace ForgottenMemories.Items
 				Main.dust[dust].scale = 1.5f;
 			}
 		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(3459, 5);
+			recipe.AddIngredient(3457, 5);
+			recipe.AddIngredient(3458, 5);
+			recipe.AddIngredient(3456, 5);
+			recipe.AddIngredient(3467, 5);
+			recipe.AddTile(412);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 }}

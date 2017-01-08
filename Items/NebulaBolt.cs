@@ -41,7 +41,7 @@ public class NebulaBolt : ModItem
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3457, 10);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
