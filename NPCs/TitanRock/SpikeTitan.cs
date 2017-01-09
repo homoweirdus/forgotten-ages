@@ -26,6 +26,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 			animationType = NPCID.GiantBat;
 			npc.lavaImmune = true;
 			aiType = NPCID.GiantBat;
+			npc.scale = 1.25f;
 		}
 
 	

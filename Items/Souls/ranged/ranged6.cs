@@ -41,6 +41,13 @@ namespace ForgottenMemories.Items.Souls.ranged
 			recipe.AddIngredient(null, "ranged5", 1);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "soul", 600);
+			recipe.AddIngredient(null, "ProtectionCrystal", 5);
+			recipe.AddIngredient(null, "thro5", 1);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

@@ -23,10 +23,19 @@ namespace ForgottenMemories {
         public UIItemSlot EquipSoulSlot;
         public UIItemSlot VanitySoulSlot;
         public UIItemSlot SoulDyeSlot;
+		
+		public bool GroundPound;
+		public bool Pound;
 
         public override bool Autoload(ref string name) {
             return true;
         }
+		
+		public override void ResetEffects()
+		{
+            GroundPound = false;
+		}
+		
 
         public override void Initialize() {
             EquipSoulSlot = new UIItemSlot(Vector2.Zero, context: Contexts.EquipAccessory,
@@ -134,6 +143,25 @@ namespace ForgottenMemories {
         }
 
         public override void PreUpdate() {
+			if (GroundPound == true && player.controlDown && player.velocity.Y != 0f)
+			{
+				Projectile.NewProjectile(player.position.X, player.position.Y + 40, 0f, 0f, mod.ProjectileType("RedFlames"), 35, 0f, player.whoAmI, 0f, 0f);
+				player.velocity.Y = 23f;
+			}
+			if (GroundPound == true && player.controlDown && player.velocity.Y != 0f)
+			{
+				Pound = true;
+			}
+			
+			if (GroundPound && Pound && player.controlDown)
+			{
+			if (player.velocity.Y == 0f)
+			{
+				Projectile.NewProjectile(player.position.X, player.position.Y + 40, 0f, 0f, mod.ProjectileType("RedFlameBoom"), 35, 0f, player.whoAmI, 0f, 0f);
+				Pound = false;
+			}
+			}
+			
             if(ShouldDrawSlots()) {
                 EquipSoulSlot.Update();
                 VanitySoulSlot.Update();

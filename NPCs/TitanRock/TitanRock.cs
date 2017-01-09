@@ -224,5 +224,31 @@ namespace ForgottenMemories.NPCs.TitanRock
 			int frame = (int)npc.frameCounter; 
 			npc.frame.Y = frame * frameHeight; 
 		}
+		
+		public override void NPCLoot()
+		{
+		if (Main.expertMode)
+		{
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("TitanRockBag")));
+		}
+		else
+		{
+			int amountToDrop = Main.rand.Next(5,10);
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ProtectionCrystal"), amountToDrop);
+			
+		if (Main.rand.Next(3) == 0)
+            {
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserbladeKatana"), 1);
+            }
+		if (Main.rand.Next(3) == 0)
+            {
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Needler"), 1);
+            }
+		if (Main.rand.Next(3) == 0)
+            {
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserbeamStaff"), 1);
+            }
+		}
+		}
         }
     }
