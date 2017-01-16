@@ -28,7 +28,7 @@ namespace ForgottenMemories.Items
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("laserbeam");
             item.shootSpeed = 15f;
-			item.reuseDelay = 30;
+			item.reuseDelay = 25;
         }
 		
 		

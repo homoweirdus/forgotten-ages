@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (Main.rand.Next(5) == 0)
+			if (Main.rand.Next(3) == 0)
 			{
 			for (int i = 0; i < 3; i++)
 			{
@@ -42,7 +42,7 @@ namespace ForgottenMemories.Items
             float sY = speedY;
             sX += (float)Main.rand.Next(-60, 61) * 0.03f;
             sY += (float)Main.rand.Next(-60, 61) * 0.03f;
-            Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("needle"), damage, knockBack, player.whoAmI);
+            Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("needle"), damage / 4, knockBack, player.whoAmI);
 			}
 			}
 			return true;
