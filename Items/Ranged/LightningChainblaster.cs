@@ -12,12 +12,12 @@ public class LightningChainblaster : ModItem
     public override void SetDefaults()
     {
 		item.name = "Lightning Chainblaster";
-        item.damage = 70;
+        item.damage = 30;
         item.ranged = true;
         item.width = 50;
         item.height = 50;
-        item.useTime = 8;
-        item.useAnimation = 8;
+        item.useTime = 3;
+        item.useAnimation = 3;
         item.useStyle = 5;
         item.knockBack = 1;
         item.value = 200000;
@@ -25,7 +25,7 @@ public class LightningChainblaster : ModItem
         item.UseSound = SoundID.Item41;
         item.autoReuse = true;
 		item.shoot = ProjectileID.Bullet;
-		item.shootSpeed = 10f;
+		item.shootSpeed = 15f;
 		item.noMelee = true;
 		item.useAmmo =  AmmoID.Bullet;
     }
@@ -48,7 +48,7 @@ public class LightningChainblaster : ModItem
 	
 	public override bool ConsumeAmmo(Player player)
 	{
-		if (Main.rand.Next(3) == 0)
+		if (Main.rand.Next(4) == 0)
 		{
 			return true;
 		}
@@ -61,7 +61,7 @@ public class LightningChainblaster : ModItem
 	
 	public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 	{
-		if (Main.rand.Next(5) == 0)
+		if (Main.rand.Next(3) == 0)
 		{
 		float sX = speedX;
         float sY = speedY;
@@ -72,10 +72,10 @@ public class LightningChainblaster : ModItem
 		
 		float spX = speedX;
         float spY = speedY;
-        spX += (float)Main.rand.Next(-60, 61) * 0.02f;
-        spY += (float)Main.rand.Next(-60, 61) * 0.02f;
+        spX += (float)Main.rand.Next(-60, 61) * 0.03f;
+        spY += (float)Main.rand.Next(-60, 61) * 0.03f;
         Projectile.NewProjectile(position.X, position.Y, spX, spY, type, damage, knockBack, player.whoAmI);
 				
-			return true;
+			return false;
 	}
 }}

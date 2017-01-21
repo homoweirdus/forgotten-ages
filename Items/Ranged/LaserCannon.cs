@@ -12,7 +12,7 @@ public class LaserCannon : ModItem
     public override void SetDefaults()
     {
 		item.name = "Lightning Shotgun";
-        item.damage = 32;
+        item.damage = 36;
         item.ranged = true;
         item.width = 50;
         item.height = 50;
@@ -61,6 +61,6 @@ public class LaserCannon : ModItem
         Projectile.NewProjectile(position.X, position.Y, spX, spY, type, damage, knockBack, player.whoAmI);
 		}
 				
-			return true;
+			return false;
 	}
 }}
