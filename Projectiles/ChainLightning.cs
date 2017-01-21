@@ -8,7 +8,7 @@ using System;
 
 namespace ForgottenMemories.Projectiles
 {
-    public class PistolLightning : ModProjectile
+    public class ChainLightning : ModProjectile
     {
         public override void SetDefaults()
         {
@@ -19,7 +19,7 @@ namespace ForgottenMemories.Projectiles
             projectile.friendly = true;
             projectile.ranged = true;
             projectile.penetrate = 1;
-            projectile.timeLeft = 40;
+            projectile.timeLeft = 70;
             projectile.extraUpdates = 4;
 			projectile.alpha = 255;
         }
@@ -28,7 +28,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			int dust;
 			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 59, 0f, 0f);
-			Main.dust[dust].scale = 1.5f;
+			Main.dust[dust].scale = 2.2f;
 			Main.dust[dust].noGravity = true;
 			
 			Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
@@ -65,13 +65,24 @@ namespace ForgottenMemories.Projectiles
 			}
             }
 			
-			if (Main.rand.Next(20) == 0)
+			if (Main.rand.Next(30) == 0)
 			{
+				if (Main.rand.Next(3) == 0)
+				{
+					Vector2 coolVect = projectile.velocity.RotatedBy(System.Math.PI / -5);
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, coolVect.X, coolVect.Y, mod.ProjectileType("PistolLightning"), projectile.damage, 5f, projectile.owner);
+				}
 				Vector2 newVect = projectile.velocity.RotatedBy(System.Math.PI / 5);
 				projectile.velocity = newVect;
 			}	
-			if (Main.rand.Next(20) == 0)
+			if (Main.rand.Next(30) == 0)
 			{
+				if (Main.rand.Next(3) == 0)
+				{
+					Vector2 coolVect = projectile.velocity.RotatedBy(System.Math.PI / 5);
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, coolVect.X, coolVect.Y, mod.ProjectileType("PistolLightning"), projectile.damage, 5f, projectile.owner);
+				}
+				
 				Vector2 newVect2 = projectile.velocity.RotatedBy(System.Math.PI / -5);
 				projectile.velocity = newVect2;
 			}			
