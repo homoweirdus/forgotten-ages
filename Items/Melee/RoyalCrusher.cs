@@ -33,7 +33,7 @@ namespace ForgottenMemories.Items.Melee
 			recipe.AddIngredient(ItemID.GoldBroadsword, 1);
 			recipe.AddIngredient(ItemID.PlatinumBroadsword, 1);
 			recipe.AddIngredient(ItemID.Ruby, 5);
-			recipe.AddTile(TileID.IceMachine);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
