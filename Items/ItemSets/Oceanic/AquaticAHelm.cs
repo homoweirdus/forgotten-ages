@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.ItemSets.Oceanic
 {
-	public class AquaticHelm : ModItem
+	public class AquaticAHelm : ModItem
 	{
 		public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
 		{
@@ -19,10 +19,10 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.name = "Aquatic Helmet";
 			item.width = 18;
 			item.height = 18;
-			item.toolTip = "4% increased magic damage";
+			item.toolTip = "4% increased melee damage, increased life by 25";
 			item.value = 10000;
 			item.rare = 2;
-			item.defense = 10;
+			item.defense = 5;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -32,13 +32,14 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 
         public override void UpdateEquip(Player player)
         {
-            player.magicDamage += 0.04f;
+            player.meleeDamage += 0.04f;
+			player.statLifeMax2 += 25;
         }
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Maximum health increased by 25";
-			player.statLifeMax2 += 25;
+			player.setBonus = "Passively create damaging bubbles, explode into water when hurt";
+			((MyPlayer)player.GetModPlayer(mod, "MyPlayer")).AquaPowers = true;
 		}
 
         public override void AddRecipes()

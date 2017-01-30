@@ -19,16 +19,16 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.name = "Aquatic Chestplate";
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("Plus 20 maximum mana, 3% increased magic damage");
+			AddTooltip("3% increased melee damage and critical strike chance");
 			item.value = 10000;
 			item.rare = 2;
-			item.defense = 5;
+			item.defense = 7;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-			player.statManaMax2 += 20;
-			player.magicDamage += 0.03f;
+			player.meleeCrit += 3;
+			player.meleeDamage += 0.03f;
 		}
 
 		public override void AddRecipes()

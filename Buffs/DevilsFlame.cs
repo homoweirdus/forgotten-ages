@@ -17,8 +17,7 @@ namespace ForgottenMemories.Buffs
         }
         public override void Update(NPC npc, ref int buffIndex)
         {
-            npc.lifeRegen -= 5;
-            npc.defense -= 5;
+            npc.lifeRegen -= 10;
 
             if (Main.rand.Next(2) == 0)
             {

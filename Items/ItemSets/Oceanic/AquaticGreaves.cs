@@ -19,16 +19,17 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.name = "Aquatic Greaves";
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("7% increased magic damage");
+			AddTooltip("7% increased melee speed and damage");
 			item.value = 10000;
 			item.rare = 2;
-			item.defense = 4;
+			item.defense = 6;
             item.lifeRegen = 1;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-           player.magicDamage += 0.07f;
+           player.meleeDamage += 0.07f;
+		   player.meleeSpeed  += 0.07f;
 		}
 
 		public override void AddRecipes()

@@ -15,22 +15,14 @@ namespace ForgottenMemories
 		
 		public bool GroundPound;
 		public bool Pound;
-		public bool SlimeCharm;
+		public bool AquaPowers;
 		
 		public override void ResetEffects()
 		{
             GroundPound = false;
-			SlimeCharm = false;
+			AquaPowers = false;
 		}
 		
-		public override bool Shoot(Item item, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			if (Main.rand.Next(5) == 0 && SlimeCharm)
-			{
-            Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("SlimeBall"), damage, knockBack, player.whoAmI);
-			}
-			return true;
-		}
 		
 		public override void SetupStartInventory(IList<Item> items)
 		{
@@ -90,8 +82,33 @@ namespace ForgottenMemories
 				Projectile.NewProjectile(player.position.X, player.position.Y + 40, 0f, 0f, mod.ProjectileType("RedFlameBoom"), 35, 0f, player.whoAmI, 0f, 0f);
 				Pound = false;
 			}
+			
+			}
+			
+			if (AquaPowers == true && Main.rand.Next(20) == 0)
+			{
+				float spX = (float)Main.rand.Next(-30, 30) * 0.05f;
+				float spY = (float)Main.rand.Next(-30, 30) * 0.05f;
+				int projectile2 = Projectile.NewProjectile(player.position.X, player.position.Y, spX, spY, mod.ProjectileType("buble"), 6, 0f, player.whoAmI, 0f, 0f);
+				Main.projectile[projectile2].melee = false;
 			}
         }
+		
+		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
+		{
+			if (AquaPowers == true)
+			{
+				int amountOfProjectiles = Main.rand.Next(2, 6);
+				for (int i = 0; i < amountOfProjectiles; ++i)
+				{
+					float sX = (float)Main.rand.Next(-120, 120) * 0.1f;
+					float sY = (float)Main.rand.Next(-120, 120) * 0.1f;
+					int projectile = Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, 22, 45, 5f, player.whoAmI);
+					Main.projectile[projectile].timeLeft = 100;
+					Main.projectile[projectile].magic = false;
+				}
+			}
+		}
 			
     }
 }
