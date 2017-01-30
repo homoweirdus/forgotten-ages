@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.Crystals
+namespace ForgottenMemories.Items
 {
     public class CrystalDrop : GlobalNPC
     {
@@ -15,10 +15,10 @@ namespace ForgottenMemories.Items.Crystals
                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SlimeRod"), 1); 
             }
 			
-			if (npc.type == 32)
+			if (npc.type == 32 && Main.rand.Next(3) == 0)
             {
                int amountToDrop = Main.rand.Next(1,2);
-               Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WaterCrystal"), amountToDrop); 
+               Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WaterShard"), amountToDrop); 
             }
           
         }

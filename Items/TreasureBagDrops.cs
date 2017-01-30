@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.Crystals
+namespace ForgottenMemories.Items
 {
 	public class TreasureBagDrops : GlobalItem
 	{
