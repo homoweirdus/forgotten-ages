@@ -34,7 +34,7 @@ public class LightningPistol : ModItem
 	{
 		ModRecipe recipe = new ModRecipe(mod);
 		recipe.AddIngredient(ItemID.FlintlockPistol, 1);
-		recipe.AddIngredient(null, "VisionCrystal", 3);
+		recipe.AddIngredient(ItemID.Lens, 10);
 		recipe.AddIngredient(ItemID.MeteoriteBar, 15);
 		recipe.AddTile(TileID.Anvils);
 		recipe.SetResult(this);

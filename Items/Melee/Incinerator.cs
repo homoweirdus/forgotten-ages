@@ -33,7 +33,7 @@ namespace ForgottenMemories.Items.Melee
 			recipe.AddIngredient(ItemID.FieryGreatsword, 1);
 			recipe.AddRecipeGroup("AnyPhaseblade");
 			recipe.AddIngredient(ItemID.LavaBucket, 5);
-			recipe.AddIngredient(null, "ExterminationCrystal", 5);
+			recipe.AddIngredient(ItemID.Bone, 20);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

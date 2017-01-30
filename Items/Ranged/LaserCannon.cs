@@ -16,8 +16,8 @@ public class LaserCannon : ModItem
         item.ranged = true;
         item.width = 50;
         item.height = 50;
-        item.useTime = 35;
-        item.useAnimation = 35;
+        item.useTime = 46;
+        item.useAnimation = 46;
         item.useStyle = 5;
         item.knockBack = 1;
         item.value = 200000;

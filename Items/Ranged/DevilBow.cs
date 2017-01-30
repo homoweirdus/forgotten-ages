@@ -49,7 +49,7 @@ namespace ForgottenMemories.Items.Ranged
 			recipe.AddIngredient(ItemID.MoltenFury, 1);
 			recipe.AddIngredient(ItemID.HellwingBow, 1);
 			recipe.AddIngredient(ItemID.LavaBucket, 5);
-			recipe.AddIngredient(null, "ExterminationCrystal", 5);
+			recipe.AddIngredient(ItemID.Bone, 20);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -46,7 +46,7 @@ namespace ForgottenMemories.Items.Magic
 			recipe.AddIngredient(ItemID.DemonScythe, 1);
 			recipe.AddIngredient(ItemID.BookofSkulls, 1);
 			recipe.AddIngredient(ItemID.LavaBucket, 5);
-			recipe.AddIngredient(null, "ExterminationCrystal", 5);
+			recipe.AddIngredient(ItemID.Bone, 20);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

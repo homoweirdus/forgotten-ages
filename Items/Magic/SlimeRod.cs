@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Magic
         public override void SetDefaults()
         {
             item.name = "Slime Rod";
-            item.damage = 15;
+            item.damage = 12;
             item.magic = true;
             item.mana = 8;
             item.width = 25;
@@ -42,16 +42,5 @@ namespace ForgottenMemories.Items.Magic
             Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
 			return false;
     }
-
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(null, "ChampionCrystal", 5);
-			recipe.AddIngredient(ItemID.Gel, 100);
-            recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-
-        }
 	}
 }
