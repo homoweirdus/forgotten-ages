@@ -98,11 +98,11 @@ namespace ForgottenMemories
 		{
 			if (AquaPowers == true)
 			{
-				int amountOfProjectiles = Main.rand.Next(2, 6);
+				int amountOfProjectiles = Main.rand.Next(4, 6);
 				for (int i = 0; i < amountOfProjectiles; ++i)
 				{
-					float sX = (float)Main.rand.Next(-120, 120) * 0.1f;
-					float sY = (float)Main.rand.Next(-120, 120) * 0.1f;
+					float sX = (float)Main.rand.Next(-40, 40) * 0.1f;
+					float sY = (float)Main.rand.Next(-120, 0) * 0.1f;
 					int projectile = Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, 22, 45, 5f, player.whoAmI);
 					Main.projectile[projectile].timeLeft = 100;
 					Main.projectile[projectile].magic = false;
