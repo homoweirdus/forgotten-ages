@@ -29,14 +29,14 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.scale = 1.25f;
 		}
 
-	
+		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-	{
-		npc.lifeMax = (int)(npc.lifeMax * 1f);
-		npc.damage = (int)(npc.damage * 1f);
-	}
-	
-	public override bool PreNPCLoot()
+		{
+			npc.lifeMax = (int)(npc.lifeMax * 1f);
+			npc.damage = (int)(npc.damage * 1f);
+		}
+		
+		public override bool PreNPCLoot()
 		{
 			for (int i = 0; i < 30; ++i)
 			{
@@ -52,12 +52,12 @@ namespace ForgottenMemories.NPCs.TitanRock
 			timer++;
 			if (timer == 60)
 			{
-			Vector2 direction = Main.player[npc.target].Center - npc.Center;
-			direction.Normalize();
-			Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X * 4f, direction.Y * 4f, 84, 20, 1, Main.myPlayer, 0, 0);
-			timer = 0;
+				Vector2 direction = Main.player[npc.target].Center - npc.Center;
+				direction.Normalize();
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X * 4f, direction.Y * 4f, 84, 20, 1, Main.myPlayer, 0, 0);
+				timer = 0;
 			}
 		}
-	
+		
 	}
 }

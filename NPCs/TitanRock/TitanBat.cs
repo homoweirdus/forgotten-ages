@@ -26,14 +26,14 @@ namespace ForgottenMemories.NPCs.TitanRock
 			animationType = NPCID.GiantBat;
 		}
 
-	
+		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-	{
-		npc.lifeMax = (int)(npc.lifeMax * 1f);
-		npc.damage = (int)(npc.damage * 1f);
-	}
-	
-	public override bool PreNPCLoot()
+		{
+			npc.lifeMax = (int)(npc.lifeMax * 1f);
+			npc.damage = (int)(npc.damage * 1f);
+		}
+		
+		public override bool PreNPCLoot()
 		{
 			for (int i = 0; i < 10; ++i)
 			{
@@ -42,6 +42,5 @@ namespace ForgottenMemories.NPCs.TitanRock
 			
 			return false;
 		}
-	
 	}
 }
