@@ -24,14 +24,14 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 1;
 		}
 		
-			public override void AI()
-        {
-            projectile.frameCounter++;
-            if (projectile.frameCounter >= 3)
-            {
-                projectile.frameCounter = 0;
-                projectile.frame = (projectile.frame + 1) % 4;
-            } 
+		public override void AI()
+		{
+			projectile.frameCounter++;
+			if (projectile.frameCounter >= 3)
+			{
+				projectile.frameCounter = 0;
+				projectile.frame = (projectile.frame + 1) % 4;
+			} 
 			
 			if (Main.rand.Next(3) == 0)
 			{
@@ -45,14 +45,14 @@ namespace ForgottenMemories.Projectiles
 			
 		}
 		
-			public override void Kill(int timeLeft)
-			{
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("solarboom"), 50, 5f, projectile.owner);
-			}
-			
-			public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-			{
-				target.AddBuff(189, 180, false);
-			}
-        }
+		public override void Kill(int timeLeft)
+		{
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("solarboom"), 50, 5f, projectile.owner);
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.AddBuff(189, 180, false);
+		}
 	}
+}

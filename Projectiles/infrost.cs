@@ -43,5 +43,5 @@ namespace ForgottenMemories.Projectiles
 			}
 		}
 		
-		}
 	}
+}

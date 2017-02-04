@@ -6,24 +6,24 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-    public class CurseLightning : ModProjectile
-    {
-        public override void SetDefaults()
-        {
-            projectile.name = "Curse Lightning";
-            projectile.width = 20;
-            projectile.height = 20;
-            projectile.aiStyle = -1;
-            projectile.friendly = true;
-            projectile.melee = true;
-            projectile.penetrate = 1;
-            projectile.timeLeft = 100;
-            projectile.extraUpdates = 100;
+	public class CurseLightning : ModProjectile
+	{
+		public override void SetDefaults()
+		{
+			projectile.name = "Curse Lightning";
+			projectile.width = 20;
+			projectile.height = 20;
+			projectile.aiStyle = -1;
+			projectile.friendly = true;
+			projectile.melee = true;
+			projectile.penetrate = 1;
+			projectile.timeLeft = 100;
+			projectile.extraUpdates = 100;
 			projectile.alpha = 255;
 			projectile.tileCollide = false;
-        }
+		}
 		
-		   public override void AI()
+		public override void AI()
 		{
 			int dust;
 			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 75, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
@@ -46,8 +46,8 @@ namespace ForgottenMemories.Projectiles
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-            target.AddBuff(39, 500, false);
-        }
-    }
+		{
+			target.AddBuff(39, 500, false);
+		}
+	}
 }

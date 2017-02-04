@@ -7,18 +7,18 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-    public class scythe : ModProjectile
-    {
-        public override void SetDefaults()
-        {
-            projectile.name = "Scythe";
-            projectile.width = 28;
+	public class scythe : ModProjectile
+	{
+		public override void SetDefaults()
+		{
+			projectile.name = "Scythe";
+			projectile.width = 28;
 			projectile.height = 28;
-            projectile.magic = true;
-            projectile.friendly = true;
-            projectile.hostile = false;
-            projectile.penetrate = 2;
-        }
+			projectile.magic = true;
+			projectile.friendly = true;
+			projectile.hostile = false;
+			projectile.penetrate = 2;
+		}
 		
 		public override bool PreAI()
 		{
@@ -37,7 +37,7 @@ namespace ForgottenMemories.Projectiles
 			{
 				int dust2 = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, mod.DustType("reddust"), 0f, 0f);
 			}
-	
+			
 			return false;
 		}
 		
@@ -45,5 +45,5 @@ namespace ForgottenMemories.Projectiles
 		{
 			target.AddBuff(mod.BuffType("DevilsFlame"), 360, false);
 		}
-    }
+	}
 }

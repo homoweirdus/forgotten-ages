@@ -53,12 +53,12 @@ namespace ForgottenMemories.NPCs
 				Main.dust[dust].scale = 1.5f;
 			}
 		}
-	
+		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-	{
-		npc.lifeMax = (int)(npc.lifeMax * 1f);
-		npc.damage = (int)(npc.damage * 1f);
-	}
-	
+		{
+			npc.lifeMax = (int)(npc.lifeMax * 1f);
+			npc.damage = (int)(npc.damage * 1f);
+		}
+		
 	}
 }

@@ -4,40 +4,40 @@ using Terraria;
 using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles {
-public class Spark : ModProjectile
-{
-	public override void SetDefaults()
+	public class Spark : ModProjectile
 	{
-		projectile.name = "Spark";
-		projectile.width = 20;
-		projectile.height = 20;
-		projectile.aiStyle = 0;
-		projectile.penetrate = 1;
-		projectile.melee = true;
-		projectile.friendly = true;
-		projectile.alpha = 255;
-		projectile.timeLeft = 45;
-		projectile.tileCollide = false;
-		projectile.light = 0.5f;
-	}
-	
-	public override void Kill(int timeLeft)
-    {
-		for (int i = 0; i < 5; i++)
+		public override void SetDefaults()
 		{
-            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64);
-			Main.dust[dust].scale = 1.5f;
-			Main.dust[dust].noGravity = true;
-        }
-		for (int i = 0; i < 5; i++)
+			projectile.name = "Spark";
+			projectile.width = 20;
+			projectile.height = 20;
+			projectile.aiStyle = 0;
+			projectile.penetrate = 1;
+			projectile.melee = true;
+			projectile.friendly = true;
+			projectile.alpha = 255;
+			projectile.timeLeft = 45;
+			projectile.tileCollide = false;
+			projectile.light = 0.5f;
+		}
+		
+		public override void Kill(int timeLeft)
 		{
-            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 63);
-			Main.dust[dust].scale = 1.5f;
-			Main.dust[dust].noGravity = true;
-        }
-    }
-	
-	public override void AI()
+			for (int i = 0; i < 5; i++)
+			{
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64);
+				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].noGravity = true;
+			}
+			for (int i = 0; i < 5; i++)
+			{
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 63);
+				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].noGravity = true;
+			}
+		}
+		
+		public override void AI()
 		{
 			if (Main.rand.Next(2) == 0)
 			{
@@ -58,5 +58,5 @@ public class Spark : ModProjectile
 			projectile.velocity.X *= 0.96f;
 			projectile.velocity.Y *= 0.96f;
 		}
-}
+	}
 }	

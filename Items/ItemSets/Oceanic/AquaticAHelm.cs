@@ -30,11 +30,11 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			return body.type == mod.ItemType("AquaticChestplate") && legs.type == mod.ItemType("AquaticGreaves");
 		}
 
-        public override void UpdateEquip(Player player)
-        {
-            player.meleeDamage += 0.04f;
+		public override void UpdateEquip(Player player)
+		{
+			player.meleeDamage += 0.04f;
 			player.statLifeMax2 += 25;
-        }
+		}
 
 		public override void UpdateArmorSet(Player player)
 		{
@@ -42,12 +42,12 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			((MyPlayer)player.GetModPlayer(mod, "MyPlayer")).AquaPowers = true;
 		}
 
-        public override void AddRecipes()
+		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "WaterShard", 7);
 			recipe.AddIngredient(ItemID.SharkFin, 4);
-            recipe.AddTile(TileID.Anvils);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

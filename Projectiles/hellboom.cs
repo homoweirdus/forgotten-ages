@@ -24,19 +24,19 @@ namespace ForgottenMemories.Projectiles
 			projectile.scale = 1.25f;
 		}
 		
-			public override void AI()
-        {
-            projectile.frameCounter++;
-            if (projectile.frameCounter >= 4)
-            {
-                projectile.frameCounter = 0;
-                projectile.frame = (projectile.frame + 1) % 4;
-            } 
+		public override void AI()
+		{
+			projectile.frameCounter++;
+			if (projectile.frameCounter >= 4)
+			{
+				projectile.frameCounter = 0;
+				projectile.frame = (projectile.frame + 1) % 4;
+			} 
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-            target.AddBuff(24, 180, false);
-        }
+		{
+			target.AddBuff(24, 180, false);
+		}
 	}
 }

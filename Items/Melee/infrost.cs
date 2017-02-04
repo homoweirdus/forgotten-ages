@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.Melee
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 200000;
-            item.rare = 5;
+			item.rare = 5;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("infrost");
@@ -59,13 +59,13 @@ namespace ForgottenMemories.Items.Melee
 		{
 			if (Main.rand.Next(4) < 2)
 			{
-			target.AddBuff(BuffID.Frostburn, 60);
+				target.AddBuff(BuffID.Frostburn, 60);
 			}
 			if (Main.rand.Next(100) < 99)
 			{
 				target.AddBuff(BuffID.Frozen, 10);
 			}
-		
+			
 		}
 	}
 }

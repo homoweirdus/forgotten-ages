@@ -18,5 +18,5 @@ namespace ForgottenMemories.Items.Materials
 			item.rare = 2;
 			item.maxStack = 999;
 		}
-}
+	}
 }

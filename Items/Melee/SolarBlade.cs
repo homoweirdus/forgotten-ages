@@ -47,14 +47,13 @@ namespace ForgottenMemories.Items.Melee
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-    {
-            float sX = speedX;
-            float sY = speedY;
-            sX += (float)Main.rand.Next(-60, 61) * 0.1f;
-            sY += (float)Main.rand.Next(-60, 61) * 0.1f;
-            Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
+		{
+			float sX = speedX;
+			float sY = speedY;
+			sX += (float)Main.rand.Next(-60, 61) * 0.1f;
+			sY += (float)Main.rand.Next(-60, 61) * 0.1f;
+			Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
 			return false;
-    }
-
+		}
 	}
 }

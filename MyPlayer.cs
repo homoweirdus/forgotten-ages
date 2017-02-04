@@ -10,8 +10,8 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories
 {
-    public class MyPlayer : ModPlayer
-    {
+	public class MyPlayer : ModPlayer
+	{
 		
 		public bool GroundPound;
 		public bool Pound;
@@ -19,7 +19,7 @@ namespace ForgottenMemories
 		
 		public override void ResetEffects()
 		{
-            GroundPound = false;
+			GroundPound = false;
 			AquaPowers = false;
 		}
 		
@@ -77,12 +77,12 @@ namespace ForgottenMemories
 			
 			if (GroundPound && Pound && player.controlDown)
 			{
-			if (player.velocity.Y == 0f)
-			{
-				Projectile.NewProjectile(player.position.X, player.position.Y + 40, 0f, 0f, mod.ProjectileType("RedFlameBoom"), 35, 0f, player.whoAmI, 0f, 0f);
-				Pound = false;
-			}
-			
+				if (player.velocity.Y == 0f)
+				{
+					Projectile.NewProjectile(player.position.X, player.position.Y + 40, 0f, 0f, mod.ProjectileType("RedFlameBoom"), 35, 0f, player.whoAmI, 0f, 0f);
+					Pound = false;
+				}
+				
 			}
 			
 			if (AquaPowers == true && Main.rand.Next(20) == 0)
@@ -92,7 +92,7 @@ namespace ForgottenMemories
 				int projectile2 = Projectile.NewProjectile(player.position.X, player.position.Y, spX, spY, mod.ProjectileType("buble"), 6, 0f, player.whoAmI, 0f, 0f);
 				Main.projectile[projectile2].melee = false;
 			}
-        }
+		}
 		
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
@@ -109,6 +109,6 @@ namespace ForgottenMemories
 				}
 			}
 		}
-			
-    }
+		
+	}
 }

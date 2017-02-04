@@ -30,14 +30,14 @@ namespace ForgottenMemories.Projectiles
 			if (Main.rand.Next(5) == 0)
 			{
 				int dust;
-				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 62, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				dust = Dust.NewDust(projectile.position, projectile.height, projectile.width, 62, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
 			if (Main.rand.Next(4) == 0)
 			{
 				int dust;
-				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 14, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				dust = Dust.NewDust(projectile.position, projectile.height, projectile.width, 14, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
@@ -62,5 +62,5 @@ namespace ForgottenMemories.Projectiles
 				projectile.velocity.X *= 1.1f;
 			}
 		}
-		}
 	}
+}

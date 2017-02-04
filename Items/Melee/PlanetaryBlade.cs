@@ -41,21 +41,21 @@ namespace ForgottenMemories.Items.Melee
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-    {
-            float sX = speedX;
-            float sY = speedY;
-            sX += (float)Main.rand.Next(-60, 61) * 0.05f;
-            sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-            Projectile.NewProjectile(position.X, position.Y, sX, sY, 483, damage, knockBack, player.whoAmI);
+		{
+			float sX = speedX;
+			float sY = speedY;
+			sX += (float)Main.rand.Next(-60, 61) * 0.05f;
+			sY += (float)Main.rand.Next(-60, 61) * 0.05f;
+			Projectile.NewProjectile(position.X, position.Y, sX, sY, 483, damage, knockBack, player.whoAmI);
 			
 			float sX2 = speedX;
-            float sY2 = speedY;
-            sX2 += (float)Main.rand.Next(-60, 61) * 0.05f;
-            sY2 += (float)Main.rand.Next(-60, 61) * 0.05f;
-            Projectile.NewProjectile(position.X, position.Y, sX2, sY2, 483, damage, knockBack, player.whoAmI);
+			float sY2 = speedY;
+			sX2 += (float)Main.rand.Next(-60, 61) * 0.05f;
+			sY2 += (float)Main.rand.Next(-60, 61) * 0.05f;
+			Projectile.NewProjectile(position.X, position.Y, sX2, sY2, 483, damage, knockBack, player.whoAmI);
 			
 			return true;
-    }
+		}
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
@@ -78,6 +78,5 @@ namespace ForgottenMemories.Items.Melee
 				Main.dust[dust2].noGravity = true;
 			}
 		}
-
 	}
 }

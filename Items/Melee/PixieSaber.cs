@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.Melee
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 100000;
-            item.rare = 4;
+			item.rare = 4;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("starproj");
@@ -44,6 +44,5 @@ namespace ForgottenMemories.Items.Melee
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-
 	}
 }

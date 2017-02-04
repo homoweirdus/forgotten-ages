@@ -8,20 +8,20 @@ using System;
 
 namespace ForgottenMemories.Projectiles
 {
-    public class hellorb : ModProjectile
-    {
-        public override void SetDefaults()
-        {
-            projectile.name = "Hell Orb";
-            projectile.width = 22;
-            projectile.height = 22;
-            projectile.aiStyle = 2;
-            projectile.friendly = true;
-            projectile.magic = true;
-            projectile.penetrate = 1;
-            projectile.timeLeft = 200;
+	public class hellorb : ModProjectile
+	{
+		public override void SetDefaults()
+		{
+			projectile.name = "Hell Orb";
+			projectile.width = 22;
+			projectile.height = 22;
+			projectile.aiStyle = 2;
+			projectile.friendly = true;
+			projectile.magic = true;
+			projectile.penetrate = 1;
+			projectile.timeLeft = 200;
 			projectile.extraUpdates = 3;
-        }
+		}
 		
 		public override void AI()
 		{
@@ -35,9 +35,9 @@ namespace ForgottenMemories.Projectiles
 		}
 		
 		public override void Kill(int timeLeft)
-			{
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("hellboom"), 50, 5f, projectile.owner);
-				 Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-			}
-        }
-    }
+		{
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("hellboom"), 50, 5f, projectile.owner);
+			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
+		}
+	}
+}

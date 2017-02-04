@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.Melee
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 100000;
-            item.rare = 3;
+			item.rare = 3;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("redflame");
@@ -46,6 +46,5 @@ namespace ForgottenMemories.Items.Melee
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 60);
 			}
 		}
-
 	}
 }

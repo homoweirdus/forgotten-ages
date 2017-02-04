@@ -48,4 +48,5 @@ namespace ForgottenMemories.Items.Melee
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-}}
+	}
+}

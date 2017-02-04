@@ -3,28 +3,29 @@ using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
 
-namespace ForgottenMemories.Items.ItemSets.OldGear {
-public class OldAxe : ModItem
+namespace ForgottenMemories.Items.ItemSets.OldGear 
 {
-    public override void SetDefaults()
-    {
-		item.name = "Ancient Axe";
-        item.damage = 5;
-        item.melee = true;
-        item.width = 22;
-        item.height = 24;
-        item.useTime = 15;
-        item.useAnimation = 27;
-        item.useStyle = 1;
-        item.knockBack = 1;
-        item.value = 10000;
-        item.rare = 1;
-        item.UseSound = SoundID.Item1;
-        item.autoReuse = true;
-		item.axe = 7;
-    }
-	
-	public override void MeleeEffects(Player player, Rectangle hitbox)
+	public class OldAxe : ModItem
+	{
+		public override void SetDefaults()
+		{
+			item.name = "Ancient Axe";
+			item.damage = 5;
+			item.melee = true;
+			item.width = 22;
+			item.height = 24;
+			item.useTime = 15;
+			item.useAnimation = 27;
+			item.useStyle = 1;
+			item.knockBack = 1;
+			item.value = 10000;
+			item.rare = 1;
+			item.UseSound = SoundID.Item1;
+			item.autoReuse = true;
+			item.axe = 7;
+		}
+		
+		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
 			if (Main.rand.Next(3) == 0)
 			{
@@ -33,4 +34,5 @@ public class OldAxe : ModItem
 				Main.dust[dust2].noGravity = true;
 			}
 		}
-}}
+	}
+}

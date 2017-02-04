@@ -41,18 +41,18 @@ namespace ForgottenMemories.Items.Melee
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-    {
-		Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
-		if (Main.rand.Next(5) == 0)
 		{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("IchorLightning"), damage * 2, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			if (Main.rand.Next(5) == 0)
+			{
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("IchorLightning"), damage * 2, knockBack, player.whoAmI);
+			}
+			if (Main.rand.Next(5) == 0)
+			{
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("CurseLightning"), damage * 2, knockBack, player.whoAmI);
+			}
+			return false;
 		}
-		if (Main.rand.Next(5) == 0)
-		{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("CurseLightning"), damage * 2, knockBack, player.whoAmI);
-		}
-        return false;
-    }
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

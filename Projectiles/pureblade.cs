@@ -58,5 +58,5 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[dust].noGravity = true;
 			}
 		}
-		}
 	}
+}

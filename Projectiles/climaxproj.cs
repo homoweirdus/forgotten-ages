@@ -24,14 +24,14 @@ namespace ForgottenMemories.Projectiles
 			projectile.scale = 0.75f;
 		}
 		
-			public override void AI()
-        {
-            projectile.frameCounter++;
-            if (projectile.frameCounter >= 6)
-            {
-                projectile.frameCounter = 0;
-                projectile.frame = (projectile.frame + 1) % 4;
-            } 
+		public override void AI()
+		{
+			projectile.frameCounter++;
+			if (projectile.frameCounter >= 6)
+			{
+				projectile.frameCounter = 0;
+				projectile.frame = (projectile.frame + 1) % 4;
+			} 
 		}
 	}
 }

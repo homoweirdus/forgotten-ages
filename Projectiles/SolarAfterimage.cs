@@ -26,13 +26,13 @@ namespace ForgottenMemories.Projectiles
 		}
 
 		public override void AI()
-        {
-            projectile.frameCounter++;
-            if (projectile.frameCounter >= 3)
-            {
-                projectile.frameCounter = 0;
-                projectile.frame = (projectile.frame + 1) % 4;
-            } 
+		{
+			projectile.frameCounter++;
+			if (projectile.frameCounter >= 3)
+			{
+				projectile.frameCounter = 0;
+				projectile.frame = (projectile.frame + 1) % 4;
+			} 
 			
 			if (Main.rand.Next(6) == 0)
 			{
@@ -47,5 +47,5 @@ namespace ForgottenMemories.Projectiles
 		{
 			target.AddBuff(189, 180, false);
 		}		
-    }
+	}
 }

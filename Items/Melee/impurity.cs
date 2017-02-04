@@ -70,6 +70,5 @@ namespace ForgottenMemories.Items.Melee
 				Main.dust[dust5].noGravity = true;
 			}
 		}
-
 	}
 }
