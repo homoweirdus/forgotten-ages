@@ -1,5 +1,5 @@
-author = Crimsoneye495 and his filthy minions
+author = A team of contributers
 
 version = 0.0.2.8
 
-displayName = Forgotten Memories
+displayName = The Forgotten Ages
