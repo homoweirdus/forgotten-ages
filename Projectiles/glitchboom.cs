@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-	public class glitchlboom : ModProjectile
+	public class glitchboom : ModProjectile
 	{
 		public override void SetDefaults()
 		{
