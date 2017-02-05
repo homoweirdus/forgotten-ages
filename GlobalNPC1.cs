@@ -9,8 +9,6 @@ namespace ForgottenMemories
 	public class GlobalNPC1 : GlobalNPC
 	{
 		
-		
-
 		public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
 		{
 			if (player.GetModPlayer<MyPlayer>(mod).isGlitch)
@@ -19,7 +17,5 @@ namespace ForgottenMemories
 				maxSpawns = (int)(maxSpawns * 50f);
 			}
 		}
-
-	
 	}
 }

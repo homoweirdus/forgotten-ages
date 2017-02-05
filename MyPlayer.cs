@@ -16,11 +16,13 @@ namespace ForgottenMemories
 		public bool GroundPound;
 		public bool Pound;
 		public bool AquaPowers;
+		public bool isGlitch;
 		
 		public override void ResetEffects()
 		{
 			GroundPound = false;
 			AquaPowers = false;
+			isGlitch = false;
 		}
 		
 		
