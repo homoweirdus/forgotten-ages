@@ -1,5 +1,5 @@
-author = A team of contributers
+author = It was literally just kachow and nobody else
 
-version = 0.0.2.8
+version = 0.1
 
 displayName = The Forgotten Ages

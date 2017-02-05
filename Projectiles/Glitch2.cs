@@ -44,7 +44,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("glitchboom"), 50, 5f, projectile.owner);
 				target.aiStyle = Main.rand.Next(3, 32);
 				
 				if(Main.rand.Next(10) == 0) {
