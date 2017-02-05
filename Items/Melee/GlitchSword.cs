@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Gay";
+			item.name = "Glitch Sword";
 			item.damage = 12;
 			item.melee = true;
 			item.width = 88;
