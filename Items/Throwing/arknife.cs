@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 			item.name = "Ark Dagger";
-			item.damage = 20;
+			item.damage = 14;
 			item.thrown = true;
 			item.width = 88;
 			item.height = 88;
