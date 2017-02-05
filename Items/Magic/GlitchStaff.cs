@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.Magic
 			item.magic = true;
 			item.width = 25;
 			item.height = 26;
-			item.toolTip = "Mess everything up";
+			item.toolTip = "Cheat Weapon! Unobtainable outside of cheat sheet.";
 			item.useTime = 10;
 			item.UseSound = SoundID.Item20;
 			item.useAnimation = 10;
