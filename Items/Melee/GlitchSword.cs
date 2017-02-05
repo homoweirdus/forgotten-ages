@@ -1,9 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
-using Microsoft.using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria;
 using Microsoft.Xna.Framework;
 
 namespace ForgottenMemories.Items.Melee
