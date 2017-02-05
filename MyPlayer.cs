@@ -17,6 +17,7 @@ namespace ForgottenMemories
 		public bool Pound;
 		public bool AquaPowers;
 		public bool isGlitch;
+		public bool breakShop;
 		
 		public override void ResetEffects()
 		{
