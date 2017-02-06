@@ -10,21 +10,21 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 		public override void SetDefaults()
 		{
 			item.name = "Aquatic Katana";
-			item.damage = 25;
+			item.damage = 30;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
 			item.toolTip = "Fires a short range splash of water";
-			item.useTime = 15;
-			item.useAnimation = 15;
+			item.useTime = 14;
+			item.useAnimation = 14;
 			item.useStyle = 1;
-			item.knockBack = 6;
+			item.knockBack = 2;
 			item.value = 50000;
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("splash");
-			item.shootSpeed = 5;
+			item.shootSpeed = 8;
 		}
 
 		public override void AddRecipes()
