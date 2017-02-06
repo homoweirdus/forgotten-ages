@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
     {
         public override void SetDefaults()
         {
-            item.name = "ancient boomerang";
+            item.name = "Ancient Boomerang";
             item.damage = 11;            
             item.melee = true;
             item.width = 30;
             item.height = 30;
-            item.toolTip = "A cool boomerang";
+            item.toolTip = "Fires 3 boomerangs";
             item.useTime = 25;
             item.useAnimation = 25;
             item.noUseGraphic = true;
