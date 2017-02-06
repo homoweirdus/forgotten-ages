@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TGEM.Projectiles.Melee
+namespace ForgottenMemories.Projectiles.Necro
 {
 	
 	public class NecroflameDrillProj : ModProjectile
