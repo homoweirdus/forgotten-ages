@@ -16,24 +16,22 @@ namespace ForgottenMemories.Items.ItemSets.Accursed
         {
 
             item.name = "Accursed Blade";
-            item.damage = 62;
+            item.damage = 48;
             item.crit = 8;
             item.melee = true;
             item.knockBack = 6;
             item.autoReuse = false;
-            item.useTurn = true;
             item.width = 46;
             item.height = 48;
-            item.useTime = 50;
+            item.useTime = 25;
             item.useAnimation = 25;
             item.useStyle = 1;
             item.UseSound = SoundID.Item1;
             item.value = 138000;
 			item.rare = 4;
-			item.shoot = 95;
-			item.shootSpeed = 10;
+			item.shoot = mod.ProjectileType("curseblade");
+			item.shootSpeed = 15;
 			item.autoReuse = true;
-			item.useTurn = true;
 
         }
 
@@ -44,14 +42,6 @@ namespace ForgottenMemories.Items.ItemSets.Accursed
                 target.AddBuff(39, 360, false);
             }
         }
-		
-		public static void MeleeEffects(Item item, Player player, Rectangle hitbox)
-		{
-			if (Main.rand.Next(3) == 0)
-			{
-				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 75);
-			}
-		}
 
         public override void AddRecipes()
         {

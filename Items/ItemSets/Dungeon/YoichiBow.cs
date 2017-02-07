@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.ItemSets.Dungeon
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-            item.toolTip = "Has a chance to release a swarm of waterbolts";
+            item.toolTip = "Has a chance to fire waterbolts";
             item.useTime = 20;
             item.useAnimation = 20;
             item.useStyle = 5;
@@ -42,18 +42,14 @@ namespace ForgottenMemories.Items.ItemSets.Dungeon
 				Vector2 newVect3 = origVect.RotatedBy(System.Math.PI / 20);
 				Vector2 newVect4 = origVect.RotatedBy(-System.Math.PI / 20);
 
-				int p = Projectile.NewProjectile(position.X, position.Y, newVect.X * 2f, newVect.Y * 2f, 27, damage / 2, knockBack, player.whoAmI, 0, 0);
+				int p = Projectile.NewProjectile(position.X, position.Y, newVect.X * 0.5f, newVect.Y * 0.5f, 27, damage / 2, knockBack, player.whoAmI, 0, 0);
 				Main.projectile[p].penetrate = 1;
-				Main.projectile[p].extraUpdates = 2;
-				int p2 = Projectile.NewProjectile(position.X, position.Y, newVect2.X * 2f, newVect2.Y * 2f, 27, damage / 2, knockBack, player.whoAmI, 0, 0);
+				Main.projectile[p].magic = false;
+				Main.projectile[p].ranged = true;
+				int p2 = Projectile.NewProjectile(position.X, position.Y, newVect2.X * 0.5f, newVect2.Y * 0.5f, 27, damage / 2, knockBack, player.whoAmI, 0, 0);
 				Main.projectile[p2].penetrate = 1;
-				Main.projectile[p2].extraUpdates = 2;
-				int p3 = Projectile.NewProjectile(position.X, position.Y, newVect3.X * 2f, newVect3.Y * 2f, 27, damage / 2, knockBack, player.whoAmI, 0, 0);
-				Main.projectile[p3].penetrate = 1;
-				Main.projectile[p3].extraUpdates = 2;
-				int p4 = Projectile.NewProjectile(position.X, position.Y, newVect4.X * 2f, newVect4.Y * 2f, 27, damage / 2, knockBack, player.whoAmI, 0, 0);
-				Main.projectile[p4].penetrate = 1;
-				Main.projectile[p4].extraUpdates = 2;
+				Main.projectile[p2].magic = false;
+				Main.projectile[p2].ranged = true;
 			}
             return true;
         }
