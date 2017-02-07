@@ -7,26 +7,26 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.ItemSets.HMS
 {
-    public class AdamantiteShurikenP : ModProjectile
-    {
+	public class AdamantiteShurikenP : ModProjectile
+	{
 
-        public override void SetDefaults()
-        {
-            projectile.CloneDefaults(ProjectileID.Shuriken);
-            projectile.name = "Adamantite Shuriken";
-            projectile.width = 22;
-            projectile.height = 22;
-            projectile.penetrate = 7;
-            aiType = ProjectileID.Shuriken;
-            projectile.ignoreWater = true;
-            projectile.timeLeft = 6000;
-        }
-        public override void Kill(int timeLeft)
-        {
-        	if (Main.rand.Next(2) == 0)
-        	{
-        		Item.NewItem((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, mod.ItemType("AdamantiteShuriken"));
-        	}
+		public override void SetDefaults()
+		{
+			projectile.CloneDefaults(ProjectileID.Shuriken);
+			projectile.name = "Adamantite Shuriken";
+			projectile.width = 22;
+			projectile.height = 22;
+			projectile.penetrate = 7;
+			aiType = ProjectileID.Shuriken;
+			projectile.ignoreWater = true;
+			projectile.timeLeft = 6000;
+		}
+		public override void Kill(int timeLeft)
+		{
+			if (Main.rand.Next(5) == 0)
+			{
+				Item.NewItem((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, mod.ItemType("AdamantiteShuriken"));
+			}
 			for (int i = 0; i < 5; i++)
 			{
 				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 50);
@@ -34,25 +34,25 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 				Main.dust[dust].noGravity = true;
 			}
 			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
-        }
+		}
 
-    }
+	}
 
-    public class AdamantiteShuriken : ModItem
-    {
+	public class AdamantiteShuriken : ModItem
+	{
 
-        public override void SetDefaults()
-        {
-            item.CloneDefaults(ItemID.Shuriken);
-            item.damage = 42;
-            item.shoot = mod.ProjectileType("AdamantiteShurikenP");
-            item.name = "Adamantite Shuriken";
-            item.rare = 4;
+		public override void SetDefaults()
+		{
+			item.CloneDefaults(ItemID.Shuriken);
+			item.damage = 42;
+			item.shoot = mod.ProjectileType("AdamantiteShurikenP");
+			item.name = "Adamantite Shuriken";
+			item.rare = 4;
 			item.useTime = 23;
 			item.useAnimation = 23;
-            item.shootSpeed = 19f;
-            item.autoReuse = true;
-        }
+			item.shootSpeed = 19f;
+			item.autoReuse = true;
+		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -68,13 +68,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 			return false;
 		}
 
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.AdamantiteBar, 1);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 20);
-            recipe.AddRecipe();
-        }
-    }
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.AdamantiteBar, 1);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this, 20);
+			recipe.AddRecipe();
+		}
+	}
 }

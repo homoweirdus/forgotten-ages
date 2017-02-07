@@ -1,7 +1,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.Materials
+namespace ForgottenMemories.Items.AaMaterials
 {
 	public class NecroBar : ModItem
 	{
