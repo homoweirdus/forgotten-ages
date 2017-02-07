@@ -43,7 +43,7 @@ namespace ForgottenMemories.Items.ItemSets.Chaotic
 		
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(10, 0);
+			return new Vector2(-3, 0);
 		}
 		
 		public override void AddRecipes()

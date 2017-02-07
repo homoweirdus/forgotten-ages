@@ -13,12 +13,12 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 		public override void SetDefaults()
 		{
 			item.name = "The Bowne";
-			item.damage = 30;
+			item.damage = 36;
 			item.noMelee = true;
 			item.ranged = true;
 			item.width = 9;
 			item.height = 20;
-			item.toolTip = "Transforms Wooden arrows into shadowflame necro arrows";
+			item.toolTip = "Fires necro bone arrows";
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 5;

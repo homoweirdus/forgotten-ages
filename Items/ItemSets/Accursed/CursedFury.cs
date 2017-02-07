@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Accursed
 		public override void SetDefaults()
 		{
 			item.name = "Cursed Fury";
-			item.damage = 45;
+			item.damage = 55;
 			item.magic = true;
 			item.width = 50;
 			item.height = 50;
-			item.useTime = 20;
-			item.useAnimation = 20;
+			item.useTime = 22;
+			item.useAnimation = 22;
 			item.useStyle = 5;
 			item.knockBack = 5;
 			item.value = 138000;
