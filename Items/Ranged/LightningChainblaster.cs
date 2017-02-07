@@ -21,8 +21,8 @@ namespace ForgottenMemories.Items.Ranged
 			item.useAnimation = 3;
 			item.useStyle = 5;
 			item.knockBack = 1;
-			item.value = 200000;
-			item.rare = 5;
+			item.value = 500000;
+			item.rare = 10;
 			item.UseSound = SoundID.Item41;
 			item.autoReuse = true;
 			item.shoot = ProjectileID.Bullet;
