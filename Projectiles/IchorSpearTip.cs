@@ -29,7 +29,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			for (int i = 0; i < 20; i++)
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 57);
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64);
 				Main.dust[dust].scale = 2.5f;
 				Main.dust[dust].noGravity = true;
 			}
@@ -37,6 +37,20 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
+			if (Main.rand.Next(5) == 0)
+			{
+				int dust;
+				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				Main.dust[dust].scale = 1.5f;
+			}
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			if (Main.rand.Next(2) == 0)
+			{
+				target.AddBuff(69, 360, false);
+			}
 		}
 	}
 }

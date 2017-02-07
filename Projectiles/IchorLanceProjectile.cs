@@ -42,7 +42,7 @@ namespace ForgottenMemories.Projectiles
         	}
         	if(Main.player[projectile.owner].itemAnimation < Main.player[projectile.owner].itemAnimationMax / 3)
         	{
-        		projectile.ai[0] -= 2.4f;
+        		projectile.ai[0] -= 0.95f;
 				if (projectile.localAI[0] == 0f && Main.myPlayer == projectile.owner)
 				{
 					projectile.localAI[0] = 1f;
@@ -51,7 +51,7 @@ namespace ForgottenMemories.Projectiles
         	}
         	else
         	{
-        		projectile.ai[0] += 0.95f;
+        		projectile.ai[0] += 1.2f;
         	}
         	
         	if(Main.player[projectile.owner].itemAnimation == 0)
@@ -64,6 +64,21 @@ namespace ForgottenMemories.Projectiles
         	{
         		projectile.rotation -= 1.57f;
         	}
+			
+			if (Main.rand.Next(5) == 0)
+			{
+				int dust;
+				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				Main.dust[dust].scale = 1.5f;
+			}
         }
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			if (Main.rand.Next(2) == 0)
+			{
+				target.AddBuff(69, 360, false);
+			}
+		}
     }
 }
