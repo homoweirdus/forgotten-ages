@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.useAnimation = 20;
             item.useStyle = 1;
             item.knockBack = 6.5f;
-            item.value = 10000;
+            item.value = 27000;
             item.rare = 2;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
@@ -39,7 +39,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "OpticBar", 12);
-            recipe.AddTile(TileID.DemonAltar);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

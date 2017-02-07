@@ -25,8 +25,8 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.shoot = 3;
             item.useAmmo = 40;
             item.knockBack = 1;
-            item.value = 1000;
-            item.rare = 7;
+            item.value = 27000;
+            item.rare = 2;
             item.UseSound = SoundID.Item5;
             item.autoReuse = true;
             item.shootSpeed = 10f;
@@ -44,7 +44,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "OpticBar", 12);
-            recipe.AddTile(TileID.DemonAltar);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

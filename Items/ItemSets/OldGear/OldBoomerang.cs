@@ -56,12 +56,5 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
             }
             return true;
         }
-        public override void AddRecipes()
-        {
-                ModRecipe recipe = new ModRecipe(mod);
-                recipe.AddIngredient(ItemID.DirtBlock, 1);
-                recipe.SetResult(this);
-                recipe.AddRecipe();
-        }
     }
 }

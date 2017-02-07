@@ -44,7 +44,7 @@ namespace ForgottenMemories.Items.ItemSets.Accursed
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "AccursedBar", 10);
 			recipe.AddIngredient(ItemID.Vilethorn, 1);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

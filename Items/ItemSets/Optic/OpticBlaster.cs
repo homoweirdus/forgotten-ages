@@ -22,8 +22,8 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 			item.useStyle = 5;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 2;
+			item.value = 27000;
+            item.rare = 2;
 			item.UseSound = SoundID.Item11;
 			item.autoReuse = true;
 			item.shoot = 10; //idk why but all the guns in the vanilla source have this
@@ -48,7 +48,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "OpticBar", 12);
-            recipe.AddTile(TileID.DemonAltar);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

@@ -32,8 +32,8 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.knockBack = 2f;
             item.buffType = mod.BuffType("ServantOfCthulhu");
             item.buffTime = 3600;
-            item.value = 450000;
-            item.rare = 6;
+            item.value = 27000;
+            item.rare = 2;
             item.UseSound = SoundID.Item82;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("Servant");
@@ -52,7 +52,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "OpticBar", 12);
-            recipe.AddTile(TileID.DemonAltar);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

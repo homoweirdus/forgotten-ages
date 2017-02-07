@@ -53,6 +53,7 @@ namespace ForgottenMemories.Items.ItemSets.Jungle
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Stinger, 4);
             recipe.AddIngredient(ItemID.JungleSpores, 8);
+			recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

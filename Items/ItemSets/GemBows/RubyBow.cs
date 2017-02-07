@@ -25,7 +25,7 @@ namespace  ForgottenMemories.Items.ItemSets.GemBows
             item.shoot = 3;
             item.useAmmo = 40;
             item.knockBack = 1;
-            item.value = 1687500;
+            item.value = 168750;
             item.rare = 2;
             item.UseSound = SoundID.Item5;
             item.autoReuse = true;

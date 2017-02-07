@@ -57,7 +57,7 @@ namespace ForgottenMemories.Items.ItemSets.Chaotic
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "ChaoticBar", 15);
-            recipe.AddTile(26);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
         }

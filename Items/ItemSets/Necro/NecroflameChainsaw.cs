@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "NecroBar", 12);
-			recipe.AddTile(TileID.DemonAltar);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

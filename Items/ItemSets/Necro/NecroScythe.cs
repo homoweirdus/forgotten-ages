@@ -47,5 +47,14 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 				target.AddBuff(153, 360, false);
 			}
 		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "NecroBar", 10);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }

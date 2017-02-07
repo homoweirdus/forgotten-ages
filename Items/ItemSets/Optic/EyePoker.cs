@@ -25,8 +25,8 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.noMelee = true;
             item.noUseGraphic = true;
             item.useStyle = 5;
-            item.value = Item.sellPrice(0, 1, 0, 0);
-            item.rare = 3;
+            item.value = 27000;
+            item.rare = 2;
             item.shoot = mod.ProjectileType("EyePoker");
             item.shootSpeed = 4f;
         }
@@ -43,7 +43,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "OpticBar", 12);
-            recipe.AddTile(TileID.DemonAltar);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

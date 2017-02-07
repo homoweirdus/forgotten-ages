@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.AaMaterials
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(38, 1);
             recipe.AddIngredient(null, "WideLens", 3);
-            recipe.AddTile(26);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
         }

@@ -23,8 +23,8 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 			item.axe = 7;
 			item.useStyle = 5;
 			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 22, 50, 0);
-			item.rare = 9;
+			item.value = 27000;
+            item.rare = 2;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("OpticChainsaw");
 			item.shootSpeed = 40f;
@@ -42,7 +42,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "OpticBar", 12);
-            recipe.AddTile(TileID.DemonAltar);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

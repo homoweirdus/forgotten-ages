@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.CobaltBar, 12);
 			recipe.AddIngredient(ItemID.Topaz, 5);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
 
