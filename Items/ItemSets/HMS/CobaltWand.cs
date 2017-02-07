@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemeories.Items.ItemSets.HMS
+namespace ForgottenMemories.Items.ItemSets.HMS
 {
     public class CobaltWand : ModItem
     {
