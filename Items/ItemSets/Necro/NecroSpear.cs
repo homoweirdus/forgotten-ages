@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 		{
 			item.name = "Bone Lance";
 			item.damage = 47;
-			item.toolTip = "Impales the impurity.";
+			item.toolTip = "Fires shadowflame skulls at nearby enemies";
 			item.melee = true;
 			item.width = 52;
 			item.height = 52;

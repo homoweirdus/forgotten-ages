@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 		public override void SetDefaults()
 		{
 			item.name = "Reaper's Scythe";
-			item.damage = 47;
+			item.damage = 42;
 			item.melee = true;
 			item.width = 58;
 			item.height = 52;
-			item.toolTip = "Tears through souls.";
-			item.useTime = 25;
-			item.useAnimation = 25;
+			item.toolTip = "Tears through souls";
+			item.useTime = 21;
+			item.useAnimation = 21;
 			item.useStyle = 1;
 			item.knockBack = 6.5f;
 			item.value = 138000;
@@ -26,6 +26,19 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.shoot = mod.ProjectileType("NecroflameSickleProj");
 			item.shootSpeed = 10f;
 		}
+		
+		public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            //create velocity vectors for the two angled projectiles (outwards at PI/15 radians)
+            Vector2 origVect = new Vector2(speedX, speedY);
+            Vector2 newVect = origVect.RotatedBy(System.Math.PI / 12);
+            Vector2 newVect2 = origVect.RotatedBy(-System.Math.PI / 12);
+
+            Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI, 0, 0);
+            Projectile.NewProjectile(position.X, position.Y, newVect.X, newVect.Y, type, damage, knockBack, player.whoAmI, 0, 0);
+            Projectile.NewProjectile(position.X, position.Y, newVect2.X, newVect2.Y, type, damage, knockBack, player.whoAmI, 0, 0);
+			return false;
+        }
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{

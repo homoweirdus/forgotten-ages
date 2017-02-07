@@ -15,7 +15,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.height = 14;
 			npc.damage = 25;
 			npc.defense = 10;
-			npc.lifeMax = 5;
+			npc.lifeMax = 10;
 			npc.HitSound = SoundID.NPCHit41;
 			npc.DeathSound = SoundID.NPCDeath44;
 			npc.value = 0f;
