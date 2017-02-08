@@ -21,7 +21,7 @@ public class FleshDart : ModItem
         item.knockBack = 1;
 		item.UseSound = SoundID.Item1;
 		item.scale = 1f;
-        item.value = 10;
+        item.value = 3;
         item.rare = 1;
         item.ammo = AmmoID.Dart;
 		item.maxStack = 999;

@@ -14,8 +14,8 @@ namespace ForgottenMemories.Items.Throwing
 			item.thrown = true;
 			item.width = 88;
 			item.height = 88;
-			item.useTime = 15;
-			item.useAnimation = 15;
+			item.useTime = 18;
+			item.useAnimation = 18;
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 50000;

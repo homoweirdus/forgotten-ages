@@ -18,7 +18,7 @@ public class ForestBlast : ModItem
         item.useAnimation = 28;
         item.useStyle = 5;
         item.knockBack = 5;
-        item.value = 10000;
+        item.value = 27000;
         item.rare = 2;
         item.UseSound = SoundID.Item20;
         item.autoReuse = true;

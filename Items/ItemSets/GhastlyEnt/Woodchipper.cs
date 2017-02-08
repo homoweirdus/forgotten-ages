@@ -19,8 +19,8 @@ public class Woodchipper : ModItem
 		item.UseSound = SoundID.Item36;
         item.useStyle = 5;
         item.knockBack = 3;
-        item.value = 10000;
-        item.rare = 1;
+        item.value = 27000;
+        item.rare = 2;
         item.autoReuse = true;
 		item.toolTip = "Fires a bullet along with woodchips";
         item.shoot = 10; 

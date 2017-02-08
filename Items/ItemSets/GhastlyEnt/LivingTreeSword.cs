@@ -18,8 +18,8 @@ public class LivingTreeSword : ModItem
         item.useAnimation = 40;
         item.useStyle = 1;
         item.knockBack = 7.5f;
-        item.value = 10000;
-        item.rare = 1;
+        item.value = 27000;
+        item.rare = 2;
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
 		item.toolTip = "Swings Slow, but hits heavily";

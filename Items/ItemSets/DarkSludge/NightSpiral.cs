@@ -23,8 +23,8 @@ public class NightSpiral : ModItem
         item.shootSpeed = 16f;
         item.knockBack = 3.75f;
         item.damage = 25;
-        item.value = Item.sellPrice(0, 1, 30, 0);
-        item.rare = 3;
+        item.value = 20000;
+        item.rare = 2;
         item.shoot = mod.ProjectileType("BouncyProj");
     }
 	

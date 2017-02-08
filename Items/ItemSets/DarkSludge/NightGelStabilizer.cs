@@ -18,7 +18,7 @@ public class NightGelStabilizer : ModItem
         item.useAnimation = 13;
         item.useStyle = 5;
         item.knockBack = 5;
-        item.value = 10000;
+        item.value = 20000;
         item.rare = 2;
         item.UseSound = SoundID.Item13;
         item.autoReuse = true;
