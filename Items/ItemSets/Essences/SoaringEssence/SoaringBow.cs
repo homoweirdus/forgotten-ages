@@ -4,7 +4,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence {
+namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence 
+{
 public class SoaringBow : ModItem
 {
     public override void SetDefaults()
@@ -19,7 +20,7 @@ public class SoaringBow : ModItem
         item.useStyle = 5;
         item.knockBack = 1;
         item.value = 10000;
-        item.rare = 2;
+        item.rare = 1;
         item.UseSound = SoundID.Item5;
         item.autoReuse = true;
 		item.shoot = ProjectileID.WoodenArrowFriendly;
@@ -36,4 +37,5 @@ public class SoaringBow : ModItem
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-}}
+}
+}

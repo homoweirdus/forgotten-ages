@@ -10,20 +10,20 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Power Tome";
+			item.name = "Dazzling Tome";
 			item.damage = 15;
 			item.magic = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 25;
-			item.useAnimation = 25;
+			item.useTime = 32;
+			item.useAnimation = 32;
 			item.useStyle = 5;
 			item.knockBack = 3;
-			item.value = 10000;
+			item.value = 5000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.toolTip = "Shoots yellow bolts";
+			item.toolTip = "Shoots yellow light bolts";
 			item.shoot = 122;
 			item.shootSpeed = 10f;
 			item.mana = 4;
@@ -46,10 +46,12 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "BossEnergy", 2);
+			recipe.AddIngredient(null, "BossEnergy", 8);
+			recipe.AddIngredient(null, "OpticBar", 8);
 			recipe.AddIngredient(ItemID.Topaz, 10);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-	}}
+	}
+}

@@ -3,7 +3,8 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 
-namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence {
+namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
+ {
 public class BloodShuriken : ModItem
 {
 	
@@ -25,8 +26,8 @@ public class BloodShuriken : ModItem
         item.knockBack = 1;
 		item.UseSound = SoundID.Item1;
 		item.scale = 1f;
-        item.value = 10000;
-        item.rare = 1;
+        item.value = 30000;
+        item.rare = 3;
         item.autoReuse = true;
 		item.consumable = true;
 		item.maxStack = 999;
@@ -41,4 +42,5 @@ public class BloodShuriken : ModItem
         recipe.SetResult(this, 111);
         recipe.AddRecipe();
     }
-}}
+}
+}

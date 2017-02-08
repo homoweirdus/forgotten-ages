@@ -21,8 +21,8 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.useStyle = 5;
 			item.noMelee = true; 
 			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 2;
+			item.value = 5000;
+			item.rare = 1;
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;
 			item.shoot = 51; 
@@ -38,8 +38,8 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			{
 				float sX = speedX;
 				float sY = speedY;
-				sX += (float)Main.rand.Next(-60, 61) * 0.05f;
-				sY += (float)Main.rand.Next(-60, 61) * 0.05f;
+				sX += (float)Main.rand.Next(-60, 61) * 0.03f;
+				sY += (float)Main.rand.Next(-60, 61) * 0.03f;
 				Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
 			}
 			return false;
@@ -48,7 +48,8 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "BossEnergy", 2);
+			recipe.AddIngredient(null, "BossEnergy", 8);
+			recipe.AddIngredient(null, "OpticBar", 8);
 			recipe.AddIngredient(ItemID.Topaz, 10);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
@@ -57,6 +58,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(10, 0);
+			return new Vector2(-4, 0);
 		}
-	}}
+	}
+}

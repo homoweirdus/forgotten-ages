@@ -17,8 +17,8 @@ public class LeechingSword : ModItem
             item.useAnimation = 18;
             item.useStyle = 1;
             item.knockBack = 3;
-            item.value = 10000;
-            item.rare = 1;
+            item.value = 30000;
+            item.rare = 3;
             item.UseSound = SoundID.Item1;
             item.autoReuse = false;
             item.toolTip = "Steals a small amount of health from enemies";
@@ -28,8 +28,8 @@ public class LeechingSword : ModItem
 	
 	public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
 		{
-			player.HealEffect(3);
-			player.statLife += 3;
+			player.HealEffect(1);
+			player.statLife += 1;
 		}
 	
 	

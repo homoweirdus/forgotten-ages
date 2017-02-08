@@ -20,7 +20,7 @@ public class CrimtaneBlowpipe : ModItem
         item.useStyle = 5;
         item.noMelee = true; 
         item.knockBack = 4;
-        item.value = 10000;
+        item.value = 15000;
         item.rare = 2;
         item.UseSound = SoundID.Item5;
         item.autoReuse = true;

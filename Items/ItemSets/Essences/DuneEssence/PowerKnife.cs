@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		
 		public override void SetDefaults()
 		{
-			item.name = "Power Knife";
+			item.name = "Glittering Knives";
 			item.damage = 12;
 			item.thrown = true;
 			item.noMelee = true;
@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.knockBack = 1;
 			item.UseSound = SoundID.Item1;
 			item.scale = 1f;
-			item.value = 10000;
+			item.value = 3;
 			item.rare = 1;
 			item.autoReuse = true;
 			item.consumable = true;
@@ -53,9 +53,9 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "BossEnergy", 1);
-			recipe.AddIngredient(ItemID.Topaz, 3);
+			recipe.AddIngredient(null, "OpticBar", 1);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this, 333);
+			recipe.SetResult(this, 111);
 			recipe.AddRecipe();
 		}
 	}}
