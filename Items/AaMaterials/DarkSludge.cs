@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.AaMaterials
             recipe.AddIngredient(null, "DarkEnergy", 2);
 			recipe.AddIngredient(null, "GelatineBar", 2);
 			recipe.AddIngredient(ItemID.TissueSample, 2);
-            recipe.AddTile(26);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 3);
             recipe.AddRecipe();
 			
@@ -31,7 +31,7 @@ namespace ForgottenMemories.Items.AaMaterials
             recipe.AddIngredient(null, "DarkEnergy", 2);
 			recipe.AddIngredient(null, "GelatineBar", 2);
 			recipe.AddIngredient(ItemID.ShadowScale, 2);
-            recipe.AddTile(26);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 3);
             recipe.AddRecipe();
         }

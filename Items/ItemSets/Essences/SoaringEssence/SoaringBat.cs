@@ -4,37 +4,38 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence {
-public class SoaringBat : ModItem
+namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence 
 {
-    public override void SetDefaults()
-    {
-		item.name = "Soaring Broadsword";
-        item.damage = 17;
-        item.melee = true;
-        item.width = 22;
-        item.height = 24;
-        item.useTime = 25;
-        item.useAnimation = 25;
-        item.useStyle = 1;
-        item.knockBack = 4;
-        item.value = 10000;
-        item.rare = 1;
-        item.UseSound = SoundID.Item1;
-		item.toolTip = "Knocks enemies upward";
-        item.autoReuse = true;
-		item.useTurn = true;
-    }
-	
-	public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
-{
-    if(!target.boss) 
-    {
-        target.velocity.Y -= 5; 
-    }
-}
-	
-	public override void AddRecipes()
+	public class SoaringBat : ModItem
+	{
+		public override void SetDefaults()
+		{
+			item.name = "Soaring Broadsword";
+			item.damage = 14;
+			item.melee = true;
+			item.width = 22;
+			item.height = 24;
+			item.useTime = 9;
+			item.useAnimation = 9;
+			item.useStyle = 1;
+			item.knockBack = 4;
+			item.value = 10000;
+			item.rare = 1;
+			item.UseSound = SoundID.Item1;
+			item.toolTip = "Swings fast, and knocks enemies upward";
+			item.autoReuse = true;
+			item.useTurn = true;
+		}
+		
+		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+		{
+			if(!target.boss) 
+			{
+				target.velocity.Y -= 2; 
+			}
+		}
+		
+		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "SoaringEnergy", 10);
@@ -42,4 +43,5 @@ public class SoaringBat : ModItem
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-}}
+	}
+}

@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.AaMaterials
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Bone, 3);
             recipe.AddIngredient(521, 1);
-            recipe.AddTile(26);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this, 2);
             recipe.AddRecipe();
         }

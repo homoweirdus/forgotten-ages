@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 			item.name = "Royal Crusher";
-			item.damage = 17;
+			item.damage = 19;
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
 			item.toolTip = "A blade fit for a king";
-			item.useTime = 40;
-			item.useAnimation = 20;
+			item.useTime = 19;
+			item.useAnimation = 19;
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 20000;
@@ -24,12 +24,13 @@ namespace ForgottenMemories.Items.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("Spark");
-			item.shootSpeed = 10;
+			item.shootSpeed = 15;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "PowerBlade", 1);
 			recipe.AddIngredient(ItemID.GoldBroadsword, 1);
 			recipe.AddIngredient(ItemID.PlatinumBroadsword, 1);
 			recipe.AddIngredient(ItemID.Ruby, 5);

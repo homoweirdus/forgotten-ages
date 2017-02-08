@@ -37,7 +37,9 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 				float sY = speedY;
 				sX += (float)Main.rand.Next(-60, 61) * 0.05f;
 				sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-				Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
+				int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
+				Main.projectile[p].magic = false;
+				Main.projectile[p].melee = true;
 			}
 			return false;
 		}
