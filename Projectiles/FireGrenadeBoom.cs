@@ -26,10 +26,13 @@ namespace ForgottenMemories.Projectiles
 			int amountOfProjectiles = 5;
 			for (int i = 0; i < amountOfProjectiles; ++i)
 			{
+				float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
+				float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
 				projectile.tileCollide = false;
 				int dust;
-				dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 6, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-				Main.dust[dust].scale = 1.5f;
+				dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 6, sX, sY);
+				Main.dust[dust].scale = 1.2f;
+				Main.dust[dust].noGravity = true;
 			}
 			return false;
 		}
