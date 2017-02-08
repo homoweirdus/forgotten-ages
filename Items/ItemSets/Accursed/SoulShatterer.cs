@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items.ItemSets.Accursed
 			item.ranged = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 40;
-			item.useAnimation = 40;
+			item.useTime = 50;
+			item.useAnimation = 50;
 			item.UseSound = SoundID.Item36;
 			item.useStyle = 5;
 			item.knockBack = 3;
@@ -41,7 +41,7 @@ namespace ForgottenMemories.Items.ItemSets.Accursed
 		
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(-5, 0);
+			return new Vector2(-1, 0);
 		}
 		
 		public override void AddRecipes()
