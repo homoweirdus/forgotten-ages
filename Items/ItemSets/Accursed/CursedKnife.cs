@@ -75,9 +75,9 @@ namespace ForgottenMemories.Items.ItemSets.Accursed
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CursedFlame, 1);
-			recipe.AddTile(16);
-			recipe.SetResult(this, 50);
+			recipe.AddIngredient(null, "AccursedBar", 1);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this, 200);
 			recipe.AddRecipe();
 		}
 	}

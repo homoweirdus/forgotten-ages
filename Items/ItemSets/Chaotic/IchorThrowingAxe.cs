@@ -76,9 +76,9 @@ namespace ForgottenMemories.Items.ItemSets.Chaotic
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Ichor, 1);
-			recipe.AddTile(16);
-			recipe.SetResult(this, 50);
+			recipe.AddIngredient(null, "ChaoticBar", 1);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this, 200);
 			recipe.AddRecipe();
 		}
 	}
