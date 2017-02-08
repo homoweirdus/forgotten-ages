@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.Throwing
 			item.useTime = 18;
 			item.useAnimation = 18;
 			item.useStyle = 1;
-			item.knockBack = 6;
+			item.knockBack = 2;
 			item.value = 50000;
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;

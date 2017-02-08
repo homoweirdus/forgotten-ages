@@ -14,8 +14,8 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.melee = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 7;
-			item.useAnimation = 7;
+			item.useTime = 12;
+			item.useAnimation = 12;
 			item.useStyle = 3;
 			item.knockBack = 1;
 			item.value = 15000;

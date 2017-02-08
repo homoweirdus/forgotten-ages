@@ -19,8 +19,8 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.width = 22;
 			item.height = 22;
 			item.toolTip = "Throws multiple knives";
-			item.useTime = 30;
-			item.useAnimation = 30;
+			item.useTime = 37;
+			item.useAnimation = 37;
 			item.useStyle = 1;
 			item.shootSpeed = 10f;
 			item.shoot = mod.ProjectileType("PowerKnifeProj");

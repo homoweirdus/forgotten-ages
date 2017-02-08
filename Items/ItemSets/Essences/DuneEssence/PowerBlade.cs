@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.width = 22;
 			item.height = 24;
 			item.useTime = 60;
-			item.useAnimation = 20;
+			item.useAnimation = 30;
 			item.useStyle = 1;
 			item.knockBack = 3;
 			item.value = 5000;

@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items.Melee
 			item.width = 62;
 			item.height = 70;
 			item.toolTip = "A blade fit for a king";
-			item.useTime = 19;
-			item.useAnimation = 19;
+			item.useTime = 23;
+			item.useAnimation = 23;
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 20000;

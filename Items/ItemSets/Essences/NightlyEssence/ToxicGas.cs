@@ -15,9 +15,9 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.magic = true;
 			item.width = 50;
 			item.height = 50;
-			item.useTime = 10;
+			item.useTime = 19;
 			item.UseSound = SoundID.Item20;
-			item.useAnimation = 10;
+			item.useAnimation = 19;
 			item.useStyle = 5;
 			item.knockBack = 5;
 			item.value = 15000;
