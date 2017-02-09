@@ -6,11 +6,11 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-	public class IchorSpearTip : ModProjectile
+	public class CursedSpearTip : ModProjectile
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ichor Lance Tip";
+			projectile.name = "Cursed Lance Tip";
 			projectile.width = 40;
 			projectile.height = 88;
 			projectile.aiStyle = 1;
@@ -27,7 +27,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("IchorBoom"), 50, 5f, projectile.owner);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("CursedBoom"), 50, 5f, projectile.owner);
 			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
 		}
 		
@@ -36,7 +36,7 @@ namespace ForgottenMemories.Projectiles
 			if (Main.rand.Next(5) == 0)
 			{
 				int dust;
-				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 75, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 1.5f;
 			}
 		}
@@ -45,7 +45,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			if (Main.rand.Next(2) == 0)
 			{
-				target.AddBuff(69, 360, false);
+				target.AddBuff(39, 360, false);
 			}
 		}
 	}

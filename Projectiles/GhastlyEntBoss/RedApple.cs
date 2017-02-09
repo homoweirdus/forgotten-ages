@@ -4,20 +4,32 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 
-namespace ForgottenMemories.Projectiles.GhastlyEntBoss {
-public class RedApple : ModProjectile
+namespace ForgottenMemories.Projectiles.GhastlyEntBoss 
 {
-	public override void SetDefaults()
+	public class RedApple : ModProjectile
 	{
-		projectile.name = "Red Apple";
-		projectile.width = 20;
-		projectile.height = 20;
-		projectile.aiStyle = 14;
-		projectile.penetrate = 1;
-        projectile.timeLeft = 300;
-		projectile.hostile = true;
-        projectile.friendly = false;
-		projectile.scale = 1.2f;
+		public override void SetDefaults()
+		{
+			projectile.name = "Red Apple";
+			projectile.width = 20;
+			projectile.height = 20;
+			projectile.aiStyle = 2;
+			projectile.penetrate = 1;
+			projectile.timeLeft = 300;
+			projectile.hostile = true;
+			projectile.friendly = false;
+			projectile.scale = 1.2f;
+		}
+		
+		public override void Kill(int timeLeft)
+		{
+			for (int i = 0; i < 5; i++)
+			{
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 7);
+				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].noGravity = true;
+			}
+			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
+		}
 	}
-}
 }	

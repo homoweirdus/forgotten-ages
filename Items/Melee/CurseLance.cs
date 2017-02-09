@@ -8,13 +8,13 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.Melee 
 {
-	public class IchorLance : ModItem
+	public class CurseLance : ModItem
 	{
 
 
 		public override void SetDefaults()
 		{
-			item.name = "Ichor Lance";
+			item.name = "Cursed Lance";
 			item.width = 65;  //The width of the .png file in pixels divided by 2.
 			item.damage = 78;  //Keep this reasonable please.
 			item.melee = true;  //Dictates whether this is a melee-class weapon.
@@ -29,8 +29,8 @@ namespace ForgottenMemories.Items.Melee
 			item.height = 96;  //The height of the .png file in pixels divided by 2.
 			item.maxStack = 1;
 			item.value = 300000;  //Value is calculated in copper coins.
-			item.rare = 10;  //Ranges from 1 to 11.
-			item.shoot = mod.ProjectileType("IchorLanceProjectile");
+			item.rare = 8;  //Ranges from 1 to 11.
+			item.shoot = mod.ProjectileType("CursedLanceProjectile");
 			item.shootSpeed = 7;
 		}
 		
@@ -38,7 +38,7 @@ namespace ForgottenMemories.Items.Melee
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(1228, 15);
-			recipe.AddIngredient(null, "ChaoticBar", 20);
+			recipe.AddIngredient(null, "AccursedBar", 20);
 			recipe.AddIngredient(ItemID.Ectoplasm, 15);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
