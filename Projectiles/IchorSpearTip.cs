@@ -16,7 +16,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.melee = true;
-			projectile.penetrate = 3;
+			projectile.penetrate = 1;
 			projectile.timeLeft = 150;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
@@ -27,12 +27,8 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			for (int i = 0; i < 20; i++)
-			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64);
-				Main.dust[dust].scale = 1.5f;
-				Main.dust[dust].noGravity = true;
-			}
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("IchorBoom"), 50, 5f, projectile.owner);
+			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
 		}
 		
 		public override void AI()
