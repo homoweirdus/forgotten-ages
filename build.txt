@@ -1,5 +1,5 @@
-author = It was literally just kachow and nobody else
+author = A large team
 
-version = 0.1
+version = 0.2
 
 displayName = The Forgotten Ages
