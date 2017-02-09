@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Magic
 			item.useAnimation = 10;
 			item.useStyle = 5;
 			item.noMelee = true;
-			item.knockBack = 7;
+			item.knockBack = 2;
 			item.value = 100000;
 			item.rare = 3;
 			item.autoReuse = true;

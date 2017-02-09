@@ -21,6 +21,11 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WaterShard"), amountToDrop); 
 			}
 			
+			if (npc.type == 489 && Main.rand.Next(40) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BloodHeart"), 1); 
+			}
+			
 			if (npc.type == NPCID.WallofFlesh && !Main.expertMode)
 			{
 				int amountToDrop = Main.rand.Next(10,15);

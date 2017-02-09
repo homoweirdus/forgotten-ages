@@ -17,19 +17,19 @@ namespace ForgottenMemories.Items.Magic
 			item.width = 25;
 			item.height = 26;
 			item.toolTip = "Fires slime balls";
-			item.useTime = 3;
+			item.useTime = 4;
 			item.UseSound = SoundID.Item20;
-			item.useAnimation = 12;
+			item.useAnimation = 16;
 			item.useStyle = 5;
 			item.noMelee = true;
-			item.knockBack = 7;
+			item.knockBack = 2;
 			Item.staff[item.type] = true;
 			item.value = 20000;
 			item.rare = 2;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("SlimeBall");
 			item.shootSpeed = 7f;
-			item.reuseDelay = 30;
+			item.reuseDelay = 35;
 		}
 		
 		
