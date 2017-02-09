@@ -17,12 +17,15 @@ namespace ForgottenMemories.Buffs
 		}
 		public override void Update(NPC npc, ref int buffIndex)
 		{
-			npc.velocity.X *= 0.5f;
-			npc.velocity.Y *= 0.5f;
+			if (npc.boss == false)
+			{
+				npc.velocity.X *= 0.5f;
+				npc.velocity.Y *= 0.5f;
+			}
 
 			if (Main.rand.Next(2) == 0)
 			{
-				int dust = Dust.NewDust(npc.position, npc.width, npc.height, 33);
+				int dust = Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType("geldust"));
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;		
 			}

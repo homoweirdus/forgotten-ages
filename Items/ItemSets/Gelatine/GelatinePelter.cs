@@ -17,36 +17,41 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 			item.width = 23;
 			item.height = 13;
 			item.toolTip = "Occasionally fires a chunk of gel instead of a bullet";
-			item.useTime = 14;
-			item.useAnimation = 14;
+			item.useTime = 16;
+			item.useAnimation = 16;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 4;
 			item.value = 40000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item11;
-			item.autoReuse = false;
+			item.autoReuse = true;
 			item.shoot = 10;
 			item.shootSpeed = 5.25f;
 			item.useAmmo = AmmoID.Bullet;
-        }
+		}
 		
-			public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-	{
-    		if (Main.rand.Next(4) == 0)
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(-3, 0);
+		}
+		
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			if (Main.rand.Next(4) == 0)
 			{
-    			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, 409, damage, knockBack, player.whoAmI);
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("gelshot"), damage, knockBack, player.whoAmI);
 			}
-    	return true; //409 is a placeholder until gel chunk projectile is added
-	}
+			return true;
+		}
 
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(null, "GelatineBar", 12);
-            recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-        }
-    }
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "GelatineBar", 12);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
 }
