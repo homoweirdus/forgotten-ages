@@ -14,8 +14,8 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 			item.name = "Slimethrower";
 			item.damage = 13;
 			item.ranged = true;
-			item.width = 23;
-			item.height = 13;
+			item.width = 44;
+			item.height = 20;
 			item.toolTip = "Shoots high velocity streams of gel";
 			item.useTime = 6;
 			item.useAnimation = 30;
