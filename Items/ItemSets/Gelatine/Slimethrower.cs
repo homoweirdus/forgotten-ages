@@ -35,6 +35,19 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 		{
 			return new Vector2(-3, 0);
 		}
+		
+		public override bool ConsumeAmmo(Player player)
+		{
+			if (Main.rand.Next(10) == 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+			
+		}
 
 		public override void AddRecipes()
 		{

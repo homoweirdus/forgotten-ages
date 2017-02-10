@@ -13,8 +13,8 @@ namespace ForgottenMemories.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.name = "Gel Stream";
-			projectile.width = 20;
-			projectile.height = 20;
+			projectile.width = 35;
+			projectile.height = 35;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.ranged = true;
@@ -27,8 +27,8 @@ namespace ForgottenMemories.Projectiles
 		public override void AI()
 		{
 			int dust;
-			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, mod.DustType("geldust"), 0f, 0f);
-			Main.dust[dust].scale = 1.5f;
+			dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, mod.DustType("geldust"), 0f, 0f);
+			Main.dust[dust].scale = 1f;
 			Main.dust[dust].noGravity = true;
 		}
 		
