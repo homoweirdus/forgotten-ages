@@ -4,7 +4,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.DarkSludge {
+namespace ForgottenMemories.Items.ItemSets.DarkSludge 
+{
 public class NightGelStabilizer : ModItem
 {
     public override void SetDefaults()
@@ -32,6 +33,7 @@ public class NightGelStabilizer : ModItem
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "DarkSludge", 10);
+			recipe.AddTile(16);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
         }
@@ -40,4 +42,5 @@ public class NightGelStabilizer : ModItem
 		{
 			return new Vector2(10, 0);
 		}
-}}
+}
+}

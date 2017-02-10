@@ -1,6 +1,10 @@
 using System.Collections.Generic;
+using System;
+using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
+
 
 namespace ForgottenMemories.Items.Acessory
 {
@@ -20,6 +24,39 @@ namespace ForgottenMemories.Items.Acessory
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.pickSpeed += 0.25f;
+        }
+		
+		public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "BrassAlloy", 10);
+            recipe.AddTile(16);
+            recipe.SetResult(this, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "BrassAlloy", 10);
+            recipe.AddTile(16);
+            recipe.SetResult(ItemID.WarriorEmblem, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "BrassAlloy", 10);
+            recipe.AddTile(16);
+            recipe.SetResult(ItemID.SorcererEmblem, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "BrassAlloy", 10);
+            recipe.AddTile(16);
+            recipe.SetResult(ItemID.SummonerEmblem, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "BrassAlloy", 10);
+            recipe.AddTile(16);
+            recipe.SetResult(ItemID.RangerEmblem, 1);
+            recipe.AddRecipe();
         }
     }
 }

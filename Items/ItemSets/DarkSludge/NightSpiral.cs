@@ -4,7 +4,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.DarkSludge {
+namespace ForgottenMemories.Items.ItemSets.DarkSludge 
+{
 public class NightSpiral : ModItem
 {
     public override void SetDefaults()
@@ -32,7 +33,9 @@ public class NightSpiral : ModItem
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "DarkSludge", 10);
+			recipe.AddTile(16);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
         }
-}}
+}
+}
