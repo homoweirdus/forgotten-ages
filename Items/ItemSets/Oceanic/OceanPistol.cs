@@ -21,9 +21,9 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.useAnimation = 15;
 			item.useStyle = 5;
 			item.noMelee = true;
-			item.knockBack = 4;
+			item.knockBack = 1;
 			item.value = 50000;
-			item.rare = 1;
+			item.rare = 2;
 			item.UseSound = SoundID.Item11;
 			item.autoReuse = true;
 			item.shoot = 10;
