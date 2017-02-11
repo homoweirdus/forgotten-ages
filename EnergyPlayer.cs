@@ -18,6 +18,8 @@ namespace ForgottenMemories
 		public bool sapBall = false;
 		public bool canJumpFirestorm = true;
 		public bool SlimyNeck = true;
+		public bool jungard = true;
+		
 			public override void ResetEffects()
 		{
 			firestorm = false;
@@ -25,6 +27,7 @@ namespace ForgottenMemories
             lifesteal = false;
 			sapBall = false;
 			SlimyNeck = false;
+			jungard = true;
 		}
 		
 
@@ -53,6 +56,14 @@ namespace ForgottenMemories
 					{
 						target.AddBuff(mod.BuffType("Gelled"), 60, false);
 					}
+				}
+			}
+			
+			public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
+			{
+				if (jungard == true)
+				{
+					Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("JungleGuard"), 15, 5f, player.whoAmI);
 				}
 			}
 			
