@@ -17,12 +17,14 @@ namespace ForgottenMemories
 		public bool firestorm = false;
 		public bool sapBall = false;
 		public bool canJumpFirestorm = true;
+		public bool SlimyNeck = true;
 			public override void ResetEffects()
 		{
 			firestorm = false;
 			treeMinion = false;
             lifesteal = false;
 			sapBall = false;
+			SlimyNeck = false;
 		}
 		
 
@@ -37,11 +39,19 @@ namespace ForgottenMemories
 			
 			public override void OnHitNPCWithProj(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 			{
-				if (sapBall == true && Main.rand.Next(5) == 0)
+				if (sapBall == true && Main.rand.Next(3) == 0)
 				{
 					if (projectile.minion == true || ProjectileID.Sets.MinionShot[projectile.type] || ProjectileID.Sets.SentryShot[projectile.type])
 					{
 						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("SapSphere"), projectile.damage, 5f, player.whoAmI);
+					}
+				}
+				
+				if (SlimyNeck == true && Main.rand.Next(7) == 0)
+				{
+					if (projectile.minion == true || ProjectileID.Sets.MinionShot[projectile.type] || ProjectileID.Sets.SentryShot[projectile.type])
+					{
+						target.AddBuff(mod.BuffType("Gelled"), 60, false);
 					}
 				}
 			}
