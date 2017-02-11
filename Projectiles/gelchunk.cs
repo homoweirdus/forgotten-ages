@@ -40,7 +40,10 @@ namespace ForgottenMemories.Projectiles
 				{
 					float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
 					float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("gelshot"), projectile.damage / 3, 5f, projectile.owner);
+					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("gelshot"), projectile.damage / 3, 5f, projectile.owner);
+					Main.projectile[z].ranged = false;
+					Main.projectile[z].magic = true;
+					Main.projectile[z].timeLeft = 100;
 				}
 		}
 		
