@@ -19,8 +19,8 @@ namespace ForgottenMemories.Items.ItemSets.Accursed
             item.width = 27;
             item.height = 11;
             item.toolTip = "Arrows shot inflict cursed flame";
-            item.useTime = 22;
-            item.useAnimation = 22;
+            item.useTime = 27;
+            item.useAnimation = 27;
             item.useStyle = 5;
             item.shoot = 3;
             item.useAmmo = 40;

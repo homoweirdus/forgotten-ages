@@ -22,7 +22,6 @@ public class GelatineBlade : ModItem
         item.rare = 1;
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
-		item.pick = 59;
 		item.useTurn = true;
     }
 	

@@ -33,7 +33,6 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 			int amountOfProjectiles = Main.rand.Next(1, 4);
 			
 			for (int i = 0; i < amountOfProjectiles; ++i)

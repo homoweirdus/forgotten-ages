@@ -19,9 +19,15 @@ namespace ForgottenMemories.Buffs
 		{
 			if (npc.boss == false)
 			{
-				npc.velocity.X *= 0.5f;
-				npc.velocity.Y *= 0.5f;
+				npc.velocity.X *= 0.8f;
+				npc.velocity.Y *= 0.8f;
 			}
+			
+			if (npc.FindBuffIndex(24) >= 0)
+			{
+				npc.lifeRegen -= 20;
+			}
+			
 
 			if (Main.rand.Next(2) == 0)
 			{

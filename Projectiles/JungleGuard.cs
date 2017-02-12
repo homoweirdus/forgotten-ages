@@ -48,7 +48,7 @@ namespace ForgottenMemories.Projectiles
 				}
 			}
 			timer++;
-			if (target && timer >= 30)
+			if (target && timer >= 50)
 			{
 				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 15f, move.Y * 15f, 374, projectile.damage, 5f, projectile.owner);
 				timer = 0;
