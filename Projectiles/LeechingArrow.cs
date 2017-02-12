@@ -42,9 +42,12 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			Player player = Main.player[projectile.owner];
-			player.HealEffect(1);
-			player.statLife += 1;
+			if (Main.rand.Next(2) == 0)
+			{
+				Player player = Main.player[projectile.owner];
+				player.HealEffect(1);
+				player.statLife += 1;
+			}
 		}
 	}	
 }
