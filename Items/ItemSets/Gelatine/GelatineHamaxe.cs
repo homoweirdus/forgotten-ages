@@ -4,24 +4,24 @@ using Terraria.ModLoader;
 using Terraria.ID;
 
 namespace ForgottenMemories.Items.ItemSets.Gelatine {
-public class GelatinePick : ModItem
+public class GelatineHamaxe : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Gelatine Pick";
-        item.damage = 8;
+		item.name = "Gelatine Hamaxe";
+        item.damage = 15;
         item.melee = true;
-        item.width = 28;
-        item.height = 28;
-        item.useTime = 16;
-        item.useAnimation = 16;
+        item.width = 38;
+        item.height = 36;
+        item.useTime = 28;
+        item.useAnimation = 28;
         item.useStyle = 1;
-        item.knockBack = 1;
         item.value = 40000;
         item.rare = 1;
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
-		item.pick = 59;
+		item.axe = 12;
+		item.hammer = 80;
     }
 	
 	
