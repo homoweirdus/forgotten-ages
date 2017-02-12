@@ -27,7 +27,7 @@ namespace ForgottenMemories
             lifesteal = false;
 			sapBall = false;
 			SlimyNeck = false;
-			jungard = true;
+			jungard = false;
 		}
 		
 
