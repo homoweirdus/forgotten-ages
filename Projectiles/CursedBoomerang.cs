@@ -30,11 +30,13 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			int dust;
-			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 75, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-			Main.dust[dust].scale = 0.5f;
-			Main.dust[dust].noGravity = true;		
-			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 0.785f;
+			if (Main.rand.Next(3) == 0)
+			{
+				int dust;
+				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 75, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].noGravity = true;
+			}
 			
 		}
     }
