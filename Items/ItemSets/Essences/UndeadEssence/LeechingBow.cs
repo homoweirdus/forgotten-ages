@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 		public override void SetDefaults()
 		{
 			item.name = "Leeching Bow";
-			item.damage = 17;
+			item.damage = 14;
 			item.ranged = true;
 			item.width = 50;
 			item.height = 50;

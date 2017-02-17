@@ -20,7 +20,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.ranged = true;
 			projectile.penetrate = 3;
 			projectile.timeLeft = 1000;
-			projectile.extraUpdates = 1;
 		}
 		
 		public override void AI()
