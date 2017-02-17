@@ -16,6 +16,7 @@ public class GelatineHamaxe : ModItem
         item.useTime = 28;
         item.useAnimation = 28;
         item.useStyle = 1;
+        item.knockBack = 7;
         item.value = 40000;
         item.rare = 1;
         item.UseSound = SoundID.Item1;
@@ -33,4 +34,6 @@ public class GelatineHamaxe : ModItem
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-}}
+
+	}	
+}
