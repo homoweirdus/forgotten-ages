@@ -20,9 +20,9 @@ namespace ForgottenMemories.Items.AaMaterials
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Bone, 3);
-            recipe.AddIngredient(521, 1);
+            recipe.AddIngredient(null, "ShadowflameEmber", 1);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 2);
+            recipe.SetResult(this, 1);
             recipe.AddRecipe();
         }
     }

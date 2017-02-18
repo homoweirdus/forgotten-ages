@@ -31,6 +31,12 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JungleSlimePendant"), 1); 
 			}
 			
+			if (npc.type == 471)
+			{
+				int amountToDrop = Main.rand.Next(9,14);
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ShadowflameEmber"), amountToDrop); 
+			}
+			
 			if (npc.type == NPCID.WallofFlesh && !Main.expertMode)
 			{
 				int amountToDrop = Main.rand.Next(10,15);
