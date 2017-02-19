@@ -13,6 +13,7 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool Mutilator = false;
 		public bool TrueHR = false;
 		public bool Shroom = false;
+		public bool Terra = false;
     }
 	
 	public class Stuff : GlobalProjectile
@@ -45,6 +46,11 @@ namespace ForgottenMemories.Projectiles.Info
 						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("HallowEnergy"), 20, 5f, projectile.owner);
 					}
 			}
+			
+			if (projectile.GetModInfo<Info>(mod).Terra == true)
+			{
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("TerraBoom"), 29, 5f, projectile.owner);
+			}
 		}
 		
 		public override void AI(Projectile projectile)
@@ -59,6 +65,14 @@ namespace ForgottenMemories.Projectiles.Info
 				hitler = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, mod.DustType("pinkdust"), 0f, 0f);
 				Main.dust[hitler].scale = 0.9f;
 				Main.dust[hitler].noGravity = true;
+			}
+			
+			if (projectile.GetModInfo<Info>(mod).Terra == true)
+			{
+				int dust;
+				dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 74, 0f, 0f);
+				Main.dust[dust].scale = 0.9f;
+				Main.dust[dust].noGravity = true;
 			}
 			
 			if (projectile.GetModInfo<Info>(mod).Shroom == true)
