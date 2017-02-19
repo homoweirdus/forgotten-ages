@@ -10,7 +10,8 @@ namespace ForgottenMemories.Projectiles.Info
     public class Info : ProjectileInfo
     {
 		public bool Paradox = false;
-		public bool Mutilator = false;		
+		public bool Mutilator = false;
+		public bool TrueHR = false;
     }
 	
 	public class Stuff : GlobalProjectile
@@ -27,6 +28,36 @@ namespace ForgottenMemories.Projectiles.Info
 			if(Main.rand.Next(3) == 0 && projectile.GetModInfo<Info>(mod).Mutilator == true)
 			{
             target.AddBuff(69, 360);
+			}
+		}
+		
+		public override void Kill(Projectile projectile, int timeLeft)
+		{
+			if (projectile.GetModInfo<Info>(mod).TrueHR == true)
+			{
+				int amountOfProjectiles = Main.rand.Next(1, 4);
+			
+				for (int i = 0; i < amountOfProjectiles; ++i)
+					{
+						float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
+						float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
+						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("HallowEnergy"), 20, 5f, projectile.owner);
+					}
+			}
+		}
+		
+		public override void AI(Projectile projectile)
+		{
+			if (projectile.GetModInfo<Info>(mod).TrueHR == true)
+			{
+				int dust;
+				dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, mod.DustType("bluedust"), 0f, 0f);
+				Main.dust[dust].scale = 0.9f;
+				Main.dust[dust].noGravity = true;
+				int hitler;
+				hitler = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, mod.DustType("pinkdust"), 0f, 0f);
+				Main.dust[hitler].scale = 0.9f;
+				Main.dust[hitler].noGravity = true;
 			}
 		}
 	}
