@@ -49,7 +49,7 @@ namespace ForgottenMemories.Projectiles.Info
 			
 			if (projectile.GetModInfo<Info>(mod).Terra == true)
 			{
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("TerraBoom"), 29, 5f, projectile.owner);
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("TerraBoom"), 30, 5f, projectile.owner);
 			}
 		}
 		

@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.Ranged
         public override void SetDefaults()
         {
             item.name = "Terra Bow";
-            item.damage = 58;
+            item.damage = 46;
             item.noMelee = true;
             item.ranged = true;
             item.width = 38;
@@ -45,9 +45,9 @@ namespace ForgottenMemories.Items.Ranged
 				
 				int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
 				Main.projectile[p].GetModInfo<Info>(mod).Terra = true;
-				Projectile.NewProjectile(position.X, position.Y, (int)(speedX/ 2), (int)(speedY /2), mod.ProjectileType("TerraEnergy"), (int)(damage * 0.8), knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, (int)(newVect2.X /2), (int)(newVect2.Y /2), mod.ProjectileType("TerraEnergy"), (int)(damage * 0.8), knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, (int)(newVect3.X /2), (int)(newVect3.Y /2), mod.ProjectileType("TerraEnergy"), (int)(damage * 0.8), knockBack, player.whoAmI, 0, 0);
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("TerraEnergy"), (int)(damage * 0.9), knockBack, player.whoAmI, 0, 0);
+				Projectile.NewProjectile(position.X, position.Y, newVect2.X, newVect2.Y, mod.ProjectileType("TerraEnergy"), (int)(damage * 0.9), knockBack, player.whoAmI, 0, 0);
+				Projectile.NewProjectile(position.X, position.Y, newVect3.X, newVect3.Y, mod.ProjectileType("TerraEnergy"), (int)(damage * 0.9), knockBack, player.whoAmI, 0, 0);
             return false;
         }
         public override void AddRecipes()
