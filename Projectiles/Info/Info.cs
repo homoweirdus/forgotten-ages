@@ -12,6 +12,7 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool Paradox = false;
 		public bool Mutilator = false;
 		public bool TrueHR = false;
+		public bool Shroom = false;
     }
 	
 	public class Stuff : GlobalProjectile
@@ -58,6 +59,33 @@ namespace ForgottenMemories.Projectiles.Info
 				hitler = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, mod.DustType("pinkdust"), 0f, 0f);
 				Main.dust[hitler].scale = 0.9f;
 				Main.dust[hitler].noGravity = true;
+			}
+			
+			if (projectile.GetModInfo<Info>(mod).Shroom == true)
+			{
+				Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
+				Vector2 move = Vector2.Zero;
+				float distance = 150f;
+				bool target = false;
+				for (int k = 0; k < 200; k++)
+				{
+					if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
+					{
+						Vector2 newMove = Main.npc[k].Center - projectile.Center;
+						float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
+						if (distanceTo < distance)
+						{
+							newMove.Normalize();
+							move = newMove;
+							distance = distanceTo;
+							target = true;
+						}
+					}
+				}
+				if (target)
+				{
+					projectile.velocity = (move * 14f);
+				}
 			}
 		}
 	}

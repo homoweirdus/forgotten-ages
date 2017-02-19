@@ -52,6 +52,7 @@ namespace ForgottenMemories.Items.Ranged
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "Artemis", 1);
             recipe.AddIngredient(ItemID.BrokenHeroSword, 1); //placeholder ingredient
+			recipe.AddTile(134);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
