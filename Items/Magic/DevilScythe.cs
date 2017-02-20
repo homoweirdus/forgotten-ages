@@ -11,14 +11,14 @@ namespace ForgottenMemories.Items.Magic
 		public override void SetDefaults()
 		{
 			item.name = "Devil Scythe";
-			item.damage = 25;
+			item.damage = 22;
 			item.magic = true;
 			item.mana = 4;
 			item.width = 25;
 			item.height = 26;
-			item.useTime = 10;
+			item.useTime = 15;
 			item.UseSound = SoundID.Item20;
-			item.useAnimation = 10;
+			item.useAnimation = 15;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 2;

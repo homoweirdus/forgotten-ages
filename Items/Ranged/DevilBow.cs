@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.name = "Devil's Rage";
-			item.damage = 23;
+			item.damage = 17;
 			item.noMelee = true;
 			item.ranged = true;
 			item.width = 27;

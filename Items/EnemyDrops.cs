@@ -26,9 +26,14 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BloodHeart"), 1); 
 			}
 			
-			if (npc.type == 204 && Main.rand.Next(40) == 0)
+			if (npc.type == 204 && Main.rand.Next(70) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JungleSlimePendant"), 1); 
+			}
+			
+			if(npc.displayName == "Zombie" && Main.rand.Next(250) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JaggedBand"));
 			}
 			
 			if (npc.type == 471)
