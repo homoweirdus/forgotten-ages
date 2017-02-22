@@ -8,7 +8,7 @@ namespace ForgottenMemories.Items.Acessory
     {
         public override void SetDefaults()
         {
-            item.name = "Berserker Emblem";
+            item.name = "Jagged Band";
             item.width = 14;
             item.height = 14;
             item.toolTip = "75% increase to all damage but summon, but you take 150% more damage";
@@ -24,15 +24,6 @@ namespace ForgottenMemories.Items.Acessory
 			player.rangedDamage += 0.75f;
 			player.magicDamage += 0.75f;
 			player.thrownDamage += 0.75f;
-        }
-		
-		public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(null, "BrassAlloy", 10);
-            recipe.AddTile(16);
-            recipe.SetResult(this, 1);
-            recipe.AddRecipe();
         }
     }
 }
