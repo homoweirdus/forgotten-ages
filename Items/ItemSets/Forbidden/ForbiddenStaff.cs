@@ -27,6 +27,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.autoReuse = true;
 			item.mana = 60;
 			item.shoot = 656;
+			item.noMelee = true;
 			item.shootSpeed = 10f;
 		}
 
@@ -50,8 +51,8 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			if (player.altFunctionUse == 2)
 			{
 				item.useStyle = 5;
-				item.useTime = 4;
-				item.useAnimation = 4;
+				item.useTime = 2;
+				item.useAnimation = 10;
 				item.damage = 110;
 				item.mana = 0;
 			}
@@ -72,7 +73,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			{
 				Vector2 mouse = Main.MouseWorld;
 				
-				Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, mod.ProjectileType("ManaDrain"), 0, 0f, player.whoAmI);
+				Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, mod.ProjectileType("ManaDrain"), 1, 0.1f, player.whoAmI);
 			}
 			else
 			{

@@ -19,9 +19,15 @@ namespace ForgottenMemories.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
+			if (player.lifeRegen > 0)
+				{
+					player.lifeRegen = 0;
+				}
 			player.lifeRegen = 0;
+			player.lifeRegen -= 8;
+			player.manaRegen *= 2;
 			player.magicDamage += 0.10f;
-			player.endurance -= 0.15f;
+			player.endurance -= 0.3f;
 		}
 	}
 }

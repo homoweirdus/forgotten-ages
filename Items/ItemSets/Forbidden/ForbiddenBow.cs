@@ -25,6 +25,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.autoReuse = true;
 			item.useAmmo = 40;
 			item.shoot = 3;
+			item.noMelee = true;
 			item.shootSpeed = 10f;
 		}
 

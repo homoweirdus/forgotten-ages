@@ -26,8 +26,14 @@ namespace ForgottenMemories.Projectiles
 		{
 			Player player = Main.player[projectile.owner];
 			target.immune[projectile.owner] = 10;
-			player.statMana += 1;
-			player.AddBuff (mod.BuffType("ForbiddenBoost"), 240, false);
+			player.statMana += 8;
+			player.AddBuff (mod.BuffType("ForbiddenBoost"), 480, false);
+		}
+		
+		public override void AI()
+		{
+			int dust2 = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 32, 0f, 0f);
+			Main.dust[dust2].noGravity = true;
 		}
 	}
 }
