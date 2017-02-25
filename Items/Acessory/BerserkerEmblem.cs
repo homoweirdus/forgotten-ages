@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Acessory
             item.name = "Berserker Emblem";
             item.width = 14;
             item.height = 14;
-            item.toolTip = "Increases Melee Speed by 15%.";
+            item.toolTip = "Increases Crit Chance by 12%.";
             item.value = 100000;
             item.rare = 4;
             item.accessory = true;
@@ -19,7 +19,10 @@ namespace ForgottenMemories.Items.Acessory
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.meleeSpeed += 0.15f;
+            player.meleeCrit += 12;
+			player.magicCrit += 12;
+			player.rangedCrit += 12;
+			player.thrownCrit += 12;
         }
 		
 		public override void AddRecipes()

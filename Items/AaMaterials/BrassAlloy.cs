@@ -19,5 +19,56 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.scale = 0.75f;
 			item.maxStack = 999;
 		}
+		
+		public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WarriorEmblem, 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 5);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.SorcererEmblem, 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 5);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.RangerEmblem, 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 5);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.SummonerEmblem, 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 5);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "MinerEmblem", 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 5);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "BerserkerEmblem", 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 5);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "NinjaEmblem", 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 5);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "PaladinEmblem", 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 5);
+            recipe.AddRecipe();
+        }
 	}
 }

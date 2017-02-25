@@ -26,14 +26,9 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BloodHeart"), 1); 
 			}
 			
-			if (npc.type == 204 && Main.rand.Next(70) == 0)
+			if (npc.type == 204 && Main.rand.Next(40) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JungleSlimePendant"), 1); 
-			}
-			
-			if(npc.displayName == "Zombie" && Main.rand.Next(250) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JaggedBand"));
 			}
 			
 			if (npc.type == 471)
@@ -46,6 +41,26 @@ namespace ForgottenMemories.Items
 			{
 				int amountToDrop = Main.rand.Next(10,15);
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrassAlloy"), amountToDrop); 
+				
+				if (Main.rand.Next(4) == 0)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MinerEmblem"), 1); 
+				}
+				
+				if (Main.rand.Next(4) == 1)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("NinjaEmblem"), 1); 
+				}
+				
+				if (Main.rand.Next(4) == 2)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BerserkerEmblem"), 1); 
+				}
+				
+				if (Main.rand.Next(4) == 3)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaladinEmblem"), 1); 
+				}
 			}
 			
 			if (npc.type == 4 && !Main.expertMode)
