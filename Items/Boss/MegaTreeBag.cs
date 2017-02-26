@@ -28,6 +28,7 @@ namespace ForgottenMemories.Items.Boss
 		{
 			int amountToDrop = Main.rand.Next(20,30);
 			player.QuickSpawnItem(mod.ItemType("ForestEnergy"), amountToDrop);
+			player.QuickSpawnItem(ItemID.Wood,(amountToDrop * 3));
             player.QuickSpawnItem(mod.ItemType("AmberCrystal"), 1);
 		}
 	}

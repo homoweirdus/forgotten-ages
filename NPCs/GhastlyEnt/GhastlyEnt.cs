@@ -222,6 +222,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		{
 			int amountToDrop = Main.rand.Next(10,30);
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ForestEnergy"), amountToDrop);
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Wood, (amountToDrop * 3));
 			
 		if (Main.rand.Next(7) == 0)
             {

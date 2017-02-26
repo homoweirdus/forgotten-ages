@@ -28,10 +28,21 @@ namespace ForgottenMemories.NPCs.Jungle
 
 		public override float CanSpawn(NPCSpawnInfo spawnInfo)
 		{
-            int x = spawnInfo.spawnTileX;
-            int y = spawnInfo.spawnTileY;
-            int tile = (int)Main.tile[x, y].type;
-			return !Main.bloodMoon && spawnInfo.player.ZoneJungle && (tile == 60) && spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.1f : 0f;
+			if (NPC.downedBoss1 == false)
+			{
+				int x = spawnInfo.spawnTileX;
+				int y = spawnInfo.spawnTileY;
+				int tile = (int)Main.tile[x, y].type;
+				return !Main.bloodMoon && spawnInfo.player.ZoneJungle && (tile == 60) && spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.1f : 0f;
+			}
+			
+			if (NPC.downedBoss1 == true)
+			{
+				int x = spawnInfo.spawnTileX;
+				int y = spawnInfo.spawnTileY;
+				int tile = (int)Main.tile[x, y].type;
+				return !Main.bloodMoon && spawnInfo.player.ZoneJungle && (tile == 60) && spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.2f : 0f;
+			}
 		}
 		
 			public override void NPCLoot()
@@ -42,6 +53,11 @@ namespace ForgottenMemories.NPCs.Jungle
     {
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LivingTwig"));
     }
+	
+		if (NPC.downedBoss1 == true && Main.rand.next(50) == 0);
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AncientLog"), 1);
+			}
 	}
 	
 			public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
