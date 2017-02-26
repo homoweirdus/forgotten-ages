@@ -26,22 +26,22 @@ namespace ForgottenMemories.Items
 				
 				if (Main.rand.Next(4) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MinerEmblem"), 1); 
+					player.QuickSpawnItem(mod.ItemType("MinerEmblem"), 1); 
 				}
 				
 				if (Main.rand.Next(4) == 1)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("NinjaEmblem"), 1); 
+					player.QuickSpawnItem(mod.ItemType("NinjaEmblem"), 1); 
 				}
 				
 				if (Main.rand.Next(4) == 2)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BerserkerEmblem"), 1); 
+					player.QuickSpawnItem(mod.ItemType("BerserkerEmblem"), 1); 
 				}
 				
 				if (Main.rand.Next(4) == 3)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaladinEmblem"), 1); 
+					player.QuickSpawnItem(mod.ItemType("PaladinEmblem"), 1); 
 				}
 			}
 		}
