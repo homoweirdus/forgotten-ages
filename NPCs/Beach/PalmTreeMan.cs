@@ -38,14 +38,17 @@ namespace ForgottenMemories.NPCs.Beach
 	{
 			int amountToDrop = Main.rand.Next(3,10);
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PalmWood, amountToDrop);
-					if(Main.rand.Next(60) == 0)
-    {
-        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LivingTwig"));
-    }
-		if (NPC.downedBoss1 == true && Main.rand.Next(50) == 0);
-		{
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AncientLog"), 1);
-		}
+			if(Main.rand.Next(60) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LivingTwig"));
+			}
+			if (NPC.downedBoss1 == true);
+			{
+				if(Main.rand.Next(50) == 0)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AncientLog"), 1);
+				}
+			}
 	}
 	
 			public override void ScaleExpertStats(int numPlayers, float bossLifeScale)

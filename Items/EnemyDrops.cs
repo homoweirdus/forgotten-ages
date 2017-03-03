@@ -84,6 +84,56 @@ namespace ForgottenMemories.Items
 			{
 				Main.NewText("Screams echo from the forest...", 53, 140, 51);
 			}
+			
+			if (npc.type == 390 && Main.rand.Next(50) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
+			
+			if (npc.type == 391 && Main.rand.Next(50) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
+			
+			if (npc.type == 520 && Main.rand.Next(50) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
+			
+			if (npc.type == 389 && Main.rand.Next(50) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
+			
+			if (npc.type == 386 && Main.rand.Next(50) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
+			
+			if (npc.type == 383 && Main.rand.Next(50) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
+			
+			if (npc.type == 382 && Main.rand.Next(50) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
+			
+			if (npc.type == 381 && Main.rand.Next(50) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
+			
+			if (npc.type == 388 && Main.rand.Next(50) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
+			
+			if (npc.type == 392 && Main.rand.Next(25) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+			}
 		}
 	}
 }
