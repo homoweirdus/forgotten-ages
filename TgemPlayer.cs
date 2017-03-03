@@ -22,7 +22,8 @@ namespace ForgottenMemories
         {
             Servant = false;
 			slimeGuard = false;
-        }
+			ChaoticSet = false;
+			}
 		
 		public override void PreUpdate()
 		{
