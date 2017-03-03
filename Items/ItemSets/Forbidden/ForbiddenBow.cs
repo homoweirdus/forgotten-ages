@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.ranged = true;
 			item.width = 40;
 			item.height = 100;
-			item.toolTip = "Right Clicking will fire a barrage of arrows";
+			item.toolTip = "Right Clicking will create an arrow storm";
 			item.useTime = 16;
 			item.useAnimation = 16;
 			item.useStyle = 5;
@@ -51,7 +51,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 				item.useStyle = 5;
 				item.useTime = 36;
 				item.useAnimation = 36;
-				item.damage = 14;
+				item.damage = 30;
 			}
 			else
 			{
@@ -67,14 +67,18 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 		{
 			if (player.altFunctionUse == 2)
 			{
-				int amountOfProjectiles = Main.rand.Next(10, 20);
+				int amountOfProjectiles = Main.rand.Next(20, 30);
 				for (int i = 0; i < amountOfProjectiles; ++i)
 					{
 						float sX = speedX;
 						float sY = speedY;
 						sX += (float)Main.rand.Next(-120, 120) * 0.02f;
 						sY += (float)Main.rand.Next(-120, 120) * 0.02f;
-						Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
+						int homo = Main.rand.Next(-250, 250);
+						int gay = Main.rand.Next(-250, 250);
+						int po = Projectile.NewProjectile(position.X + homo, position.Y + gay, sX, sY, type, damage, knockBack, player.whoAmI);
+						Main.projectile[po].tileCollide = false;
+						Main.projectile[po].noDropItem = true;
 					}
 			}
 			else
@@ -85,7 +89,8 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 						float sY = speedY;
 						sX += (float)Main.rand.Next(-60, 60) * 0.02f;
 						sY += (float)Main.rand.Next(-60, 60) * 0.02f;
-						Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
+						int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
+						Main.projectile[p].noDropItem = true;
 					}
 			}
 			return false;
