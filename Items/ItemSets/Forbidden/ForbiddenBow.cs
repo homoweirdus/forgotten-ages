@@ -51,7 +51,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 				item.useStyle = 5;
 				item.useTime = 36;
 				item.useAnimation = 36;
-				item.damage = 30;
+				item.damage = 33;
 			}
 			else
 			{
@@ -79,6 +79,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 						int po = Projectile.NewProjectile(position.X + homo, position.Y + gay, sX, sY, type, damage, knockBack, player.whoAmI);
 						Main.projectile[po].tileCollide = false;
 						Main.projectile[po].noDropItem = true;
+						Main.projectile[po].timeLeft = 120;
 					}
 			}
 			else
