@@ -65,8 +65,8 @@ namespace ForgottenMemories.Items
 			
 			if (npc.type == 4 && !Main.expertMode)
 			{
-				int amountToDrop = Main.rand.Next(36,42);
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WideLens"), amountToDrop); 
+				int amountToDrop = Main.rand.Next(20,28);
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OpticBar"), amountToDrop); 
 			}
 			
 			if (npc.type == NPCID.KingSlime)
