@@ -29,8 +29,21 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.rare = 4;
 			item.shoot = mod.ProjectileType("NecroSpearP");  //put your Spear projectile name
 			item.shootSpeed = 7;
+			item.autoReuse = true;
 
 		}
+		
+		public override bool CanUseItem(Player player)
+        {
+            for (int i = 0; i < 1000; ++i)
+            {
+                if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
 		public override void AddRecipes()
 		{

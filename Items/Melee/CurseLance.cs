@@ -25,7 +25,7 @@ namespace ForgottenMemories.Items.Melee
 			item.useTime = 30;
 			item.knockBack = 9.5f;  //Ranges from 1 to 9.
 			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;  //Dictates whether the weapon can be "auto-fired".
+			item.autoReuse = true;  //Dictates whether the weapon can be "auto-fired".
 			item.height = 96;  //The height of the .png file in pixels divided by 2.
 			item.maxStack = 1;
 			item.value = 300000;  //Value is calculated in copper coins.
@@ -33,6 +33,18 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("CursedLanceProjectile");
 			item.shootSpeed = 7;
 		}
+		
+		public override bool CanUseItem(Player player)
+        {
+            for (int i = 0; i < 1000; ++i)
+            {
+                if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 		
 		public override void AddRecipes()
 		{
