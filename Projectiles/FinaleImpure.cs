@@ -16,7 +16,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.melee = true;
-			projectile.penetrate = 1;
+			projectile.penetrate = -1;
 			projectile.timeLeft = 100;
 			projectile.extraUpdates = 100;
 			projectile.alpha = 255;
@@ -25,7 +25,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.Next(6) == 0)
 			{
 			int dust;
 			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
@@ -48,20 +48,6 @@ namespace ForgottenMemories.Projectiles
 			Main.dust[dust5].scale = 1.5f;	
 			Main.dust[dust5].noGravity = true;
 			}
-			
-			
-			if (Main.rand.Next(10) == 0)
-			{
-				Vector2 newVect = projectile.velocity.RotatedBy(System.Math.PI / 10);
-				projectile.velocity = newVect;
-			}	
-			if (Main.rand.Next(10) == 0)
-			{
-				Vector2 newVect2 = projectile.velocity.RotatedBy(System.Math.PI / -10);
-				projectile.velocity = newVect2;
-			}			
-			
-			
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
@@ -73,6 +59,7 @@ namespace ForgottenMemories.Projectiles
 			target.AddBuff(39, 1800, false);
 			target.AddBuff(mod.BuffType("DevilsFlame"), 1800, false);
 			target.AddBuff(mod.BuffType("Gelled"), 1800, false);
+			target.immune[projectile.owner] = 1;
 		}
 	}
 }

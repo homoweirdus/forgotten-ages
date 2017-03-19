@@ -26,7 +26,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.Next(5) == 0)
 			{
 			int dust;
 			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
@@ -51,40 +51,25 @@ namespace ForgottenMemories.Projectiles
 			}
 			
 			projectile.rotation += 10;
-			Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
-			Vector2 move = Vector2.Zero;
-			float distance = 400f;
-			bool target = false;
-			for (int k = 0; k < 200; k++)
-			{
-				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
-				{
-					Vector2 newMove = Main.npc[k].Center - projectile.Center;
-					float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
-					if (distanceTo < distance)
-					{
-						newMove.Normalize();
-						move = newMove;
-						distance = distanceTo;
-						target = true;
-					}
-				}
-			}
-			if (target)
-			{
-				projectile.velocity = (move * 20f);
-			}
 		}
 		
 		public override void Kill(int timeLeft)
 		{
-			int amountOfProjectiles = Main.rand.Next(2, 3);
-			
-			for (int i = 0; i < amountOfProjectiles; ++i)
+			switch (Main.rand.Next(2))
 			{
-				float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-				float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("climaxproj"), projectile.damage, 5f, projectile.owner);
+				case 0: 
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 3, 0, mod.ProjectileType("FinaleImpure"), (int)(projectile.damage/4), 5f, projectile.owner);
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 3, mod.ProjectileType("FinaleImpure"), (int)(projectile.damage/4), 5f, projectile.owner);
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -3, 0, mod.ProjectileType("FinaleImpure"), (int)(projectile.damage/4), 5f, projectile.owner);
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -3, mod.ProjectileType("FinaleImpure"), (int)(projectile.damage/4), 5f, projectile.owner);
+				break;
+				case 1: 
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 3, 3, mod.ProjectileType("FinaleImpure"), (int)(projectile.damage/4), 5f, projectile.owner);
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -3, 3, mod.ProjectileType("FinaleImpure"), (int)(projectile.damage/4), 5f, projectile.owner);
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -3, -3, mod.ProjectileType("FinaleImpure"), (int)(projectile.damage/4), 5f, projectile.owner);
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 3, -3, mod.ProjectileType("FinaleImpure"), (int)(projectile.damage/4), 5f, projectile.owner);
+				break;
+				default: break;
 			}
 		}
 		
