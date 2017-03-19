@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "RoyalCrusher", 1);
 			recipe.AddIngredient(ItemID.CrystalShard, 20);
-			recipe.AddIngredient(ItemID.BeetleShell, 5);
+			recipe.AddIngredient(ItemID.BeetleHusk, 5);
 			recipe.AddIngredient(ItemID.ChristmasTreeSword, 1);
 			recipe.AddIngredient(1826, 1);
 			recipe.AddTile(TileID.MythrilAnvil);
