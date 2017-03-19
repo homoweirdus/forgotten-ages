@@ -11,7 +11,6 @@ namespace ForgottenMemories.Items.ItemSets.Accursed
 
     public class CursedBoomerang : ModItem
     {
-
         public override void SetDefaults()
         {
 

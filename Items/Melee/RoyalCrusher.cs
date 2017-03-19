@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "PowerBlade", 1);
 			recipe.AddIngredient(ItemID.GoldBroadsword, 1);
+			recipe.AddIngredient(ItemID.Ruby, 5);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "PowerBlade", 1);
 			recipe.AddIngredient(ItemID.PlatinumBroadsword, 1);
 			recipe.AddIngredient(ItemID.Ruby, 5);
 			recipe.AddTile(TileID.Anvils);

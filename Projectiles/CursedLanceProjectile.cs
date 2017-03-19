@@ -27,7 +27,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.hide = true;
         }
 
-        public override void AI()
+         public override void AI()
         {
         	Main.player[projectile.owner].direction = projectile.direction;
         	Main.player[projectile.owner].heldProj = projectile.whoAmI;

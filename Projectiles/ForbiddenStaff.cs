@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-	public class ManaDrain : ModProjectile
+	public class ForbiddenStaff : ModProjectile
 	{
 		public override void SetDefaults()
 		{
