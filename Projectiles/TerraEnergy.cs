@@ -29,7 +29,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			int dust;
 			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 74, 0f, 0f);
-			Main.dust[dust].scale = 1.5f;
+			Main.dust[dust].scale = 0.9f;
 			Main.dust[dust].noGravity = true;
 			projectile.rotation += 10;
 			Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
