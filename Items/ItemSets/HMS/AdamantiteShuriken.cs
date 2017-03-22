@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 			projectile.name = "Adamantite Shuriken";
 			projectile.width = 22;
 			projectile.height = 22;
-			projectile.penetrate = 7;
+			projectile.penetrate = 1;
 			aiType = ProjectileID.Shuriken;
 			projectile.ignoreWater = true;
 			projectile.timeLeft = 6000;
@@ -44,12 +44,12 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
-			item.damage = 42;
+			item.damage = 38;
 			item.shoot = mod.ProjectileType("AdamantiteShurikenP");
 			item.name = "Adamantite Shuriken";
 			item.rare = 4;
-			item.useTime = 23;
-			item.useAnimation = 23;
+			item.useTime = 28;
+			item.useAnimation = 28;
 			item.shootSpeed = 19f;
 			item.autoReuse = true;
 		}
