@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.noMelee = true; 
 			item.knockBack = 4;
 			item.value = 10000;
-			item.rare = 2;
+			item.rare = 10;
 			item.UseSound = SoundID.Item11;
 			item.autoReuse = false;
 			item.shoot = 10; 

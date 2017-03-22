@@ -52,7 +52,6 @@ namespace ForgottenMemories.Items.Melee
 			{
 				Vector2 mouse = Main.MouseWorld;
 				mouse.X += Main.rand.Next(-20, 21);
-				mouse.Y += Main.rand.Next(-20, 21);
 				float sX = speedX;
 				float sY = 25;
 				sX += (float)Main.rand.Next(-30, 15) * 0.2f;

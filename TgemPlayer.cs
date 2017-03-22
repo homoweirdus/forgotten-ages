@@ -17,12 +17,14 @@ namespace ForgottenMemories
         public static bool hasProjectile;
 		public bool slimeGuard = false;
 		public bool ChaoticSet = false;
+		public bool stardustCrown = false;
 
         public override void ResetEffects()
         {
             Servant = false;
 			slimeGuard = false;
 			ChaoticSet = false;
+			stardustCrown = false;
 			}
 		
 		public override void PreUpdate()
@@ -67,6 +69,16 @@ namespace ForgottenMemories
 			}
 				
 		}
-			
+		
+		public override void OnHitNPCWithProj(Projectile projectile, NPC target, int damage, float knockback, bool crit)
+		{
+			if (stardustCrown == true)
+			{
+				if (ProjectileID.Sets.SentryShot[projectile.type])
+				{
+					target.AddBuff(mod.BuffType("StardustInferno"), 1800, false);
+				}
+			}
+		}	
     }
 }
