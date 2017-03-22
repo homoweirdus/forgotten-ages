@@ -43,6 +43,7 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
+			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 2);
 		}
 	}
 }

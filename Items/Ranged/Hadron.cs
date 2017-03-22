@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.knockBack = 1;
 			item.value = 1400000;
 			item.rare = 10;
-			item.UseSound = SoundID.Item41;
+			item.UseSound = SoundID.Item14;
 			item.autoReuse = true;
 			item.shoot = ProjectileID.Bullet;
 			item.shootSpeed = 15f;
@@ -77,6 +77,7 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			Main.PlaySound(2, (int)position.X, (int)position.Y, 11);
 			cooldown ++;
 			if (Main.rand.Next(3) == 0)
 			{
@@ -84,6 +85,7 @@ namespace ForgottenMemories.Items.Ranged
 				float sY = speedY;
 				sX += (float)Main.rand.Next(-60, 61) * 0.03f;
 				sY += (float)Main.rand.Next(-60, 61) * 0.03f;
+				Main.PlaySound(2, (int)position.X, (int)position.Y, 14);
 				Projectile.NewProjectile(position.X, (position.Y - 20), sX, sY, 616, damage, knockBack, player.whoAmI);
 			}
 			
