@@ -61,8 +61,8 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 			{
 				float sX = speedX;
 				float sY = speedY;
-				sX += (float)Main.rand.Next(-60, 61) * 0.05f;
-				sY += (float)Main.rand.Next(-60, 61) * 0.05f;
+				sX += (float)Main.rand.Next(-60, 61) * 0.02f;
+				sY += (float)Main.rand.Next(-60, 61) * 0.02f;
 				Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("AdamantiteShurikenP"), damage, knockBack, player.whoAmI);
 			}
 			return false;
