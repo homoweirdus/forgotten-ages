@@ -92,6 +92,7 @@ namespace ForgottenMemories.Items.Melee
             {
                 if (line2.mod == "Terraria" && line2.Name == "ItemName")
                 {
+                    line2.overrideColor = new Color(246, 0, 255);
                 }
             }
         }
