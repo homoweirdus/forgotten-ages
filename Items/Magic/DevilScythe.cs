@@ -11,9 +11,9 @@ namespace ForgottenMemories.Items.Magic
 		public override void SetDefaults()
 		{
 			item.name = "Devil Scythe";
-			item.damage = 22;
+			item.damage = 14;
 			item.magic = true;
-			item.mana = 4;
+			item.mana = 6;
 			item.width = 25;
 			item.height = 26;
 			item.useTime = 15;
@@ -22,8 +22,8 @@ namespace ForgottenMemories.Items.Magic
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 2;
-			item.value = 100000;
-			item.rare = 3;
+			item.value = 14000;
+			item.rare = 2;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("scythe");
 			item.shootSpeed = 1f;
@@ -43,10 +43,7 @@ namespace ForgottenMemories.Items.Magic
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DemonScythe, 1);
-			recipe.AddIngredient(ItemID.BookofSkulls, 1);
-			recipe.AddIngredient(ItemID.LavaBucket, 5);
-			recipe.AddIngredient(ItemID.Bone, 20);
+			recipe.AddIngredient(null,"DevilFlame", 14);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

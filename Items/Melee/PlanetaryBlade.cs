@@ -2,6 +2,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 
 namespace ForgottenMemories.Items.Melee
 {
@@ -78,5 +79,16 @@ namespace ForgottenMemories.Items.Melee
 				Main.dust[dust2].noGravity = true;
 			}
 		}
+		
+		public override void ModifyTooltips(List<TooltipLine> list)
+        {
+            foreach (TooltipLine line2 in list)
+            {
+                if (line2.mod == "Terraria" && line2.Name == "ItemName")
+                {
+                    line2.overrideColor = new Color(246, 0, 255);
+                }
+            }
+        }
 	}
 }

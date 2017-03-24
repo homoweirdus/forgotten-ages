@@ -31,17 +31,6 @@ namespace ForgottenMemories.Items.Ranged
 			item.useAmmo =  AmmoID.Bullet;
 		}
 		
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.FlintlockPistol, 1);
-			recipe.AddIngredient(ItemID.Lens, 10);
-			recipe.AddIngredient(ItemID.MeteoriteBar, 15);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			float sX = speedX;

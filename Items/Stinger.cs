@@ -2,9 +2,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ExampleMod.Items
+namespace ForgottenMemories.Items
 {
-	public class CopperShortsword : GlobalItem
+	public class Stinger : GlobalItem
 	{
 		public override void SetDefaults(Item item)
 		{

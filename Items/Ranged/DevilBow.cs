@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.name = "Devil's Rage";
-			item.damage = 17;
+			item.damage = 13;
 			item.noMelee = true;
 			item.ranged = true;
 			item.width = 27;
@@ -24,8 +24,8 @@ namespace ForgottenMemories.Items.Ranged
 			item.shoot = 3;
 			item.useAmmo = 40;
 			item.knockBack = 1;
-			item.value = 100000;
-			item.rare = 3;
+			item.value = 14000;
+			item.rare = 2;
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;
 			item.shootSpeed = 10f;
@@ -46,10 +46,7 @@ namespace ForgottenMemories.Items.Ranged
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.MoltenFury, 1);
-			recipe.AddIngredient(ItemID.HellwingBow, 1);
-			recipe.AddIngredient(ItemID.LavaBucket, 5);
-			recipe.AddIngredient(ItemID.Bone, 20);
+			recipe.AddIngredient(null,"DevilFlame", 14);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

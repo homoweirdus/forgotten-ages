@@ -9,7 +9,6 @@ namespace ForgottenMemories.Items
 	{
 		public override void NPCLoot(NPC npc)
 		{
-			
 			if (npc.type == NPCID.KingSlime && !Main.expertMode && Main.rand.Next(8) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SlimeRod"), 1); 
@@ -85,54 +84,20 @@ namespace ForgottenMemories.Items
 				Main.NewText("Screams echo from the forest...", 53, 140, 51);
 			}
 			
-			if (npc.type == 390 && Main.rand.Next(50) == 0)
+			if (Main.invasionType == 4 && Main.rand.Next(20) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
 			}
-			
-			if (npc.type == 391 && Main.rand.Next(50) == 0)
+
+			if (npc.type == 62 && NPC.downedBoss1 && Main.rand.Next(3) == 0 || npc.type == 24 && NPC.downedBoss1 && Main.rand.Next(3) == 0 || npc.type == 66 && NPC.downedBoss1 && Main.rand.Next(3) == 0 || npc.type == 60 && NPC.downedBoss1 && Main.rand.Next(3) == 0 || npc.type == 59 && NPC.downedBoss1 && Main.rand.Next(3) == 0 || npc.type == 39 && NPC.downedBoss1 && Main.rand.Next(3) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DevilFlame"), 1); 
 			}
 			
-			if (npc.type == 520 && Main.rand.Next(50) == 0)
+			if (npc.type == 156 || npc.type == 151)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
-			}
-			
-			if (npc.type == 389 && Main.rand.Next(50) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
-			}
-			
-			if (npc.type == 386 && Main.rand.Next(50) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
-			}
-			
-			if (npc.type == 383 && Main.rand.Next(50) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
-			}
-			
-			if (npc.type == 382 && Main.rand.Next(50) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
-			}
-			
-			if (npc.type == 381 && Main.rand.Next(50) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
-			}
-			
-			if (npc.type == 388 && Main.rand.Next(50) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
-			}
-			
-			if (npc.type == 392 && Main.rand.Next(25) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 
+				int amountToDrop = Main.rand.Next(1,3);
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DevilFlame"), amountToDrop); 
 			}
 		}
 	}

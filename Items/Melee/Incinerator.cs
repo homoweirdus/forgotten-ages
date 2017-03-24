@@ -9,8 +9,8 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Devil's Flame";
-			item.damage = 35;
+			item.name = "Devil's Blade";
+			item.damage = 19;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
@@ -19,8 +19,8 @@ namespace ForgottenMemories.Items.Melee
 			item.useAnimation = 20;
 			item.useStyle = 1;
 			item.knockBack = 6;
-			item.value = 100000;
-			item.rare = 3;
+			item.value = 14000;
+			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("redflame");
@@ -30,10 +30,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.FieryGreatsword, 1);
-			recipe.AddRecipeGroup("AnyPhaseblade");
-			recipe.AddIngredient(ItemID.LavaBucket, 5);
-			recipe.AddIngredient(ItemID.Bone, 20);
+			recipe.AddIngredient(null,"DevilFlame", 14);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

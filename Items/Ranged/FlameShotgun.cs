@@ -42,7 +42,7 @@ namespace ForgottenMemories.Items.Ranged
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Shotgun, 1);
 			recipe.AddIngredient(ItemID.HellstoneBar, 15);
-			recipe.AddIngredient(ItemID.LivingFireBlock, 10);
+			recipe.AddIngredient(null,"DevilFlame", 15);
 			recipe.AddIngredient(521, 12); //Soul of Night
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

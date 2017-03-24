@@ -46,6 +46,7 @@ namespace ForgottenMemories.Items.Magic
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.HellstoneBar, 15);
+			recipe.AddIngredient(null,"DevilFlame", 15);
 			recipe.AddIngredient(ItemID.SoulofNight, 10);
 			recipe.AddIngredient(ItemID.SoulofFright, 10);
 			recipe.AddTile(TileID.MythrilAnvil);

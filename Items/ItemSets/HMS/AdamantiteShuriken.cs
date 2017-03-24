@@ -44,7 +44,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
-			item.damage = 38;
+			item.damage = 40;
 			item.shoot = mod.ProjectileType("AdamantiteShurikenP");
 			item.name = "Adamantite Shuriken";
 			item.rare = 4;

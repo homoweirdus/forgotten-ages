@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             projectile.name = "Titanium Shuriken";
             projectile.width = 22;
             projectile.height = 22;
-            projectile.penetrate = 6;
+            projectile.penetrate = 4;
             projectile.aiStyle = -1;
 			projectile.thrown = true;
 			projectile.friendly = true;
@@ -59,7 +59,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
         public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.Shuriken);
-            item.damage = 30;
+            item.damage = 34;
             item.shoot = mod.ProjectileType("TitaniumShurikenP");
             item.name = "Titanium Shuriken";
             item.rare = 4;

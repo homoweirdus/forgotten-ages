@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using System.Collections.Generic;
 using ForgottenMemories.Projectiles.Info;
 
 namespace ForgottenMemories.Items.Ranged
@@ -21,7 +22,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.useStyle = 5;
 			item.knockBack = 5;
 			item.value = 500000;
-			item.rare = 7;
+			item.rare = 11;
 			item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
 			item.shoot = mod.ProjectileType("LeechingArrow");
@@ -133,5 +134,16 @@ namespace ForgottenMemories.Items.Ranged
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
+		
+		public override void ModifyTooltips(List<TooltipLine> list)
+        {
+            foreach (TooltipLine line2 in list)
+            {
+                if (line2.mod == "Terraria" && line2.Name == "ItemName")
+                {
+                    line2.overrideColor = new Color(246, 0, 255);
+                }
+            }
+        }
 	}
 }

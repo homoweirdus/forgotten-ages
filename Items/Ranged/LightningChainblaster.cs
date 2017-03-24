@@ -79,5 +79,16 @@ namespace ForgottenMemories.Items.Ranged
 			
 			return false;
 		}
+		
+		public override void ModifyTooltips(List<TooltipLine> list)
+        {
+            foreach (TooltipLine line2 in list)
+            {
+                if (line2.mod == "Terraria" && line2.Name == "ItemName")
+                {
+                    line2.overrideColor = new Color(246, 0, 255);
+                }
+            }
+        }
 	}
 }
