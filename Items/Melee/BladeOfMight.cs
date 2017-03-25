@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Soul Slasher";
+			item.name = "Blade of Might";
 			item.damage = 50;
 			item.melee = true;
 			item.width = 62;
@@ -32,7 +32,8 @@ namespace ForgottenMemories.Items.Melee
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.EnchantedSword, 1);
-			recipe.AddIngredient(ItemID.SoulofMight, 5);
+			recipe.AddIngredient(ItemID.SoulofMight, 20);
+			recipe.AddIngredient(ItemID.HallowedBar, 15);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
