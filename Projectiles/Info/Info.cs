@@ -14,6 +14,7 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool TrueHR = false;
 		public bool Shroom = false;
 		public bool Terra = false;
+		public bool Titanium = false;
     }
 	
 	public class Stuff : GlobalProjectile
@@ -37,7 +38,7 @@ namespace ForgottenMemories.Projectiles.Info
 		{
 			if (projectile.GetModInfo<Info>(mod).TrueHR == true)
 			{
-				int amountOfProjectiles = Main.rand.Next(1, 4);
+				int amountOfProjectiles = Main.rand.Next(1, 3);
 			
 				for (int i = 0; i < amountOfProjectiles; ++i)
 					{
@@ -47,12 +48,23 @@ namespace ForgottenMemories.Projectiles.Info
 					}
 			}
 			
+			if (projectile.GetModInfo<Info>(mod).Titanium == true)
+			{
+				int amountOfProjectiles = Main.rand.Next(1, 4);
+			
+				for (int i = 0; i < amountOfProjectiles; ++i)
+					{
+						float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
+						float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
+						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 126, 15, 5f, projectile.owner);
+					}
+			}
+			
 			if (projectile.GetModInfo<Info>(mod).Terra == true)
 			{
 				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("TerraBoom"), 30, 5f, projectile.owner);
 			}
 		}
-		
 		public override void AI(Projectile projectile)
 		{
 			if (projectile.GetModInfo<Info>(mod).TrueHR == true)
