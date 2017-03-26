@@ -81,7 +81,7 @@ namespace ForgottenMemories.Items
 			
 			if (npc.type == 4 && NPC.downedBoss1 == false)
 			{
-				Main.NewText("Screams echo from the forest...", 53, 140, 51);
+				Main.NewText("An eerie presence is felt coming from the forests...", 53, 140, 51);
 			}
 			
 			if (Main.invasionType == 4 && Main.rand.Next(20) == 0)

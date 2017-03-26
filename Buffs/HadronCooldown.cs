@@ -14,8 +14,13 @@ namespace ForgottenMemories.Buffs
 		{
 			Main.buffNoTimeDisplay[Type] = false;
 			Main.buffName[Type] = "Hadron Cooldown";
-			Main.buffTip[Type] = "You can't use the hadron";
+			Main.buffTip[Type] = "Your missile barrage is reloading";
 			Main.debuff[Type] = true;
+		}
+		
+		public override void Update(Player player, ref int buffIndex)
+		{
+			((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).hadron = true;
 		}
 	}
 }

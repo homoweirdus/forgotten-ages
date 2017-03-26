@@ -1,3 +1,10 @@
-We haven't come up with a description yet
-credits
-kachow:everything
+This mod adds in a total of:
+216 Items
+12 Enemies
+1 Town NPC
+2 Bosses
+credits:
+Hamboy- Owner, Ideas
+Zoroarkcity, Kachow, ColinAV516, Homo Weirdus, Fargowilta, Eldrazi, GameBro - Coding/Help with coding
+Zoroarkcity, Peas, ColinAV516, WoodenPhones, Earth, Hitoshima, Some Schmo, Crimsoneye495, Frous, Eli10293, ArmyFrog, VoxelFox, Oliver1992killer10, quickseed40, Graydee, DivermanSam - Spriting/Help with spriting
+Zoroarkcity, ColinAV516, Crimsoneye495 - Merging their mods with this one

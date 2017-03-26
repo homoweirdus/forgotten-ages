@@ -14,19 +14,19 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.name = "Hadron";
-			item.damage = 500;
+			item.damage = 120;
 			item.ranged = true;
 			item.width = 200;
 			item.height = 58;
-			AddTooltip("Unleashes a devastatingly powerful barrage of bullets and missiles");
-			AddTooltip("Cannot be used for 30 seconds after firing");
-			item.useTime = 5;
-			item.useAnimation = 55;
+			AddTooltip("Unleashes a devastatingly powerful barrage of missiles");
+			AddTooltip("The missile barrage takes 10 seconds to reload");
+			item.useTime = 7;
+			item.useAnimation = 28;
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 1400000;
 			item.rare = 10;
-			item.UseSound = SoundID.Item14;
+			item.UseSound = SoundID.Item41;
 			item.autoReuse = true;
 			item.shoot = ProjectileID.Bullet;
 			item.shootSpeed = 15f;
@@ -63,30 +63,21 @@ namespace ForgottenMemories.Items.Ranged
 			
 		}
 		
-		public override bool CanUseItem(Player player)
-        {
-            for (int i = 0; i < 1000; ++i)
-            {
-                if (player.FindBuffIndex(mod.BuffType("HadronCooldown")) >= 0)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Main.PlaySound(2, (int)position.X, (int)position.Y, 11);
-			cooldown ++;
-			if (Main.rand.Next(3) == 0)
+			Main.PlaySound(2, (int)position.X, (int)position.Y, 41);
+			if (((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).hadron == false)
 			{
-				float sX = speedX;
-				float sY = speedY;
-				sX += (float)Main.rand.Next(-60, 61) * 0.03f;
-				sY += (float)Main.rand.Next(-60, 61) * 0.03f;
+				for (int i = 0; i < 4; i++)
+				{	
+					float sX = speedX;
+					float sY = speedY;
+					sX += (float)Main.rand.Next(-60, 61) * 0.03f;
+					sY += (float)Main.rand.Next(-60, 61) * 0.03f;
+					Projectile.NewProjectile(position.X, (position.Y - 20), sX, sY, 616, 160, knockBack, player.whoAmI);
+				}
 				Main.PlaySound(2, (int)position.X, (int)position.Y, 14);
-				Projectile.NewProjectile(position.X, (position.Y - 20), sX, sY, 616, damage, knockBack, player.whoAmI);
+				cooldown ++;
 			}
 			
 			float spX = speedX;
@@ -94,10 +85,10 @@ namespace ForgottenMemories.Items.Ranged
 			spX += (float)Main.rand.Next(-60, 61) * 0.03f;
 			spY += (float)Main.rand.Next(-60, 61) * 0.03f;
 			Projectile.NewProjectile(position.X, (position.Y - 20), spX, spY, type, damage, knockBack, player.whoAmI);
-			if (cooldown >= 10)
+			if (cooldown >= 4)
 			{
 				cooldown = 0;
-				player.AddBuff(mod.BuffType("HadronCooldown"), 1800, false);
+				player.AddBuff(mod.BuffType("HadronCooldown"), 600, false);
 			}
 			return false;
 		}
