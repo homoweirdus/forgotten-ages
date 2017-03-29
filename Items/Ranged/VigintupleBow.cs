@@ -60,5 +60,26 @@ namespace ForgottenMemories.Items.Ranged
 		{
 			return new Vector2(-5, 0);
 		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.BeetleHusk, 12);
+			recipe.AddIngredient(ItemID.WoodenBow, 1);
+			recipe.AddIngredient(ItemID.DemoniteBar, 5);
+			recipe.AddIngredient(ItemID.HellstoneBar, 5);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.BeetleHusk, 12);
+			recipe.AddIngredient(ItemID.WoodenBow, 1);
+			recipe.AddIngredient(ItemID.CrimtaneBar, 5);
+			recipe.AddIngredient(ItemID.HellstoneBar, 5);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }

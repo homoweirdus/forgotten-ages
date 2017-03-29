@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 			item.name = "Solar Blade";
-			item.damage = 128;
+			item.damage = 148;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("SolarBall");
-			item.shootSpeed = 16;
+			item.shootSpeed = 9;
 		}
 
 		public override void AddRecipes()
@@ -50,8 +50,8 @@ namespace ForgottenMemories.Items.Melee
 		{
 			float sX = speedX;
 			float sY = speedY;
-			sX += (float)Main.rand.Next(-60, 61) * 0.1f;
-			sY += (float)Main.rand.Next(-60, 61) * 0.1f;
+			sX += (float)Main.rand.Next(-60, 61) * 0.05f;
+			sY += (float)Main.rand.Next(-60, 61) * 0.05f;
 			Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
 			return false;
 		}

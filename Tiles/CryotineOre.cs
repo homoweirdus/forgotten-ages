@@ -23,7 +23,7 @@ namespace ForgottenMemories.Tiles
 			Main.tileLighted[Type] = true;
 			dustType = 67;
 			drop = mod.ItemType("CryotineOreItem");
-			AddMapEntry(new Color(75, 206, 242), "CryotineOre");
+			AddMapEntry(new Color(75, 206, 242), "Cryotine Ore");
 			soundType = 21;
 			minPick = 65;
 		}

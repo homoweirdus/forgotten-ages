@@ -10,11 +10,11 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 			item.name = "X-Flow Nullifier";
-			item.damage = 158;
+			item.damage = 138;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Releases piercing stars from the sky";
+			item.toolTip = "Creates a storm of stars at your location";
 			item.useTime = 4;
 			item.useAnimation = 16;
 			item.useStyle = 1;
@@ -48,15 +48,15 @@ namespace ForgottenMemories.Items.Melee
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			for (int i = 0; i < 4; ++i)
+			for (int i = 0; i < 5; ++i)
 			{
 				Vector2 mouse = Main.MouseWorld;
 				mouse.X += Main.rand.Next(-20, 21);
-				float sX = speedX;
+				float sX = 0;
 				float sY = 25;
-				sX += (float)Main.rand.Next(-30, 15) * 0.2f;
+				sX += (float)Main.rand.Next(-30, 30) * 0.2f;
 				sY += (float)Main.rand.Next(-10, 30) * 0.2f;
-				int proj = Projectile.NewProjectile(mouse.X, (position.Y-1000), sX, sY, type, damage, knockBack, player.whoAmI);
+				int proj = Projectile.NewProjectile(position.X, (position.Y-1000), sX, sY, type, damage, knockBack, player.whoAmI);
 			}
 			return false;
 		}
