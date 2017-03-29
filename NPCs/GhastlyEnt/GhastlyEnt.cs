@@ -214,21 +214,22 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		}
 				public override void NPCLoot()
 			{
-		if (Main.expertMode)
-		{
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("MegaTreeBag")));
-		}
-		else
-		{
-			int amountToDrop = Main.rand.Next(10,30);
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ForestEnergy"), amountToDrop);
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Wood, (amountToDrop * 3));
-			
-		if (Main.rand.Next(7) == 0)
-            {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MegaTreeMask"), 1);
-            }
-		}
-	}
+				TGEMWorld.downedGhastlyEnt = true;
+				if (Main.expertMode)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("MegaTreeBag")));
+				}
+				else
+				{
+					int amountToDrop = Main.rand.Next(10,30);
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ForestEnergy"), amountToDrop);
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Wood, (amountToDrop * 3));
+					
+				if (Main.rand.Next(7) == 0)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MegaTreeMask"), 1);
+					}
+				}
+			}
         }
     }

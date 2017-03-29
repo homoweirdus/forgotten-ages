@@ -249,6 +249,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserbeamStaff"), 1);
 				}
 			}
+			TGEMWorld.downedTitanRock = true;
 		}
 	}
 }

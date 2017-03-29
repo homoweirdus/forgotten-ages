@@ -1,6 +1,15 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.DataStructures;
+using Terraria.GameContent;
+using Terraria.GameContent.Achievements;
+using Terraria.GameContent.Events;
+using Terraria.GameContent.Tile_Entities;
+using Terraria.GameContent.UI;
+using Terraria.ID;
 
 namespace ForgottenMemories.Tiles
 {
@@ -10,7 +19,6 @@ namespace ForgottenMemories.Tiles
 		{
 			Main.tileSpelunker[Type] = true;
 			Main.tileSolid[Type] = true;
-			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
 			dustType = 67;

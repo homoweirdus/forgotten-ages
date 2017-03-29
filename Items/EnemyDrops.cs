@@ -68,20 +68,32 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OpticBar"), amountToDrop); 
 			}
 			
-			if (npc.type == NPCID.KingSlime)
+			if (npc.type == NPCID.KingSlime && TGEMWorld.Gelatine == false)
 			{
 				Main.NewText("Gelatine grows in the underground!", 0, 29, 255);
-				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 6E-05); k++)
+				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 8E-05); k++)
 				{
-					WorldGen.OreRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .5f)), (double)WorldGen.genRand.Next(5, 6), WorldGen.genRand.Next(5, 6), (ushort)mod.TileType("GelatineOre"));
+					WorldGen.OreRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .5f)), (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("GelatineOre"));
 					
 					
 				}
+				TGEMWorld.Gelatine = true;
 			}
 			
-			if (npc.type == 4 && NPC.downedBoss1 == false)
+			if (npc.type == 4 && TGEMWorld.Cryotine == false)
 			{
 				Main.NewText("An eerie presence is felt coming from the forests...", 53, 140, 51);
+				Main.NewText("Ice crystallizes in the underground snow!", 36, 242, 242);
+				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 16E-05); k++)
+				{
+					int ayy = WorldGen.genRand.Next(200, Main.maxTilesX - 200);
+					int lmao = WorldGen.genRand.Next(200, Main.maxTilesY - 200);
+					if (Main.tile[ayy,lmao].type == 147 || Main.tile[ayy,lmao].type == 161)
+					{
+						WorldGen.OreRunner(ayy, lmao, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("CryotineOre"));
+					}
+				}
+				TGEMWorld.Cryotine = true;
 			}
 			
 			if (Main.invasionType == 4 && Main.rand.Next(20) == 0)

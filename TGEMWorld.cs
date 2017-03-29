@@ -7,11 +7,61 @@ using Terraria.World.Generation;
 using Microsoft.Xna.Framework;
 using Terraria.GameContent.Generation;
 using System;
+using System.Linq;
+using Terraria.ModLoader.IO;
 
 namespace ForgottenMemories
 {
     public class TGEMWorld : ModWorld
     {
+		public static bool Cryotine = false;
+		public static bool Gelatine = false;
+		public static bool downedGhastlyEnt = false;
+		public static bool downedTitanRock = false;
+		
+		public override void Initialize()
+        {
+			Gelatine = false;
+			Cryotine = false;
+			downedGhastlyEnt = false;
+			downedTitanRock = false;
+		}
+		
+		public override TagCompound Save()
+		{
+			var downed = new List<string>();
+			var ore = new List<string>();
+			if (Gelatine) ore.Add("Gelatine");
+			if (Cryotine) ore.Add("Cryotine");
+			if (downedGhastlyEnt) downed.Add("GhastlyEnt");
+			if (downedTitanRock) downed.Add("TitanRock");
+			
+			return new TagCompound {
+				{"downed", downed},
+				{"ore", ore}
+			};;
+		}
+		
+		public override void Load(TagCompound tag)
+		{
+			var downed = tag.GetList<string>("downed");
+			var ore = tag.GetList<string>("ore");
+			downedGhastlyEnt = downed.Contains("GhastlyEnt");
+			downedTitanRock = downed.Contains("TitanRock");
+			Gelatine = ore.Contains("Gelatine");
+			Cryotine = ore.Contains("Cryotine");
+		}
+		
+		public override void NetSend(BinaryWriter writer)
+		{
+			BitsByte flags = new BitsByte();
+			flags[0] = Gelatine;
+			flags[1] = Cryotine;
+			flags[2] = downedGhastlyEnt;
+			flags[3] = downedTitanRock;
+			writer.Write(flags);
+		}
+		
         public override void PostWorldGen()
         {
             // Place some items in Marble Chests
