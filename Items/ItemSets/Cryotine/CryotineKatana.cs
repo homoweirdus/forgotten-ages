@@ -12,6 +12,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.name = "Cryotine Katana";
 			item.damage = 19;
 			item.melee = true;
+			item.crit = 25;
 			item.width = 88;
 			item.height = 88;
 			item.useTime = 10;
