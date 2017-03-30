@@ -33,8 +33,7 @@ namespace ForgottenMemories.Items.Melee
 			recipe.AddIngredient(ItemID.Frostbrand, 1);
 			recipe.AddIngredient(ItemID.IceBlade, 1);
 			recipe.AddIngredient(ItemID.FrostCore, 3);
-			recipe.AddIngredient(ItemID.SnowBlock, 100);
-			recipe.AddIngredient(ItemID.IceBlock, 250);
+			recipe.AddIngredient(null,"CryotineBar", 18);
 			recipe.AddTile(TileID.IceMachine);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
