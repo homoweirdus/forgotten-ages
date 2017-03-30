@@ -27,6 +27,75 @@ namespace ForgottenMemories.Items.AaMaterials
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
+						
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.Bottle, 1);
+			recipe.AddIngredient(null,"CryotineBar", 10);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(987, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.Leather, 7);
+			recipe.AddIngredient(null,"CryotineBar", 10);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(950, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.Leather, 7);
+			recipe.AddIngredient(null,"CryotineBar", 10);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(1579, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.IceBlade, 1);
+			recipe.AddIngredient(null,"CryotineBar", 12);
+			recipe.AddIngredient(ItemID.AdamantiteBar, 10);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.Frostbrand, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.FlowerofFire, 1);
+			recipe.AddIngredient(ItemID.AdamantiteBar, 10);
+			recipe.AddIngredient(null,"CryotineBar", 12);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.FlowerofFrost, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WoodenBow, 1);
+			recipe.AddIngredient(ItemID.AdamantiteBar, 10);
+			recipe.AddIngredient(null,"CryotineBar", 12);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.IceBow, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.IceBlade, 1);
+			recipe.AddIngredient(null,"CryotineBar", 12);
+			recipe.AddIngredient(ItemID.TitaniumBar, 10);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.Frostbrand, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.FlowerofFire, 1);
+			recipe.AddIngredient(ItemID.TitaniumBar, 10);
+			recipe.AddIngredient(null,"CryotineBar", 12);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.FlowerofFrost, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WoodenBow, 1);
+			recipe.AddIngredient(ItemID.TitaniumBar, 10);
+			recipe.AddIngredient(null,"CryotineBar", 12);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.IceBow, 1);
+            recipe.AddRecipe();
         }
     }
 }

@@ -45,6 +45,14 @@ namespace ForgottenMemories
             recipe.AddRecipe();
 			
 			recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.FlurryBoots, 1);
+			recipe.AddIngredient(ItemID.WaterWalkingPotion, 10);
+			recipe.AddIngredient(null,"WaterShard", 10);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(863, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.Leather, 14);
 			recipe.AddIngredient(ItemID.Cobweb, 10);
 			recipe.AddIngredient(ItemID.Bone, 5);

@@ -37,6 +37,15 @@ namespace ForgottenMemories.Items.Melee
 			recipe.AddTile(TileID.IceMachine);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Frostbrand, 1);
+			recipe.AddIngredient(null, "CryotineKatana", 1);
+			recipe.AddIngredient(ItemID.FrostCore, 3);
+			recipe.AddIngredient(null,"CryotineBar", 18);
+			recipe.AddTile(TileID.IceMachine);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
