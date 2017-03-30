@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.toolTip = "Creates a storm of ice energy that follow your cursor";
 			item.useStyle = 5;
 			item.knockBack = 3;
-			item.value = 50000;
+			item.value = 168000;
 			item.rare = 2;
 			item.shoot = mod.ProjectileType("IceBolt");
 			item.noMelee = true;

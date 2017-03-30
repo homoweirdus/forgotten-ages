@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.toolTip = "Has a chance to fire a spread of frostburn arrows";
 			item.useStyle = 5;
 			item.knockBack = 3;
-			item.value = 50000;
+			item.value = 168000;
 			item.noMelee = true;
 			item.rare = 2;
 			item.shoot = 3;

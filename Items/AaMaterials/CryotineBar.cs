@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.height = 8;
 			item.maxStack = 999;
 			item.value = 14000;
-			item.rare = 1;
+			item.rare = 2;
 
         }
 
