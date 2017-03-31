@@ -2,6 +2,7 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
+using Microsoft.Xna.Framework;
 
 namespace ForgottenMemories.Items.Tool 
 {
@@ -18,7 +19,7 @@ namespace ForgottenMemories.Items.Tool
 			item.useAnimation = 11;
 			item.useStyle = 1;
 			item.knockBack = 1.25f;
-			item.value = 15000;
+			item.value = 14000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;

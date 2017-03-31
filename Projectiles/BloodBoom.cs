@@ -10,16 +10,30 @@ namespace ForgottenMemories.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.name = "Blood Execution";
-			projectile.width = 50;
-			projectile.height = 50;
+			projectile.width = 100;
+			projectile.height = 100;
 			projectile.aiStyle = -1;
 			projectile.penetrate = 1;
 			projectile.melee = true;
 			projectile.friendly = true;
 			projectile.alpha = 255;
-			projectile.timeLeft = 1;
+			projectile.timeLeft = 10;
 			projectile.tileCollide = false;
 			projectile.light = 0.5f;
+		}
+		
+		public override bool PreAI()
+		{
+			int amountOfDust = 5;
+			for (int i = 0; i < amountOfDust; ++i)
+			{
+				projectile.tileCollide = false;
+				int dust;
+				dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 90, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].noGravity = true;
+			}
+			return false;
 		}
 		
 		public override void Kill(int timeLeft)
