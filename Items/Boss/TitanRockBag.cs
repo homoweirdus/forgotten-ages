@@ -34,6 +34,10 @@ namespace ForgottenMemories.Items.Boss
 			}
 			if (Main.rand.Next(2) == 0)
 			{
+				player.QuickSpawnItem(mod.ItemType("BeamSlicer"), 1);
+			}
+			if (Main.rand.Next(2) == 0)
+			{
 				player.QuickSpawnItem(mod.ItemType("LaserbladeKatana"), 1);
 			}
 			if (Main.rand.Next(2) == 0)
