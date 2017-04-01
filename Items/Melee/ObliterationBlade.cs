@@ -11,13 +11,13 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 			item.name = "Obliteration blade";
-			item.damage = 180;
+			item.damage = 480;
 			item.melee = true;
 			item.width = 62;
 			item.height = 62;
-			item.toolTip = "Shreds your enemies in seconds \nKilling enemies restores health and creates an explosion of blood";
-			item.useTime = 3;
-			item.useAnimation = 3;
+			item.toolTip = "Shreds your enemies in seconds \nKilling enemies with more than 100 max life restores health and creates an explosion of blood";
+			item.useTime = 8;
+			item.useAnimation = 8;
 			item.useStyle = 1;
 			item.knockBack = 3;
 			item.value = 10000000;
@@ -54,10 +54,10 @@ namespace ForgottenMemories.Items.Melee
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {
-			if (target.life <= 0)
+			if (target.life <= 0 && target.lifeMax >= 100)
             {
-				player.HealEffect((int)target.maxLife * 0.1));
-				player.statLife += ((int)(target.maxLife * 0.1));
+				player.HealEffect((int)(damage * 0.1));
+				player.statLife += ((int)(damage * 0.1));
 				Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("BloodBoom"), damage, 0f, player.whoAmI, 0f, 0f);
 			}
 		}
