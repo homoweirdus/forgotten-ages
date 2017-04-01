@@ -71,7 +71,7 @@ namespace ForgottenMemories.Projectiles
 			}
 			if (target)
 			{
-				projectile.velocity = (move * 5f);
+				projectile.velocity = (move * 12f);
 			}
 		}
 	}
