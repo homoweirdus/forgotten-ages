@@ -45,7 +45,7 @@ namespace ForgottenMemories.Projectiles
 				{
 					float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
 					float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
-					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 228, projectile.damage / 3, 5f, projectile.owner);
+					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 228, projectile.damage / 2, 5f, projectile.owner);
 					Main.projectile[z].melee = false;
 					Main.projectile[z].thrown = true;
 					Main.projectile[z].timeLeft = 15;

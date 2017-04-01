@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 
 		public override void SetDefaults()
 		{
-			item.damage = 52;
+			item.damage = 60;
 			item.thrown = true;
 			item.shoot = mod.ProjectileType("ChlorophyteKunai");
 			item.name = "Chlorophyte Kunai";
 			AddTooltip("Explodes into spore clouds on hit");
 			item.consumable = true;
-			item.shootSpeed = 14f;
+			item.shootSpeed = 15f;
 			item.useTime = 14;
 			item.useAnimation = 14;
 			item.consumable = true;

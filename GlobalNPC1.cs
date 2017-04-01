@@ -17,5 +17,14 @@ namespace ForgottenMemories
 				maxSpawns = (int)(maxSpawns * 50f);
 			}
 		}
+		
+		public override void SetupShop(int type, Chest shop, ref int nextSlot)
+		{
+			if (type == 19 && NPC.downedBoss2)
+			{
+				shop.item[nextSlot].SetDefaults(mod.ItemType("psychic_pistol"));
+				nextSlot++;
+			}
+		}
 	}
 }
