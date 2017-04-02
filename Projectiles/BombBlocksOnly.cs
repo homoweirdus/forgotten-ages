@@ -33,8 +33,8 @@ namespace ForgottenMemories.Projectiles
             {
                 for (int y = -radius; y <= radius; y++)
                 {
-                    int xPosition = (int)(x + position.X / 10.0f);
-                    int yPosition = (int)(y + position.Y / 10.0f);
+                    int xPosition = (int)(x + position.X / 16.0f);
+                    int yPosition = (int)(y + position.Y / 16.0f);
 
                     if (Math.Sqrt(x * x + y * y) <= radius + 0.5)   //this make so the explosion radius is a circle
                     {
