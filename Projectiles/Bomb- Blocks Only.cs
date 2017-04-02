@@ -11,7 +11,12 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.CloneDefaults(166);
+            projectile.width = 10;   //This defines the hitbox width
+            projectile.height = 32;    //This defines the hitbox height
+            projectile.aiStyle = 16;  //How the projectile works, 16 is the aistyle Used for: Grenades, Dynamite, Bombs, Sticky Bomb.
+            projectile.friendly = true; //Tells the game whether it is friendly to players/friendly npcs or not
+            projectile.penetrate = -1; //Tells the game how many enemies it can hit before being destroyed
+            projectile.timeLeft = 170; //The amount of time the projectile is alive for
             projectile.name = "Bomb";
 
         }
