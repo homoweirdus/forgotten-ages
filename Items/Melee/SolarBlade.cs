@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("SolarBall");
-			item.shootSpeed = 9;
+			item.shootSpeed = 14;
 		}
 
 		public override void AddRecipes()
@@ -50,8 +50,8 @@ namespace ForgottenMemories.Items.Melee
 		{
 			float sX = speedX;
 			float sY = speedY;
-			sX += (float)Main.rand.Next(-60, 61) * 0.05f;
-			sY += (float)Main.rand.Next(-60, 61) * 0.05f;
+			sX += (float)Main.rand.Next(-60, 61) * 0.07f;
+			sY += (float)Main.rand.Next(-60, 61) * 0.07f;
 			Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
 			return false;
 		}

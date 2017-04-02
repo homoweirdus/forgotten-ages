@@ -48,16 +48,22 @@ namespace ForgottenMemories.Items.Melee
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			for (int i = 0; i < 5; ++i)
+			for (int i = 0; i < 6; ++i)
 			{
-				Vector2 mouse = Main.MouseWorld;
-				mouse.X += Main.rand.Next(-20, 21);
 				float sX = 0;
-				float sY = 25;
-				sX += (float)Main.rand.Next(-30, 30) * 0.2f;
+				float sY = 40;
+				sX += (float)Main.rand.Next(-160, 160) * 0.2f;
 				sY += (float)Main.rand.Next(-10, 30) * 0.2f;
-				int proj = Projectile.NewProjectile(position.X, (position.Y-1000), sX, sY, type, damage, knockBack, player.whoAmI);
+				int proj = Projectile.NewProjectile(position.X, (position.Y-1000), sX, sY, type, damage / 3, knockBack, player.whoAmI);
 			}
+			Vector2 mouse = Main.MouseWorld;
+			mouse.X += Main.rand.Next(-20, 21);
+			float sX2 = 0;
+			float sY2 = 40;
+			sX2 += (float)Main.rand.Next(-10, 10) * 0.2f;
+			sY2 += (float)Main.rand.Next(-10, 30) * 0.2f;
+			Projectile.NewProjectile(position.X, (position.Y-1000), sX2, sY2, mod.ProjectileType("XFlowStarBlue"), damage / 2, knockBack, player.whoAmI);
+			Projectile.NewProjectile(mouse.X, (position.Y-1000), sX2, sY2, mod.ProjectileType("XFlowStarYellow"), damage / 4, knockBack, player.whoAmI);
 			return false;
 		}
 	}
