@@ -27,7 +27,7 @@ namespace ForgottenMemories.Projectiles
 
             Vector2 position = projectile.Center;
             Main.PlaySound(SoundID.Item14, (int)position.X, (int)position.Y);
-            int radius = 20;     //this is the explosion radius, the highter is the value the bigger is the explosion
+            int radius = 5;     //this is the explosion radius, the highter is the value the bigger is the explosion
 
             for (int x = -radius; x <= radius; x++)
             {
