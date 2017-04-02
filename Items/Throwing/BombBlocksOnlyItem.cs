@@ -31,7 +31,7 @@ namespace ForgottenMemories.Items.Throwing                 //We need this to bas
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Wood, 15); //this is how to add an ingredient from Terraria,  so for crafting this item you need 15 bombs          
             recipe.AddIngredient(ItemID.Bomb, 10); //this is an example of how to add a modded item as an ingredient
-            recipe.AddTile(TileID.18);   //this is where to craft the item ,WorkBenches = all WorkBenches    Anvils = all anvils , MythrilAnvil = Mythril Anvil and Orichalcum Anvil, Furnaces = all furnaces , DemonAltar = Demon Altar and Crimson Altar , TinkerersWorkbench = Tinkerer's Workbench
+            recipe.AddTile(TileID.WorkBenches);   //this is where to craft the item ,WorkBenches = all WorkBenches    Anvils = all anvils , MythrilAnvil = Mythril Anvil and Orichalcum Anvil, Furnaces = all furnaces , DemonAltar = Demon Altar and Crimson Altar , TinkerersWorkbench = Tinkerer's Workbench
             recipe.SetResult(this, 15);   //this defines the resultat of hte crafting, so 15 dynamite + 1 customtileitem = 15 Custom Explosive
             recipe.AddRecipe();
         }
