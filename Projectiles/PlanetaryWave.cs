@@ -17,7 +17,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.melee = true;
 			projectile.penetrate = 3;
-			projectile.timeLeft = 35;
+			projectile.timeLeft = 28;
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
