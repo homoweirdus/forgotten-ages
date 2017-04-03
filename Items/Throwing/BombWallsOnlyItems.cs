@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.Throwing                 //We need this to basically indicate the folder where it is to be read from, so you the texture will load correctly
 {
-    public class BombWallsOnlyItem : ModItem
+    public class BombWallsOnlyItems : ModItem
     {
         public override void SetDefaults()
         {

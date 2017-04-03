@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 			item.name = "Planetary Blade";
-			item.damage = 120;
+			item.damage = 140;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
@@ -47,15 +47,17 @@ namespace ForgottenMemories.Items.Melee
 			float sY = speedY;
 			sX += (float)Main.rand.Next(-60, 61) * 0.05f;
 			sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-			Projectile.NewProjectile(position.X, position.Y, sX, sY, 483, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, sX, sY, 483, damage / 3, knockBack, player.whoAmI);
 			
 			float sX2 = speedX;
 			float sY2 = speedY;
 			sX2 += (float)Main.rand.Next(-60, 61) * 0.05f;
 			sY2 += (float)Main.rand.Next(-60, 61) * 0.05f;
-			Projectile.NewProjectile(position.X, position.Y, sX2, sY2, 483, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, sX2, sY2, 483, damage / 3, knockBack, player.whoAmI);
 			
-			return true;
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage * 3, knockBack, player.whoAmI);
+			
+			return false;
 		}
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)

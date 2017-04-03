@@ -51,18 +51,9 @@ namespace ForgottenMemories.Items.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.NorthPole, 1);
-			recipe.AddIngredient(ItemID.CrystalShard, 8);
+			recipe.AddIngredient(550, 8);
 			recipe.AddIngredient(null,"MikePenceSpear", 1);
-			recipe.AddIngredient(ItemID.BeetleHusk, 5);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.NorthPole, 1);
 			recipe.AddIngredient(ItemID.CrystalShard, 8);
-			recipe.AddIngredient(null,"MikePenceSpear", 1);
 			recipe.AddIngredient(ItemID.BeetleHusk, 5);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

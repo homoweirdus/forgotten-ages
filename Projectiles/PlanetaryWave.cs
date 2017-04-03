@@ -10,14 +10,14 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "PlanetaryWave";
+			projectile.name = "Planetary Wave";
 			projectile.width = 150;
 			projectile.height = 30;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.melee = true;
 			projectile.penetrate = 3;
-			projectile.timeLeft = 600;
+			projectile.timeLeft = 35;
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
