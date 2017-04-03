@@ -25,7 +25,7 @@ namespace ForgottenMemories.Projectiles
             projectile.penetrate = 3;
 			projectile.alpha = 50;
 			projectile.scale = 1.3f;
-			projectile.timeLeft = 120;
+			projectile.timeLeft = 60;
         }
 		
 		   public override void AI()
@@ -44,7 +44,6 @@ namespace ForgottenMemories.Projectiles
 				newMove.Normalize();
 				move = newMove;
 				projectile.velocity = (move * 18f);
-				projectile.timeLeft = 120;
 				counter++;
 			}
 			if (Main.mouseRightRelease)

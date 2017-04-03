@@ -68,6 +68,11 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OpticBar"), amountToDrop); 
 			}
 			
+			if (npc.type == 439)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VortexSphere"), 1); 
+			}
+			
 			if (npc.type == NPCID.KingSlime && TGEMWorld.Gelatine == false)
 			{
 				Main.NewText("Gelatine grows in the underground!", 0, 29, 255);
