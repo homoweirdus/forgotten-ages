@@ -19,7 +19,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.melee = true;
 			projectile.penetrate = 1;
-			projectile.timeLeft = 200;
+			projectile.timeLeft = 60;
 			projectile.alpha = 255;
 			projectile.tileCollide = false;
 		}
@@ -34,7 +34,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.rotation += 10;
 			Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
 			Vector2 move = Vector2.Zero;
-			float distance = 400f;
+			float distance = 100f;
 			bool target = false;
 			for (int k = 0; k < 200; k++)
 			{
@@ -57,7 +57,7 @@ namespace ForgottenMemories.Projectiles
 			}
 		}
 		
-		public override void Kill(int timeLeft)
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			int amountOfProjectiles = Main.rand.Next(2, 3);
 			

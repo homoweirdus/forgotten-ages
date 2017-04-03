@@ -27,6 +27,7 @@ namespace ForgottenMemories.Items.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shootSpeed = 5f;
+			item.useTurn = true;
 		}
 
 		public override void AddRecipes()
@@ -86,13 +87,13 @@ namespace ForgottenMemories.Items.Melee
 				target.AddBuff(203, 1800, false);
 				Projectile.NewProjectile(target.Center.X, target.Center.Y, sX, sY, mod.ProjectileType("PiercingSpark"), damage, knockback, player.whoAmI, 0f, 0f);
 				Projectile.NewProjectile(target.Center.X, target.Center.Y, sX, sY, mod.ProjectileType("ExplosiveSpark"), damage, knockback, player.whoAmI, 0f, 0f);
-				player.HealEffect((int)(damage * 0.03));
-				player.statLife += ((int)(damage * 0.03));
+				player.HealEffect((int)(damage * 0.01));
+				player.statLife += ((int)(damage * 0.01));
             }
 			if (target.life <= 0)
             {
-				player.HealEffect((int)(damage * 0.1));
-				player.statLife += ((int)(damage * 0.1));
+				player.HealEffect((int)(damage * 0.05));
+				player.statLife += ((int)(damage * 0.05));
             }
         }
 	}
