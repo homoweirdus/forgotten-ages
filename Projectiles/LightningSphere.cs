@@ -21,6 +21,7 @@ namespace ForgottenMemories.Projectiles
             projectile.friendly = true;
             projectile.magic = true;
 			projectile.timeLeft = 300;
+			projectile.scale = 0.5f;
 			Main.projFrames[projectile.type] = 4;
             projectile.penetrate = -1;
 			projectile.tileCollide = true;

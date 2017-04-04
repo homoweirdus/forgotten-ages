@@ -28,7 +28,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			int dust;
 			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 226, 0f, 0f);
-			Main.dust[dust].scale = 1.5f;
+			Main.dust[dust].scale = 1.0f;
 			Main.dust[dust].noGravity = true;
 			if (Main.rand.Next(30) == 0)
 			{
