@@ -22,12 +22,27 @@ public class ForestBlast : ModItem
         item.rare = 2;
         item.UseSound = SoundID.Item20;
         item.autoReuse = true;
-		item.shoot = mod.ProjectileType("ForestBlast1");
+		item.shoot = mod.ProjectileType("LeafnadoFriendly");
 		item.shootSpeed = 10f;
 		item.mana = 10;
-		item.toolTip = "Fires a powered forest energy that explodes into leaves";
+		item.toolTip = "Fires a spread of leafnados";
 		item.noMelee = true;
     }
+	
+	public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			int amountOfProjectiles = Main.rand.Next(2, 5);
+			for (int i = 0; i < amountOfProjectiles; i++)
+			{
+				float spX = speedX;
+				float spY = speedY;
+				spX += (float)Main.rand.Next(-40, 41) * 0.05f;
+				spY += (float)Main.rand.Next(-40, 41) * 0.05f;
+				Projectile.NewProjectile(position.X, position.Y, spX, spY, type, damage, knockBack, player.whoAmI);
+			}
+			
+			return false;
+		}
 	
 			public override void AddRecipes()
 		{
