@@ -18,6 +18,7 @@ namespace ForgottenMemories
 		public bool doubleJumpMeteor = false;
 		public bool meteor = false;
 		public bool hadron = false;
+		public bool xflow = false;
 		public bool dJumpEffectMeteor = false;
 		public bool sapBall = false;
 		public bool canJumpFirestorm = true;
@@ -34,6 +35,7 @@ namespace ForgottenMemories
 			sapBall = false;
 			SlimyNeck = false;
 			jungard = false;
+			xflow = false;
 		}
 		
 

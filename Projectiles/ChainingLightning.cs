@@ -23,7 +23,7 @@ namespace ForgottenMemories.Projectiles
 		}
 		public override bool PreAI()
 		{
-			int amountOfDust = 5;
+			int amountOfDust = 2;
 			for (int i = 0; i < amountOfDust; ++i)
 			{
 				projectile.tileCollide = false;

@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 			item.name = "Muramisian Spectre";
-			item.damage = 45;
+			item.damage = 68;
 			item.melee = true;
 			item.width = 62;
 			item.height = 62;
@@ -55,7 +55,8 @@ namespace ForgottenMemories.Items.Melee
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Main.projectile[p].timeLeft = 20;
 			for (int i = 0; i < 2; ++i)
 			{
 				Vector2 mouse = Main.MouseWorld;
@@ -64,7 +65,7 @@ namespace ForgottenMemories.Items.Melee
 				float sY = 25;
 				sX += (float)Main.rand.Next(-10, 10) * 0.2f;
 				sY += (float)Main.rand.Next(-20, 20) * 0.2f;
-				Projectile.NewProjectile(mouse.X, (position.Y-1000), sX, sY, type, damage, knockBack, player.whoAmI);
+				Projectile.NewProjectile(mouse.X, (position.Y-1000), sX, sY, type, damage/3, knockBack, player.whoAmI);
 			}
 			for (int i = 0; i < 2; ++i)
 			{
@@ -74,7 +75,7 @@ namespace ForgottenMemories.Items.Melee
 				float s2Y = -25;
 				s2X += (float)Main.rand.Next(-10, 10) * 0.2f;
 				s2Y += (float)Main.rand.Next(-20, 20) * 0.2f;
-				Projectile.NewProjectile(mouse.X, (position.Y+1000), s2X, s2Y, type, damage, knockBack, player.whoAmI);
+				Projectile.NewProjectile(mouse.X, (position.Y+1000), s2X, s2Y, type, damage/3, knockBack, player.whoAmI);
 			}
 			return false;
 		}
