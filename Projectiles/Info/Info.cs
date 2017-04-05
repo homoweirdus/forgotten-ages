@@ -7,8 +7,8 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Info
 {
-    public class Info : ProjectileInfo
-    {
+	public class Info : ProjectileInfo
+	{
 		public bool Paradox = false;
 		public bool Mutilator = false;
 		public bool TrueHR = false;
@@ -16,7 +16,8 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool Shroom = false;
 		public bool Terra = false;
 		public bool Titanium = false;
-    }
+		public bool Planetary = false;
+	}
 	
 	public class Stuff : GlobalProjectile
 	{
@@ -24,14 +25,28 @@ namespace ForgottenMemories.Projectiles.Info
 		{
 			if (Main.rand.Next(2) == 0 && projectile.GetModInfo<Info>(mod).Paradox == true)
 			{
-			int z = Projectile.NewProjectile(projectile.Center.X + projectile.velocity.X * 100f, projectile.Center.Y + projectile.velocity.Y * 100f, projectile.velocity.X * -1, projectile.velocity.Y * -1, projectile.type, projectile.damage, 0f, projectile.owner, 0f, 0f);
-			Main.projectile[z].GetModInfo<Info>(mod).Paradox = true;
-			Main.projectile[z].tileCollide = false;
-			Main.projectile[z].penetrate = 1;
+				int z = Projectile.NewProjectile(projectile.Center.X + projectile.velocity.X * 100f, projectile.Center.Y + projectile.velocity.Y * 100f, projectile.velocity.X * -1, projectile.velocity.Y * -1, projectile.type, projectile.damage, 0f, projectile.owner, 0f, 0f);
+				Main.projectile[z].GetModInfo<Info>(mod).Paradox = true;
+				Main.projectile[z].tileCollide = false;
+				Main.projectile[z].penetrate = 1;
 			}
 			if(Main.rand.Next(3) == 0 && projectile.GetModInfo<Info>(mod).Mutilator == true)
 			{
-            target.AddBuff(69, 360);
+				target.AddBuff(69, 360);
+			}
+			if (Main.rand.Next(2) == 0 && projectile.GetModInfo<Info>(mod).Planetary == true)
+			{
+				Player player = Main.player[projectile.owner];
+				Vector2 newMove = projectile.Center - player.Center;
+				float memes = newMove.X * 15f;
+				float memes2 = newMove.Y * 15f;
+				memes += (float)Main.rand.Next(-40, 41) * 0.1f;
+				memes2 += (float)Main.rand.Next(-40, 41) * 0.1f;
+				int z = Projectile.NewProjectile(player.Center.X, player.Center.Y, memes, memes2, projectile.type, projectile.damage, 0f, projectile.owner, 0f, 0f);
+				if(Main.rand.Next(3) == 0)
+				{
+					Main.projectile[z].GetModInfo<Info>(mod).Planetary = true;
+				}
 			}
 		}
 		
@@ -40,40 +55,40 @@ namespace ForgottenMemories.Projectiles.Info
 			if (projectile.GetModInfo<Info>(mod).TrueHR == true)
 			{
 				int amountOfProjectiles = Main.rand.Next(1, 3);
-			
+				
 				for (int i = 0; i < amountOfProjectiles; ++i)
-					{
-						float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-						float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("HallowEnergy"), 20, 5f, projectile.owner);
-						
-					}
+				{
+					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
+					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("HallowEnergy"), 20, 5f, projectile.owner);
+					
+				}
 			}
 			
 			if (projectile.GetModInfo<Info>(mod).Cosmodium == true)
 			{
 				int amountOfProjectiles = Main.rand.Next(2, 4);
-			
+				
 				for (int i = 0; i < amountOfProjectiles; ++i)
-					{
-						float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-						float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-						int B = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("CosmodiumBolt2"), projectile.damage, 5f, projectile.owner);
-						Main.projectile[B].magic = false;
-						Main.projectile[B].ranged = true;
-					}
+				{
+					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
+					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
+					int B = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("CosmodiumBolt2"), projectile.damage, 5f, projectile.owner);
+					Main.projectile[B].magic = false;
+					Main.projectile[B].ranged = true;
+				}
 			}
 			
 			if (projectile.GetModInfo<Info>(mod).Titanium == true)
 			{
 				int amountOfProjectiles = Main.rand.Next(1, 4);
-			
+				
 				for (int i = 0; i < amountOfProjectiles; ++i)
-					{
-						float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-						float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 126, 15, 5f, projectile.owner);
-					}
+				{
+					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
+					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 126, 15, 5f, projectile.owner);
+				}
 			}
 			
 			if (projectile.GetModInfo<Info>(mod).Terra == true)

@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using System.Collections.Generic;
 using System;
+using ForgottenMemories.Projectiles.Info;
 
 namespace ForgottenMemories.Items.Ranged 
 {
@@ -20,7 +21,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.useTime = 32;
 			item.useAnimation = 32;
 			item.useStyle = 5;
-			AddTooltip("Creates a short-ranged wave and onyx rocks");
+			AddTooltip("Hit bullets fire more bullets at the enemy");
 			item.knockBack = 6;
 			item.value = 1000000;
 			item.rare = 10;
@@ -42,8 +43,8 @@ namespace ForgottenMemories.Items.Ranged
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.OnyxBlaster, 1);
 			recipe.AddIngredient(null,"FlameShotgun", 1);
-			recipe.AddIngredient(3459, 30);
-			recipe.AddIngredient(3457, 30);
+			recipe.AddIngredient(3459, 12);
+			recipe.AddIngredient(3457, 12);
 			recipe.AddIngredient(3467, 10);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
@@ -52,25 +53,15 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			int d = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("PlanetaryWave"), damage, knockBack, player.whoAmI);
-			Main.projectile[d].timeLeft = 15;
-			for (int i = 0; i < 3; i++)
-			{
-				float sX = speedX;
-				float sY = speedY;
-				sX += (float)Main.rand.Next(-60, 61) * 0.07f;
-				sY += (float)Main.rand.Next(-60, 61) * 0.07f;
-				int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, 661, damage, knockBack, player.whoAmI); 
-				Main.projectile[p].timeLeft = 15;
-			}
-			int amountOfProjectiles = Main.rand.Next(5, 7);
+			int amountOfProjectiles = Main.rand.Next(7, 9);
 			for (int i = 0; i < amountOfProjectiles; i++)
 			{
 				float spX = speedX;
 				float spY = speedY;
-				spX += (float)Main.rand.Next(-40, 41) * 0.03f;
-				spY += (float)Main.rand.Next(-40, 41) * 0.03f;
-				Projectile.NewProjectile(position.X, position.Y, spX, spY, type, damage, knockBack, player.whoAmI);
+				spX += (float)Main.rand.Next(-40, 41) * 0.1f;
+				spY += (float)Main.rand.Next(-40, 41) * 0.1f;
+				int p = Projectile.NewProjectile(position.X, position.Y, spX, spY, type, damage, knockBack, player.whoAmI);
+				Main.projectile[p].GetModInfo<Info>(mod).Planetary = true;
 			}
 			
 			return false;
