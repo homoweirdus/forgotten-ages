@@ -24,6 +24,7 @@ namespace ForgottenMemories.Items.AaMaterials
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "CryotineOreItem", 4);
+			recipe.AddIngredient(null, "Galeshard", 1);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();

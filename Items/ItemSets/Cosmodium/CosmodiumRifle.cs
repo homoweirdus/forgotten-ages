@@ -25,7 +25,6 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.useStyle = 5;
             item.noMelee = true;
             item.knockBack = 6;
-            item.useTurn = true;
             item.value = Terraria.Item.sellPrice(0, 15, 0, 0);
             item.rare = 11;
             item.UseSound = SoundID.Item36;
@@ -68,7 +67,6 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "CosmodiumBar", 10);
-            recipe.AddIngredient(40, 30);
             recipe.AddTile(412);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();

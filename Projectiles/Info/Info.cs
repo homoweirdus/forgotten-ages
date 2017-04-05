@@ -12,6 +12,7 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool Paradox = false;
 		public bool Mutilator = false;
 		public bool TrueHR = false;
+		public bool Cosmodium = false;
 		public bool Shroom = false;
 		public bool Terra = false;
 		public bool Titanium = false;
@@ -45,6 +46,21 @@ namespace ForgottenMemories.Projectiles.Info
 						float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
 						float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
 						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("HallowEnergy"), 20, 5f, projectile.owner);
+						
+					}
+			}
+			
+			if (projectile.GetModInfo<Info>(mod).Cosmodium == true)
+			{
+				int amountOfProjectiles = Main.rand.Next(2, 4);
+			
+				for (int i = 0; i < amountOfProjectiles; ++i)
+					{
+						float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
+						float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
+						int B = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("CosmodiumBolt2"), projectile.damage, 5f, projectile.owner);
+						Main.projectile[B].magic = false;
+						Main.projectile[B].ranged = true;
 					}
 			}
 			

@@ -34,7 +34,6 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 		{
 			ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "CosmodiumBar", 8);
-            recipe.AddIngredient(40, 30);
             recipe.AddTile(412);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();

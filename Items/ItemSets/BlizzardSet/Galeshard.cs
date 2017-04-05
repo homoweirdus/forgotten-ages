@@ -12,8 +12,8 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 		public override void SetDefaults()
 		{
 			item.name = "Blizzard Shard";
-			item.toolTip = "'As icey as death's stare'";
-			item.rare = 3;
+			item.toolTip = "'As icy as death's stare'";
+			item.rare = 1;
             item.width = item.height = 38;
             item.maxStack = 999;
             ItemID.Sets.ItemNoGravity[item.type] = true;
