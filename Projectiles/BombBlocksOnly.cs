@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 namespace ForgottenMemories.Projectiles
 
 {
-    public class BombWallsOnly : ModProjectile
+    public class BombBlocksOnly : ModProjectile
     {
         public override void SetDefaults()
         {
@@ -38,7 +38,7 @@ namespace ForgottenMemories.Projectiles
 
                     if (Math.Sqrt(x * x + y * y) <= radius + 0.5)   //this make so the explosion radius is a circle
                     {
-                        WorldGen.KillWall(xPosition, yPosition, false); //this make the explosion destroy tiles  
+                        WorldGen.KillTile(xPosition, yPosition, false, false, false);  //this make the explosion destroy tiles  
                         Dust.NewDust(position, 22, 22, DustID.Smoke, 0.0f, 0.0f, 120, new Color(), 1f);  //this is the dust that will spawn after the explosion
                     }
                 }
