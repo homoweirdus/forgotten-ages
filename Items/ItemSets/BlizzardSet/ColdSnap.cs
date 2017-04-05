@@ -11,15 +11,16 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 		public override void SetDefaults()
 		{
 			item.name = "ColdSnap";
-			item.damage = 6;
+			item.damage = 4;
 			item.magic = true;
 			item.width = 22;
 			item.height = 24;
 			item.useTime = 10;
 			item.useAnimation = 10;
+			item.reuseDelay = 12;
 			item.channel = true;
 			item.useStyle = 5;
-			item.knockBack = 3;
+			item.knockBack = 0f;
 			item.value = 1000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item20;

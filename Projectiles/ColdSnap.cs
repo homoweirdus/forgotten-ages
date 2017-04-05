@@ -34,6 +34,10 @@ namespace ForgottenMemories.Projectiles
 					dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 135, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 					Main.dust[dust].noGravity = true;
 				}
+			if (player.statMana <= 1)
+			{
+				projectile.Kill();
+			}
 			if (Main.myPlayer == projectile.owner)
 			{
 				if (player.channel && !player.noItems && !player.CCed)
@@ -42,6 +46,11 @@ namespace ForgottenMemories.Projectiles
 					{
 						projectile.width++;
 						projectile.height++;
+					}
+					
+					if (Main.rand.Next(3) == 0)
+					{
+						player.statMana -= 1;
 					}
 					projectile.Center = player.MountedCenter;
 					projectile.position.X += player.width / 2 * player.direction;
