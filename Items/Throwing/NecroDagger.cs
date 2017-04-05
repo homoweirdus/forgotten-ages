@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 			item.name = "Necro Dagger";
-			item.damage = 22;
+			item.damage = 14;
 			item.thrown = true;
 			item.width = 32;
 			item.height = 36;
@@ -32,6 +32,7 @@ namespace ForgottenMemories.Items.Throwing
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Bone, 35);
+			recipe.AddIngredient(null, "DarkEnergy", 3);
 			recipe.AddIngredient(ItemID.Cobweb, 50);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

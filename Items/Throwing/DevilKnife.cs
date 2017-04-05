@@ -30,6 +30,7 @@ namespace ForgottenMemories.Items.Throwing
 			item.rare = 2;
 			item.shootSpeed = 15f;
 			item.autoReuse = true;
+			item.UseSound = SoundID.Item1;
 		}
 
 		public override void AddRecipes()

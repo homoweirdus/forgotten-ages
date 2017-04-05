@@ -30,6 +30,7 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 			item.rare = 1;
 			item.shootSpeed = 15f;
 			item.autoReuse = true;
+			item.UseSound = SoundID.Item1;
 		}
 
 		public override void AddRecipes()
