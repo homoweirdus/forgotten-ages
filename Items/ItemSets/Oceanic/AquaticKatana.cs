@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 		public override void SetDefaults()
 		{
 			item.name = "Aquatic Katana";
-			item.damage = 25;
+			item.damage = 19;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;

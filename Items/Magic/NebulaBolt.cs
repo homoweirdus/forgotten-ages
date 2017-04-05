@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items.Magic
 			item.magic = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 10;
-			item.useAnimation = 10;
+			item.useTime = 7;
+			item.useAnimation = 7;
 			item.useStyle = 5;
 			item.knockBack = 3;
 			item.value = 500000;
@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.Magic
 			item.toolTip = "Summons flames at your cursor";
 			item.shoot = mod.ProjectileType("NebulaFlame");
 			item.shootSpeed = 10f;
-			item.mana = 15;
+			item.mana = 6;
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

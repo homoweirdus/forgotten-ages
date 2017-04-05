@@ -43,7 +43,7 @@ namespace ForgottenMemories.Projectiles
 				projectile.frame = (projectile.frame + 1) % 4;
 			} 
 			
-			if (timer >= 30)
+			if (timer >= 25)
 			{
 				Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
 				Vector2 move = Vector2.Zero;
