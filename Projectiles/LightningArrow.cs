@@ -45,7 +45,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(4) == 0 && projectile.noDropItem == false)
         	{
         		Item.NewItem((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, mod.ItemType("LightningArrow"));
         	} // 1/4 chance to create an arrow when the projectile is killed

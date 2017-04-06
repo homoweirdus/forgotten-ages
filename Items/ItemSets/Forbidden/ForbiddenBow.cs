@@ -79,7 +79,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 						int po = Projectile.NewProjectile(position.X + homo, position.Y + gay, sX, sY, type, damage, knockBack, player.whoAmI);
 						Main.projectile[po].tileCollide = false;
 						Main.projectile[po].noDropItem = true;
-						Main.projectile[po].timeLeft = 120;
+						Main.projectile[po].timeLeft = 45;
 					}
 			}
 			else
