@@ -14,27 +14,20 @@ namespace ForgottenMemories.Projectiles
         public override void SetDefaults()
         {
             projectile.name = "Lightning Sphere";
-            projectile.width = 28;
-            projectile.height = 28;
+            projectile.width = 40;
+            projectile.height = 40;
             projectile.aiStyle = -1;
-			projectile.alpha = 0;
+			projectile.alpha = 100;
             projectile.friendly = true;
             projectile.magic = true;
 			projectile.timeLeft = 300;
-			projectile.scale = 0.5f;
-			Main.projFrames[projectile.type] = 4;
             projectile.penetrate = -1;
 			projectile.tileCollide = true;
         }
 		
 		   public override void AI()
 		{
-			projectile.frameCounter++;
-			if (projectile.frameCounter >= 4)
-			{
-				projectile.frameCounter = 0;
-				projectile.frame = (projectile.frame + 1) % 4;
-			} 
+			projectile.rotation += 0.5f;
 			Vector2 move = Vector2.Zero;
 			float distance = 700f;
 			bool target = false;

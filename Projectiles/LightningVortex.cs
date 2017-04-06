@@ -44,7 +44,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.velocity.X *= 0.96f;
 			projectile.velocity.Y *= 0.96f;
 			Vector2 move = Vector2.Zero;
-			float distance = 150f;
+			float distance = 220f;
 			bool target = false;
 			for (int k = 0; k < 200; k++)
 			{

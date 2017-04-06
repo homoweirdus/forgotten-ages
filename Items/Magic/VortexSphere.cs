@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.Magic
 		public override void SetDefaults()
 		{
 			item.name = "Lightning Sphere";
-			item.damage = 75;
+			item.damage = 126;
 			item.magic = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 55;
-			item.useAnimation = 55;
+			item.useTime = 40;
+			item.useAnimation = 40;
 			item.useStyle = 5;
 			item.knockBack = 3;
 			item.value = 500000;
@@ -25,7 +25,7 @@ namespace ForgottenMemories.Items.Magic
 			item.autoReuse = true;
 			item.toolTip = "Summons an orb of electricity that shoots lightning at nearby enemies";
 			item.shoot = mod.ProjectileType("LightningSphere");
-			item.shootSpeed = 4f;
+			item.shootSpeed = 5f;
 			item.mana = 45;
 		}
 	}
