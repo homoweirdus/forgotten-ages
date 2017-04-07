@@ -116,6 +116,11 @@ namespace ForgottenMemories.Items
 				int amountToDrop = Main.rand.Next(1,3);
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DevilFlame"), amountToDrop); 
 			}
+			
+			if (npc.type == 65 && Main.rand.Next(50) == 0 || npc.type == 64 && Main.rand.Next(50) == 0 || npc.type == 67 && Main.rand.Next(50) == 0 || npc.type == 221 && Main.rand.Next(25) == 0 || npc.type == 220 && Main.rand.Next(15) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Pearl"), 1); 
+			}
 		}
 	}
 }
