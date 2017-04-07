@@ -25,6 +25,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.shoot = mod.ProjectileType("IceBolt");
 			item.noMelee = true;
 			item.shootSpeed = 10f;
+			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
 		}
 		
