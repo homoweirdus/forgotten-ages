@@ -19,6 +19,7 @@ namespace ForgottenMemories.Projectiles.Necro
 			projectile.friendly = true;
 			projectile.extraUpdates = 3;
 			projectile.tileCollide = false;
+			projectile.alpha = 150;
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
@@ -35,7 +36,7 @@ namespace ForgottenMemories.Projectiles.Necro
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 173, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].scale = 0.7f;
 			}
 		}
 	}

@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("NecroflameSickleProj");
-			item.shootSpeed = 10f;
+			item.shootSpeed = 9f;
 		}
 		
 		public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

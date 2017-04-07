@@ -25,7 +25,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.shoot = 3;
 			item.shootSpeed = 10f;
             item.useAmmo = 40;
-			item.UseSound = SoundID.Item1;
+			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;
 		}
 		
