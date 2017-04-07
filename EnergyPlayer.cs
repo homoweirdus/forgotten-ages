@@ -21,6 +21,7 @@ namespace ForgottenMemories
 		public bool hadron = false;
 		public bool pearl = false;
 		public bool pearl2 = false;
+		public bool BoCBuff = false;
 		public bool dJumpEffectMeteor = false;
 		public bool sapBall = false;
 		public bool canJumpFirestorm = true;
@@ -34,6 +35,7 @@ namespace ForgottenMemories
 			hadron = false;
 			pearl = false;
 			pearl2 = false;
+			BoCBuff = false;
 			treeMinion = false;
             lifesteal = false;
 			sapBall = false;
@@ -58,6 +60,23 @@ namespace ForgottenMemories
 					if (projectile.minion == true || ProjectileID.Sets.MinionShot[projectile.type] || ProjectileID.Sets.SentryShot[projectile.type])
 					{
 						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("SapSphere"), projectile.damage, 5f, player.whoAmI);
+					}
+				}
+				
+				if (BoCBuff == true)
+				{	
+					if (target.FindBuffIndex(31) >= 0 && projectile.type != mod.ProjectileType("BoCBolt"))
+					{
+						Player player = Main.player[projectile.owner];
+						Vector2 newMove = projectile.Center - player.Center;
+						float ok = newMove.X * 3f;
+						float ok2 = newMove.Y * 3f;
+						Projectile.NewProjectile(player.Center.X, player.Center.Y, ok, ok2, mod.ProjectileType("BoCBolt"), (int)(projectile.damage/3), 0f, projectile.owner, 0f, 0f);
+					}
+					
+					if (Main.rand.Next(5) == 0)
+					{
+						target.AddBuff(31, 540, false);
 					}
 				}
 				
