@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 			item.name = "Obliteration blade";
-			item.damage = 480;
+			item.damage = 430;
 			item.melee = true;
 			item.width = 62;
 			item.height = 62;
@@ -56,8 +56,8 @@ namespace ForgottenMemories.Items.Melee
         {
 			if (target.life <= 0 && target.lifeMax >= 100)
             {
-				player.HealEffect((int)(damage * 0.1));
-				player.statLife += ((int)(damage * 0.1));
+				player.HealEffect((int)(target.lifeMax * 0.005));
+				player.statLife += ((int)(target.lifeMax * 0.005));
 				Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("BloodBoom"), damage, 0f, player.whoAmI, 0f, 0f);
 			}
 		}

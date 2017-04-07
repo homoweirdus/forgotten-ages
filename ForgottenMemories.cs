@@ -1,7 +1,10 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.IO;
 using Terraria;
 using Terraria.ID;
+using Terraria.IO;
 using Terraria.ModLoader;
 
 namespace ForgottenMemories
@@ -18,6 +21,11 @@ namespace ForgottenMemories
 				AutoloadSounds = true,
 				AutoloadGores = true
 			};
+		}	
+
+		public override void Load()
+		{
+			Config.Load();
 		}
 		
 		public override void AddRecipeGroups()
@@ -33,6 +41,7 @@ namespace ForgottenMemories
 			});
 			RecipeGroup.RegisterGroup("AnyPhaseblade", group);
 		}
+
 		
 		public override void AddRecipes()
         {
