@@ -29,7 +29,7 @@ namespace ForgottenMemories.Projectiles
 				dust = Dust.NewDust(projectile.Center + projectile.velocity, projectile.width, projectile.height, 77, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].noGravity = true;
 			}
-			projectile.rotation += 3f;
+			projectile.rotation += 0.1f;
 		}
 		
 		public override void Kill(int timeLeft)

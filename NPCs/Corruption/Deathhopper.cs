@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.GameContent.Events;
 using Terraria.ModLoader;
 
 namespace ForgottenMemories.NPCs.Corruption
@@ -36,16 +37,20 @@ namespace ForgottenMemories.NPCs.Corruption
 		}
 		
 					public override void NPCLoot()
-	{
-			int amountToDrop = Main.rand.Next(1,5);
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Gel, amountToDrop);
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Deathweed, amountToDrop);
-			if(Main.rand.Next(40) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DeathweedStaff"));
-			}
-			
-	}
+					{
+						int amountToDrop = Main.rand.Next(1,5);
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Gel, amountToDrop);
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Deathweed, amountToDrop);
+						if(Main.rand.Next(40) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DeathweedStaff"));
+						}
+						
+						if(Main.rand.Next(40) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DeathweedDecimator"));
+						}		
+					}
 	
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 	{

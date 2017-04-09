@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Magic
 		public override void SetDefaults()
 		{
 			item.name = "Deathweed Staff";
-			item.damage = 9;
+			item.damage = 11;
 			item.magic = true;
 			item.mana = 6;
 			item.width = 21;

@@ -14,6 +14,7 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool TrueHR = false;
 		public bool Cosmodium = false;
 		public bool Shroom = false;
+		public bool Flamethrower = false;
 		public bool Terra = false;
 		public bool Titanium = false;
 		public bool Planetary = false;
@@ -23,6 +24,11 @@ namespace ForgottenMemories.Projectiles.Info
 	{
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
+			if (projectile.GetModInfo<Info>(mod).Flamethrower == true)
+			{
+				target.immune[projectile.owner] = 5;
+			}
+			
 			if (Main.rand.Next(2) == 0 && projectile.GetModInfo<Info>(mod).Paradox == true)
 			{
 				int z = Projectile.NewProjectile(projectile.Center.X + projectile.velocity.X * 100f, projectile.Center.Y + projectile.velocity.Y * 100f, projectile.velocity.X * -1, projectile.velocity.Y * -1, projectile.type, projectile.damage, 0f, projectile.owner, 0f, 0f);

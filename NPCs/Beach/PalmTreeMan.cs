@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.GameContent.Events;
 using Terraria.ModLoader;
 
 namespace ForgottenMemories.NPCs.Beach
