@@ -35,8 +35,8 @@ namespace ForgottenMemories.Items.Ranged
 		{
 			float sX = speedX;
 			float sY = speedY;
-			sX += (float)Main.rand.Next(-60, 61) * 0.03f;
-			sY += (float)Main.rand.Next(-60, 61) * 0.03f;
+			sX += (float)Main.rand.Next(-10, 10) * 0.03f;
+			sY += (float)Main.rand.Next(-10, 10) * 0.03f;
 			Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("DevBullet"), damage, knockBack, player.whoAmI);
 			
 			return false;
