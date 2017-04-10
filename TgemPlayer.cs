@@ -15,6 +15,8 @@ namespace ForgottenMemories
         private const int saveVersion = 0;
         public bool Servant = false;
 		public bool EaterMinion = false;
+		public bool CreeperMinion = false;
+		public bool ShadowflameSpirit = false;
         public static bool hasProjectile;
 		public bool slimeGuard = false;
 		public bool ChaoticSet = false;
@@ -23,6 +25,8 @@ namespace ForgottenMemories
         public override void ResetEffects()
         {
             Servant = false;
+			CreeperMinion = false;
+			ShadowflameSpirit = false;
 			EaterMinion = false;
 			slimeGuard = false;
 			ChaoticSet = false;

@@ -30,9 +30,20 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JungleSlimePendant"), 1); 
 			}
 			
+			if (npc.type == 533 && Main.rand.Next(20) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DesertStaff"), 1); 
+			}
+			
 			if (npc.type == 471)
 			{
 				int amountToDrop = Main.rand.Next(9,14);
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ShadowflameEmber"), amountToDrop); 
+			}
+			
+			if (Main.bloodMoon && Main.rand.Next(3) == 0)
+			{
+				int amountToDrop = Main.rand.Next(8,14);
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ShadowflameEmber"), amountToDrop); 
 			}
 			

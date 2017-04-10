@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 			item.name = "Serial Inferost";
-			item.damage = 50;
+			item.damage = 52;
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
@@ -67,11 +67,11 @@ namespace ForgottenMemories.Items.Melee
 		{
 			if (Main.rand.Next(4) < 2)
 			{
-				target.AddBuff(BuffID.Frostburn, 60);
+				target.AddBuff(BuffID.Frostburn, 60, false);
 			}
 			if (Main.rand.Next(100) < 99)
 			{
-				target.AddBuff(BuffID.Frozen, 10);
+				target.AddBuff(mod.BuffType("Frozen"), 10, false);
 			}
 			
 		}

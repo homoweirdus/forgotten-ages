@@ -43,5 +43,17 @@ namespace ForgottenMemories.Projectiles
 			}
 		}
 		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			if (Main.rand.Next(4) < 2)
+			{
+				target.AddBuff(BuffID.Frostburn, 60, false);
+			}
+			if (Main.rand.Next(100) < 99)
+			{
+				target.AddBuff(mod.BuffType("Frozen"), 10, false);
+			}
+		}
+		
 	}
 }

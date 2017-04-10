@@ -18,10 +18,13 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool Terra = false;
 		public bool Titanium = false;
 		public bool Planetary = false;
+		public bool Split = false;
+		public bool wtf = false;
 	}
 	
 	public class Stuff : GlobalProjectile
 	{
+		
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
 			if (projectile.GetModInfo<Info>(mod).Flamethrower == true)
@@ -69,6 +72,25 @@ namespace ForgottenMemories.Projectiles.Info
 					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("HallowEnergy"), 20, 5f, projectile.owner);
 					
 				}
+			}
+			
+			if (projectile.GetModInfo<Info>(mod).Split == true && projectile.timeLeft == 0)
+			{
+				Vector2 origVect = new Vector2(projectile.velocity.X, projectile.velocity.Y);
+				Vector2 newVect2 = origVect.RotatedBy(-System.Math.PI / 30);
+				Vector2 newVect3 = origVect.RotatedBy(System.Math.PI / 30);
+				Vector2 newVect4 = origVect.RotatedBy(-System.Math.PI / 60);
+				Vector2 newVect5 = origVect.RotatedBy(System.Math.PI / 60);
+				int ok1 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, origVect.X, origVect.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
+				int ok2 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect2.X, newVect2.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
+				int ok3 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect3.X, newVect3.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
+				int ok4 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect4.X, newVect4.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
+				int ok5 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect5.X, newVect5.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
+				Main.projectile[ok1].GetModInfo<Info>(mod).wtf = true;
+				Main.projectile[ok2].GetModInfo<Info>(mod).wtf = true;
+				Main.projectile[ok3].GetModInfo<Info>(mod).wtf = true;
+				Main.projectile[ok4].GetModInfo<Info>(mod).wtf = true;
+				Main.projectile[ok5].GetModInfo<Info>(mod).wtf = true;
 			}
 			
 			if (projectile.GetModInfo<Info>(mod).Cosmodium == true)
@@ -122,6 +144,11 @@ namespace ForgottenMemories.Projectiles.Info
 				dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 74, 0f, 0f);
 				Main.dust[dust].scale = 0.9f;
 				Main.dust[dust].noGravity = true;
+			}
+			
+			if (projectile.GetModInfo<Info>(mod).wtf == true && projectile.velocity.X == 0 && projectile.velocity.Y == 0)
+			{
+				projectile.Kill();
 			}
 			
 			if (projectile.GetModInfo<Info>(mod).Shroom == true)
