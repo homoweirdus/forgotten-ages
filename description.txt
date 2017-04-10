@@ -1,8 +1,9 @@
 This mod adds in a total of:
-237 Items
-12 Enemies
+277 Items
+13 Enemies
 1 Town NPC
 2 Bosses
+Some balance changes to vanilla, can be turned off in the config file
 credits:
 Hamboy- Owner, Ideas
 Zoroarkcity, Kachow, ColinAV516, Homo Weirdus, Fargowilta, Eldrazi, GameBro - Coding/Help with coding

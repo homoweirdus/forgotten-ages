@@ -1,7 +1,9 @@
 author = A team of high quality people
 
-version = 0.2.4
+version = 0.2.5
 
 displayName = Beyond The Forgotten Ages
 
 homepage = https://discord.gg/sYXXQHh
+
+hideCode = false

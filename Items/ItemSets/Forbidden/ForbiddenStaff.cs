@@ -73,7 +73,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			{
 				Vector2 mouse = Main.MouseWorld;
 				
-				Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, mod.ProjectileType("ManaDrain"), 1, 0.1f, player.whoAmI);
+				Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, mod.ProjectileType("ForbiddenStaff"), 1, 0.1f, player.whoAmI);
 			}
 			else
 			{
