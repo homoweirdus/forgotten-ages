@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.Ranged
 		{
 			float sX = speedX;
 			float sY = speedY;
-			if (Main.rand.Next(5) == 0)
+			if (Main.rand.Next(3) == 0)
 			{
 				int p = Projectile.NewProjectile(position.X, position.Y, sX+2f, sY+2f, 616, damage, knockBack, player.whoAmI);
 				Projectile.NewProjectile(position.X, position.Y, sX-2f, sY-2f, 616, damage, knockBack, player.whoAmI);
