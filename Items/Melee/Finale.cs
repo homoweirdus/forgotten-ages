@@ -69,14 +69,6 @@ namespace ForgottenMemories.Items.Melee
 			return false;
 		}
 		
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
-        {
-			target.AddBuff(69, 1800, false);
-			target.AddBuff(203, 1800, false);
-			player.HealEffect((int)(damage * 0.05));
-			player.statLife += ((int)(damage * 0.05));
-		}
-		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
@@ -84,7 +76,6 @@ namespace ForgottenMemories.Items.Melee
 			recipe.AddIngredient(null,"PlanetaryBlade", 1);
 			recipe.AddIngredient(null,"CrazedImpurity", 1);
 			recipe.AddIngredient(null,"perfectpurity", 1);
-			recipe.AddIngredient(null,"ForcedPride", 1);
 			recipe.AddIngredient(ItemID.GravityGlobe, 1);
 			recipe.AddTile(412);
 			recipe.SetResult(this);

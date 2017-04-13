@@ -1,6 +1,6 @@
 This mod adds in a total of:
 277 Items
-13 Enemies
+14 Enemies
 1 Town NPC
 2 Bosses
 Some balance changes to vanilla, can be turned off in the config file

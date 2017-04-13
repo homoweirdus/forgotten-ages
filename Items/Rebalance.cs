@@ -56,11 +56,6 @@ namespace ForgottenMemories.Items
 					item.useTurn = true;
 				}
 				
-				if (item.type == ItemID.Flamarang)
-				{
-					item.damage = 33;
-				}
-				
 				if (item.type == 1910)
 				{
 					item.damage = 46;

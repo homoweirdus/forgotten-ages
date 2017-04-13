@@ -30,6 +30,5 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             AscensionWorld.DropComet();
             return true;
         }
-
     }
 }

@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.Ammo
 			item.width = 22;
 			item.height = 22;
 			item.toolTip = "Moves somewhat randomly, but has insane velocity";
-			item.shootSpeed = 18f;
+			item.shootSpeed = 3f;
 			item.shoot = mod.ProjectileType("LightningArrow");
 			item.knockBack = 1.2f;
 			item.UseSound = SoundID.Item1;
