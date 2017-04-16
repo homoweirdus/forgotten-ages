@@ -2,12 +2,24 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using System;
 using Terraria.ModLoader;
 
 namespace ForgottenMemories
 {
 	public class GlobalNPC1 : GlobalNPC
 	{
+		//public override void AI (NPC npc)
+		//{
+		//	for (int k = 0; k < 200; k++)
+		//		{
+		//			Player player = Main.player[k];
+		//			if (TgemPlayer.LightningDagger == true)
+		//			{
+		//				npc.AddBuff(mod.BuffType("Electrified"), 2, false);
+		//			}
+		//		}
+		//}
 		
 		public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
 		{

@@ -14,6 +14,7 @@ namespace ForgottenMemories
     {
         private const int saveVersion = 0;
         public bool Servant = false;
+		public bool LightningDagger = false;
 		public bool EaterMinion = false;
 		public bool CreeperMinion = false;
 		public bool ShadowflameSpirit = false;
@@ -25,13 +26,14 @@ namespace ForgottenMemories
         public override void ResetEffects()
         {
             Servant = false;
+			LightningDagger = false;
 			CreeperMinion = false;
 			ShadowflameSpirit = false;
 			EaterMinion = false;
 			slimeGuard = false;
 			ChaoticSet = false;
 			stardustCrown = false;
-			}
+		}
 		
 		public override void PreUpdate()
 		{
