@@ -13,12 +13,12 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.name = "Lightning Chainblaster";
-			item.damage = 30;
+			item.damage = 40;
 			item.ranged = true;
 			item.width = 50;
 			item.height = 50;
-			item.useTime = 3;
-			item.useAnimation = 3;
+			item.useTime = 2;
+			item.useAnimation = 2;
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 500000;

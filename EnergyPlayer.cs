@@ -27,6 +27,7 @@ namespace ForgottenMemories
 		public bool canJumpFirestorm = true;
 		public bool SlimyNeck = true;
 		public bool jungard = true;
+		public bool frostguard = false;
 		
 		public override void ResetEffects()
 		{
@@ -41,6 +42,7 @@ namespace ForgottenMemories
 			sapBall = false;
 			SlimyNeck = false;
 			jungard = false;
+			frostguard = false;
 		}
 		
 
@@ -100,6 +102,11 @@ namespace ForgottenMemories
 				if (jungard == true)
 				{
 					Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("JungleGuard"), 15, 5f, player.whoAmI);
+				}
+				
+				if (frostguard == true)
+				{
+					Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("IceSlimeMinion"), 12, 5f, player.whoAmI);
 				}
 				
 				if (pearl == true && Main.rand.Next(2) == 0 && damageTaken >= 10)

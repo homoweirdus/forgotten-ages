@@ -21,6 +21,14 @@ namespace ForgottenMemories.Items
 					item.toolTip2 = "Ignores 10 defense";
 				}
 				
+				if (item.type == 3546) //celebration
+				{
+					item.damage = 90;
+					item.useTime = 10;
+					item.useAnimation = 30;
+					item.reuseDelay = 60;
+				}
+				
 				if (item.type == ItemID.DaedalusStormbow)
 				{
 					item.damage = 30;
@@ -268,6 +276,11 @@ namespace ForgottenMemories.Items
 				{
 					target.AddBuff(24, 360, false);
 					target.AddBuff(69, 360, false);
+				}
+				
+				if (projectile.type == 632) //last prism beam
+				{
+					target.immune[projectile.owner] = 15;
 				}
 				
 				if (projectile.type == ProjectileID.Chik && Main.rand.Next(3) == 0)

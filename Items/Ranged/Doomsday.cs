@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.name = "Doomsday Bow";
-			item.damage = 215;
+			item.damage = 115;
 			item.ranged = true;
 			item.width = 50;
 			item.height = 50;
@@ -91,7 +91,15 @@ namespace ForgottenMemories.Items.Ranged
 				Main.projectile[p].noDropItem = true;
 				if (type == 1)
 				{
-					Main.projectile[p].GetModInfo<Info>(mod).Terra = true;
+					if (Main.rand.Next(2) == 0)
+					{
+						Main.projectile[p].GetModInfo<Info>(mod).Terra = true;
+					}
+					
+					else
+					{
+						Main.projectile[p].GetModInfo<Info>(mod).TrueHR = true;
+					}
 				}
 				Main.projectile[p].timeLeft = 60;
 				type = thing;

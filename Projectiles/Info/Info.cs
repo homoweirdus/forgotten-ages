@@ -20,10 +20,18 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool Planetary = false;
 		public bool Split = false;
 		public bool wtf = false;
+		public bool IceSpike = false;
 	}
 	
 	public class Stuff : GlobalProjectile
 	{
+		public override void SetDefaults(Projectile projectile)
+        {
+			if (projectile.GetModInfo<Info>(mod).IceSpike == true)
+			{
+				ProjectileID.Sets.MinionShot[projectile.type] = true;
+			}
+		}
 		
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
@@ -43,6 +51,12 @@ namespace ForgottenMemories.Projectiles.Info
 			{
 				target.AddBuff(69, 360);
 			}
+			
+			if(projectile.GetModInfo<Info>(mod).IceSpike == true)
+			{
+				target.AddBuff(BuffID.Frostburn, 360);
+			}
+			
 			if (Main.rand.Next(2) == 0 && projectile.GetModInfo<Info>(mod).Planetary == true)
 			{
 				Player player = Main.player[projectile.owner];

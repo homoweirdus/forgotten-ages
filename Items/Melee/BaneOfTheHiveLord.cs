@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 			item.name = "Bane of the Hive Lord";
-			item.damage = 56;
+			item.damage = 66;
 			item.melee = true;
 			item.width = 22;
 			item.height = 25;
@@ -40,7 +40,7 @@ namespace ForgottenMemories.Items.Melee
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {
-			for (int i = 0; i <= 2; i++)
+			for (int i = 0; i <= 1; i++)
             {
 				float sX = 2f;
 				float sY = 2f;
