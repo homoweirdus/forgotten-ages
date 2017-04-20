@@ -264,6 +264,23 @@ namespace ForgottenMemories.Items
 				}
             }
         }
+		
+		public override bool CanEquipAccessory(Item item, Player player, int slot)
+		{
+			if (item.type == ItemID.SporeSac || item.type == ItemID.ShinyStone)
+			{
+				if (((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).shiny == true)
+				{
+					return false;
+				}
+				
+				else
+				{
+					return true;
+				}
+			}
+			return true;
+		}
 	}
 	
 	public class Rebalance2 : GlobalProjectile
