@@ -56,7 +56,7 @@ namespace ForgottenMemories.Items.Acessory
 			recipe.AddIngredient(null, "JungleSlimePendant", 1);
 			recipe.AddIngredient(null, "IceSlimeNecklace", 1);
 			recipe.AddIngredient(ItemID.RoyalGel, 1);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddTile(114);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

@@ -20,7 +20,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 1000;
 			projectile.light = 0.5f;
 			Main.projFrames[projectile.type] = 4;
-			projectile.scale = 1f;
+			projectile.scale = 1.2f;
 			projectile.extraUpdates = 1;
 		}
 		

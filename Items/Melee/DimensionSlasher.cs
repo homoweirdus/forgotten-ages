@@ -17,7 +17,6 @@ namespace ForgottenMemories.Items.Melee
 			item.height = 70;
 			AddTooltip("Striking an enemy with the blade will unleash explosive dragon spit");
 			AddTooltip("Reduces enemy defense to near 0 and causes them to melt");
-			AddTooltip("Right click to block with a sheild");
 			item.useTime = 16;
 			item.useAnimation = 16;
 			item.useStyle = 1;
@@ -37,7 +36,6 @@ namespace ForgottenMemories.Items.Melee
 			recipe.AddIngredient(null, "SolarBlade", 1);
 			recipe.AddIngredient(null, "ObliterationBlade", 1);
 			recipe.AddIngredient(null, "CosmodiumBar", 16);
-			recipe.AddIngredient(3823, 1);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
@@ -66,11 +64,14 @@ namespace ForgottenMemories.Items.Melee
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {
-			float sX = 0f;
-			float sY = -3f;
-			sX += (float)Main.rand.Next(-30, 31) * 0.2f;
-			sY += (float)Main.rand.Next(-61, 0) * 0.2f;
-            Projectile.NewProjectile(target.Center.X, target.Center.Y, sX, sY, mod.ProjectileType("DragonSpit"), damage, knockback, player.whoAmI, 0f, 0f);
+			if (Main.rand.Next(4) == 0)
+			{
+				float sX = 0f;
+				float sY = -3f;
+				sX += (float)Main.rand.Next(-30, 31) * 0.2f;
+				sY += (float)Main.rand.Next(-61, 0) * 0.2f;
+				Projectile.NewProjectile(target.Center.X, target.Center.Y, sX, sY, mod.ProjectileType("DragonSpit"), damage, knockback, player.whoAmI, 0f, 0f);
+			}
             target.AddBuff(69, 1800, false);
 			target.AddBuff(203, 1800, false);
 			target.AddBuff(189, 1800, false);

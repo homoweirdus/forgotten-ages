@@ -25,6 +25,11 @@ namespace ForgottenMemories.Projectiles
             projectile.timeLeft = 300;
 
         }
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("ShinyBoom"), damage, knockback, projectile.owner);
+		}
 
         public override void Kill(int timeLeft)
         {
@@ -39,12 +44,23 @@ namespace ForgottenMemories.Projectiles
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 55, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f, 200, default(Color), 0.5f);
 				Main.dust[dust].noGravity = true;
 				Main.dust[dust].velocity *= 0.75f;
-				Main.dust[dust].scale = 0.7f;
-				Main.dust[dust].fadeIn = 1.3f;
+				Main.dust[dust].scale = 1f;
 				dustcounter = 0;
 			}
+			float num940 = 0f + (float)Main.rand.Next(-2,2);
+			float num941 = 0f + (float)Main.rand.Next(-2,2);
+			if (Main.rand.Next(60) == 0)
+			{
+				projectile.velocity.X = projectile.velocity.X + 0.1f * num941;
+				projectile.velocity.Y = projectile.velocity.Y + 0.1f * num940;
+			}
+			if (Main.rand.Next(60) == 0)
+			{
+				projectile.velocity.X = projectile.velocity.X - 0.1f * num941;
+				projectile.velocity.Y = projectile.velocity.Y - 0.1f * num940;
+			}
             Vector2 targetPos = projectile.Center;
-            float targetDist = 700f;
+            float targetDist = 1000f;
             bool targetAcquired = false;
 
             //loop through first 200 NPCs in Main.npc
@@ -66,7 +82,7 @@ namespace ForgottenMemories.Projectiles
             //change trajectory to home in on target
             if (targetAcquired)
             {
-                float homingSpeedFactor = 6f;
+                float homingSpeedFactor = 3f;
                 Vector2 homingVect = targetPos - projectile.Center;
                 float dist = projectile.Distance(targetPos);
                 dist = homingSpeedFactor / dist;
@@ -75,7 +91,5 @@ namespace ForgottenMemories.Projectiles
                 projectile.velocity = (projectile.velocity * 20 + homingVect) / 21f;
             }
         }
-    }
-
-        
+    }       
 }

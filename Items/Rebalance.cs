@@ -21,6 +21,11 @@ namespace ForgottenMemories.Items
 					item.toolTip2 = "Ignores 10 defense";
 				}
 				
+				if (item.type == ItemID.SpaceGun)
+				{
+					item.damage = 10;
+				}
+				
 				if (item.type == 3546) //celebration
 				{
 					item.damage = 90;
@@ -67,6 +72,21 @@ namespace ForgottenMemories.Items
 				if (item.type == 1910)
 				{
 					item.damage = 46;
+				}
+				
+				if (item.type == 2760)
+				{
+					item.toolTip2 = "30% reduced magic damage and life regen, 7% increased magic critical strike chance";
+				}
+				
+				if (item.type == ItemID.ChlorophyteArrow)
+				{
+					item.toolTip2 = "Has a chance to create a spore cloud on hit";
+				}
+				
+				if (item.type == ItemID.ChlorophyteBullet)
+				{
+					item.damage = -10;
 				}
 				
 				if (item.type == ItemID.BreakerBlade)
@@ -281,6 +301,18 @@ namespace ForgottenMemories.Items
 			}
 			return true;
 		}
+		
+		public override void UpdateEquip(Item item, Player player)
+		{
+			if (item.type == 2760)
+			{
+				player.magicDamage -= 0.37f;
+				if (player.lifeRegen >= 0)
+				{
+					player.lifeRegen = (int)(player.lifeRegen * 0.7);
+				}
+			}
+		}
 	}
 	
 	public class Rebalance2 : GlobalProjectile
@@ -298,6 +330,11 @@ namespace ForgottenMemories.Items
 				if (projectile.type == 632) //last prism beam
 				{
 					target.immune[projectile.owner] = 15;
+				}
+				
+				if (projectile.type == ProjectileID.ChlorophyteArrow && Main.rand.Next(2) == 0)
+				{
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 0f, (569 + Main.rand.Next(3)), (projectile.damage/3), 5f, projectile.owner);
 				}
 				
 				if (projectile.type == ProjectileID.Chik && Main.rand.Next(3) == 0)

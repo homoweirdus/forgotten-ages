@@ -39,6 +39,11 @@ namespace ForgottenMemories
 					shop.item[nextSlot].SetDefaults(mod.ItemType("psychic_pistol")); // sell psychic pistol
 					nextSlot++;
 				}
+				if (NPC.downedAncientCultist)
+				{
+					shop.item[nextSlot].SetDefaults(mod.ItemType("VengeanceBullet"));
+					nextSlot++;
+				}
 				for (int i = 0; i < 200; i++) // loop through 200 players
 				{
 					Player player = Main.player[i];
