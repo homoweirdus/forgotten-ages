@@ -25,7 +25,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			for (int i = 0; i <= 2; i++)
+			for (int i = 0; i <= 3; i++)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 63, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);

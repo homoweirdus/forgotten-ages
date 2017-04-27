@@ -6,16 +6,16 @@ using Terraria.ID;
 
 namespace ForgottenMemories.Items.Magic
 {
-	public class SolarJudgement : ModItem
+	public class LunarWrath : ModItem
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Solar Judgement";
-			item.damage = 152;
+			item.name = "Lunar Wrath";
+			item.damage = 92;
 			item.magic = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 12;
+			item.useTime = 4;
 			item.useAnimation = 12;
 			item.reuseDelay = 18;
 			item.channel = true;
@@ -25,19 +25,19 @@ namespace ForgottenMemories.Items.Magic
 			item.rare = 9;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.toolTip = "Creates a fast moving, explosive orb of sunfire that rapisly loses velocity";
+			item.toolTip = "Creates a slow moving, homing laser of moonlight that gains velocity over time";
 			Item.staff[item.type] = true;
-			item.shoot = mod.ProjectileType("SolBeam");
-			item.shootSpeed = 18f;
-			item.mana = 25;
+			item.shoot = mod.ProjectileType("LunarOrb");
+			item.shootSpeed = 6f;
+			item.mana = 15;
 		}
 		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.SoulofLight, 12);
+			recipe.AddIngredient(ItemID.SoulofNight, 12);
 			recipe.AddIngredient(ItemID.LunarBar, 12);
-			recipe.AddIngredient(3458, 12);
+			recipe.AddIngredient(ItemID.Ectoplasm, 12);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

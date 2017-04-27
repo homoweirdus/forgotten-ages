@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 		int counter = 0;
         public override void SetDefaults()
         {
-            item.name = "Orichalcum Tome";
+            item.name = "Orichalcum Index";
             item.damage = 39;
             item.magic = true;
             item.mana = 5;

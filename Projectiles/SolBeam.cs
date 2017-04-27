@@ -13,8 +13,8 @@ namespace ForgottenMemories.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.name = "Solar Beam";
-			projectile.width = 30;
-			projectile.height = 30;
+			projectile.width = 10;
+			projectile.height = 10;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.magic = true;
@@ -24,7 +24,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 0;
 			projectile.timeLeft = 100;
 			Main.projFrames[projectile.type] = 4;
-			projectile.scale = 1f;
+			projectile.scale = 1.25f;
 		}
 		
 		public override void AI()
@@ -47,29 +47,22 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			for (int i = 0; i <= 4; i++)
+			for (int i = 0; i <= 3; i++)
 			{
 				float cX = projectile.Center.X;
 				float cY = projectile.Center.Y;
-				cX += Main.rand.Next(-60, 60);
-				cY += Main.rand.Next(-60, 60);
+				cX += Main.rand.Next(-45, 45);
+				cY += Main.rand.Next(-45, 45);
 				int kk = Projectile.NewProjectile(cX, cY, 0f, 0f, mod.ProjectileType("solarboom"), projectile.damage, 5f, projectile.owner);
 				Main.projectile[kk].melee = false;
 				Main.projectile[kk].magic = true;
 			}
-		}
-		
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			for (int i = 0; i <= 8; i++)
+			
+			for (int i = 0; i <= 2; i++)
 			{
-				float cX = projectile.Center.X;
-				float cY = projectile.Center.Y;
-				cX += Main.rand.Next(-70, 70);
-				cY += Main.rand.Next(-70, 70);
-				int kk = Projectile.NewProjectile(cX, cY, 0f, 0f, mod.ProjectileType("solarboom"), projectile.damage, 5f, projectile.owner);
-				Main.projectile[kk].melee = false;
-				Main.projectile[kk].magic = true;
+				float sX = Main.rand.Next(-60, 60) * 0.05f;
+				float sY = Main.rand.Next(-60, 60) * 0.05f;
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, sX, sY, mod.ProjectileType("solarember"), projectile.damage/2, 5f, projectile.owner);
 			}
 		}
 	}

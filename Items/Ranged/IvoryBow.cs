@@ -33,7 +33,7 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("IvoryLaser"), (int)damage/3, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("IvoryLaser"), (int)(damage*0.75), knockBack, player.whoAmI);
 			
 			for (int i = 0; i < 2; i++)
 			{

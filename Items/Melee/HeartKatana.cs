@@ -25,7 +25,6 @@ namespace ForgottenMemories.Items.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
 			item.toolTip = "Critical strikes restore health";
-			item.toolTip2 = "Right-click while moving and attacking an enemy 3 times to dash";
 			item.autoReuse = true;
 			item.useTurn = true;
 		}
