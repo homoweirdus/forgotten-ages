@@ -13,16 +13,16 @@ namespace ForgottenMemories.Items.Ranged
         public override void SetDefaults()
         {
             item.name = "Artemis";
-            item.damage = 20;
+            item.damage = 33;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-            item.toolTip = "Fires a wave of night stars";
-            item.useTime = 25;
-            item.useAnimation = 25;
+            item.toolTip = "Fires a night arrow that splits into stars";
+            item.useTime = 30;
+            item.useAnimation = 30;
             item.useStyle = 5;
-            item.shoot = 3;
+            item.shoot = mod.ProjectileType("NightArrow");
             item.useAmmo = 40;
             item.knockBack = 1;
             item.value = 1000;
@@ -43,13 +43,16 @@ namespace ForgottenMemories.Items.Ranged
 				Vector2 newVect6 = origVect.RotatedBy(-System.Math.PI / 10);
 				
 				Projectile.NewProjectile(position.X, position.Y, origVect.X, origVect.Y, mod.ProjectileType("NightArrow"), damage, knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect.X, newVect.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect2.X, newVect2.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect3.X, newVect3.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect4.X, newVect4.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect5.X, newVect5.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect6.X , newVect6.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
-            return false;
+				if (Main.rand.Next(6) == 0)
+				{
+					Projectile.NewProjectile(position.X, position.Y, newVect.X, newVect.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
+					Projectile.NewProjectile(position.X, position.Y, newVect2.X, newVect2.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
+					Projectile.NewProjectile(position.X, position.Y, newVect3.X, newVect3.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
+					Projectile.NewProjectile(position.X, position.Y, newVect4.X, newVect4.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
+					Projectile.NewProjectile(position.X, position.Y, newVect5.X, newVect5.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
+					Projectile.NewProjectile(position.X, position.Y, newVect6.X , newVect6.Y, mod.ProjectileType("NightStar"), damage, knockBack, player.whoAmI, 0, 0);
+				}
+			return false;
         }
         public override void AddRecipes()
         {

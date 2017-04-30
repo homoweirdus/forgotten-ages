@@ -16,7 +16,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.height = 64;
 			npc.damage = 25;
 			npc.defense = 10;
-			npc.lifeMax = 400;
+			npc.lifeMax = 200;
 			npc.HitSound = SoundID.NPCHit41;
 			npc.DeathSound = SoundID.NPCDeath44;
 			npc.value = 0f;
@@ -50,7 +50,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 		public override void AI()
 		{
 			timer++;
-			if (timer == 60)
+			if (timer == 80)
 			{
 				Vector2 direction = Main.player[npc.target].Center - npc.Center;
 				direction.Normalize();

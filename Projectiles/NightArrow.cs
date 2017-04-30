@@ -23,7 +23,7 @@ namespace ForgottenMemories.Projectiles
 		
 		    public override void Kill(int timeLeft)
 			{
-				int amountOfProjectiles = Main.rand.Next(5, 10);
+				int amountOfProjectiles = Main.rand.Next(3) + 1;
 			
 				for (int i = 0; i < amountOfProjectiles; ++i)
 					{

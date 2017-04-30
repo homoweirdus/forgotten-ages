@@ -18,6 +18,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 2;
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
+			projectile.timeLeft = 45;
 			projectile.extraUpdates = 1;
 			aiType = ProjectileID.Bullet;
 			projectile.melee = true;
@@ -32,6 +33,8 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
+			
+			projectile.scale += 0.03f;
 		}
 		
 	}

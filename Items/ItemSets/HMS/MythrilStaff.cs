@@ -44,10 +44,9 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 
         public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            //create velocity vectors for the two angled projectiles (outwards at PI/20 radians)
             Vector2 origVect = new Vector2(speedX, speedY);
-            Vector2 newVect = origVect.RotatedBy(System.Math.PI / 20);
-            Vector2 newVect2 = origVect.RotatedBy(-System.Math.PI / 20);
+            Vector2 newVect = origVect.RotatedBy(System.Math.PI / 7);
+            Vector2 newVect2 = origVect.RotatedBy(-System.Math.PI / 7);
 
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI, 0, 0);
             Projectile.NewProjectile(position.X, position.Y, newVect.X, newVect.Y, type, damage, knockBack, player.whoAmI, 0, 0);

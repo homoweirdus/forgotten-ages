@@ -18,6 +18,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.hostile = true;
 			projectile.penetrate = 3;
 			projectile.alpha = 255;
+			projectile.timeLeft = 120;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
 			aiType = ProjectileID.Bullet;
@@ -25,11 +26,21 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			if (Main.rand.Next(5) == 0)
+			if (Main.rand.Next(15) == 0)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 60, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].scale = 0.5f;
+				Main.dust[dust].noGravity = true;
+			}
+		}
+		
+		public override void Kill(int timeLeft)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 60);
+				Main.dust[dust].scale = 2.5f;
 				Main.dust[dust].noGravity = true;
 			}
 		}

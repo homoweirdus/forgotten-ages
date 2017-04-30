@@ -15,7 +15,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.height = 14;
 			npc.damage = 25;
 			npc.defense = 10;
-			npc.lifeMax = 10;
+			npc.lifeMax = 150;
 			npc.HitSound = SoundID.NPCHit41;
 			npc.DeathSound = SoundID.NPCDeath44;
 			npc.value = 0f;
@@ -29,8 +29,8 @@ namespace ForgottenMemories.NPCs.TitanRock
 		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 1f);
-			npc.damage = (int)(npc.damage * 1f);
+			npc.lifeMax = 200;
+			npc.damage = 50;
 		}
 		
 		public override bool PreNPCLoot()

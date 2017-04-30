@@ -17,15 +17,14 @@ namespace ForgottenMemories.Items.Ranged
         public override void SetDefaults()
         {
             item.name = "True Hallowed Repeater";
-            item.damage = 38;
+            item.damage = 58;
             item.noMelee = true;
             item.ranged = true;
             item.width = 54;
             item.height = 24;
             item.toolTip = "Enchants arrows with hallowed energy";
-            item.useTime = 8;
-            item.useAnimation = 24;
-			item.reuseDelay = 18;
+            item.useTime = 20;
+            item.useAnimation = 20;
             item.useStyle = 5;
             item.shoot = 3;
             item.useAmmo = 40;

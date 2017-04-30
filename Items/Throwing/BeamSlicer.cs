@@ -11,11 +11,12 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 			item.name = "Beam Slicer";
-			item.damage = 13;
+			item.damage = 38;
 			item.thrown = true;
 			item.noMelee = true;
 			item.noUseGraphic = true;
-			AddTooltip("Fires lasers in random directions");
+			AddTooltip("Stops midair, teleports 3 times firing lasers in all directions before disappearing");
+			AddTooltip("Non-consumable, but only one can be thrown at a time");
 			item.width = 22;
 			item.height = 22;
 			item.useTime = 20;
@@ -29,5 +30,17 @@ namespace ForgottenMemories.Items.Throwing
 			item.rare = 2;
 			item.autoReuse = true;
 		}
+		
+		public override bool CanUseItem(Player player)
+        {
+            for (int i = 0; i < 1000; ++i)
+            {
+                if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 	}
 }

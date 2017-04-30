@@ -13,16 +13,16 @@ namespace ForgottenMemories.Items.Ranged
         public override void SetDefaults()
         {
             item.name = "True Artemis";
-            item.damage = 42;
+            item.damage = 60;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-            item.toolTip = "Fires a spread of cursed lightning";
+            item.toolTip = "Fires a true night arrow that splits into cursed lightning";
             item.useTime = 28;
             item.useAnimation = 28;
             item.useStyle = 5;
-            item.shoot = 3;
+            item.shoot = mod.ProjectileType("TrueNightArrow");
             item.useAmmo = 40;
             item.knockBack = 1;
             item.value = 500000;
@@ -41,11 +41,14 @@ namespace ForgottenMemories.Items.Ranged
 				Vector2 newVect4 = origVect.RotatedBy(-System.Math.PI / 15);
 				
 				Projectile.NewProjectile(position.X, position.Y, origVect.X, origVect.Y, mod.ProjectileType("TrueNightArrow"), damage, knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect.X, newVect.Y, mod.ProjectileType("CursedLightning"), (int)(damage * 0.66), knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect2.X, newVect2.Y, mod.ProjectileType("CursedLightning"), (int)(damage * 0.66), knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect3.X, newVect3.Y, mod.ProjectileType("CursedLightning"), (int)(damage * 0.66), knockBack, player.whoAmI, 0, 0);
-				Projectile.NewProjectile(position.X, position.Y, newVect4.X, newVect4.Y, mod.ProjectileType("CursedLightning"), (int)(damage * 0.66), knockBack, player.whoAmI, 0, 0);
-            return false;
+				if (Main.rand.Next(5) == 0)
+				{
+					Projectile.NewProjectile(position.X, position.Y, newVect.X, newVect.Y, mod.ProjectileType("CursedLightning"), (int)(damage * 0.66), knockBack, player.whoAmI, 0, 0);
+					Projectile.NewProjectile(position.X, position.Y, newVect2.X, newVect2.Y, mod.ProjectileType("CursedLightning"), (int)(damage * 0.66), knockBack, player.whoAmI, 0, 0);
+					Projectile.NewProjectile(position.X, position.Y, newVect3.X, newVect3.Y, mod.ProjectileType("CursedLightning"), (int)(damage * 0.66), knockBack, player.whoAmI, 0, 0);
+					Projectile.NewProjectile(position.X, position.Y, newVect4.X, newVect4.Y, mod.ProjectileType("CursedLightning"), (int)(damage * 0.66), knockBack, player.whoAmI, 0, 0);
+				}
+		   return false;
         }
         public override void AddRecipes()
         {

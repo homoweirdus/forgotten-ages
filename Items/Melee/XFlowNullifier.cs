@@ -15,7 +15,6 @@ namespace ForgottenMemories.Items.Melee
 			item.width = 88;
 			item.height = 88;
 			AddTooltip("Fires light from the heavens");
-			AddTooltip("The starstorm takes 5 seconds to reload");
 			item.useTime = 4;
 			item.useAnimation = 16;
 			item.useStyle = 1;

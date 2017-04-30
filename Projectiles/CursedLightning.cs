@@ -27,7 +27,6 @@ namespace ForgottenMemories.Projectiles
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
              target.AddBuff(39, 180, false);
-			 target.immune[projectile.owner] = 1;
         }
 		
 		public override void AI()

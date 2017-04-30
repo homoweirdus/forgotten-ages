@@ -35,29 +35,6 @@ namespace ForgottenMemories.Projectiles
 			Main.dust[hitler].scale = 1.5f;
 			Main.dust[hitler].noGravity = true;
 			projectile.rotation += 10;
-			Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
-			Vector2 move = Vector2.Zero;
-			float distance = 400f;
-			bool target = false;
-			for (int k = 0; k < 200; k++)
-			{
-				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
-				{
-					Vector2 newMove = Main.npc[k].Center - projectile.Center;
-					float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
-					if (distanceTo < distance)
-					{
-						newMove.Normalize();
-						move = newMove;
-						distance = distanceTo;
-						target = true;
-					}
-				}
-			}
-			if (target)
-			{
-				projectile.velocity = (move * 5f);
-			}
 		}
 	}
 }

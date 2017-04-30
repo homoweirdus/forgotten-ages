@@ -13,12 +13,12 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.name = "Doomsday Bow";
-			item.damage = 115;
+			item.damage = 105;
 			item.ranged = true;
 			item.width = 50;
 			item.height = 50;
-			item.useTime = 15;
-			item.useAnimation = 15;
+			item.useTime = 22;
+			item.useAnimation = 22;
 			item.useStyle = 5;
 			item.knockBack = 5;
 			item.value = 500000;
