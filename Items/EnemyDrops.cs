@@ -54,7 +54,7 @@ namespace ForgottenMemories.Items
 			if (Main.bloodMoon && Main.rand.Next(3) == 0)
 			{
 				int amountToDrop = Main.rand.Next(8,14);
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ShadowflameEmber"), amountToDrop); 
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BloodDagger"), amountToDrop); 
 			}
 			
 			if (npc.type == NPCID.WallofFlesh && !Main.expertMode)

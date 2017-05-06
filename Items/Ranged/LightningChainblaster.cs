@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.name = "Lightning Chainblaster";
-			item.damage = 40;
+			item.damage = 35;
 			item.ranged = true;
 			item.width = 50;
 			item.height = 50;
@@ -62,7 +62,7 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.Next(6) == 0)
 			{
 				float sX = speedX;
 				float sY = speedY;

@@ -54,7 +54,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 			{
 				Vector2 direction = Main.player[npc.target].Center - npc.Center;
 				direction.Normalize();
-				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X * 4f, direction.Y * 4f, 84, 20, 1, Main.myPlayer, 0, 0);
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X * 4f, direction.Y * 4f, mod.ProjectileType("Ball2"), 20, 1, Main.myPlayer, 0, 0);
 				timer = 0;
 			}
 		}

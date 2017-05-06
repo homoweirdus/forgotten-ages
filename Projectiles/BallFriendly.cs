@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-	public class Ball : ModProjectile
+	public class BallFriendly : ModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -14,12 +14,12 @@ namespace ForgottenMemories.Projectiles
 			projectile.width = 40;
 			projectile.height = 40;
 			projectile.aiStyle = 1;
-			projectile.friendly = false;
-			projectile.hostile = true;
-			projectile.penetrate = 3;
-			projectile.tileCollide = false;
+			projectile.friendly = true;
+			projectile.hostile = false;
+			projectile.penetrate = -1;
 			projectile.alpha = 255;
-			projectile.timeLeft = 180;
+			projectile.tileCollide = false;
+			projectile.timeLeft = 30;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
 			aiType = ProjectileID.Bullet;
@@ -41,7 +41,7 @@ namespace ForgottenMemories.Projectiles
 			for (int i = 0; i < 10; i++)
 			{
 				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 60);
-				Main.dust[dust].scale = 2.5f;
+				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
 		}

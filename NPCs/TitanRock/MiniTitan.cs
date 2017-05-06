@@ -16,7 +16,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.height = 64;
 			npc.damage = 0;
 			npc.defense = 0;
-			npc.lifeMax = 1000;
+			npc.lifeMax = 4000;
 			npc.HitSound = SoundID.NPCHit41;
 			npc.DeathSound = SoundID.NPCDeath44;
 			npc.value = 0f;
@@ -67,7 +67,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 						float sY = direction.Y * 4f;
 						sX += (float)Main.rand.Next(-60, 61) * 0.02f;
 						sY += (float)Main.rand.Next(-60, 61) * 0.02f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Ball"), 25, 1, Main.myPlayer, 0, 0);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Ball2"), 25, 1, Main.myPlayer, 0, 0);
 					}
 				timer = 0;
 			}

@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 		public override void SetDefaults()
 		{
 			item.name = "Optic Chainsaw";
-			item.damage = 36;
+			item.damage = 16;
 			item.melee = true;
 			item.width = 24;
 			item.height = 8;

@@ -6,20 +6,22 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-	public class laserbeam : ModProjectile
+	public class DoomBeam : ModProjectile
 	{
+		bool alreadyHit = false;
 		public override void SetDefaults()
 		{
-			projectile.name = "Laser";
-			projectile.width = 8;
-			projectile.height = 8;
+			projectile.name = "Dying Reality Bolt";
+			projectile.width = 16;
+			projectile.height = 16;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.hostile = false;
-			projectile.penetrate = 1;
+			projectile.penetrate = -1;
 			projectile.alpha = 255;
-			projectile.timeLeft = 360;
-			projectile.extraUpdates = 3;
+			projectile.timeLeft = 60;
+			projectile.tileCollide = false;
+			projectile.extraUpdates = 1;
 			projectile.light = 0.5f;
 			projectile.scale = 1.2f;
 		}
@@ -27,26 +29,29 @@ namespace ForgottenMemories.Projectiles
 		public override void AI()
 		{
 			int num;
-			for (int num164 = 0; num164 < 10; num164 = num + 1)
+			if (projectile.timeLeft <= 358)
 			{
-				float x2 = projectile.position.X - projectile.velocity.X / 10f * (float)num164;
-				float y2 = projectile.position.Y - projectile.velocity.Y / 10f * (float)num164;
-				int num165 = Dust.NewDust(new Vector2(x2, y2), 1, 1, 60, 0f, 0f, 0, default(Color), 1f);
-				Main.dust[num165].position.X = x2;
-				Main.dust[num165].position.Y = y2;
-				Dust dust3 = Main.dust[num165];
-				dust3.velocity *= 0f;
-				Main.dust[num165].noGravity = true;
-				num = num164;
+				for (int num164 = 0; num164 < 10; num164 = num + 1)
+				{
+					float x2 = projectile.position.X - projectile.velocity.X / 10f * (float)num164;
+					float y2 = projectile.position.Y - projectile.velocity.Y / 10f * (float)num164;
+					int num165 = Dust.NewDust(new Vector2(x2, y2), 1, 1, 62, 0f, 0f, 0, default(Color), 1f);
+					Main.dust[num165].position.X = x2;
+					Main.dust[num165].position.Y = y2;
+					Dust dust3 = Main.dust[num165];
+					dust3.velocity *= 0f;
+					Main.dust[num165].noGravity = true;
+					num = num164;
+				}
 			}
 			
 						
 			Vector2 targetPos = projectile.Center;
-            float targetDist = 350f;
+            float targetDist = 450f;
             bool targetAcquired = false;
 			for (int i = 0; i < 200; i++)
             {
-                if (Main.npc[i].CanBeChasedBy(projectile) && Collision.CanHit(projectile.Center, 1, 1, Main.npc[i].Center, 1, 1))
+                if (Main.npc[i].CanBeChasedBy(projectile))
                 {
                     float dist = projectile.Distance(Main.npc[i].Center);
                     if (dist < targetDist)
@@ -60,14 +65,23 @@ namespace ForgottenMemories.Projectiles
 
             if (targetAcquired)
             {
-                float homingSpeedFactor = 6f;
+                float homingSpeedFactor = 5f;
                 Vector2 homingVect = targetPos - projectile.Center;
                 float dist = projectile.Distance(targetPos);
                 dist = homingSpeedFactor / dist;
                 homingVect *= dist;
-				projectile.tileCollide = false;
                 projectile.velocity = (projectile.velocity * 20 + homingVect) / 21f;
+				
+				if (alreadyHit == false)
+				{
+					projectile.timeLeft++;
+				}
             }
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			alreadyHit = true;
 		}
 	}
 }

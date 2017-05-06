@@ -18,6 +18,7 @@ namespace ForgottenMemories
 		public static bool Gelatine = false;
 		public static bool downedGhastlyEnt = false;
 		public static bool downedTitanRock = false;
+		public static int TremorTime = 0;
 		
 		public override void Initialize()
         {

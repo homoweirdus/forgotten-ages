@@ -42,9 +42,9 @@ namespace ForgottenMemories.Projectiles
 				int dust2 = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0,  60, 0f, 0f);
 			}
 			
-			projectile.velocity *= 0.95f;
-			projectile.alpha += 5;
-			if (projectile.alpha == 255 && counterA == 0)
+			projectile.velocity *= 0.96f;
+			projectile.alpha += 3;
+			if (projectile.alpha >= 255 && counterA == 0)
 			{
 				int A = Main.rand.Next(-50, 50);
 				int B = Main.rand.Next(-50, 50);
