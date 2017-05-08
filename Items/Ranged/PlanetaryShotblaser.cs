@@ -43,6 +43,7 @@ namespace ForgottenMemories.Items.Ranged
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.OnyxBlaster, 1);
 			recipe.AddIngredient(null,"FlameShotgun", 1);
+			recipe.AddIngredient(null, "ForestEnergy", 8);
 			recipe.AddIngredient(3459, 12);
 			recipe.AddIngredient(3457, 12);
 			recipe.AddIngredient(3467, 10);

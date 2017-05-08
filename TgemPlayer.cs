@@ -16,6 +16,7 @@ namespace ForgottenMemories
         public bool Servant = false;
 		public bool LightningDagger = false;
 		public bool EaterMinion = false;
+		public bool BlightstoneDragon = false;
 		public bool CreeperMinion = false;
 		public bool ShadowflameSpirit = false;
         public static bool hasProjectile;
@@ -25,6 +26,7 @@ namespace ForgottenMemories
 
         public override void ResetEffects()
         {
+			BlightstoneDragon = false;
             Servant = false;
 			LightningDagger = false;
 			CreeperMinion = false;

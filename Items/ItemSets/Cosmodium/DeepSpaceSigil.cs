@@ -30,5 +30,17 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             AscensionWorld.DropComet();
             return true;
         }
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.FragmentNebula, 30);
+			recipe.AddIngredient(ItemID.FragmentVortex, 30);
+			recipe.AddIngredient(ItemID.FragmentSolar, 30);
+			recipe.AddIngredient(ItemID.FragmentStardust, 30);
+			recipe.AddIngredient(ItemID.LunarBar, 30);
+			recipe.AddTile(412);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
     }
 }

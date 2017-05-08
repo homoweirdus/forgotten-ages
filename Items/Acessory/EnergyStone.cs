@@ -12,9 +12,9 @@ namespace ForgottenMemories.Items.Acessory
 			item.name = "Energy Stone";
 			item.width = 24;
 			item.height = 28;
-			item.toolTip = "Hold down to ground pound";
+			item.toolTip = "Hold down to ground pound \nHold up to reduce falling speed";
 			item.value = 10000;
-			item.rare = 2;
+			item.rare = 4;
 			item.accessory = true;
 			item.expert = true;
 		}

@@ -33,6 +33,7 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.TerraBlade, 1);
 			recipe.AddIngredient(ItemID.Seedler, 1);
+			recipe.AddIngredient(null, "ForestEnergy", 8);
 			recipe.AddIngredient(3458, 30);
 			recipe.AddIngredient(3456, 30);
 			recipe.AddIngredient(3467, 10);

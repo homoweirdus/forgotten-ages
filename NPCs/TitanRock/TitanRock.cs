@@ -21,6 +21,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 		bool despawn = false;
 		bool phase2transition = false;
 		bool canTPAgain = false;
+		bool OnScreen = false;
 		bool spawnedMiniTitans1 = false;
 		bool spawnedMiniTitans2 = false;
 		Vector2 gayvector = new Vector2(0f, -5f);
@@ -95,15 +96,22 @@ namespace ForgottenMemories.NPCs.TitanRock
 		{
 			npc.TargetClosest(true);
 			Player player = Main.player[npc.target];
-			timer++;
+			
 			if (npc.life <= (int)(npc.lifeMax/2) && despawn == false)
 			{		
 				if (phase2transition == false)
 				{
 					Main.NewText("Titan Rock enrages!", 255, 25, 0);
 					Main.PlaySound(15, (int)npc.position.X, (int)npc.position.Y, 0);
+					timer = 0;
 					phase2transition = true;
 				}
+				
+				if (falltimer <= 50 && falltimer >= 20)
+				{
+					timer++;
+				}
+				
 				if (spawnedMiniTitans1 == false) //spawn the 1st pair of mini titans
 				{
 					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("MiniTitan"));
@@ -118,7 +126,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 					spawnedMiniTitans2 = true;
 				}
 				
-				if (timer <= 350)
+				if (timer <= 150)
 				{
 					gayvector = new Vector2(0f, -5f);
 					npc.rotation += 0.20f; //rotation
@@ -133,10 +141,10 @@ namespace ForgottenMemories.NPCs.TitanRock
 					npc.velocity.X = 0; //make sure it doesn't break when entering the 2nd phase
 					if (falltimer == 0)//teleport above the player and create a ring of lasers
 					{
-						int A = Main.rand.Next(-250, 250) * 3;
+						int A = Main.rand.Next(-250, 250) * 2;
 						npc.position.X = player.Center.X + A;
-						npc.position.Y = player.position.Y - (Main.screenHeight * 1.25f);
-						teleportF = player.position.Y + (Main.screenHeight * 1.25f);
+						npc.position.Y = player.position.Y - (Main.screenHeight);
+						teleportF = player.position.Y + (Main.screenHeight);
 						canTPAgain = true;
 						
 						for (int m = 0; m <= 30; m++)
@@ -192,7 +200,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 					}
 					
 					
-					if (npc.Center.Y >= teleportF && canTPAgain == true)
+					if (npc.Center.Y >= teleportF && canTPAgain == true && timer <= 151)
 					{
 						falltimer = 0;
 						for (int r = 0; r <= 30; r++)
@@ -205,7 +213,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 					}
 				}
 				
-				if (timer >= 350)
+				if (timer >= 150 && falltimer <= 50 && falltimer >= 20)
 				{
 					timer2++;
 					
@@ -226,7 +234,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 						
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, gayvector.X, gayvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, homovector.X, homovector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						if (timer <= 400 || timer >= 450 && timer <= 550|| timer >= 600)
+						if (timer <= 200 || timer >= 250 && timer <= 350|| timer >= 400)
 						{
 							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, lesvector.X, lesvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
 							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, bivector.X, bivector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
@@ -246,7 +254,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("SpikeTitan"));
 				}
 								
-				if (timer >= 650)
+				if (timer >= 450)
 				{
 					timer = 0;
 				}
@@ -255,6 +263,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 				
 			else
 			{
+				timer++;
 				if (timer <= 350)
 				{
 					npc.ai[2] += 1f;

@@ -50,7 +50,7 @@ namespace ForgottenMemories.Items.Melee
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(1228, 1);
-			recipe.AddIngredient(null, "AccursedBar", 20);
+			recipe.AddIngredient(ItemID.CursedFlame, 20);
 			recipe.AddIngredient(ItemID.Ectoplasm, 15);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

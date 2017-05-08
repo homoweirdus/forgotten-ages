@@ -49,7 +49,7 @@ namespace ForgottenMemories
 						previousRotation = targetRotation;
 						previousOffsetX = targetOffsetX;
 						previousOffsetY = targetOffsetY;
-						targetRotation = (Main.rand.NextFloat() - .5f) * MathHelper.ToRadians(15);
+						targetRotation = (Main.rand.NextFloat() - .5f) * MathHelper.ToRadians(7);
 						targetOffsetX = Main.rand.Next(60) - 30;
 						targetOffsetY = Main.rand.Next(40) - 20;
 						if (TGEMWorld.TremorTime == ShakeLength)

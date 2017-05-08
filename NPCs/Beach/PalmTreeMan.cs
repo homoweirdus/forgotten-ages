@@ -39,7 +39,7 @@ namespace ForgottenMemories.NPCs.Beach
 	{
 			int amountToDrop = Main.rand.Next(3,10);
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PalmWood, amountToDrop);
-			if(Main.rand.Next(60) == 0)
+			if(Main.rand.Next(30) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LivingTwig"));
 			}

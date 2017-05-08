@@ -116,27 +116,12 @@ namespace ForgottenMemories.Items.Ranged
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "ApocalypseBow", 1);
-			recipe.AddIngredient(null, "AccursedBow", 1);
 			recipe.AddIngredient(3019, 1); //Hellwing bow
 			recipe.AddIngredient(3854, 1); //Phantom Phoenix
 			recipe.AddIngredient(null,"TerraBow", 1);
 			recipe.AddIngredient(682, 1); //Marrow
 			recipe.AddIngredient(3859, 1); //Aerial Bane
 			recipe.AddIngredient(2223, 1); //Pulse Bow
-			recipe.AddIngredient(ItemID.LunarBar, 12);
-			recipe.AddTile(412);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ApocalypseBow", 1);
-			recipe.AddIngredient(null, "ManSlayer", 1);
-			recipe.AddIngredient(3019, 1); //Hellwing bow
-			recipe.AddIngredient(3854, 1); //Phantom Phoenix
-			recipe.AddIngredient(null,"TerraBow", 1);
-			recipe.AddIngredient(682, 1); //Marrow
-			recipe.AddIngredient(3859, 1); //Aerial Bane
-			recipe.AddIngredient(3540, 1); //Phantasm
 			recipe.AddIngredient(ItemID.LunarBar, 12);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
