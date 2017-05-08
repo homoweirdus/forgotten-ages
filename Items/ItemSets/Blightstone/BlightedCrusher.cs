@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.height = 60;
 			item.toolTip = "Critical hits create an explosion and reduce enemy defense";
 			item.useTime = 14;
-			item.crit = 29;
+			item.crit = 16;
 			item.useAnimation = 14;
 			item.useStyle = 1;
 			item.knockBack = 4;

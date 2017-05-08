@@ -32,5 +32,10 @@ namespace ForgottenMemories.Projectiles
 				projectile.frame = (projectile.frame + 1) % 4;
 			} 
 		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.AddBuff(mod.BuffType("BlightFlame"), 580, false);
+		}
 	}
 }
