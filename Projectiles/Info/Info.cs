@@ -21,6 +21,7 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool Split = false;
 		public bool wtf = false;
 		public bool IceSpike = false;
+		public bool BlightedBow = false;
 	}
 	
 	public class Stuff : GlobalProjectile
@@ -47,9 +48,9 @@ namespace ForgottenMemories.Projectiles.Info
 				Main.projectile[z].tileCollide = false;
 				Main.projectile[z].penetrate = 1;
 			}
-			if(Main.rand.Next(3) == 0 && projectile.GetModInfo<Info>(mod).Mutilator == true)
+			if (projectile.GetModInfo<Info>(mod).BlightedBow == true)
 			{
-				target.AddBuff(69, 360);
+				target.AddBuff(mod.BuffType("BlightFlame"), 360, false);
 			}
 			
 			if(projectile.GetModInfo<Info>(mod).IceSpike == true)
@@ -157,6 +158,14 @@ namespace ForgottenMemories.Projectiles.Info
 				int dust;
 				dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 74, 0f, 0f);
 				Main.dust[dust].scale = 0.9f;
+				Main.dust[dust].noGravity = true;
+			}
+			
+			if (projectile.GetModInfo<Info>(mod).BlightedBow == true)
+			{
+				int dust;
+				dust = Dust.NewDust(projectile.Center, 0, 0, 65, 0f, 0f);
+				Main.dust[dust].scale = 1.2f;
 				Main.dust[dust].noGravity = true;
 			}
 			

@@ -15,8 +15,10 @@ namespace ForgottenMemories
         private const int saveVersion = 0;
         public bool Servant = false;
 		public bool LightningDagger = false;
+		public bool BlightFlameRing = false;
 		public bool EaterMinion = false;
 		public bool BlightstoneDragon = false;
+		int BlightCounter = 0;
 		public bool CreeperMinion = false;
 		public bool ShadowflameSpirit = false;
         public static bool hasProjectile;
@@ -27,6 +29,7 @@ namespace ForgottenMemories
         public override void ResetEffects()
         {
 			BlightstoneDragon = false;
+			BlightFlameRing = false;
             Servant = false;
 			LightningDagger = false;
 			CreeperMinion = false;
@@ -43,6 +46,22 @@ namespace ForgottenMemories
 			{
 				Projectile.NewProjectile(player.position.X, player.position.Y, 0f, 0f, mod.ProjectileType("SlimeGuard"), 15, 1f, player.whoAmI, 0f, 0f);
 			}	
+			
+			if (player.ownedProjectileCounts[mod.ProjectileType("BlightFireOrbit")] < 12 && BlightFlameRing == true)
+			{
+				Vector2 Ring = new Vector2(150, 0).RotatedBy(MathHelper.ToRadians(player.ownedProjectileCounts[mod.ProjectileType("BlightFireOrbit")] * 30));
+				Projectile.NewProjectile((player.position.X + Ring.X), (player.position.Y + Ring.Y), 0f, 0f, mod.ProjectileType("BlightFireOrbit"), 0, 0f, player.whoAmI, 0f, 0f);
+			}
+			
+			if (player.ownedProjectileCounts[mod.ProjectileType("BlightLaserOrbit")] < 1 && BlightFlameRing == true)
+			{
+				BlightCounter++;
+				if (BlightCounter >= 180)
+				{
+					Projectile.NewProjectile((player.position.X + 150), (player.position.Y), 0f, 0f, mod.ProjectileType("BlightLaserOrbit"), 120, 0f, player.whoAmI, 0f, 0f);
+					BlightCounter = 0;
+				}
+			}
 		}
 		
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)

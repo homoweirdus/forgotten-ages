@@ -1,0 +1,23 @@
+using System.Collections.Generic;
+using System;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace ForgottenMemories.Items.AaMaterials
+{
+	public class blight_bar : ModItem
+	{
+		public override void SetDefaults()
+		{
+			item.name = "Blightstone Bar";
+			item.width = 8;
+			item.height = 8;
+			item.maxStack = 999;
+			item.value = 20000;
+			item.rare = 5;
+
+        }
+    }
+}
