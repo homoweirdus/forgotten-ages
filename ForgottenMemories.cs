@@ -179,6 +179,59 @@ namespace ForgottenMemories
             recipe.AddRecipe();
 			
 			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.IronBar, 10);
+			recipe.AddIngredient(ItemID.IllegalGunParts, 1);
+			recipe.AddIngredient(ItemID.SoulofFright, 5);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.Gatligator, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.LeadBar, 10);
+			recipe.AddIngredient(ItemID.IllegalGunParts, 1);
+			recipe.AddIngredient(ItemID.SoulofFright, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(ItemID.Gatligator, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.FlintlockPistol, 1);
+			recipe.AddIngredient(ItemID.IllegalGunParts, 1);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.Revolver, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.Rally, 1);
+			recipe.AddIngredient(null, "WaterShard", 5);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.Code1, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.Code1, 1);
+			recipe.AddIngredient(ItemID.SoulofMight, 5);
+			recipe.AddIngredient(ItemID.SoulofFright, 5);
+			recipe.AddIngredient(ItemID.SoulofSight, 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(ItemID.Code2, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.ShroomiteBar, 18);
+			recipe.AddIngredient(ItemID.BeetleHusk, 3);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(ItemID.PulseBow, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
+			recipe.AddIngredient(ItemID.IllegalGunParts, 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(ItemID.Uzi, 1);
+            recipe.AddRecipe();
+			
+			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.Vertebrae, 5);
             recipe.AddTile(18);
             recipe.SetResult(259, 1);

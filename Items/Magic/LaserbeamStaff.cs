@@ -15,9 +15,9 @@ namespace ForgottenMemories.Items.Magic
 			item.damage = 49;
 			item.magic = true;
 			item.mana = 8;
-			item.width = 25;
-			item.height = 26;
-			item.useTime = 8;
+			item.width = 38;
+			item.height = 38;
+			item.useTime = 4;
 			item.UseSound = SoundID.Item15;
 			item.useAnimation = 16;
 			item.useStyle = 5;
@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.Magic
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			memer += 0.2f;
+			memer += 0.1f;
 			Vector2 newVect = new Vector2(speedX, speedY);
 			Vector2 newVect2 = newVect.RotatedBy(Math.Sin(memer) / 2);
 			Vector2 newVect3 = newVect.RotatedBy(Math.Sin(-memer) / 2);

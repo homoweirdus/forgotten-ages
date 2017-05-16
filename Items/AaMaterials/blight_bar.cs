@@ -19,5 +19,14 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.rare = 5;
 
         }
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "BlightOreItem", 5);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
     }
 }

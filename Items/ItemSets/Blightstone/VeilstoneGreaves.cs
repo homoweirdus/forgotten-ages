@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void SetDefaults()
 		{
-			item.name = "Veilstone Greaves";
+			item.name = "Blightstone Greaves";
 			item.width = 18;
 			item.height = 18;
 			AddTooltip("15% increased movement speed");

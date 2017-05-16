@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void SetDefaults()
 		{
-			item.name = "Veilstone Breastplate";
+			item.name = "Blightstone Chestplate";
 			item.width = 18;
 			item.height = 18;
 			AddTooltip("Increased life regen");

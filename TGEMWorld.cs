@@ -16,6 +16,7 @@ namespace ForgottenMemories
     {
 		public static bool Cryotine = false;
 		public static bool Gelatine = false;
+		public static bool Blight = false;
 		public static bool downedGhastlyEnt = false;
 		public static bool downedTitanRock = false;
 		public static int TremorTime = 0;
@@ -23,6 +24,7 @@ namespace ForgottenMemories
 		public override void Initialize()
         {
 			Gelatine = false;
+			Blight = false;
 			Cryotine = false;
 			downedGhastlyEnt = false;
 			downedTitanRock = false;
@@ -34,6 +36,7 @@ namespace ForgottenMemories
 			var ore = new List<string>();
 			if (Gelatine) ore.Add("Gelatine");
 			if (Cryotine) ore.Add("Cryotine");
+			if (Blight) ore.Add("Blight");
 			if (downedGhastlyEnt) downed.Add("GhastlyEnt");
 			if (downedTitanRock) downed.Add("TitanRock");
 			
@@ -51,6 +54,7 @@ namespace ForgottenMemories
 			downedTitanRock = downed.Contains("TitanRock");
 			Gelatine = ore.Contains("Gelatine");
 			Cryotine = ore.Contains("Cryotine");
+			Blight = ore.Contains("Blight");
 		}
 		
 		public override void NetSend(BinaryWriter writer)
@@ -60,6 +64,7 @@ namespace ForgottenMemories
 			flags[1] = Cryotine;
 			flags[2] = downedGhastlyEnt;
 			flags[3] = downedTitanRock;
+			flags[4] = Blight;
 			writer.Write(flags);
 		}
 		

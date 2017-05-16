@@ -24,7 +24,7 @@ namespace ForgottenMemories
         {
            if (player.ZoneSnow && Main.raining && (player.position.Y / 16) <= Main.worldSurface)
             {
-                if (Main.rand.Next(800) == 1)
+                if (Main.rand.Next(600) == 0)
                 {
                     Item.NewItem((int)player.position.X + Main.rand.Next(-2000, 2000), (int)player.position.Y - Main.rand.Next(233), 1, 1, mod.ItemType("Galeshard"));
                 }

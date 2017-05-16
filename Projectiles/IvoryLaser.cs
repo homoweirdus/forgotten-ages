@@ -25,11 +25,13 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			for (int i = 0; i <= 3; i++)
+			for (int i = 0; i <= 4; i++)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 63, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].noGravity = true;
+				Main.dust[dust].velocity = -(projectile.velocity * (float)(0.20 * i/2));
+				Main.dust[dust].scale = Main.rand.Next(75, 100) * 0.01f;
 			}
 		}
 		

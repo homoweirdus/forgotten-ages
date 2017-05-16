@@ -18,8 +18,10 @@ namespace ForgottenMemories
 		public bool BlightFlameRing = false;
 		public bool EaterMinion = false;
 		public bool BlightstoneDragon = false;
+		public bool BlightFlameProj;
 		int BlightCounter = 0;
 		public bool CreeperMinion = false;
+		public bool BlightConserve = false;
 		public bool ShadowflameSpirit = false;
         public static bool hasProjectile;
 		public bool slimeGuard = false;
@@ -30,12 +32,14 @@ namespace ForgottenMemories
         {
 			BlightstoneDragon = false;
 			BlightFlameRing = false;
+			BlightFlameProj = false;
             Servant = false;
 			LightningDagger = false;
 			CreeperMinion = false;
 			ShadowflameSpirit = false;
 			EaterMinion = false;
 			slimeGuard = false;
+			BlightConserve = false;
 			ChaoticSet = false;
 			stardustCrown = false;
 		}
@@ -108,6 +112,21 @@ namespace ForgottenMemories
 					target.AddBuff(mod.BuffType("StardustInferno"), 1800, false);
 				}
 			}
-		}	
+			
+			if (BlightFlameProj == true && (projectile.thrown == true || projectile.ranged == true) && Main.rand.Next(5) == 0)
+			{
+				Projectile.NewProjectile (target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("BlightBoomRange"), damage, knockback, player.whoAmI);
+			}
+		}
+		
+		public override bool ConsumeAmmo(Item weapon, Item ammo)
+		{
+			if (BlightConserve == true && Main.rand.Next(4) == 0)
+			{
+				return false;
+			}
+			
+			return true;
+		}
     }
 }

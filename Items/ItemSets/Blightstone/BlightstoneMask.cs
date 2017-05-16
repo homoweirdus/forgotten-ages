@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.ItemSets.Blightstone
 {
-	public class VeilstoneHelmet : ModItem
+	public class BlightstoneMask : ModItem
 	{
 		public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
 		{
@@ -16,13 +16,14 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void SetDefaults()
 		{
-			item.name = "Blightstone Helmet";
+			item.name = "Blightstone Mask";
 			item.width = 18;
 			item.height = 18;
-			item.toolTip = "14% increased melee damage and 7% increased melee crit chance";
+			item.toolTip = "11% increased ranged and thrown damage";
+			item.toolTip = "25% chance not to consume ammo or thrown weapons";
 			item.value = 250000;
 			item.rare = 5;
-			item.defense = 14;
+			item.defense = 8;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -37,14 +38,15 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.14f;
-			player.meleeCrit += 7;
+			player.rangedDamage += 0.11f;
+			player.rangedDamage += 0.11f;
+			((TgemPlayer)player.GetModPlayer(mod, "TgemPlayer")).BlightConserve = true;
 		}
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Creates a ring of malevolent fire around you";
-			((TgemPlayer)player.GetModPlayer(mod, "TgemPlayer")).BlightFlameRing = true;
+			player.setBonus = "Thrown and Ranged attacks have a chance to explode into blighted fire";
+			((TgemPlayer)player.GetModPlayer(mod, "TgemPlayer")).BlightFlameProj = true;
 		}
 		
 		public override void AddRecipes()
