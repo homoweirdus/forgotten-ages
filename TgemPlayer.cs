@@ -25,6 +25,7 @@ namespace ForgottenMemories
 		public bool ShadowflameSpirit = false;
         public static bool hasProjectile;
 		public bool slimeGuard = false;
+		public bool BlightOrb = false;
 		public bool ChaoticSet = false;
 		public bool stardustCrown = false;
 
@@ -33,6 +34,7 @@ namespace ForgottenMemories
 			BlightstoneDragon = false;
 			BlightFlameRing = false;
 			BlightFlameProj = false;
+			BlightOrb = false;
             Servant = false;
 			LightningDagger = false;
 			CreeperMinion = false;
@@ -50,6 +52,12 @@ namespace ForgottenMemories
 			{
 				Projectile.NewProjectile(player.position.X, player.position.Y, 0f, 0f, mod.ProjectileType("SlimeGuard"), 15, 1f, player.whoAmI, 0f, 0f);
 			}	
+			
+			if (player.ownedProjectileCounts[mod.ProjectileType("BlightOrb")] < 1 && BlightOrb == true)
+			{
+				Projectile.NewProjectile(player.position.X, player.position.Y, 0f, 0f, mod.ProjectileType("BlightOrb"), 45, 1f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(player.position.X, player.position.Y, 0f, 0f, mod.ProjectileType("BlightOrb2"), 95, 1f, player.whoAmI, 0f, 0f);
+			}
 			
 			if (player.ownedProjectileCounts[mod.ProjectileType("BlightFireOrbit")] < 12 && BlightFlameRing == true)
 			{

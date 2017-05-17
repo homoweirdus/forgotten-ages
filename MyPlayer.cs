@@ -18,12 +18,14 @@ namespace ForgottenMemories
 		public bool AquaPowers;
 		public bool isGlitch;
 		public bool breakShop;
+		public bool CosmicPowers;
 		
 		public override void ResetEffects()
 		{
 			GroundPound = false;
 			AquaPowers = false;
 			isGlitch = false;
+			CosmicPowers = false;
 		}
 		
 		
@@ -100,6 +102,11 @@ namespace ForgottenMemories
 				int projectile2 = Projectile.NewProjectile(player.position.X, player.position.Y, spX, spY, mod.ProjectileType("buble"), 6, 0f, player.whoAmI, 0f, 0f);
 				Main.projectile[projectile2].melee = false;
 			}
+			
+			if (CosmicPowers == true && player.statLife <= (int)(player.statLifeMax2 / 2))
+			{
+				player.AddBuff(mod.BuffType("CosmicBoon"), 2, false);
+			}
 		}
 		
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
@@ -116,7 +123,18 @@ namespace ForgottenMemories
 					Main.projectile[projectile].magic = false;
 				}
 			}
+			
+			if (CosmicPowers == true)
+			{
+				int amountOfProjectiles = Main.rand.Next(1, 3);
+				for (int i = 0; i < amountOfProjectiles; ++i)
+				{
+					float sX = (float)Main.rand.Next(-40, 40) * 0.1f;
+					float pX = (float)Main.rand.Next(-120, 120) * 2;
+					int projectile = Projectile.NewProjectile(player.Center.X + pX, player.Center.Y - 500, sX, 15, 424 + Main.rand.Next(3), 45, 0f, player.whoAmI, 0f, 0f);
+					Main.projectile[projectile].magic = false;
+				}
+			}
 		}
-		
 	}
 }

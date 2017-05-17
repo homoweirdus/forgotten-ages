@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.ItemSets.Blightstone
 {
-	public class BlightstoneMask : ModItem
+	public class BlightstoneHood : ModItem
 	{
 		public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
 		{
@@ -16,14 +16,14 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void SetDefaults()
 		{
-			item.name = "Blightstone Mask";
+			item.name = "Blightstone Hood";
 			item.width = 18;
 			item.height = 18;
-			item.toolTip = "11% increased ranged and thrown damage";
-			item.toolTip = "25% chance not to consume ammo or thrown weapons";
+			item.toolTip = "10% increased summon and magic damage";
+			item.toolTip = "Max minions increased by 2 and Max mana increased by 80";
 			item.value = 250000;
 			item.rare = 5;
-			item.defense = 8;
+			item.defense = 4;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -38,15 +38,16 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedDamage += 0.11f;
-			player.thrownDamage += 0.11f;
-			((TgemPlayer)player.GetModPlayer(mod, "TgemPlayer")).BlightConserve = true;
+			player.minionDamage += 0.11f;
+			player.magicDamage += 0.11f;
+			player.maxMinions += 2;
+			player.statManaMax2 += 80;
 		}
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Thrown and Ranged attacks have a chance to explode into blighted fire";
-			((TgemPlayer)player.GetModPlayer(mod, "TgemPlayer")).BlightFlameProj = true;
+			player.setBonus = "Summons an orb of blighted energy that damages nearby enemies";
+			((TgemPlayer)player.GetModPlayer(mod, "TgemPlayer")).BlightOrb = true;
 		}
 		
 		public override void AddRecipes()
