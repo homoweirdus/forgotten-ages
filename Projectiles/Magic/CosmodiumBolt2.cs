@@ -18,7 +18,7 @@ namespace ForgottenMemories.Projectiles.Magic
             projectile.height = 10;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-            projectile.penetrate = 2;
+            projectile.penetrate = 3;
             projectile.alpha = 255;
             projectile.timeLeft = 300;
 
@@ -62,7 +62,7 @@ namespace ForgottenMemories.Projectiles.Magic
             //change trajectory to home in on target
             if (targetAcquired)
             {
-                float homingSpeedFactor = 6f;
+                float homingSpeedFactor = 3f;
                 Vector2 homingVect = targetPos - projectile.Center;
                 float dist = projectile.Distance(targetPos);
                 dist = homingSpeedFactor / dist;

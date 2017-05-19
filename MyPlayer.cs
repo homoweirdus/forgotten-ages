@@ -131,8 +131,9 @@ namespace ForgottenMemories
 				{
 					float sX = (float)Main.rand.Next(-40, 40) * 0.1f;
 					float pX = (float)Main.rand.Next(-120, 120) * 2;
-					int projectile = Projectile.NewProjectile(player.Center.X + pX, player.Center.Y - 500, sX, 15, 424 + Main.rand.Next(3), 45, 0f, player.whoAmI, 0f, 0f);
-					Main.projectile[projectile].magic = false;
+					int projectile = Projectile.NewProjectile(player.Center.X + pX, player.Center.Y - 500, sX, 5, mod.ProjectileType("CosmirockMeteor"), 45, 0f, player.whoAmI, 0f, 0f);
+					Main.projectile[projectile].melee = false;
+					Main.projectile[projectile].timeLeft = 1000;
 				}
 			}
 		}

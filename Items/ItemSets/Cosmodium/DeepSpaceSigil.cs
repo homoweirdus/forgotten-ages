@@ -33,11 +33,11 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.FragmentNebula, 30);
-			recipe.AddIngredient(ItemID.FragmentVortex, 30);
-			recipe.AddIngredient(ItemID.FragmentSolar, 30);
-			recipe.AddIngredient(ItemID.FragmentStardust, 30);
-			recipe.AddIngredient(ItemID.LunarBar, 30);
+			recipe.AddIngredient(ItemID.FragmentNebula, 3);
+			recipe.AddIngredient(ItemID.FragmentVortex, 3);
+			recipe.AddIngredient(ItemID.FragmentSolar, 3);
+			recipe.AddIngredient(ItemID.FragmentStardust, 3);
+			recipe.AddIngredient(ItemID.LunarBar, 15);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

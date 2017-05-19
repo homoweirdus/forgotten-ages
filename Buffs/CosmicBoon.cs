@@ -32,17 +32,20 @@ namespace ForgottenMemories.Buffs
 			player.thrownDamage -= 0.1f;
 			player.moveSpeed -= 0.35f;
 			
-			int num5 = Dust.NewDust(player.position, player.width, player.height, 15, 0f, 0f, 200, default(Color), 0.5f);
-			Main.dust[num5].noGravity = true;
-			Main.dust[num5].velocity *= 0.75f;
-			Main.dust[num5].fadeIn = 1.3f;
-			Vector2 vector = new Vector2((float)Main.rand.Next(-100, 101), (float)Main.rand.Next(-100, 101));
-			vector.Normalize();
-			vector *= (float)Main.rand.Next(50, 100) * 0.04f;
-			Main.dust[num5].velocity = vector;
-			vector.Normalize();
-			vector *= 34f;
-			Main.dust[num5].position = player.Center - vector;
+			if (Main.rand.Next(5) == 0)
+			{
+				int num5 = Dust.NewDust(player.position, player.width, player.height, 15, 0f, 0f, 200, default(Color), 0.5f);
+				Main.dust[num5].noGravity = true;
+				Main.dust[num5].velocity *= 0.75f;
+				Main.dust[num5].fadeIn = 1.3f;
+				Vector2 vector = new Vector2((float)Main.rand.Next(-100, 101), (float)Main.rand.Next(-100, 101));
+				vector.Normalize();
+				vector *= (float)Main.rand.Next(50, 100) * 0.04f;
+				Main.dust[num5].velocity = vector;
+				vector.Normalize();
+				vector *= 34f;
+				Main.dust[num5].position = player.Center - vector;
+			}
 		}
 	}
 }
