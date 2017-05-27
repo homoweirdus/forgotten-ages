@@ -48,12 +48,12 @@ namespace ForgottenMemories
 		}
 		
 
-            public override void OnHitAnything(float x, float y, Entity victim)
+            public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
             {
-                if (Main.rand.Next(8) == 0 && lifesteal == true)
+                if (Main.rand.Next(4) == 0 && lifesteal == true && !target.immortal && target.lifeMax >= 20)
                 {
-                    player.HealEffect(1);
-                    player.statLife += 1;
+                    player.HealEffect((int)(damage / 10));
+                    player.statLife += ((int)(damage / 10));
                 }
             }
 			
@@ -65,6 +65,12 @@ namespace ForgottenMemories
 					{
 						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("SapSphere"), projectile.damage, 5f, player.whoAmI);
 					}
+				}
+				
+				if (lifesteal == true && Main.rand.Next(4) == 0 && target.CanBeChasedBy(projectile))
+				{
+					int p = Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, 305, damage, 5f, player.whoAmI);
+					Main.projectile[p].ai[1] = (int)(damage/15);
 				}
 				
 				if (BoCBuff == true)
@@ -219,14 +225,14 @@ namespace ForgottenMemories
 				if (Main.rand.Next(15) == 0)
 				{
 					int num = 0;
-					for (int i = 0; i < 1000; i++) //search for a projectile
+					for (int i = 0; i < 1000; i++) //search for amount of projctiles
 					{
 						if (Main.projectile[i].active && Main.projectile[i].owner == player.whoAmI && (Main.projectile[i].type == mod.ProjectileType("ShinyEnergy")))
 						{
 							num++;
 						}
 					}
-					if (Main.rand.Next(15) >= num && num < 10)
+					if (Main.rand.Next(10) >= num && num < 10)
 					{
 						int num2 = 50;
 						int num3 = 24;

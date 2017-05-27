@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using System;
 using Terraria.ModLoader;
+using ForgottenMemories;
 
 namespace ForgottenMemories
 {
@@ -27,6 +28,32 @@ namespace ForgottenMemories
 			{
 				spawnRate = (int)(spawnRate * 50f);
 				maxSpawns = (int)(maxSpawns * 50f);
+			}
+		}
+		
+		public override void UpdateLifeRegen(NPC npc, ref int damage)
+        {
+			if (npc.FindBuffIndex(mod.BuffType("BlightFlame")) >= 0)
+			{
+				if (damage < 10)
+				{
+					damage = 10;
+				}
+			}
+			
+			if (npc.GetModInfo<NpcInfo>(mod).BlightCelled == true)
+			{
+				if (npc.lifeRegen > 0)
+					npc.lifeRegen = 0;
+				int num = 0;
+				for (int index = 0; index < 1000; ++index)
+				{
+				  if (Main.projectile[index].active && Main.projectile[index].type == mod.ProjectileType("BlightOrbShoot") && ((double) Main.projectile[index].ai[0] == 1.0 && (double) Main.projectile[index].ai[1] == (double) npc.whoAmI))
+					++num;
+				}
+				npc.lifeRegen -= num * 2 * 5;
+				if (damage < num * 5)
+					damage = num * 5;
 			}
 		}
 		

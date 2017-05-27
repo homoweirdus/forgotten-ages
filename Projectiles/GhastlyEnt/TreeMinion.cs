@@ -48,6 +48,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 		projectile.position.Y -= 300;
 		int proj = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 5f, mod.ProjectileType("LeafnadoFriendly"), projectile.damage, 0f, projectile.owner, 0f, 0f);
 		Main.projectile[proj].magic = false;
+		ProjectileID.Sets.MinionShot[Main.projectile[proj].type] = true;
 		int amountOfDust = 20;
 		for (int i = 0; i < amountOfDust; ++i)
 		{

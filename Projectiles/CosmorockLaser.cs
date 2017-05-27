@@ -74,5 +74,10 @@ namespace ForgottenMemories.Projectiles
                 projectile.velocity = (projectile.velocity * 20 + homingVect) / 21f;
             }
 		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.AddBuff(mod.BuffType("CosmicCurse"), 180, false);
+		}
 	}
 }

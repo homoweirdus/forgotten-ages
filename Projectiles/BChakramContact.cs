@@ -15,13 +15,18 @@ namespace ForgottenMemories.Projectiles
 			projectile.height = 30;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
-			projectile.melee = true;
+			projectile.thrown = true;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 5;
 			projectile.light = 0.5f;
 			projectile.tileCollide = false;
 			projectile.scale = 1f;
 			projectile.alpha = 155;
+		}
+		
+		public override void AI()
+		{
+			projectile.alpha += 20;
 		}
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

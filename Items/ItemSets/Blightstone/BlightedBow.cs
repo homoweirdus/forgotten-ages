@@ -30,7 +30,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
             item.rare = 5;
             item.UseSound = SoundID.Item5;
             item.autoReuse = true;
-            item.shootSpeed = 7f;
+            item.shootSpeed = 14f;
 
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -43,7 +43,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 				
 				if (Main.rand.Next(3) == 0)
 				{
-					int p = Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, type, (int)(damage * 1.1), knockBack, Main.myPlayer, 0, 0);
+					int p = Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, type, (int)(damage * 1.25), knockBack, Main.myPlayer, 0, 0);
 					Main.projectile[p].GetModInfo<Info>(mod).BlightedBow = true;
 				}
 				

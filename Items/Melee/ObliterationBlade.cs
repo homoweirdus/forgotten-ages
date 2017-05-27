@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Obliteration blade";
+			item.name = "Obliteration Blade";
 			item.damage = 430;
 			item.melee = true;
 			item.width = 62;

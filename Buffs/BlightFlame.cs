@@ -17,12 +17,12 @@ namespace ForgottenMemories.Buffs
 		}
 		public override void Update(NPC npc, ref int buffIndex)
 		{
-			npc.lifeRegen -= 15;
+			npc.lifeRegen -= 40;
 
 			if (Main.rand.Next(2) == 0)
 			{
-				int dust = Dust.NewDust(npc.position, npc.width, npc.height, 65);
-				Main.dust[dust].scale = 1.5f;
+				int dust = Dust.NewDust(npc.position, npc.width, npc.height, 173);
+				Main.dust[dust].scale = 1.8f;
 				Main.dust[dust].noGravity = true;		
 			}
 		}

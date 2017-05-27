@@ -29,7 +29,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += 0.15f;
-			player.maxRunSpeed  += 0.05f;
+			player.maxRunSpeed  *= 1.05f;
 		}
 		
 		public override void AddRecipes()

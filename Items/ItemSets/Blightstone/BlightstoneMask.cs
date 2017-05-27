@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.width = 18;
 			item.height = 18;
 			item.toolTip = "11% increased ranged and thrown damage";
-			item.toolTip = "25% chance not to consume ammo or thrown weapons";
+			item.toolTip2 = "25% chance not to consume ammo or thrown weapons";
 			item.value = 250000;
 			item.rare = 5;
 			item.defense = 8;

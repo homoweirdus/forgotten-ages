@@ -37,6 +37,7 @@ namespace ForgottenMemories.Items.Summon
             item.UseSound = SoundID.Item82;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("CreeperMinion");
+			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
             item.shootSpeed = 10f;
         }
 
@@ -50,5 +51,12 @@ namespace ForgottenMemories.Items.Summon
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
+		
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			Vector2 mouse = Main.MouseWorld;
+			Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, type, damage, knockBack, player.whoAmI);
+			return false;
+		}
     }
 }

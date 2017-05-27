@@ -20,11 +20,6 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WaterShard"), amountToDrop); 
 			}
 			
-			if (npc.type == 489 && Main.rand.Next(40) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BloodHeart"), 1); 
-			}
-			
 			if (npc.type == NPCID.AngryNimbus && Main.rand.Next(25) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LightningDagger"), 1); 
@@ -97,7 +92,7 @@ namespace ForgottenMemories.Items
 			if (npc.type == NPCID.KingSlime && TGEMWorld.Gelatine == false)
 			{
 				Main.NewText("Gelatine grows in the underground!", 0, 29, 255);
-				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 8E-05); k++)
+				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 30E-05); k++)
 				{
 					WorldGen.OreRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .5f)), (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("GelatineOre"));
 					
@@ -110,13 +105,14 @@ namespace ForgottenMemories.Items
 			{
 				Main.NewText("An eerie presence is felt coming from the forests...", 53, 140, 51);
 				Main.NewText("Ice crystallizes in the underground snow!", 36, 242, 242);
-				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 16E-05); k++)
+				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 64E-05); k++)
 				{
-					int ayy = WorldGen.genRand.Next(200, Main.maxTilesX - 200);
-					int lmao = WorldGen.genRand.Next(200, Main.maxTilesY - 200);
-					if (Main.tile[ayy,lmao].type == 147 || Main.tile[ayy,lmao].type == 161)
+					int positionX = WorldGen.genRand.Next(200, Main.maxTilesX - 200);
+					int positionY = WorldGen.genRand.Next(200, Main.maxTilesY - 200);
+					Tile tile = Main.tile[positionX, positionY];
+					if (tile.type == 147 || tile.type == 161)
 					{
-						WorldGen.OreRunner(ayy, lmao, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("CryotineOre"));
+						WorldGen.OreRunner(positionX, positionY, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("CryotineOre"));
 					}
 				}
 				TGEMWorld.Cryotine = true;

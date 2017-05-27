@@ -29,7 +29,15 @@ namespace ForgottenMemories.Items.Summon
 			item.rare = 4;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("ShadowflameSpirit");
+			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
 			item.shootSpeed = 10f;
+		}
+		
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			Vector2 mouse = Main.MouseWorld;
+			Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, type, damage, knockBack, player.whoAmI);
+			return false;
 		}
 	}
 }

@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
     public class VengeanceBulletP : ModProjectile
     {
 		int j = 0;
-		int k = 0;
         public override void SetDefaults()
         {
             projectile.hostile = false;
@@ -23,6 +22,8 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = true;
             projectile.penetrate = 2;
 			projectile.extraUpdates = 1;
+			projectile.usesLocalNPCImmunity = true;
+			projectile.localNPCHitCooldown = 10;
             projectile.timeLeft = 300;
 			projectile.light = 0.2f;
         }
@@ -48,26 +49,26 @@ namespace ForgottenMemories.Projectiles
 				}
 			}
 			projectile.damage = (int)projectile.damage/5;
-			projectile.tileCollide = false;	
-			if (k == 0 && player.inventory[player.selectedItem].useTime >= 1)
-			{
-				target.immune[projectile.owner] = player.inventory[player.selectedItem].useTime;
-			}
-			k++;
+			projectile.tileCollide = false;
 		}
 
         public override void AI()
         {
-			for (int i = 0; i < 8; i++)
-            {
-				if (Main.rand.Next(2) == 0)
+			int num;
+			int num2 = 3;
+			for (int num164 = 0; num164 < 5; num164 = num + 1)
 				{
-					int dust;
-					dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 269, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f);
-					Main.dust[dust].noGravity = true;
-					Main.dust[dust].scale = 0.4f;
+					float x2 = projectile.position.X - projectile.velocity.X / 10f * (float)(num164 * 2);
+					float y2 = projectile.position.Y - projectile.velocity.Y / 10f * (float)(num164 * 2);
+					int num165 = Dust.NewDust(new Vector2(x2, y2), 1, 1, 269, 0f, 0f, 0, default(Color), 1f);
+					Main.dust[num165].position.X = x2;
+					Main.dust[num165].position.Y = y2;
+					Dust dust3 = Main.dust[num165];
+					dust3.velocity *= 0f;
+					Main.dust[num165].noGravity = true;
+					num = num164;
 				}
-			}
+			
 			Vector2 targetPos = projectile.Center;
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
             if (projectile.penetrate == 1 && Main.npc[j].life >= 0)

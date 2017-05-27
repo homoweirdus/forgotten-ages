@@ -40,7 +40,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.knockBackResist = 0f;
 			npc.width = 170;
 			npc.height = 170;
-			npc.value = Item.buyPrice(0, 2, 0, 0);
+			npc.value = Item.buyPrice(0, 12, 0, 0);
 			npc.boss = true;
 			npc.lavaImmune = true;
 			npc.noTileCollide = true;
@@ -457,8 +457,8 @@ namespace ForgottenMemories.NPCs.TitanRock
 			}
 			else
 			{
-				int amountToDrop = Main.rand.Next(5,10);
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ProtectionCrystal"), amountToDrop);
+				int amountToDrop = Main.rand.Next(12,16);
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SpaceRockFragment"), amountToDrop);
 				
 				if (Main.rand.Next(3) == 0)
 				{
@@ -477,7 +477,16 @@ namespace ForgottenMemories.NPCs.TitanRock
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BeamSlicer"), 1);
 				}
 			}
-			TGEMWorld.downedTitanRock = true;
+			
+			if (TGEMWorld.downedTitanRock == false)
+			{
+				Main.NewText("Purified space rock falls down to your planet!", 175, 167, 75);
+				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 20E-05); k++)
+				{
+					WorldGen.OreRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .5f)), (double)WorldGen.genRand.Next(3, 4), WorldGen.genRand.Next(4, 5), (ushort)mod.TileType("CosmirockTile"));
+				}
+				TGEMWorld.downedTitanRock = true;
+			}
 		}
 	}
 }

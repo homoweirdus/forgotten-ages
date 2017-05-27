@@ -20,10 +20,19 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.width = 18;
 			item.height = 18;
 			AddTooltip("Increased Life Regen");
-			item.value = 10000;
+			item.value = 180000;
 			item.rare = 4;
 			item.defense = 12;
 			item.lifeRegen = 2;
+		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "SpaceRockFragment", 10);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

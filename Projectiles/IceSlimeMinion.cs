@@ -62,7 +62,7 @@ namespace ForgottenMemories.Projectiles
 				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 15f, move.Y * 15f, 174, projectile.damage, 5f, projectile.owner);
 				Main.projectile[proj].friendly = true;
 				Main.projectile[proj].hostile = false;
-				//Main.projectile[proj].GetModInfo<Info>(mod).IceSpike = true;
+				ProjectileID.Sets.MinionShot[Main.projectile[proj].type] = true;
 				timer = 0;
 			}
 		}

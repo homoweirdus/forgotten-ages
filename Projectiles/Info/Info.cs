@@ -22,7 +22,6 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool wtf = false;
 		public bool IceSpike = false;
 		public bool BlightedBow = false;
-		public bool Cosmorock = false;
 	}
 	
 	public class Stuff : GlobalProjectile
@@ -88,15 +87,6 @@ namespace ForgottenMemories.Projectiles.Info
 					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("HallowEnergy"), 12, 5f, projectile.owner);
 					
 				}
-			}
-			
-			if (projectile.GetModInfo<Info>(mod).Cosmorock == true && Main.rand.Next(5) == 0)
-			{
-				int p = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 0f, mod.ProjectileType("CosmirockMeteor"), projectile.damage, projectile.knockBack, projectile.owner);
-				Main.projectile[p].melee = false;
-				Main.projectile[p].ranged = true;
-				Main.projectile[p].timeLeft = 2;
-				Main.projectile[p].tileCollide = false;
 			}
 			
 			if (projectile.GetModInfo<Info>(mod).Split == true && projectile.timeLeft == 0)

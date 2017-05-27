@@ -19,6 +19,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.width = 27;
 			item.height = 11;
 			item.useTime = 16;
+			item.toolTip = "Has a 1/3 chance to fire 2 homing lasers";
 			item.useAnimation = 16;
 			item.useStyle = 5;
 			item.shoot = 3;
@@ -42,7 +43,7 @@ namespace ForgottenMemories.Items.Ranged
 					float sY = speedY;
 					sX += (float)Main.rand.Next(-60, 61) * 0.03f;
 					sY += (float)Main.rand.Next(-60, 61) * 0.03f;
-					Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("laserbeam"), damage / 2, knockBack, player.whoAmI);
+					Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("laserbeamNeedle"), damage / 2, knockBack, player.whoAmI);
 				}
 			}
 			return true;

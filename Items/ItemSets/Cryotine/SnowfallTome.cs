@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.height = 88;
 			item.useTime = 15;
 			item.useAnimation = 15;
-			item.toolTip = "Creates a storm of ice energy that follow your cursor";
+			item.toolTip = "Creates a storm of ice energy that follows your cursor";
 			item.useStyle = 5;
 			item.knockBack = 3;
 			item.value = 168000;

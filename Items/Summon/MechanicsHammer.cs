@@ -17,6 +17,7 @@ namespace ForgottenMemories.Items.Summon
 			item.width = 40;
 			item.height = 40;
             item.value = Terraria.Item.sellPrice(0, 1, 0, 0);
+			ProjectileID.Sets.TurretFeature[item.shoot] = true;
             item.rare = 3;
             item.knockBack = 2.5f;
 			item.UseSound = SoundID.Item25;

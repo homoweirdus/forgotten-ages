@@ -70,7 +70,7 @@ namespace ForgottenMemories
 		
 		public override void PreUpdate() 
 		{
-			if (GroundPound == true && player.controlUp && player.velocity.Y >= 0)
+			if (GroundPound == true && player.controlUp && player.velocity.Y > 0)
 			{
 				player.velocity.Y *= 0.75f;
 				Projectile.NewProjectile(player.position.X, player.position.Y + 40, 0f, 0f, mod.ProjectileType("RedFlames"), 70, 0f, player.whoAmI, 0f, 0f);

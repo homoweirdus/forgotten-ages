@@ -100,6 +100,7 @@ namespace ForgottenMemories.Projectiles
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{	
 			target.immune[projectile.owner] = 5;
+			target.AddBuff(mod.BuffType("CosmicCurse"), 180, false);
 		}
 	}
 }

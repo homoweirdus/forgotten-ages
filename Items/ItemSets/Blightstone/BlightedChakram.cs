@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
             item.thrown = true;
             item.width = 30;
             item.height = 30;
-            item.toolTip = "Pierces through enemies at an insane velocity";
+            item.toolTip = "Throws 2 chakrams that pierce through enemies at an insane velocity";
             item.useTime = 10;
             item.useAnimation = 10;
             item.noUseGraphic = true;
@@ -29,11 +29,18 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
             item.autoReuse = true;
         }
 		
-		public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, item.shoot, 0, knockBack, item.owner);
-			return false;
-		}
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+			int projectileAmount = 2;
+			for (int k = 0; k < projectileAmount; k++)
+			{
+				Vector2 velVect = new Vector2(speedX, speedY);
+				Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-15, 15)));
+				
+				Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, type, 0, knockBack, Main.myPlayer, 0, 0);
+			}
+            return false;
+        }
 		
         public override bool CanUseItem(Player player)       //this make that you can shoot only 1 boomerang at once
         {

@@ -38,6 +38,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("Servant");
             item.shootSpeed = 10f;
+			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
         }
 
         public override void HoldItem(Player player)
@@ -56,5 +57,12 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
+		
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			Vector2 mouse = Main.MouseWorld;
+			Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, type, damage, knockBack, player.whoAmI);
+			return false;
+		}
     }
 }

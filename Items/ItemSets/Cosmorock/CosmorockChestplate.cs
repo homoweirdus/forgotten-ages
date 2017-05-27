@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.width = 18;
 			item.height = 18;
 			AddTooltip("+50 Max Health");
-			item.value = 10000;
+			item.value = 250000;
 			item.rare = 4;
 			item.defense = 18;
 		}
@@ -28,6 +28,15 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 		public override void UpdateEquip(Player player)
 		{
 			player.statLifeMax2 += 50;
+		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "SpaceRockFragment", 18);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

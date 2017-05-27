@@ -23,6 +23,7 @@ namespace ForgottenMemories
 		public bool CreeperMinion = false;
 		public bool BlightConserve = false;
 		public bool ShadowflameSpirit = false;
+		public bool BloodSlime = false;
         public static bool hasProjectile;
 		public bool slimeGuard = false;
 		public bool BlightOrb = false;
@@ -34,6 +35,7 @@ namespace ForgottenMemories
 			BlightstoneDragon = false;
 			BlightFlameRing = false;
 			BlightFlameProj = false;
+			BloodSlime = false;
 			BlightOrb = false;
             Servant = false;
 			LightningDagger = false;

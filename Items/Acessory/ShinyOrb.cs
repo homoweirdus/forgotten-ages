@@ -20,7 +20,8 @@ public class ShinyOrb : ModItem
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).shiny = true;
+			((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).ShinyOrbSpawn();
+			((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).ShinyOrbHeal();
 		}
 		
 		public override void AddRecipes()

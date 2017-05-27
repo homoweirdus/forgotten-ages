@@ -16,6 +16,7 @@ namespace ForgottenMemories.Items.Boss
 			item.height = 24;
 			item.toolTip = "Right click to open";
 			item.expert = true;
+			item.rare = 3;
 			bossBagNPC = mod.NPCType("GhastlyEnt");
 		}
 

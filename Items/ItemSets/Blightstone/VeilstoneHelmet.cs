@@ -22,7 +22,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.toolTip = "14% increased melee damage and 7% increased melee crit chance";
 			item.value = 250000;
 			item.rare = 5;
-			item.defense = 14;
+			item.defense = 20;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.useAnimation = 22;
 			item.useStyle = 1;
 			item.knockBack = 2;
-			item.value = 50000;
+			item.value = 200000;
 			item.rare = 4;
 			item.shoot = mod.ProjectileType("CosmirockMeteor");
 			item.shootSpeed = 5f;
@@ -52,5 +52,19 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			}
             return false;
         }
+		
+		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+        {
+			target.AddBuff(mod.BuffType("CosmicCurse"), 180, false);
+		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "SpaceRockFragment", 12);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }

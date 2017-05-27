@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.width = 18;
 			item.height = 18;
 			item.toolTip = "10% increased summon and magic damage";
-			item.toolTip = "Max minions increased by 2 and Max mana increased by 80";
+			item.toolTip2 = "Max minions increased by 2 and Max mana increased by 80";
 			item.value = 250000;
 			item.rare = 5;
 			item.defense = 4;

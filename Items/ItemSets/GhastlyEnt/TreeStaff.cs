@@ -1,7 +1,16 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ModLoader;
+using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.GameContent;
+using Terraria.IO;
+using Terraria.ObjectData;
+using Terraria.Utilities;
+using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 {
@@ -26,6 +35,7 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			item.UseSound = SoundID.Item82;
 			item.shoot = mod.ProjectileType("TreeMinion");
 			item.shootSpeed = 20f;
+			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
 			item.buffType = mod.BuffType("TreeMinion");
 			item.buffTime = 3600;
 		}
@@ -38,6 +48,13 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
+		}
+		
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			Vector2 mouse = Main.MouseWorld;
+			Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, type, damage, knockBack, player.whoAmI);
+			return false;
 		}
 	}
 }
