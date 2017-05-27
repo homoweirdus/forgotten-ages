@@ -38,7 +38,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < 3; i++)
 			{
 				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 60);
 				Main.dust[dust].scale = 2.5f;

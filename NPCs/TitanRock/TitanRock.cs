@@ -24,6 +24,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 		bool OnScreen = false;
 		bool spawnedMiniTitans1 = false;
 		bool spawnedMiniTitans2 = false;
+		int transgender = 0;
 		Vector2 gayvector = new Vector2(0f, -5f);
 		Vector2 homovector = new Vector2(0f, 5f);
 		Vector2 lesvector = new Vector2(-5f, 0f);
@@ -126,7 +127,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 					spawnedMiniTitans2 = true;
 				}
 				
-				if (timer <= 150)
+				if (timer <= 30)
 				{
 					gayvector = new Vector2(0f, -5f);
 					npc.rotation += 0.20f; //rotation
@@ -200,7 +201,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 					}
 					
 					
-					if (npc.Center.Y >= teleportF && canTPAgain == true && timer <= 151)
+					if (npc.Center.Y >= teleportF && canTPAgain == true && timer <= 21)
 					{
 						falltimer = 0;
 						for (int r = 0; r <= 30; r++)
@@ -213,7 +214,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 					}
 				}
 				
-				if (timer >= 150 && falltimer <= 50 && falltimer >= 20)
+				if (timer >= 30 && falltimer <= 50 && falltimer >= 20 && transgender == 0)
 				{
 					timer2++;
 					
@@ -225,7 +226,49 @@ namespace ForgottenMemories.NPCs.TitanRock
 					
 					if (timer2 >= 5)
 					{
-						Vector2 newVect = gayvector.RotatedBy(System.Math.PI / 27);
+						Vector2 newVect = gayvector.RotatedBy(System.Math.PI / 25);
+						
+						gayvector = newVect;
+						homovector = gayvector.RotatedBy(System.Math.PI);
+						bivector = gayvector.RotatedBy(System.Math.PI / 2);
+						lesvector = gayvector.RotatedBy((3*System.Math.PI) / 2);
+						
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, gayvector.X * 1.4f, gayvector.Y * 1.4f, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, homovector.X * 1.4f, homovector.Y * 1.4f, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
+						if (timer <= 200 || timer >= 250 && timer <= 350|| timer >= 400)
+						{
+							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, lesvector.X * 1.4f, lesvector.Y * 1.4f, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
+							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, bivector.X * 1.4f, bivector.Y * 1.4f, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
+						}
+						Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
+						timer2 = 0;
+					}
+				}
+				
+				
+				if (timer >= 30 && falltimer <= 50 && falltimer >= 20 && transgender == 1)
+				{
+					timer2++;
+					
+					npc.rotation += 0.20f;
+					npc.velocity.X = 0f;
+					npc.velocity.Y = 0f;
+					
+					int dust = Dust.NewDust(npc.position, npc.width, npc.height, 60);
+					
+					if (timer2 >= 5)
+					{
+						Vector2 newVect = gayvector;
+						if (timer <= 230)
+						{
+						
+							newVect = gayvector.RotatedBy(System.Math.PI / -32);
+						}
+						else
+						{
+						
+							newVect = gayvector.RotatedBy(System.Math.PI / 32);
+						}
 						
 						gayvector = newVect;
 						homovector = gayvector.RotatedBy(System.Math.PI);
@@ -234,11 +277,8 @@ namespace ForgottenMemories.NPCs.TitanRock
 						
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, gayvector.X, gayvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, homovector.X, homovector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						if (timer <= 200 || timer >= 250 && timer <= 350|| timer >= 400)
-						{
-							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, lesvector.X, lesvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, bivector.X, bivector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						}
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, lesvector.X, lesvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, bivector.X, bivector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
 						Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
 						timer2 = 0;
 					}
@@ -254,9 +294,14 @@ namespace ForgottenMemories.NPCs.TitanRock
 					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("SpikeTitan"));
 				}
 								
-				if (timer >= 450)
+				if (timer >= 400)
 				{
 					timer = 0;
+					transgender++;
+					if (transgender > 1)
+					{
+						transgender = 0; 
+					}
 				}
 				
 			}
