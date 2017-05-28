@@ -16,6 +16,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.aiStyle = -1;
 			projectile.friendly = false;
 			projectile.hostile = true;
+			projectile.tileCollide = false;
 			projectile.penetrate = -1;
 			projectile.alpha = 255;
 			projectile.timeLeft = 360;

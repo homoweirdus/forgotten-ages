@@ -18,13 +18,14 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
-			projectile.timeLeft = 45;
+			projectile.timeLeft = 70;
 			//projectile.extraUpdates = 1;
 			projectile.alpha = 255;
 		}
 		
 		public override void AI()
 		{
+			projectile.velocity *= 0.9f;
 			for (int index1 = 0; index1 < 5; ++index1)
 			{
 				float num1 = projectile.velocity.X / 3f * (float) index1;

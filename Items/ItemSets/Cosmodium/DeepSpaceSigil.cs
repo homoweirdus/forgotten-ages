@@ -38,6 +38,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 			recipe.AddIngredient(ItemID.FragmentSolar, 3);
 			recipe.AddIngredient(ItemID.FragmentStardust, 3);
 			recipe.AddIngredient(ItemID.LunarBar, 15);
+			recipe.AddIngredient(null, "SpaceRockFragment", 12);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

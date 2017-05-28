@@ -27,24 +27,29 @@ namespace ForgottenMemories.Items.Boss
 
 		public override void OpenBossBag(Player player)
 		{
-			int amountToDrop = Main.rand.Next(5,15);
-			player.QuickSpawnItem(mod.ItemType("ProtectionCrystal"), amountToDrop);
-			if (Main.rand.Next(2) == 0)
+			player.TryGettingDevArmor();
+			int amountToDrop = Main.rand.Next(12,16);
+			player.QuickSpawnItem(mod.ItemType("SpaceRockFragment"), amountToDrop);
+			
+			switch (Main.rand.Next (5))
 			{
-				player.QuickSpawnItem(mod.ItemType("LaserbeamStaff"), 1);
+				case 0:
+					player.QuickSpawnItem(mod.ItemType("LaserbladeKatana"), 1);
+					break;
+				case 1:
+					player.QuickSpawnItem(mod.ItemType("LaserbeamStaff"), 1);
+					break;
+				case 2:
+					player.QuickSpawnItem(mod.ItemType("NeedleBow"), 1);
+					break;
+				case 3:
+					player.QuickSpawnItem(mod.ItemType("BeamSlicer"), Main.rand.Next(240, 300));
+					break;
+				case 4:
+					player.QuickSpawnItem(mod.ItemType("EnergizedBlaster"), 1);
+					break;
 			}
-			if (Main.rand.Next(2) == 0)
-			{
-				player.QuickSpawnItem(mod.ItemType("BeamSlicer"), 1);
-			}
-			if (Main.rand.Next(2) == 0)
-			{
-				player.QuickSpawnItem(mod.ItemType("LaserbladeKatana"), 1);
-			}
-			if (Main.rand.Next(2) == 0)
-			{
-				player.QuickSpawnItem(mod.ItemType("Needler"), 1);
-			}
+			
 			player.QuickSpawnItem(mod.ItemType("EnergyStone"), 1);
 		}
 	}
