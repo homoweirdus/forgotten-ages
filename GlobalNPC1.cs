@@ -10,17 +10,7 @@ namespace ForgottenMemories
 {
 	public class GlobalNPC1 : GlobalNPC
 	{
-		//public override void AI (NPC npc)
-		//{
-		//	for (int k = 0; k < 200; k++)
-		//		{
-		//			Player player = Main.player[k];
-		//			if (TgemPlayer.LightningDagger == true)
-		//			{
-		//				npc.AddBuff(mod.BuffType("Electrified"), 2, false);
-		//			}
-		//		}
-		//}
+		int DagNum = 0;
 		
 		public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
 		{
@@ -41,6 +31,14 @@ namespace ForgottenMemories
 				}
 			}
 			
+			if (npc.FindBuffIndex(mod.BuffType("TitanCrush")) >= 0)
+			{
+				if (damage < 20)
+				{
+					damage = 20;
+				}
+			}
+			
 			if (npc.GetModInfo<NpcInfo>(mod).BlightCelled == true)
 			{
 				if (npc.lifeRegen > 0)
@@ -54,6 +52,22 @@ namespace ForgottenMemories
 				npc.lifeRegen -= num * 2 * 5;
 				if (damage < num * 5)
 					damage = num * 5;
+			}
+			
+			if (npc.GetModInfo<NpcInfo>(mod).BloodLeech == true)
+			{
+				if (npc.lifeRegen > 0)
+					npc.lifeRegen = 0;
+				int num = 0;
+				DagNum = num;
+				for (int index = 0; index < 1000; ++index)
+				{
+				  if (Main.projectile[index].active && Main.projectile[index].type == mod.ProjectileType("BloodLeech") && ((double) Main.projectile[index].ai[0] == 1.0 && (double) Main.projectile[index].ai[1] == (double) npc.whoAmI))
+					++num;
+				}
+				npc.lifeRegen -= num * 2 * 3;
+				if (damage < num * 3)
+					damage = num * 3;
 			}
 		}
 		
@@ -79,6 +93,52 @@ namespace ForgottenMemories
 						shop.item[nextSlot].SetDefaults(mod.ItemType("LightningArrow")); //sell the lightning arrow
 						nextSlot++;
 					}
+				}
+				
+				for (int i = 0; i < 200; i++)
+				{
+					Player player = Main.player[i];
+					if (player.HasItem(mod.ItemType("AncientLauncher")))
+					{
+						shop.item[nextSlot].SetDefaults(771);
+						nextSlot++;
+					}
+				}
+			}
+			
+			if (type == NPCID.Merchant)
+			{
+				if (TGEMWorld.downedGhastlyEnt)
+				{
+					shop.item[nextSlot].SetDefaults(mod.ItemType("GhastlyKnife"));
+					nextSlot++;
+				}
+				
+				if (TGEMWorld.downedArterius)
+				{
+					shop.item[nextSlot].SetDefaults(mod.ItemType("BloodLeech"));
+					nextSlot++;
+				}
+				
+				if (TGEMWorld.downedTitanRock)
+				{
+					shop.item[nextSlot].SetDefaults(mod.ItemType("BeamSlicer"));
+					nextSlot++;
+				}
+			}
+		}
+		
+		public override void NPCLoot(NPC npc)
+		{
+			if (npc.GetModInfo<NpcInfo>(mod).BloodLeech == true)
+			{
+				for (int i = 0; i <= DagNum; i++)
+				{
+					int p = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, 0f, 0f, mod.ProjectileType("BloodBoom"), 50, 0f, Main.player[npc.target].whoAmI, 0f, 0f);
+					Main.projectile[p].melee = false;
+					Main.projectile[p].thrown = true;
+					Main.projectile[p].usesLocalNPCImmunity = true;
+					Main.projectile[p].localNPCHitCooldown = 10;
 				}
 			}
 		}

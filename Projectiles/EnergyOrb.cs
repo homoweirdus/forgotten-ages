@@ -18,7 +18,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.hostile = false;
 			projectile.magic = true;
-			Main.projFrames[projectile.type] = 7;
+			Main.projFrames[projectile.type] = 4;
 			projectile.penetrate = 1;
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
@@ -50,11 +50,11 @@ namespace ForgottenMemories.Projectiles
 			Main.PlaySound(SoundID.Item89, projectile.position);
 			projectile.position.X += (float) (projectile.width / 2);
 			projectile.position.Y += (float) (projectile.height / 2);
-			projectile.height = (int)(200 * projectile.scale);
-			projectile.width = (int)(200 * projectile.scale);
+			projectile.height = (int)(150 * projectile.scale);
+			projectile.width = (int)(150 * projectile.scale);
 			projectile.position.X -= (float) (projectile.width / 2);
 			projectile.position.Y -= (float) (projectile.height / 2);
-			int amountOfDust = 3;
+			int amountOfDust = 5;
 			for (int i = 0; i < amountOfDust; ++i)
 			{
 				Vector2 vector2 = new Vector2(projectile.width/2, projectile.height/2);

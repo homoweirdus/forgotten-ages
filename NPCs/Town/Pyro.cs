@@ -116,13 +116,26 @@ namespace ForgottenMemories.NPCs.Town
 
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
-            shop.item[nextSlot].SetDefaults(ItemID.MolotovCocktail);
+			shop.item[nextSlot].SetDefaults(ItemID.Gel);
 			nextSlot++;
             shop.item[nextSlot].SetDefaults(ItemID.FlamingArrow);
             nextSlot++;
             shop.item[nextSlot].SetDefaults(mod.ItemType("FireGrenade"));
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults(mod.ItemType("FirestormBottle"));
+			nextSlot++;
+			
+			if (NPC.downedBoss2)
+			{
+				shop.item[nextSlot].SetDefaults(ItemID.MolotovCocktail);
+				nextSlot++;
+			}
+			
+			if (NPC.downedBoss3)
+			{
+				shop.item[nextSlot].SetDefaults(mod.ItemType("MagmaGlobStaff"));
+				nextSlot++;
+			}
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)

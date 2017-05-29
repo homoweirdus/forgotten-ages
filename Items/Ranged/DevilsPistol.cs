@@ -19,12 +19,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.height = 50;
 			item.useTime = 23;
 			item.useAnimation = 23;
+			AddTooltip("Has a chance to shoot an unholy fire bolt");
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 10000;
 			item.rare = 2;
 			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
+			item.autoReuse = false;
 			item.shoot = ProjectileID.Bullet;
 			item.shootSpeed = 10f;
 			item.noMelee = true;
@@ -33,13 +34,15 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			float sX = speedX;
-			float sY = speedY;
-			sX += (float)Main.rand.Next(-10, 10) * 0.03f;
-			sY += (float)Main.rand.Next(-10, 10) * 0.03f;
-			Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("DevBullet"), damage, knockBack, player.whoAmI);
-			
-			return false;
+			if (Main.rand.Next(3) == 0)
+			{
+				float sX = speedX;
+				float sY = speedY;
+				sX += (float)Main.rand.Next(-20, 20) * 0.03f;
+				sY += (float)Main.rand.Next(-20, 20) * 0.03f;
+				Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("DevBullet"), damage, knockBack, player.whoAmI);
+			}
+			return true;
 		}
 		
 		public override Vector2? HoldoutOffset()

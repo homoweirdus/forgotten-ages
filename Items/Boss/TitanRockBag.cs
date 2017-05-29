@@ -31,7 +31,7 @@ namespace ForgottenMemories.Items.Boss
 			int amountToDrop = Main.rand.Next(12,16);
 			player.QuickSpawnItem(mod.ItemType("SpaceRockFragment"), amountToDrop);
 			
-			switch (Main.rand.Next (5))
+			switch (Main.rand.Next (8))
 			{
 				case 0:
 					player.QuickSpawnItem(mod.ItemType("LaserbladeKatana"), 1);
@@ -40,13 +40,23 @@ namespace ForgottenMemories.Items.Boss
 					player.QuickSpawnItem(mod.ItemType("LaserbeamStaff"), 1);
 					break;
 				case 2:
-					player.QuickSpawnItem(mod.ItemType("NeedleBow"), 1);
+					player.QuickSpawnItem(mod.ItemType("Needler"), 1);
 					break;
 				case 3:
 					player.QuickSpawnItem(mod.ItemType("BeamSlicer"), Main.rand.Next(240, 300));
 					break;
 				case 4:
 					player.QuickSpawnItem(mod.ItemType("EnergizedBlaster"), 1);
+					break;
+				case 5:
+					player.QuickSpawnItem(mod.ItemType("TitanSpin"), 1);
+					break;
+				case 6:
+					player.QuickSpawnItem(mod.ItemType("TitanicCrusher"), 1);
+					break;
+				case 7:
+					player.QuickSpawnItem(mod.ItemType("AncientLauncher"), 1);
+					player.QuickSpawnItem(771, Main.rand.Next(120, 160));
 					break;
 			}
 			

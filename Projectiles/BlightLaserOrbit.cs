@@ -17,8 +17,8 @@ namespace ForgottenMemories.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.name = "BlightedEmber";
-			projectile.width = 2;
-			projectile.height = 2;
+			projectile.width = 1;
+			projectile.height = 1;
 			projectile.friendly = true;
 			projectile.tileCollide = false;
 			Main.projFrames[projectile.type] = 4;
@@ -58,7 +58,7 @@ namespace ForgottenMemories.Projectiles
 			//Main.dust[dust].scale = 0.9f;
 			//Main.dust[dust].noGravity = true;
 			int dust2;
-			dust2 = Dust.NewDust(projectile.position, projectile.width/2, projectile.height/2, 173, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			dust2 = Dust.NewDust(projectile.position, 0, 0, 173, 0, 0);
 			Main.dust[dust2].scale = 0.8f;
 			Main.dust[dust2].noGravity = true;
 		}

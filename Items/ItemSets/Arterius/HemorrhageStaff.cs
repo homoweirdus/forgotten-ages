@@ -32,7 +32,7 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
             item.knockBack = 2f;
             item.buffType = mod.BuffType("BloodSlime");
             item.buffTime = 3600;
-            item.value = 27000;
+            item.value = 140000;
             item.rare = 2;
             item.UseSound = SoundID.Item82;
             item.autoReuse = true;

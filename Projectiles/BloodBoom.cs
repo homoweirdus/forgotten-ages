@@ -29,7 +29,7 @@ namespace ForgottenMemories.Projectiles
 			{
 				projectile.tileCollide = false;
 				int dust;
-				dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 90, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, mod.DustType("BloodDust"), projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}

@@ -64,7 +64,8 @@ namespace ForgottenMemories
 			if (player.ownedProjectileCounts[mod.ProjectileType("BlightFireOrbit")] < 12 && BlightFlameRing == true)
 			{
 				Vector2 Ring = new Vector2(150, 0).RotatedBy(MathHelper.ToRadians(player.ownedProjectileCounts[mod.ProjectileType("BlightFireOrbit")] * 30));
-				Projectile.NewProjectile((player.position.X + Ring.X), (player.position.Y + Ring.Y), 0f, 0f, mod.ProjectileType("BlightFireOrbit"), 0, 0f, player.whoAmI, 0f, 0f);
+				int p = Projectile.NewProjectile((player.position.X + Ring.X), (player.position.Y + Ring.Y), 0f, 0f, mod.ProjectileType("BlightFireOrbit"), 0, 0f, player.whoAmI, 0f, 0f);
+				Main.projectile[p].position += new Vector2 (Main.projectile[p].width/4, Main.projectile[p].height/4);
 			}
 			
 			if (player.ownedProjectileCounts[mod.ProjectileType("BlightLaserOrbit")] < 1 && BlightFlameRing == true)
@@ -72,7 +73,8 @@ namespace ForgottenMemories
 				BlightCounter++;
 				if (BlightCounter >= 180)
 				{
-					Projectile.NewProjectile((player.position.X + 150), (player.position.Y), 0f, 0f, mod.ProjectileType("BlightLaserOrbit"), 120, 0f, player.whoAmI, 0f, 0f);
+					int p = Projectile.NewProjectile((player.position.X + 150), (player.position.Y), 0f, 0f, mod.ProjectileType("BlightLaserOrbit"), 120, 0f, player.whoAmI, 0f, 0f);
+					Main.projectile[p].position += new Vector2 (Main.projectile[p].width/2, Main.projectile[p].height/2);
 					BlightCounter = 0;
 				}
 			}

@@ -28,6 +28,24 @@ namespace ForgottenMemories.Items.Boss
 		public override void OpenBossBag(Player player)
 		{
             player.QuickSpawnItem(mod.ItemType("BloodHeart"), 1);
+			
+			switch (Main.rand.Next(4))
+			{
+				case 0: 
+					player.QuickSpawnItem(mod.ItemType("SeveredTongue"), 1);
+					break;
+				case 1: 
+					player.QuickSpawnItem(mod.ItemType("HemorrhageStaff"), 1);
+					break;
+				case 2:
+					player.QuickSpawnItem(mod.ItemType("BloodLeech"), Main.rand.Next(270, 300));
+					break;
+				case 3:
+					player.QuickSpawnItem(mod.ItemType("GoredLung"), 1);
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }

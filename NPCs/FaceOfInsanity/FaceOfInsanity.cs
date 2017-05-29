@@ -166,11 +166,12 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 				AiTimer = 0;
 			}
 			
-			if (!player.active || player.dead) //despawn
+			if (!player.active || player.dead || Main.dayTime) //despawn
             {
                 npc.TargetClosest(false);
                 npc.velocity.Y = -20;
 				AiTimer = 0;
+				npc.timeLeft = 10;
             }
 		}
 		
@@ -271,7 +272,7 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 			
 			else
 			{
-				switch (Main.rand.Next(3))
+				switch (Main.rand.Next(4))
 				{
 					case 0: 
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("HemorrhageStaff")));
@@ -279,10 +280,17 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 					case 1: 
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("SeveredTongue")));
 						break;
+					case 2:
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("BloodLeech")), Main.rand.Next(250, 270));
+						break;
+					case 3:
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("GoredLung")));
+						break;
 					default:
 						break;
 				}
 			}
+			TGEMWorld.downedArterius = true;
 		}
 	}
 }

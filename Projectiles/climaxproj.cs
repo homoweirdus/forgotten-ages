@@ -30,7 +30,7 @@ namespace ForgottenMemories.Projectiles
 			if (projectile.frameCounter >= 6)
 			{
 				projectile.frameCounter = 0;
-				projectile.frame = (projectile.frame + 1) % 4;
+				projectile.frame = (projectile.frame + 1) % 7;
 			} 
 		}
 	}

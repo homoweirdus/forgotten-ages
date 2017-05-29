@@ -18,7 +18,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			projectile.name = "BlightedEmber";
 			projectile.width = 20;
-			projectile.height = 20;
+			projectile.height = 26;
 			projectile.friendly = true;
 			projectile.tileCollide = false;
 			Main.projFrames[projectile.type] = 4;

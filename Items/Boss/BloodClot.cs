@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.Boss
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Strange Flesh Clump";
+			item.name = "Bleeding Residue";
 			item.width = 28;
 			item.height = 32;
 			item.maxStack = 20;

@@ -27,8 +27,8 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
             npc.damage = 25;
             npc.defense = 15;
             npc.knockBackResist = 0f;
-            npc.width = 75;
-            npc.height = 144;
+            npc.width = 76;
+            npc.height = 158;
             npc.value = Item.buyPrice(0, 2, 0, 0);
             npc.boss = true;
             npc.lavaImmune = true;
@@ -37,7 +37,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
             npc.HitSound = SoundID.NPCHit7;
 			npc.DeathSound = SoundID.NPCDeath3;
             music = 12;
-			Main.npcFrameCount[npc.type] = 5;
+			Main.npcFrameCount[npc.type] = 6;
 			npc.scale = 1.25f;
 			npc.npcSlots = 5;
         }
@@ -207,7 +207,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		}
 					public override void FindFrame(int frameHeight)
 		{
-			npc.frameCounter += 0.125f; 
+			npc.frameCounter += 0.25f; 
 			npc.frameCounter %= Main.npcFrameCount[npc.type]; 
 			int frame = (int)npc.frameCounter; 
 			npc.frame.Y = frame * frameHeight; 

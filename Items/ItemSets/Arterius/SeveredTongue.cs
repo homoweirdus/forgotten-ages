@@ -25,7 +25,7 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
 			item.shootSpeed = 16f;
 			item.knockBack = 3.75f;
 			item.damage = 45;
-			item.value = 138000;
+			item.value = 140000;
 			item.rare = 4;
 			item.shoot = mod.ProjectileType("SeveredTongue");
 		}

@@ -10,5 +10,6 @@ namespace ForgottenMemories
 	public class NpcInfo : NPCInfo
 	{
 		public bool BlightCelled = false;
+		public bool BloodLeech = false;
 	}
 }

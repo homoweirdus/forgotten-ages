@@ -18,6 +18,7 @@ namespace ForgottenMemories
 		public static bool Gelatine = false;
 		public static bool Blight = false;
 		public static bool downedGhastlyEnt = false;
+		public static bool downedArterius = false;
 		public static bool downedTitanRock = false;
 		public static int TremorTime = 0;
 		
@@ -25,6 +26,7 @@ namespace ForgottenMemories
         {
 			Gelatine = false;
 			Blight = false;
+			downedArterius = false;
 			Cryotine = false;
 			downedGhastlyEnt = false;
 			downedTitanRock = false;
@@ -39,6 +41,7 @@ namespace ForgottenMemories
 			if (Blight) ore.Add("Blight");
 			if (downedGhastlyEnt) downed.Add("GhastlyEnt");
 			if (downedTitanRock) downed.Add("TitanRock");
+			if (downedArterius) downed.Add("Arterius");
 			
 			return new TagCompound {
 				{"downed", downed},
@@ -52,6 +55,7 @@ namespace ForgottenMemories
 			var ore = tag.GetList<string>("ore");
 			downedGhastlyEnt = downed.Contains("GhastlyEnt");
 			downedTitanRock = downed.Contains("TitanRock");
+			downedArterius = downed.Contains("Arterius");
 			Gelatine = ore.Contains("Gelatine");
 			Cryotine = ore.Contains("Cryotine");
 			Blight = ore.Contains("Blight");
@@ -65,6 +69,7 @@ namespace ForgottenMemories
 			flags[2] = downedGhastlyEnt;
 			flags[3] = downedTitanRock;
 			flags[4] = Blight;
+			flags[5] = downedArterius;
 			writer.Write(flags);
 		}
 		

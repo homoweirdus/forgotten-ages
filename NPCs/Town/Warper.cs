@@ -28,8 +28,8 @@ namespace ForgottenMemories.NPCs.Town
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0.5f;
-			Main.npcFrameCount[npc.type] = 25;
-			NPCID.Sets.ExtraFramesCount[npc.type] = 25;
+			Main.npcFrameCount[npc.type] = 20;
+			NPCID.Sets.ExtraFramesCount[npc.type] = 20;
 			NPCID.Sets.AttackFrameCount[npc.type] = 2;
 			NPCID.Sets.DangerDetectRange[npc.type] = 500;
 			NPCID.Sets.AttackType[npc.type] = 0;
