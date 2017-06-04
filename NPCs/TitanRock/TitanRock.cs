@@ -479,6 +479,10 @@ namespace ForgottenMemories.NPCs.TitanRock
 				npc.velocity.Y = -20;
 				timer = 0;
 				despawn = true;
+				if (npc.timeLeft > 10)
+					{
+						npc.timeLeft = 10;
+					}
 			}
 		}
 

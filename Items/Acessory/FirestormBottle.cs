@@ -20,6 +20,6 @@ public class FirestormBottle : ModItem
     public override void UpdateAccessory(Player player, bool hideVisual)
 	{
         ((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).firestorm = true;
-		player.jumpSpeedBoost = 2f;
+		player.jumpSpeedBoost = 1.75f;
 	}
 }}

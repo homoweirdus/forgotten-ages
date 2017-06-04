@@ -55,6 +55,7 @@ namespace ForgottenMemories.Items.Melee
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+			Main.PlaySound(2, (int)position.X, (int)position.Y, 88);
 			int num8 = 3;
 			for (int index = 0; index < num8; ++index)
 			{
@@ -73,7 +74,8 @@ namespace ForgottenMemories.Items.Melee
 				float num14 = num10 * num12;
 				float num15 = num13;
 				float num16 = num14 + (float) Main.rand.Next(-40, 41) * 0.02f;
-				Projectile.NewProjectile(vector2_1.X, vector2_1.Y, num15 * 0.75f, num16 * 0.75f, mod.ProjectileType("BlightedMeteor"), damage, knockBack, player.whoAmI, 0.0f, (float) (0.5 + Main.rand.NextDouble() * 0.300000011920929));
+				int p = Projectile.NewProjectile(vector2_1.X, vector2_1.Y, num15 * 0.75f, num16 * 0.75f, mod.ProjectileType("BlightedMeteor"), damage, knockBack, player.whoAmI, 0.0f, (float) (0.5 + Main.rand.NextDouble() * 0.300000011920929));
+				Main.projectile[p].ai[1] = position.Y;
 			}
 			return false;
         }

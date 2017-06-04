@@ -8,63 +8,74 @@ using Terraria.Utilities;
 
 namespace ForgottenMemories.Projectiles
 {
-	public class IchorLightning : ModProjectile
+	public class LightBeam : ModProjectile
 	{
-		int SoundTimer;
-		float ok;
 		public override void SetDefaults()
 		{
-			projectile.name = "Ichor Lightning";
-			projectile.width = 14;
-			projectile.height = 14;
-			projectile.melee = true;
-			projectile.penetrate = -1;
-			projectile.usesLocalNPCImmunity = true;
-			projectile.localNPCHitCooldown = 10;
-			//projectile.aiStyle = 88;
+			projectile.name = "Light Beam";
+			projectile.width = 7;
+			projectile.height = 7;
 			projectile.friendly = true;
+			projectile.melee = true;
+			projectile.penetrate = 3;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
-			ProjectileID.Sets.TrailCacheLength[projectile.type] = 20;
-			projectile.alpha = 255;
-			projectile.ignoreWater = true;
-			projectile.tileCollide = false;
-			projectile.extraUpdates = 4;
-			projectile.timeLeft = 600;
+			ProjectileID.Sets.TrailCacheLength[projectile.type] = 3;
+			projectile.timeLeft = 70;
+			projectile.light = 0.5f;
+			projectile.extraUpdates = 3;
+			projectile.usesLocalNPCImmunity = true;
+			projectile.localNPCHitCooldown = 60;
 		}
 		
-		public override bool? Colliding(Rectangle myRect, Rectangle targetRect)
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			for (int i = 0; i < projectile.oldPos.Length; i++)
+			if (projectile.localAI[1] < 1f && projectile.penetrate == 1)
 			{
-				if (projectile.oldPos[i].X == 0f && projectile.oldPos[i].Y == 0f)
-				{
-					break;
-				}
-				myRect.X = (int)projectile.oldPos[i].X;
-				myRect.Y = (int)projectile.oldPos[i].Y;
-				if (myRect.Intersects(targetRect))
-				{
-					return true;
-				}
+				projectile.localAI[1] += 2f;
+				projectile.position += projectile.velocity;
+				projectile.velocity = Vector2.Zero;
+			}
+		}
+		
+		public override bool OnTileCollide(Vector2 velocity1)
+		{
+			if ((double) projectile.velocity.Y != (double) velocity1.Y || (double) projectile.velocity.X != (double) velocity1.X)
+			{
+			  if ((double) projectile.velocity.X != (double) velocity1.X)
+				projectile.velocity.X = -velocity1.X;
+			  if ((double) projectile.velocity.Y != (double) velocity1.Y)
+				projectile.velocity.Y = -velocity1.Y;
 			}
 			return false;
 		}
 		
+		public override void Kill(int timeLeft)
+		{
+			for (int i = 0; i < 20; i++)
+			{
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 160);
+				Main.dust[dust].scale = 2.5f;
+				Main.dust[dust].noGravity = true;
+			}
+		}
+		
+		public override Color? GetAlpha(Color lightColor)
+		{
+			return new Color(99, 38, 255, 255);
+		}
+		
 		public override void AI()
 		{
-			if (projectile.position.Y > (double) projectile.ai[1])
-				projectile.tileCollide = true;
-			
+			float origDamage = projectile.ai[0];
+			if (projectile.damage >= origDamage * 0.4f)
+			{
+				projectile.damage = (int)(projectile.damage * 0.98f);
+			}
 			if (projectile.ai[0] == 0)
 			{
 				projectile.ai[0] = projectile.velocity.ToRotation();
 			}
-			SoundTimer++;
-			if (SoundTimer >= 30 && Main.rand.Next(2) == 0)
-			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 93);
-				SoundTimer = 0;
-			}
+			
 			else
 			{
 				int num3 = projectile.frameCounter;
@@ -95,14 +106,14 @@ namespace ForgottenMemories.Projectiles
 				{
 					projectile.frameCounter = 0;
 					float num860 = projectile.velocity.Length();
-					UnifiedRandom unifiedRandom = new UnifiedRandom((int)ok);
+					UnifiedRandom unifiedRandom = new UnifiedRandom((int)projectile.ai[1]);
 					int num861 = 0;
 					Vector2 vector96 = -Vector2.UnitY;
 					Vector2 vector97;
 					do
 					{
 						int num862 = unifiedRandom.Next();
-						ok = (float)num862;
+						projectile.ai[1] = (float)num862;
 						num862 %= 100;
 						float f = (float)num862 / 100f * 6.28318548f;
 						vector97 = f.ToRotationVector2();
@@ -140,62 +151,12 @@ namespace ForgottenMemories.Projectiles
 					if (projectile.velocity != Vector2.Zero)
 					{
 						projectile.localAI[0] += vector96.X * (float)(projectile.extraUpdates + 1) * 2f * num860;
-						projectile.velocity = vector96.RotatedBy((double)(projectile.ai[0] + 1.57079637f), default(Vector2)) * num860;
-						projectile.rotation = projectile.velocity.ToRotation() + 1.57079637f;
+						//projectile.velocity = vector96.RotatedBy((double)(projectile.ai[0] + 1.57079637f), default(Vector2)) * num860;
+						//projectile.rotation = projectile.velocity.ToRotation() + 1.57079637f;
 						return;
 					}
 				}
 			}
-		}
-		
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			target.AddBuff(mod.BuffType("Ichor"), 500, false);
-			if (projectile.localAI[1] < 1f)
-			{
-				projectile.localAI[1] += 2f;
-				projectile.position += projectile.velocity;
-				projectile.velocity = Vector2.Zero;
-			}
-			projectile.damage = 0;
-			projectile.velocity *= 0;
-		}
-		
-		public override bool OnTileCollide(Vector2 oldVelocity)
-		{
-			if (projectile.localAI[1] < 1f)
-			{
-				projectile.localAI[1] += 2f;
-				projectile.position += projectile.velocity;
-				projectile.velocity = Vector2.Zero;
-			}
-			return false;
-		}
-		
-		public override void PostAI()
-		{
-			if (projectile.frameCounter == 0 || projectile.oldPos[0] == Vector2.Zero)
-			{
-				for (int num31 = projectile.oldPos.Length - 1; num31 > 0; num31--)
-				{
-					projectile.oldPos[num31] = projectile.oldPos[num31 - 1];
-				}
-				projectile.oldPos[0] = projectile.position;
-				if (projectile.velocity == Vector2.Zero && projectile.type == 466)
-				{
-					float num32 = projectile.rotation + 1.57079637f + ((Main.rand.Next(2) == 1) ? -1f : 1f) * 1.57079637f;
-					float num33 = (float)Main.rand.NextDouble() * 2f + 2f;
-					Vector2 vector2 = new Vector2((float)Math.Cos((double)num32) * num33, (float)Math.Sin((double)num32) * num33);
-					int num34 = Dust.NewDust(projectile.oldPos[projectile.oldPos.Length - 1], 0, 0, 229, vector2.X, vector2.Y, 0, default(Color), 1f);
-					Main.dust[num34].noGravity = true;
-					Main.dust[num34].scale = 1.7f;
-				}
-			}
-		}
-		
-		public override Color? GetAlpha(Color lightColor)
-		{
-			return new Color(255, 153, 0, 255);
 		}
 		
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
@@ -204,7 +165,7 @@ namespace ForgottenMemories.Projectiles
 			Vector2 end3 = projectile.position + new Vector2((float)projectile.width, (float)projectile.height) / 2f + Vector2.UnitY * projectile.gfxOffY - Main.screenPosition;
 			Texture2D tex4 = Main.extraTexture[33];
 			projectile.GetAlpha(color25);
-			Vector2 scale17 = new Vector2(projectile.scale) / 2f;
+			Vector2 scale17 = new Vector2(projectile.scale) / 8f;
 			int num43;
 			for (int num297 = 0; num297 < 2; num297 = num43 + 1)
 			{
@@ -212,12 +173,12 @@ namespace ForgottenMemories.Projectiles
 				if (num297 == 0)
 				{
 					scale17 = new Vector2(projectile.scale) * (0.5f + num298);
-					DelegateMethods.c_1 = new Microsoft.Xna.Framework.Color(255, 153, 0) * 0.5f;
+					DelegateMethods.c_1 = new Microsoft.Xna.Framework.Color(86, 255, 220) * 0.5f;
 				}
 				else
 				{
 					scale17 = new Vector2(projectile.scale) * (0.3f + num298);
-					DelegateMethods.c_1 = new Microsoft.Xna.Framework.Color(255, 255, 255, 0) * 0.5f;
+					DelegateMethods.c_1 = new Microsoft.Xna.Framework.Color(232, 255, 250, 0) * 0.5f;
 				}
 				DelegateMethods.f_1 = 1f;
 				for (int num299 = projectile.oldPos.Length - 1; num299 > 0; num299 = num43 - 1)

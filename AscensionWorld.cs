@@ -15,6 +15,15 @@ namespace ForgottenMemories
 	public class AscensionWorld : ModWorld
 	{
         public static Mod mod = ModLoader.GetMod("ForgottenMemories");
+		
+		public override void PostUpdate()
+		{
+			if (NPC.downedMoonlord && Main.rand.Next(172800) == 0)
+			{
+				AscensionWorld.DropComet();
+			}
+		}
+		
         public static void DropComet()
         {
         bool flag = true;

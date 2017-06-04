@@ -18,7 +18,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.hostile = false;
 			projectile.penetrate = 1;
-			projectile.tileCollide = true;
+			projectile.tileCollide = false;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 3;
 		}
@@ -41,12 +41,15 @@ namespace ForgottenMemories.Projectiles
 			dust2.noGravity = true;
 			for (int index1 = 0; index1 < 1; ++index1)
 			{
-			  int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 173, 0.0f, 0.0f, 0, new Color(), 1f);
-			  Main.dust[index2].velocity *= 0.5f;
-			  Main.dust[index2].scale *= 1.3f;
-			  Main.dust[index2].fadeIn = 1f;
-			  Main.dust[index2].noGravity = true;
+				int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 173, 0.0f, 0.0f, 0, new Color(), 1f);
+				Main.dust[index2].velocity *= 0.5f;
+				Main.dust[index2].scale *= 1.3f;
+				Main.dust[index2].fadeIn = 1f;
+				Main.dust[index2].noGravity = true;
 			}
+			
+			if (projectile.position.Y > (double) projectile.ai[1])
+				projectile.tileCollide = true;
 		}
 		
 		public override void Kill(int timeLeft)

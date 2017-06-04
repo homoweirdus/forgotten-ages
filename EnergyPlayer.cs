@@ -174,7 +174,7 @@ namespace ForgottenMemories
 						{
 							float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
 							float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
-							int projectile = Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, 400, 15, 5f, player.whoAmI);
+							int projectile = Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, 400, 10, 5f, player.whoAmI);
 							Main.projectile[projectile].timeLeft = 100;
 						}				
 						canJumpFirestorm = false;
@@ -198,7 +198,7 @@ namespace ForgottenMemories
 					else if (flag == true) 
 					{
 						dJumpEffectMeteor = true;
-						player.jump = Player.jumpHeight * 2;
+						player.jump = (int)(Player.jumpHeight * 1.5f);
 						Main.PlaySound(2, (int)player.Center.X, (int)player.Center.Y, 34);
 					}
 				}

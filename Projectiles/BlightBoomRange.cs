@@ -26,7 +26,8 @@ namespace ForgottenMemories.Projectiles
 			for (int i = 0; i < amountOfDust; ++i)
 			{
 				int dust;
-				Vector2 newVect = new Vector2 (8, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(45)));
+				Vector2 dustPos = projectile.position + new Vector2(projectile.height/2, projectile.width/2);
+				Vector2 newVect = new Vector2 (18, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(45)));
 				Vector2 newVect2 = newVect.RotatedBy(MathHelper.ToRadians(45));
 				Vector2 newVect3 = newVect.RotatedBy(MathHelper.ToRadians(90));
 				Vector2 newVect4 = newVect.RotatedBy(MathHelper.ToRadians(135));
@@ -34,14 +35,14 @@ namespace ForgottenMemories.Projectiles
 				Vector2 newVect6 = newVect.RotatedBy(MathHelper.ToRadians(225));
 				Vector2 newVect7 = newVect.RotatedBy(MathHelper.ToRadians(270));
 				Vector2 newVect8 = newVect.RotatedBy(MathHelper.ToRadians(315));
-				dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 173, newVect.X, newVect.Y);
-				int dust2 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 173, newVect2.X, newVect2.Y);
-				int dust3 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 173, newVect3.X, newVect3.Y);
-				int dust4 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 173, newVect4.X, newVect4.Y);
-				int dust5 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 173, newVect5.X, newVect5.Y);
-				int dust6 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 173, newVect6.X, newVect6.Y);
-				int dust7 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 173, newVect7.X, newVect7.Y);
-				int dust8 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 173, newVect8.X, newVect8.Y);
+				dust = Dust.NewDust(dustPos, 0, 0, 173, newVect.X, newVect.Y);
+				int dust2 = Dust.NewDust(dustPos, 0, 0, 173, newVect2.X, newVect2.Y);
+				int dust3 = Dust.NewDust(dustPos, 0, 0, 173, newVect3.X, newVect3.Y);
+				int dust4 = Dust.NewDust(dustPos, 0, 0, 173, newVect4.X, newVect4.Y);
+				int dust5 = Dust.NewDust(dustPos, 0, 0, 173, newVect5.X, newVect5.Y);
+				int dust6 = Dust.NewDust(dustPos, 0, 0, 173, newVect6.X, newVect6.Y);
+				int dust7 = Dust.NewDust(dustPos, 0, 0, 173, newVect7.X, newVect7.Y);
+				int dust8 = Dust.NewDust(dustPos, 0, 0, 173, newVect8.X, newVect8.Y);
 				Main.dust[dust].scale = (float)(Main.rand.Next(20) * 0.1);
 				Main.dust[dust].noGravity = true;
 				Main.dust[dust2].scale = (float)(Main.rand.Next(20) * 0.1);

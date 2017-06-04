@@ -171,7 +171,10 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
                 npc.TargetClosest(false);
                 npc.velocity.Y = -20;
 				AiTimer = 0;
-				npc.timeLeft = 10;
+				if (npc.timeLeft > 10)
+				{
+					npc.timeLeft = 10;
+				}
             }
 		}
 		

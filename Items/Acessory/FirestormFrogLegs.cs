@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Acessory
             item.name = "Firestorm Frog Legs";
             item.width = 34;
             item.height = 34;
-            item.toolTip = "Enhances your jump, leaving behind fire, nullifying fall damage, and granting auto jump.";
+            item.toolTip = "Enhances your jump, leaving behind fire, nullifying fall damage and fire block damage, and granting auto jump.";
             item.value = 200000;
             item.rare = 2;
             item.accessory = true;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Acessory
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             ((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).firestorm = true;
-            player.jumpSpeedBoost += 2.8f;
+            player.jumpSpeedBoost += 2.2f;
             player.noFallDmg = true;
             player.fireWalk = true;
             player.autoJump = true;
