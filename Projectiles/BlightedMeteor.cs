@@ -11,8 +11,8 @@ namespace ForgottenMemories.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.name = "Meteor";
-			projectile.width = 48;
-			projectile.height = 44;
+			projectile.width = 36;
+			projectile.height = 34;
 			projectile.aiStyle = -1;
 			projectile.melee = true;
 			projectile.friendly = true;
