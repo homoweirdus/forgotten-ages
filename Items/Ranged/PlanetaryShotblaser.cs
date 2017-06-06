@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Planetary Shotgun";
+
 			item.damage = 114;
 			item.ranged = true;
 			item.width = 40;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.useTime = 32;
 			item.useAnimation = 32;
 			item.useStyle = 5;
-			AddTooltip("Hit bullets fire more bullets at the enemy");
+
 			item.knockBack = 6;
 			item.value = 1000000;
 			item.rare = 10;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.noMelee = true;
 			item.useAmmo =  AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Planetary Shotgun");
+      Tooltip.SetDefault("Hit bullets fire more bullets at the enemy");
+    }
+
 		
 		public override Vector2? HoldoutOffset()
 		{

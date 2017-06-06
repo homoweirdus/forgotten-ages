@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Bane of the Hive Lord";
+
 			item.damage = 66;
 			item.melee = true;
 			item.width = 22;
 			item.height = 25;
-			AddTooltip("Striking an enemy with the blade will unleash bees and wasps");
+
 			item.useTime = 14;
 			item.useAnimation = 14;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shootSpeed = 5f;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bane of the Hive Lord");
+      Tooltip.SetDefault("Striking an enemy with the blade will unleash bees and wasps");
+    }
+
 
 		public override void AddRecipes()
 		{

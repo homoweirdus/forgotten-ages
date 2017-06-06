@@ -11,13 +11,13 @@ namespace ForgottenMemories.Items.Magic
     {
         public override void SetDefaults()
         {
-            item.name = "Energized Blaster";
+
             item.damage = 90;
             item.ranged = true;
             item.width = 31;
             item.height = 32;
             item.crit = 15;
-            item.toolTip = "Fires an explosive orb of energy";
+
             item.useTime = 45;
             item.useAnimation = 45;
             item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Magic
             item.shootSpeed = 18f;
             item.mana = 20;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Energized Blaster");
+      Tooltip.SetDefault("Fires an explosive orb of energy");
+    }
+
 		
 		public override Vector2? HoldoutOffset()
 		{

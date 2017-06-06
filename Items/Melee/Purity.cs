@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Purity";
+
 			item.damage = 110;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Fires a high damage, bouncing beam of light that loses damage over time";
+
 			item.useTime = 14;
 			item.useAnimation = 14;
 			item.useStyle = 1;
@@ -27,6 +27,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("LightBeam");
 			item.shootSpeed = 10;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Purity");
+      Tooltip.SetDefault("Fires a high damage, bouncing beam of light that loses damage over time");
+    }
+
 
 		public override void AddRecipes()
 		{

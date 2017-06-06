@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.Summon
     {
         public override void SetDefaults()
         {
-            item.name = "Eater Staff";
+
             item.damage = 13;
             item.summon = true;
             item.mana = 10;
@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.Summon
             item.useTime = 36;
             item.useAnimation = 36;
             item.useStyle = 1;
-            AddTooltip("Summons Eaters of Souls to fight");
+
             item.noMelee = true; //so the item's animation doesn't do damage
             item.knockBack = 2f;
             item.buffType = mod.BuffType("EaterMinion");
@@ -40,6 +40,13 @@ namespace ForgottenMemories.Items.Summon
 			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
             item.shootSpeed = 10f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Eater Staff");
+      Tooltip.SetDefault("Summons Eaters of Souls to fight");
+    }
+
 
         public override void AddRecipes()
         {

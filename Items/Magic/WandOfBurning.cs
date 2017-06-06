@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Wand Of Burning";
+
 			item.damage = 22;
 			item.magic = true;
 			item.mana = 8;
@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.Magic
 			item.height = 26;
 			item.useTime = 22;
 			item.UseSound = SoundID.Item20;
-			AddTooltip("Has a chance to fire a splitting spark");
+
 			item.useAnimation = 22;
 			item.useStyle = 1;
 			item.noMelee = true;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.Magic
 			item.shoot = 504;
 			item.shootSpeed = 15f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Wand Of Burning");
+      Tooltip.SetDefault("Has a chance to fire a splitting spark");
+    }
+
 		
 		public override void AddRecipes()
 		{

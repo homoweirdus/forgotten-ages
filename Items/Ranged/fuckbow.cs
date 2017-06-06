@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Ranged
 		int counter = 0;
 		public override void SetDefaults()
 		{
-			item.name = "Blighted Drake";
+
 			item.damage = 55;
 			item.ranged = true;
 			item.width = 50;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.noMelee = true;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blighted Drake");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

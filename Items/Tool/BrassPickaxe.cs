@@ -8,7 +8,7 @@ public class BrassPickaxe : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Brass Pickaxe";
+
         item.damage = 15;
         item.melee = true;
         item.width = 22;
@@ -23,6 +23,13 @@ public class BrassPickaxe : ModItem
         item.autoReuse = true;
 		item.pick = 105;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Brass Pickaxe");
+      Tooltip.SetDefault("");
+    }
+
 	
 	
 	public override void AddRecipes()

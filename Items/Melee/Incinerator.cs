@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Devil's Blade";
+
 			item.damage = 19;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Incinerates enemies";
+
 			item.useTime = 20;
 			item.useAnimation = 20;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("redflame");
 			item.shootSpeed = 5;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Devil's Blade");
+      Tooltip.SetDefault("Incinerates enemies");
+    }
+
 
 		public override void AddRecipes()
 		{

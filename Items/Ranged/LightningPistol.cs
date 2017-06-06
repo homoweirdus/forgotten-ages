@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Lightning Pistol";
+
 			item.damage = 8;
 			item.ranged = true;
 			item.width = 50;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.noMelee = true;
 			item.useAmmo =  AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Lightning Pistol");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

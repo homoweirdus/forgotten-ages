@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Lunar Wrath";
+
 			item.damage = 92;
 			item.magic = true;
 			item.width = 22;
@@ -25,12 +25,19 @@ namespace ForgottenMemories.Items.Magic
 			item.rare = 9;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.toolTip = "Creates a slow moving, homing laser of moonlight that gains velocity over time";
+
 			Item.staff[item.type] = true;
 			item.shoot = mod.ProjectileType("LunarOrb");
 			item.shootSpeed = 6f;
 			item.mana = 15;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Lunar Wrath");
+      Tooltip.SetDefault("Creates a slow moving, homing laser of moonlight that gains velocity over time");
+    }
+
 		
 		public override void AddRecipes()
 		{

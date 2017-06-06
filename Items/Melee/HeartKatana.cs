@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Heart Katana";
+
 			item.damage = 24;
 			item.crit = 26;
 			item.melee = true;
@@ -24,10 +24,17 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 3;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
-			item.toolTip = "Critical strikes restore health";
+
 			item.autoReuse = true;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Heart Katana");
+      Tooltip.SetDefault("Critical strikes restore health");
+    }
+
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
 		{

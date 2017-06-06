@@ -12,14 +12,14 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Devil Pistol";
+
 			item.damage = 14;
 			item.ranged = true;
 			item.width = 50;
 			item.height = 50;
 			item.useTime = 23;
 			item.useAnimation = 23;
-			AddTooltip("Has a chance to shoot an unholy fire bolt");
+
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 10000;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.noMelee = true;
 			item.useAmmo =  AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Devil Pistol");
+      Tooltip.SetDefault("Has a chance to shoot an unholy fire bolt");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

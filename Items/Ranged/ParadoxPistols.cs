@@ -15,12 +15,12 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Paradox Pistol";
+
 			item.damage = 70;
 			item.ranged = true;
 			item.width = 23;
 			item.height = 13;
-			item.toolTip = "Fires another bullet when a bullet hits an enemy, which can create another bullet, which can create another bullet...";
+
 			item.useTime = 4;
 			item.useAnimation = 4;
 			item.useStyle = 5;
@@ -34,6 +34,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.shootSpeed = 16f;
 			item.useAmmo = AmmoID.Bullet;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Paradox Pistol");
+      Tooltip.SetDefault("Fires another bullet when a bullet hits an enemy, which can create another bullet, which can create another bullet...");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

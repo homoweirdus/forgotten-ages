@@ -12,12 +12,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Ebony";
+
 			item.damage = 66;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Rains down blighted meteors \nTrue melee strikes reduce enemy defense";
+
 			item.useTime = 30;
 			item.crit = 10;
 			item.useAnimation = 15;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ebony");
+      Tooltip.SetDefault("Rains down blighted meteors \nTrue melee strikes reduce enemy defense");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

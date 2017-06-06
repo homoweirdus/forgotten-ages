@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.Melee
 
 		public override void SetDefaults()
 		{
-			item.name = "Ichor Lance";
+
 			item.width = 65;  //The width of the .png file in pixels divided by 2.
 			item.damage = 78;  //Keep this reasonable please.
 			item.melee = true;  //Dictates whether this is a melee-class weapon.
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("IchorLanceProjectile");
 			item.shootSpeed = 7;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ichor Lance");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override bool CanUseItem(Player player)
         {

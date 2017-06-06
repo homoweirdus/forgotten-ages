@@ -16,13 +16,13 @@ namespace ForgottenMemories.Items.Ranged
 
         public override void SetDefaults()
         {
-            item.name = "True Hallowed Repeater";
+
             item.damage = 58;
             item.noMelee = true;
             item.ranged = true;
             item.width = 54;
             item.height = 24;
-            item.toolTip = "Enchants arrows with hallowed energy";
+
             item.useTime = 20;
             item.useAnimation = 20;
             item.useStyle = 5;
@@ -36,6 +36,13 @@ namespace ForgottenMemories.Items.Ranged
             item.shootSpeed = 12f;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("True Hallowed Repeater");
+      Tooltip.SetDefault("Enchants arrows with hallowed energy");
+    }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 				int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);

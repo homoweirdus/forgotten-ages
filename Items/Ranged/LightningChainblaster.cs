@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Lightning Chainblaster";
+
 			item.damage = 35;
 			item.ranged = true;
 			item.width = 50;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.noMelee = true;
 			item.useAmmo =  AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Lightning Chainblaster");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override void AddRecipes()
 		{

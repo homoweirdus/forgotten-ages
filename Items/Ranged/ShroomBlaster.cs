@@ -15,12 +15,12 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Shroom Blaster";
+
 			item.damage = 26;
 			item.ranged = true;
 			item.width = 23;
 			item.height = 13;
-			item.toolTip = "Bullets fired home in on enemies";
+
 			item.useTime = 33;
 			item.useAnimation = 33;
 			item.useStyle = 5;
@@ -34,6 +34,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.shootSpeed = 6f;
 			item.useAmmo = AmmoID.Bullet;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Shroom Blaster");
+      Tooltip.SetDefault("Bullets fired home in on enemies");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

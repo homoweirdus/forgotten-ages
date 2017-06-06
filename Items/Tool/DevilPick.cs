@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Tool
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Devil Pick";
+
 			item.damage = 14;
 			item.melee = true;
 			item.width = 32;
@@ -25,6 +25,13 @@ namespace ForgottenMemories.Items.Tool
 			item.autoReuse = true;
 			item.pick = 59;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Devil Pick");
+      Tooltip.SetDefault("");
+    }
+
 		
 		
 		public override void AddRecipes()

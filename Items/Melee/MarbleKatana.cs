@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Melee
     {
         public override void SetDefaults()
         {
-            item.name = "Marble Katana";
+
 
             item.damage = 21; 
             item.crit = 8;
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.Melee
             item.rare = 3;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Marble Katana");
+      Tooltip.SetDefault("");
+    }
+
         
     }
 }

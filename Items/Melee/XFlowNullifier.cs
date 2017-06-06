@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "X-Flow Nullifier";
+
 			item.damage = 138;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			AddTooltip("Fires light from the heavens");
+
 			item.useTime = 4;
 			item.useAnimation = 16;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("XFlowStar");
 			item.shootSpeed = 1.5f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("X-Flow Nullifier");
+      Tooltip.SetDefault("Fires light from the heavens");
+    }
+
 
 		public override void AddRecipes()
 		{

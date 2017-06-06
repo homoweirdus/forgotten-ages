@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Slime Rod";
+
 			item.damage = 12;
 			item.magic = true;
 			item.mana = 8;
 			item.width = 25;
 			item.height = 26;
-			item.toolTip = "Fires slime balls";
+
 			item.useTime = 4;
 			item.UseSound = SoundID.Item20;
 			item.useAnimation = 16;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Magic
 			item.shootSpeed = 7f;
 			item.reuseDelay = 35;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Slime Rod");
+      Tooltip.SetDefault("Fires slime balls");
+    }
+
 		
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

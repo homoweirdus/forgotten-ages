@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Melee
     {
         public override void SetDefaults()
         {
-            item.name = "Coral Boomerang";
+
             item.damage = 14;            
             item.melee = true;
             item.width = 30;
             item.height = 30;
-            item.toolTip = "Stacks up to 3";
+
             item.useTime = 18;
             item.useAnimation = 18;
             item.noUseGraphic = true;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.Melee
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Coral Boomerang");
+      Tooltip.SetDefault("Stacks up to 3");
+    }
+
 		
         public override bool CanUseItem(Player player)
         {

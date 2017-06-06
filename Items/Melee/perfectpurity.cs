@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Perfect Purity";
+
 			item.damage = 120;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Fires a bouncing ball of light that creates a pillar of light on hit";
+
 			item.useTime = 15;
 			item.useAnimation = 10;
 			item.useStyle = 1;
@@ -27,6 +27,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("LightBall");
 			item.shootSpeed = 10;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Perfect Purity");
+      Tooltip.SetDefault("Fires a bouncing ball of light that creates a pillar of light on hit");
+    }
+
 
 		public override void AddRecipes()
 		{

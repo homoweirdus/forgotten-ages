@@ -14,13 +14,13 @@ namespace ForgottenMemories.Items.Melee
 
 		public override void SetDefaults()
 		{
-			item.name = "The Finisher";
+
 			item.width = 108;  //The width of the .png file in pixels divided by 2.
 			item.damage = 98;  //Keep this reasonable please.
 			item.melee = true;  //Dictates whether this is a melee-class weapon.
 			item.noMelee = true;
 			item.noUseGraphic = true;
-			AddTooltip("Creates energy that chains from enemy to enemy");
+
 			AddTooltip("Greatly reduces the defense of a low hp enemy");
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -35,6 +35,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("Finisher");
 			item.shootSpeed = 9;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("The Finisher");
+      Tooltip.SetDefault("Creates energy that chains from enemy to enemy");
+    }
+
 		
 		public override bool CanUseItem(Player player)
         {

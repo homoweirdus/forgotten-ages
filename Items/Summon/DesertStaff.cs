@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.Summon
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Desert Staff";
+
 			item.damage = 33;
 			item.summon = true;
 			item.mana = 10;
 			item.width = 19;
 			item.height = 19;
-			item.toolTip = "Creates a shadowflame spirit to fight for you";
+
 			item.useTime = 36;
 			item.UseSound = SoundID.Item20;
 			item.useAnimation = 36;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.Summon
 			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
 			item.shootSpeed = 10f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Desert Staff");
+      Tooltip.SetDefault("Creates a shadowflame spirit to fight for you");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

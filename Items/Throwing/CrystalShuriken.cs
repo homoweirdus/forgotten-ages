@@ -22,6 +22,8 @@ namespace ForgottenMemories.Items.Throwing
             projectile.timeLeft = 6000;
 
         }
+
+
         public override void Kill(int timeLeft)
 			{
 				int amountOfProjectiles = Main.rand.Next(3, 4);
@@ -37,18 +39,18 @@ namespace ForgottenMemories.Items.Throwing
         }
 
         public class CrystalShuriken : ModItem
-        {
+
 
             public override void SetDefaults()
             {
                 item.CloneDefaults(ItemID.Shuriken);
-                item.damage = 34;
-                item.shoot = mod.ProjectileType("CrystalShurikenP");
-                item.name = "Crystal Shuriken";
-                item.rare = 4;
-                item.shootSpeed = 15f;
-				item.autoReuse = true;
-            }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Crystal Shuriken");
+      Tooltip.SetDefault("");
+    }
+
 
             public override void AddRecipes()
             {

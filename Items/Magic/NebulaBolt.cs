@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Nebula Bolt";
+
 			item.damage = 85;
 			item.magic = true;
 			item.width = 22;
@@ -23,11 +23,18 @@ namespace ForgottenMemories.Items.Magic
 			item.rare = 10;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.toolTip = "Summons flames at your cursor";
+
 			item.shoot = mod.ProjectileType("NebulaFlame");
 			item.shootSpeed = 10f;
 			item.mana = 6;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Nebula Bolt");
+      Tooltip.SetDefault("Summons flames at your cursor");
+    }
+
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

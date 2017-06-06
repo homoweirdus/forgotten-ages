@@ -11,13 +11,13 @@ namespace ForgottenMemories.Items.Ranged
     {
         public override void SetDefaults()
         {
-            item.name = "Granite Decimator";
+
             item.damage = 32;
             item.ranged = true;
             item.width = 31;
             item.height = 32;
             item.crit = 15;
-            item.toolTip = "Destroys your enemies with ease";
+
             item.useTime = 35;
             item.useAnimation = 35;
             item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Ranged
             item.shootSpeed = 12f;
             item.useAmmo = AmmoID.Bullet;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Granite Decimator");
+      Tooltip.SetDefault("Destroys your enemies with ease");
+    }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             // Convert Musket Balls into Granite Shots

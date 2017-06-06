@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Titan's Spin";
+
 			item.useStyle = 5;
 			item.width = 24;
 			item.height = 24;
@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;
 			item.channel = true;
 			item.noMelee = true;
-			AddTooltip("Occasionally fires a barrage of lasers");
+
 			item.useAnimation = 25;
 			item.useTime = 25;
 			item.shootSpeed = 16f;
@@ -29,5 +29,12 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 3;
 			item.shoot = mod.ProjectileType("TitanSpin");
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Titan's Spin");
+      Tooltip.SetDefault("Occasionally fires a barrage of lasers");
+    }
+
 	}
 }

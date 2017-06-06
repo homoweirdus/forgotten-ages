@@ -12,14 +12,14 @@ namespace ForgottenMemories.Items.Ranged
 
 		public override void SetDefaults()
 		{
-			item.name = "Needle Bow";
+
 			item.damage = 46;
 			item.noMelee = true;
 			item.ranged = true;
 			item.width = 27;
 			item.height = 11;
 			item.useTime = 16;
-			item.toolTip = "Has a 1/3 chance to fire 2 homing lasers";
+
 			item.useAnimation = 16;
 			item.useStyle = 5;
 			item.shoot = 3;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.autoReuse = true;
 			item.shootSpeed = 10f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Needle Bow");
+      Tooltip.SetDefault("Has a 1/3 chance to fire 2 homing lasers");
+    }
+
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

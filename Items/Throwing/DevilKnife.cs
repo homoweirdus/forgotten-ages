@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.Throwing
 			item.damage = 13;
 			item.thrown = true;
 			item.shoot = mod.ProjectileType("DevilKnife");
-			item.name = "Devil Knife";
+
 			item.consumable = true;
 			item.shootSpeed = 11f;
 			item.useTime = 17;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.Throwing
 			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Devil Knife");
+      Tooltip.SetDefault("");
+    }
+
 
 		public override void AddRecipes()
 		{

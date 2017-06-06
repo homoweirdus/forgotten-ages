@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Throwing
 		
 		public override void SetDefaults()
 		{
-			item.name = "Beam Slicer";
+
 			item.damage = 43;
 			item.thrown = true;
 			item.noMelee = true;
 			item.noUseGraphic = true;
-			AddTooltip("Stops midair, firing lasers at nearby enemies");
+
 			item.width = 22;
 			item.height = 22;
 			item.useTime = 20;
@@ -31,5 +31,12 @@ namespace ForgottenMemories.Items.Throwing
 			item.maxStack = 999;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Beam Slicer");
+      Tooltip.SetDefault("Stops midair, firing lasers at nearby enemies");
+    }
+
 	}
 }

@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Pine Staff";
+
 			item.damage = 12;
 			item.magic = true;
 			item.mana = 3;
 			item.width = 25;
 			item.height = 26;
-			item.toolTip = "Fires pine needles";
+
 			item.useTime = 9;
 			item.UseSound = SoundID.Item20;
 			item.useAnimation = 9;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.Magic
 			item.shoot = 336;
 			item.shootSpeed = 10f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Pine Staff");
+      Tooltip.SetDefault("Fires pine needles");
+    }
+
 		
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

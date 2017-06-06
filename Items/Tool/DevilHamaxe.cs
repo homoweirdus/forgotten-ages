@@ -9,7 +9,7 @@ public class DevilHamaxe : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Devil Hamaxe";
+
         item.damage = 17;
         item.melee = true;
         item.width = 22;
@@ -25,6 +25,13 @@ public class DevilHamaxe : ModItem
 		item.axe = 20;
 		item.hammer = 60;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Devil Hamaxe");
+      Tooltip.SetDefault("");
+    }
+
 	
 	
 	public override void AddRecipes()

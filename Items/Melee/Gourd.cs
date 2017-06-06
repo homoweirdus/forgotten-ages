@@ -9,7 +9,7 @@ public class Gourd : ModItem
 {
     public override void SetDefaults()
     {
-        item.name = "Gourd";
+
         item.useStyle = 5;
         item.width = 24;
         item.height = 24;
@@ -27,6 +27,13 @@ public class Gourd : ModItem
         item.rare = 3;
         item.shoot = mod.ProjectileType("GourdProj");
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gourd");
+      Tooltip.SetDefault("");
+    }
+
 	
 	public override void AddRecipes()
 		{

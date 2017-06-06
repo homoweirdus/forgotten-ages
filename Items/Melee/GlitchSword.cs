@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Glitch Sword";
+
 			item.damage = 12;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Cheat weapon /n Made by kachow the god";
+
 			item.damage = 136;
 			item.melee = true;
 			item.width = 88;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("Glitch2");
 			item.shootSpeed = 10;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Glitch Sword");
+      Tooltip.SetDefault("Cheat weapon /n Made by kachow the god");
+    }
+
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, Main.rand.Next(1, 713), 20, knockBack, player.whoAmI, 0f, 0f); //This is spawning a projectile of type FrostburnArrow using the original stats

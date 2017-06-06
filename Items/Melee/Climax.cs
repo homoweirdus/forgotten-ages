@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Climax";
+
 			item.damage = 298;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Can absorb the power of other blades";
+
 			item.useTime = 40;
 			item.useAnimation = 20;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("climaxbolt");
 			item.shootSpeed = 10;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Climax");
+      Tooltip.SetDefault("Can absorb the power of other blades");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

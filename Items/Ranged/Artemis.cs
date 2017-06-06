@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.Ranged
 
         public override void SetDefaults()
         {
-            item.name = "Artemis";
+
             item.damage = 33;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-            item.toolTip = "Fires a night arrow that splits into stars";
+
             item.useTime = 30;
             item.useAnimation = 30;
             item.useStyle = 5;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.Ranged
             item.shootSpeed = 10f;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Artemis");
+      Tooltip.SetDefault("Fires a night arrow that splits into stars");
+    }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 				Vector2 origVect = new Vector2(speedX, speedY);

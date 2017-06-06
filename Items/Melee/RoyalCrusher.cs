@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Royal Crusher";
+
 			item.damage = 19;
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
-			item.toolTip = "A blade fit for a king";
+
 			item.useTime = 23;
 			item.useAnimation = 23;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("Spark");
 			item.shootSpeed = 15;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Royal Crusher");
+      Tooltip.SetDefault("A blade fit for a king");
+    }
+
 
 		public override void AddRecipes()
 		{

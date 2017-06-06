@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Lightning Dagger";
+
 			item.damage = 42;
 			item.melee = true;
 			item.width = 22;
@@ -22,9 +22,16 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 4;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.toolTip = "Creates an aura of static electricity when hitting enemies";
+
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Lightning Dagger");
+      Tooltip.SetDefault("Creates an aura of static electricity when hitting enemies");
+    }
+
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {

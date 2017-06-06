@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Wyvern Scythe";
+
 			item.damage = 52;
 			item.melee = true;
 			item.width = 58;
 			item.height = 52;
-			item.toolTip = "Creates short-ranged fire breath that ignores tiles";
+
 			item.useTime = 10;
 			item.useAnimation = 20;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("NecroflameSickleProj");
 			item.shootSpeed = 10f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Wyvern Scythe");
+      Tooltip.SetDefault("Creates short-ranged fire breath that ignores tiles");
+    }
+
 		
 		public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {

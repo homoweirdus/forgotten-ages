@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Magic
 		float memer = 0f;
 		public override void SetDefaults()
 		{
-			item.name = "Laserbeam Staff";
+
 			item.damage = 49;
 			item.magic = true;
 			item.mana = 8;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.Magic
 			item.shoot = mod.ProjectileType("laserbeam2");
 			item.shootSpeed = 4f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Laserbeam Staff");
+      Tooltip.SetDefault("");
+    }
+
 		
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

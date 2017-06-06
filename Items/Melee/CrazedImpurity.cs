@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Crazed Impurity";
+
 			item.damage = 140;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Tortures the enemy with agonizing lightning";
+
 			item.useTime = 10;
 			item.useAnimation = 10;
 			item.useStyle = 1;
@@ -27,6 +27,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("DarkWave");
 			item.shootSpeed = 10;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Crazed Impurity");
+      Tooltip.SetDefault("Tortures the enemy with agonizing lightning");
+    }
+
 
 		public override void AddRecipes()
 		{

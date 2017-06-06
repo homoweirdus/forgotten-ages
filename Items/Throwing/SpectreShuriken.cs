@@ -10,12 +10,12 @@ public class SpectreShuriken : ModItem
 	
     public override void SetDefaults()
     {
-        item.name = "Spectre Shuriken";
+
         item.damage = 63;
         item.thrown = true;
 		item.noMelee = true;
 		item.noUseGraphic = true;
-		AddTooltip("Homes in on nearby enemies");
+
         item.width = 22;
         item.height = 22;
         item.useTime = 16;
@@ -31,6 +31,13 @@ public class SpectreShuriken : ModItem
 		item.consumable = true;
 		item.maxStack = 999;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Spectre Shuriken");
+      Tooltip.SetDefault("Homes in on nearby enemies");
+    }
+
 
     public override void AddRecipes()
     {

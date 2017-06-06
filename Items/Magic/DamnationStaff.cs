@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Damnation Staff";
+
 			item.damage = 33;
 			item.magic = true;
 			item.mana = 8;
 			item.width = 25;
 			item.height = 26;
-			item.toolTip = "Fires an exploding orb";
+
 			item.useTime = 13;
 			item.UseSound = SoundID.Item20;
 			item.useAnimation = 13;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.Magic
 			item.shoot = mod.ProjectileType("hellorb");
 			item.shootSpeed = 16f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Damnation Staff");
+      Tooltip.SetDefault("Fires an exploding orb");
+    }
+
 		
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

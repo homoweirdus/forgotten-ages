@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Bubblethrower";
+
 			item.damage = 13;
 			item.ranged = true;
 			item.width = 44;
 			item.height = 20;
-			item.toolTip = "Shoots streams of bubbles that wil shoot homing bubbles in addition \n 2% chance to consume ammo";
+
 			item.useTime = 6;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.shootSpeed = 5.25f;
 			item.useAmmo = AmmoID.Gel;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bubblethrower");
+      Tooltip.SetDefault("Shoots streams of bubbles that wil shoot homing bubbles in addition \n 2% chance to consume ammo");
+    }
+
 		
 		public override Vector2? HoldoutOffset()
 		{

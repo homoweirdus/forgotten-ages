@@ -16,14 +16,14 @@ namespace ForgottenMemories.Items.Ranged
 
         public override void SetDefaults()
         {
-            item.name = "Terra Bow";
+
             item.damage = 46;
             item.noMelee = true;
             item.ranged = true;
             item.width = 38;
             item.height = 78;
-            item.toolTip = "Fires a spread of homing terra energy";
-			item.toolTip2 = "Enchants fired arrows with terra energy";
+
+
             item.useTime = 20;
             item.useAnimation = 20;
             item.useStyle = 5;
@@ -37,6 +37,13 @@ namespace ForgottenMemories.Items.Ranged
             item.shootSpeed = 12f;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Terra Bow");
+      Tooltip.SetDefault("Fires a spread of homing terra energy\nEnchants fired arrows with terra energy");
+    }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 				Vector2 origVect = new Vector2(speedX, speedY);

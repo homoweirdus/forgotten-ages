@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items.Throwing
 			item.damage = 11;
 			item.thrown = true;
 			item.shoot = mod.ProjectileType("BloodDagger");
-			item.name = "Blood Dagger";
-			AddTooltip("Causes enemies to slowly lose health and explode into blood on death");
+
+
 			item.consumable = true;
 			item.shootSpeed = 11f;
 			item.useTime = 22;
@@ -33,5 +33,12 @@ namespace ForgottenMemories.Items.Throwing
 			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blood Dagger");
+      Tooltip.SetDefault("Causes enemies to slowly lose health and explode into blood on death");
+    }
+
 	}
 }

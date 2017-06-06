@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Titanic Crusher";
+
 			item.useStyle = 5;
 			item.width = 24;
 			item.height = 24;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Melee
 			item.noMelee = true;
 			item.useAnimation = 44;
 			item.useTime = 44;
-			item.toolTip = "Rends enemy defense and deals some damage over time on hit";
+
 			item.shootSpeed = 16f;
 			item.knockBack = 3.75f;
 			item.damage = 52;
@@ -29,5 +29,12 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 4;
 			item.shoot = mod.ProjectileType("TitanicCrusher");
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Titanic Crusher");
+      Tooltip.SetDefault("Rends enemy defense and deals some damage over time on hit");
+    }
+
 	}
 }

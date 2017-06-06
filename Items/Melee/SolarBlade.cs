@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Solar Blade";
+
 			item.damage = 148;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Fires exploding fireballs";
+
 			item.useTime = 10;
 			item.useAnimation = 10;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("SolarBall");
 			item.shootSpeed = 14;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Solar Blade");
+      Tooltip.SetDefault("Fires exploding fireballs");
+    }
+
 
 		public override void AddRecipes()
 		{

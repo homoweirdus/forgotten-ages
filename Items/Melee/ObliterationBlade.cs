@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Obliteration Blade";
+
 			item.damage = 430;
 			item.melee = true;
 			item.width = 62;
 			item.height = 62;
-			item.toolTip = "Shreds your enemies in seconds \nKilling enemies with more than 100 max life restores health and creates an explosion of blood";
+
 			item.useTime = 8;
 			item.useAnimation = 8;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.autoReuse = true;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Obliteration Blade");
+      Tooltip.SetDefault("Shreds your enemies in seconds \nKilling enemies with more than 100 max life restores health and creates an explosion of blood");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Pixie Saber";
+
 			item.damage = 47;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Creates stationary exploding stars";
+
 			item.useTime = 30;
 			item.useAnimation = 10;
 			item.useStyle = 1;
@@ -25,6 +25,13 @@ namespace ForgottenMemories.Items.Melee
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("starproj");
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Pixie Saber");
+      Tooltip.SetDefault("Creates stationary exploding stars");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

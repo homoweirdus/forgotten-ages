@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Ranged
 		int counter = 0;
 		public override void SetDefaults()
 		{
-			item.name = "Ivory Longbow";
+
 			item.damage = 45;
 			item.ranged = true;
 			item.width = 27;
@@ -24,12 +24,19 @@ namespace ForgottenMemories.Items.Ranged
 			item.rare = 4;
 			item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
-			AddTooltip("Fires a piercing ivory laser");
+
 			item.shoot = 3;
 			item.shootSpeed = 15f;
 			item.noMelee = true;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ivory Longbow");
+      Tooltip.SetDefault("Fires a piercing ivory laser");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

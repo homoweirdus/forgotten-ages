@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Lightning Sphere";
+
 			item.damage = 126;
 			item.magic = true;
 			item.width = 22;
@@ -23,10 +23,17 @@ namespace ForgottenMemories.Items.Magic
 			item.rare = 10;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.toolTip = "Summons an orb of electricity that shoots lightning at nearby enemies";
+
 			item.shoot = mod.ProjectileType("LightningSphere");
 			item.shootSpeed = 5f;
 			item.mana = 45;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Lightning Sphere");
+      Tooltip.SetDefault("Summons an orb of electricity that shoots lightning at nearby enemies");
+    }
+
 	}
 }

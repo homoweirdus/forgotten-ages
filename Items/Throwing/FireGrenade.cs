@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Throwing
 		
 		public override void SetDefaults()
 		{
-			item.name = "Fire Grenade";
+
 			item.damage = 30;
 			item.thrown = true;
 			item.noMelee = true;
@@ -32,4 +32,11 @@ namespace ForgottenMemories.Items.Throwing
 			item.consumable = true;
 			item.maxStack = 999;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Fire Grenade");
+      Tooltip.SetDefault("");
+    }
+
 	}}

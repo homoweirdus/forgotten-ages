@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.Throwing
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Necro Dagger";
+
 			item.damage = 14;
 			item.thrown = true;
 			item.width = 32;
@@ -27,6 +27,13 @@ namespace ForgottenMemories.Items.Throwing
 			item.noMelee = true;
 			item.noUseGraphic = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Necro Dagger");
+      Tooltip.SetDefault("");
+    }
+
 
 		public override void AddRecipes()
 		{

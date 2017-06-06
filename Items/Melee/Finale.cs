@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Finale";
+
 			item.damage = 360;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			AddTooltip("Creates a ring of rainbow explosions around you");
+
 			AddTooltip("Right-Clicking rains down explosive rainbow bolts");
 			AddTooltip("Cheat Item");
 			item.useTime = 10;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("FinaleBoom");
 			item.shootSpeed = 18;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Finale");
+      Tooltip.SetDefault("Creates a ring of rainbow explosions around you");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

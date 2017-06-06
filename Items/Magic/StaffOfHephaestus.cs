@@ -10,14 +10,14 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Staff of Hephaestus";
+
 			item.damage = 50;
 			item.magic = true;
 			item.crit = 26;
 			item.mana = 18;
 			item.width = 25;
 			item.height = 26;
-			item.toolTip = "Fires a barrage of molten blades";
+
 			item.useTime = 7;
 			item.UseSound = SoundID.Item20;
 			item.useAnimation = 14;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.Magic
 			item.shoot = mod.ProjectileType("MoltenBlade");
 			item.shootSpeed = 14f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Staff of Hephaestus");
+      Tooltip.SetDefault("Fires a barrage of molten blades");
+    }
+
 		
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

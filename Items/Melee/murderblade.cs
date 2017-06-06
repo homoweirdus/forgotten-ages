@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Murder blade";
+
 			item.damage = 100;
 			item.melee = true;
 			item.width = 62;
 			item.height = 62;
-			item.toolTip = "How are your hands still on?";
+
 			item.useTime = 4;
 			item.useAnimation = 4;
 			item.useStyle = 1;
@@ -25,6 +25,13 @@ namespace ForgottenMemories.Items.Melee
 			item.autoReuse = true;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Murder blade");
+      Tooltip.SetDefault("How are your hands still on?");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.TileItems
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Gold in a bottle";
+
 			item.width = 10;
 			item.height = 12;
 			item.maxStack = 99;
@@ -22,6 +22,13 @@ namespace ForgottenMemories.Items.TileItems
 			item.createTile = mod.TileType("GoldBottleTile");
 			item.value = 1000;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gold in a bottle");
+      Tooltip.SetDefault("");
+    }
+
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

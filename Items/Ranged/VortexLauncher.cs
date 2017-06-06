@@ -11,13 +11,13 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.RocketLauncher);
-			item.name = "Vortex Launcher";
+
 			item.damage = 92;
 			item.ranged = true;
 			item.width = 29;
 			item.height = 24;
-			item.toolTip = "Causes normal rockets to split into 5 weaker rockets midair \nHas a chance to instead fire 2 homing vortex rockets";
-			item.toolTip2 = "66% chance not to consume ammo";
+
+
 			item.useTime = 35;
 			item.useAnimation = 35;
 			item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.shootSpeed = 16f;
 			item.useAmmo = AmmoID.Rocket;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Vortex Launcher");
+      Tooltip.SetDefault("Causes normal rockets to split into 5 weaker rockets midair \nHas a chance to instead fire 2 homing vortex rockets\n66% chance not to consume ammo");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

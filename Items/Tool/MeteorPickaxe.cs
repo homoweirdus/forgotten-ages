@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.Tool
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Meteor Pickaxe";
+
 			item.damage = 12;
 			item.melee = true;
 			item.width = 32;
@@ -24,6 +24,13 @@ namespace ForgottenMemories.Items.Tool
 			item.autoReuse = true;
 			item.pick = 65;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Meteor Pickaxe");
+      Tooltip.SetDefault("");
+    }
+
 		
 		
 		public override void AddRecipes()

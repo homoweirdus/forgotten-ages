@@ -12,18 +12,25 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Doom Sayer's Slayer";
+
 			item.damage = 200;
 			item.melee = true;
 			item.width = 82;
 			item.height = 82;
-			item.toolTip = "Fires a homing bolt of Reality Fury \nRight-Clicking fires bolts of Despair, Dread, and Anger \nOnly usable if Thorium is installed";
+
 			item.useTime = 16;
 			item.useAnimation = 16;
 			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				item.useStyle = 1;
 			}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Doom Sayer's Slayer");
+      Tooltip.SetDefault("Fires a homing bolt of Reality Fury \nRight-Clicking fires bolts of Despair, Dread, and Anger \nOnly usable if Thorium is installed");
+    }
+
 			item.knockBack = 6;
 			item.value = 637500;
 			item.rare = 10;

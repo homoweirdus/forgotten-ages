@@ -12,14 +12,14 @@ namespace ForgottenMemories.Items.Melee
     {
         public override void SetDefaults()
         {
-            item.name = "Deathweed Sword";
+
             item.damage = 16; 
 			item.crit = 20;
             item.melee = true;
             item.knockBack = 5; 
             item.autoReuse = true; 
             item.useTurn = true; 
-			AddTooltip("Critical strikes deal 50% more damage and knockback");
+
             item.width = 32;       
             item.height = 32;
             item.useTime = 20;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.Melee
             item.value = 15000;
 			item.rare = 1;
         } 
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Deathweed Sword");
+      Tooltip.SetDefault("Critical strikes deal 50% more damage and knockback");
+    }
+
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {

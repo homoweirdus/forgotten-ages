@@ -9,13 +9,13 @@ public class MartianYoyo : ModItem
 {
     public override void SetDefaults()
 		{
-			item.name = "Extraterrestrial";
+
 			item.useStyle = 5;
 			item.width = 24;
 			item.height = 24;
 			item.noUseGraphic = true;
 			item.UseSound = SoundID.Item1;
-			item.toolTip = "Has a chance to fire lasers on hit";
+
 			item.melee = true;
 			item.channel = true;
 			item.noMelee = true;
@@ -28,5 +28,12 @@ public class MartianYoyo : ModItem
 			item.rare = 8;
 			item.shoot = mod.ProjectileType("MartianYoyoP");
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Extraterrestrial");
+      Tooltip.SetDefault("Has a chance to fire lasers on hit");
+    }
+
 	}
 }

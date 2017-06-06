@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.RocketLauncher);
-			item.name = "Ancient Launcher";
+
 			item.damage = 30;
 			item.ranged = true;
 			item.width = 29;
 			item.height = 24;
-			item.toolTip = "Transforms Rockets into Rock Missiles";
+
 			item.useTime = 48;
 			item.useAnimation = 48;
 			item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.shootSpeed = 16f;
 			item.useAmmo = AmmoID.Rocket;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ancient Launcher");
+      Tooltip.SetDefault("Transforms Rockets into Rock Missiles");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float sX, ref float sY, ref int type, ref int damage, ref float knockBack)
 		{

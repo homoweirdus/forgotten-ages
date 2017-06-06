@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Planetary Blade";
+
 			item.damage = 100;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Fires seeds and a gigantic wave";
+
 			item.useTime = 14;
 			item.useAnimation = 7;
 			item.useStyle = 1;
@@ -27,6 +27,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("PlanetaryWave");
 			item.shootSpeed = 20;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Planetary Blade");
+      Tooltip.SetDefault("Fires seeds and a gigantic wave");
+    }
+
 
 		public override void AddRecipes()
 		{

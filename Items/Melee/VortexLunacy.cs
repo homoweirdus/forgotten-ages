@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Vortex Lunacy";
+
 			item.damage = 108;
 			item.melee = true;
 			item.width = 98;
 			item.height = 98;
-			item.toolTip = "Releases a spinning vortex";
+
 			item.useTime = 20;
 			item.useAnimation = 20;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("LightningVortex");
 			item.shootSpeed = 16;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Vortex Lunacy");
+      Tooltip.SetDefault("Releases a spinning vortex");
+    }
+
 
 		public override void AddRecipes()
 		{

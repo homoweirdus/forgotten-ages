@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Flame Shotgun";
+
 			item.damage = 28;
 			item.ranged = true;
 			item.width = 40;
@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.useTime = 44;
 			item.useAnimation = 44;
 			item.useStyle = 5;
-			AddTooltip("Creates short-ranged flames");
+
 			item.knockBack = 6;
 			item.value = 250000;
 			item.rare = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.noMelee = true;
 			item.useAmmo =  AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Flame Shotgun");
+      Tooltip.SetDefault("Creates short-ranged flames");
+    }
+
 		
 		public override Vector2? HoldoutOffset()
 		{

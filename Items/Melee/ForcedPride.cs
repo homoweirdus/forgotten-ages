@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Forced Pride";
+
 			item.damage = 160;
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
-			AddTooltip("Striking an enemy with the blade will unleash piercing and explosive sparks");
+
 			AddTooltip("Striking a low health enemy with the blade will create more sparks, restore some health, and greatly lower their defense");
 			AddTooltip("Killing an enemy with the blade will restore even more health");
 			AddTooltip("A blade fit for a god");
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shootSpeed = 5f;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Forced Pride");
+      Tooltip.SetDefault("Striking an enemy with the blade will unleash piercing and explosive sparks");
+    }
+
 
 		public override void AddRecipes()
 		{

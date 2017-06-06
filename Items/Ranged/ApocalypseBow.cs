@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Apocalypse Bow";
+
 			item.damage = 35;
 			item.ranged = true;
 			item.width = 50;
@@ -25,10 +25,17 @@ namespace ForgottenMemories.Items.Ranged
 			item.UseSound = SoundID.Item5;
 			item.shoot = mod.ProjectileType("LeechingArrow");
 			item.shootSpeed = 15f;
-			item.toolTip = "Fires many different types of arrows";
+
 			item.noMelee = true;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Apocalypse Bow");
+      Tooltip.SetDefault("Fires many different types of arrows");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

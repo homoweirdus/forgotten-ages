@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Muramisian Spectre";
+
 			item.damage = 72;
 			item.melee = true;
 			item.width = 62;
 			item.height = 62;
-			item.toolTip = "Creates a wall of spectre waves";
+
 			item.useTime = 11;
 			item.useAnimation = 11;
 			item.useStyle = 1;
@@ -27,6 +27,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shootSpeed = 15f;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Muramisian Spectre");
+      Tooltip.SetDefault("Creates a wall of spectre waves");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

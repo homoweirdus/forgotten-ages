@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Solar Judgement";
+
 			item.damage = 152;
 			item.magic = true;
 			item.width = 22;
@@ -25,12 +25,19 @@ namespace ForgottenMemories.Items.Magic
 			item.rare = 9;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.toolTip = "Creates a fast moving, explosive orb of sunfire that rapisly loses velocity";
+
 			Item.staff[item.type] = true;
 			item.shoot = mod.ProjectileType("SolBeam");
 			item.shootSpeed = 18f;
 			item.mana = 25;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Solar Judgement");
+      Tooltip.SetDefault("Creates a fast moving, explosive orb of sunfire that rapisly loses velocity");
+    }
+
 		
 		public override void AddRecipes()
 		{

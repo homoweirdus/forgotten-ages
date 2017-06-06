@@ -13,14 +13,14 @@ namespace ForgottenMemories.Items.Melee
 		Vector2 lesvector = new Vector2(5f, 0f);
 		public override void SetDefaults()
 		{
-			item.name = "Laserblade Katana";
+
 			item.damage = 58;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
 			item.useTime = 5;
 			item.useAnimation = 10;
-			AddTooltip("Unleashes a spiral of lasers around you");
+
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 50000;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("laserslash");
 			item.shootSpeed = 10;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Laserblade Katana");
+      Tooltip.SetDefault("Unleashes a spiral of lasers around you");
+    }
+
 
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)

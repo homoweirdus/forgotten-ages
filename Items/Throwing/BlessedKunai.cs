@@ -22,6 +22,7 @@ namespace ForgottenMemories.Items.Throwing
 			projectile.timeLeft = 6000;
 			
 		}
+
 		
 		public override void Kill(int timeLeft)
 		{
@@ -34,20 +35,20 @@ namespace ForgottenMemories.Items.Throwing
 	}
 	
 	public class BlessedKunai : ModItem
-	{
+
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
 			item.damage = 49;
 			item.shoot = mod.ProjectileType("BlessedKunaiP");
-			item.name = "Blessed Kunai";
-			item.rare = 4;
-			item.useTime = 13;
-			item.useAnimation = 13;
-			item.shootSpeed = 9f;
-			item.autoReuse = true;
-		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blessed Kunai");
+      Tooltip.SetDefault("");
+    }
+
 
 		public override void AddRecipes()
 		{

@@ -7,7 +7,7 @@ namespace ForgottenMemories.Items.TileItems
     {
         public override void SetDefaults()
         {
-            item.name = "Gelatine Ore";
+
             item.width = 16; 
 			item.height = 14;
             item.maxStack = 999;
@@ -21,5 +21,12 @@ namespace ForgottenMemories.Items.TileItems
 			item.autoReuse = true;
             item.createTile = mod.TileType("GelatineOre");
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Ore");
+      Tooltip.SetDefault("");
+    }
+
     }
 }

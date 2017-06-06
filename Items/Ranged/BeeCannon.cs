@@ -9,13 +9,13 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Bee Cannon";
+
 			item.damage = 22;
 			item.ranged = true;
 			item.width = 42;
 			item.height = 30;
-			item.toolTip = "Uses stingers as ammo";
-			item.toolTip2 = "80% chance not to consume stingers";
+
+
 			item.useTime = 40;
 			item.useAnimation = 40;
 			item.useStyle = 5;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.shootSpeed = 16f;
 			item.useAmmo = ItemID.Stinger;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bee Cannon");
+      Tooltip.SetDefault("Uses stingers as ammo\n80% chance not to consume stingers");
+    }
+
 
 		public override void AddRecipes()
 		{

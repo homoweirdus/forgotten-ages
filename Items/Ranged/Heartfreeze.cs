@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Ranged
 
 		public override void SetDefaults()
 		{
-			item.name = "Heartfreeze";
+
 			item.damage = 42;
 			item.noMelee = true;
 			item.ranged = true;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.autoReuse = true;
 			item.shootSpeed = 10f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Heartfreeze");
+      Tooltip.SetDefault("");
+    }
+
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

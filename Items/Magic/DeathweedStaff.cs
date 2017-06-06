@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Deathweed Staff";
+
 			item.damage = 11;
 			item.magic = true;
 			item.mana = 6;
 			item.width = 21;
 			item.height = 22;
-			item.toolTip = "Fires piercing deathweed projectiles";
+
 			item.useTime = 18;
 			item.UseSound = SoundID.Item20;
 			item.useAnimation = 18;
@@ -30,5 +30,12 @@ namespace ForgottenMemories.Items.Magic
 			item.shoot = mod.ProjectileType("DeathweedBall");
 			item.shootSpeed = 9f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Deathweed Staff");
+      Tooltip.SetDefault("Fires piercing deathweed projectiles");
+    }
+
 	}
 }

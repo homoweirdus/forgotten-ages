@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Impurity";
+
 			item.damage = 116;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Fires a wave of dark energy that inflicts several debuffs";
+
 			item.useTime = 20;
 			item.useAnimation = 20;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("DarkWave");
 			item.shootSpeed = 14;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Impurity");
+      Tooltip.SetDefault("Fires a wave of dark energy that inflicts several debuffs");
+    }
+
 
 		public override void AddRecipes()
 		{

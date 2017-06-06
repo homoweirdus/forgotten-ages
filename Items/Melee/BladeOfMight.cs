@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Blade of Might";
+
 			item.damage = 60;
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
-			AddTooltip("Fires a sword beam that flies towards your cursor's location after right-clicking");
+
 			AddTooltip("'Enchanted with the essence of the Destroyer'");
 			item.useTime = 24;
 			item.useAnimation = 12;
@@ -27,6 +27,13 @@ namespace ForgottenMemories.Items.Melee
 			item.autoReuse = true;
 			item.shootSpeed = 11f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blade of Might");
+      Tooltip.SetDefault("Fires a sword beam that flies towards your cursor's location after right-clicking");
+    }
+
 
 		public override void AddRecipes()
 		{

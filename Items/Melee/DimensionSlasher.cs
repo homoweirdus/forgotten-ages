@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Dragon's Tongue";
+
 			item.damage = 475;
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
-			AddTooltip("Striking an enemy with the blade will unleash explosive dragon spit");
+
 			AddTooltip("Reduces enemy defense to near 0 and causes them to melt");
 			item.useTime = 16;
 			item.useAnimation = 16;
@@ -28,6 +28,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shootSpeed = 5f;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Dragon's Tongue");
+      Tooltip.SetDefault("Striking an enemy with the blade will unleash explosive dragon spit");
+    }
+
 
 		public override void AddRecipes()
 		{

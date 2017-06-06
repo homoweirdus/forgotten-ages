@@ -12,10 +12,10 @@ namespace ForgottenMemories.Items.Ranged
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Psychic Pistol";
+
 			item.damage = 14;
 			item.ranged = true;
-			AddTooltip("Fires an additional bullet at the closest enemy");
+
 			item.width = 50;
 			item.height = 50;
 			item.useTime = 26;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.noMelee = true;
 			item.useAmmo =  AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Psychic Pistol");
+      Tooltip.SetDefault("Fires an additional bullet at the closest enemy");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

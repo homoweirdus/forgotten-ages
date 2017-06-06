@@ -14,14 +14,14 @@ namespace ForgottenMemories.Items.Melee
 
 		public override void SetDefaults()
 		{
-			item.name = "Electroshocker";
+
 			item.width = 41;  //The width of the .png file in pixels divided by 2.
 			item.damage = 9;  //Keep this reasonable please.
 			item.melee = true;  //Dictates whether this is a melee-class weapon.
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.useAnimation = 30;
-			AddTooltip("Creates electricity on hit that chains from enemy to enemy");
+
 			item.useStyle = 5;
 			item.useTime = 30;
 			item.knockBack = 9.5f;  //Ranges from 1 to 9.
@@ -34,6 +34,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("MikePenceSpear");
 			item.shootSpeed = 7;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Electroshocker");
+      Tooltip.SetDefault("Creates electricity on hit that chains from enemy to enemy");
+    }
+
 		
 		public override bool CanUseItem(Player player)
         {

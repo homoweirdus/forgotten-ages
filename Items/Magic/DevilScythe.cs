@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Magic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Devil Scythe";
+
 			item.damage = 14;
 			item.magic = true;
 			item.mana = 6;
@@ -28,6 +28,13 @@ namespace ForgottenMemories.Items.Magic
 			item.shoot = mod.ProjectileType("scythe");
 			item.shootSpeed = 1f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Devil Scythe");
+      Tooltip.SetDefault("");
+    }
+
 		
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

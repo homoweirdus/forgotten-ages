@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.Ranged
 
 		public override void SetDefaults()
 		{
-			item.name = "Bow of Sight";
+
 			item.damage = 48;
 			item.noMelee = true;
 			item.ranged = true;
 			item.width = 27;
 			item.height = 11;
-			AddTooltip("Right-Clicking will transform arrows into lasers if an enemy is nearby");
+
 			item.useTime = 14;
 			item.useAnimation = 14;
 			item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.autoReuse = true;
 			item.shootSpeed = 10f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bow of Sight");
+      Tooltip.SetDefault("Right-Clicking will transform arrows into lasers if an enemy is nearby");
+    }
+
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

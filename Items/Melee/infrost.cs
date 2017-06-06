@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Melee
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Serial Inferost";
+
 			item.damage = 52;
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
-			item.toolTip = "You should be frozen just by touching this thing!";
+
 			item.useTime = 48;
 			item.useAnimation = 16;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("infrost");
 			item.shootSpeed = 10;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Serial Inferost");
+      Tooltip.SetDefault("You should be frozen just by touching this thing!");
+    }
+
 
 		public override void AddRecipes()
 		{

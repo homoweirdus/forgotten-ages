@@ -8,7 +8,7 @@ public class BrassHamaxe : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Brass Hamaxe";
+
         item.damage = 20;
         item.melee = true;
         item.width = 22;
@@ -24,6 +24,13 @@ public class BrassHamaxe : ModItem
 		item.axe = 35;
 		item.hammer = 75;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Brass Hamaxe");
+      Tooltip.SetDefault("");
+    }
+
 	
 	
 	public override void AddRecipes()

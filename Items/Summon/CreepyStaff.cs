@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.Summon
     {
         public override void SetDefaults()
         {
-            item.name = "Creeper Staff";
+
             item.damage = 13;
             item.summon = true;
             item.mana = 10;
@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.Summon
             item.useTime = 36;
             item.useAnimation = 36;
             item.useStyle = 1;
-            AddTooltip("Summons Creepers to fight");
+
             item.noMelee = true; //so the item's animation doesn't do damage
             item.knockBack = 2f;
             item.buffType = mod.BuffType("CreeperMinion");
@@ -40,6 +40,13 @@ namespace ForgottenMemories.Items.Summon
 			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
             item.shootSpeed = 10f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Creeper Staff");
+      Tooltip.SetDefault("Summons Creepers to fight");
+    }
+
 
         public override void AddRecipes()
         {

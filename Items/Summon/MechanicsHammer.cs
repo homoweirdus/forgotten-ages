@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Summon
 		public override void SetDefaults()
 		{
 		item.CloneDefaults(ItemID.QueenSpiderStaff); 
-			item.name = "Mechanics Hammer";
+
 			item.damage = 20;  
 			item.mana = 13;   
 			item.width = 40;
@@ -21,11 +21,18 @@ namespace ForgottenMemories.Items.Summon
             item.rare = 3;
             item.knockBack = 2.5f;
 			item.UseSound = SoundID.Item25;
-			item.toolTip = "Summons a stationary Turret";
-            item.toolTip2 = "'Gotta move that gear up'";
+
+
             item.shoot = mod.ProjectileType("MechanicalTurret");
 			item.shootSpeed = 0f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Mechanics Hammer");
+      Tooltip.SetDefault("Summons a stationary Turret\n'Gotta move that gear up'");
+    }
+
 
 		public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

@@ -13,12 +13,12 @@ namespace ForgottenMemories.Items.Ranged
 		int cooldown;
 		public override void SetDefaults()
 		{
-			item.name = "Hadron";
+
 			item.damage = 120;
 			item.ranged = true;
 			item.width = 200;
 			item.height = 58;
-			AddTooltip("Unleashes a devastatingly powerful barrage of missiles");
+
 			AddTooltip("The missile barrage takes 10 seconds to reload");
 			item.useTime = 7;
 			item.useAnimation = 28;
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.Ranged
 			item.noMelee = true;
 			item.useAmmo =  AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Hadron");
+      Tooltip.SetDefault("Unleashes a devastatingly powerful barrage of missiles");
+    }
+
 		
 		public override void AddRecipes()
 		{

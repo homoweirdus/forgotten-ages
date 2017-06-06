@@ -21,6 +21,8 @@ namespace ForgottenMemories.Items.Throwing
 			projectile.ignoreWater = true;
 			projectile.timeLeft = 6000;
 		}
+
+ 
 		
 		public override void Kill(int timeLeft)
 		{
@@ -55,18 +57,18 @@ namespace ForgottenMemories.Items.Throwing
 
 
 	public class HellstoneGlaive : ModItem
-	{
+
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
-			item.damage = 22;
-			item.shoot = mod.ProjectileType("HellstoneGlaiveP");
-			item.name = "Hellstone Shuriken";
-			item.rare = 4;
-			item.shootSpeed = 15f;
-			item.autoReuse = true;
-		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Hellstone Shuriken");
+      Tooltip.SetDefault("");
+    }
+
 
 		public override void AddRecipes()
 		{
@@ -86,13 +88,13 @@ namespace ForgottenMemories.Items.Throwing
 			projectile.width = 100;
 			projectile.height = 100;
 			projectile.aiStyle = 2;
-			projectile.penetrate = -1;
-			projectile.thrown = true;
-			projectile.timeLeft = 3;
-			projectile.friendly = true;
-			projectile.alpha = 255;
-			projectile.tileCollide = false;
-		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Hellstone Shuriken");
+      Tooltip.SetDefault("");
+    }
+
 		public override bool PreAI()
 		{
 			int amountOfDust = 2;
