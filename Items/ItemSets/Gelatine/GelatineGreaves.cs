@@ -16,15 +16,22 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 
 		public override void SetDefaults()
 		{
-			item.name = "Gelatine Greaves";
+
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("7% increased summon damage");
+
 			item.value = 25000;
 			item.rare = 1;
 			item.defense = 2;
             item.lifeRegen = 3;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Greaves");
+      Tooltip.SetDefault("7% increased summon damage");
+    }
+
 
 		public override void UpdateEquip(Player player)
 		{

@@ -10,14 +10,14 @@ public class BloodShuriken : ModItem
 	
     public override void SetDefaults()
     {
-        item.name = "Blood Shuriken";
+
         item.damage = 13;
         item.thrown = true;
 		item.noMelee = true;
 		item.noUseGraphic = true;
         item.width = 22;
         item.height = 22;
-        item.toolTip = "Leeches life";
+
         item.useTime = 14;
         item.useAnimation = 14;
         item.useStyle = 1;
@@ -32,6 +32,13 @@ public class BloodShuriken : ModItem
 		item.consumable = true;
 		item.maxStack = 999;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blood Shuriken");
+      Tooltip.SetDefault("Leeches life");
+    }
+
 
     public override void AddRecipes()
     {

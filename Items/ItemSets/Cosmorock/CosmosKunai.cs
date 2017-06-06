@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.damage = 42;
 			item.thrown = true;
 			item.shoot = mod.ProjectileType("CosmosKunai");
-			item.name = "Cosmos Kunai";
+
 			item.consumable = true;
 			item.shootSpeed = 12f;
 			item.useTime = 12;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmos Kunai");
+      Tooltip.SetDefault("");
+    }
+
 
 		public override void AddRecipes()
 		{

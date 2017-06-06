@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Toxic Gas";
+
 			item.damage = 15;
 			item.magic = true;
 			item.width = 50;
@@ -27,9 +27,16 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.shoot = mod.ProjectileType("ToxicGasProj");
 			item.shootSpeed = 10f;
 			item.mana = 4;
-			item.toolTip = "Shoot toxic gas that expands on impact with a block";
+
 			item.noMelee = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Toxic Gas");
+      Tooltip.SetDefault("Shoot toxic gas that expands on impact with a block");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

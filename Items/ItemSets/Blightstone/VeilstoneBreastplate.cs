@@ -16,16 +16,23 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void SetDefaults()
 		{
-			item.name = "Blightstone Chestplate";
+
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("Increased life regen");
+
 			AddTooltip("10% increased damage resistance");
 			item.value = 300000;
 			item.rare = 5;
 			item.defense = 13;
 			item.lifeRegen = 3;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blightstone Chestplate");
+      Tooltip.SetDefault("Increased life regen");
+    }
+
 
 		public override void UpdateEquip(Player player)
 		{

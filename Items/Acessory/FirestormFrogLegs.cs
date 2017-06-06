@@ -9,14 +9,21 @@ namespace ForgottenMemories.Items.Acessory
     {
         public override void SetDefaults()
         {
-            item.name = "Firestorm Frog Legs";
+
             item.width = 34;
             item.height = 34;
-            item.toolTip = "Enhances your jump, leaving behind fire, nullifying fall damage and fire block damage, and granting auto jump.";
+
             item.value = 200000;
             item.rare = 2;
             item.accessory = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Firestorm Frog Legs");
+      Tooltip.SetDefault("Enhances your jump, leaving behind fire, nullifying fall damage and fire block damage, and granting auto jump.");
+    }
+
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

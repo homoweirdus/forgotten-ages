@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.ItemSets.Dungeon
 
         public override void SetDefaults()
         {
-            item.name = "Yoichi Bow";
+
             item.damage = 15;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-            item.toolTip = "Has a chance to fire waterbolts";
+
             item.useTime = 20;
             item.useAnimation = 20;
             item.useStyle = 5;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.ItemSets.Dungeon
             item.shootSpeed = 7f;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Yoichi Bow");
+      Tooltip.SetDefault("Has a chance to fire waterbolts");
+    }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 			if (Main.rand.Next(3) == 0)

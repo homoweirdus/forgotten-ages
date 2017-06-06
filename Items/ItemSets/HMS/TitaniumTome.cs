@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 		int counter = 0;
         public override void SetDefaults()
         {
-            item.name = "Titanium Tome";
+
             item.damage = 44;
             item.magic = true;
             item.mana = 8;
             item.width = 14;
             item.height = 16;
-            item.toolTip = "Summons a bolt of energy from the sky that splits into more bolts";
+
             item.useTime = 17;
             item.useAnimation = 17;
             item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             item.shootSpeed = 17f;
 			item.UseSound = SoundID.Item20;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Titanium Tome");
+      Tooltip.SetDefault("Summons a bolt of energy from the sky that splits into more bolts");
+    }
+
 
         public override void AddRecipes()
         {

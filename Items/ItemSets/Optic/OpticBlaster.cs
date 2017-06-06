@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Optic Blaster";
+
 			item.damage = 12;
 			item.ranged = true;
 			item.width = 23;
 			item.height = 13;
-			item.toolTip = "None can hide...";
+
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 			item.shootSpeed = 16f;
 			item.useAmmo = AmmoID.Bullet;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Optic Blaster");
+      Tooltip.SetDefault("None can hide...");
+    }
+
 
         public override void HoldItem(Player player)
         {

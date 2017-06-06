@@ -16,15 +16,22 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 
 		public override void SetDefaults()
 		{
-			item.name = "Cosmic Greaves";
+
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("Increased Life Regen");
+
 			item.value = 180000;
 			item.rare = 4;
 			item.defense = 12;
 			item.lifeRegen = 2;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmic Greaves");
+      Tooltip.SetDefault("Increased Life Regen");
+    }
+
 		
 		public override void AddRecipes()
 		{

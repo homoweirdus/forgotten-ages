@@ -16,15 +16,22 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 
 		public override void SetDefaults()
 		{
-			item.name = "Aquatic Greaves";
+
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("7% increased melee speed and damage");
+
 			item.value = 10000;
 			item.rare = 2;
 			item.defense = 6;
 			item.lifeRegen = 1;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Aquatic Greaves");
+      Tooltip.SetDefault("7% increased melee speed and damage");
+    }
+
 
 		public override void UpdateEquip(Player player)
 		{

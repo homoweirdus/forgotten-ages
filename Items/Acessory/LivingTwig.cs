@@ -8,14 +8,21 @@ public class LivingTwig : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Living Twig";
+
         item.width = 24;
         item.height = 28;
-        item.toolTip = "Increases health by 20";
+
         item.value = 10000;
         item.rare = 1;
         item.accessory = true;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Living Twig");
+      Tooltip.SetDefault("Increases health by 20");
+    }
+
 
     public override void UpdateAccessory(Player player, bool hideVisual)
 	{

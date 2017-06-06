@@ -16,15 +16,22 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void SetDefaults()
 		{
-			item.name = "Blightstone Hood";
+
 			item.width = 18;
 			item.height = 18;
-			item.toolTip = "10% increased summon and magic damage";
-			item.toolTip2 = "Max minions increased by 2 and Max mana increased by 80";
+
+
 			item.value = 250000;
 			item.rare = 5;
 			item.defense = 4;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blightstone Hood");
+      Tooltip.SetDefault("10% increased summon and magic damage\nMax minions increased by 2 and Max mana increased by 80");
+    }
+
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{

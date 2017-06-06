@@ -10,12 +10,12 @@ public class PurpleDart : ModItem
 	
     public override void SetDefaults()
     {
-        item.name = "Purple Dart";
+
         item.damage = 5;
         item.ranged = true;
         item.width = 22;
         item.height = 22;
-        item.toolTip = "Shot out of blowpipes, explodes into yellow fire on contact";
+
 		item.shootSpeed = 2f;
 		item.shoot = mod.ProjectileType("PurpleDartProj");
         item.knockBack = 1;
@@ -27,6 +27,13 @@ public class PurpleDart : ModItem
 		item.maxStack = 999;
         item.ammo = AmmoID.Dart;
 	}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Purple Dart");
+      Tooltip.SetDefault("Shot out of blowpipes, explodes into yellow fire on contact");
+    }
+
 		
 		public override void AddRecipes()
         {

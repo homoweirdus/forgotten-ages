@@ -10,13 +10,20 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 	{
 		public override void SetDefaults()
 		{	
-            item.name = "Cosmodium Bar";
+
             item.width = 24;
             item.height = 28;
             item.value = 50000;
             item.rare = 11;
             item.maxStack = 999;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmodium Bar");
+      Tooltip.SetDefault("");
+    }
+
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

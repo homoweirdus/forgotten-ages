@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Bloodslash Wand";
+
 			item.damage = 20;
 			item.magic = true;
 			item.width = 50;
@@ -26,9 +26,16 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 			item.shoot = mod.ProjectileType("RedSlash");
 			item.shootSpeed = 17f;
 			item.mana = 10;
-			item.toolTip = "Creates bloodmist when an enemy is hit";
+
 			item.noMelee = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bloodslash Wand");
+      Tooltip.SetDefault("Creates bloodmist when an enemy is hit");
+    }
+
 		
 		public override void AddRecipes()
 		{

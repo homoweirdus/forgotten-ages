@@ -12,19 +12,21 @@ namespace ForgottenMemories.Items.AaMaterials
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Devil's Flame";
+
 			item.width = 7;
 			item.height = 8;
-			AddTooltip("Contains unholy powers");
+
 			item.maxStack = 999;
 			item.value = 1000;
 			item.rare = 2;
 		}
-		
-		public override DrawAnimation GetAnimation()
-		{
-			return new DrawAnimationVertical(6, 4);
-		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Devil's Flame");
+      Tooltip.SetDefault("Contains unholy powers");
+	  Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
+    }
 	
 		public override void Update(ref float gravity, ref float maxFallSpeed)
 		{

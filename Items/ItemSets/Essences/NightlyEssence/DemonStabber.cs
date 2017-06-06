@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Demon Stabber";
+
 			item.damage = 17;
 			item.melee = true;
 			item.width = 22;
@@ -22,9 +22,16 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.toolTip = "Hitting an enemy has a chance to explode into corruption gas";
+
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Demon Stabber");
+      Tooltip.SetDefault("Hitting an enemy has a chance to explode into corruption gas");
+    }
+
 		
 		public override void AddRecipes()
 		{

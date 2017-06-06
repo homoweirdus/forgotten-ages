@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.Jungle
     {
         public override void SetDefaults()
         {
-            item.name = "Primal Wrath";
+
             item.damage = 17;
             item.magic = true;
             item.mana = 8;
             item.width = 38;
             item.height = 38;
-            item.toolTip = "Fires bursts of 4 inaccurate leaves";
+
             item.useTime = 4;
             item.useAnimation = 16;
             item.reuseDelay = 14;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.ItemSets.Jungle
             item.shoot = (206);
             item.shootSpeed = 11f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Primal Wrath");
+      Tooltip.SetDefault("Fires bursts of 4 inaccurate leaves");
+    }
+
 
         public override void AddRecipes()
         {

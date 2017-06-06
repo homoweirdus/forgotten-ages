@@ -16,15 +16,22 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void SetDefaults()
 		{
-			item.name = "Blightstone Greaves";
+
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("15% increased movement speed");
+
 			AddTooltip("5% increased max movement speed");
 			item.value = 200000;
 			item.rare = 5;
 			item.defense = 10;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blightstone Greaves");
+      Tooltip.SetDefault("15% increased movement speed");
+    }
+
 
 		public override void UpdateEquip(Player player)
 		{

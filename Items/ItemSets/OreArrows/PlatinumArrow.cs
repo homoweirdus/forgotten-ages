@@ -10,11 +10,11 @@ namespace ForgottenMemories.Items.ItemSets.OreArrows
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Platinum Arrow";
+
 			item.width = 10;
 			item.height = 28;
             item.value = 60;
-            item.toolTip = "Can pierce 3 times";
+
             item.rare = 2;
 
             item.maxStack = 999;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.ItemSets.OreArrows
             item.shoot = mod.ProjectileType("PlatinumArrow");
             item.shootSpeed = 1.5f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Platinum Arrow");
+      Tooltip.SetDefault("Can pierce 3 times");
+    }
+
 
 		public override void AddRecipes()
 		{

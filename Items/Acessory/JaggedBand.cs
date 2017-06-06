@@ -8,14 +8,21 @@ namespace ForgottenMemories.Items.Acessory
     {
         public override void SetDefaults()
         {
-            item.name = "Jagged Band";
+
             item.width = 14;
             item.height = 14;
-            item.toolTip = "75% increase to all damage but summon, but you take 150% more damage";
+
             item.value = 100000;
             item.rare = 9;
             item.accessory = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Jagged Band");
+      Tooltip.SetDefault("75% increase to all damage but summon, but you take 150% more damage");
+    }
+
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

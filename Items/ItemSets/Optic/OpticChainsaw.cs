@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Optic Chainsaw";
+
 			item.damage = 16;
 			item.melee = true;
 			item.width = 24;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 			item.shoot = mod.ProjectileType("OpticChainsaw");
 			item.shootSpeed = 40f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Optic Chainsaw");
+      Tooltip.SetDefault("");
+    }
+
 
         public override void HoldItem(Player player)
         {

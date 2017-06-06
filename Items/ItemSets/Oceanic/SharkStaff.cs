@@ -11,13 +11,13 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Ocean Staff";
+
 			item.damage = 22;
 			item.magic = true;
 			item.width = 19;
 			item.height = 19;
 			item.mana = 8;
-			item.toolTip = "Creates a delayed explosion of water";
+
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.shoot = mod.ProjectileType("OceanBolt");
 			item.shootSpeed = 0f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ocean Staff");
+      Tooltip.SetDefault("Creates a delayed explosion of water");
+    }
+
 		
 		public override void AddRecipes()
 		{

@@ -7,7 +7,7 @@ namespace ForgottenMemories.Items.AaMaterials
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Optic Bar";
+
 			item.width = 8;
 			item.height = 8;
 			item.maxStack = 999;
@@ -15,5 +15,12 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.rare = 1;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Optic Bar");
+      Tooltip.SetDefault("");
+    }
+
     }
 }

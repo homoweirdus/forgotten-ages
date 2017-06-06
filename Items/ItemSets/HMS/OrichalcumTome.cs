@@ -11,13 +11,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 		int counter = 0;
         public override void SetDefaults()
         {
-            item.name = "Orichalcum Index";
+
             item.damage = 39;
             item.magic = true;
             item.mana = 5;
             item.width = 14;
             item.height = 16;
-            item.toolTip = "Fires petals in all directions every 4 uses";
+
             item.useTime = 19;
             item.useAnimation = 19;
             item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             item.shootSpeed = 17f;
 			item.UseSound = SoundID.Item20;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Orichalcum Index");
+      Tooltip.SetDefault("Fires petals in all directions every 4 uses");
+    }
+
 
         public override void AddRecipes()
         {

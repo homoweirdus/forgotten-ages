@@ -9,14 +9,21 @@ namespace ForgottenMemories.Items.Acessory
     {
         public override void SetDefaults()
         {
-            item.name = "Meteor Band";
+
             item.width = 28;
             item.height = 20;
-            item.toolTip = "Enhances your resistance to attacks by 5%, and you are immune to on fire!";
+
             item.value = 60000;
             item.rare = 1;
             item.accessory = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Meteor Band");
+      Tooltip.SetDefault("Enhances your resistance to attacks by 5%, and you are immune to on fire!");
+    }
+
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

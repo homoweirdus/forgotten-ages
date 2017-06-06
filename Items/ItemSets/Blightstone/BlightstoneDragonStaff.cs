@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Blightstone Dragon Staff";
+
 			item.damage = 46;
 			item.summon = true;
 			item.mana = 10;
 			item.width = 19;
 			item.height = 19;
-			item.toolTip = "Creates a blightstone dragon to fight for you";
+
 			item.useTime = 36;
 			item.UseSound = SoundID.Item20;
 			item.useAnimation = 36;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.shootSpeed = 10f;
 			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blightstone Dragon Staff");
+      Tooltip.SetDefault("Creates a blightstone dragon to fight for you");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

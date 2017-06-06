@@ -9,7 +9,7 @@ public class CryotinePickaxe : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Cryotine Pickaxe";
+
         item.damage = 14;
         item.melee = true;
         item.width = 28;
@@ -24,6 +24,13 @@ public class CryotinePickaxe : ModItem
         item.autoReuse = true;
 		item.pick = 90;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cryotine Pickaxe");
+      Tooltip.SetDefault("");
+    }
+
 	
 	public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.AaMaterials
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Water Shard";
+
 			item.width = 10;
 			item.height = 10;
 			item.noMelee = true; 
@@ -18,6 +18,13 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.rare = 2;
 			item.maxStack = 999;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Water Shard");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override void AddRecipes()
         {

@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
     {
         public override void SetDefaults()
         {
-            item.name = "Mythril Staff";
+
             item.damage = 46;
             item.magic = true;
             item.mana = 8;
             item.width = 25;
             item.height = 26;
-            item.toolTip = "Fires three bolts of energy!";
+
             item.useTime = 31;
 			item.UseSound = SoundID.Item20;
             item.useAnimation = 31;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             item.shoot = (124);
             item.shootSpeed = 8f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Mythril Staff");
+      Tooltip.SetDefault("Fires three bolts of energy!");
+    }
+
 
         public override void AddRecipes()
         {

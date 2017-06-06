@@ -8,7 +8,7 @@ public class LeechingSword : ModItem
 {
         public override void SetDefaults()
         {
-            item.name = "Leeching Sword";
+
             item.damage = 30;
             item.melee = true;
             item.width = 22;
@@ -21,10 +21,17 @@ public class LeechingSword : ModItem
             item.rare = 3;
             item.UseSound = SoundID.Item1;
             item.autoReuse = false;
-            item.toolTip = "Steals a small amount of health from enemies";
+
             item.autoReuse = true;
             item.useTurn = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Leeching Sword");
+      Tooltip.SetDefault("Steals a small amount of health from enemies");
+    }
+
 	
 	public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
 		{

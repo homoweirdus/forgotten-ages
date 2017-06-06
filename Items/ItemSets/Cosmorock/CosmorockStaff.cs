@@ -12,10 +12,10 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Cosmic Sceptre";
+
 			item.damage = 44;
 			item.magic = true;
-			AddTooltip("Fires homing bolts, has a chance to launch a meteor instead");
+
 			item.width = 50;
 			item.height = 50;
 			item.useTime = 18;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.noMelee = true;
 			Item.staff[item.type] = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmic Sceptre");
+      Tooltip.SetDefault("Fires homing bolts, has a chance to launch a meteor instead");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

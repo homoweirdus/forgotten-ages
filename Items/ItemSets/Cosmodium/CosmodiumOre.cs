@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 	{
 		public override void SetDefaults()
 		{	
-            item.name = "Cosmodium Ore";
+
             item.width = 24;
             item.height = 28;
             item.value = 10000;
             item.rare = 11;
-            item.toolTip = "'Pulsing with energy from another realm'";
+
             item.maxStack = 999;
             item.useStyle = 1;
             item.useTime = 10;
@@ -27,6 +27,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 
             item.createTile = mod.TileType("Cosmodium");
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmodium Ore");
+      Tooltip.SetDefault("'Pulsing with energy from another realm'");
+    }
+
 
 		
 	}

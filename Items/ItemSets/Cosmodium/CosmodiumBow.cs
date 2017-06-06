@@ -16,13 +16,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 
         public override void SetDefaults()
         {
-            item.name = "Cosmodium Longbow";
+
             item.damage = 95;
             item.noMelee = true;
             item.ranged = true;
             item.width = 54;
             item.height = 24;
-            item.toolTip = "Arrows fired keep their original effect and create leeching energy balls";
+
             item.useTime = 25;
             item.useAnimation = 25;
             item.useStyle = 5;
@@ -36,6 +36,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.shootSpeed = 15f;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmodium Longbow");
+      Tooltip.SetDefault("Arrows fired keep their original effect and create leeching energy balls");
+    }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 				int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);

@@ -8,15 +8,22 @@ public class VampireNecklace : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Vampire Necklace";
+
         item.width = 24;
         item.height = 28;
-        item.toolTip = "Gives you a chance to steal life on enemy hit, increased armor penetration";
+
         item.value = 100000;
         item.rare = 5;
 		item.expert = true;
         item.accessory = true;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Vampire Necklace");
+      Tooltip.SetDefault("Gives you a chance to steal life on enemy hit, increased armor penetration");
+    }
+
 
     public override void UpdateAccessory(Player player, bool hideVisual)
 	{

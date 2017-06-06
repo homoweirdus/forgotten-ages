@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.OreArrows
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Tin Arrow";
+
 			item.width = 10;
 			item.height = 28;
             item.value = 30;
@@ -28,6 +28,13 @@ namespace ForgottenMemories.Items.ItemSets.OreArrows
             item.shoot = mod.ProjectileType("TinArrow");
             item.shootSpeed = 1.25f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Tin Arrow");
+      Tooltip.SetDefault("");
+    }
+
 
 		public override void AddRecipes()
 		{

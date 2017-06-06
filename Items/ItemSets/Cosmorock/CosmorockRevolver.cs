@@ -13,12 +13,12 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 		int counter = 0;
 		public override void SetDefaults()
 		{
-			item.name = "Cosmorock Revolver";
+
 			item.damage = 35;
 			item.ranged = true;
 			item.width = 23;
 			item.height = 13;
-			item.toolTip = "Fires bullets in bursts of 2 in addition to a meteor";
+
 			item.useTime = 2;
 			item.useAnimation = 6;
 			item.reuseDelay = 20;
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.shootSpeed = 8f;
 			item.useAmmo = AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmorock Revolver");
+      Tooltip.SetDefault("Fires bullets in bursts of 2 in addition to a meteor");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

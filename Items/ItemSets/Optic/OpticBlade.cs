@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.ItemSets.Optic
     {
         public override void SetDefaults()
         {
-            item.name = "Optic Blade";
+
             item.damage = 14;
             item.melee = true;
             item.width = 23;
             item.height = 23;
-            item.toolTip = "No enemy can hide from its might";
+
             item.useTime = 40;
             item.useAnimation = 20;
             item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 			item.shoot = mod.ProjectileType("OpticBladeProj");
 			item.shootSpeed = 5f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Optic Blade");
+      Tooltip.SetDefault("No enemy can hide from its might");
+    }
+
 
         public override void HoldItem(Player player)
         {

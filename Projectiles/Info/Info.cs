@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Info
 {
-	public class Info : ProjectileInfo
+	public class Info : GlobalProjectile
 	{
 		public bool Paradox = false;
 		public bool Mutilator = false;

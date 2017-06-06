@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Forbidden Javelin";
+
 			item.damage = 80;
 			item.thrown = true;
 			item.width = 96;
 			item.height = 88;
-			item.toolTip = "Right clicking will stab the enemy with the javelin";
+
 			item.useTime = 14;
 			item.useAnimation = 14;
 			item.consumable = true;
@@ -30,6 +30,15 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
             item.noUseGraphic = true;
 			item.maxStack = 999;
 		}
+
+
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Forbidden Javelin");
+      Tooltip.SetDefault("Right clicking will stab the enemy with the javelin");
+    }
+
 
 		public override void AddRecipes()
 		{

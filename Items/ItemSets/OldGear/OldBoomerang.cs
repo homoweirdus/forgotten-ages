@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
     {
         public override void SetDefaults()
         {
-            item.name = "Ancient Boomerang";
+
             item.damage = 11;            
             item.melee = true;
             item.width = 30;
             item.height = 30;
-            item.toolTip = "Fires 3 boomerangs";
+
             item.useTime = 25;
             item.useAnimation = 25;
             item.noUseGraphic = true;
@@ -28,6 +28,13 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ancient Boomerang");
+      Tooltip.SetDefault("Fires 3 boomerangs");
+    }
+
 		
 		 public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

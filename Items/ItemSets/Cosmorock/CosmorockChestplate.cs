@@ -16,14 +16,21 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 
 		public override void SetDefaults()
 		{
-			item.name = "Cosmic Chestplate";
+
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("+50 Max Health");
+
 			item.value = 250000;
 			item.rare = 4;
 			item.defense = 18;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmic Chestplate");
+      Tooltip.SetDefault("+50 Max Health");
+    }
+
 
 		public override void UpdateEquip(Player player)
 		{

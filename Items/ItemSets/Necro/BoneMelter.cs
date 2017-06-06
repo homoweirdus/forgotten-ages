@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Bone Melter";
+
 			item.damage = 30;
 			item.ranged = true;
 			item.width = 23;
 			item.height = 13;
-			item.toolTip = "Attacks inflict shadowflame";
+
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.shootSpeed = 17f;
 			item.useAmmo = AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bone Melter");
+      Tooltip.SetDefault("Attacks inflict shadowflame");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

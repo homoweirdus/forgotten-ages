@@ -10,8 +10,8 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 	{
 		public override void SetDefaults()
 		{	
-            item.name = "Deep space sigil";
-            item.toolTip = "'A lot of cosmic energy is fluxuating inside'";
+
+
             item.width = 24;
             item.height = 28;
             item.value = 50000;
@@ -25,6 +25,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.consumable = true;
             item.maxStack = 999;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Deep space sigil");
+      Tooltip.SetDefault("'A lot of cosmic energy is fluxuating inside'");
+    }
+
         public override bool UseItem(Player player)
         {
             AscensionWorld.DropComet();

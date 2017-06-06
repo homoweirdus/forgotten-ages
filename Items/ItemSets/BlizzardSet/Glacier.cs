@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Glacier";
+
 			item.damage = 11;
 			item.melee = true;
 			item.width = 22;
@@ -23,11 +23,18 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.toolTip = "Launches a sliding ice cube";
+
 			item.shoot = mod.ProjectileType("IceCube");
 			item.shootSpeed = 11f;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Glacier");
+      Tooltip.SetDefault("Launches a sliding ice cube");
+    }
+
 		
 
 		

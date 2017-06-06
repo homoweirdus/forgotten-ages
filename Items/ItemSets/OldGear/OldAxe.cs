@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Ancient Axe";
+
 			item.damage = 5;
 			item.melee = true;
 			item.width = 22;
@@ -24,6 +24,13 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
 			item.autoReuse = true;
 			item.axe = 7;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ancient Axe");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

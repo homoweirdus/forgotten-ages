@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Reaper's Scythe";
+
 			item.damage = 42;
 			item.melee = true;
 			item.width = 58;
 			item.height = 52;
-			item.toolTip = "Tears through souls";
+
 			item.useTime = 21;
 			item.useAnimation = 21;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.shoot = mod.ProjectileType("NecroflameSickleProj");
 			item.shootSpeed = 9f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Reaper's Scythe");
+      Tooltip.SetDefault("Tears through souls");
+    }
+
 		
 		public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {

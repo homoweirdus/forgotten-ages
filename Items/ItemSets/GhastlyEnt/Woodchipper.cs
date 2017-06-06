@@ -9,7 +9,7 @@ public class Woodchipper : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Wood Chipper";
+
         item.damage = 15;
         item.ranged = true;
         item.width = 22;
@@ -22,11 +22,18 @@ public class Woodchipper : ModItem
         item.value = 27000;
         item.rare = 2;
         item.autoReuse = true;
-		item.toolTip = "Fires a bullet along with woodchips";
+
         item.shoot = 10; 
 		item.shootSpeed = 7f;
 		item.useAmmo = AmmoID.Bullet;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Wood Chipper");
+      Tooltip.SetDefault("Fires a bullet along with woodchips");
+    }
+
 
     public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
     {

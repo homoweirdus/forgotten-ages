@@ -16,14 +16,21 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void SetDefaults()
 		{
-			item.name = "Blightstone Helmet";
+
 			item.width = 18;
 			item.height = 18;
-			item.toolTip = "14% increased melee damage and 7% increased melee crit chance";
+
 			item.value = 250000;
 			item.rare = 5;
 			item.defense = 20;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blightstone Helmet");
+      Tooltip.SetDefault("14% increased melee damage and 7% increased melee crit chance");
+    }
+
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{

@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
     {
         public override void SetDefaults()
         {
-            item.name = "Ultra tech Disk";
+
             item.damage = 120;            
             item.melee = true;
             item.width = 30;
             item.height = 30;
-            item.toolTip = "Up to 20 disks can be thrown at once, explodes on collision";
+
             item.useTime = 10;
             item.useAnimation = 10;
             item.noUseGraphic = true;
@@ -28,6 +28,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ultra tech Disk");
+      Tooltip.SetDefault("Up to 20 disks can be thrown at once, explodes on collision");
+    }
+
 		
         public override bool CanUseItem(Player player)
         {

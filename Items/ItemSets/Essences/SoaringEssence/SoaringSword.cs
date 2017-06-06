@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Soaring Skyblade";
+
 			item.damage = 15;
 			item.melee = true;
 			item.width = 22;
@@ -22,10 +22,17 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.toolTip = "Fires a short ranged projectile";
+
 			item.shoot = mod.ProjectileType("meleestorm");
 			item.shootSpeed = 8f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Soaring Skyblade");
+      Tooltip.SetDefault("Fires a short ranged projectile");
+    }
+
 		
 		
 		public override void AddRecipes()

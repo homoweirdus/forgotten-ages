@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Crimtane Stabber";
+
 			item.damage = 16;
 			item.melee = true;
 			item.width = 22;
@@ -22,9 +22,16 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.toolTip = "Executes enemies under 40 life with a blood explosion";
+
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Crimtane Stabber");
+      Tooltip.SetDefault("Executes enemies under 40 life with a blood explosion");
+    }
+
 		
 		public override void AddRecipes()
 		{

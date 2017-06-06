@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 	{
 		public override void SetDefaults()
 		{
-			item.name = "The Comet";
+
 			item.useStyle = 5;
 			item.width = 24;
 			item.height = 24;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.noMelee = true;
 			item.useAnimation = 25;
 			item.useTime = 25;
-			item.toolTip = "Explodes on hit, has high velocity";
+
 			item.shootSpeed = 16f;
 			item.knockBack = 3.75f;
 			item.damage = 45;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.maxStack = 1;
 			item.shoot = mod.ProjectileType("TheComet");
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("The Comet");
+      Tooltip.SetDefault("Explodes on hit, has high velocity");
+    }
+
 		
 		public override void AddRecipes()
 		{

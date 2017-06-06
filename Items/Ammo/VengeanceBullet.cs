@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Ammo
 	{	
 		public override void SetDefaults()
 		{
-			item.name = "Vengeance Bullet";
+
 			item.damage = 6;
 			item.ranged = true;
 			item.width = 22;
 			item.height = 22;
-			AddTooltip("Homes in on an enemy it just hit, dealig a portion of the original damage");
+
 			item.shootSpeed = 4.5f;
 			item.shoot = mod.ProjectileType("VengeanceBulletP");
 			item.knockBack = 1.2f;
@@ -26,5 +26,12 @@ namespace ForgottenMemories.Items.Ammo
 			item.maxStack = 999;
 			item.consumable = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Vengeance Bullet");
+      Tooltip.SetDefault("Homes in on an enemy it just hit, dealig a portion of the original damage");
+    }
+
 	}
 }

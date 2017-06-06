@@ -10,7 +10,7 @@ public class NightGelStabilizer : ModItem
 {
     public override void SetDefaults()
     {
-        item.name = "Night Gel Stabilizer";
+
         item.damage = 20;
         item.ranged = true;
         item.width = 50;
@@ -28,6 +28,13 @@ public class NightGelStabilizer : ModItem
 		item.noMelee = true;
         item.scale = 0.9f;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Night Gel Stabilizer");
+      Tooltip.SetDefault("");
+    }
+
 	
 	public override void AddRecipes()
         {

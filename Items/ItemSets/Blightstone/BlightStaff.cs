@@ -10,10 +10,10 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Blighted Inferno Scepter";
+
 			item.damage = 53;
 			item.magic = true;
-			item.toolTip = "Creates a laser that moves in a wave";
+
 			item.width = 25;
 			item.height = 25;
 			item.useTime = 10;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.autoReuse = true;
 			item.mana = 5;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blighted Inferno Scepter");
+      Tooltip.SetDefault("Creates a laser that moves in a wave");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

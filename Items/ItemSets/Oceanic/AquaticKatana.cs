@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Aquatic Katana";
+
 			item.damage = 19;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Fires a splash of water";
+
 			item.useTime = 14;
 			item.useAnimation = 14;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.shoot = mod.ProjectileType("splash");
 			item.shootSpeed = 8;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Aquatic Katana");
+      Tooltip.SetDefault("Fires a splash of water");
+    }
+
 
 		public override void AddRecipes()
 		{

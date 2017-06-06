@@ -10,9 +10,9 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Bone Lance";
+
 			item.damage = 39;
-			item.toolTip = "Fires shadowflame skulls at nearby enemies";
+
 			item.melee = true;
 			item.width = 52;
 			item.height = 52;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.autoReuse = true;
 
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bone Lance");
+      Tooltip.SetDefault("Fires shadowflame skulls at nearby enemies");
+    }
+
 		
 		public override bool CanUseItem(Player player)
         {

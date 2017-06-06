@@ -9,16 +9,23 @@ namespace ForgottenMemories.Items.Acessory
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Sap Necklace";
+
 			item.width = 24;
 			item.height = 28;
-			item.toolTip = "Summon attacks have a chance to create balls of sap";
-			item.toolTip2 = "Increased Max Minions";
+
+
 			item.value = 50000;
 			item.rare = 8;
 			item.accessory = true;
 			item.expert = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Sap Necklace");
+      Tooltip.SetDefault("Summon attacks have a chance to create balls of sap\nIncreased Max Minions");
+    }
+
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{

@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Leaf Scythe";
+
 			item.damage = 25;
 			item.melee = true;
 			item.width = 58;
 			item.height = 52;
-			item.toolTip = "Fires a short ranged leaf that pierces tiles and enemies";
+
 			item.useTime = 18;
 			item.useAnimation = 18;
 			item.useStyle = 1;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			item.shoot = mod.ProjectileType("Leaf");
 			item.shootSpeed = 10f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Leaf Scythe");
+      Tooltip.SetDefault("Fires a short ranged leaf that pierces tiles and enemies");
+    }
+
 		
 		public override void AddRecipes()
 		{

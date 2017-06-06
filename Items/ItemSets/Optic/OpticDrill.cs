@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Optic Drill";
+
 			item.damage = 9;
 			item.melee = true;
 			item.width = 22;
 			item.height = 9;
-			item.toolTip = "Can mine Meteorite";
+
 			item.useTime = 7;
 			item.useAnimation = 25;
 			item.channel = true;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 			item.shoot = mod.ProjectileType("OpticDrill");
 			item.shootSpeed = 40f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Optic Drill");
+      Tooltip.SetDefault("Can mine Meteorite");
+    }
+
 
         public override void HoldItem(Player player)
         {

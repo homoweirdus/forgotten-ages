@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
     {
         public override void SetDefaults()
         {
-            item.name = "The Third Eye";
+
             item.damage = 16;
             item.magic = true;
             item.mana = 2;
             item.width = 16;
             item.height = 17;
-            item.toolTip = "Predicts the locations of your enemies.";
+
             item.useTime = 16;
             item.useAnimation = 16;
             item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.shoot = mod.ProjectileType("PsyBolt");
             item.shootSpeed = 2.25f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("The Third Eye");
+      Tooltip.SetDefault("Predicts the locations of your enemies.");
+    }
+
 
         public override void HoldItem(Player player)
         {

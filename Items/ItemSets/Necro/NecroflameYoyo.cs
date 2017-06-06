@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Graverobber";
+
 			item.useStyle = 5;
 			item.width = 24;
 			item.height = 24;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.noMelee = true;
 			item.useAnimation = 25;
 			item.useTime = 25;
-			item.toolTip = "Fires shadowflame skulls at nearby enemies";
+
 			item.shootSpeed = 16f;
 			item.knockBack = 3.75f;
 			item.damage = 39;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.maxStack = 1;
 			item.shoot = mod.ProjectileType("NecroflameYoyo");
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Graverobber");
+      Tooltip.SetDefault("Fires shadowflame skulls at nearby enemies");
+    }
+
 		
 		public override void AddRecipes()
 		{

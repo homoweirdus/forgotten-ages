@@ -9,12 +9,12 @@ public class ShadowBlowpipe : ModItem
 {
     public override void SetDefaults()
     {
-        item.name = "Shadow Blowpipe";
+
         item.damage = 15;
         item.ranged = true;
         item.width = 40;
         item.height = 20;
-        item.toolTip = "Uses seeds or darts as ammo";
+
         item.useTime = 25;
         item.useAnimation = 25;
         item.useStyle = 5;
@@ -28,6 +28,13 @@ public class ShadowBlowpipe : ModItem
         item.shootSpeed = 16f;
         item.useAmmo = AmmoID.Dart;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Shadow Blowpipe");
+      Tooltip.SetDefault("Uses seeds or darts as ammo");
+    }
+
 	
     public override void AddRecipes()
     {

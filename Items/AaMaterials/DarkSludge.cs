@@ -7,15 +7,22 @@ namespace ForgottenMemories.Items.AaMaterials
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Dark Sludge";
+
 			item.width = 8;
 			item.height = 8;
 			item.maxStack = 999;
-			AddTooltip("Smells and looks disgusting");
+
 			item.value = 18000;
 			item.rare = 1;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Dark Sludge");
+      Tooltip.SetDefault("Smells and looks disgusting");
+    }
+
 
         public override void AddRecipes()
         {

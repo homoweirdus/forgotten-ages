@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Forbidden Bow";
+
 			item.damage = 70;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 100;
-			item.toolTip = "Right Clicking will create an arrow storm";
+
 			item.useTime = 16;
 			item.useAnimation = 16;
 			item.useStyle = 5;
@@ -28,6 +28,13 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.noMelee = true;
 			item.shootSpeed = 10f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Forbidden Bow");
+      Tooltip.SetDefault("Right Clicking will create an arrow storm");
+    }
+
 
 		public override void AddRecipes()
 		{

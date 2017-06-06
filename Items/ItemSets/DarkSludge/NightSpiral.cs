@@ -10,7 +10,7 @@ public class NightSpiral : ModItem
 {
     public override void SetDefaults()
     {
-        item.name = "Night Spiral";
+
         item.useStyle = 5;
         item.width = 24;
         item.height = 24;
@@ -28,6 +28,13 @@ public class NightSpiral : ModItem
         item.rare = 2;
         item.shoot = mod.ProjectileType("BouncyProj");
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Night Spiral");
+      Tooltip.SetDefault("");
+    }
+
 	
 	public override void AddRecipes()
         {

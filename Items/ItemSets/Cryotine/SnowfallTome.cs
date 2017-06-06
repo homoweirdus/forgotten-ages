@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Snowstorm Tome";
+
 			item.damage = 15;
 			item.mana = 6;
 			item.ranged = true;
@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.height = 88;
 			item.useTime = 15;
 			item.useAnimation = 15;
-			item.toolTip = "Creates a storm of ice energy that follows your cursor";
+
 			item.useStyle = 5;
 			item.knockBack = 3;
 			item.value = 168000;
@@ -28,6 +28,13 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Snowstorm Tome");
+      Tooltip.SetDefault("Creates a storm of ice energy that follows your cursor");
+    }
+
 		
 		public override void AddRecipes()
 		{

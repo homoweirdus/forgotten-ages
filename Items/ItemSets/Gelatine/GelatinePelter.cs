@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Gelatine Pelter";
+
 			item.damage = 11;
 			item.ranged = true;
 			item.width = 23;
 			item.height = 13;
-			item.toolTip = "Occasionally fires a chunk of gel instead of a bullet";
+
 			item.useTime = 16;
 			item.useAnimation = 16;
 			item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 			item.shootSpeed = 5.25f;
 			item.useAmmo = AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Pelter");
+      Tooltip.SetDefault("Occasionally fires a chunk of gel instead of a bullet");
+    }
+
 		
 		public override Vector2? HoldoutOffset()
 		{

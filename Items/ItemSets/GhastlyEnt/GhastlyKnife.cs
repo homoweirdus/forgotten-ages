@@ -15,12 +15,12 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			item.damage = 15;
 			item.thrown = true;
 			item.shoot = mod.ProjectileType("GhastlyKnife");
-			item.name = "Ghastly Knife";
+
 			item.consumable = true;
 			item.shootSpeed = 10f;
 			item.useTime = 17;
 			item.useAnimation = 17;
-			item.toolTip = "Splits into woodchips when destroyed";
+
 			item.consumable = true;
 			item.maxStack = 999;
 			item.useStyle = 1;
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ghastly Knife");
+      Tooltip.SetDefault("Splits into woodchips when destroyed");
+    }
+
 
 		public override void AddRecipes()
 		{

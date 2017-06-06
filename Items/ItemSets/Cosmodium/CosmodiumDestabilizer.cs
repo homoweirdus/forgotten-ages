@@ -10,8 +10,8 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 	{
 		public override void SetDefaults()
 		{	
-            item.name = "Cosmodium Destabilizer";
-            item.toolTip = "Launches an unstable beam of chaos";
+
+
             item.damage = 143;
             item.magic = true;
             item.mana = 15;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.shoot = mod.ProjectileType("CosmodiumBolt");
             item.shootSpeed = 17f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmodium Destabilizer");
+      Tooltip.SetDefault("Launches an unstable beam of chaos");
+    }
+
 
 		public override void AddRecipes()
 		{

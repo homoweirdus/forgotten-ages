@@ -9,17 +9,24 @@ namespace ForgottenMemories.Items.Boss
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Bleeding Residue";
+
 			item.width = 28;
 			item.height = 32;
 			item.maxStack = 20;
-			item.toolTip = "Has a strong enough stench to attract a horrific being...";
+
 			item.rare = 3;
 			item.useAnimation = 45;
 			item.useTime = 45;
 			item.useStyle = 4;
 			item.consumable = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bleeding Residue");
+      Tooltip.SetDefault("Has a strong enough stench to attract a horrific being...");
+    }
+
 		
 		public override bool CanUseItem(Player player)
 		{

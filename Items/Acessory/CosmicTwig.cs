@@ -8,14 +8,21 @@ public class CosmicTwig : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Cosmic Twig";
+
         item.width = 24;
         item.height = 28;
-        item.toolTip = "Increases health and mana by 40";
+
         item.value = 120000;
         item.rare = 1;
         item.accessory = true;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmic Twig");
+      Tooltip.SetDefault("Increases health and mana by 40");
+    }
+
 
     public override void UpdateAccessory(Player player, bool hideVisual)
 	{

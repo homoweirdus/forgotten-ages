@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
     {
         public override void SetDefaults()
         {
-            item.name = "Hemorrhage Staff";
+
             item.damage = 38;
             item.summon = true;
             item.mana = 10;
@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
             item.useTime = 36;
             item.useAnimation = 36;
             item.useStyle = 1;
-            AddTooltip("Summons Living Blood to fight");
+
             item.noMelee = true; //so the item's animation doesn't do damage
             item.knockBack = 2f;
             item.buffType = mod.BuffType("BloodSlime");
@@ -40,6 +40,13 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
             item.shootSpeed = 10f;
 			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Hemorrhage Staff");
+      Tooltip.SetDefault("Summons Living Blood to fight");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

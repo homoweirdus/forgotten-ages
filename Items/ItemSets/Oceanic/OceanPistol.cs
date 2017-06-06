@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Ocean Pistol";
+
 			item.damage = 21;
 			item.ranged = true;
 			item.width = 32;
 			item.height = 20;
-			item.toolTip = "Has a chance to shoot a bubble";
+
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.shootSpeed = 5.25f;
 			item.useAmmo = AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ocean Pistol");
+      Tooltip.SetDefault("Has a chance to shoot a bubble");
+    }
+
 		
 		public override Vector2? HoldoutOffset()
 		{

@@ -9,15 +9,22 @@ namespace ForgottenMemories.Items.Acessory
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Blood Heart";
+
 			item.width = 24;
 			item.height = 28;
-			item.toolTip = "Gives you a chance to steal life on enemy hit";
+
 			item.expert = true;
 			item.value = 50000;
 			item.rare = 4;
 			item.accessory = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blood Heart");
+      Tooltip.SetDefault("Gives you a chance to steal life on enemy hit");
+    }
+
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{

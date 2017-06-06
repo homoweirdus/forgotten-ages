@@ -21,6 +21,8 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 			projectile.ignoreWater = true;
 			projectile.timeLeft = 6000;
 		}
+
+
 		public override void Kill(int timeLeft)
 		{
 			if (Main.rand.Next(5) == 0)
@@ -39,20 +41,20 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 	}
 
 	public class AdamantiteShuriken : ModItem
-	{
+
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
 			item.damage = 40;
 			item.shoot = mod.ProjectileType("AdamantiteShurikenP");
-			item.name = "Adamantite Shuriken";
-			item.rare = 4;
-			item.useTime = 28;
-			item.useAnimation = 28;
-			item.shootSpeed = 19f;
-			item.autoReuse = true;
-		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Adamantite Shuriken");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

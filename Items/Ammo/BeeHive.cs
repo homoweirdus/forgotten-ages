@@ -10,12 +10,12 @@ public class BeeHive : ModItem
 	
     public override void SetDefaults()
     {
-        item.name = "Bee Hive";
+
         item.damage = 5;
         item.ranged = true;
         item.width = 22;
         item.height = 22;
-        item.toolTip = "Ammo for bows, fires bees";
+
 		item.shootSpeed = 3f;
 		item.shoot = 469;
         item.knockBack = 1;
@@ -26,6 +26,13 @@ public class BeeHive : ModItem
 		item.maxStack = 1;
 		item.consumable = false;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bee Hive");
+      Tooltip.SetDefault("Ammo for bows, fires bees");
+    }
+
 	
 	        public override void AddRecipes()
         {

@@ -21,6 +21,8 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             projectile.ignoreWater = true;
             projectile.timeLeft = 6000;
         }
+
+
         public override void Kill(int timeLeft)
         {
         	if (Main.rand.Next(2) == 0)
@@ -39,18 +41,18 @@ namespace ForgottenMemories.Items.ItemSets.HMS
     }
 
     public class OrichalcumShuriken : ModItem
-    {
+
 
         public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.Shuriken);
-            item.damage = 38;
-            item.shoot = mod.ProjectileType("OrichalcumShurikenP");
-            item.name = "Orichalcum Shuriken";
-            item.rare = 4;
-            item.shootSpeed = 17f;
-            item.autoReuse = true;
-        }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Orichalcum Shuriken");
+      Tooltip.SetDefault("");
+    }
+
 
         public override void AddRecipes()
         {

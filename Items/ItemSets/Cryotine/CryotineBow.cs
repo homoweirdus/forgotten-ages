@@ -9,14 +9,14 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Cryotine Bow";
+
 			item.damage = 12;
 			item.ranged = true;
 			item.width = 88;
 			item.height = 88;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.toolTip = "Has a chance to fire a spread of frostburn arrows";
+
 			item.useStyle = 5;
 			item.knockBack = 3;
 			item.value = 168000;
@@ -28,6 +28,13 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cryotine Bow");
+      Tooltip.SetDefault("Has a chance to fire a spread of frostburn arrows");
+    }
+
 		
 		public override void AddRecipes()
 		{

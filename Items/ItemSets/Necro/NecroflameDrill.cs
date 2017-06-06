@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Necroflame Drill";
+
 			item.damage = 26;
 			item.melee = true;
 			item.width = 22;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.shoot = mod.ProjectileType("NecroflameDrillProj");
 			item.shootSpeed = 40f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Necroflame Drill");
+      Tooltip.SetDefault("");
+    }
+
 
         public override void AddRecipes()
         {

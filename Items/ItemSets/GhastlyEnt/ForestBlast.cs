@@ -9,7 +9,7 @@ public class ForestBlast : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Forest Blast";
+
         item.damage = 20;
         item.magic = true;
         item.width = 50;
@@ -25,9 +25,16 @@ public class ForestBlast : ModItem
 		item.shoot = mod.ProjectileType("LeafnadoFriendly");
 		item.shootSpeed = 10f;
 		item.mana = 10;
-		item.toolTip = "Fires a spread of leafnados";
+
 		item.noMelee = true;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Forest Blast");
+      Tooltip.SetDefault("Fires a spread of leafnados");
+    }
+
 	
 	public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

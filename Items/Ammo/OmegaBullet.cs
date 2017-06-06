@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Ammo
 	{	
 		public override void SetDefaults()
 		{
-			item.name = "Omega Bullet";
+
 			item.damage = 40;
 			item.ranged = true;
 			item.width = 22;
 			item.height = 22;
-			AddTooltip("Killing an enemy restores life and unleashes more bullets from the sky");
+
 			AddTooltip("Homes in on enemies");
 			AddTooltip("'They say this bullet pierced the heavens'");
 			item.shootSpeed = 18f;
@@ -29,5 +29,12 @@ namespace ForgottenMemories.Items.Ammo
 			item.maxStack = 999;
 			item.consumable = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Omega Bullet");
+      Tooltip.SetDefault("Killing an enemy restores life and unleashes more bullets from the sky");
+    }
+
 	}
 }

@@ -8,7 +8,7 @@ public class GelatinePick : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Gelatine Pick";
+
         item.damage = 8;
         item.melee = true;
         item.width = 28;
@@ -23,6 +23,13 @@ public class GelatinePick : ModItem
         item.autoReuse = true;
 		item.pick = 59;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Pick");
+      Tooltip.SetDefault("");
+    }
+
 	
 	
 	public override void AddRecipes()

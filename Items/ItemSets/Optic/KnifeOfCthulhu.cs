@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             projectile.ignoreWater = true;
             projectile.timeLeft = 6000;
         }
-		
+
         public override void Kill(int timeLeft)
         {
         	if (Main.rand.Next(3) == 0)
@@ -40,18 +40,18 @@ namespace ForgottenMemories.Items.ItemSets.Optic
         // This .cs file has 2 classes in it, which is totally fine. (What is important is that namespace+classname is unique. Remember that autoloaded textures follow the namespace+classname convention as well.)
         // This is an approach you can take to fit your organization style.
         public class KnifeOfCthulhu : ModItem
-        {
+
 
             public override void SetDefaults()
             {
                 item.CloneDefaults(ItemID.Shuriken);
-                item.damage = 15;
-                item.shoot = mod.ProjectileType("KnifeOfCthulhuP");
-                item.name = "Knife Of Cthulhu";
-                item.rare = 4;
-                item.shootSpeed = 15f;
-				item.autoReuse = true;
-        }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Knife Of Cthulhu");
+      Tooltip.SetDefault("");
+    }
+
 
         public override void HoldItem(Player player)
         {

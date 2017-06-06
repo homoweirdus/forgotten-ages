@@ -7,13 +7,20 @@ namespace ForgottenMemories.Items.AaMaterials
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Shadowflame Ember";
+
 			item.width = 7;
 			item.height = 8;
 			item.maxStack = 999;
 			item.value = 100;
 			item.rare = 1;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Shadowflame Ember");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override void AddRecipes()
         {

@@ -11,14 +11,14 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		
 		public override void SetDefaults()
 		{
-			item.name = "Glittering Knives";
+
 			item.damage = 12;
 			item.thrown = true;
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.width = 22;
 			item.height = 22;
-			item.toolTip = "Throws multiple knives";
+
 			item.useTime = 37;
 			item.useAnimation = 37;
 			item.useStyle = 1;
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.consumable = true;
 			item.maxStack = 999;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Glittering Knives");
+      Tooltip.SetDefault("Throws multiple knives");
+    }
+
 
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

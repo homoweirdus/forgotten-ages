@@ -13,12 +13,12 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Flamethrower);
-			item.name = "Gored Lung";
+
 			item.damage = 37;
 			item.ranged = true;
 			item.width = 44;
 			item.height = 20;
-			item.toolTip = "Sprays streams of blood, leaves behind some lasting blood";
+
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 1;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
 			item.shoot = mod.ProjectileType("BloodStream");
 			item.useAmmo = AmmoID.Gel;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gored Lung");
+      Tooltip.SetDefault("Sprays streams of blood, leaves behind some lasting blood");
+    }
+
 		
 		public override Vector2? HoldoutOffset()
 		{

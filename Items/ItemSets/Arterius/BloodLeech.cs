@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Blood Leech";
+
 			item.damage = 42;
 			item.thrown = true;
 			item.width = 44;
 			item.height = 20;
-			item.toolTip = "Sticks to enemies, dealing damage over time \n Creates an explosion of blood when killing an enemy";
+
 			item.useStyle = 1;
 			item.noMelee = true;
 			item.noUseGraphic = true;
@@ -32,5 +32,12 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
 			item.consumable = true;
 			item.maxStack = 999;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blood Leech");
+      Tooltip.SetDefault("Sticks to enemies, dealing damage over time \n Creates an explosion of blood when killing an enemy");
+    }
+
 	}
 }

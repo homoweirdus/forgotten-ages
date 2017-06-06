@@ -9,14 +9,21 @@ namespace ForgottenMemories.Items.Acessory
     {
         public override void SetDefaults()
         {
-            item.name = ":^)";
+
             item.width = 28;
             item.height = 20;
-            item.toolTip = "Immune to hadron's cooldown";
+
             item.value = 60000;
             item.rare = 1;
             item.accessory = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault(":^)");
+      Tooltip.SetDefault("Immune to hadron's cooldown");
+    }
+
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

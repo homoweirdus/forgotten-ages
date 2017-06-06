@@ -8,7 +8,7 @@ public class SoaringHammer : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Soaring Hammer";
+
         item.damage = 5;
         item.melee = true;
         item.width = 22;
@@ -23,6 +23,13 @@ public class SoaringHammer : ModItem
         item.autoReuse = true;
 		item.hammer = 35;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Soaring Hammer");
+      Tooltip.SetDefault("");
+    }
+
 	
 	
 	public override void AddRecipes()

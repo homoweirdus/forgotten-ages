@@ -12,14 +12,21 @@ namespace ForgottenMemories.Items.Acessory
     {
         public override void SetDefaults()
         {
-            item.name = "Miner Emblem";
+
             item.width = 14;
             item.height = 14;
-            item.toolTip = "Increases mining speed by 25%";
+
             item.value = 100000;
             item.rare = 3;
             item.accessory = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Miner Emblem");
+      Tooltip.SetDefault("Increases mining speed by 25%");
+    }
+
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

@@ -8,14 +8,21 @@ namespace ForgottenMemories.Items.Acessory
     {
         public override void SetDefaults()
         {
-            item.name = "Berserker Emblem";
+
             item.width = 14;
             item.height = 14;
-            item.toolTip = "Increases Crit Chance by 12%.";
+
             item.value = 100000;
             item.rare = 4;
             item.accessory = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Berserker Emblem");
+      Tooltip.SetDefault("Increases Crit Chance by 12%.");
+    }
+
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

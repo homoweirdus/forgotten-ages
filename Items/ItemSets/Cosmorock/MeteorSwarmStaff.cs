@@ -12,10 +12,10 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Meteor Swarm Staff";
+
 			item.damage = 92;
 			item.magic = true;
-			AddTooltip("Showers down defense-lowering meteors and comet shards");
+
 			item.width = 50;
 			item.height = 50;
 			item.useTime = 12;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.noMelee = true;
 			Item.staff[item.type] = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Meteor Swarm Staff");
+      Tooltip.SetDefault("Showers down defense-lowering meteors and comet shards");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

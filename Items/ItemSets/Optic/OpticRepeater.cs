@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 
         public override void SetDefaults()
         {
-            item.name = "Optic Repeater";
+
             item.damage = 13;
             item.noMelee = true;
             item.ranged = true;
             item.width = 27;
             item.height = 11;
-            item.toolTip = "Reveals the weak.";
+
             item.useTime = 24;
             item.useAnimation = 24;
             item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.autoReuse = true;
             item.shootSpeed = 10f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Optic Repeater");
+      Tooltip.SetDefault("Reveals the weak.");
+    }
+
 
         public override void HoldItem(Player player)
         {

@@ -10,12 +10,12 @@ public class FleshDart : ModItem
 	
     public override void SetDefaults()
     {
-        item.name = "Flesh Dart";
+
         item.damage = 6;
         item.ranged = true;
         item.width = 22;
         item.height = 22;
-        item.toolTip = "Shot out of blowpipes, blood goes everywhere";
+
 		item.shootSpeed = 2f;
 		item.shoot = mod.ProjectileType("FleshDartProj");
         item.knockBack = 1;
@@ -27,6 +27,13 @@ public class FleshDart : ModItem
 		item.maxStack = 999;
 		item.consumable = true;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Flesh Dart");
+      Tooltip.SetDefault("Shot out of blowpipes, blood goes everywhere");
+    }
+
 	
 	        public override void AddRecipes()
         {

@@ -13,13 +13,13 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
         public override void SetDefaults()
         {
-            item.name = "Blighted Bow";
+
             item.damage = 42;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-            item.toolTip = "Fires a spread of arrows, has a chance to imbue arrows with blighted fire";
+
             item.useTime = 32;
             item.useAnimation = 32;
             item.useStyle = 5;
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
             item.shootSpeed = 14f;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blighted Bow");
+      Tooltip.SetDefault("Fires a spread of arrows, has a chance to imbue arrows with blighted fire");
+    }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 			for (int k = 0; k < 3; k++)

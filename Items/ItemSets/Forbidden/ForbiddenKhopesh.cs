@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Forbidden Khopesh";
+
 			item.damage = 110;
 			item.melee = true;
 			item.width = 96;
 			item.height = 88;
-			item.toolTip = "Right clicking will swing the sword slower and disarm hit enemies";
+
 			item.useTime = 16;
 			item.useAnimation = 16;
 			item.useStyle = 1;
@@ -26,6 +26,14 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.shootSpeed = 5f;
 			item.useTurn = true;
 		}
+
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Forbidden Khopesh");
+      Tooltip.SetDefault("Right clicking will swing the sword slower and disarm hit enemies");
+    }
+
 
 		public override void AddRecipes()
 		{

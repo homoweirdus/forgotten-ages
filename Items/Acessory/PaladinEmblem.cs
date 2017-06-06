@@ -8,14 +8,21 @@ namespace ForgottenMemories.Items.Acessory
     {
         public override void SetDefaults()
         {
-            item.name = "Paladin Emblem";
+
             item.width = 28;
             item.height = 28;
-            item.toolTip = "Reduces damage taken by 12%";
+
             item.value = 100000;
             item.rare = 3;
             item.accessory = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Paladin Emblem");
+      Tooltip.SetDefault("Reduces damage taken by 12%");
+    }
+
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

@@ -10,12 +10,12 @@ public class ShadowDart : ModItem
 	
     public override void SetDefaults()
     {
-        item.name = "Shadow Dart";
+
         item.damage = 6;
         item.ranged = true;
         item.width = 22;
         item.height = 22;
-        item.toolTip = "Shot out of blowpipes, Leaves damaging afterimages";
+
 		item.shootSpeed = 2f;
 		item.shoot = mod.ProjectileType("ShadowDartProj");
         item.knockBack = 1;
@@ -27,6 +27,13 @@ public class ShadowDart : ModItem
 		item.maxStack = 999;
 		item.consumable = true;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Shadow Dart");
+      Tooltip.SetDefault("Shot out of blowpipes, Leaves damaging afterimages");
+    }
+
 	
 		        public override void AddRecipes()
         {

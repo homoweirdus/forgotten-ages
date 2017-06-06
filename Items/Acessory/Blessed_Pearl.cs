@@ -9,10 +9,10 @@ namespace ForgottenMemories.Items.Acessory
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Blessed Pearl";
+
 			item.width = 24;
 			item.height = 28;
-			AddTooltip("Taking over 15 damage has a 1/2 chance to restore 15 health");
+
 			AddTooltip("Taking damage when under half of your max health will restore even more health");
 			AddTooltip("Increased length of invincibility");
 			AddTooltip("'Protect it, and it will protect you'");
@@ -20,6 +20,13 @@ namespace ForgottenMemories.Items.Acessory
 			item.rare = 4;
 			item.accessory = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blessed Pearl");
+      Tooltip.SetDefault("Taking over 15 damage has a 1/2 chance to restore 15 health");
+    }
+
 		
 		public override void AddRecipes()
 		{

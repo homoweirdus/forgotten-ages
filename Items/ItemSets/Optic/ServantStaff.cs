@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
     {
         public override void SetDefaults()
         {
-            item.name = "Servant Staff";
+
             item.damage = 10;
             item.summon = true;
             item.mana = 10;
@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.useTime = 36;
             item.useAnimation = 36;
             item.useStyle = 1;
-            AddTooltip("Summons Cthulhu's Servants to fight");
+
             item.noMelee = true; //so the item's animation doesn't do damage
             item.knockBack = 2f;
             item.buffType = mod.BuffType("ServantOfCthulhu");
@@ -40,6 +40,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.shootSpeed = 10f;
 			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Servant Staff");
+      Tooltip.SetDefault("Summons Cthulhu's Servants to fight");
+    }
+
 
         public override void HoldItem(Player player)
         {

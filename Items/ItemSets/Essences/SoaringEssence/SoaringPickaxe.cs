@@ -8,7 +8,7 @@ public class SoaringPickaxe : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Soaring Pickaxe";
+
         item.damage = 5;
         item.melee = true;
         item.width = 22;
@@ -23,6 +23,13 @@ public class SoaringPickaxe : ModItem
         item.autoReuse = true;
 		item.pick = 35;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Soaring Pickaxe");
+      Tooltip.SetDefault("");
+    }
+
 	
 	
 	public override void AddRecipes()

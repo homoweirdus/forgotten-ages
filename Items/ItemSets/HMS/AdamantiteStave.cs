@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
     {
         public override void SetDefaults()
         {
-            item.name = "Adamantite Laser Staff";
+
             item.damage = 50;
             item.magic = true;
             item.mana = 10;
             item.width = 28;
             item.height = 30;
-            item.toolTip = "Fires a concentrated laser!";
+
             item.useTime = 20;
             item.useAnimation = 20;
             item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             item.shoot = 126;
             item.shootSpeed = 8f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Adamantite Laser Staff");
+      Tooltip.SetDefault("Fires a concentrated laser!");
+    }
+
 
         public override void AddRecipes()
         {

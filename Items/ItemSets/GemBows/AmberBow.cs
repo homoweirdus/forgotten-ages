@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.ItemSets.GemBows
 
         public override void SetDefaults()
         {
-            item.name = "Amber Longbow";
+
             item.damage = 13;
             item.noMelee = true;
             item.ranged = true;
             item.width = 27;
             item.height = 11;
-            item.toolTip = "Arrows penetrate enemies";
+
             item.useTime = 34;
             item.useAnimation = 34;
             item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.ItemSets.GemBows
             item.autoReuse = true;
             item.shootSpeed = 10f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Amber Longbow");
+      Tooltip.SetDefault("Arrows penetrate enemies");
+    }
+
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

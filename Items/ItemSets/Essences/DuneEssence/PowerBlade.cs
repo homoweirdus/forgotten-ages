@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Daylight Blade";
+
 			item.damage = 15;
 			item.melee = true;
 			item.width = 22;
@@ -23,10 +23,17 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.toolTip = "Shoots yellow bolts";
+
 			item.shoot = 122;
 			item.shootSpeed = 10f;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Daylight Blade");
+      Tooltip.SetDefault("Shoots yellow bolts");
+    }
+
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

@@ -9,7 +9,7 @@ public class LivingTreeSword : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Living Tree Sword";
+
         item.damage = 23;
         item.melee = true;
         item.width = 22;
@@ -22,11 +22,18 @@ public class LivingTreeSword : ModItem
         item.rare = 2;
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
-		item.toolTip = "Swings Slow, but hits heavily, fires a splitting sap ball";
+
 		item.shoot = mod.ProjectileType("SapBallFriendly");
 		item.shootSpeed = 11f;
         item.useTurn = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Living Tree Sword");
+      Tooltip.SetDefault("Swings Slow, but hits heavily, fires a splitting sap ball");
+    }
+
 	
 
 	

@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Cryotine Katana";
+
 			item.damage = 19;
 			item.melee = true;
 			item.crit = 25;
@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.height = 88;
 			item.useTime = 10;
 			item.useAnimation = 10;
-			item.toolTip = "Inflicts frostburn on hit";
+
 			item.useStyle = 1;
 			item.knockBack = 3;
 			item.value = 168000;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.autoReuse = true;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cryotine Katana");
+      Tooltip.SetDefault("Inflicts frostburn on hit");
+    }
+
 		
 		public override void AddRecipes()
 		{

@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.AaMaterials
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Cosmorock Fragment";
+
 			item.width = 8;
 			item.height = 8;
 			item.maxStack = 999;
@@ -25,5 +25,12 @@ namespace ForgottenMemories.Items.AaMaterials
             item.useTime = 10;
             item.useStyle = 1;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmorock Fragment");
+      Tooltip.SetDefault("");
+    }
+
     }
 }

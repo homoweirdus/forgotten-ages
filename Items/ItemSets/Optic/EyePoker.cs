@@ -10,9 +10,9 @@ namespace ForgottenMemories.Items.ItemSets.Optic
     {
         public override void SetDefaults()
         {
-            item.name = "Eye Poker";
+
             item.damage = 12;
-            item.toolTip = "Be careful!";
+
             item.melee = true;
             item.width = 19;
             item.height = 19;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.shoot = mod.ProjectileType("EyePoker");
             item.shootSpeed = 4f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Eye Poker");
+      Tooltip.SetDefault("Be careful!");
+    }
+
 
         public override void HoldItem(Player player)
         {

@@ -10,7 +10,7 @@ public class CryotineShuriken : ModItem
 	
     public override void SetDefaults()
     {
-        item.name = "Cryotine Shuriken";
+
         item.damage = 17;
         item.thrown = true;
 		item.noMelee = true;
@@ -30,6 +30,13 @@ public class CryotineShuriken : ModItem
 		item.consumable = true;
 		item.maxStack = 999;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cryotine Shuriken");
+      Tooltip.SetDefault("");
+    }
+
 
     public override void AddRecipes()
     {

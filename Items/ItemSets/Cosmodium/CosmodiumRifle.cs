@@ -13,13 +13,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
         private Vector2 newVect;
         public override void SetDefaults()
         {
-            item.name = "Cosmodium Rifle";
+
             item.damage = 86;
             item.ranged = true;
             item.width = 65;
             item.height = 21;
             item.useTime = 9;
-            item.toolTip2 = "'The ammo is stored in an alternate dimension'";
+
             item.toolTip = "Might not react well to plant-based ammo";
             item.useAnimation = 9;
             item.useStyle = 5;
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.shootSpeed = 9f;
             item.useAmmo = AmmoID.Bullet;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmodium Rifle");
+      Tooltip.SetDefault("'The ammo is stored in an alternate dimension'\n'The ammo is stored in an alternate dimension'");
+    }
+
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {

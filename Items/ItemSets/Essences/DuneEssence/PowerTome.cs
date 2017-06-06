@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Dazzling Tome";
+
 			item.damage = 15;
 			item.magic = true;
 			item.width = 22;
@@ -23,11 +23,18 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.rare = 1;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.toolTip = "Shoots yellow light bolts";
+
 			item.shoot = 122;
 			item.shootSpeed = 10f;
 			item.mana = 4;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Dazzling Tome");
+      Tooltip.SetDefault("Shoots yellow light bolts");
+    }
+
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

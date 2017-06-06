@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.ItemSets.Jungle
 
         public override void SetDefaults()
         {
-            item.name = "Stinger Bow";
+
             item.damage = 17;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-            item.toolTip = "Transforms all arrows into stinger arrows, fires like a shotgun";
+
             item.useTime = 40;
             item.useAnimation = 40;
             item.useStyle = 5;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.ItemSets.Jungle
             item.shootSpeed = 5f;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Stinger Bow");
+      Tooltip.SetDefault("Transforms all arrows into stinger arrows, fires like a shotgun");
+    }
+
 		
 			public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

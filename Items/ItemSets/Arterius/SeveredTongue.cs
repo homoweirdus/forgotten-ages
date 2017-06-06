@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Severed Tongue";
+
 			item.useStyle = 5;
 			item.width = 24;
 			item.height = 24;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
 			item.noMelee = true;
 			item.useAnimation = 42;
 			item.useTime = 42;
-			item.toolTip = "Leaves behind a trail of weak blood";
+
 			item.shootSpeed = 16f;
 			item.knockBack = 3.75f;
 			item.damage = 45;
@@ -29,5 +29,12 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
 			item.rare = 4;
 			item.shoot = mod.ProjectileType("SeveredTongue");
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Severed Tongue");
+      Tooltip.SetDefault("Leaves behind a trail of weak blood");
+    }
+
 	}
 }

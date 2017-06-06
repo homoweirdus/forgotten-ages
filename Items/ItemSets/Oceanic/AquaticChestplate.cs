@@ -16,14 +16,21 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 
 		public override void SetDefaults()
 		{
-			item.name = "Aquatic Chestplate";
+
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("3% increased melee damage and critical strike chance");
+
 			item.value = 10000;
 			item.rare = 2;
 			item.defense = 7;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Aquatic Chestplate");
+      Tooltip.SetDefault("3% increased melee damage and critical strike chance");
+    }
+
 
 		public override void UpdateEquip(Player player)
 		{

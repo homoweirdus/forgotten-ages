@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Necronomicon";
+
 			item.damage = 35;
 			item.magic = true;
 			item.width = 22;
@@ -23,11 +23,18 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.rare = 4;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.toolTip = "Damages enemies at your cursor";
+
 			item.shoot = mod.ProjectileType("NecroThing");
 			item.shootSpeed = 10f;
 			item.mana = 4;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Necronomicon");
+      Tooltip.SetDefault("Damages enemies at your cursor");
+    }
+
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Triple Blowpipe";
+
 			item.damage = 12;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 20;
-			item.toolTip = "Uses seeds or darts as ammo";
+
 			item.useTime = 60;
 			item.useAnimation = 60;
 			item.useStyle = 5;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.shootSpeed = 10f;
 			item.useAmmo = AmmoID.Dart;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Triple Blowpipe");
+      Tooltip.SetDefault("Uses seeds or darts as ammo");
+    }
+
 
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

@@ -9,10 +9,10 @@ public class GelatineSceptre : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Gelatine Staff";
+
         item.damage = 13;
         item.magic = true;
-		item.toolTip = "Fires splitting chunks of gel";
+
         item.width = 38;
         item.height = 38;
         item.useTime = 25;
@@ -28,6 +28,13 @@ public class GelatineSceptre : ModItem
         item.autoReuse = true;
 		item.mana = 10;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Staff");
+      Tooltip.SetDefault("Fires splitting chunks of gel");
+    }
+
 	
 	
 	public override void AddRecipes()

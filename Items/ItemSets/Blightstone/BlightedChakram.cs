@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
     {
         public override void SetDefaults()
         {
-            item.name = "Blighted Chakram";
+
             item.damage = 51;            
             item.thrown = true;
             item.width = 30;
             item.height = 30;
-            item.toolTip = "Throws 2 chakrams that pierce through enemies at an insane velocity";
+
             item.useTime = 10;
             item.useAnimation = 10;
             item.noUseGraphic = true;
@@ -28,6 +28,13 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blighted Chakram");
+      Tooltip.SetDefault("Throws 2 chakrams that pierce through enemies at an insane velocity");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {

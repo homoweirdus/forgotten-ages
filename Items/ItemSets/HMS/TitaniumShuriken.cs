@@ -23,6 +23,9 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 			projectile.tileCollide = false;
             projectile.timeLeft = 25;
 		}
+
+
+
         public override void Kill(int timeLeft)
         {
         	if (Main.rand.Next(12) == 0)
@@ -54,21 +57,21 @@ namespace ForgottenMemories.Items.ItemSets.HMS
     }
 
     public class TitaniumShuriken : ModItem
-    {
+
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.Shuriken);
+
             item.damage = 34;
             item.shoot = mod.ProjectileType("TitaniumShurikenP");
             item.name = "Titanium Shuriken";
-            item.rare = 4;
-			item.useTime = 18;
-			item.useAnimation = 18;
-			AddTooltip("Attacks at your cursor's location");
-            item.shootSpeed = 19f;
-            item.autoReuse = true;
-        }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Titanium Shuriken");
+      Tooltip.SetDefault("Attacks at your cursor's location");
+    }
+
 
         public override void AddRecipes()
         {

@@ -18,15 +18,22 @@ namespace ForgottenMemories.Items.ItemSets.LunarAltHelms
 
 		public override void SetDefaults()
 		{
-			item.name = "Stardust Crown";
+
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("Increases your max number of turrets by 1");
+
 			AddTooltip("Increases minion damage by 22%");
 			item.value = 0;
 			item.rare = 10;
 			item.defense = 16;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Stardust Crown");
+      Tooltip.SetDefault("Increases your max number of turrets by 1");
+    }
+
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{

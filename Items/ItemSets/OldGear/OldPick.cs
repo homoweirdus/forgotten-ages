@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Ancient Pickaxe";
+
 			item.damage = 5;
 			item.melee = true;
 			item.width = 22;
@@ -24,6 +24,13 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
 			item.autoReuse = true;
 			item.pick = 35;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ancient Pickaxe");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

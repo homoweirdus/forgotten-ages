@@ -9,7 +9,7 @@ public class GelatineBlade : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Gelatine Blade";
+
         item.damage = 15;
         item.melee = true;
         item.width = 28;
@@ -24,6 +24,13 @@ public class GelatineBlade : ModItem
         item.autoReuse = true;
 		item.useTurn = true;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Blade");
+      Tooltip.SetDefault("");
+    }
+
 	
 	
 	public override void AddRecipes()

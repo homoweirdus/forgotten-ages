@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 	{
 		public override void SetDefaults()
 		{
-			item.name = "ColdSnap";
+
 			item.damage = 4;
 			item.magic = true;
 			item.width = 22;
@@ -25,12 +25,19 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 			item.rare = 1;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.toolTip = "Creates an expanding area of ice around you";
+
 			item.useTurn = true;
 			item.shoot = mod.ProjectileType("ColdSnap");
 			item.shootSpeed = 0f;
 			item.mana = 15;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("ColdSnap");
+      Tooltip.SetDefault("Creates an expanding area of ice around you");
+    }
+
 		
 		public override void AddRecipes()
 		{

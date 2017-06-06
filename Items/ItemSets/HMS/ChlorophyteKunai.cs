@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 			item.damage = 60;
 			item.thrown = true;
 			item.shoot = mod.ProjectileType("ChlorophyteKunai");
-			item.name = "Chlorophyte Kunai";
-			AddTooltip("Explodes into spore clouds on hit");
+
+
 			item.consumable = true;
 			item.shootSpeed = 15f;
 			item.useTime = 14;
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Chlorophyte Kunai");
+      Tooltip.SetDefault("Explodes into spore clouds on hit");
+    }
+
 
 		public override void AddRecipes()
 		{

@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
     {
         public override void SetDefaults()
         {
-            item.name = "Palladium Book";
+
             item.damage = 36;
             item.magic = true;
             item.mana = 6;
             item.width = 14;
             item.height = 16;
-            item.toolTip = "Fires a slow moving spread of inaccurate energy";
+
             item.useTime = 33;
             item.useAnimation = 33;
             item.useStyle = 5;
@@ -29,6 +29,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             item.shootSpeed = 3f;
 			item.UseSound = SoundID.Item20;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Palladium Book");
+      Tooltip.SetDefault("Fires a slow moving spread of inaccurate energy");
+    }
+
 
         public override void AddRecipes()
         {

@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Bloodmist";
+
 			item.damage = 13;
 			item.magic = true;
 			item.width = 50;
@@ -26,9 +26,16 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.shoot = mod.ProjectileType("BloodmistProj");
 			item.shootSpeed = 10f;
 			item.mana = 4;
-			item.toolTip = "Shoots a bloodmist cloud that expands on impact with an enemy";
+
 			item.noMelee = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Bloodmist");
+      Tooltip.SetDefault("Shoots a bloodmist cloud that expands on impact with an enemy");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

@@ -18,13 +18,13 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Tree Staff";
+
 			item.damage = 9;
 			item.summon = true;
 			item.mana = 10;
 			item.width = 26;
 			item.height = 28;
-			item.toolTip = "Summons a ghastly tree to fight for you";
+
 			item.useTime = 36;
 			item.useAnimation = 36;
 			item.useStyle = 1;
@@ -39,6 +39,13 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			item.buffType = mod.BuffType("TreeMinion");
 			item.buffTime = 3600;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Tree Staff");
+      Tooltip.SetDefault("Summons a ghastly tree to fight for you");
+    }
+
 		
 		
 		public override void AddRecipes()

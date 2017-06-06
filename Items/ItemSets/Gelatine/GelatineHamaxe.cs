@@ -8,7 +8,7 @@ public class GelatineHamaxe : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Gelatine Hamaxe";
+
         item.damage = 15;
         item.melee = true;
         item.width = 38;
@@ -24,6 +24,13 @@ public class GelatineHamaxe : ModItem
 		item.axe = 12;
 		item.hammer = 80;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Hamaxe");
+      Tooltip.SetDefault("");
+    }
+
 	
 	
 	public override void AddRecipes()

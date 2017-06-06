@@ -8,7 +8,7 @@ public class SoaringAxe : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Soaring Axe";
+
         item.damage = 5;
         item.melee = true;
         item.width = 22;
@@ -23,6 +23,13 @@ public class SoaringAxe : ModItem
         item.autoReuse = true;
 		item.axe = 7;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Soaring Axe");
+      Tooltip.SetDefault("");
+    }
+
 	
 	
 	public override void AddRecipes()

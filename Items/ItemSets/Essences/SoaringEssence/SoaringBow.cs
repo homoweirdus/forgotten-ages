@@ -10,7 +10,7 @@ public class SoaringBow : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Soaring Bow";
+
         item.damage = 10;
         item.ranged = true;
         item.width = 50;
@@ -28,6 +28,13 @@ public class SoaringBow : ModItem
 		item.noMelee = true;
 		item.useAmmo = AmmoID.Arrow;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Soaring Bow");
+      Tooltip.SetDefault("");
+    }
+
 	
 			public override void AddRecipes()
 		{

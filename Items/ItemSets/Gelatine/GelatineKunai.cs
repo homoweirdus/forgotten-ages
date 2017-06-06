@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 			item.damage = 11;
 			item.thrown = true;
 			item.shoot = mod.ProjectileType("GelatineKunai");
-			item.name = "Gelatine Kunai";
+
 			item.consumable = true;
 			item.shootSpeed = 10f;
 			item.useTime = 18;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Kunai");
+      Tooltip.SetDefault("");
+    }
+
 
 		public override void AddRecipes()
 		{

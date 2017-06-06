@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.AaMaterials
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Cryotine Bar";
+
 			item.width = 8;
 			item.height = 8;
 			item.maxStack = 999;
@@ -19,6 +19,13 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.rare = 2;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cryotine Bar");
+      Tooltip.SetDefault("");
+    }
+
 
         public override void AddRecipes()
         {

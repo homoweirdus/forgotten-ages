@@ -16,14 +16,21 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 
 		public override void SetDefaults()
 		{
-			item.name = "Gelatine Breastplate";
+
 			item.width = 18;
 			item.height = 18;
-			AddTooltip("Increases your maxiumum minions by 1");
+
 			item.value = 30000;
 			item.rare = 1;
 			item.defense = 4;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Breastplate");
+      Tooltip.SetDefault("Increases your maxiumum minions by 1");
+    }
+
 
 		public override void UpdateEquip(Player player)
 		{

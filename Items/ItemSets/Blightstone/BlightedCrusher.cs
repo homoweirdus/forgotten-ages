@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Blighted Crusher";
+
 			item.damage = 45;
 			item.melee = true;
 			item.width = 60;
 			item.height = 60;
-			item.toolTip = "Critical hits create an explosion and reduce enemy defense";
+
 			item.useTime = 14;
 			item.crit = 16;
 			item.useAnimation = 14;
@@ -26,6 +26,13 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blighted Crusher");
+      Tooltip.SetDefault("Critical hits create an explosion and reduce enemy defense");
+    }
+
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {

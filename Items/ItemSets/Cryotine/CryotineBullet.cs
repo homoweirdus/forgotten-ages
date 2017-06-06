@@ -10,12 +10,12 @@ public class CryotineBullet : ModItem
 	
     public override void SetDefaults()
     {
-        item.name = "Cryotine Bullet";
+
         item.damage = 8;
         item.ranged = true;
         item.width = 22;
         item.height = 22;
-        item.toolTip = "Inflicts Frostburn";
+
 		item.shootSpeed = 5f;
 		item.shoot = mod.ProjectileType("CryotineBulletP");
         item.knockBack = 3.25f;
@@ -27,6 +27,13 @@ public class CryotineBullet : ModItem
 		item.maxStack = 999;
         item.ammo = AmmoID.Bullet;
 	}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cryotine Bullet");
+      Tooltip.SetDefault("Inflicts Frostburn");
+    }
+
 		
 		public override void AddRecipes()
         {

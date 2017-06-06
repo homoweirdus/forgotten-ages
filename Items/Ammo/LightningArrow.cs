@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Ammo
 	{	
 		public override void SetDefaults()
 		{
-			item.name = "Lightning Arrow";
+
 			item.damage = 10;
 			item.ranged = true;
 			item.width = 22;
 			item.height = 22;
-			item.toolTip = "Moves somewhat randomly, but has insane velocity";
+
 			item.shootSpeed = 3f;
 			item.shoot = mod.ProjectileType("LightningArrow");
 			item.knockBack = 1.2f;
@@ -26,5 +26,12 @@ namespace ForgottenMemories.Items.Ammo
 			item.maxStack = 999;
 			item.consumable = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Lightning Arrow");
+      Tooltip.SetDefault("Moves somewhat randomly, but has insane velocity");
+    }
+
 	}
 }

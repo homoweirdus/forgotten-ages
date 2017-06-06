@@ -13,13 +13,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 
         public override void SetDefaults()
         {
-            item.name = "Galactica";
+
             item.damage = 32;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-            item.toolTip = "Fires a bouncing comet shard in addition to 2 arrows";
+
             item.useTime = 30;
             item.useAnimation = 30;
             item.useStyle = 5;
@@ -33,6 +33,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
             item.shootSpeed = 10f;
 
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Galactica");
+      Tooltip.SetDefault("Fires a bouncing comet shard in addition to 2 arrows");
+    }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 			for (int k = 0; k < 3; k++)

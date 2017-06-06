@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Leeching Bow";
+
 			item.damage = 14;
 			item.ranged = true;
 			item.width = 50;
@@ -26,10 +26,17 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 			item.shoot = mod.ProjectileType("LeechingArrow");
 			item.shootSpeed = 15f;
 			item.scale = 1.1f;
-			item.toolTip = "Shoots life leeching arrows";
+
 			item.noMelee = true;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Leeching Bow");
+      Tooltip.SetDefault("Shoots life leeching arrows");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

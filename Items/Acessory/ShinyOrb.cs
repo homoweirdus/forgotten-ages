@@ -8,15 +8,22 @@ public class ShinyOrb : ModItem
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Shiny Orb";
+
 			item.width = 22;
 			item.height = 22;
-			AddTooltip("Standing still increases life regen, summons homing energy over time");
+
 			item.value = 100000;
 			item.expert = true;
 			item.rare = 9;
 			item.accessory = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Shiny Orb");
+      Tooltip.SetDefault("Standing still increases life regen, summons homing energy over time");
+    }
+
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{

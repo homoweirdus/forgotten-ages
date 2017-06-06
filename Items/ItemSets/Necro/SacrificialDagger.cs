@@ -21,6 +21,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			projectile.ignoreWater = true;
 			projectile.timeLeft = 6000;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("");
+      Tooltip.SetDefault("");
+    }
+
 		public override void Kill(int timeLeft)
 		{
 			if (Main.rand.Next(2) == 0)
@@ -46,19 +53,19 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 	}
 
 	public class SacrificialDagger : ModItem
-	{
+
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
 			item.damage = 38;
-			item.shoot = mod.ProjectileType("SacrificialDaggerP");
-			item.name = "Sacrificial Dagger";
-			item.value = 1000;
-			item.rare = 4;
-			item.shootSpeed = 17f;
-			item.autoReuse = true;
-		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Sacrificial Dagger");
+      Tooltip.SetDefault("");
+    }
+
 
 		public override void AddRecipes()
 		{

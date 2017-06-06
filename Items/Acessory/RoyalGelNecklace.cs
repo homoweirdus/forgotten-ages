@@ -9,10 +9,10 @@ namespace ForgottenMemories.Items.Acessory
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Royal Gel Necklace";
+
 			item.width = 24;
 			item.height = 28;
-			AddTooltip("Getting hit releases slime guards to protect you");
+
 			AddTooltip("Minions have a chance to slow down enemies");
 			AddTooltip("Slimes are passive");
 			item.value = 140000;
@@ -20,6 +20,13 @@ namespace ForgottenMemories.Items.Acessory
 			item.expert = true;
 			item.accessory = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Royal Gel Necklace");
+      Tooltip.SetDefault("Getting hit releases slime guards to protect you");
+    }
+
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{

@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 
 		public override void SetDefaults()
 		{
-			item.name = "The Bowne";
+
 			item.damage = 36;
 			item.noMelee = true;
 			item.ranged = true;
 			item.width = 9;
 			item.height = 20;
-			item.toolTip = "Fires necro bone arrows";
+
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 5;
@@ -32,6 +32,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			item.shootSpeed = 10f;
 
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("The Bowne");
+      Tooltip.SetDefault("Fires necro bone arrows");
+    }
+
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("NecroArrow"), damage, knockBack, player.whoAmI, 0f, 0f);

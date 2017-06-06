@@ -16,14 +16,21 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 
 		public override void SetDefaults()
 		{
-			item.name = "Gelatine Cap";
+
 			item.width = 18;
 			item.height = 18;
-			item.toolTip = "10% increased movement speed";
+
 			item.value = 35000;
 			item.rare = 1;
 			item.defense = 3;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Cap");
+      Tooltip.SetDefault("10% increased movement speed");
+    }
+
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{

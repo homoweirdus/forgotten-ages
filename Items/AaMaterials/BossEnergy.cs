@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.AaMaterials
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Dune Essence";
+
 			item.width = 10;
 			item.height = 10;
 			item.noMelee = true; 
@@ -19,5 +19,12 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.scale = 0.75f;
 			item.maxStack = 999;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Dune Essence");
+      Tooltip.SetDefault("");
+    }
+
 	}
 }

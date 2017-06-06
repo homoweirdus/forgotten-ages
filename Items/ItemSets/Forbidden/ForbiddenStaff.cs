@@ -9,13 +9,13 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Forbidden Staff";
+
 			item.damage = 110;
 			item.magic = true;
 			item.width = 94;
 			item.height = 94;
-			item.toolTip = "Creates a powerful sandnado";
-			item.toolTip2 = "Right Clicking will drain magic from enemies";
+
+
 			item.useTime = 38;
 			item.useAnimation = 38;
 			item.useStyle = 5;
@@ -30,6 +30,15 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.noMelee = true;
 			item.shootSpeed = 10f;
 		}
+
+
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Forbidden Staff");
+      Tooltip.SetDefault("Creates a powerful sandnado\nRight Clicking will drain magic from enemies");
+    }
+
 
 		public override void AddRecipes()
 		{

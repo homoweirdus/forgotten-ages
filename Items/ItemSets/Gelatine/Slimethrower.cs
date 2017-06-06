@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Slimethrower";
+
 			item.damage = 13;
 			item.ranged = true;
 			item.width = 44;
 			item.height = 20;
-			item.toolTip = "Shoots high velocity streams of gel";
+
 			item.useTime = 6;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 			item.shootSpeed = 5.25f;
 			item.useAmmo = AmmoID.Gel;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Slimethrower");
+      Tooltip.SetDefault("Shoots high velocity streams of gel");
+    }
+
 		
 		public override Vector2? HoldoutOffset()
 		{

@@ -12,12 +12,12 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 		int counter = 0;
 		public override void SetDefaults()
 		{
-			item.name = "Blight Pistol";
+
 			item.damage = 40;
 			item.ranged = true;
 			item.width = 23;
 			item.height = 13;
-			item.toolTip = "Creates a blighted ember every 4 uses";
+
 			item.useTime = 12;
 			item.useAnimation = 12;
 			item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.shootSpeed = 17f;
 			item.useAmmo = AmmoID.Bullet;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blight Pistol");
+      Tooltip.SetDefault("Creates a blighted ember every 4 uses");
+    }
+
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

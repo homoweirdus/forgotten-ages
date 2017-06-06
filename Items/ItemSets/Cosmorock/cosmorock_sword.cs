@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Cosmos Blade";
+
 			item.damage = 56;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Fires a spread of short-ranged meteors";
+
 			item.useTime = 44;
 			item.useAnimation = 22;
 			item.useStyle = 1;
@@ -27,6 +27,13 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cosmos Blade");
+      Tooltip.SetDefault("Fires a spread of short-ranged meteors");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

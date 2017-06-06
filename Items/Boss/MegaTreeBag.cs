@@ -9,16 +9,23 @@ namespace ForgottenMemories.Items.Boss
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Treasure Bag";
+
 			item.maxStack = 999;
 			item.consumable = true;
 			item.width = 24;
 			item.height = 24;
-			item.toolTip = "Right click to open";
+
 			item.expert = true;
 			item.rare = 3;
 			bossBagNPC = mod.NPCType("GhastlyEnt");
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Treasure Bag");
+      Tooltip.SetDefault("Right click to open");
+    }
+
 
 		public override bool CanRightClick()
 		{

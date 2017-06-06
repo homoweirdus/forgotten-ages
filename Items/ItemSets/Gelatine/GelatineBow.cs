@@ -12,13 +12,13 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 
         public override void SetDefaults()
         {
-            item.name = "Gelatine Bow";
+
             item.damage = 10;
             item.noMelee = true;
             item.ranged = true;
             item.width = 27;
             item.height = 11;
-            item.toolTip = "Has a chance to fire gel arrows";
+
             item.useTime = 23;
             item.useAnimation = 23;
             item.useStyle = 5;
@@ -31,6 +31,13 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
             item.autoReuse = true;
             item.shootSpeed = 6f;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Gelatine Bow");
+      Tooltip.SetDefault("Has a chance to fire gel arrows");
+    }
+
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

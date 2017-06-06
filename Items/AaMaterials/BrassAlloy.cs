@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.AaMaterials
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Brass Alloy";
+
 			item.width = 10;
 			item.height = 10;
 			item.noMelee = true; 
@@ -19,6 +19,13 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.scale = 0.75f;
 			item.maxStack = 999;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Brass Alloy");
+      Tooltip.SetDefault("");
+    }
+
 		
 		public override void AddRecipes()
         {

@@ -16,15 +16,22 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 		public override void SetDefaults()
 		{
-			item.name = "Blightstone Mask";
+
 			item.width = 18;
 			item.height = 18;
-			item.toolTip = "11% increased ranged and thrown damage";
-			item.toolTip2 = "25% chance not to consume ammo or thrown weapons";
+
+
 			item.value = 250000;
 			item.rare = 5;
 			item.defense = 8;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Blightstone Mask");
+      Tooltip.SetDefault("11% increased ranged and thrown damage\n25% chance not to consume ammo or thrown weapons");
+    }
+
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{

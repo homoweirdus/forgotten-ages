@@ -8,14 +8,21 @@ namespace ForgottenMemories.Items.Acessory
     {
         public override void SetDefaults()
         {
-            item.name = "Ninja Emblem";
+
             item.width = 14;
             item.height = 14;
-            item.toolTip = "Increases Thrown Damage by 15%.";
+
             item.value = 100000;
             item.rare = 3;
             item.accessory = true;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Ninja Emblem");
+      Tooltip.SetDefault("Increases Thrown Damage by 15%.");
+    }
+
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

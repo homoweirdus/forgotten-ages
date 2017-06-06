@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
     {
         public override void SetDefaults()
         {
-            item.name = "Cobalt Wand";
+
             item.damage = 40;
             item.magic = true;
             item.mana = 6;
             item.width = 13;
             item.height = 14;
-            item.toolTip = "Fires high-velocity bolts of energy!";
+
             item.useTime = 33;
             item.useAnimation = 33;
             item.useStyle = 5;
@@ -30,6 +30,13 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             item.shootSpeed = 25f;
 			item.UseSound = SoundID.Item20;
         }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Cobalt Wand");
+      Tooltip.SetDefault("Fires high-velocity bolts of energy!");
+    }
+
 
         public override void AddRecipes()
         {

@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Soaring Broadsword";
+
 			item.damage = 14;
 			item.melee = true;
 			item.width = 22;
@@ -22,10 +22,17 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 			item.value = 10000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
-			item.toolTip = "Swings fast, and knocks enemies upward";
+
 			item.autoReuse = true;
 			item.useTurn = true;
 		}
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Soaring Broadsword");
+      Tooltip.SetDefault("Swings fast, and knocks enemies upward");
+    }
+
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
 		{

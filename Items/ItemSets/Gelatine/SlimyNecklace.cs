@@ -9,14 +9,21 @@ public class SlimyNecklace : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Slimy Necklace";
+
         item.width = 24;
         item.height = 28;
-        item.toolTip = "Minions have a chance to slow down enemies";
+
         item.value = 40000;
         item.rare = 1;
         item.accessory = true;
     }
+
+    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Slimy Necklace");
+      Tooltip.SetDefault("Minions have a chance to slow down enemies");
+    }
+
 
     public override void UpdateAccessory(Player player, bool hideVisual)
 	{
