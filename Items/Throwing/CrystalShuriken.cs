@@ -39,12 +39,12 @@ namespace ForgottenMemories.Items.Throwing
         }
 
         public class CrystalShuriken : ModItem
-
+		{
 
             public override void SetDefaults()
             {
                 item.CloneDefaults(ItemID.Shuriken);
-
+			}
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Crystal Shuriken");

@@ -24,13 +24,6 @@ namespace ForgottenMemories.Items.Melee
 			{
 				item.useStyle = 1;
 			}
-
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Doom Sayer's Slayer");
-      Tooltip.SetDefault("Fires a homing bolt of Reality Fury \nRight-Clicking fires bolts of Despair, Dread, and Anger \nOnly usable if Thorium is installed");
-    }
-
 			item.knockBack = 6;
 			item.value = 637500;
 			item.rare = 10;
@@ -39,6 +32,13 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("DoomBeam");
 			item.shootSpeed = 10;
 		}
+		
+		    public override void SetStaticDefaults()
+    {
+      DisplayName.SetDefault("Doom Sayer's Slayer");
+      Tooltip.SetDefault("Fires a homing bolt of Reality Fury \nRight-Clicking fires bolts of Despair, Dread, and Anger \nOnly usable if Thorium is installed");
+    }
+
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

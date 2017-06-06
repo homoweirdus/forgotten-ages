@@ -42,12 +42,12 @@ namespace ForgottenMemories.Items.ItemSets.HMS
     }
 
     public class MythrilShuriken : ModItem
-
+	{
 
         public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.Shuriken);
-
+		}
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Mythril Shuriken");

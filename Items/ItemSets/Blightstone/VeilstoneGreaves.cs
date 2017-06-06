@@ -6,13 +6,9 @@ using Terraria.ID;
 
 namespace ForgottenMemories.Items.ItemSets.Blightstone
 {
+	[AutoloadEquip(EquipType.Legs)]
 	public class VeilstoneGreaves : ModItem
 	{
-		public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
-		{
-			equips.Add(EquipType.Legs);
-			return true;
-		}
 
 		public override void SetDefaults()
 		{

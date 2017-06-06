@@ -41,7 +41,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 	}
 
 	public class AdamantiteShuriken : ModItem
-
+	{
 
 		public override void SetDefaults()
 		{
@@ -49,6 +49,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 			item.damage = 40;
 			item.shoot = mod.ProjectileType("AdamantiteShurikenP");
 
+		}
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Adamantite Shuriken");

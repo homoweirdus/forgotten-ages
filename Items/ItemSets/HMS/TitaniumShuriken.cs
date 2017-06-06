@@ -57,7 +57,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
     }
 
     public class TitaniumShuriken : ModItem
-
+	{
 
         public override void SetDefaults()
         {
@@ -65,7 +65,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             item.damage = 34;
             item.shoot = mod.ProjectileType("TitaniumShurikenP");
             item.name = "Titanium Shuriken";
-
+		}
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Titanium Shuriken");

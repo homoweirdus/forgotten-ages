@@ -57,12 +57,12 @@ namespace ForgottenMemories.Items.Throwing
 
 
 	public class HellstoneGlaive : ModItem
-
+	{
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
-
+		}
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Hellstone Shuriken");
@@ -88,12 +88,7 @@ namespace ForgottenMemories.Items.Throwing
 			projectile.width = 100;
 			projectile.height = 100;
 			projectile.aiStyle = 2;
-
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Hellstone Shuriken");
-      Tooltip.SetDefault("");
-    }
+		}
 
 		public override bool PreAI()
 		{

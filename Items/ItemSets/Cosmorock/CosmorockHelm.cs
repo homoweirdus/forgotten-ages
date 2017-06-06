@@ -6,13 +6,9 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.ItemSets.Cosmorock
 {
+	[AutoloadEquip(EquipType.Head)]
 	public class CosmorockHelm : ModItem
 	{
-		public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
-		{
-			equips.Add(EquipType.Head);
-			return true;
-		}
 
 		public override void SetDefaults()
 		{

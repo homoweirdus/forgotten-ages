@@ -6,13 +6,10 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.ItemSets.Oceanic
 {
+	[AutoloadEquip(EquipType.Head)]
 	public class AquaticAHelm : ModItem
 	{
-		public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
-		{
-			equips.Add(EquipType.Head);
-			return true;
-		}
+
 
 		public override void SetDefaults()
 		{

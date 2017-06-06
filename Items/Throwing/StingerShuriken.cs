@@ -55,12 +55,12 @@ namespace ForgottenMemories.Items.Throwing
     // This .cs file has 2 classes in it, which is totally fine. (What is important is that namespace+classname is unique. Remember that autoloaded textures follow the namespace+classname convention as well.)
     // This is an approach you can take to fit your organization style.
     public class StingerShuriken : ModItem
-
+	{
 
         public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.Shuriken);
-
+		}
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Sting Shuriken");

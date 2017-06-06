@@ -22,11 +22,6 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			projectile.timeLeft = 6000;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("");
-      Tooltip.SetDefault("");
-    }
 
 		public override void Kill(int timeLeft)
 		{
@@ -53,13 +48,13 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 	}
 
 	public class SacrificialDagger : ModItem
-
+	{
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
 			item.damage = 38;
-
+		}
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Sacrificial Dagger");

@@ -8,13 +8,9 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.ItemSets.LunarAltHelms
 {
+	[AutoloadEquip(EquipType.Head)]
 	public class StardustCrown : ModItem
 	{
-		public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
-		{
-			equips.Add(EquipType.Head);
-			return true;
-		}
 
 		public override void SetDefaults()
 		{

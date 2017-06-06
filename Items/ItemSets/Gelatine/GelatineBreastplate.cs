@@ -6,13 +6,9 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.ItemSets.Gelatine
 {
+	[AutoloadEquip(EquipType.Body)]
 	public class GelatineBreastplate : ModItem
 	{
-		public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
-		{
-			equips.Add(EquipType.Body);
-			return true;
-		}
 
 		public override void SetDefaults()
 		{

@@ -35,14 +35,14 @@ namespace ForgottenMemories.Items.Throwing
 	}
 	
 	public class BlessedKunai : ModItem
-
+	{
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
 			item.damage = 49;
 			item.shoot = mod.ProjectileType("BlessedKunaiP");
-
+		}
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Blessed Kunai");

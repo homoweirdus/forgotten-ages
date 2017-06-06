@@ -25,15 +25,12 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
     {
       DisplayName.SetDefault("Blizzard Shard");
       Tooltip.SetDefault("'As icy as death's stare'");
+	  Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 5));
     }
 
         public override void Update(ref float gravity, ref float maxFallSpeed)
         {
 
-        }
-        public override DrawAnimation GetAnimation()
-        {
-            return new DrawAnimationVertical(5, 5);
         }
     }
 }
