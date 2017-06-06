@@ -26,7 +26,7 @@ namespace ForgottenMemories.NPCs.Night
 			aiType = NPCID.BlueSlime;
 		}
 
-		public override float CanSpawn(NPCSpawnInfo spawnInfo)
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;

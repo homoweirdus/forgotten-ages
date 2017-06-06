@@ -6,6 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.NPCs.FaceOfInsanity
 {
+	[AutoloadBossHead]
     public class FaceOfInsanity : ModNPC
     {
 		int AiTimer = 0;
@@ -44,10 +45,6 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 			npc.defense = 22;
 		}
 		
-		public override void AutoloadHead(ref string headTexture, ref string bossHeadTexture)
-		{
-			bossHeadTexture = "ForgottenMemories/NPCs/FaceOfInsanity/Arterius_Head_Boss";
-		}
 
         public override void AI()
         {

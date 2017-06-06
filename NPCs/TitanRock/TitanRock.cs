@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.NPCs.TitanRock
 {
+	[AutoloadBossHead]
 	public class TitanRock : ModNPC
 	{
 		int timer = 0;
@@ -54,10 +55,6 @@ namespace ForgottenMemories.NPCs.TitanRock
 			music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/TitanRock");
 		}
 		
-		public override void AutoloadHead(ref string headTexture, ref string bossHeadTexture)
-		{
-			bossHeadTexture = "ForgottenMemories/NPCs/TitanRock/TitanRock_Head_Boss";
-		}
 		
 		public override void BossHeadRotation (ref float rotation)
 		{
