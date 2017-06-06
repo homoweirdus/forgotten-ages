@@ -16,8 +16,9 @@ namespace ForgottenMemories.Projectiles {
 			projectile.penetrate = -1;
 			projectile.melee = true;
 			projectile.friendly = true;
-			projectile.timeLeft = 55;
+			projectile.timeLeft = 10;
 			Main.projFrames[projectile.type] = 5;
+			projectile.extraUpdates = 1;
 			projectile.tileCollide = false;
 			projectile.light = 0.5f;
 		}
@@ -29,15 +30,12 @@ namespace ForgottenMemories.Projectiles {
 		
 		public override void AI()
 		{
-			if (projectile.scale == 2f)
+			projectile.frameCounter++;
+			if (projectile.frameCounter >= 2)
 			{
-				projectile.frameCounter++;
-				if (projectile.frameCounter >= 2)
-				{
-					projectile.frameCounter = 0;
-					projectile.frame = (projectile.frame + 1);
-				} 
-			}
+				projectile.frameCounter = 0;
+				projectile.frame = (projectile.frame + 1) % 5;
+			} 
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

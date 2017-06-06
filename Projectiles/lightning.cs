@@ -60,9 +60,11 @@ namespace ForgottenMemories.Projectiles
 				projectile.ai[0] = projectile.velocity.ToRotation();
 			}
 			SoundTimer++;
-			if (SoundTimer >= 30 && Main.rand.Next(2) == 0)
+			if (SoundTimer >= 50)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 93);
+				if (Main.rand.Next(2) == 0)
+					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 93);
+				
 				SoundTimer = 0;
 			}
 			else

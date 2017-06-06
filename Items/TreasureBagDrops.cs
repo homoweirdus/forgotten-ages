@@ -13,10 +13,10 @@ namespace ForgottenMemories.Items
 				player.QuickSpawnItem(mod.ItemType("SlimeRod"), 1);
 			}
 			
-			if (context == "bossBag" && arg == 3319 && Main.rand.Next(1) == 0)
+			if (context == "bossBag" && arg == 3319)
 			{
-				int amountToDrop = Main.rand.Next(36,42);
-				player.QuickSpawnItem(mod.ItemType("WideLens"), amountToDrop);
+				int amountToDrop = Main.rand.Next(21,28);
+				player.QuickSpawnItem(mod.ItemType("OpticBar"), amountToDrop);
 			}
 			
 			if (context == "bossBag" && arg == 3324 && Main.rand.Next(1) == 0)
