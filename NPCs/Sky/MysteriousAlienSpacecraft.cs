@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.Sky
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "MysteriousAlienSpacecraft";
-			npc.displayName = "Mysterious Alien Spacecraft";
 			npc.width = 48;
 			npc.height = 36;
 			npc.damage = 30;
@@ -22,9 +20,14 @@ namespace ForgottenMemories.NPCs.Sky
 			npc.value = 70f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 14;
-			Main.npcFrameCount[npc.type] = 4;
 			aiType = -1;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Mysterious Alien Spacecraft");
 			animationType = 93;
+			Main.npcFrameCount[npc.type] = 4;
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)

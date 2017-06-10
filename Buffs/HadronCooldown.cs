@@ -13,8 +13,8 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = false;
-			Main.buffName[Type] = "Hadron Cooldown";
-			Main.buffTip[Type] = "Your missile barrage is reloading";
+			DisplayName.SetDefault("Hadron Cooldown");
+			Description.SetDefault("Your missile barrage is reloading");
 			Main.debuff[Type] = true;
 		}
 		

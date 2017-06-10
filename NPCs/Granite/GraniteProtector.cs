@@ -12,8 +12,6 @@ namespace ForgottenMemories.NPCs.Granite
 		int counter = 0;
 		public override void SetDefaults()
 		{
-			npc.name = "GraniteProtector";
-			npc.displayName = "Spike Elemental";
 			npc.width = 48;
 			npc.height = 36;
 			npc.damage = 48;
@@ -24,8 +22,13 @@ namespace ForgottenMemories.NPCs.Granite
 			npc.value = 70f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 14;
-			Main.npcFrameCount[npc.type] = 6;
 			aiType = -1;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Spike Elemental");
+			Main.npcFrameCount[npc.type] = 6;
 		}
 		
 		public override void FindFrame(int frameHeight)

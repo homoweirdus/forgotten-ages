@@ -13,7 +13,7 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = false;
-			Main.buffName[this.Type] = "Gelled";
+			DisplayName.SetDefault("Gelled");
 		}
 		public override void Update(NPC npc, ref int buffIndex)
 		{

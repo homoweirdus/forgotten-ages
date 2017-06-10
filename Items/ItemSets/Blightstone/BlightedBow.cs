@@ -51,7 +51,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 				if (Main.rand.Next(3) == 0)
 				{
 					int p = Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, type, (int)(damage * 1.25), knockBack, Main.myPlayer, 0, 0);
-					Main.projectile[p].GetModInfo<Info>(mod).BlightedBow = true;
+					Main.projectile[p].GetGlobalProjectile<Info>(mod).BlightedBow = true;
 				}
 				
 				else

@@ -7,8 +7,8 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			Main.buffName[Type] = "Blightstone Dragon";
-			Main.buffTip[Type] = "A baby dragon for you";
+			DisplayName.SetDefault("Blighted Dragon");
+			Description.SetDefault("A baby dragon fights for you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.buffNoSave[Type] = true;
 		}

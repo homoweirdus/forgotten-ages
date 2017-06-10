@@ -33,8 +33,6 @@ namespace ForgottenMemories.NPCs.TitanRock
 		
 		public override void SetDefaults()
 		{
-			npc.name = "Titan Rock";
-			npc.displayName = "Titan Rock";
 			npc.aiStyle = -1;
 			npc.lifeMax = 28000;
 			npc.damage = 60;
@@ -49,12 +47,16 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.noGravity = true;
 			npc.HitSound = SoundID.NPCHit41;
 			npc.DeathSound = SoundID.NPCDeath44;
-			Main.npcFrameCount[npc.type] = 6;
 			npc.scale = 1.25f;
 			npc.npcSlots = 5;
 			music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/TitanRock");
 		}
 		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Titan Rock");
+			Main.npcFrameCount[npc.type] = 6;
+		}
 		
 		public override void BossHeadRotation (ref float rotation)
 		{

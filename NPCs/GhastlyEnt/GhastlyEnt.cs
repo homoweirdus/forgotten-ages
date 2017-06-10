@@ -20,8 +20,6 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		
         public override void SetDefaults()
         {
-            npc.name = "Ghastly Ent";
-            npc.displayName = "Ghastly Ent";
             npc.aiStyle = -1;
             npc.lifeMax = 2700;
             npc.damage = 25;
@@ -37,10 +35,15 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
             npc.HitSound = SoundID.NPCHit7;
 			npc.DeathSound = SoundID.NPCDeath3;
             music = 12;
-			Main.npcFrameCount[npc.type] = 6;
 			npc.scale = 1.25f;
 			npc.npcSlots = 5;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ghastly Ent");
+			Main.npcFrameCount[npc.type] = 6;
+		}
 
         public override void AI()
         {

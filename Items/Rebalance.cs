@@ -11,6 +11,57 @@ namespace ForgottenMemories.Items
 {
 	public class Rebalance : GlobalItem
 	{
+		//public override void SetStaticDefaults(Item item) no hook for static defaults yet
+		/*{
+			if (Config.VanillaBalance)
+			{
+				if (item.type == ItemID.CrystalVileShard)
+				{
+					Tooltip.SetDefault( + "\nIgnores 10 defense");
+				}
+				
+				if (item.type == ItemID.BoneGlove)
+				{
+					Tooltip.SetDefault( + "\nScales in power with progression");
+				}
+				
+				if (item.type == ItemID.Chik)
+				{
+					Tooltip.SetDefault( + "\nHas a 1/3 chance to create crystal shards on hit");
+				}
+				
+				if (item.type == ItemID.Flamarang)
+				{
+					Tooltip.SetDefault( + "\nFires 2 boomerangs in a spread");
+				}
+				
+				if (item.type == 2760)
+				{
+					Tooltip.SetDefault( + "\n30% reduced magic damage and life regen, 7% increased magic critical strike chance");
+				}
+				
+				if (item.type == ItemID.ChlorophyteArrow)
+				{
+					Tooltip.SetDefault( + "\nHas a chance to create a spore cloud on hit");
+				}
+				
+				if (item.type == ItemID.HeatRay)
+				{
+					Tooltip.SetDefault( + "\nShoots a piercing ray of heat \nMelts through enemy hp and defense");
+				}
+				
+				if (item.type == 3223)
+				{
+					Tooltip.SetDefault( + "\nAll projectiles have 20% chance to inflict confused \nAttacking a confused enemy with a projectile fires a homing bolt towards them)";
+				}
+				
+				if (item.type == ItemID.NettleBurst)
+				{
+					Tooltip.SetDefault( + "\nIgnores 12 defense");
+				}
+			}
+		}*/
+	
 		public override void SetDefaults(Item item)
 		{
 			if (Config.VanillaBalance)
@@ -18,7 +69,6 @@ namespace ForgottenMemories.Items
 				if (item.type == ItemID.CrystalVileShard)
 				{
 					item.damage = 30;
-					item.toolTip2 = "Ignores 10 defense";
 				}
 				
 				if (item.type == ItemID.SpaceGun)
@@ -43,7 +93,6 @@ namespace ForgottenMemories.Items
 				
 				if (item.type == ItemID.BoneGlove)
 				{
-					item.toolTip2 = "33% chance not to consume bone \nScales in power with progression";
 					item.autoReuse = true;
 					item.useTurn = true;
 					
@@ -54,15 +103,9 @@ namespace ForgottenMemories.Items
 					}
 				}
 				
-				if (item.type == ItemID.Chik)
-				{
-					item.toolTip2 = "Has a 1/3 chance to create crystal shards on hit";
-				}
-				
 				if (item.type == ItemID.Flamarang)
 				{
 					item.damage = 42;
-					item.toolTip2 = "Fires 2 boomerangs in a spread";
 					item.useTime = 10;
 					item.useAnimation = 10;
 					item.autoReuse = true;
@@ -72,16 +115,6 @@ namespace ForgottenMemories.Items
 				if (item.type == 1910)
 				{
 					item.damage = 46;
-				}
-				
-				if (item.type == 2760)
-				{
-					item.toolTip2 = "30% reduced magic damage and life regen, 7% increased magic critical strike chance";
-				}
-				
-				if (item.type == ItemID.ChlorophyteArrow)
-				{
-					item.toolTip2 = "Has a chance to create a spore cloud on hit";
 				}
 				
 				if (item.type == ItemID.ChlorophyteBullet)
@@ -115,18 +148,11 @@ namespace ForgottenMemories.Items
 				if (item.type == ItemID.HeatRay)
 				{
 					item.damage = 58;
-					item.toolTip = "Shoots a piercing ray of heat \nMelts through enemy hp and defense";
 				}
 				
 				if (item.type == ItemID.NettleBurst)
 				{
 					item.damage = 37;
-					item.toolTip2 = "Ignores 12 defense";
-				}
-				
-				if (item.type == 3223)
-				{
-					item.toolTip2 = "All projectiles have 20% chance to inflict confused \nAttacking a confused enemy with a projectile fires a homing bolt towards them";
 				}
 			}
 		}
@@ -138,7 +164,7 @@ namespace ForgottenMemories.Items
 				if (item.type == ItemID.Flamethrower || item.type == 1910)
 				{
 					int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
-					Main.projectile[p].GetModInfo<Info>(mod).Flamethrower = true;
+					Main.projectile[p].GetGlobalProjectile<Info>(mod).Flamethrower = true;
 					return false;
 				}
 				

@@ -17,8 +17,6 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 		
         public override void SetDefaults()
         {
-            npc.name = "Face Of Insanity";
-            npc.displayName = "Arterius";
             npc.aiStyle = -1;
             npc.lifeMax = 11000;
             npc.damage = 40;
@@ -34,9 +32,14 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
             npc.HitSound = SoundID.NPCHit8;
 			npc.DeathSound = SoundID.NPCDeath13;
             music = MusicID.Boss4;
-			Main.npcFrameCount[npc.type] = 4;
 			npc.npcSlots = 5;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Arterius");
+			Main.npcFrameCount[npc.type] = 4;
+		}
 		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 		{

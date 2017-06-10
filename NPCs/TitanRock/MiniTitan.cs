@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.TitanRock
 		int timer = 0;
 		public override void SetDefaults()
 		{
-			npc.name = "Titan Pebble";
-			npc.displayName = "Titan Pebble";
 			npc.width = 64;
 			npc.height = 64;
 			npc.damage = 0;
@@ -24,6 +22,11 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.lavaImmune = true;
 			npc.noGravity = true;
 			npc.scale = 1.3f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Titan Pebble");
 		}
 
 		

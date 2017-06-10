@@ -154,7 +154,7 @@ namespace ForgottenMemories
             {
                 for (int n = j - num; n < j + num; n++)
                 {
-                    if (Main.tile[m, n].active() && TileLoader.IsChest((int)Main.tile[m, n].type))
+                    if (Main.tile[m, n].active() && TileID.Sets.BasicChest[(int) Main.tile[m, n].type])
                     {
                         return false;
                     }
@@ -276,18 +276,18 @@ namespace ForgottenMemories
                 }
             }
            // WorldGen.stopDrops = false;
-            if (Main.netMode == 0)
-            {
+            //if (Main.netMode == 0) temporarily may have broke multiplayer because migration guide says nothing on how to fix :(
+            //{
                 Main.NewText("A strange comet has landed!", 50, 255, 130, false);
-            }
-            else if (Main.netMode == 2)
-            {
-                NetMessage.SendData(25, -1, -1, "A strange comet has landed!", 255, 50f, 255f, 130f, 0, 0, 0);
-            }
-            if (Main.netMode != 1)
-            {
-                NetMessage.SendTileSquare(-1, i, j, 40);
-            }
+            //}
+           // else if (Main.netMode == 2)
+           // {
+           //     NetMessage.SendData(25, -1, -1, "A strange comet has landed!", 255, 50f, 255f, 130f, 0, 0, 0);
+           // }
+           //if (Main.netMode != 1)
+            //{
+            //    NetMessage.SendTileSquare(-1, i, j, 40);
+            //}
             return true;
         }
 

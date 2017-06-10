@@ -201,9 +201,10 @@ namespace ForgottenMemories.Projectiles.Summon
 			}
 		}
 
-		public override void TileCollideStyle(ref int width, ref int height, ref bool fallThrough)
+		public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)
 		{
 			fallThrough = true;
+			return true;
 		}
 	}
 }

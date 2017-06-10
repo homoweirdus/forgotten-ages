@@ -13,7 +13,7 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = false;
-			Main.buffName[this.Type] = "Blighted Flame";
+			DisplayName.SetDefault("Blighted Flame");
 		}
 		public override void Update(NPC npc, ref int buffIndex)
 		{

@@ -8,8 +8,8 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			Main.buffName[Type] = "Ghastly Tree";
-			Main.buffTip[Type] = "Spooky";
+			DisplayName.SetDefault("Ghastly Tree");
+			Description.SetDefault("Spooky");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

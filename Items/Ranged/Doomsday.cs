@@ -100,12 +100,12 @@ namespace ForgottenMemories.Items.Ranged
 				{
 					if (Main.rand.Next(2) == 0)
 					{
-						Main.projectile[p].GetModInfo<Info>(mod).Terra = true;
+						Main.projectile[p].GetGlobalProjectile<Info>(mod).Terra = true;
 					}
 					
 					else
 					{
-						Main.projectile[p].GetModInfo<Info>(mod).TrueHR = true;
+						Main.projectile[p].GetGlobalProjectile<Info>(mod).TrueHR = true;
 					}
 				}
 				Main.projectile[p].timeLeft = 60;

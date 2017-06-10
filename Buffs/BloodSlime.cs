@@ -7,8 +7,8 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			Main.buffName[Type] = "Living Blood";
-			Main.buffTip[Type] = "Living Blood fights for you";
+			DisplayName.SetDefault("Living Blood");
+			Description.SetDefault("Living Blood fights for you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.buffNoSave[Type] = true;
 		}

@@ -7,8 +7,8 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			Main.buffName[Type] = "Eater minion";
-			Main.buffTip[Type] = "An eater of souls fight for you";
+			DisplayName.SetDefault("Eater minion");
+			Description.SetDefault("An eater of souls fight for you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.buffNoSave[Type] = true;
 		}

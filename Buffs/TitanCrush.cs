@@ -13,7 +13,7 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = false;
-			Main.buffName[this.Type] = "Titanic Crush";
+			DisplayName.SetDefault("Titanic Crush");
 		}
 		public override void Update(NPC npc, ref int buffIndex)
 		{
@@ -23,7 +23,7 @@ namespace ForgottenMemories.Buffs
 			if (Main.rand.Next(3) == 0)
 			{
 				int dust = Dust.NewDust(npc.position, npc.width, npc.height, 1);
-				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].scale = 2.5f;
 				Main.dust[dust].noGravity = true;		
 			}
 		}

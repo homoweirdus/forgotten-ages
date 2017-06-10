@@ -51,7 +51,7 @@ namespace ForgottenMemories.Items.Ranged
 				sX += (float)Main.rand.Next(-50, 50) * 0.02f;
 				sY += (float)Main.rand.Next(-50, 50) * 0.02f;
 				int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
-				Main.projectile[p].GetModInfo<Info>(mod).Shroom = true;
+				Main.projectile[p].GetGlobalProjectile<Info>(mod).Shroom = true;
 			}
 			return false;
 		}

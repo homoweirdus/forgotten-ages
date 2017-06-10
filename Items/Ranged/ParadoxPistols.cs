@@ -51,7 +51,7 @@ namespace ForgottenMemories.Items.Ranged
 				sX += (float)Main.rand.Next(-30, 30) * 0.02f;
 				sY += (float)Main.rand.Next(-30, 30) * 0.02f;
 				int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
-				Main.projectile[p].GetModInfo<Info>(mod).Paradox = true;
+				Main.projectile[p].GetGlobalProjectile<Info>(mod).Paradox = true;
 				Main.projectile[p].tileCollide = false;
 				Main.projectile[p].penetrate = 1;
 			}

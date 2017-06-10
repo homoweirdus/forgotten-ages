@@ -15,8 +15,6 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 			item.width = 18;
 			item.height = 18;
-
-			AddTooltip("5% increased max movement speed");
 			item.value = 200000;
 			item.rare = 5;
 			item.defense = 10;
@@ -25,7 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Blightstone Greaves");
-      Tooltip.SetDefault("15% increased movement speed");
+      Tooltip.SetDefault("15% increased movement speed \n5% increased max movement speed");
     }
 
 

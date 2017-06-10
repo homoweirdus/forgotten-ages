@@ -5,18 +5,25 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.NPCs.Town
 {
+	[AutoloadHead]
 	public class Pyro : ModNPC
 	{
 		
-		public override bool Autoload(ref string name, ref string texture, ref string[] altTextures)
+		public override bool Autoload(ref string name)
 		{
 			name = "Pyro";
-			altTextures = new string[] { "TGEM/NPCs/Town/Pyro"};
 			return mod.Properties.Autoload;
+		}
+		
+		public override string Texture
+		{
+			get
+			{
+				return "ForgottenMemories/NPCs/Town/Pyro";
+			}
 		}
 		public override void SetDefaults()
 		{
-			npc.name = "Pyromaniac";
 			npc.townNPC = true;
 			npc.friendly = true;
 			npc.width = 18;
@@ -28,6 +35,11 @@ namespace ForgottenMemories.NPCs.Town
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0.5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Pyromaniac");
 			Main.npcFrameCount[npc.type] = 25;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 9;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;

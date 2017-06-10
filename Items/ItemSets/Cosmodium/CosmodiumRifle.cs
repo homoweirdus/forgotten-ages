@@ -19,8 +19,6 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.width = 65;
             item.height = 21;
             item.useTime = 9;
-
-            item.toolTip = "Might not react well to plant-based ammo";
             item.useAnimation = 9;
             item.useStyle = 5;
             item.noMelee = true;
@@ -37,7 +35,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Cosmodium Rifle");
-      Tooltip.SetDefault("'The ammo is stored in an alternate dimension'\n'The ammo is stored in an alternate dimension'");
+      Tooltip.SetDefault("'The ammo is stored in an alternate dimension'\nMight not react well to plant-based ammo");
     }
 
 

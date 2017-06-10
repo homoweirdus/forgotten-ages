@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.Beach
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Palm Tree Man";
-			npc.displayName = "Palm Tree Man";
 			npc.width = 16;
 			npc.height = 40;
 			npc.damage = 20;
@@ -22,8 +20,13 @@ namespace ForgottenMemories.NPCs.Beach
 			npc.value = 60f;
 			npc.knockBackResist = 0.5f;
 			npc.aiStyle = 3;
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Zombie];
 			aiType = NPCID.Zombie;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Palm Tree Man");
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Zombie];
 			animationType = NPCID.Zombie;
 		}
 

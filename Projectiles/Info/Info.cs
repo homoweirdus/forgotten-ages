@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Info
 {
+	
 	public class Info : GlobalProjectile
 	{
 		public bool Paradox = false;
@@ -20,45 +21,28 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool Planetary = false;
 		public bool Split = false;
 		public bool wtf = false;
-		public bool IceSpike = false;
 		public bool BlightedBow = false;
-	}
-	
-	public class Stuff : GlobalProjectile
-	{
-		public override void SetDefaults(Projectile projectile)
-        {
-			if (projectile.GetModInfo<Info>(mod).IceSpike == true)
-			{
-				ProjectileID.Sets.MinionShot[projectile.type] = true;
-			}
-		}
 		
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
-			if (projectile.GetModInfo<Info>(mod).Flamethrower == true)
+			if (Flamethrower == true)
 			{
 				target.immune[projectile.owner] = 5;
 			}
 			
-			if (Main.rand.Next(2) == 0 && projectile.GetModInfo<Info>(mod).Paradox == true)
+			if (Main.rand.Next(2) == 0 && Paradox == true)
 			{
 				int z = Projectile.NewProjectile(projectile.Center.X + projectile.velocity.X * 100f, projectile.Center.Y + projectile.velocity.Y * 100f, projectile.velocity.X * -1, projectile.velocity.Y * -1, projectile.type, projectile.damage, 0f, projectile.owner, 0f, 0f);
 				Main.projectile[z].GetModInfo<Info>(mod).Paradox = true;
 				Main.projectile[z].tileCollide = false;
 				Main.projectile[z].penetrate = 1;
 			}
-			if (projectile.GetModInfo<Info>(mod).BlightedBow == true)
+			if (BlightedBow == true)
 			{
 				target.AddBuff(mod.BuffType("BlightFlame"), 360, false);
 			}
 			
-			if(projectile.GetModInfo<Info>(mod).IceSpike == true)
-			{
-				target.AddBuff(BuffID.Frostburn, 360);
-			}
-			
-			if (Main.rand.Next(2) == 0 && projectile.GetModInfo<Info>(mod).Planetary == true)
+			if (Main.rand.Next(2) == 0 && Planetary == true)
 			{
 				Player player = Main.player[projectile.owner];
 				Vector2 newMove = projectile.Center - player.Center;
@@ -76,7 +60,7 @@ namespace ForgottenMemories.Projectiles.Info
 		
 		public override void Kill(Projectile projectile, int timeLeft)
 		{
-			if (projectile.GetModInfo<Info>(mod).TrueHR == true)
+			if (TrueHR == true)
 			{
 				int amountOfProjectiles = Main.rand.Next(1, 3);
 				
@@ -89,7 +73,7 @@ namespace ForgottenMemories.Projectiles.Info
 				}
 			}
 			
-			if (projectile.GetModInfo<Info>(mod).Split == true && projectile.timeLeft == 0)
+			if (Split == true && projectile.timeLeft == 0)
 			{
 				Vector2 origVect = new Vector2(projectile.velocity.X, projectile.velocity.Y);
 				Vector2 newVect2 = origVect.RotatedBy(-System.Math.PI / 30);
@@ -108,7 +92,7 @@ namespace ForgottenMemories.Projectiles.Info
 				Main.projectile[ok5].GetModInfo<Info>(mod).wtf = true;
 			}
 			
-			if (projectile.GetModInfo<Info>(mod).Cosmodium == true)
+			if (Cosmodium == true)
 			{
 				int amountOfProjectiles = Main.rand.Next(2, 4);
 				
@@ -122,7 +106,7 @@ namespace ForgottenMemories.Projectiles.Info
 				}
 			}
 			
-			if (projectile.GetModInfo<Info>(mod).Titanium == true)
+			if (Titanium == true)
 			{
 				int amountOfProjectiles = Main.rand.Next(1, 4);
 				
@@ -134,14 +118,14 @@ namespace ForgottenMemories.Projectiles.Info
 				}
 			}
 			
-			if (projectile.GetModInfo<Info>(mod).Terra == true)
+			if (Terra == true)
 			{
 				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("TerraBoom"), 30, 5f, projectile.owner);
 			}
 		}
 		public override void AI(Projectile projectile)
 		{
-			if (projectile.GetModInfo<Info>(mod).TrueHR == true)
+			if (TrueHR == true)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, mod.DustType("bluedust"), 0f, 0f);
@@ -153,7 +137,7 @@ namespace ForgottenMemories.Projectiles.Info
 				Main.dust[hitler].noGravity = true;
 			}
 			
-			if (projectile.GetModInfo<Info>(mod).Terra == true)
+			if (Terra == true)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 74, 0f, 0f);
@@ -161,7 +145,7 @@ namespace ForgottenMemories.Projectiles.Info
 				Main.dust[dust].noGravity = true;
 			}
 			
-			if (projectile.GetModInfo<Info>(mod).BlightedBow == true)
+			if (BlightedBow == true)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.Center, 0, 0, 65, 0f, 0f);
@@ -169,12 +153,12 @@ namespace ForgottenMemories.Projectiles.Info
 				Main.dust[dust].noGravity = true;
 			}
 			
-			if (projectile.GetModInfo<Info>(mod).wtf == true && projectile.velocity.X == 0 && projectile.velocity.Y == 0)
+			if (wtf == true && projectile.velocity.X == 0 && projectile.velocity.Y == 0)
 			{
 				projectile.Kill();
 			}
 			
-			if (projectile.GetModInfo<Info>(mod).Shroom == true)
+			if (Shroom == true)
 			{
 				Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
 				Vector2 move = Vector2.Zero;

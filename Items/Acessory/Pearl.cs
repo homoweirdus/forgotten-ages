@@ -11,9 +11,6 @@ public class Pearl : ModItem
 
         item.width = 24;
         item.height = 28;
-
-		AddTooltip("Taking damage when under half of your max health will restore even more health");
-		AddTooltip("'The ocean protects you'");
         item.value = 100000;
         item.rare = 1;
         item.accessory = true;
@@ -22,7 +19,7 @@ public class Pearl : ModItem
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Pearl");
-      Tooltip.SetDefault("Taking over 10 damage has a 1/2 chance to restore 10 health");
+      Tooltip.SetDefault("Taking over 10 damage has a 1/2 chance to restore 10 health \nTaming damage when under half of your max health will restore even more health \n'The ocean protects you'");
     }
 
 

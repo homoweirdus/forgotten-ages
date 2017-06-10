@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.Snow
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Boreal Tree Man";
-			npc.displayName = "Boreal Tree Man";
 			npc.width = 16;
 			npc.height = 40;
 			npc.damage = 15;
@@ -22,8 +20,13 @@ namespace ForgottenMemories.NPCs.Snow
 			npc.value = 60f;
 			npc.knockBackResist = 0.5f;
 			npc.aiStyle = 3;
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Zombie];
 			aiType = NPCID.Zombie;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Boreal Tree Man");
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Zombie];
 			animationType = NPCID.Zombie;
 		}
 

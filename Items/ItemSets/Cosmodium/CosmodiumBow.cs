@@ -46,7 +46,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
 				int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
-				Main.projectile[p].GetModInfo<Info>(mod).Cosmodium = true;
+				Main.projectile[p].GetGlobalProjectile<Info>(mod).Cosmodium = true;
             return false;
         }
 		

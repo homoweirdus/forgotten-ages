@@ -13,13 +13,13 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = false;
-			Main.buffName[this.Type] = "Disarmed";
+			DisplayName.SetDefault("Disarmed");
 		}
 		public override void Update(NPC npc, ref int buffIndex)
 		{
 			if (npc.boss == false)
 			{
-				npc.damage = 0;
+				npc.defense /= 4;
 			}
 			
 			npc.defense /= 2;

@@ -15,8 +15,6 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 
 			item.width = 18;
 			item.height = 18;
-
-			AddTooltip("10% increased damage resistance");
 			item.value = 300000;
 			item.rare = 5;
 			item.defense = 13;
@@ -26,7 +24,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Blightstone Chestplate");
-      Tooltip.SetDefault("Increased life regen");
+      Tooltip.SetDefault("Increased life regen \n10% increased damage resistance");
     }
 
 

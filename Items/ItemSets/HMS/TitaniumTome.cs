@@ -59,7 +59,7 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 			sX += (float)Main.rand.Next(-10, 10) * 0.2f;
 			sY += (float)Main.rand.Next(-10, 30) * 0.2f;
 			int proj = Projectile.NewProjectile(mouse.X, (position.Y-1000), sX, sY, type, damage, knockBack, player.whoAmI);
-			Main.projectile[proj].GetModInfo<Info>(mod).Titanium = true;
+			Main.projectile[proj].GetGlobalProjectile<Info>(mod).Titanium = true;
 			Main.projectile[proj].penetrate = 1;
 			return false;
 		}

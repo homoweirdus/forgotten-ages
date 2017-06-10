@@ -12,9 +12,6 @@ namespace ForgottenMemories.Items.Acessory
 
 			item.width = 24;
 			item.height = 28;
-
-			AddTooltip("Minions have a chance to slow down enemies");
-			AddTooltip("Slimes are passive");
 			item.value = 140000;
 			item.rare = 2;
 			item.expert = true;
@@ -24,7 +21,7 @@ namespace ForgottenMemories.Items.Acessory
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Royal Gel Necklace");
-      Tooltip.SetDefault("Getting hit releases slime guards to protect you");
+      Tooltip.SetDefault("Getting hit releases slime guards to protect you \nMinions have a chance to slow down enemies \nSlimes are passive");
     }
 
 

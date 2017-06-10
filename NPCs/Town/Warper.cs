@@ -5,18 +5,25 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.NPCs.Town
 {
+	[AutoloadHead]
 	public class Warper : ModNPC
 	{
 		
-		public override bool Autoload(ref string name, ref string texture, ref string[] altTextures)
+		public override bool Autoload(ref string name)
 		{
 			name = "Warper";
-			altTextures = new string[] { "ForgottenMemories/NPCs/Town/Warper"};
 			return mod.Properties.Autoload;
+		}
+		
+		public override string Texture
+		{
+			get
+			{
+				return "ForgottenMemories/NPCs/Town/Warper";
+			}
 		}
 		public override void SetDefaults()
 		{
-			npc.name = "Warper";
 			npc.townNPC = true;
 			npc.friendly = true;
 			npc.width = 18;
@@ -28,6 +35,11 @@ namespace ForgottenMemories.NPCs.Town
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0.5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Warper");
 			Main.npcFrameCount[npc.type] = 20;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 20;
 			NPCID.Sets.AttackFrameCount[npc.type] = 2;

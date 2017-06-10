@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.Mushroom
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Shroom Slime";
-			npc.displayName = "Shroom Slime";
 			npc.width = 48;
 			npc.height = 36;
 			npc.damage = 20;
@@ -22,8 +20,13 @@ namespace ForgottenMemories.NPCs.Mushroom
 			npc.value = 60f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 1;
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.BlueSlime];
 			aiType = NPCID.BlueSlime;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Shroom Slime");
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.BlueSlime];
 			animationType = NPCID.BlueSlime;
 		}
 

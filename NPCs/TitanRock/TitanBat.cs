@@ -9,8 +9,6 @@ namespace ForgottenMemories.NPCs.TitanRock
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Titan Bat";
-			npc.displayName = "Titan Bat";
 			npc.width = 20;
 			npc.height = 14;
 			npc.damage = 25;
@@ -21,9 +19,14 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.value = 0f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 14;
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 			aiType = NPCID.GiantBat;
 			animationType = NPCID.GiantBat;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Titan Bat");
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 		}
 
 		

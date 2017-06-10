@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.TitanRock
 		int timer = 0;
 		public override void SetDefaults()
 		{
-			npc.name = "Spiked Titan";
-			npc.displayName = "Spiked Titan";
 			npc.width = 64;
 			npc.height = 64;
 			npc.damage = 25;
@@ -22,11 +20,16 @@ namespace ForgottenMemories.NPCs.TitanRock
 			npc.value = 0f;
 			npc.knockBackResist = 0f;
 			npc.aiStyle = 14;
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 			animationType = NPCID.GiantBat;
 			npc.lavaImmune = true;
 			aiType = NPCID.GiantBat;
 			npc.scale = 1.25f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Spiked Titan");
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 		}
 
 		

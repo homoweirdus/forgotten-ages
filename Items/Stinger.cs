@@ -15,13 +15,6 @@ namespace ForgottenMemories.Items
 				item.shoot = mod.ProjectileType("StingerRocket");
 				item.consumable = true;
 			}
-			
-			if (item.type == ItemID.Acorn && Config.VanillaBalance)
-			{
-				item.thrown = true;
-				item.damage = 5;
-				item.toolTip = "Right click to throw!";
-			}
 		}
 	}
 }

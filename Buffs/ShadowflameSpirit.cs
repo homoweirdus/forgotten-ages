@@ -7,8 +7,8 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			Main.buffName[Type] = "Shadowflame Spirit";
-			Main.buffTip[Type] = "A malevolent spirit fights for you";
+			DisplayName.SetDefault("Shadowflame Spirit");
+			Description.SetDefault("A malevolent spirit fights for you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.buffNoSave[Type] = true;
 		}

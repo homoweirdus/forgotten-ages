@@ -51,7 +51,7 @@ namespace ForgottenMemories.Items.Ranged
 				Vector2 newVect3 = origVect.RotatedBy(System.Math.PI / 30);
 				
 				int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
-				Main.projectile[p].GetModInfo<Info>(mod).Terra = true;
+				Main.projectile[p].GetGlobalProjectile<Info>(mod).Terra = true;
 				if (Main.rand.Next(2) == 0)
 				{
 					Projectile.NewProjectile(position.X, position.Y, newVect2.X, newVect2.Y, mod.ProjectileType("TerraEnergy"), (int)(damage * 0.5), knockBack, player.whoAmI, 0, 0);

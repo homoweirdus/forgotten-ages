@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.Ascension
         int counter = 0;
         public override void SetDefaults()
         {
-            npc.name = "Cosmos Hunter";
-            npc.displayName = "Cosmic Hunter";
             npc.width = 52;
             npc.height = 48;
             npc.damage = 125;
@@ -21,9 +19,13 @@ namespace ForgottenMemories.NPCs.Ascension
             npc.DeathSound = SoundID.NPCDeath1;
             npc.value = 6000f;
             npc.knockBackResist = .20f;
-            Main.npcFrameCount[npc.type] = 3;
-           
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Cosmos Hunter");
+            Main.npcFrameCount[npc.type] = 3;
+		}
 
        // public override float CanSpawn(NPCSpawnInfo spawnInfo)
        // {

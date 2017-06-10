@@ -14,11 +14,11 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = false;
-			Main.buffName[this.Type] = "Blood Leech";
+			DisplayName.SetDefault("Blood Leech");
 		}
 		public override void Update(NPC npc, ref int buffIndex)
 		{
-			npc.GetModInfo<NpcInfo>(mod).BloodLeech = true;
+			npc.GetGlobalNPC<GlobalNPC1>(mod).BloodLeech = true;
 		}
 	}
 }

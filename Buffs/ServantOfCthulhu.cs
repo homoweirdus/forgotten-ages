@@ -7,8 +7,8 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			Main.buffName[Type] = "Servant Of Cthulhu";
-			Main.buffTip[Type] = "Become the Cthulhu";
+			DisplayName.SetDefault("Servant Of Cthulhu");
+			Description.SetDefault("Become the Cthulhu");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.buffNoSave[Type] = true;
 		}

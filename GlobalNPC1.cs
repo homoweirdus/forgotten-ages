@@ -11,6 +11,8 @@ namespace ForgottenMemories
 	public class GlobalNPC1 : GlobalNPC
 	{
 		int DagNum = 0;
+		public bool BlightCelled = false;
+		public bool BloodLeech = false;
 		
 		public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
 		{
@@ -39,7 +41,7 @@ namespace ForgottenMemories
 				}
 			}
 			
-			if (npc.GetModInfo<NpcInfo>(mod).BlightCelled == true)
+			if (BlightCelled == true)
 			{
 				if (npc.lifeRegen > 0)
 					npc.lifeRegen = 0;
@@ -54,7 +56,7 @@ namespace ForgottenMemories
 					damage = num * 5;
 			}
 			
-			if (npc.GetModInfo<NpcInfo>(mod).BloodLeech == true)
+			if (BloodLeech == true)
 			{
 				if (npc.lifeRegen > 0)
 					npc.lifeRegen = 0;
@@ -130,7 +132,7 @@ namespace ForgottenMemories
 		
 		public override void NPCLoot(NPC npc)
 		{
-			if (npc.GetModInfo<NpcInfo>(mod).BloodLeech == true)
+			if (BloodLeech == true)
 			{
 				for (int i = 0; i <= DagNum; i++)
 				{

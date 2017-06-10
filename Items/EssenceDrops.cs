@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items
 	{
 		public override void NPCLoot(NPC npc)
 		{
-			if(npc.displayName == "Demon Eye" && Main.rand.Next(15) == 0) //Demon Eye Drop
+			if(npc.type == NPCID.DemonEye && Main.rand.Next(15) == 0) //Demon Eye Drop
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoaringEnergy"));
 			}
@@ -19,12 +19,12 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoaringEnergy"));
 			}
 			
-			if(npc.displayName == "Zombie" && Main.rand.Next(20) == 0) //Zombie drop
+			if(npc.type == NPCID.Zombie && Main.rand.Next(20) == 0) //Zombie drop
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"));
 			}
 
-			if(npc.displayName == "Skeleton" && Main.rand.Next(2) == 0) //Skeleton drop
+			if(npc.type == NPCID.Skeleton && Main.rand.Next(2) == 0) //Skeleton drop
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"));
 			}
@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"));
 			}
 			
-			if(npc.displayName == "Angry Bones" && Main.rand.Next(20) == 0)  //Angry Bones drop
+			if(npc.type == NPCID.AngryBones && Main.rand.Next(20) == 0)  //Angry Bones drop
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"));
 			}

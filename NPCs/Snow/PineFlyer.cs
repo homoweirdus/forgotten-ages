@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.Snow
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Pine Flyer";
-			npc.displayName = "Pine Flyer";
 			npc.width = 66;
 			npc.height = 42;
 			npc.damage = 25;
@@ -22,8 +20,13 @@ namespace ForgottenMemories.NPCs.Snow
 			npc.value = 60f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 14;
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 			aiType = NPCID.GiantBat;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Pine Flyer");
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 			animationType = NPCID.GiantBat;
 		}
 

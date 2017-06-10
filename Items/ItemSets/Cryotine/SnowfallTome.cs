@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 
 			item.damage = 15;
 			item.mana = 6;
-			item.ranged = true;
+			item.magic = true;
 			item.width = 88;
 			item.height = 88;
 			item.useTime = 15;

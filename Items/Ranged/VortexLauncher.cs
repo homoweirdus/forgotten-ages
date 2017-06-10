@@ -51,7 +51,7 @@ namespace ForgottenMemories.Items.Ranged
 			else
 			{
 				int k = Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
-				Main.projectile[k].GetModInfo<Info>(mod).Split = true;
+				Main.projectile[k].GetGlobalProjectile<Info>(mod).Split = true;
 				Main.projectile[k].timeLeft = 25;
 			}
 			return false;

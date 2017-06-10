@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.Night
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Night Bat";
-			npc.displayName = "Night Bat";
 			npc.width = 24;
 			npc.height = 18;
 			npc.damage = 15;
@@ -22,8 +20,13 @@ namespace ForgottenMemories.NPCs.Night
 			npc.value = 60f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 14;
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 			aiType = NPCID.GiantBat;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Night Bat");
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 			animationType = NPCID.GiantBat;
 		}
 

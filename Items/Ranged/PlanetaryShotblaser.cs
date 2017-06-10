@@ -69,7 +69,7 @@ namespace ForgottenMemories.Items.Ranged
 				spX += (float)Main.rand.Next(-40, 41) * 0.1f;
 				spY += (float)Main.rand.Next(-40, 41) * 0.1f;
 				int p = Projectile.NewProjectile(position.X, position.Y, spX, spY, type, damage, knockBack, player.whoAmI);
-				Main.projectile[p].GetModInfo<Info>(mod).Planetary = true;
+				Main.projectile[p].GetGlobalProjectile<Info>(mod).Planetary = true;
 			}
 			
 			return false;

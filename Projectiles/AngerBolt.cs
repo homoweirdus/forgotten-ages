@@ -25,6 +25,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.light = 0.5f;
 			projectile.scale = 1.2f;
 		}
+
 		
 		public override void AI()
 		{

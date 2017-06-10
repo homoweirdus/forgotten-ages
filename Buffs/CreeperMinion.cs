@@ -7,8 +7,8 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			Main.buffName[Type] = "Creeper minion";
-			Main.buffTip[Type] = "A creeper fights for you";
+			DisplayName.SetDefault("Creeper minion");
+			Description.SetDefault("A creeper fights for you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.buffNoSave[Type] = true;
 		}

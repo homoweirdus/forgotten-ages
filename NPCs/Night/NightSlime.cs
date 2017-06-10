@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.Night
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Night Slime";
-			npc.displayName = "Night Slime";
 			npc.width = 24;
 			npc.height = 18;
 			npc.damage = 15;
@@ -22,8 +20,13 @@ namespace ForgottenMemories.NPCs.Night
 			npc.value = 60f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 1;
-			Main.npcFrameCount[npc.type] = 16;
 			aiType = NPCID.BlueSlime;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Night Slime");
+			Main.npcFrameCount[npc.type] = 16;
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)

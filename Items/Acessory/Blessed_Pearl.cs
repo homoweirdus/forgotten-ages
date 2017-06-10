@@ -12,10 +12,6 @@ namespace ForgottenMemories.Items.Acessory
 
 			item.width = 24;
 			item.height = 28;
-
-			AddTooltip("Taking damage when under half of your max health will restore even more health");
-			AddTooltip("Increased length of invincibility");
-			AddTooltip("'Protect it, and it will protect you'");
 			item.value = 101500;
 			item.rare = 4;
 			item.accessory = true;
@@ -24,7 +20,10 @@ namespace ForgottenMemories.Items.Acessory
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Blessed Pearl");
-      Tooltip.SetDefault("Taking over 15 damage has a 1/2 chance to restore 15 health");
+      Tooltip.SetDefault("Taking over 15 damage has a 1/2 chance to restore 15 health"
+	  + "\nTaking damage when under half of your max health will restore even more health"
+	  +	"\nIncreased length of invincibility"
+	  + "\n'Protect it, and it will protect you'");
     }
 
 		

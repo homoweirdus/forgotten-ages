@@ -10,8 +10,6 @@ namespace ForgottenMemories.NPCs.Corruption
 	{
 		public override void SetDefaults()
 		{
-			npc.name = "Deathhopper";
-			npc.displayName = "Deathweed Hopper";
 			npc.width = 48;
 			npc.height = 36;
 			npc.damage = 26;
@@ -22,8 +20,13 @@ namespace ForgottenMemories.NPCs.Corruption
 			npc.value = 60f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 1;
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.BlueSlime];
 			aiType = NPCID.BlueSlime;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Deathweed Hopper");
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.BlueSlime];
 			animationType = NPCID.BlueSlime;
 		}
 

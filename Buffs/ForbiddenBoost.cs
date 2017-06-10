@@ -13,8 +13,8 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = false;
-			Main.buffName[Type] = "Forbidden Boon";
-			Main.buffTip[Type] = "Power at a cost";
+			DisplayName.SetDefault("Forbidden Boon");
+			Description.SetDefault("Power at a cost");
 		}
 		
 		public override void Update(Player player, ref int buffIndex)

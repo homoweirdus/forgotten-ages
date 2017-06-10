@@ -14,8 +14,8 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			Main.buffName[Type] = "Cosmic Boon";
-			Main.buffTip[Type] = "Increased defensive stats at the cost of damage and movement speed";
+			DisplayName.SetDefault("Cosmic Boon");
+			Description.SetDefault("Increased defensive stats at the cost of damage and movement speed");
 			Main.buffNoTimeDisplay[Type] = true;
 		}
 		
