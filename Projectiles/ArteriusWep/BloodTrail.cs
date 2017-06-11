@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Blood Trail";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = -1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
 			projectile.timeLeft = 70;
 			//projectile.extraUpdates = 1;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blood");
 		}
 		
 		public override void AI()

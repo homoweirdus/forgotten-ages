@@ -13,7 +13,6 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.Shuriken);
-			projectile.name = "Hellstone Glaive";
 			projectile.width = 22;
 			projectile.height = 22;
 			projectile.penetrate = 2;
@@ -22,7 +21,10 @@ namespace ForgottenMemories.Items.Throwing
 			projectile.timeLeft = 6000;
 		}
 
- 
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Explosive Shuriken");
+		}
 		
 		public override void Kill(int timeLeft)
 		{
@@ -65,7 +67,7 @@ namespace ForgottenMemories.Items.Throwing
 		}
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Hellstone Shuriken");
+      DisplayName.SetDefault("Explosive Shuriken");
       Tooltip.SetDefault("");
     }
 
@@ -84,10 +86,14 @@ namespace ForgottenMemories.Items.Throwing
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Hellstone Glaive";
 			projectile.width = 100;
 			projectile.height = 100;
 			projectile.aiStyle = 2;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Explosive Shuriken");
 		}
 
 		public override bool PreAI()

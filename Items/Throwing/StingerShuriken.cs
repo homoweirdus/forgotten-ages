@@ -13,7 +13,6 @@ namespace ForgottenMemories.Items.Throwing
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.Shuriken);
-            projectile.name = "Sting Shuriken";
             projectile.width = 22;       //projectile width
             projectile.height = 22;
             projectile.penetrate = 3;
@@ -22,7 +21,10 @@ namespace ForgottenMemories.Items.Throwing
             projectile.timeLeft = 6000;
         }
 
-
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Sting Shuriken");
+		}
 		
 		public override void Kill(int timeLeft)
         {

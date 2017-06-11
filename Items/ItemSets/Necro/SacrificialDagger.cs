@@ -13,7 +13,6 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.Shuriken);
-			projectile.name = "Sacrificial Dagger";
 			projectile.width = 22;
 			projectile.height = 22;
 			projectile.penetrate = 6;
@@ -22,7 +21,10 @@ namespace ForgottenMemories.Items.ItemSets.Necro
 			projectile.timeLeft = 6000;
 		}
 
-
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Sacrificial Dagger");
+		}
 		public override void Kill(int timeLeft)
 		{
 			if (Main.rand.Next(2) == 0)

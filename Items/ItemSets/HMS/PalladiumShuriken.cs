@@ -13,7 +13,6 @@ namespace ForgottenMemories.Items.ItemSets.HMS
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.Shuriken);
-            projectile.name = "Palladium Shuriken";
             projectile.width = 22;
             projectile.height = 22;
             projectile.penetrate = 4;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             projectile.ignoreWater = true;
             projectile.timeLeft = 6000;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Palladium Shuriken");
+		}
 
 
         public override void Kill(int timeLeft)

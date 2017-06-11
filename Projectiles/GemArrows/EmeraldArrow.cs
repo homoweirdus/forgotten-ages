@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles.GemArrows
     {
         public override void SetDefaults()
         {
-            projectile.name = "Emerald Arrow";
             projectile.width = 10;
             projectile.height = 32;
             projectile.aiStyle = 1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles.GemArrows
             projectile.extraUpdates = 1;
             aiType = 1;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Emerald Arrow");
+		}
 		
 		public override void Kill(int timeLeft)
 		{

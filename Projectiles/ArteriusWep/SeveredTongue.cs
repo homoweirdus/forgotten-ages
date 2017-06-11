@@ -14,7 +14,6 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
 		float rotate;
 		public override void SetDefaults()
 		{
-			projectile.name = "Severed Tongue";
 			projectile.width = 26;
 			projectile.height = 28;
 			projectile.alpha = 0;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
 			//projectile.extraUpdates = 1;
 			projectile.melee = true;
 			projectile.penetrate = -1;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Severed Tongue");
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

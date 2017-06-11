@@ -13,7 +13,6 @@ namespace ForgottenMemories.Items.ItemSets.Optic
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.Shuriken);
-            projectile.name = "Knife Of Cthulhu";
             projectile.penetrate = 3;
             projectile.width = 22;       //projectile width
             projectile.height = 34;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             projectile.ignoreWater = true;
             projectile.timeLeft = 6000;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Knife of Cthulhu");
+		}
 
         public override void Kill(int timeLeft)
         {

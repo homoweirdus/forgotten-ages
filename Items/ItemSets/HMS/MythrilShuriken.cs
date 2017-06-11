@@ -13,7 +13,6 @@ namespace ForgottenMemories.Items.ItemSets.HMS
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.Shuriken);
-            projectile.name = "Mythril Shuriken";
             projectile.width = 22;
             projectile.height = 22;
             projectile.penetrate = 6;
@@ -22,7 +21,10 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             projectile.timeLeft = 6000;
         }
 
-
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Mythril Shuriken");
+		}
 
         public override void Kill(int timeLeft)
         {

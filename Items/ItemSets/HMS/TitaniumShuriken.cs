@@ -12,7 +12,6 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 		int counter = 0;
         public override void SetDefaults()
         {
-            projectile.name = "Titanium Shuriken";
             projectile.width = 22;
             projectile.height = 22;
             projectile.penetrate = 4;
@@ -24,7 +23,10 @@ namespace ForgottenMemories.Items.ItemSets.HMS
             projectile.timeLeft = 25;
 		}
 
-
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Titanium Shuriken");
+		}
 
         public override void Kill(int timeLeft)
         {

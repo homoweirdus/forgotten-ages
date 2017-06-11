@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles.Arterius
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Explosive Blood";
 			projectile.width = 30;
 			projectile.height = 30;
 			projectile.aiStyle = -1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles.Arterius
 			projectile.extraUpdates = 1;
 			projectile.alpha = 255;
 			projectile.damage *= 2;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Homing Blood");
 		}
 		
 		public override void AI()

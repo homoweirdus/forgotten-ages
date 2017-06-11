@@ -21,6 +21,12 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
 			projectile.timeLeft = 360;
 		}
 		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blood Leech");
+		}
+		
+		
 		public override void AI()
 		{
 			int num1 = 25;

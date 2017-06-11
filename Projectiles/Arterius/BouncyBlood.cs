@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles.Arterius
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Bouncy Blood";
 			projectile.width = 44;
 			projectile.height = 44;
 			projectile.aiStyle = 1;
@@ -20,8 +19,13 @@ namespace ForgottenMemories.Projectiles.Arterius
 			projectile.penetrate = 3;
 			projectile.tileCollide = true;
 			projectile.timeLeft = 300;
-			Main.projFrames[projectile.type] = 4;
 			projectile.light = 0.5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Bouncy Blood");
+			Main.projFrames[projectile.type] = 4;
 		}
 		
 		public override void AI()

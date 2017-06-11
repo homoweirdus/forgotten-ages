@@ -13,13 +13,17 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.Shuriken);
-			projectile.name = "Adamantite Shuriken";
 			projectile.width = 22;
 			projectile.height = 22;
 			projectile.penetrate = 1;
 			aiType = ProjectileID.Shuriken;
 			projectile.ignoreWater = true;
 			projectile.timeLeft = 6000;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Adamantite Shuriken");
 		}
 
 

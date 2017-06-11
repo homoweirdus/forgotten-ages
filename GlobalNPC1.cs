@@ -14,6 +14,15 @@ namespace ForgottenMemories
 		public bool BlightCelled = false;
 		public bool BloodLeech = false;
 		
+		public override void ResetEffects(NPC npc)
+        {
+            DagNum = 0;
+			BlightCelled = false;
+			BloodLeech = false;
+        } 
+		
+		public override bool InstancePerEntity {get{return true;}}
+		
 		public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
 		{
 			if (player.GetModPlayer<MyPlayer>(mod).isGlitch)

@@ -23,6 +23,24 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool wtf = false;
 		public bool BlightedBow = false;
 		
+		public override void ResetEffects(NPC npc)
+        {
+            Paradox = false;
+			Mutilator = false;
+			TrueHR = false;
+			Cosmodium = false;
+			Shroom = false;
+			Flamethrower = false;
+			Terra = false;
+			Titanium = false;
+			Planetary = false;
+			Split = false;
+			wtf = false;
+			BlightedBow = false;
+        } 
+		
+		public override bool InstancePerEntity {get{return true;}}
+		
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
 			if (Flamethrower == true)

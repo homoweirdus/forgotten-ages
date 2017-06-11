@@ -24,6 +24,12 @@ namespace ForgottenMemories.Projectiles.Arterius
 			projectile.alpha = 255;
 		}
 		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blood");
+		}
+		
+		
 		public override void AI()
 		{
 			for (int i = 0; i < 5; i++)

@@ -13,7 +13,6 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.JestersArrow);
-			projectile.name = "Blessed Kunai";
 			projectile.width = 7;
 			projectile.height = 14;
 			projectile.penetrate = -1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Items.Throwing
 			projectile.ignoreWater = true;
 			projectile.timeLeft = 6000;
 			
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blessed Kunai");
 		}
 
 		

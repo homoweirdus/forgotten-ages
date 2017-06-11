@@ -23,9 +23,14 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
 			aiType = 266;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 18000;
-			Main.projFrames[projectile.type] = 6;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Living Blood");
+			Main.projFrames[projectile.type] = 6;
 			ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
 			ProjectileID.Sets.Homing[projectile.type] = true;
 		}
