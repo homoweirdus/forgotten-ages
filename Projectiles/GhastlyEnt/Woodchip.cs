@@ -9,7 +9,6 @@ public class Woodchip : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Woodchip";
 		projectile.width = 5;
 		projectile.height = 5;
 		projectile.penetrate = 1;
@@ -18,6 +17,11 @@ public class Woodchip : ModProjectile
 		projectile.aiStyle = 1;
         projectile.timeLeft = 90;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Woodchip");
+		}
 	
 	public override bool OnTileCollide(Vector2 oldVelocity)
 		{

@@ -18,8 +18,14 @@ public class LeafnadoFriendly : ModProjectile
         projectile.hostile = false;
 		projectile.scale = 1f;
 		projectile.tileCollide = true;
-		Main.projFrames[projectile.type] = 6;
+		
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Leafnado");
+			Main.projFrames[projectile.type] = 6;
+		}
 	
 	
 			public override void AI()
@@ -30,6 +36,11 @@ public class LeafnadoFriendly : ModProjectile
                 projectile.frameCounter = 0;
                 projectile.frame = (projectile.frame + 1) % 4;
             } 
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.AddBuff(186, 500, false);
 		}
 }
 }	

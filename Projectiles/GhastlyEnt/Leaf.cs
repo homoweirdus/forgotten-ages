@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Leaf";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.penetrate = -1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 			projectile.hostile = false;
 			projectile.scale = 1f;
 			Main.projFrames[projectile.type] = 5;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Leaf");
 		}
 		
 		

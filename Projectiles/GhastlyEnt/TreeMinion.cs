@@ -12,16 +12,25 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.Raven);
-            projectile.name = "Tree Minion";
             Main.projFrames[projectile.type] = 1; 
             Main.projPet[projectile.type] = true;
             ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
-            aiType = ProjectileID.Raven;
-            drawOffsetX = 10; 
-            drawOriginOffsetY = 10; 
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Tree Minion");
+            aiType = ProjectileID.Raven;
+            drawOffsetX = 10; 
+            drawOriginOffsetY = 10; 
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.AddBuff(186, 500, false);
+		}
 		
 		public override void AI()
 		{

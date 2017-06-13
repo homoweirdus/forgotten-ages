@@ -9,7 +9,6 @@ public class SapBallFriendly : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Corrosive Sap";
 		projectile.width = 18;
 		projectile.height = 30;
 		projectile.penetrate = 1;
@@ -18,8 +17,13 @@ public class SapBallFriendly : ModProjectile
 		projectile.melee = true;
 		projectile.alpha = 0;
 		projectile.aiStyle = 1;
-		aiType = ProjectileID.Bullet;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Corrosive Sap");	
+			aiType = ProjectileID.Bullet;
+		}
 	
 	
 		public override void AI()

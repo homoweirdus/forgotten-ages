@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ghastly Knife";
 			projectile.width = 10;
 			projectile.height = 30;
 			projectile.aiStyle = 1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 			projectile.thrown = true;
 			projectile.penetrate = 1;
 			projectile.timeLeft = 1000;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ghastly Knife");
 		}
 		
 		public override void Kill(int timeLeft)
@@ -66,6 +70,11 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 			{
 				Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			}
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.AddBuff(186, 500, false);
 		}
 	}
 }
