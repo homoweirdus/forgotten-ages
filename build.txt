@@ -4,7 +4,7 @@ version = 0.3
 
 displayName = Beyond The Forgotten Ages
 
-homepage = https://discord.gg/sYXXQHh
+homepage = https://forums.terraria.org/index.php?threads/the-beyond-the-forgotten-ages-forum-post.58568/
 
 hideCode = false
 
