@@ -13,10 +13,12 @@ namespace ForgottenMemories.Projectiles.OreArrows
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.WoodenArrowFriendly);
-			projectile.name = "Iron Arrow";
             projectile.penetrate = 1;
 		}
 
-	
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Iron Arrow");
+		}
     }
 }

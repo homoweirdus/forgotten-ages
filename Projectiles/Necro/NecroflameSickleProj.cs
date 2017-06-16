@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles.Necro
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Necroflame Sickle";
 			projectile.width = 40;
 			projectile.height = 40;
 			projectile.aiStyle = 3;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles.Necro
 			projectile.extraUpdates = 3;
 			projectile.tileCollide = false;
 			projectile.alpha = 150;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Necroflame Sickle");
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

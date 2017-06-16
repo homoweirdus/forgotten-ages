@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles.Summon
     	public override void SetDefaults()
 		{
 			projectile.netImportant = true;
-			projectile.name = "Blighted Orb";
 			projectile.width = 46;
 			projectile.height = 46;
 			projectile.friendly = true;
@@ -23,6 +22,11 @@ namespace ForgottenMemories.Projectiles.Summon
 			projectile.timeLeft = 18000;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blighted Orb");
 			ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
 			ProjectileID.Sets.Homing[projectile.type] = true;
 		}

@@ -8,7 +8,6 @@ public class Leafnado : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Leafnado";
 		projectile.width = 20;
 		projectile.height = 20;
 		projectile.aiStyle = 0;
@@ -17,8 +16,12 @@ public class Leafnado : ModProjectile
         projectile.friendly = false;
 		projectile.scale = 1f;
 		projectile.tileCollide = false;
-		Main.projFrames[projectile.type] = 6;
 	}
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Leafnado");
+		Main.projFrames[projectile.type] = 6;
+		}
 	
 	
 			public override void AI()

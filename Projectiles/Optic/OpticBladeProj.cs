@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles.Optic
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Disconnected Eyeball";
 			projectile.width = 16;
 			projectile.height = 16;
 			projectile.aiStyle = 14;
@@ -19,6 +18,11 @@ namespace ForgottenMemories.Projectiles.Optic
 			projectile.extraUpdates = 1;
 			projectile.melee = true;
 			projectile.friendly = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Disconnected Eyeball");
 		}
 		
 		   public override void AI()

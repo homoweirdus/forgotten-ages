@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles.GhastlyEntBoss
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Green Apple";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = 2;
@@ -19,6 +18,10 @@ namespace ForgottenMemories.Projectiles.GhastlyEntBoss
 			projectile.hostile = true;
 			projectile.friendly = false;
 			projectile.scale = 1.2f;
+		}
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Green Apple");
 		}
 		
 		public override void Kill(int timeLeft)

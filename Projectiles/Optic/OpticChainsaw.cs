@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles.Optic
     {
         public override void SetDefaults()
         {
-            projectile.name = "Optic Chainsaw";
             projectile.width = 22;
             projectile.height = 22;
             projectile.aiStyle = 20;
@@ -21,5 +20,10 @@ namespace ForgottenMemories.Projectiles.Optic
             projectile.ownerHitCheck = true; //so you can't hit enemies through walls
             projectile.melee = true;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Optic Chainsaw");
+		}
     }
 }

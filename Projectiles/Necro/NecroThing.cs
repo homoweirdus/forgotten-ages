@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles.Necro
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Necro Thing";
 			projectile.width = 50;
 			projectile.height = 50;
 			projectile.aiStyle = -1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles.Necro
 			projectile.timeLeft = 20;
 			projectile.extraUpdates = 1;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Necrotic Magic");
 		}
 		
 		public override void AI()

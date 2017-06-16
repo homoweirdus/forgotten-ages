@@ -13,7 +13,6 @@ namespace ForgottenMemories.Projectiles.Magic
         {
             projectile.hostile = false;
             projectile.magic = true;
-            projectile.name = "Cosmodium Bolt";
             projectile.width = 10;
             projectile.height = 10;
             projectile.aiStyle = -1;
@@ -23,6 +22,11 @@ namespace ForgottenMemories.Projectiles.Magic
             projectile.timeLeft = 300;
 
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Cosmodium Bolt");
+		}
 
         public override void Kill(int timeLeft)
         {

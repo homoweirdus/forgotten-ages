@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles.Summon
         bool shot = false;
         public override void SetDefaults()
         {
-            projectile.name = "Mechanical Turret";
 			projectile.width = 50;
             projectile.height = 42;
             projectile.timeLeft = 5000;
@@ -22,8 +21,13 @@ namespace ForgottenMemories.Projectiles.Summon
             projectile.ignoreWater = true;
 			projectile.minion = true;
 			projectile.minionSlots = 0;
-			Main.projFrames[projectile.type] = 3;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Mechanical Turret");
+			Main.projFrames[projectile.type] = 3;
+		}
 
         public override bool OnTileCollide(Vector2 oldVelocity)
         {

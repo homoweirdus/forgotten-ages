@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles.Necro
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Necroflame Drill";
 			projectile.width = 22;
 			projectile.height = 22;
 			projectile.aiStyle = 20;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles.Necro
 			projectile.hide = true;
 			projectile.ownerHitCheck = true; 
 			projectile.melee = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Necroflame Drill");
 		}
 		
 		public override void AI()

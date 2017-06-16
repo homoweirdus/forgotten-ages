@@ -8,7 +8,6 @@ public class ForestEnergy : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Forest Blast";
 		projectile.width = 20;
 		projectile.height = 20;
 		projectile.aiStyle = 0;
@@ -18,6 +17,11 @@ public class ForestEnergy : ModProjectile
 		projectile.alpha = 100;
 		projectile.scale = 1.5f;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Forest Blast");
+		}
 	public override bool PreAI()
 {
     projectile.rotation += 0.05f;

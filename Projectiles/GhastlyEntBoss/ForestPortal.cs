@@ -9,7 +9,6 @@ public class ForestPortal : ModProjectile
 	int timer = 0;
 	public override void SetDefaults()
 	{
-		projectile.name = "Forest Portal";
 		projectile.width = 32;
 		projectile.height = 32;
 		projectile.aiStyle = 0;
@@ -18,9 +17,14 @@ public class ForestPortal : ModProjectile
         projectile.friendly = false;
 		projectile.scale = 1.1f;
 		projectile.tileCollide = false;
-		Main.projFrames[projectile.type] = 4;
 		projectile.timeLeft = 500;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Forest Portal");
+		Main.projFrames[projectile.type] = 4;
+		}
 	
 			public override void AI()
         {

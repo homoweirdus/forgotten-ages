@@ -9,7 +9,6 @@ namespace ForgottenMemories.Projectiles.Summon
 		public override void SetDefaults()
 		{
 			projectile.netImportant = true;
-			projectile.name = "BlightstoneDragon";
 			projectile.width = 60;
 			projectile.height = 70;
 			Main.projFrames[projectile.type] = 4;
@@ -21,12 +20,17 @@ namespace ForgottenMemories.Projectiles.Summon
 			projectile.timeLeft = 18000;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
-			ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
-			ProjectileID.Sets.Homing[projectile.type] = true;
 			inertia = 20f;
 			shootCool = 45f;
 			shoot = mod.ProjectileType("BlightBolt");
 			shootSpeed = 5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blightstone Dragon");
+			ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
+			ProjectileID.Sets.Homing[projectile.type] = true;
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

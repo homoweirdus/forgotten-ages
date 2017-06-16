@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles.OldProjectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Old Boomerang";
             projectile.width = 30;
             projectile.height = 30;
             projectile.aiStyle = 3;
@@ -21,5 +20,10 @@ namespace ForgottenMemories.Projectiles.OldProjectiles
             projectile.timeLeft = 600;   
            
         } 
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Old Boomerang");
+		}
     }
 }

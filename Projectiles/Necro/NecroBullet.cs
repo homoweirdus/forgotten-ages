@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles.Necro
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Necro Bullet";
 			projectile.width = 5;
 			projectile.height = 5;
 			projectile.aiStyle = -1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles.Necro
 			projectile.timeLeft = 600;
 			projectile.extraUpdates = 1;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Necro Bullet");
 		}
 		
 		public override void AI()

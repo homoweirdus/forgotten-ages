@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles.Necro
 		int timer = 0;
 		public override void SetDefaults()
 		{
-			projectile.name = "Necro Spear";
 			projectile.width = 19;
 			projectile.height = 19;
 			projectile.scale = 1.1f;
@@ -24,6 +23,11 @@ namespace ForgottenMemories.Projectiles.Necro
 			projectile.melee = true;
 			projectile.timeLeft = 90;
 			projectile.hide = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Necro Spear");
 		}
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

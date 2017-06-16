@@ -8,7 +8,6 @@ public class MiniSap : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Corrosive Sap";
 		projectile.width = 10;
 		projectile.height = 10;
 		projectile.aiStyle = 2;
@@ -18,6 +17,11 @@ public class MiniSap : ModProjectile
 		projectile.alpha = 0;
 		projectile.timeLeft = 100;
 	}
+	
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Corrosive Sap");
+		}
 	
 			public override void AI()
 	{

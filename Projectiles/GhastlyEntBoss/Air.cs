@@ -8,7 +8,6 @@ public class Air : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Spit Air";
 		projectile.width = 16;
 		projectile.height = 16;
 		projectile.aiStyle = 0;
@@ -17,6 +16,11 @@ public class Air : ModProjectile
         projectile.friendly = false;
 		projectile.scale = 1.1f;
 		projectile.tileCollide = false;
+	}
+	
+	public override void SetStaticDefaults()
+	{
+		DisplayName.SetDefault("Spit Air");
 		Main.projFrames[projectile.type] = 4;
 	}
 	

@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles.Optic
     {
         public override void SetDefaults()
         {
-            projectile.name = "Eye Poker";
             projectile.width = 19;
             projectile.height = 19;
             projectile.scale = 1.1f;
@@ -25,6 +24,11 @@ namespace ForgottenMemories.Projectiles.Optic
             projectile.timeLeft = 90;
             projectile.hide = true;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Eye Poker");
+		}
         public override void AI()
         {
             Main.player[projectile.owner].direction = projectile.direction;
