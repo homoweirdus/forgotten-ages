@@ -21,7 +21,9 @@ namespace ForgottenMemories.Tiles
             soundType = 27;
             soundStyle = 2;
             drop = mod.ItemType("CosmodiumOre");
-            AddMapEntry(new Color(19, 163, 189));
+			ModTranslation name = CreateMapEntryName();
+			name.SetDefault("Cosmodium Ore");
+            AddMapEntry(new Color(19, 163, 189), name);
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

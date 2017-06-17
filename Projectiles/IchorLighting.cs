@@ -14,7 +14,6 @@ namespace ForgottenMemories.Projectiles
 		float ok;
 		public override void SetDefaults()
 		{
-			projectile.name = "Ichor Lightning";
 			projectile.width = 14;
 			projectile.height = 14;
 			projectile.melee = true;
@@ -30,6 +29,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = false;
 			projectile.extraUpdates = 4;
 			projectile.timeLeft = 600;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ichor Lightning");
 		}
 		
 		public override bool? Colliding(Rectangle myRect, Rectangle targetRect)

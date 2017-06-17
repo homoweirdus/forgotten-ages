@@ -13,7 +13,6 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
     	public override void SetDefaults()
 		{
 			projectile.netImportant = true;
-			projectile.name = "Living Blood";
 			projectile.CloneDefaults(ProjectileID.BabySlime);
 			projectile.friendly = true;
 			Main.projPet[projectile.type] = true;

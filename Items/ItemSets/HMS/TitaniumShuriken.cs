@@ -63,11 +63,10 @@ namespace ForgottenMemories.Items.ItemSets.HMS
 
         public override void SetDefaults()
         {
-
             item.damage = 34;
             item.shoot = mod.ProjectileType("TitaniumShurikenP");
-            item.name = "Titanium Shuriken";
 		}
+		
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Titanium Shuriken");

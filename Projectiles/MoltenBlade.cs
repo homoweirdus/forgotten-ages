@@ -14,7 +14,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Molten Blade";
 			projectile.width = 30;
 			projectile.height = 30;
 			projectile.aiStyle = 1;
@@ -25,6 +24,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 1000;
 			projectile.light = 0.5f;
 			projectile.scale = 1f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Molten Blade");
 		}
 		
 		public override void AI()

@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Terra Explosion";
 			projectile.width = 98;
 			projectile.height = 98;
 			projectile.aiStyle = -1;
@@ -20,8 +19,13 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 15;
 			projectile.light = 0.5f;
 			projectile.tileCollide = false;
-			Main.projFrames[projectile.type] = 7;
 			projectile.scale = 1.25f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Terra Explosion");
+			Main.projFrames[projectile.type] = 7;
 		}
 		
 		public override void AI()

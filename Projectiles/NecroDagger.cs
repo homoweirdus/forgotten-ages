@@ -12,16 +12,20 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Necro Dagger";
             projectile.width = 28;
             projectile.height = 28;
-            projectile.aiStyle = -1;
+            projectile.aiStyle = 1;
             projectile.friendly = true;
             projectile.thrown = true;
             projectile.penetrate = -1;
 			projectile.tileCollide = true;
 			projectile.scale = 0.8f;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Necro Dagger");
+		}
 		
 		   public override void AI()
 		{
@@ -32,16 +36,6 @@ namespace ForgottenMemories.Projectiles
 			Main.dust[dust].scale = 0.5f;
 			Main.dust[dust].noGravity = true;
 			}
-			projectile.rotation += 0.5f;
-			if (projectile.velocity.X > 0)
-			{
-				projectile.velocity.X -= 0.08f;
-			}
-			if (projectile.velocity.X < 0)
-			{
-				projectile.velocity.X += 0.08f;
-			}
-			projectile.velocity.Y += 0.3f;
 		}
 		
 		public override void Kill(int timeLeft)

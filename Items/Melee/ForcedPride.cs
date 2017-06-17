@@ -14,10 +14,6 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
-
-			AddTooltip("Striking a low health enemy with the blade will create more sparks, restore some health, and greatly lower their defense");
-			AddTooltip("Killing an enemy with the blade will restore even more health");
-			AddTooltip("A blade fit for a god");
 			item.useTime = 12;
 			item.useAnimation = 12;
 			item.useStyle = 1;
@@ -33,7 +29,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Forced Pride");
-      Tooltip.SetDefault("Striking an enemy with the blade will unleash piercing and explosive sparks");
+      Tooltip.SetDefault("Striking an enemy with the blade will unleash piercing and explosive sparks \nStriking a low health enemy with the blade will create more sparks, restore some health, and greatly lower their defense \nKilling an enemy with the blade will restore even more health \n'A blade fit for a god'");
     }
 
 
@@ -43,8 +39,6 @@ namespace ForgottenMemories.Items.Melee
 			recipe.AddIngredient(null, "RoyalCrusher", 1);
 			recipe.AddIngredient(ItemID.CrystalShard, 20);
 			recipe.AddIngredient(ItemID.BeetleHusk, 5);
-			recipe.AddIngredient(ItemID.ChristmasTreeSword, 1);
-			recipe.AddIngredient(1826, 1);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

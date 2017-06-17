@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Magma Glob";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = 0;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.ignoreWater = false;
 			projectile.timeLeft = 1000;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Magma Glob");
 		}
 		
 		public override void AI()
@@ -54,7 +58,6 @@ namespace ForgottenMemories.Projectiles
 			{
 				Vector2 vector2 = new Vector2(4, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360)));
 				int kek = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, vector2.X, vector2.Y, ProjectileID.MolotovFire, (int)(projectile.damage/2), 5f, projectile.owner);
-				Main.projectile[kek].name = "Magma Ember";
 				Main.projectile[kek].thrown = false;
 				Main.projectile[kek].magic = true;
 			}

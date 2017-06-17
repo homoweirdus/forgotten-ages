@@ -20,8 +20,6 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;  //Dictates whether this is a melee-class weapon.
 			item.noMelee = true;
 			item.noUseGraphic = true;
-
-			AddTooltip("Greatly reduces the defense of a low hp enemy");
 			item.useAnimation = 30;
 			item.useStyle = 5;
 			item.useTime = 30;
@@ -39,7 +37,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("The Finisher");
-      Tooltip.SetDefault("Creates energy that chains from enemy to enemy");
+      Tooltip.SetDefault("Deals more damage to and reduces the defense of a low hp enemy");
     }
 
 		
@@ -59,7 +57,6 @@ namespace ForgottenMemories.Items.Melee
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(550, 8);
-			recipe.AddIngredient(null,"MikePenceSpear", 1);
 			recipe.AddIngredient(ItemID.CrystalShard, 8);
 			recipe.AddIngredient(ItemID.BeetleHusk, 5);
 			recipe.AddTile(TileID.MythrilAnvil);

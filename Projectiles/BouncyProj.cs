@@ -12,10 +12,14 @@ namespace ForgottenMemories.Projectiles
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.JungleYoyo);
-            projectile.name = "Night Spiral";
             aiType = ProjectileID.JungleYoyo;
             projectile.aiStyle = 99;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Night Spiral");
+		}
 
         public override void AI()
         {

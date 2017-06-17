@@ -8,7 +8,6 @@ namespace ForgottenMemories.Projectiles {
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Solar Detonator";
 			projectile.width = 25;
 			projectile.height = 25;
 			projectile.scale = 2f;
@@ -17,10 +16,15 @@ namespace ForgottenMemories.Projectiles {
 			projectile.melee = true;
 			projectile.friendly = true;
 			projectile.timeLeft = 10;
-			Main.projFrames[projectile.type] = 5;
 			projectile.extraUpdates = 1;
 			projectile.tileCollide = false;
 			projectile.light = 0.5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Solar Detonator");
+			Main.projFrames[projectile.type] = 5;
 		}
 		
 		public override void Kill(int timeLeft)

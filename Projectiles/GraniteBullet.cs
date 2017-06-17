@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Granite Shot";
             projectile.width = 1;
             projectile.height = 20;
             projectile.aiStyle = -1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
             projectile.extraUpdates = 1;
             projectile.alpha = 0;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Granite Shot");
+		}
 		
 		public override void Kill(int timeLeft)
 		{

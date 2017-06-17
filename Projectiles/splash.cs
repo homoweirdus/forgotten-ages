@@ -18,7 +18,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 60;
 			projectile.extraUpdates = 3;
 			projectile.alpha = 255;
-			projectile.name = "Splash";
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Splash");
 		}
 		
 

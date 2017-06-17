@@ -17,8 +17,6 @@ namespace ForgottenMemories.Items.ItemSets.LunarAltHelms
 
 			item.width = 18;
 			item.height = 18;
-
-			AddTooltip("Increases minion damage by 22%");
 			item.value = 0;
 			item.rare = 10;
 			item.defense = 16;
@@ -27,7 +25,7 @@ namespace ForgottenMemories.Items.ItemSets.LunarAltHelms
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Stardust Crown");
-      Tooltip.SetDefault("Increases your max number of turrets by 1");
+      Tooltip.SetDefault("Increases your max number of turrets by 1 \nIncreases minion damage by 22%");
     }
 
 

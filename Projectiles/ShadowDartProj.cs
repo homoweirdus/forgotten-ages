@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
 		int timer = 0;
         public override void SetDefaults()
         {
-            projectile.name = "Shadow Dart";
             projectile.width = 14;
             projectile.height = 28;
             projectile.aiStyle = 1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
             projectile.penetrate = -1;
             projectile.timeLeft = 600;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Shadow Dart");
+		}
 		
 		
 		public override void Kill(int timeLeft)

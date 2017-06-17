@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Coral Boomerang";
             projectile.width = 30;
             projectile.height = 30;
             projectile.aiStyle = 3;
@@ -21,5 +20,10 @@ namespace ForgottenMemories.Projectiles
             projectile.timeLeft = 600;   
            
         } 
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Coral Boomerang");
+		}
     }
 }

@@ -9,7 +9,6 @@ namespace ForgottenMemories.Projectiles {
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "PowerKnife";
 		projectile.width = 15;
 		projectile.height = 28;
 		projectile.aiStyle = 2;
@@ -18,6 +17,11 @@ namespace ForgottenMemories.Projectiles {
 		projectile.friendly = true;
         projectile.timeLeft = 3000;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Power Knife");
+		}
 	
 	public override void Kill(int timeLeft)
         {

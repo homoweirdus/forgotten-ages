@@ -14,7 +14,6 @@ namespace ForgottenMemories.Projectiles
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.BabySlime);
-            projectile.name = "Slime Guard";
             Main.projPet[projectile.type] = true;
             ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
             aiType = ProjectileID.BabySlime;
@@ -25,6 +24,11 @@ namespace ForgottenMemories.Projectiles
 			Main.projFrames[projectile.type] = 6;
 			projectile.timeLeft = 300;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Slime Guard");
+		}
 		
 		public override void Kill(int timeLeft)
 		{

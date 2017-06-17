@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Red Slash";
 			projectile.width = 36;
 			projectile.height = 8;
 			projectile.aiStyle = 1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 20;
 			projectile.timeLeft = 30;
 			projectile.scale = 1.5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Red Slash");
 		}
 		
 		

@@ -12,16 +12,21 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Climax Bolt";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.melee = true;
 			projectile.penetrate = -1;
-			projectile.timeLeft = 200;
+			projectile.timeLeft = 60;
+			projectile.extraUpdates = 2;
 			projectile.alpha = 255;
 			projectile.tileCollide = false;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Climax Bolt");
 		}
 		
 		public override void AI()

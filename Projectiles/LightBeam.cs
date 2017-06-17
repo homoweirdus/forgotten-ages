@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Light Beam";
 			projectile.width = 7;
 			projectile.height = 7;
 			projectile.friendly = true;
@@ -25,6 +24,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 3;
 			projectile.usesLocalNPCImmunity = true;
 			projectile.localNPCHitCooldown = 60;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Light Beam");
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

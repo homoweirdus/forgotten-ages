@@ -9,7 +9,6 @@ public class SparkBoom : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Spark Boom";
 		projectile.width = 100;
 		projectile.height = 100;
 		projectile.aiStyle = 2;
@@ -20,6 +19,12 @@ public class SparkBoom : ModProjectile
         projectile.alpha = 255;
         projectile.tileCollide = false;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Spark Boom");
+		}
+		
     public override bool PreAI()
 {
     int amountOfDust = 5;

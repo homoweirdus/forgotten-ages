@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
 		bool alreadyHit = false;
 		public override void SetDefaults()
 		{
-			projectile.name = "Dying Reality Bolt";
 			projectile.width = 2;
 			projectile.height = 2;
 			projectile.aiStyle = -1;
@@ -25,6 +24,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 1;
 			projectile.light = 0.5f;
 			projectile.scale = 1.2f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Reality Fury");
 		}
 		
 		public override void AI()

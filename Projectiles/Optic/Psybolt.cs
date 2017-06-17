@@ -13,7 +13,6 @@ namespace ForgottenMemories.Projectiles.Optic
 
         public override void SetDefaults()
         {
-            projectile.name = "Psychic Bolt";
             projectile.width = 8;
             projectile.height = 8;
             projectile.alpha = 255;
@@ -29,6 +28,11 @@ namespace ForgottenMemories.Projectiles.Optic
             Main.projFrames[projectile.type] = 3;
             ProjectileID.Sets.Homing[projectile.type] = true;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Psychic Bolt");
+		}
 
         public override void AI()
         {

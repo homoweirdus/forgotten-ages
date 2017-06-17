@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
 		int index1 = 999;
 		public override void SetDefaults()
 		{
-			projectile.name = "Blight Orb";
 			projectile.width = 5;
 			projectile.height = 5;
 			projectile.aiStyle = -1;
@@ -19,6 +18,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = -1;
 			ProjectileID.Sets.MinionShot[projectile.type] = true;
 			projectile.timeLeft = 360;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blight Orb");
 		}
 		
 		public override void AI()

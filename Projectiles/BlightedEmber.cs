@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "BlightedEmber";
 			projectile.width = 2;
 			projectile.height = 2;
 			projectile.friendly = true;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 3;
 			projectile.timeLeft = 30;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blighted Ember");
 		}
 		
 		public override void AI()

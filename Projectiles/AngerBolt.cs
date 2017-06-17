@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Anger Bolt";
 			projectile.width = 16;
 			projectile.height = 16;
 			projectile.aiStyle = -1;
@@ -24,6 +23,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 1;
 			projectile.light = 0.5f;
 			projectile.scale = 1.2f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Anger Bolt");
 		}
 
 		
@@ -51,7 +55,6 @@ namespace ForgottenMemories.Projectiles
         {
 			int ree = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 0f, 612, projectile.damage, 5f, projectile.owner);
 			Main.projectile[ree].melee = false;
-			Main.projectile[ree].name = "Anger Blast";
 			Main.projectile[ree].penetrate = -1;
 		}
 	}

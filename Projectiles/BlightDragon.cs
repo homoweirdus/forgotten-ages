@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Blighted Drake";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = -1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 100;
 			Main.projFrames[projectile.type] = 4;
 			projectile.tileCollide = false;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Cursed Soul");
 		}
 		
 		public override void AI()

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ocean Bolt";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = -1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 1;
 			projectile.timeLeft = 60;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ocean Bolt");
 		}
 		
 		public override void AI()

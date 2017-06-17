@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Rock";
 			projectile.width = 12;
 			projectile.height = 14;
 			projectile.aiStyle = 1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
 			projectile.timeLeft = 40;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Rock");
 			aiType = ProjectileID.Bullet;
 		}
 		

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Terra Energy";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = -1;
@@ -23,6 +22,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 255;
 			projectile.tileCollide = true;
 			projectile.extraUpdates = 3;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Terra Energy");
 		}
 		
 		public override void AI()

@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Solar Ball";
 			projectile.width = 30;
 			projectile.height = 30;
 			projectile.aiStyle = -1;
@@ -20,9 +19,14 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 4;
 			projectile.light = 0.5f;
 			projectile.tileCollide = false;
-			Main.projFrames[projectile.type] = 4;
 			projectile.scale = 1f;
 			projectile.alpha = 100;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Solar Ball");
+			Main.projFrames[projectile.type] = 4;
 		}
 
 		public override void AI()

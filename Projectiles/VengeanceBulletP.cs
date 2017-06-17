@@ -14,7 +14,6 @@ namespace ForgottenMemories.Projectiles
         {
             projectile.hostile = false;
             projectile.magic = true;
-            projectile.name = "vengeance bullets";
             projectile.width = 2;
             projectile.height = 2;
 			projectile.alpha = 255;
@@ -27,6 +26,11 @@ namespace ForgottenMemories.Projectiles
             projectile.timeLeft = 300;
 			projectile.light = 0.2f;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Vengeance Bullet");
+		}
 		
 		public override void Kill(int timeLeft)
 		{

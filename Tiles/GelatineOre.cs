@@ -13,8 +13,10 @@ namespace ForgottenMemories.Tiles
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
 			dustType = 252;
+			ModTranslation name = CreateMapEntryName();
+			name.SetDefault("Gelatine Ore");
 			drop = mod.ItemType("GelatineOreItem");
-			AddMapEntry(new Color(0, 0, 255));
+			AddMapEntry(new Color(0, 0, 255), name);
 			soundType = 21;
 		}
 

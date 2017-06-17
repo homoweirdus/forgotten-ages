@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Granite Spray";
 			projectile.width = 6;
 			projectile.height = 6;
 			projectile.friendly = true;
@@ -19,6 +18,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 2;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Granite Spray");
 		}
 
 		public override void AI()

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "X-Flow Star";
 			projectile.width = 40;
 			projectile.height = 40;
 			projectile.aiStyle = -1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 260;
 			projectile.alpha = 155;
 			projectile.tileCollide = false;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("X-Flow Star");
 		}
 		
 		public override void AI()

@@ -9,7 +9,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Bloodmist";
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.aiStyle = 0;
@@ -19,6 +18,10 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 100;
 			projectile.timeLeft = 100;
 			projectile.scale = 1.5f;
+		}
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Bloodmist");
 		}
 		public override bool PreAI()
 		{

@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ivory Laser";
 			projectile.width = 4;
 			projectile.height = 4;
 			projectile.aiStyle = -1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 100;
 			projectile.alpha = 255;
 			projectile.tileCollide = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ivory Laser");
 		}
 		
 		public override void AI()

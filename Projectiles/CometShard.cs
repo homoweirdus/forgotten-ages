@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "CometShard";
 			projectile.width = 24;
 			projectile.height = 22;
 			projectile.aiStyle = -1;
@@ -23,6 +22,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 360;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Comet Shard");
 		}
 		
 		public override void AI()

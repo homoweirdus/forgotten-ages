@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Blighted Boom";
 			projectile.width = 100;
 			projectile.height = 100;
 			projectile.aiStyle = 2;
@@ -19,6 +18,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.alpha = 255;
 			projectile.tileCollide = false;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blighted Fire");
 		}
 		public override bool PreAI()
 		{

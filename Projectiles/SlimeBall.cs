@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Slime Ball";
 			projectile.width = 14;
 			projectile.height = 14;
 			projectile.aiStyle = 14;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.magic = true;
 			projectile.penetrate = 2;
 			projectile.timeLeft = 100;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Slime Ball");
 		}
 		
 		

@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Dark Wave";
 			projectile.width = 52;
 			projectile.height = 40;
 			projectile.aiStyle = 1;
@@ -24,6 +23,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.light = 0.5f;
 			aiType = ProjectileID.Bullet;
 			projectile.tileCollide = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Dark Wave");
 		}
 		
 		public override void AI()

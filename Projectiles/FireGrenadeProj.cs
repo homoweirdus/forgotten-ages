@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Fire Grenade";
 			projectile.width = 14;
 			projectile.height = 14;
 			projectile.aiStyle = 14;
@@ -18,6 +17,10 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 300;
 			projectile.thrown = true;
 			projectile.friendly = true;
+		}
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Fire Grenade");
 		}
 		public override void Kill(int timeLeft)
 		{

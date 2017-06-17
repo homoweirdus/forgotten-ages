@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Malevolent explosion";
 			projectile.width = 98;
 			projectile.height = 98;
 			projectile.aiStyle = -1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.light = 0.5f;
 			projectile.tileCollide = false;
 			Main.projFrames[projectile.type] = 7;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Malevolent Explosion");
 		}
 		
 		public override void AI()

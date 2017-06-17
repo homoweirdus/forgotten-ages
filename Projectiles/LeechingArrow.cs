@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Leeching Arrow";
 			projectile.width = 10;
 			projectile.height = 20;
 			projectile.penetrate = 1;
@@ -18,6 +17,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.alpha = 0;
 			projectile.aiStyle = 1;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Leeching Arrow");
 		}
 		
 		   public override void AI()

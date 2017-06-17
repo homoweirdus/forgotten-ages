@@ -100,7 +100,7 @@ namespace ForgottenMemories.NPCs.Town
 			int demo = NPC.FindFirstNPC(NPCID.Demolitionist);
 			if (demo >= 0 && Main.rand.Next(4) == 0)
 			{
-				return "Wow, " + Main.npc[demo].displayName + " thinks blowing things up is fun. What a loser";
+				return "Wow, " +  Main.npc[demo].GivenName + " thinks blowing things up is fun. What a loser";
 			}
 			switch (Main.rand.Next(3))
 			{
@@ -115,7 +115,7 @@ namespace ForgottenMemories.NPCs.Town
 
 		public override void SetChatButtons(ref string button, ref string button2)
 		{
-			button = Lang.inter[28];
+			button = Lang.inter[28].Value;
 		}
 
 		public override void OnChatButtonClicked(bool firstButton, ref bool shop)

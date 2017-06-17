@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Beam of Sight";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = -1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 100;
 			projectile.alpha = 255;
 			projectile.tileCollide = false;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Beam of Sight");
 		}
 		
 		public override void AI()

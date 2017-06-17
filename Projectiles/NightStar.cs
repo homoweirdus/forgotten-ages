@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Night Star";
             projectile.width = 18; 
             projectile.height = 20; 
             projectile.aiStyle = 5; 
@@ -21,5 +20,10 @@ namespace ForgottenMemories.Projectiles
             projectile.light = 1f;
 			projectile.scale = 0.9f;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Night Star");
+		}
     }
 }

@@ -14,9 +14,6 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-
-			AddTooltip("Right-Clicking rains down explosive rainbow bolts");
-			AddTooltip("Cheat Item");
 			item.useTime = 10;
 			item.useAnimation = 20;
 			item.useStyle = 1;
@@ -33,7 +30,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Finale");
-      Tooltip.SetDefault("Creates a ring of rainbow explosions around you");
+      Tooltip.SetDefault("Creates a ring of rainbow explosions around you \nRight-Clicking rains down explosive rainbow bolts \nCheat Item");
     }
 
 		

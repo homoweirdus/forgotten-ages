@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ice Bolt";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = 0;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 1;
 			projectile.timeLeft = 360;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ice Bolt");
 		}
 		
 		public override void AI()

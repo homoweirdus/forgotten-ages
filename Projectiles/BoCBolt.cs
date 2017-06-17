@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Brain of Confusion Bolt";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = -1;
@@ -23,10 +22,15 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = false;
 		}
 		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Confusion Bolt");
+		}
+		
 		public override void AI()
 		{
 			int dust;
-			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 71, 0f, 0f);
+			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 242, 0f, 0f);
 			Main.dust[dust].scale = 1.15f;
 			Main.dust[dust].noGravity = true;
 			projectile.rotation += 10;

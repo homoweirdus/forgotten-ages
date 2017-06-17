@@ -9,7 +9,6 @@ public class StingerBoom : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "StingerBoom";
 		projectile.width = 150;
 		projectile.height = 150;
 		projectile.aiStyle = 2;
@@ -20,6 +19,12 @@ public class StingerBoom : ModProjectile
         projectile.alpha = 255;
         projectile.tileCollide = false;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("StingerBoom");
+		}
+		
     public override bool PreAI()
 		{
 			int amountOfDust = 2;

@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Ranged
 		{
 			item.CloneDefaults(ItemID.RocketLauncher);
 
-			item.damage = 30;
+			item.damage = 38;
 			item.ranged = true;
 			item.width = 29;
 			item.height = 24;

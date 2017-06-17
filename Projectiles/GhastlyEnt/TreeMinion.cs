@@ -27,11 +27,6 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
             drawOriginOffsetY = 10; 
 		}
 		
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			target.AddBuff(186, 500, false);
-		}
-		
 		public override void AI()
 		{
 			Player player = Main.player[projectile.owner];
@@ -54,6 +49,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 	{
+		target.AddBuff(186, 500, false);
 		projectile.position.Y -= 300;
 		int proj = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 5f, mod.ProjectileType("LeafnadoFriendly"), projectile.damage, 0f, projectile.owner, 0f, 0f);
 		Main.projectile[proj].magic = false;

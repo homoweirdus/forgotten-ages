@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Lunar Beam";
 			projectile.width = 30;
 			projectile.height = 30;
 			projectile.aiStyle = -1;
@@ -25,6 +24,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 100;
 			Main.projFrames[projectile.type] = 5;
 			projectile.scale = 1f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Lunar Bolt");
 		}
 		
 		public override void AI()

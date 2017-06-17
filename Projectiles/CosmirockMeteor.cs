@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Meteor";
 			projectile.width = 24;
 			projectile.height = 22;
 			projectile.aiStyle = -1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 50;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 3;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Meteor");
 		}
 		
 		public override void AI()

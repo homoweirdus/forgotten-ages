@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "RainbowBolt";
 			projectile.width = 30;
 			projectile.height = 50;
 			projectile.aiStyle = 1;
@@ -23,6 +22,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 2;
 			projectile.light = 0.5f;
 			projectile.timeLeft = 400;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Rainbow Bolt");
 			aiType = ProjectileID.Bullet;
 		}
 		

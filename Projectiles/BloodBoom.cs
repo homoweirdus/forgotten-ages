@@ -9,7 +9,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Blood Execution";
 			projectile.width = 100;
 			projectile.height = 100;
 			projectile.aiStyle = -1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 10;
 			projectile.tileCollide = false;
 			projectile.light = 0.5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Bloody Execution");
 		}
 		
 		public override bool PreAI()

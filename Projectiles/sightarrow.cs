@@ -16,7 +16,6 @@ namespace ForgottenMemories.Projectiles
 		int counter = 0;
         public override void SetDefaults()
         {
-            projectile.name = "Arrow of Sight";
             projectile.width = 10;
 			projectile.height = 30;
             projectile.aiStyle = 1;
@@ -27,6 +26,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.scale = 1.3f;
 			projectile.timeLeft = 1000;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Arrow of Sight");
+		}
 		
 		   public override void AI()
 		{

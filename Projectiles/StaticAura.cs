@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Static Electricity";
 			projectile.width = 250;
 			projectile.height = 250;
 			projectile.penetrate = -1;
@@ -19,6 +18,10 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 255;
 			projectile.timeLeft = 4;
 			projectile.tileCollide = false;
+		}
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Static Electricity");
 		}
 		public override bool PreAI()
 		{

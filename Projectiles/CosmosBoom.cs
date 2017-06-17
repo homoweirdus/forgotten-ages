@@ -9,7 +9,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Comet Explosion";
 			projectile.width = 52;
 			projectile.height = 52;
 			projectile.aiStyle = -1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			Main.projFrames[projectile.type] = 5;
 			projectile.tileCollide = false;
 			projectile.light = 0.5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Comet Explosion");
 		}
 		
 		public override void Kill(int timeLeft)

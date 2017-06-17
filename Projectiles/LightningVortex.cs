@@ -13,7 +13,6 @@ namespace ForgottenMemories.Projectiles
 		int timer = 0;
         public override void SetDefaults()
         {
-            projectile.name = "Vortex";
             projectile.width = 38;
             projectile.height = 38;
             projectile.aiStyle = -1;
@@ -24,6 +23,11 @@ namespace ForgottenMemories.Projectiles
             projectile.penetrate = -1;
 			projectile.tileCollide = false;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Vortex");
+		}
 		
 		   public override void AI()
 		{

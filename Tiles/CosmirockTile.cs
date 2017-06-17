@@ -18,7 +18,9 @@ namespace ForgottenMemories.Tiles
             minPick = 180;
             soundType = 21;
             drop = mod.ItemType("SpaceRockFragment");
-            AddMapEntry(new Color(175, 167, 75), "Space Rock");
+			ModTranslation name = CreateMapEntryName();
+			name.SetDefault("Cosmirock");
+            AddMapEntry(new Color(175, 167, 75), name);
 			dustType = 15;
         }
 

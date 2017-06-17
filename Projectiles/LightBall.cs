@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "LightBall";
 			projectile.width = 5;
 			projectile.height = 5;
 			projectile.aiStyle = 0;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.ignoreWater = false;
 			projectile.timeLeft = 70;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("LightBall");
 		}
 		
 		public override void AI()

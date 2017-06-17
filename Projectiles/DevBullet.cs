@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Red Flame";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = 0;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 3;
 			projectile.timeLeft = 1000;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Red Flame");
 		}
 		
 		public override void AI()

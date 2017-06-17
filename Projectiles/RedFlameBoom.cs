@@ -8,7 +8,6 @@ namespace ForgottenMemories.Projectiles {
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "RedFlameBoom";
 			projectile.width = 100;
 			projectile.height = 100;
 			projectile.aiStyle = -1;
@@ -19,6 +18,11 @@ namespace ForgottenMemories.Projectiles {
 			projectile.timeLeft = 3;
 			projectile.tileCollide = false;
 			projectile.light = 0.5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Red Flames");
 		}
 		
 		public override void Kill(int timeLeft)

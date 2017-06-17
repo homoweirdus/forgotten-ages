@@ -11,13 +11,17 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Scythe";
 			projectile.width = 28;
 			projectile.height = 28;
 			projectile.magic = true;
 			projectile.friendly = true;
 			projectile.hostile = false;
 			projectile.penetrate = 2;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Scythe");
 		}
 		
 		public override bool PreAI()

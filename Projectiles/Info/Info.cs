@@ -23,22 +23,6 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool wtf = false;
 		public bool BlightedBow = false;
 		
-		public override void ResetEffects(NPC npc)
-        {
-            Paradox = false;
-			Mutilator = false;
-			TrueHR = false;
-			Cosmodium = false;
-			Shroom = false;
-			Flamethrower = false;
-			Terra = false;
-			Titanium = false;
-			Planetary = false;
-			Split = false;
-			wtf = false;
-			BlightedBow = false;
-        } 
-		
 		public override bool InstancePerEntity {get{return true;}}
 		
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
@@ -51,7 +35,7 @@ namespace ForgottenMemories.Projectiles.Info
 			if (Main.rand.Next(2) == 0 && Paradox == true)
 			{
 				int z = Projectile.NewProjectile(projectile.Center.X + projectile.velocity.X * 100f, projectile.Center.Y + projectile.velocity.Y * 100f, projectile.velocity.X * -1, projectile.velocity.Y * -1, projectile.type, projectile.damage, 0f, projectile.owner, 0f, 0f);
-				Main.projectile[z].GetModInfo<Info>(mod).Paradox = true;
+				Main.projectile[z].GetGlobalProjectile<Info>(mod).Paradox = true;
 				Main.projectile[z].tileCollide = false;
 				Main.projectile[z].penetrate = 1;
 			}
@@ -71,7 +55,7 @@ namespace ForgottenMemories.Projectiles.Info
 				int z = Projectile.NewProjectile(player.Center.X, player.Center.Y, memes, memes2, projectile.type, projectile.damage, 0f, projectile.owner, 0f, 0f);
 				if(Main.rand.Next(3) == 0)
 				{
-					Main.projectile[z].GetModInfo<Info>(mod).Planetary = true;
+					Main.projectile[z].GetGlobalProjectile<Info>(mod).Planetary = true;
 				}
 			}
 		}
@@ -103,11 +87,11 @@ namespace ForgottenMemories.Projectiles.Info
 				int ok3 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect3.X, newVect3.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
 				int ok4 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect4.X, newVect4.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
 				int ok5 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect5.X, newVect5.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
-				Main.projectile[ok1].GetModInfo<Info>(mod).wtf = true;
-				Main.projectile[ok2].GetModInfo<Info>(mod).wtf = true;
-				Main.projectile[ok3].GetModInfo<Info>(mod).wtf = true;
-				Main.projectile[ok4].GetModInfo<Info>(mod).wtf = true;
-				Main.projectile[ok5].GetModInfo<Info>(mod).wtf = true;
+				Main.projectile[ok1].GetGlobalProjectile<Info>(mod).wtf = true;
+				Main.projectile[ok2].GetGlobalProjectile<Info>(mod).wtf = true;
+				Main.projectile[ok3].GetGlobalProjectile<Info>(mod).wtf = true;
+				Main.projectile[ok4].GetGlobalProjectile<Info>(mod).wtf = true;
+				Main.projectile[ok5].GetGlobalProjectile<Info>(mod).wtf = true;
 			}
 			
 			if (Cosmodium == true)

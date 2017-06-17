@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
     	
         public override void SetDefaults()
         {
-            projectile.name = "ForbiddenSpear";
 			projectile.width = 20;  
 			projectile.aiStyle = 19;
 			projectile.thrown = true; 
@@ -26,6 +25,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.ownerHitCheck = true;
 			projectile.hide = true;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Forbidden Javelin");
+		}
 
         public override void AI()
         {

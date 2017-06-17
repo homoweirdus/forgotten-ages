@@ -14,7 +14,6 @@ namespace ForgottenMemories.Projectiles
         {
             projectile.hostile = false;
             projectile.magic = true;
-            projectile.name = "Shiny Energy";
             projectile.width = 10;
             projectile.height = 10;
             projectile.aiStyle = -1;
@@ -25,6 +24,11 @@ namespace ForgottenMemories.Projectiles
             projectile.timeLeft = 300;
 
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Shiny Energy");
+		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{

@@ -14,7 +14,6 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void SetDefaults()
 		{
-			projectile.name = "Nebula Flame";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = -1;
@@ -25,6 +24,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = false;
 			Main.projFrames[projectile.type] = 4;
 			projectile.scale = 1.2f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Nebula Flame");
 		}
 		
 		public override void AI()

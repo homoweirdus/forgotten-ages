@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
     	
         public override void SetDefaults()
         {
-            projectile.name = "Cursed Lance";
 			projectile.width = 40;  
 			projectile.aiStyle = 19;
 			projectile.melee = true; 
@@ -26,6 +25,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.ownerHitCheck = true;
 			projectile.hide = true;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Cursed Lance");
+		}
 
          public override void AI()
         {

@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Stinger Arrow";
             projectile.width = 14;
             projectile.height = 20;
             projectile.aiStyle = 1;
@@ -19,8 +18,12 @@ namespace ForgottenMemories.Projectiles
             projectile.penetrate = 1;
             projectile.timeLeft = 600;
             projectile.extraUpdates = 1;
-            aiType = 1;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Stinger Arrow");
+		}
 		
 		public override void Kill(int timeLeft)
 		{

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 		float rotate;
 		public override void SetDefaults()
 		{
-			projectile.name = "Titanic Crusher";
 			projectile.width = 26;
 			projectile.height = 24;
 			projectile.alpha = 0;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			//projectile.extraUpdates = 1;
 			projectile.melee = true;
 			projectile.penetrate = -1;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Titanic Crusher");
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
     	
         public override void SetDefaults()
         {
-            projectile.name = "Finisher";
 			projectile.width = 40;  
 			projectile.aiStyle = 19;
 			projectile.melee = true; 
@@ -26,6 +25,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.ownerHitCheck = true;
 			projectile.hide = true;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Finisher");
+		}
 
         public override void AI()
         {
@@ -69,12 +73,20 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("ChainingLightning"), (int)(projectile.damage/4), 5f, projectile.owner);
 			if (target.life <= (target.lifeMax/2))
             {
                 target.AddBuff(69, 1800, false);
 				target.AddBuff(203, 1800, false);
             }
 		}
+		
+		public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			if (target.life <= (target.lifeMax/2))
+            {
+				damage *= 2;
+			}
+		}
+			
     }
 }

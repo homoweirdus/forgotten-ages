@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "BlightOrb";
             projectile.width = 10;
             projectile.height = 74;
             projectile.netImportant = true;
@@ -26,6 +25,11 @@ namespace ForgottenMemories.Projectiles
             projectile.minion = true;
             projectile.tileCollide = false;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blight Orb");
+		}
 
         public override void AI()
 		{

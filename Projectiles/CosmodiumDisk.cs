@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Ultra tech Disk";
             projectile.width = 30;
             projectile.height = 30;
             projectile.aiStyle = 3;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
             projectile.timeLeft = 1000;   
            
         } 
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ultra Tech Disk");
+		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{

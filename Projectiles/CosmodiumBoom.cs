@@ -9,7 +9,6 @@ public class CosmodiumBoom : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Cosmodium Boom";
 		projectile.width = 150;
 		projectile.height = 150;
 		projectile.aiStyle = 2;
@@ -20,6 +19,11 @@ public class CosmodiumBoom : ModProjectile
         projectile.alpha = 255;
         projectile.tileCollide = false;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ultra Tech Disk");
+		}
     public override bool PreAI()
 {
     int amountOfDust = 5;

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Gel Stream";
 			projectile.width = 35;
 			projectile.height = 35;
 			projectile.aiStyle = -1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 60;
 			projectile.alpha = 255;
 			projectile.extraUpdates = 2;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Gel Stream");
 		}
 		
 		public override void AI()

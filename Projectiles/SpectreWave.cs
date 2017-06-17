@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Spectre Wave";
 			projectile.width = 30;
 			projectile.height = 6;
 			projectile.aiStyle = 1;
@@ -20,9 +19,14 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 600;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
-			aiType = ProjectileID.Bullet;
 			projectile.tileCollide = false;
 			projectile.scale = 1.3f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Spectre Wave");
+			aiType = ProjectileID.Bullet;
 		}
 		
 		public override void AI()

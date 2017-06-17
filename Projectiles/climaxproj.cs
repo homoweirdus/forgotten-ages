@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "climaxproj";
 			projectile.width = 98;
 			projectile.height = 98;
 			projectile.aiStyle = -1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = false;
 			Main.projFrames[projectile.type] = 7;
 			projectile.scale = 0.75f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Climax");
 		}
 		
 		public override void AI()

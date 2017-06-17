@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Needle";
 			projectile.width = 6;
 			projectile.height = 10;
 			projectile.aiStyle = 1;
@@ -19,8 +18,13 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
-			aiType = ProjectileID.Bullet;
 			projectile.ranged = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Needle");
+			aiType = ProjectileID.Bullet;
 		}
 		
 		public override void AI()

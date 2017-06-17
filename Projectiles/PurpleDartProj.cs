@@ -9,7 +9,6 @@ namespace ForgottenMemories.Projectiles {
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Purple Dart";
 		projectile.width = 5;
 		projectile.height = 7;
 		projectile.aiStyle = 1;
@@ -18,6 +17,11 @@ namespace ForgottenMemories.Projectiles {
 		projectile.friendly = true;
         projectile.timeLeft = 3000;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Purple Dart");
+		}
 	
 	    public override void Kill(int timeLeft)
 {

@@ -14,8 +14,6 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
-
-			AddTooltip("'Enchanted with the essence of the Destroyer'");
 			item.useTime = 24;
 			item.useAnimation = 12;
 			item.useStyle = 1;
@@ -31,7 +29,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Blade of Might");
-      Tooltip.SetDefault("Fires a sword beam that flies towards your cursor's location after right-clicking");
+      Tooltip.SetDefault("Fires a sword beam that flies towards your cursor's location after right-clicking \n'Enchanted with the essence of the Destroyer'");
     }
 
 

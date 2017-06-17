@@ -13,7 +13,6 @@ namespace ForgottenMemories.Projectiles
 		float ok;
 		public override void SetDefaults()
 		{
-			projectile.name = "Light Pillar";
 			projectile.width = 7;
 			projectile.height = 7;
 			projectile.friendly = true;
@@ -26,6 +25,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 600;
 			projectile.usesLocalNPCImmunity = true;
 			projectile.localNPCHitCooldown = 60;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Light Pillar");
 		}
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)

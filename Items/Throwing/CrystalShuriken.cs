@@ -13,15 +13,18 @@ namespace ForgottenMemories.Items.Throwing
         public override void SetDefaults()
         {
             projectile.CloneDefaults(3);
-            projectile.name = "Crystal Shuriken";
             projectile.width = 22;       //projectile width
             projectile.height = 22;
             projectile.penetrate = 1;
             aiType = 3;
             projectile.ignoreWater = true;
             projectile.timeLeft = 6000;
-
         }
+		
+		public override void SetStaticDefaults()
+		{
+		  DisplayName.SetDefault("Crystal Shuriken");
+		}
 
 
         public override void Kill(int timeLeft)

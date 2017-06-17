@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles.Arterius
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Blood Stream";
 			projectile.width = 30;
 			projectile.height = 30;
 			projectile.aiStyle = -1;

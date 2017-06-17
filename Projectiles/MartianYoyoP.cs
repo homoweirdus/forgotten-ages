@@ -12,13 +12,17 @@ namespace ForgottenMemories.Projectiles
         public override void SetDefaults()
         {
             projectile.CloneDefaults(555);
-            projectile.name = "Extraterrestrial";
             aiType = 555;
             projectile.aiStyle = 99;
 			projectile.width = 24;
             projectile.height = 24;
 			projectile.penetrate = -1;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Extraterrestrial");
+		}
 
         public override void AI()
         {

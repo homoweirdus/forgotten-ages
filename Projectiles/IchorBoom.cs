@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Explosive Ichor";
 			projectile.width = 98;
 			projectile.height = 98;
 			projectile.aiStyle = -1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = false;
 			Main.projFrames[projectile.type] = 7;
 			projectile.scale = 1.25f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Explosive Ichor");
 		}
 		
 		public override void AI()

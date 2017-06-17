@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Afterimage";
 			projectile.width = 30;
 			projectile.height = 30;
 			projectile.aiStyle = -1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = false;
 			projectile.scale = 1f;
 			projectile.alpha = 155;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blighted Chakram");
 		}
 		
 		public override void AI()

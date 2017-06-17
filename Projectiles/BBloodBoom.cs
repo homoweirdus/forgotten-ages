@@ -9,7 +9,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "The Corruption";
 			projectile.width = 120;
 			projectile.height = 120;
 			projectile.aiStyle = -1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 1;
 			projectile.tileCollide = false;
 			projectile.light = 0.5f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("The Corruption");
 		}
 		
 		public override void Kill(int timeLeft)

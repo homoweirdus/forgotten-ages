@@ -10,13 +10,17 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Blood Shuriken";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = 2;
 			projectile.penetrate = 3;
 			projectile.thrown = true;
 			projectile.friendly = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blood Shuriken");
 		}
 		
 		public override void Kill(int timeLeft)

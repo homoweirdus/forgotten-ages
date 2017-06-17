@@ -9,7 +9,6 @@ public class DarkGelShot : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Dark Gel Shot";
 		projectile.width = 5;
 		projectile.height = 5;
 		projectile.penetrate = -1;
@@ -20,6 +19,11 @@ public class DarkGelShot : ModProjectile
         projectile.timeLeft = 56;
         projectile.alpha = 255;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Dark Gel");
+		}
 
 
     public override void AI()

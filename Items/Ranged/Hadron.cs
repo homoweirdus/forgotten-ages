@@ -18,8 +18,6 @@ namespace ForgottenMemories.Items.Ranged
 			item.ranged = true;
 			item.width = 200;
 			item.height = 58;
-
-			AddTooltip("The missile barrage takes 10 seconds to reload");
 			item.useTime = 7;
 			item.useAnimation = 28;
 			item.useStyle = 5;
@@ -37,7 +35,7 @@ namespace ForgottenMemories.Items.Ranged
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Hadron");
-      Tooltip.SetDefault("Unleashes a devastatingly powerful barrage of missiles");
+      Tooltip.SetDefault("Unleashes a devastatingly powerful barrage of missiles \nThe missile barrage takes 10 seconds to reload");
     }
 
 		

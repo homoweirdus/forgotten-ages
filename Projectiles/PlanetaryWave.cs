@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Planetary Wave";
 			projectile.width = 150;
 			projectile.height = 30;
 			projectile.aiStyle = 1;
@@ -21,9 +20,14 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
-			aiType = ProjectileID.Bullet;
 			projectile.tileCollide = false;
 			projectile.scale = 1.3f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Planetary Wave");
+			aiType = ProjectileID.Bullet;
 		}
 		
 		public override void AI()

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Dragon Spit";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = 1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 1000;
 			projectile.alpha = 255;
 			projectile.extraUpdates = 2;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Dragon Spit");
 		}
 		
 		public override void AI()

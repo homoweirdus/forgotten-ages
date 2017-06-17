@@ -13,12 +13,16 @@ namespace ForgottenMemories.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.Chik);
-			projectile.name = "Necroflame Yoyo";
 			aiType = 555;
 			projectile.aiStyle = 99;
 			projectile.width = 16;
 			projectile.height = 16;
 			projectile.penetrate = -1;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Necroflame Yoyo");
 		}
 
 		public override void AI()

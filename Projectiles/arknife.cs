@@ -19,7 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
 			aiType = ProjectileID.Bullet;
-			projectile.name = "arknife";
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Arknife");
 		}
 		
 		public override void Kill(int timeLeft)

@@ -14,7 +14,6 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void SetDefaults()
 		{
-			projectile.name = "Bubble";
 			projectile.width = 5;
 			projectile.height = 5;
 			projectile.aiStyle = -1;
@@ -23,6 +22,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 100;
 			projectile.tileCollide = false;
 			projectile.alpha = 100;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Bubble");
 		}
 		
 		public override void AI()

@@ -23,7 +23,9 @@ namespace ForgottenMemories.Tiles
 			Main.tileLighted[Type] = true;
 			dustType = 67;
 			drop = mod.ItemType("CryotineOreItem");
-			AddMapEntry(new Color(75, 206, 242), "Cryotine Ore");
+			ModTranslation name = CreateMapEntryName();
+			name.SetDefault("Cryotine Ore");
+			AddMapEntry(new Color(75, 206, 242), name);
 			soundType = 21;
 			minPick = 65;
 		}

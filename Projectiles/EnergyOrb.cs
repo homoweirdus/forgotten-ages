@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ball";
 			projectile.width = 24;
 			projectile.height = 10;
 			projectile.aiStyle = 1;
@@ -23,6 +22,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
 			aiType = ProjectileID.Bullet;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Laser Bullet");
 		}
 		
 		public override void AI()

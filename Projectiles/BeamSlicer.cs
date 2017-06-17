@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
 		int CounterA = 0;
 		public override void SetDefaults()
 		{
-			projectile.name = "Beam Slicer";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = 0;
@@ -19,6 +18,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 120;
 			projectile.thrown = true;
 			projectile.friendly = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Beam Slicer");
 		}
 		
 		public override void Kill(int timeLeft)

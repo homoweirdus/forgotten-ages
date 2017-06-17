@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "ColdSnap";
 			projectile.width = 250;
 			projectile.height = 250;
 			projectile.timeLeft = 2;
@@ -19,6 +18,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.alpha = 255;
 			projectile.tileCollide = false;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Icy Aura");
 		}
 		public override bool PreAI()
 		{

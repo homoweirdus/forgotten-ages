@@ -12,15 +12,19 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "solarember";
 			projectile.width = 2;
 			projectile.height = 2;
 			projectile.aiStyle = 2;
 			projectile.friendly = true;
-			projectile.melee = true;
+			projectile.magic = true;
 			projectile.penetrate = 3;
 			projectile.timeLeft = 120;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Solar Ember");
 		}
 		
 		public override void AI()

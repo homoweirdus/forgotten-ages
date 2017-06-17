@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
 		int index1 = 999;
 		public override void SetDefaults()
 		{
-			projectile.name = "Blood Leech";
 			projectile.width = 15;
 			projectile.height = 23;
 			//projectile.aiStyle = 1;

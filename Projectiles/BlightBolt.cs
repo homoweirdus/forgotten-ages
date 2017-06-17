@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Laser";
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.aiStyle = -1;
@@ -24,6 +23,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 3;
 			projectile.light = 0.5f;
 			projectile.scale = 1.2f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Dragon Spit");
 		}
 		
 		public override void AI()

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Ice Cube";
             projectile.width = 6;
             projectile.height = 6;
             projectile.friendly = true;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 380;
             projectile.penetrate = 3;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ice Cube");
+		}
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{

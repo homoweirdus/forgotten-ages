@@ -10,15 +10,19 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Deathweed Ball";
-			projectile.width = 28;
-			projectile.height = 28;
+			projectile.width = 42;
+			projectile.height = 42;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.magic = true;
 			projectile.penetrate = 5;
 			projectile.timeLeft = 180;
 			projectile.tileCollide = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Deathweed Ball");
 		}
 		
 		public override void AI()

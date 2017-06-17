@@ -18,7 +18,9 @@ namespace ForgottenMemories.Tiles
             minPick = 180;
             soundType = 21;
             drop = mod.ItemType("BlightOreItem");
-            AddMapEntry(new Color(98, 86, 104), "Blighted Ore");
+			ModTranslation name = CreateMapEntryName();
+			name.SetDefault("Blighted Ore");
+            AddMapEntry(new Color(98, 86, 104), name);
 			dustType = 173;
         }
 

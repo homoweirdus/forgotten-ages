@@ -14,7 +14,6 @@ namespace ForgottenMemories.Projectiles
 		float ok;
 		public override void SetDefaults()
 		{
-			projectile.name = "Doom Lightning";
 			projectile.width = 14;
 			projectile.height = 14;
 			projectile.penetrate = -1;
@@ -30,6 +29,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = false;
 			projectile.extraUpdates = 4;
 			projectile.timeLeft = 600;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Doom Lightning");
 		}
 		
 		public override bool? Colliding(Rectangle myRect, Rectangle targetRect)

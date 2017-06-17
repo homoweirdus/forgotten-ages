@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Despair Bolt";
 			projectile.width = 16;
 			projectile.height = 16;
 			projectile.aiStyle = -1;
@@ -24,6 +23,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 1;
 			projectile.light = 0.5f;
 			projectile.scale = 1.2f;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Despair Bolt");
 		}
 		
 		public override void AI()

@@ -12,12 +12,16 @@ namespace ForgottenMemories.Projectiles
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.JungleYoyo);
-            projectile.name = "Gourd";
             aiType = ProjectileID.JungleYoyo;
             projectile.aiStyle = 99;
 			projectile.width = 24;
             projectile.height = 24;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Gourd");
+		}
 
         public override void AI()
         {

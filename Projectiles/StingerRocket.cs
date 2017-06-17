@@ -10,15 +10,19 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Stinger Rocket";
 			projectile.width = 6;
 			projectile.height = 10;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.penetrate = 1;
 			projectile.alpha = 0;
-			aiType = ProjectileID.Bullet;
 			projectile.ranged = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Stinger Rocket");
+			aiType = ProjectileID.Bullet;
 		}
 		
 		public override void AI()

@@ -19,7 +19,6 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.toolTip = "Cheat Weapon! Unobtainable outside of cheat sheet.";
 			item.useTime = 30;
 			item.useAnimation = 20;
 			item.useStyle = 1;

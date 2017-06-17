@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
     	
         public override void SetDefaults()
         {
-            projectile.name = "Eater of Souls";
             projectile.width = 20;
             projectile.height = 32;
             projectile.netImportant = true;
@@ -29,6 +28,11 @@ namespace ForgottenMemories.Projectiles
             aiType = 317;
             projectile.tileCollide = false;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Eater of Souls");
+		}
 
         public override void AI()
 		{

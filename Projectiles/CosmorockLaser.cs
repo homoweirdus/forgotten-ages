@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Cosmic Laser";
 			projectile.width = 4;
 			projectile.height = 4;
 			projectile.aiStyle = -1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 200;
 			projectile.alpha = 255;
 			projectile.tileCollide = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Comet Dust");
 		}
 		
 		public override void AI()

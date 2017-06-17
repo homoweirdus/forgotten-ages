@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Meteor Head";
 			projectile.width = 48;
 			projectile.height = 44;
 			projectile.aiStyle = -1;
@@ -25,6 +24,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.light = 0.5f;
 			projectile.usesLocalNPCImmunity = true;
 			projectile.localNPCHitCooldown = 5;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blighted Meteor");
 		}
 		
 		public override void AI()

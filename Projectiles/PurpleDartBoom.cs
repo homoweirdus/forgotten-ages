@@ -9,7 +9,6 @@ public class PurpleDartBoom : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "PurpleDartBoom";
 		projectile.width = 100;
 		projectile.height = 100;
 		projectile.aiStyle = 2;
@@ -20,6 +19,11 @@ public class PurpleDartBoom : ModProjectile
         projectile.alpha = 255;
         projectile.tileCollide = false;
 	}
+	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Purple Dart");
+		}
     public override bool PreAI()
 {
     int amountOfDust = 5;

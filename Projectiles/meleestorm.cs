@@ -19,7 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 30;
 			aiType = ProjectileID.Bullet;
-			projectile.name = "meleestorm";
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("meleestorm");
 		}
 		
 

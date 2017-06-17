@@ -9,7 +9,6 @@ namespace ForgottenMemories.Projectiles {
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Flesh Dart";
 		projectile.width = 14;
 		projectile.height = 28;
 		projectile.aiStyle = 1;
@@ -19,6 +18,11 @@ namespace ForgottenMemories.Projectiles {
         projectile.timeLeft = 3000;
 	}
 	
+	public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Flesh Dart");
+		}
+		
 	   public override void Kill(int timeLeft)
 		{
 			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
@@ -38,7 +42,6 @@ namespace ForgottenMemories.Projectiles {
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Flesh Dart";
 			projectile.width = 5;
 			projectile.height = 7;
 			projectile.aiStyle = 1;
@@ -49,6 +52,11 @@ namespace ForgottenMemories.Projectiles {
 			projectile.alpha = 255;
 			projectile.extraUpdates = 5;
 			
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Flesh Dart");
 		}
 		
 		public override void AI()

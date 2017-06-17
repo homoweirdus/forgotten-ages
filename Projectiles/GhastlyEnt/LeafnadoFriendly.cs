@@ -8,7 +8,6 @@ public class LeafnadoFriendly : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Leafnado";
 		projectile.width = 20;
 		projectile.height = 20;
 		projectile.aiStyle = 0;

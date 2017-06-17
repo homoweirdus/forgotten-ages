@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Cosmos Kunai";
 			projectile.width = 24;
 			projectile.height = 22;
 			projectile.aiStyle = 1;
@@ -25,19 +24,24 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 1;
 		}
 		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Cosmos Kunai");
+		}
+		
 		public override void AI()
 		{
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 			Vector2 vector2 = projectile.Center + Vector2.Normalize(projectile.velocity) * 5f;
 			Dust dust1 = Main.dust[Dust.NewDust(projectile.position, projectile.width, projectile.height, 15, 0.0f, 0.0f, 0, new Color(), 1f)];
 			dust1.position = vector2;
-			dust1.velocity = projectile.velocity.RotatedBy(1.57079637050629, new Vector2()) * 0.33f + projectile.velocity / 4f;
+			dust1.velocity = projectile.velocity.RotatedBy(1.57079637050629, new Vector2()) * 0.33f + projectile.velocity / 8f;
 			dust1.position += projectile.velocity.RotatedBy(1.57079637050629, new Vector2());
 			dust1.fadeIn = 0.5f;
 			dust1.noGravity = true;
 			Dust dust2 = Main.dust[Dust.NewDust(projectile.position, projectile.width, projectile.height, 15, 0.0f, 0.0f, 0, new Color(), 1f)];
 			dust2.position = vector2;
-			dust2.velocity = projectile.velocity.RotatedBy(-1.57079637050629, new Vector2()) * 0.33f + projectile.velocity / 4f;
+			dust2.velocity = projectile.velocity.RotatedBy(-1.57079637050629, new Vector2()) * 0.33f + projectile.velocity / 8f;
 			dust2.position += projectile.velocity.RotatedBy(-1.57079637050629, new Vector2());
 			dust2.fadeIn = 0.5f;
 			dust2.noGravity = true;

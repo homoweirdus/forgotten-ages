@@ -11,7 +11,6 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "BlightChakram";
             projectile.width = 30;
             projectile.height = 30;
             projectile.aiStyle = 3;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 2;
             projectile.timeLeft = 600;   
         } 
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blighted Chakram");
+		}
 		
 		public override void AI()
 		{

@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Cryotine Bullet";
 			projectile.width = 2;
 			projectile.height = 10;
 			projectile.aiStyle = 1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 1;
 			aiType = ProjectileID.Bullet;
 			projectile.tileCollide = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Cryotine Bullet");
 		}
 		
 		public override void Kill(int timeLeft)
@@ -36,7 +40,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.Next(3) == 0)
 			{
 			int dust;
 			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 135, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);

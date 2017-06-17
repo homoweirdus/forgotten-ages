@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
     	
         public override void SetDefaults()
         {
-            projectile.name = "Creeper";
             projectile.width = 10;
             projectile.height = 10;
             projectile.netImportant = true;
@@ -29,6 +28,11 @@ namespace ForgottenMemories.Projectiles
             aiType = 317;
             projectile.tileCollide = false;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Creeper");
+		}
 
         public override void AI()
 		{

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Hell Orb";
 			projectile.width = 22;
 			projectile.height = 22;
 			projectile.aiStyle = 2;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 1;
 			projectile.timeLeft = 200;
 			projectile.extraUpdates = 3;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Hell Orb");
 		}
 		
 		public override void AI()

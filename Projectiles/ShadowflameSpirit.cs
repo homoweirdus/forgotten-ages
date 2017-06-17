@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
     	
         public override void SetDefaults()
         {
-            projectile.name = "Shadowflame Spirit";
             projectile.width = 8;
             projectile.height = 8;
             projectile.netImportant = true;
@@ -21,14 +20,19 @@ namespace ForgottenMemories.Projectiles
             projectile.alpha = 255;
             projectile.aiStyle = 54;
             projectile.timeLeft = 18000;
-            Main.projFrames[projectile.type] = 1;
-            ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
             projectile.penetrate = -1;
             projectile.timeLeft *= 5;
             projectile.minion = true;
-            aiType = 317;
             projectile.tileCollide = false;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Shadowflame Spirit");
+			Main.projFrames[projectile.type] = 1;
+            ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
+			aiType = 317;
+		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{

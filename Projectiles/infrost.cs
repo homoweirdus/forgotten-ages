@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "infrost";
 			projectile.width = 80;
 			projectile.height = 48;
 			projectile.aiStyle = 1;
@@ -23,6 +22,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 1;
 			aiType = ProjectileID.Bullet;
 			projectile.tileCollide = false;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("infrost");
 		}
 		
 		public override void AI()

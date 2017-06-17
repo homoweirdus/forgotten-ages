@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Cursed Lance Tip";
 			projectile.width = 40;
 			projectile.height = 88;
 			projectile.aiStyle = 1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 1;
 			aiType = ProjectileID.Bullet;
 			projectile.tileCollide = false;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Cursed Lance Tip");
 		}
 		
 		

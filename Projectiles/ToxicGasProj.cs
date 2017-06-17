@@ -9,7 +9,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Toxic Gas";
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.aiStyle = 0;
@@ -20,6 +19,12 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 100;
 			projectile.scale = 1.5f;
 		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Toxic Gas");
+		}
+		
 		public override bool PreAI()
 		{
 			projectile.rotation += 0.05f;

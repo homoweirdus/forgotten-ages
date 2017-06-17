@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Spark";
 			projectile.width = 30;
 			projectile.height = 30;
 			projectile.aiStyle = 1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = -1;
 			projectile.timeLeft = 30;
 			projectile.alpha = 255;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Spark");
 		}
 		
 		public override void AI()

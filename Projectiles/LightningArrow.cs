@@ -14,15 +14,19 @@ namespace ForgottenMemories.Projectiles
 		int inaccurate2 = 0;
 		public override void SetDefaults()
 		{
-			projectile.name = "Lightning Arrow";
 			projectile.width = 20;
 			projectile.height = 20;
-			projectile.aiStyle = 1;
+			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.ranged = true;
 			projectile.penetrate = 1;
 			projectile.extraUpdates = 2;
 			projectile.timeLeft = 360;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Lightning Arrow");
 		}
 		
 		public override void AI()
@@ -40,7 +44,8 @@ namespace ForgottenMemories.Projectiles
 			{
 				Vector2 newVect2 = projectile.velocity.RotatedBy(System.Math.PI / -20);
 				projectile.velocity = newVect2;
-			}				
+			}			
+			projectile.rotation = projectile.velocity.ToRotation();
 		}
 		
 		public override void Kill(int timeLeft)

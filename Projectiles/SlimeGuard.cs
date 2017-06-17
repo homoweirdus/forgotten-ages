@@ -13,19 +13,24 @@ namespace ForgottenMemories.Projectiles
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.BabySlime);
-            projectile.name = "Slime Guard";
+			projectile.penetrate = -1;
+			projectile.tileCollide = false;
+			projectile.minionSlots = 0;
+			projectile.friendly = true;
+        }
+
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Slime Guard");
             Main.projPet[projectile.type] = true;
             ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
             aiType = ProjectileID.BabySlime;
             drawOffsetX = 10; 
             drawOriginOffsetY = 10; 
-			projectile.penetrate = -1;
-			projectile.tileCollide = false;
-			projectile.minionSlots = 0;
-			projectile.friendly = true;
 			Main.projFrames[projectile.type] = 6;
-        }
-
+			
+		}
+		
         public override void AI()
         {
 			Player player = Main.player[projectile.owner];

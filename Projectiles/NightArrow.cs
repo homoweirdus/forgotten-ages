@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Night Arrow"; //name
             projectile.width = 14; //Projectile's width in pixels
             projectile.height = 32; //Projectile's height in pixels
             projectile.aiStyle = 1; //The ai style. Info on AI styles is in the tmodloader documentation
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
             projectile.timeLeft = 600; //How long in ticks the projectile lasts
             projectile.light = 0.5f; //light the projectile gives off
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Night Arrow");
+		}
 		
 		    public override void Kill(int timeLeft)
 			{

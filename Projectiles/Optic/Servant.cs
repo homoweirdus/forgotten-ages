@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles.Optic
     	
         public override void SetDefaults()
         {
-            projectile.name = "Servant Of Cthulhu";
             projectile.width = 20;
             projectile.height = 32;
             projectile.netImportant = true;
@@ -29,6 +28,11 @@ namespace ForgottenMemories.Projectiles.Optic
             aiType = 388;
             projectile.tileCollide = false;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Servant of Cthulhu");
+		}
 
         public override void AI()
         {

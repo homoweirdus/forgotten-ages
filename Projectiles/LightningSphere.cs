@@ -13,7 +13,6 @@ namespace ForgottenMemories.Projectiles
 		int timer = 0;
         public override void SetDefaults()
         {
-            projectile.name = "Lightning Sphere";
             projectile.width = 40;
             projectile.height = 40;
             projectile.aiStyle = -1;
@@ -24,6 +23,11 @@ namespace ForgottenMemories.Projectiles
             projectile.penetrate = -1;
 			projectile.tileCollide = true;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Lightning Sphere");
+		}
 		
 		   public override void AI()
 		{

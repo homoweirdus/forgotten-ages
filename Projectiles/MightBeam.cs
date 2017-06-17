@@ -16,7 +16,6 @@ namespace ForgottenMemories.Projectiles
 		int counter = 0;
         public override void SetDefaults()
         {
-            projectile.name = "Might Beam";
             projectile.width = 14;
             projectile.height = 14;
             projectile.aiStyle = -1;
@@ -27,6 +26,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.scale = 1.3f;
 			projectile.timeLeft = 60;
         }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Might Beam");
+		}
 		
 		   public override void AI()
 		{

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Devil Arrow";
 			projectile.width = 10;
 			projectile.height = 30;
 			projectile.aiStyle = 1;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.ranged = true;
 			projectile.penetrate = 3;
 			projectile.timeLeft = 1000;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Devil Arrow");
 		}
 		
 		public override void AI()

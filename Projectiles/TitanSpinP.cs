@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Afterimage";
 			projectile.width = 12;
 			projectile.height = 12;
 			projectile.aiStyle = -1;
@@ -22,6 +21,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = false;
 			projectile.scale = 1f;
 			projectile.alpha = 100;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Afterimage");
 		}
 		
 		public override void AI()

@@ -10,7 +10,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "climaxproj";
 			projectile.width = 52;
 			projectile.height = 52;
 			projectile.aiStyle = -1;
@@ -23,6 +22,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.usesLocalNPCImmunity = true;
 			projectile.localNPCHitCooldown = projectile.timeLeft;
 			Main.projFrames[projectile.type] = 5;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Finale Boom");
 		}
 		
 		public override void AI()

@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Blood Dagger";
 			projectile.width = 10;
 			projectile.height = 30;
 			projectile.aiStyle = 2;
@@ -20,6 +19,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.thrown = true;
 			projectile.penetrate = 2;
 			projectile.timeLeft = 1000;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Blood Dagger");
 		}
 		
 		public override void Kill(int timeLeft)

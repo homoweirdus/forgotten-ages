@@ -62,7 +62,7 @@ namespace ForgottenMemories.NPCs.Town
 
 		public override string TownNPCName()
 		{
-			switch (WorldGen.genRand.Next(5))
+			switch (WorldGen.genRand.Next(6))
 			{
 				case 0:
 					return "Lucy";
@@ -84,7 +84,7 @@ namespace ForgottenMemories.NPCs.Town
 			int wizard = NPC.FindFirstNPC(NPCID.Demolitionist);
 			if (wizard >= 0 && Main.rand.Next(4) == 0)
 			{
-				return "I remember when " + Main.npc[wizard].displayName + " was a little kid... how time flies.";
+				return "I remember when " + Main.npc[wizard].GivenName + " was a little kid... how time flies.";
 			}
 			if (WorldGen.crimson && Main.rand.Next(4) == 0)
 			{
@@ -101,7 +101,7 @@ namespace ForgottenMemories.NPCs.Town
 
 		public override void SetChatButtons(ref string button, ref string button2)
 		{
-			button = Lang.inter[28];
+			button = Lang.inter[28].Value;
 		}
 
 		public override void OnChatButtonClicked(bool firstButton, ref bool shop)

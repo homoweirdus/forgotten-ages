@@ -12,7 +12,6 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Ice Arrow";
 			projectile.width = 10;
 			projectile.height = 30;
 			projectile.aiStyle = 1;
@@ -21,6 +20,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 6;
 			projectile.extraUpdates = 1;
 			projectile.timeLeft = 1000;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Ice Arrow");
 		}
 		
 		public override void AI()

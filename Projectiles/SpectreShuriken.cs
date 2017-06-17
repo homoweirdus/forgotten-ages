@@ -10,13 +10,17 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.name = "Spectre Shuriken";
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = 2;
 			projectile.penetrate = 1;
 			projectile.thrown = true;
 			projectile.friendly = true;
+		}
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Spectre Shuriken");
 		}
 		
 		public override void Kill(int timeLeft)
@@ -71,7 +75,7 @@ namespace ForgottenMemories.Projectiles
 			}
 			if (target)
 			{
-				projectile.velocity = (move * 12f);
+				projectile.velocity = (projectile.velocity*12f + move)/13f;
 			}
 		}
 	}
