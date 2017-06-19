@@ -28,7 +28,7 @@ public class ShinyOrb : ModItem
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).ShinyOrbSpawn();
-			((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).ShinyOrbHeal();
+			player.shinyStone = true;
 		}
 		
 		public override void AddRecipes()
@@ -39,19 +39,6 @@ public class ShinyOrb : ModItem
 			recipe.AddTile(114);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-		}
-		
-		public override bool CanEquipAccessory(Player player, int slot)
-		{
-			if (player.shinyStone == true || player.sporeSac == true)
-			{
-				return false;
-			}
-			
-			else
-			{
-				return true;
-			}
 		}
 	}
 }

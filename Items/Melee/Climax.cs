@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 298;
+			item.damage = 208;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
 
-			item.useTime = 40;
+			item.useTime = 20;
 			item.useAnimation = 20;
 			item.useStyle = 1;
 			item.knockBack = 6;
@@ -41,6 +41,12 @@ namespace ForgottenMemories.Items.Melee
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 63);
 				Main.dust[dust].scale = 1.5f;
 			}
+		}
+		
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 14);
+			return true;
 		}
 		
 		public override void AddRecipes()

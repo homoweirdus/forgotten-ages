@@ -18,8 +18,8 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.melee = true;
 			projectile.penetrate = -1;
-			projectile.timeLeft = 60;
-			projectile.extraUpdates = 2;
+			projectile.timeLeft = 40;
+			projectile.extraUpdates = 4;
 			projectile.alpha = 255;
 			projectile.tileCollide = false;
 		}
@@ -33,7 +33,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
 			float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
-			Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX + projectile.velocity.X, sY + projectile.velocity.Y, mod.ProjectileType("climaxproj"), projectile.damage, 5f, projectile.owner);
+			Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("climaxproj"), projectile.damage, 5f, projectile.owner);
 		}
 	}
 }

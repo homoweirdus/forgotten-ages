@@ -27,7 +27,6 @@ namespace ForgottenMemories
 		public bool canJumpFirestorm = true;
 		public bool SlimyNeck = false;
 		public bool jungard = true;
-		public bool shiny = false;
 		public bool frostguard = false;
 		
 		public override void ResetEffects()
@@ -43,7 +42,6 @@ namespace ForgottenMemories
 			sapBall = false;
 			SlimyNeck = false;
 			jungard = false;
-			shiny = false;
 			frostguard = false;
 		}
 		
@@ -148,11 +146,6 @@ namespace ForgottenMemories
 			
 			public override void PreUpdate()
 			{
-				if (this.shiny)
-				{
-					this.ShinyOrbSpawn();
-					this.ShinyOrbHeal();
-				}
 				
 				if(player.controlJump)
 				{
@@ -289,8 +282,80 @@ namespace ForgottenMemories
 					}
 				}
 			}
+			
+			public void EmeraldSpawn()
+			{
+				int damage = 135; //set damage
+				float knockBack = 2f; //set kB
+				if (Main.rand.Next(15) == 0)
+				{
+					int num = 0;
+					for (int i = 0; i < 1000; i++) //search for amount of projctiles
+					{
+						if (Main.projectile[i].active && Main.projectile[i].owner == player.whoAmI && (Main.projectile[i].type == mod.ProjectileType("EmeraldEnergy")))
+						{
+							num++;
+						}
+					}
+					if (Main.rand.Next(10) >= num && num < 10)
+					{
+						int num2 = 50;
+						int num3 = 24;
+						int num4 = 90;
+						for (int j = 0; j < num2; j++)
+						{
+							int num5 = Main.rand.Next(200 - j * 2, 400 + j * 2);
+							Vector2 center = player.Center;
+							center.X += (float)Main.rand.Next(-num5, num5 + 1);
+							center.Y += (float)Main.rand.Next(-num5, num5 + 1);
+							if (!Collision.SolidCollision(center, num3, num3) && !Collision.WetCollision(center, num3, num3))
+							{
+								center.X += (float)(num3 / 2);
+								center.Y += (float)(num3 / 2);
+								if (Collision.CanHit(new Vector2(player.Center.X, player.position.Y), 1, 1, center, 1, 1) || Collision.CanHit(new Vector2(player.Center.X, player.position.Y - 50f), 1, 1, center, 1, 1))
+								{
+									int num6 = (int)center.X / 16;
+									int num7 = (int)center.Y / 16;
+									bool flag = false;
+									if (Main.rand.Next(3) == 0 && Main.tile[num6, num7] != null && Main.tile[num6, num7].wall > 0)
+									{
+										flag = true;
+									}
+									else
+									{
+										center.X -= (float)(num4 / 2);
+										center.Y -= (float)(num4 / 2);
+										if (Collision.SolidCollision(center, num4, num4))
+										{
+											center.X += (float)(num4 / 2);
+											center.Y += (float)(num4 / 2);
+											flag = true;
+										}
+									}
+									if (flag)
+									{
+										for (int k = 0; k < 1000; k++)
+										{
+											if (Main.projectile[k].active && Main.projectile[k].owner == player.whoAmI && Main.projectile[k].type == mod.ProjectileType("EmeraldEnergy") && (center - Main.projectile[k].Center).Length() < 48f)
+											{
+												flag = false;
+												break;
+											}
+										}
+										if (flag && Main.myPlayer == player.whoAmI)
+										{
+											Projectile.NewProjectile(center.X, center.Y, 0f, 0f, mod.ProjectileType("EmeraldEnergy"), damage, knockBack, player.whoAmI, 0f, 0f);
+											return;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 
-			public void ShinyOrbHeal()
+			public void EmeraldHeal()
 			{
 				if ((double)Math.Abs(player.velocity.X) < 0.05 && (double)Math.Abs(player.velocity.Y) < 0.05 && player.itemAnimation == 0)
 				{
@@ -298,8 +363,8 @@ namespace ForgottenMemories
 					{
 						player.lifeRegenTime = 1800;
 					}
-					player.lifeRegenTime += 2;
-					player.lifeRegen += 2;
+					player.lifeRegenTime += 6;
+					player.lifeRegen += 6;
 				}
 				
 				if (player.lifeRegen > 0 && player.statLife < player.statLifeMax2)
@@ -307,7 +372,7 @@ namespace ForgottenMemories
 					player.lifeRegenCount++;
 					if ((Main.rand.Next(30000) < player.lifeRegenTime || Main.rand.Next(30) == 0))
 					{
-						int num5 = Dust.NewDust(player.position, player.width, player.height, 55, 0f, 0f, 200, default(Color), 0.5f);
+						int num5 = Dust.NewDust(player.position, player.width, player.height, 55, 0f, 0f, 200, new Color(7, 255, 180), 0.5f);
 						Main.dust[num5].noGravity = true;
 						Main.dust[num5].velocity *= 0.75f;
 						Main.dust[num5].fadeIn = 1.3f;

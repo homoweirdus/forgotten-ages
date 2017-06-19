@@ -78,11 +78,13 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 				}
 				
 				float SpeedBoost = 0.4f;
+				int maxSpeed = 6;
 				if (Main.expertMode && Phase2)
 				{
 					SpeedBoost = 0.8f;
+					maxSpeed = 8;
 				}
-				if (npc.direction == -1 && (double) npc.velocity.X > -4.0)
+				if (npc.direction == -1 && (double) npc.velocity.X > -maxSpeed)
 				{
 					npc.velocity.X -= SpeedBoost;
 					if ((double) npc.velocity.X > 6.0)
@@ -92,7 +94,7 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 					if ((double) npc.velocity.X < -6.0)
 					  npc.velocity.X = -4f;
 				}
-				else if (npc.direction == 1 && (double) npc.velocity.X < 4.0)
+				else if (npc.direction == 1 && (double) npc.velocity.X < maxSpeed)
 				{
 					npc.velocity.X += SpeedBoost;
 					if ((double) npc.velocity.X < -6.0)
@@ -102,7 +104,7 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 					if ((double) npc.velocity.X > 6.0)
 						npc.velocity.X = 4f;
 				}
-				if (npc.directionY == -1 && (double) npc.velocity.Y > -1.5)
+				if (npc.directionY == -1 && (double) npc.velocity.Y > -maxSpeed/4)
 				{
 					npc.velocity.Y -= 0.04f;
 					if ((double) npc.velocity.Y > 3)
@@ -112,7 +114,7 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 					if ((double) npc.velocity.Y < -3)
 					  npc.velocity.Y = -1.5f;
 				}
-				else if (npc.directionY == 1 && (double) npc.velocity.Y < 1.5)
+				else if (npc.directionY == 1 && (double) npc.velocity.Y < maxSpeed/4)
 				{
 					npc.velocity.Y += 0.04f;
 					if ((double) npc.velocity.Y < -3)

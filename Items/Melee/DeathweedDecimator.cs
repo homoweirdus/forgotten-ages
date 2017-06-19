@@ -37,11 +37,11 @@ namespace ForgottenMemories.Items.Melee
     }
 
 		
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
-        {
+		public override void ModifyHitNPC (Player player, NPC target, ref int damage, ref float knockback, ref bool crit)
+		{
 			if (crit == true)
 			{
-				damage += (int)(damage * 0.5);
+				damage += (int)(damage*0.5);
 				knockback *= 1.5f;
 			}
 		}

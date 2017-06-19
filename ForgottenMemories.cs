@@ -155,14 +155,6 @@ namespace ForgottenMemories
             recipe.AddRecipe();
 			
 			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.Ectoplasm, 35);
-			recipe.AddIngredient(520, 12);
-			recipe.AddIngredient(ItemID.BeetleHusk, 5);
-            recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(1326, 1);
-            recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.Bottle, 1);
 			recipe.AddIngredient(3380, 6);
 			recipe.AddIngredient(169, 80);
@@ -222,13 +214,6 @@ namespace ForgottenMemories
 			recipe.AddIngredient(ItemID.BeetleHusk, 3);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(ItemID.PulseBow, 1);
-            recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
-			recipe.AddIngredient(ItemID.IllegalGunParts, 1);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(ItemID.Uzi, 1);
             recipe.AddRecipe();
 			
 			recipe = new ModRecipe(this);
