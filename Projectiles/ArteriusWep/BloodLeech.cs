@@ -25,6 +25,14 @@ namespace ForgottenMemories.Projectiles.ArteriusWep
 			DisplayName.SetDefault("Blood Leech");
 		}
 		
+		public override void Kill(int timeLeft)
+		{
+			if (Main.rand.Next(4) == 0 && projectile.noDropItem == false)
+        	{
+        		Item.NewItem((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, mod.ItemType("BloodLeech"));
+        	}
+			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y); //create a sound
+		}
 		
 		public override void AI()
 		{

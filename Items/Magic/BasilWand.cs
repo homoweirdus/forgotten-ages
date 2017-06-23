@@ -54,7 +54,7 @@ namespace ForgottenMemories.Items.Magic
 			recipe.AddIngredient(null,"ForestEnergy", 10);
 			recipe.AddIngredient(ItemID.JungleSpores, 8);
 			recipe.AddIngredient(ItemID.Vine, 2);
-			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

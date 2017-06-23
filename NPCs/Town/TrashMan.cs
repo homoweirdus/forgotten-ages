@@ -105,10 +105,10 @@ namespace ForgottenMemories.NPCs.Town
 
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
-            shop.item[nextSlot].SetDefaults(ItemID.WhoopieCushion);
+            shop.item[nextSlot].SetDefaults(mod.ItemType("trashlid"));
 			nextSlot++;
 			
-			shop.item[nextSlot].SetDefaults(ItemID.MagicMirror);
+			shop.item[nextSlot].SetDefaults(mod.ItemType("EdibleTrash"));
 			nextSlot++;
 			if (NPC.downedBoss3)
 			{
@@ -185,8 +185,6 @@ namespace ForgottenMemories.NPCs.Town
 			
 			if (NPC.downedGolemBoss)
 			{
-				shop.item[nextSlot].SetDefaults(ItemID.Ectoplasm);
-				nextSlot++;
 				
 				shop.item[nextSlot].SetDefaults(ItemID.RodofDiscord);
 				nextSlot++;

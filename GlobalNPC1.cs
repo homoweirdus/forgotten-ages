@@ -13,12 +13,14 @@ namespace ForgottenMemories
 		int DagNum = 0;
 		public bool BlightCelled = false;
 		public bool BloodLeech = false;
+		public bool MarbleArrow = false;
 		
 		public override void ResetEffects(NPC npc)
         {
             DagNum = 0;
 			BlightCelled = false;
 			BloodLeech = false;
+			MarbleArrow = false;
         } 
 		
 		public override bool InstancePerEntity {get{return true;}}
@@ -47,6 +49,14 @@ namespace ForgottenMemories
 				if (damage < 20)
 				{
 					damage = 20;
+				}
+			}
+			
+			if (npc.FindBuffIndex(mod.BuffType("Bleeding")) >= 0)
+			{
+				if (damage < 4)
+				{
+					damage = 4;
 				}
 			}
 			
@@ -79,6 +89,21 @@ namespace ForgottenMemories
 				npc.lifeRegen -= num * 2 * 3;
 				if (damage < num * 3)
 					damage = num * 3;
+			}
+			
+			if (MarbleArrow == true)
+			{
+				if (npc.lifeRegen > 0)
+					npc.lifeRegen = 0;
+				int num = 0;
+				for (int index = 0; index < 1000; ++index)
+				{
+				  if (Main.projectile[index].active && Main.projectile[index].type == mod.ProjectileType("MarbleArrow") && ((double) Main.projectile[index].ai[0] == 1.0 && (double) Main.projectile[index].ai[1] == (double) npc.whoAmI))
+					++num;
+				}
+				npc.lifeRegen -= num * 4 * 5;
+				if (damage < num * 5)
+					damage = num * 5;
 			}
 		}
 		

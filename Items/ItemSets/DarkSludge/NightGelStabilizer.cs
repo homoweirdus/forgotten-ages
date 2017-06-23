@@ -27,12 +27,13 @@ public class NightGelStabilizer : ModItem
 		item.shootSpeed = 15f;
 		item.noMelee = true;
         item.scale = 0.9f;
+		item.useAmmo = AmmoID.Gel;
     }
 
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Night Gel Stabilizer");
-      Tooltip.SetDefault("");
+      Tooltip.SetDefault("Uses gel as ammo");
     }
 
 	

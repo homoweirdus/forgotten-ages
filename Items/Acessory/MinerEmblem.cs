@@ -30,7 +30,7 @@ namespace ForgottenMemories.Items.Acessory
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.pickSpeed += 0.25f;
+            player.pickSpeed *= 0.75f;
         }
 		
 		public override void AddRecipes()

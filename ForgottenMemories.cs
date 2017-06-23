@@ -96,6 +96,23 @@ namespace ForgottenMemories
 			});
 			RecipeGroup.RegisterGroup("AnyPhaseblade", group);
 		}
+		
+		public override void PostSetupContent()
+        {
+            Mod bossChecklist = ModLoader.GetMod("BossChecklist");
+            if(bossChecklist != null)
+            {
+                // AddBoss, bossname, order or value in terms of vanilla bosses, inline method for retrieving downed value.
+                bossChecklist.Call("AddBoss", "Ghastly Ent", 3.2f, (Func<bool>)(() => TGEMWorld.downedGhastlyEnt));
+				bossChecklist.Call("AddBoss", "Arterius", 6.3f, (Func<bool>)(() => TGEMWorld.downedArterius));
+				bossChecklist.Call("AddBoss", "Titan Rock", 6.9f, (Func<bool>)(() => TGEMWorld.downedTitanRock));
+                //bossChecklist.Call(....
+                // To include a description:
+                bossChecklist.Call("AddBossWithInfo", "Ghastly Ent", 3.2f, (Func<bool>)(() => TGEMWorld.downedGhastlyEnt), "Use a [i:" + ItemType("AncientLog") + "] that drops uncommonly from Tree Men post-Eye of Cthulhu");
+				bossChecklist.Call("AddBossWithInfo", "Arterius", 6.3f, (Func<bool>)(() => TGEMWorld.downedArterius), "Use a [i:" + ItemType("BloodClot") + "] at night");
+				bossChecklist.Call("AddBossWithInfo", "Titan Rock", 6.9f, (Func<bool>)(() => TGEMWorld.downedTitanRock), "Use a [i:" + ItemType("AnomalyDetector") + "]");
+			}
+        }
 
 		
 		public override void AddRecipes()

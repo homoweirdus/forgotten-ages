@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Acessory
 		public override void SetStaticDefaults()
 		{
 		  DisplayName.SetDefault("Mystical Code");
-		  Tooltip.SetDefault("Greatly increases life regen \nReduces the cooldown time of health potions \nCreates emerald energy around you over time /nEmerald energy homes, explodes on hit, and increases the amount of money enemies drop /n10% Increased Damage");
+		  Tooltip.SetDefault("Greatly increases life regen \nReduces the cooldown time of health potions \nCreates emerald energy around you over time \nEmerald energy homes, explodes on hit, and increases the amount of money enemies drop \n10% Increased Damage");
 		}
 
 
