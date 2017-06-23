@@ -13,8 +13,8 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.useTime = 8;
-			item.useAnimation = 8;
+			item.useTime = 13;
+			item.useAnimation = 13;
 
 			item.useStyle = 1;
 			item.knockBack = 6;
@@ -59,7 +59,7 @@ namespace ForgottenMemories.Items.Melee
 		{
 			for (int i = 0; i < 2; i++)
 			{
-				Vector2 vel = new Vector2 (speedX, speedY).RotatedBy((Main.rand.Next(-45, 45) * MathHelper.Pi)/180);
+				Vector2 vel = new Vector2 (speedX, speedY).RotatedBy((Main.rand.Next(-15, 15) * MathHelper.Pi)/180);
 				Projectile.NewProjectile(position.X, position.Y, vel.X, vel.Y, type, damage, 0f, player.whoAmI, 0f, 0f);
 			}
 			return false;

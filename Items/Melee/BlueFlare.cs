@@ -13,8 +13,8 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-			item.useTime = 8;
-			item.useAnimation = 8;
+			item.useTime = 13;
+			item.useAnimation = 13;
 			item.useTurn = true;
 			item.useStyle = 1;
 			item.knockBack = 6;

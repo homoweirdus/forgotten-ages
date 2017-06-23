@@ -6,6 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.NPCs.GhastlyEnt
 {
+	[AutoloadBossHead]
     public class GhastlyEnt : ModNPC
     {
 		int timer = 0;

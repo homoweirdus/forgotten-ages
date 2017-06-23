@@ -9,6 +9,7 @@ namespace ForgottenMemories.Projectiles
 	public class MarbleArrow : ModProjectile
 	{
 		int index1 = 999;
+		int a = 0;
 		public override void SetDefaults()
 		{
 			projectile.width = 14;
@@ -107,6 +108,22 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
+			if (a == 0)
+			{
+				for (int i = 0; i < 10; i++)
+				{
+					int num5 = Dust.NewDust(projectile.position, projectile.width, projectile.height, 55, 0f, 0f, 200, new Color(), 0.5f);
+					Main.dust[num5].noGravity = true;
+					Main.dust[num5].velocity *= 0.75f;
+					Main.dust[num5].fadeIn = 1.3f;
+				}
+				a++;
+			}
+			
+			if (projectile.timeLeft < 350)
+			{
+				projectile.tileCollide = true;
+			}
 			int num1 = 25;
 			if ((double) projectile.ai[0] == 0.0)
 			{
