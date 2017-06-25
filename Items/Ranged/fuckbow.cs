@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.rare = 8;
 			item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
-			item.shoot = mod.ProjectileType("BlightArrow");
+			item.shoot = 1;
 			item.shootSpeed = 15f;
 			item.noMelee = true;
 			item.autoReuse = true;
@@ -43,7 +43,7 @@ namespace ForgottenMemories.Items.Ranged
 			
 			if (counter >= 4)
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("BlightDragon"), damage, knockBack, player.whoAmI);
+				Projectile.NewProjectile(position.X, position.Y, speedX * 0.5f, speedY * 0.5f, mod.ProjectileType("BlightDragon"), damage, knockBack, player.whoAmI);
 				counter = 0;
 			}
 			
