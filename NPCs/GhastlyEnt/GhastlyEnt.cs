@@ -22,7 +22,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
         public override void SetDefaults()
         {
             npc.aiStyle = -1;
-            npc.lifeMax = 2700;
+            npc.lifeMax = 4700;
             npc.damage = 25;
             npc.defense = 15;
             npc.knockBackResist = 0f;
@@ -39,6 +39,13 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			npc.scale = 1.25f;
 			npc.npcSlots = 5;
         }
+		
+		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+			{
+				npc.lifeMax = 5400 + ((numPlayers) * 1000);
+				npc.damage = 30;
+				npc.defense = 20;
+			}
 		
 		public override void SetStaticDefaults()
 		{
@@ -143,7 +150,9 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 							float sY = direction.Y * 6.5f;
 							sX += (float)Main.rand.Next(-60, 61) * 0.05f;
 							sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Leafnado"), 12, 1, Main.myPlayer, 0, 0);
+							int p = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Leafnado"), 12, 1, Main.myPlayer, 0, 0);
+							npc.netUpdate = true;
+							Main.projectile[p].netUpdate = true;
 						}
 					}
 					

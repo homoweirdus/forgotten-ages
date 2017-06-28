@@ -22,7 +22,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 500000;
-			item.rare = 10;
+			item.rare = 9;
 			item.UseSound = SoundID.Item41;
 			item.autoReuse = true;
 			item.shoot = ProjectileID.Bullet;
@@ -69,9 +69,8 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(6) == 0)
 			{
-				Main.PlaySound(2, (int)position.X, (int)position.Y, 15);
 				float sX = speedX;
 				float sY = speedY;
 				sX += (float)Main.rand.Next(-60, 61) * 0.03f;
@@ -87,16 +86,5 @@ namespace ForgottenMemories.Items.Ranged
 			
 			return false;
 		}
-		
-		public override void ModifyTooltips(List<TooltipLine> list)
-        {
-            foreach (TooltipLine line2 in list)
-            {
-                if (line2.mod == "Terraria" && line2.Name == "ItemName")
-                {
-                    line2.overrideColor = new Color(246, 0, 255);
-                }
-            }
-        }
 	}
 }

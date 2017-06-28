@@ -38,7 +38,7 @@ namespace ForgottenMemories.Items.ItemSets.LunarAltHelms
 		{
 			((TgemPlayer)player.GetModPlayer(mod, "TgemPlayer")).stardustCrown = true;
 			player.maxTurrets += 1;
-			player.setBonus = "Sentry attacks will burn enemies with stardust energy, reducing all stats \n Increased max turrets";
+			player.setBonus = "Sentry attacks will burn enemies with stardust energy, reducing all stats \nIncreased max turrets";
 		}
 		
 		public override void UpdateEquip(Player player)

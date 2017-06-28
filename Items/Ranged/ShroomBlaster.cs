@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using ForgottenMemories.Projectiles.Info;
+using ForgottenMemories.Projectiles.InfoA;
 
 namespace ForgottenMemories.Items.Ranged
 {

@@ -23,6 +23,7 @@ namespace ForgottenMemories.Items.Consumable
 			item.UseSound = SoundID.Item2;
 			item.useTime = 10;
 			item.useAnimation = 10;
+			item.consumable = true;
 			item.value = 1000;
 			item.rare = 2;
 		}

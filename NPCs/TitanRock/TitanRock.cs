@@ -155,6 +155,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 						}
 						falltimer += 1;
 						Main.PlaySound(15, (int)npc.position.X, (int)npc.position.Y, 0);
+						npc.netUpdate = true;
 					}
 					
 					if (falltimer >= 0)
@@ -210,6 +211,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 							Main.dust[dust].scale = 2.5f;
 						}
 						TGEMWorld.TremorTime = 100;
+						npc.netUpdate = true;
 					}
 				}
 				
@@ -285,12 +287,16 @@ namespace ForgottenMemories.NPCs.TitanRock
 				
 				if (Main.rand.Next(400) == 0)
 				{
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("TitanBat"));
+					int n = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("TitanBat"));
+					npc.netUpdate = true;
+					Main.projectile[n].netUpdate = true;
 				}
 				
 				if (Main.rand.Next(500) == 0)
 				{
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("SpikeTitan"));
+					int n = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("SpikeTitan"));
+					npc.netUpdate = true;
+					Main.projectile[n].netUpdate = true;
 				}
 								
 				if (timer >= 400)
@@ -394,8 +400,9 @@ namespace ForgottenMemories.NPCs.TitanRock
 							float sY = direction.Y * 8f;
 							sX += (float)Main.rand.Next(-15, 15) * 0.1f;
 							sY += (float)Main.rand.Next(-15, 15) * 0.1f;
-							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Ball2"), 25, 1, Main.myPlayer, 0, 0);
+							int p = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Ball2"), 25, 1, Main.myPlayer, 0, 0);
 							Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
+							Main.projectile[p].netUpdate = true;
 						}
 					}
 					if (timer == 50 || timer == 150 || timer == 250)
@@ -410,8 +417,9 @@ namespace ForgottenMemories.NPCs.TitanRock
 								float sY = direction.Y * 8f;
 								sX += (float)Main.rand.Next(-15, 15) * 0.1f;
 								sY += (float)Main.rand.Next(-15, 15) * 0.1f;
-								Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Ball2"), 30, 1, Main.myPlayer, 0, 0);
+								int p = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Ball2"), 30, 1, Main.myPlayer, 0, 0);
 								Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
+								Main.projectile[p].netUpdate = true;
 							}
 						}
 					}
@@ -508,7 +516,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 				int amountToDrop = Main.rand.Next(12,16);
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SpaceRockFragment"), amountToDrop);
 				
-				switch (Main.rand.Next (5))
+				switch (Main.rand.Next (8))
 				{
 					case 0:
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserbladeKatana"), 1);

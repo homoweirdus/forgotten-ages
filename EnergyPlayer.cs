@@ -28,12 +28,14 @@ namespace ForgottenMemories
 		public bool SlimyNeck = false;
 		public bool jungard = true;
 		public bool frostguard = false;
+		public bool ManaShard = false;
 		
 		public override void ResetEffects()
 		{
 			firestorm = false;
 			doubleJumpMeteor = false;
 			hadron = false;
+			ManaShard = false;
 			pearl = false;
 			pearl2 = false;
 			BoCBuff = false;

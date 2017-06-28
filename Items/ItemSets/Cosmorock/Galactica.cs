@@ -4,7 +4,7 @@ using Terraria.ID;
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
-using ForgottenMemories.Projectiles.Info;
+using ForgottenMemories.Projectiles.InfoA;
 
 namespace ForgottenMemories.Items.ItemSets.Cosmorock
 {

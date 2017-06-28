@@ -27,7 +27,7 @@ namespace ForgottenMemories.NPCs.Granite
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spike Elemental");
+			DisplayName.SetDefault("Granite Protector");
 			Main.npcFrameCount[npc.type] = 6;
 		}
 		
@@ -57,7 +57,12 @@ namespace ForgottenMemories.NPCs.Granite
 		public override void NPCLoot()
 		{
 			int amountToDrop = Main.rand.Next(10,25);
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GraniteBlock, amountToDrop);			
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GraniteBlock, amountToDrop);	
+
+			if (Main.rand.Next(20) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ProtectorStab"), 0);	
+			}
 		}
 	
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)

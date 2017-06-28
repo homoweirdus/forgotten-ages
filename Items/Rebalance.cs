@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 using Terraria.GameContent.Events;
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
-using ForgottenMemories.Projectiles.Info;
+using ForgottenMemories.Projectiles.InfoA;
 
 namespace ForgottenMemories.Items
 {

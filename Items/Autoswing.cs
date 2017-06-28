@@ -65,11 +65,6 @@ namespace ForgottenMemories.Items
 				{
 					item.autoReuse = true;
 				}
-				
-				if (item.type == ItemID.NorthPole)
-				{
-					item.autoReuse = true;
-				}
 			}
 		}
 		
@@ -166,18 +161,6 @@ namespace ForgottenMemories.Items
 					for (int i = 0; i < 1000; ++i)
 					{
 						if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == 367)
-						{
-							return false;
-						}
-					}
-					return true;
-				}
-				
-				if (item.type == ItemID.NorthPole)
-				{
-					for (int i = 0; i < 1000; ++i)
-					{
-						if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == 342)
 						{
 							return false;
 						}

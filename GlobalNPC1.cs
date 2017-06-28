@@ -14,6 +14,7 @@ namespace ForgottenMemories
 		public bool BlightCelled = false;
 		public bool BloodLeech = false;
 		public bool MarbleArrow = false;
+		public bool Necro = false;
 		
 		public override void ResetEffects(NPC npc)
         {
@@ -21,6 +22,7 @@ namespace ForgottenMemories
 			BlightCelled = false;
 			BloodLeech = false;
 			MarbleArrow = false;
+			Necro = false;
         } 
 		
 		public override bool InstancePerEntity {get{return true;}}
@@ -52,6 +54,14 @@ namespace ForgottenMemories
 				}
 			}
 			
+			if (npc.FindBuffIndex(mod.BuffType("Frostburn2")) >= 0)
+			{
+				if (damage < 10)
+				{
+					damage = 10;
+				}
+			}
+			
 			if (npc.FindBuffIndex(mod.BuffType("Bleeding")) >= 0)
 			{
 				if (damage < 4)
@@ -70,7 +80,7 @@ namespace ForgottenMemories
 				  if (Main.projectile[index].active && Main.projectile[index].type == mod.ProjectileType("BlightOrbShoot") && ((double) Main.projectile[index].ai[0] == 1.0 && (double) Main.projectile[index].ai[1] == (double) npc.whoAmI))
 					++num;
 				}
-				npc.lifeRegen -= num * 2 * 5;
+				npc.lifeRegen -= num * 4 * 5;
 				if (damage < num * 5)
 					damage = num * 5;
 			}
@@ -86,7 +96,7 @@ namespace ForgottenMemories
 				  if (Main.projectile[index].active && Main.projectile[index].type == mod.ProjectileType("BloodLeech") && ((double) Main.projectile[index].ai[0] == 1.0 && (double) Main.projectile[index].ai[1] == (double) npc.whoAmI))
 					++num;
 				}
-				npc.lifeRegen -= num * 2 * 3;
+				npc.lifeRegen -= num * 4 * 3;
 				if (damage < num * 3)
 					damage = num * 3;
 			}
@@ -104,6 +114,22 @@ namespace ForgottenMemories
 				npc.lifeRegen -= num * 4 * 5;
 				if (damage < num * 5)
 					damage = num * 5;
+			}
+			
+			if (Necro == true)
+			{
+				if (npc.lifeRegen > 0)
+					npc.lifeRegen = 0;
+				int num = 0;
+				for (int index = 0; index < 1000; ++index)
+				{
+				  if (Main.projectile[index].active && Main.projectile[index].type == mod.ProjectileType("NecroDagger") && ((double) Main.projectile[index].ai[0] == 1.0 && (double) Main.projectile[index].ai[1] == (double) npc.whoAmI))
+					++num;
+					npc.AddBuff(mod.BuffType("NecroDagger"), 180, false);
+				}
+				npc.lifeRegen -= num * 4 * 3;
+				if (damage < num * 3)
+					damage = num * 3;
 			}
 		}
 		

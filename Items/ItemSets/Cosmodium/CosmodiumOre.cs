@@ -1,8 +1,13 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.IO;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ForgottenMemories.Projectiles.InfoA;
 
 namespace ForgottenMemories.Items.ItemSets.Cosmodium
 {
@@ -27,6 +32,19 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 
             item.createTile = mod.TileType("Cosmodium");
         }
+		
+		public override void ModifyTooltips(List<TooltipLine> list)
+        {
+            foreach (TooltipLine line2 in list)
+            {
+                if (line2.mod == "Terraria" && line2.Name == "ItemName")
+                {
+                    line2.overrideColor = new Color(246, 0, 255);
+                }
+            }
+        }
+		
+		
 
     public override void SetStaticDefaults()
     {

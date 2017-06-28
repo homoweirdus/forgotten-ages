@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("ColdSnap");
+      DisplayName.SetDefault("Cold Snap");
       Tooltip.SetDefault("Creates an expanding area of ice around you");
     }
 

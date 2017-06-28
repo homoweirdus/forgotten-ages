@@ -5,13 +5,12 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Projectiles.Info
+namespace ForgottenMemories.Projectiles.InfoA
 {
 	
 	public class Info : GlobalProjectile
 	{
 		public bool Paradox = false;
-		public bool Mutilator = false;
 		public bool TrueHR = false;
 		public bool Cosmodium = false;
 		public bool Shroom = false;
@@ -22,6 +21,8 @@ namespace ForgottenMemories.Projectiles.Info
 		public bool Split = false;
 		public bool wtf = false;
 		public bool BlightedBow = false;
+		public bool FrostCrystal = false;
+		public bool SnowSplit = false;
 		
 		public override bool InstancePerEntity {get{return true;}}
 		
@@ -30,6 +31,11 @@ namespace ForgottenMemories.Projectiles.Info
 			if (Flamethrower == true)
 			{
 				target.immune[projectile.owner] = 5;
+			}
+			
+			if (SnowSplit == true || FrostCrystal == true)
+			{
+				target.AddBuff(BuffID.Frostburn, 180);
 			}
 			
 			if (Main.rand.Next(2) == 0 && Paradox == true)
@@ -92,6 +98,19 @@ namespace ForgottenMemories.Projectiles.Info
 				Main.projectile[ok3].GetGlobalProjectile<Info>(mod).wtf = true;
 				Main.projectile[ok4].GetGlobalProjectile<Info>(mod).wtf = true;
 				Main.projectile[ok5].GetGlobalProjectile<Info>(mod).wtf = true;
+			}
+			
+			if (SnowSplit == true)
+			{
+				Vector2 origVect = new Vector2(-projectile.velocity.X / 2, -projectile.velocity.Y / 2);
+				Vector2 newVect2 = origVect.RotatedBy(-System.Math.PI / Main.rand.Next(30));
+				Vector2 newVect3 = origVect.RotatedBy(System.Math.PI / Main.rand.Next(30));
+				if (Main.rand.Next(2) == 0)
+				{
+					int ok1 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, origVect.X, origVect.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
+				}
+				int ok2 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect2.X, newVect2.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
+				int ok3 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect3.X, newVect3.Y, projectile.type, (int)(projectile.damage*0.6), projectile.knockBack, projectile.owner);
 			}
 			
 			if (Cosmodium == true)
@@ -162,28 +181,33 @@ namespace ForgottenMemories.Projectiles.Info
 			
 			if (Shroom == true)
 			{
-				Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
-				Vector2 move = Vector2.Zero;
-				float distance = 150f;
-				bool target = false;
-				for (int k = 0; k < 200; k++)
+				Vector2 targetPos = projectile.Center;
+				float targetDist = 350f;
+				bool targetAcquired = false;
+				
+				for (int i = 0; i < 200; i++)
 				{
-					if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
+					if (Main.npc[i].CanBeChasedBy(projectile) && Collision.CanHit(projectile.Center, 1, 1, Main.npc[i].Center, 1, 1) && Main.npc[i].immune[projectile.owner] == 0)
 					{
-						Vector2 newMove = Main.npc[k].Center - projectile.Center;
-						float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
-						if (distanceTo < distance)
+						float dist = projectile.Distance(Main.npc[i].Center);
+						if (dist < targetDist)
 						{
-							newMove.Normalize();
-							move = newMove;
-							distance = distanceTo;
-							target = true;
+							targetDist = dist;
+							targetPos = Main.npc[i].Center;
+							targetAcquired = true;
 						}
 					}
 				}
-				if (target)
+				
+				if (targetAcquired)
 				{
-					projectile.velocity = (move * 14f);
+					float homingSpeedFactor = 4f;
+					Vector2 homingVect = targetPos - projectile.Center;
+					float dist = projectile.Distance(targetPos);
+					dist = homingSpeedFactor / dist;
+					homingVect *= dist;
+
+					projectile.velocity = (projectile.velocity * 20 + homingVect) / 21f;
 				}
 			}
 		}

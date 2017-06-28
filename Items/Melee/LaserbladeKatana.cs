@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = 1;
+			item.shoot = mod.ProjectileType("laserslash");
 			item.shootSpeed = 10;
 		}
 

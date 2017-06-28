@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Melee
 			item.useStyle = 1;
 			item.knockBack = 3;
 			item.value = 10000000;
-			item.rare = 8;
+			item.rare = 10;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;
@@ -47,17 +47,6 @@ namespace ForgottenMemories.Items.Melee
 				Main.dust[dust2].scale = 2.5f;
 			}
 		}
-		
-		public override void ModifyTooltips(List<TooltipLine> list)
-        {
-            foreach (TooltipLine line2 in list)
-            {
-                if (line2.mod == "Terraria" && line2.Name == "ItemName")
-                {
-                    line2.overrideColor = new Color(246, 0, 255);
-                }
-            }
-        }
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {

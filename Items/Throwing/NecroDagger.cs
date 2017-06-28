@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 
-			item.damage = 14;
+			item.damage = 28;
 			item.thrown = true;
 			item.width = 32;
 			item.height = 36;
@@ -18,7 +18,10 @@ namespace ForgottenMemories.Items.Throwing
 			item.useAnimation = 16;
 			item.useStyle = 1;
 			item.knockBack = 2;
+			//item.channel = true;
 			item.value = 60000;
+			item.consumable = true;
+			item.maxStack = 999;
 			item.rare = 3;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
@@ -28,21 +31,21 @@ namespace ForgottenMemories.Items.Throwing
 			item.noUseGraphic = true;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Necro Dagger");
-      Tooltip.SetDefault("");
-    }
+		public override void SetStaticDefaults()
+		{
+		  DisplayName.SetDefault("Necro Dagger");
+		  Tooltip.SetDefault("Sticks to enemies");
+		}
 
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Bone, 35);
-			recipe.AddIngredient(null, "DarkEnergy", 3);
-			recipe.AddIngredient(ItemID.Cobweb, 50);
+			recipe.AddIngredient(ItemID.Bone, 2);
+			recipe.AddIngredient(null, "DarkEnergy", 1);
+			recipe.AddIngredient(ItemID.Cobweb, 5);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
+			recipe.SetResult(this, 50);
 			recipe.AddRecipe();
 		}
 	}

@@ -7,12 +7,23 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using ForgottenMemories.Projectiles.Info;
+using ForgottenMemories.Projectiles.InfoA;
 
 namespace ForgottenMemories.Items.ItemSets.Cosmodium
 {
     public class CosmodiumBow : ModItem
     {
+		
+		public override void ModifyTooltips(List<TooltipLine> list)
+        {
+            foreach (TooltipLine line2 in list)
+            {
+                if (line2.mod == "Terraria" && line2.Name == "ItemName")
+                {
+                    line2.overrideColor = new Color(246, 0, 255);
+                }
+            }
+        }
 
         public override void SetDefaults()
         {

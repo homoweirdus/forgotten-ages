@@ -27,17 +27,25 @@ namespace ForgottenMemories.Items.Throwing
 		}
 
 
-        public override void Kill(int timeLeft)
+			public override void Kill(int timeLeft)
 			{
+				int num = Main.rand.Next(3, 7);
+				for (int index1 = 0; index1 < num; ++index1)
+				{
+					int index2 = Dust.NewDust(projectile.Center - (projectile.velocity/2f), 0, 0, 67, projectile.velocity.X/3, projectile.velocity.Y/3, 100, new Color(), 2.1f);
+					Dust dust = Main.dust[index2];
+					Main.dust[index2].noGravity = true;
+				}
+			
 				int amountOfProjectiles = Main.rand.Next(3, 4);
 			
 				for (int i = 0; i < amountOfProjectiles; ++i)
-					{
-						float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-						float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 90, 15, 5f, projectile.owner);
-					}
-					Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
+				{
+					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
+					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 90, 15, 5f, projectile.owner);
+				}
+				Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 			}
         }
 
@@ -47,6 +55,9 @@ namespace ForgottenMemories.Items.Throwing
             public override void SetDefaults()
             {
                 item.CloneDefaults(ItemID.Shuriken);
+				item.shoot = mod.ProjectileType("CrystalShurikenP");
+				item.damage = 37;
+				item.autoReuse = true;
 			}
     public override void SetStaticDefaults()
     {

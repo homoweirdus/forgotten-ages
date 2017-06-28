@@ -12,13 +12,13 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 20;
-			projectile.height = 20;
+			projectile.width = 10;
+			projectile.height = 10;
 			projectile.aiStyle = 0;
 			projectile.friendly = true;
-			projectile.ranged = true;
+			projectile.magic = true;
 			projectile.tileCollide = false;
-			projectile.penetrate = 1;
+			projectile.penetrate = -1;
 			projectile.timeLeft = 360;
 			projectile.alpha = 255;
 		}
@@ -31,24 +31,24 @@ namespace ForgottenMemories.Projectiles
 		public override void AI()
 		{
 			Player player = Main.player[projectile.owner];
-			int dust;
-			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 135, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-			Main.dust[dust].scale = 1.2f;
-			Main.dust[dust].noGravity = true;		
+			
+			for (int index1 = 0; index1 < 5; ++index1)
+			{
+				float num1 = projectile.velocity.X / 3f * (float) index1;
+				float num2 = projectile.velocity.Y / 3f * (float) index1;
+				int num3 = 4;
+				int index2 = Dust.NewDust(new Vector2(projectile.position.X + (float) num3, projectile.position.Y + (float) num3), projectile.width - num3 * 2, projectile.height - num3 * 2, 135, 0.0f, 0.0f, 200, default(Color), 1.3f);
+				Main.dust[index2].noGravity = true;
+				Main.dust[index2].velocity *= 0.1f;
+				Main.dust[index2].velocity += projectile.velocity * 0.1f;
+				Main.dust[index2].position.X -= num1;
+				Main.dust[index2].position.Y -= num2;
+			}
+			
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 0.785f;
-			Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
-			Vector2 move = Vector2.Zero;
-			Vector2 newMove = Main.MouseWorld - projectile.Center;
-			if (Main.mouseLeft)
-			{
-				newMove.Normalize();
-				move = newMove;
-				projectile.velocity = (move * 18f);
-			}
-			if (projectile.timeLeft <= 300)
-			{
+			
+			if (projectile.position.Y > (double) projectile.ai[1])
 				projectile.tileCollide = true;
-			}
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

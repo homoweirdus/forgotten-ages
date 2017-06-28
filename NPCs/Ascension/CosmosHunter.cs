@@ -27,10 +27,14 @@ namespace ForgottenMemories.NPCs.Ascension
             Main.npcFrameCount[npc.type] = 3;
 		}
 
-       // public override float CanSpawn(NPCSpawnInfo spawnInfo)
-       // {
-       //     return spawnInfo.spawnTileY > Main.rockLayer && spawnInfo.player.ZoneJungle ? 0.2f : 0f;
-       // }
+       public override float SpawnChance(NPCSpawnInfo spawnInfo)
+		{
+			int x = spawnInfo.spawnTileX;
+			int y = spawnInfo.spawnTileY;
+			int tile = (int)Main.tile[x, y].type;
+			return (tile == mod.TileType("Cosmodium")) ? 0.2f : 0f;
+		}
+		
         public override void FindFrame(int frameHeight)
         {
             npc.frameCounter += 0.25f;

@@ -75,7 +75,7 @@ namespace ForgottenMemories.NPCs.Town
 				case 1:
 					return "I throw trash all over the ring!";
 				case 2: 
-					return "Someone told me I should be the ref. I'm not going to be the ref! I'm a villan, don't you see?";
+					return "Someone told me I should be the ref. I'm not going to be the ref! I'm a villain, don't you see?";
 				default:
 					return "I eat garbage!";
 			}
@@ -106,6 +106,9 @@ namespace ForgottenMemories.NPCs.Town
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
             shop.item[nextSlot].SetDefaults(mod.ItemType("trashlid"));
+			nextSlot++;
+			
+			shop.item[nextSlot].SetDefaults(mod.ItemType("trashcan"));
 			nextSlot++;
 			
 			shop.item[nextSlot].SetDefaults(mod.ItemType("EdibleTrash"));
@@ -172,6 +175,10 @@ namespace ForgottenMemories.NPCs.Town
 			
 			if (NPC.downedPlantBoss)
 			{
+				
+				shop.item[nextSlot].SetDefaults(mod.ItemType("TrashCannon"));
+				nextSlot++;
+			
 				shop.item[nextSlot].SetDefaults(ItemID.TurtleShell);
 				nextSlot++;
 				

@@ -14,7 +14,7 @@ namespace ForgottenMemories
     {
         private const int saveVersion = 0;
         public bool Servant = false;
-		public bool LightningDagger = false;
+		public bool cryotine1 = false;
 		public bool BlightFlameRing = false;
 		public bool EaterMinion = false;
 		public bool BlightstoneDragon = false;
@@ -38,7 +38,7 @@ namespace ForgottenMemories
 			BloodSlime = false;
 			BlightOrb = false;
             Servant = false;
-			LightningDagger = false;
+			cryotine1 = false;
 			CreeperMinion = false;
 			ShadowflameSpirit = false;
 			EaterMinion = false;

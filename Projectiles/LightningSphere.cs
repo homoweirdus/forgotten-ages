@@ -37,7 +37,7 @@ namespace ForgottenMemories.Projectiles
 			bool target = false;
 			for (int k = 0; k < 200; k++)
 			{
-				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
+				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].immortal && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
 				{
 					Vector2 newMove = Main.npc[k].Center - projectile.Center;
 					float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
@@ -51,9 +51,9 @@ namespace ForgottenMemories.Projectiles
 				}
 			}
 			timer++;
-			if (target && timer >= 8)
+			if (target && timer >= 24)
 			{
-				int proj = Projectile.NewProjectile(projectile.Center.X + 25, projectile.Center.Y + 5, move.X * 15f, move.Y * 15f, mod.ProjectileType("ChainLightning2"), projectile.damage, 5f, projectile.owner);
+				int proj = Projectile.NewProjectile(projectile.Center.X + 25, projectile.Center.Y + 5, move.X * 15f, move.Y * 15f, mod.ProjectileType("ChainLightning2"), projectile.damage * 3, 5f, projectile.owner);
 				timer = 0;
 			}
 		}

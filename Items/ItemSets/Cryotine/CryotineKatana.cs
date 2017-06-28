@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.crit = 25;
 			item.width = 88;
 			item.height = 88;
-			item.useTime = 10;
-			item.useAnimation = 10;
+			item.useTime = 12;
+			item.useAnimation = 12;
 
 			item.useStyle = 1;
 			item.knockBack = 3;

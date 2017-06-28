@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 		public override void SetDefaults()
 		{
 
-			item.damage = 12;
+			item.damage = 11;
 			item.ranged = true;
 			item.width = 88;
 			item.height = 88;
@@ -27,6 +27,11 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
             item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;
+		}
+		
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(-2, 0);
 		}
 
     public override void SetStaticDefaults()
@@ -47,7 +52,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(5) == 0)
 			{
 				for (int i = 0; i < 3; ++i)
 				{
