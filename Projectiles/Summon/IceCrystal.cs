@@ -155,7 +155,7 @@ namespace ForgottenMemories.Projectiles.Summon
 					TgemPlayer modPlayer = player.GetModPlayer<TgemPlayer>(mod);
 					if (projectile.owner == Main.myPlayer && modPlayer.cryotine1 == true)
 					{
-						int p = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector152.X * 4, vector152.Y * 4, 309, (int)(projectile.damage * 1.2), projectile.knockBack, projectile.owner, 0f, (float)projectile.whoAmI);
+						int p = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector152.X * 4, vector152.Y * 4, mod.ProjectileType("PermafrostThing"), (int)(projectile.damage * 1.2), projectile.knockBack, projectile.owner, 0f, (float)projectile.whoAmI);
 						Main.projectile[p].GetGlobalProjectile<Info>(mod).FrostCrystal = true;
 						Main.projectile[p].GetGlobalProjectile<Info>(mod).Shroom = true;
 						//Main.projectile[p].extraUpdates = 2;
@@ -165,7 +165,7 @@ namespace ForgottenMemories.Projectiles.Summon
 					
 					else if (projectile.owner == Main.myPlayer)
 					{
-						int p = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector152.X * 3, vector152.Y * 3, 309, projectile.damage, projectile.knockBack, projectile.owner, 0f, (float)projectile.whoAmI);
+						int p = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector152.X * 3, vector152.Y * 3, mod.ProjectileType("PermafrostThing"), projectile.damage, projectile.knockBack, projectile.owner, 0f, (float)projectile.whoAmI);
 						Main.projectile[p].GetGlobalProjectile<Info>(mod).FrostCrystal = true;
 						Main.projectile[p].height = 4;
 						Main.projectile[p].width = 4;
