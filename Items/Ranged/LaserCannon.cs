@@ -31,11 +31,11 @@ namespace ForgottenMemories.Items.Ranged
 			item.useAmmo =  AmmoID.Bullet;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Lightning Shotgun");
-      Tooltip.SetDefault("");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Lightning Shotgun");
+			Tooltip.SetDefault("");
+		}
 
 		
 		public override Vector2? HoldoutOffset()
@@ -56,14 +56,11 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			for (int i = 0; i < 2; i++)
-			{
-				float sX = speedX;
-				float sY = speedY;
-				sX += (float)Main.rand.Next(-60, 61) * 0.03f;
-				sY += (float)Main.rand.Next(-60, 61) * 0.03f;
-				Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("ShotLightning"), damage, knockBack, player.whoAmI);
-			}
+			float sX = speedX;
+			float sY = speedY;
+			sX += (float)Main.rand.Next(-60, 61) * 0.03f;
+			sY += (float)Main.rand.Next(-60, 61) * 0.03f;
+			Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("ShotLightning"), damage, knockBack, player.whoAmI);
 			
 			for (int i = 0; i < 4; i++)
 			{

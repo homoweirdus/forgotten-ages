@@ -31,21 +31,23 @@ namespace ForgottenMemories.Items.Ranged
 			item.useAmmo =  AmmoID.Bullet;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Lightning Pistol");
-      Tooltip.SetDefault("");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Lightning Pistol");
+			Tooltip.SetDefault("");
+		}
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			float sX = speedX;
-			float sY = speedY;
-			sX += (float)Main.rand.Next(-60, 61) * 0.03f;
-			sY += (float)Main.rand.Next(-60, 61) * 0.03f;
-			Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("PistolLightning"), damage, knockBack, player.whoAmI);
-			
+			if (Main.rand.Next(3) == 0)
+			{
+				float sX = speedX;
+				float sY = speedY;
+				sX += (float)Main.rand.Next(-60, 61) * 0.03f;
+				sY += (float)Main.rand.Next(-60, 61) * 0.03f;
+				Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("PistolLightning"), damage, knockBack, player.whoAmI);
+			}
 			return true;
 		}
 	}

@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.rare = 8;
 			item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
-			item.shoot = mod.ProjectileType("BlightArrow");
+			item.shoot = 1;
 			item.shootSpeed = 15f;
 			item.noMelee = true;
 			item.autoReuse = true;
