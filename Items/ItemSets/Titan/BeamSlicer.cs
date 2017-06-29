@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 
-namespace ForgottenMemories.Items.Throwing
+namespace ForgottenMemories.Items.ItemSets.Titan
  {
 	public class BeamSlicer : ModItem
 	{

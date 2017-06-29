@@ -23,6 +23,7 @@ namespace ForgottenMemories.Projectiles.InfoA
 		public bool BlightedBow = false;
 		public bool FrostCrystal = false;
 		public bool SnowSplit = false;
+		public bool NotSummon = false;
 		
 		public override bool InstancePerEntity {get{return true;}}
 		
@@ -146,6 +147,12 @@ namespace ForgottenMemories.Projectiles.InfoA
 		}
 		public override void AI(Projectile projectile)
 		{
+			if (NotSummon == true)
+			{
+				ProjectileID.Sets.MinionShot[projectile.type] = false;
+				ProjectileID.Sets.SentryShot[projectile.type] = false;
+			}
+			
 			if (TrueHR == true)
 			{
 				int dust;

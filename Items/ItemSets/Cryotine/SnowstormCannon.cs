@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.useAnimation = 16;
 
 			item.useStyle = 5;
-			item.knockBack = 3;
+			item.knockBack = 0;
 			item.value = 168000;
 			item.noMelee = true;
 			item.rare = 2;

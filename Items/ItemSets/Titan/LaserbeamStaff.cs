@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.Magic
+namespace ForgottenMemories.Items.ItemSets.Titan
 {
 	public class LaserbeamStaff : ModItem
 	{

@@ -4,9 +4,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.Melee
+namespace ForgottenMemories.Items.ItemSets.Titan
 {
-	public class TitanicCrusher : ModItem
+	public class TitanSpin : ModItem
 	{
 		public override void SetDefaults()
 		{
@@ -19,21 +19,21 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;
 			item.channel = true;
 			item.noMelee = true;
-			item.useAnimation = 44;
-			item.useTime = 44;
 
+			item.useAnimation = 25;
+			item.useTime = 25;
 			item.shootSpeed = 16f;
 			item.knockBack = 3.75f;
-			item.damage = 52;
-			item.value = 140000;
-			item.rare = 4;
-			item.shoot = mod.ProjectileType("TitanicCrusher");
+			item.damage = 43;
+			item.value = Item.sellPrice(0, 1, 30, 0);
+			item.rare = 3;
+			item.shoot = mod.ProjectileType("TitanSpin");
 		}
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Titanic Crusher");
-      Tooltip.SetDefault("Rends enemy defense and deals some damage over time on hit");
+      DisplayName.SetDefault("Titan's Spin");
+      Tooltip.SetDefault("Occasionally fires a barrage of lasers");
     }
 
 	}

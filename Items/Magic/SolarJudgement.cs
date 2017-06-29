@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.Magic
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Solar Judgement");
-      Tooltip.SetDefault("Creates a fast moving, explosive orb of sunfire that rapisly loses velocity");
+      Tooltip.SetDefault("Creates a fast moving, explosive orb of sunfire that rapidly loses velocity");
     }
 
 		

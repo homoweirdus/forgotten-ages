@@ -17,7 +17,7 @@ namespace ForgottenMemories.Projectiles
             projectile.friendly = true;
             projectile.thrown = true;
             projectile.penetrate = 1;
-            projectile.timeLeft = 600;
+            projectile.timeLeft = 400;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
         } 

@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using ForgottenMemories.Projectiles.InfoA;
 
-namespace ForgottenMemories.Items.Ranged
+namespace ForgottenMemories.Items.ItemSets.Titan
 {
 	public class AncientLauncher : ModItem
 	{

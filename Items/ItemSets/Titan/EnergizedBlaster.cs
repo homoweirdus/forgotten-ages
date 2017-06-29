@@ -5,7 +5,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.Magic
+namespace ForgottenMemories.Items.ItemSets.Titan
 {
     public class EnergizedBlaster : ModItem
     {
