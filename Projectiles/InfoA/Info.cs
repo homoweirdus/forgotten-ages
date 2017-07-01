@@ -39,6 +39,11 @@ namespace ForgottenMemories.Projectiles.InfoA
 				target.AddBuff(BuffID.Frostburn, 180);
 			}
 			
+			if (NotSummon == true)
+			{
+				target.AddBuff(mod.BuffType("SpiderSlow"), 180);
+			}
+			
 			if (Main.rand.Next(2) == 0 && Paradox == true)
 			{
 				int z = Projectile.NewProjectile(projectile.Center.X + projectile.velocity.X * 100f, projectile.Center.Y + projectile.velocity.Y * 100f, projectile.velocity.X * -1, projectile.velocity.Y * -1, projectile.type, projectile.damage, 0f, projectile.owner, 0f, 0f);

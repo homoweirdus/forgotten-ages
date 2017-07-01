@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 		public override void SetDefaults()
 		{
 
-			item.damage = 4;
+			item.damage = 6;
 			item.magic = true;
 			item.width = 22;
 			item.height = 24;

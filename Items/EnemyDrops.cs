@@ -154,6 +154,12 @@ namespace ForgottenMemories.Items
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Pearl"), 1); 
 			}
+			
+			if (Main.hardMode && (double) npc.value > 0.0)
+			{
+				if (Main.rand.Next(4) == 0 && Main.player[(int) Player.FindClosest(npc.position, npc.width, npc.height)].ZoneDesert)
+					Item.NewItem((int) npc.position.X, (int) npc.position.Y, npc.width, npc.height, mod.ItemType("SpiritflameChunk"), 1, false, 0, false, false);
+			}
 		}
 	}
 }

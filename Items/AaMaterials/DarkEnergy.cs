@@ -25,6 +25,11 @@ namespace ForgottenMemories.Items.AaMaterials
       DisplayName.SetDefault("Nightly Essence");
       Tooltip.SetDefault("");
     }
+	
+	public override void Update(ref float gravity, ref float maxFallSpeed)
+		{
+			maxFallSpeed = 0f;
+		}
 
 	}
 }

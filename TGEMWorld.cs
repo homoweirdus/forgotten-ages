@@ -20,7 +20,7 @@ namespace ForgottenMemories
 		public static bool downedGhastlyEnt = false;
 		public static bool downedArterius = false;
 		public static bool downedTitanRock = false;
-		public static int TremorTime = 0;
+		public static int TremorTime;
 		
 		public override void Initialize()
         {
@@ -29,6 +29,7 @@ namespace ForgottenMemories
 			downedArterius = false;
 			Cryotine = false;
 			downedGhastlyEnt = false;
+			TremorTime = 0;
 			downedTitanRock = false;
 		}
 		

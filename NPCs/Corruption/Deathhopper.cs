@@ -17,7 +17,7 @@ namespace ForgottenMemories.NPCs.Corruption
 			npc.lifeMax = 100;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
-			npc.value = 60f;
+			npc.value = Item.buyPrice(0, 0, 0, 50);
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 1;
 			aiType = NPCID.BlueSlime;
@@ -35,8 +35,8 @@ namespace ForgottenMemories.NPCs.Corruption
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
 			int tile = (int)Main.tile[x, y].type;
-			return spawnInfo.player.ZoneCorrupt ? 0.2f : 0f;
-			return spawnInfo.player.ZoneCrimson ? 0.2f : 0f;
+			return spawnInfo.player.ZoneCorrupt ? 0.08f : 0f;
+			return spawnInfo.player.ZoneCrimson ? 0.08f : 0f;
 		}
 		
 					public override void NPCLoot()

@@ -19,6 +19,11 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.scale = 0.75f;
 			item.maxStack = 999;
 		}
+		
+		public override void Update(ref float gravity, ref float maxFallSpeed)
+		{
+			maxFallSpeed = 0f;
+		}
 
     public override void SetStaticDefaults()
     {

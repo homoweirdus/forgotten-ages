@@ -35,7 +35,7 @@ namespace ForgottenMemories.NPCs.Night
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
 			int tile = (int)Main.tile[x, y].type;
-			return (tile == 2) && !Main.bloodMoon && spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.2f : 0f;
+			return (tile == 2) && NPC.downedBoss1 && !Main.bloodMoon && spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.1f : 0f;
 		}
 		
 			public override void NPCLoot()
@@ -48,7 +48,7 @@ namespace ForgottenMemories.NPCs.Night
     }
 		if (NPC.downedBoss1 == true);
 			{
-				if(Main.rand.Next(50) == 0)
+				if(Main.rand.Next(20) == 0)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AncientLog"), 1);
 				}

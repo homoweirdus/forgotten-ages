@@ -41,6 +41,7 @@ namespace ForgottenMemories
 		{
 			if (!Main.gameMenu)
 			{
+				TGEMWorld world = GetModWorld<TGEMWorld>();
 				if (TGEMWorld.TremorTime > 0)
 				{
 					if (TGEMWorld.TremorTime % ShakeLength == 0)

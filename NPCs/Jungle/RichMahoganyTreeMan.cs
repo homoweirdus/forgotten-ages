@@ -35,7 +35,7 @@ namespace ForgottenMemories.NPCs.Jungle
 			int x = spawnInfo.spawnTileX;
 				int y = spawnInfo.spawnTileY;
 				int tile = (int)Main.tile[x, y].type;
-					return !Main.bloodMoon && spawnInfo.player.ZoneJungle && (tile == 60) && spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.2f : 0f;
+					return !Main.bloodMoon && NPC.downedBoss1 && spawnInfo.player.ZoneJungle && (tile == 60) && spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.1f : 0f;
 		}
 		
 			public override void NPCLoot()
@@ -49,7 +49,7 @@ namespace ForgottenMemories.NPCs.Jungle
 	
 		if (NPC.downedBoss1 == true);
 			{
-				if(Main.rand.Next(50) == 0)
+				if(Main.rand.Next(20) == 0)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AncientLog"), 1);
 				}

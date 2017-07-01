@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.AaMaterials
 {
-	public class NecroBar : ModItem
+	public class SpiritflameChunk : ModItem
 	{
 		public override void SetDefaults()
 		{
