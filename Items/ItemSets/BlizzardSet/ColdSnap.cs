@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 		public override void SetDefaults()
 		{
 
-			item.damage = 4;
+			item.damage = 6;
 			item.magic = true;
 			item.width = 22;
 			item.height = 24;
@@ -29,7 +29,7 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 			item.useTurn = true;
 			item.shoot = mod.ProjectileType("ColdSnap");
 			item.shootSpeed = 0f;
-			item.mana = 15;
+			item.mana = 3;
 		}
 
     public override void SetStaticDefaults()

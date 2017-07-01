@@ -17,8 +17,8 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.width = 16;
             item.height = 17;
 
-            item.useTime = 16;
-            item.useAnimation = 16;
+            item.useTime = 23;
+            item.useAnimation = 23;
             item.useStyle = 5;
             item.noMelee = true;
             item.noUseGraphic = true;

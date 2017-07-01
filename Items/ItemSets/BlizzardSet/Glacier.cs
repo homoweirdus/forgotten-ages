@@ -15,17 +15,17 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 			item.melee = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 25;
+			item.useTime = 50;
 			item.useAnimation = 25;
 			item.useStyle = 1;
-			item.knockBack = 5f;
+			item.knockBack = 3f;
 			item.value = 1000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 
 			item.shoot = mod.ProjectileType("IceCube");
-			item.shootSpeed = 11f;
+			item.shootSpeed = 7f;
 			item.useTurn = true;
 		}
 
