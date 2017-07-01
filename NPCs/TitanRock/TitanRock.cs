@@ -96,6 +96,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 		{
 			npc.TargetClosest(true);
 			Player player = Main.player[npc.target];
+			//TGEMWorld world = GetModWorld<TGEMWorld>();
 			
 			if (npc.life <= (int)(npc.lifeMax/2) && despawn == false)
 			{		
@@ -103,6 +104,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 				{
 					Main.NewText("Titan Rock enrages!", 255, 25, 0);
 					Main.PlaySound(15, (int)npc.position.X, (int)npc.position.Y, 0);
+					TGEMWorld.TremorTime = 100;
 					timer = 0;
 					phase2transition = true;
 				}
@@ -209,7 +211,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 							int dust = Dust.NewDust(npc.position, npc.width, npc.height, 60);
 							Main.dust[dust].noGravity = true;
 							Main.dust[dust].scale = 2.5f;
-						}
+						}	
 						TGEMWorld.TremorTime = 100;
 						npc.netUpdate = true;
 					}

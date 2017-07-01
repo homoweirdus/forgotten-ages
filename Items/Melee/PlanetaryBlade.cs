@@ -24,48 +24,27 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 10;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("PlanetaryWave");
+			item.shoot = mod.ProjectileType("TerraBolt");
 			item.shootSpeed = 20;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Planetary Blade");
-      Tooltip.SetDefault("Fires seeds and a gigantic wave");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Terra Greatsword");
+			Tooltip.SetDefault("'Forged with the energy of the earth'");
+		}
 
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.TerraBlade, 1);
-			recipe.AddIngredient(ItemID.Seedler, 1);
-			recipe.AddIngredient(null, "ForestEnergy", 8);
-			recipe.AddIngredient(3458, 30);
-			recipe.AddIngredient(3456, 30);
-			recipe.AddIngredient(3467, 10);
+			recipe.AddIngredient(ItemID.InfluxWaver, 1);
+			recipe.AddIngredient(null, "MuramisianSpectre", 1);
+			recipe.AddIngredient(ItemID.LunarBar, 10);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-		}
-		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			float sX = speedX;
-			float sY = speedY;
-			sX += (float)Main.rand.Next(-60, 61) * 0.05f;
-			sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-			Projectile.NewProjectile(position.X, position.Y, sX, sY, 483, damage / 2, knockBack, player.whoAmI);
-			
-			float sX2 = speedX;
-			float sY2 = speedY;
-			sX += (float)Main.rand.Next(-60, 61) * 0.05f;
-			sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-			Projectile.NewProjectile(position.X, position.Y, sX2, sY2, 483, damage / 2, knockBack, player.whoAmI);
-			
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage * 2, knockBack, player.whoAmI);
-			
-			return false;
 		}
 		
 		public override void MeleeEffects(Player player, Rectangle hitbox)

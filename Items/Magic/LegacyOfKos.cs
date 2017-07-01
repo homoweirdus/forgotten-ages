@@ -54,6 +54,7 @@ namespace ForgottenMemories.Items.Magic
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Obsidian, 15);
+			recipe.AddIngredient(1339, 10);
 			recipe.AddIngredient(ItemID.SpiderFang, 15);
 			recipe.AddIngredient(ItemID.VenomStaff);
 			recipe.AddTile(TileID.MythrilAnvil);
