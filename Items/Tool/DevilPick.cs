@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.Tool
 			item.width = 32;
 			item.height = 32;
 			item.useTime = 11;
-			item.useAnimation = 11;
+			item.useAnimation = 16;
 			item.useStyle = 1;
 			item.knockBack = 1.25f;
 			item.value = 14000;

@@ -14,15 +14,15 @@ namespace ForgottenMemories.Items.Tool
 			item.melee = true;
 			item.width = 32;
 			item.height = 32;
-			item.useTime = 14;
-			item.useAnimation = 14;
+			item.useTime = 19;
+			item.useAnimation = 15;
 			item.useStyle = 1;
 			item.knockBack = 1;
 			item.value = 15000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.pick = 65;
+			item.pick = 55;
 		}
 
     public override void SetStaticDefaults()
