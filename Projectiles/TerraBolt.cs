@@ -10,6 +10,7 @@ namespace ForgottenMemories.Projectiles
 {
 	public class TerraBolt	: ModProjectile
 	{
+		Vector2 vel;
 		public override void SetDefaults()
 		{
 			projectile.width = 30;
@@ -60,6 +61,7 @@ namespace ForgottenMemories.Projectiles
 			if ((double) projectile.ai[1] == 0.0)
 			{
 				projectile.localAI[0] += num2;
+				vel = projectile.velocity;
 				if ((double) projectile.localAI[0] > (double) num1)
 					projectile.localAI[0] = num1;
 			}
@@ -77,6 +79,19 @@ namespace ForgottenMemories.Projectiles
 		public override bool OnTileCollide(Vector2 OldVel)
 		{
 			projectile.ai[1]++;
+			projectile.velocity = Vector2.Zero;
+			return false;
+		}
+		
+		public override bool? Colliding(Rectangle myRect, Rectangle targetRect)
+		{
+			float num11 = 0f;
+			Vector2 lineStart = projectile.Center - (Vector2.Normalize(vel) * projectile.localAI[0] * 3);
+			Vector2 lineEnd = projectile.Center;
+			if (Collision.CheckAABBvLineCollision(targetRect.TopLeft(), targetRect.Size(), lineStart, lineEnd, projectile.scale, ref num11))
+			{
+				return true;
+			}
 			return false;
 		}
 		
@@ -97,7 +112,7 @@ namespace ForgottenMemories.Projectiles
 				int num43;
 				for (int num177 = 1; num177 <= (int)projectile.localAI[0]; num177 = num43 + 1)
 				{
-					Vector2 value9 = Vector2.Normalize(projectile.velocity) * (float)num177 * scaleFactor;
+					Vector2 value9 = Vector2.Normalize(vel) * (float)num177 * scaleFactor;
 					Microsoft.Xna.Framework.Color color32 = projectile.GetAlpha(color25);
 					color32 *= (num176 - (float)num177) / num176;
 					color32.A = 0;

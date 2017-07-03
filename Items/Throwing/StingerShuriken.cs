@@ -75,7 +75,7 @@ namespace ForgottenMemories.Items.Throwing
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(209, 1);
             recipe.AddTile(16);
-            recipe.SetResult(this, 15);
+            recipe.SetResult(this, 75);
             recipe.AddRecipe();
         }
     }

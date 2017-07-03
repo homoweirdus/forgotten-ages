@@ -548,15 +548,8 @@ namespace ForgottenMemories.NPCs.TitanRock
 				}
 			}
 			
-			if (TGEMWorld.downedTitanRock == false)
-			{
-				Main.NewText("Purified space rock falls down to your planet!", 175, 167, 75);
-				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 20E-05); k++)
-				{
-					WorldGen.OreRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .5f)), (double)WorldGen.genRand.Next(3, 4), WorldGen.genRand.Next(4, 5), (ushort)mod.TileType("CosmirockTile"));
-				}
-				TGEMWorld.downedTitanRock = true;
-			}
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CosmiCrystal"), 1);
+			TGEMWorld.downedTitanRock = true;			
 		}
 	}
 }

@@ -8,11 +8,11 @@ using System;
 
 namespace ForgottenMemories.Projectiles
 {
-	public class SpinalFountain : ModProjectile
+	public class SpinalFountain2 : ModProjectile
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 20;
+			projectile.width = 10;
 			projectile.height = 20;
 			projectile.aiStyle = 0;
 			projectile.friendly = true;
@@ -20,7 +20,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 10;
 			projectile.timeLeft = 60;
 			projectile.alpha = 255;
-			projectile.extraUpdates = 1;
 		}
 		
 		public override void SetStaticDefaults()
@@ -30,12 +29,12 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			for (int index1 = 0; index1 < 2; ++index1)
+			for (int index1 = 0; index1 < 1; ++index1)
 			{
 				float num1 = projectile.velocity.X / 3f * (float) index1;
 				float num2 = projectile.velocity.Y / 3f * (float) index1;
-				int num3 = 4;
-				int index2 = Dust.NewDust(new Vector2(projectile.position.X + (float) num3, projectile.position.Y + (float) num3), projectile.width - num3 * 2, projectile.height - num3 * 2, 5, Main.rand.Next(-50, 50) * 1f, -3f, 0, default(Color), 1f);
+				int num3 = 0;
+				int index2 = Dust.NewDust(new Vector2(projectile.Center.X + (float) num3, projectile.Center.Y + (float) num3), projectile.width - num3 * 2, projectile.height - num3 * 2, mod.DustType("BloodDust"), Main.rand.Next(-50, 50) * 1f, -3f, 0, default(Color), 1f);
 				Main.dust[index2].scale = 1.6f;
 				Main.dust[index2].noGravity = true;
 				Main.dust[index2].velocity *= 0.1f;
@@ -43,19 +42,12 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[index2].position.X -= num1;
 				Main.dust[index2].position.Y -= num2;
 			}
-			projectile.ai[0]++;
-			if (projectile.ai[0] > 4)
-			{
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("SpinalFountain2"), projectile.damage, 1f, projectile.owner);
-				projectile.ai[0] = 0;
-			}
 		}
 		
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(mod.BuffType("DevilsFlame"), 360, false);
-
 		}
 	}
 }

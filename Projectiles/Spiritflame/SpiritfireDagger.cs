@@ -12,8 +12,8 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 40;
-			projectile.height = 38;
+			projectile.width = 24;
+			projectile.height = 23;
 			projectile.aiStyle = 1;
 			projectile.thrown = true;
 			projectile.friendly = true;
@@ -22,6 +22,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 			projectile.tileCollide = true;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
+			projectile.scale = 0.75f;
 			projectile.timeLeft = 360;
 			projectile.light = 0.5f;
 			//projectile.scale = 0.5f;
@@ -102,7 +103,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
-			
+			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 			if (Main.rand.Next(3) == 0)
         	{
         		Item.NewItem((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, mod.ItemType("SpiritfireDagger"));
@@ -112,6 +113,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{	
 			target.AddBuff(mod.BuffType("Spiritflame"), 180, false);
+			Main.PlaySound(SoundID.Item34, (int)projectile.position.X, (int)projectile.position.Y);
 			Projectile.NewProjectile(projectile.Center, Vector2.Zero, mod.ProjectileType("SpiritflameBoom"), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 		}
 		
@@ -125,6 +127,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 			}
 			
 			Projectile.NewProjectile(projectile.Center, Vector2.Zero, mod.ProjectileType("SpiritflameBoom"), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+			Main.PlaySound(SoundID.Item34, (int)projectile.position.X, (int)projectile.position.Y);
 			
 			if ((double) projectile.velocity.Y != (double) velocity1.Y || (double) projectile.velocity.X != (double) velocity1.X)
                 {

@@ -51,7 +51,7 @@ namespace ForgottenMemories.Items.Boss
 			recipe.AddRecipe();
 			
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CrystalShard, 1);
+			recipe.AddIngredient(ItemID.SoulofNight, 1);
 			recipe.AddIngredient(60, 5);
 			recipe.AddIngredient(ItemID.RottenChunk, 2);
 			recipe.AddTile(TileID.MythrilAnvil);

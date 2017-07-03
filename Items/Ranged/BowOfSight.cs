@@ -13,14 +13,14 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 
-			item.damage = 48;
+			item.damage = 37;
 			item.noMelee = true;
 			item.ranged = true;
 			item.width = 27;
 			item.height = 11;
 
-			item.useTime = 14;
-			item.useAnimation = 14;
+			item.useTime = 18;
+			item.useAnimation = 18;
 			item.useStyle = 5;
 			item.shoot = 3;
 			item.useAmmo = 40;
@@ -32,30 +32,27 @@ namespace ForgottenMemories.Items.Ranged
 			item.shootSpeed = 10f;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Bow of Sight");
-      Tooltip.SetDefault("Right-Clicking will transform arrows into lasers if an enemy is nearby");
-    }
+		public override void SetStaticDefaults()
+		{
+		  DisplayName.SetDefault("Bow of Sight");
+		  Tooltip.SetDefault("Fires high velocity energy bolts that hit enemies twice");
+		}
 
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			float sX = speedX;
-			float sY = speedY;
-			sX += (float)Main.rand.Next(-60, 61) * 0.05f;
-			sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-			Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("sightarrow"), damage, knockBack, player.whoAmI);
-			
+			Vector2 vel = new Vector2(speedX, speedY).RotatedBy(MathHelper.ToRadians(Main.rand.Next(-10, 10)));
+			Projectile.NewProjectile(position.X, position.Y, vel.X, vel.Y, mod.ProjectileType("sightarrow"), damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, vel.X, vel.Y, mod.ProjectileType("sightarrow"), damage, knockBack, player.whoAmI);
 			return false;
 		}
 		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.SoulofSight, 20);
-			recipe.AddIngredient(ItemID.HallowedBar, 25);
+			recipe.AddIngredient(ItemID.SoulofSight, 10);
+			recipe.AddIngredient(ItemID.HallowedBar, 15);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -89,49 +89,25 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VortexSphere"), 1); 
 			}
 			
-			if (npc.type == NPCID.KingSlime && TGEMWorld.Gelatine == false)
+			if (npc.type == NPCID.KingSlime)
 			{
-				Main.NewText("Gelatine grows in the underground!", 0, 29, 255);
-				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 30E-05); k++)
-				{
-					WorldGen.OreRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .5f)), (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("GelatineOre"));
-					
-					
-				}
-				TGEMWorld.Gelatine = true;
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SlimeCrystal"), 1); 
 			}
 			
-			if (npc.type == 4 && TGEMWorld.Cryotine == false)
+			if (npc.type == 4)
 			{
 				Main.NewText("An eerie presence is felt coming from the forests...", 53, 140, 51);
-				Main.NewText("Ice crystallizes in the underground snow!", 36, 242, 242);
-				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 64E-05); k++)
-				{
-					int positionX = WorldGen.genRand.Next(200, Main.maxTilesX - 200);
-					int positionY = WorldGen.genRand.Next(200, Main.maxTilesY - 200);
-					Tile tile = Main.tile[positionX, positionY];
-					if (tile.type == 147 || tile.type == 161)
-					{
-						WorldGen.OreRunner(positionX, positionY, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("CryotineOre"));
-					}
-				}
 				TGEMWorld.Cryotine = true;
 			}
 			
-			if (npc.type == 134 && TGEMWorld.Blight == false || npc.type == 127 && TGEMWorld.Blight == false || npc.type == 125 && TGEMWorld.Blight == false && !NPC.AnyNPCs(126) || npc.type == 126 && TGEMWorld.Blight == false && !NPC.AnyNPCs(125))
+			if ((npc.type == 13 || npc.type == 14 || npc.type == 15) && npc.boss == true || npc.type == 266)
 			{
-				Main.NewText("A malevolent force seeps into the crimtane and corrupt stone...", 150, 31, 242);
-				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 64E-05); k++)
-				{
-					int positionX = WorldGen.genRand.Next(200, Main.maxTilesX - 200);
-					int positionY =  WorldGen.genRand.Next(200, Main.maxTilesY - 200);
-					Tile tile = Main.tile[positionX, positionY];
-					if (tile.type == 203 || tile.type == 204 || tile.type == 22 || tile.type == 25 || tile.type == 112 || tile.type == 398 || tile.type == 400 || tile.type == 399 || tile.type == 401 || tile.type == 234 || tile.type == 163 || tile.type == 200)
-					{
-						WorldGen.OreRunner(positionX, positionY, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("BlightOre"));
-					}
-				}
-				TGEMWorld.Blight = true;
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CryoCrystal"), 1); 
+			}
+			
+			if (npc.type == 134 || npc.type == 127 || npc.type == 125 && !NPC.AnyNPCs(126) || npc.type == 126 && !NPC.AnyNPCs(125))
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BlightCrystal"), 1); 
 			}
 			
 			if (Main.invasionType == 4 && Main.rand.Next(20) == 0)

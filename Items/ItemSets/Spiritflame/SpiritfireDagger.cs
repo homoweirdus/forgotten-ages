@@ -37,6 +37,15 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 		  DisplayName.SetDefault("Spiritfire Dagger");
 		  Tooltip.SetDefault("Ricochets off of tiles, exploding into ghastly fire");
 		}
+		
+		public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "SpiritflameChunk", 1);
+            recipe.AddTile(16);
+            recipe.SetResult(this, 75);
+            recipe.AddRecipe();
+        }
 
 	}
 }
