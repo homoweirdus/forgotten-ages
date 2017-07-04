@@ -56,7 +56,6 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "BossEnergy", 8);
-			recipe.AddIngredient(null, "OpticBar", 8);
 			recipe.AddIngredient(ItemID.Topaz, 10);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

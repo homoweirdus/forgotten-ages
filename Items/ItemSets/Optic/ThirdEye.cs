@@ -11,31 +11,31 @@ namespace ForgottenMemories.Items.ItemSets.Optic
         public override void SetDefaults()
         {
 
-            item.damage = 16;
+            item.damage = 12;
             item.magic = true;
-            item.mana = 2;
+            item.mana = 5;
             item.width = 16;
             item.height = 17;
 
-            item.useTime = 23;
-            item.useAnimation = 23;
+            item.useTime = 20;
+            item.useAnimation = 20;
             item.useStyle = 5;
             item.noMelee = true;
             item.noUseGraphic = true;
-            item.knockBack = 7;
+            item.knockBack = 4;
             item.value = 27000;
-            item.rare = 2;
+            item.rare = 1;
             item.UseSound = SoundID.Item20;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("PsyBolt");
             item.shootSpeed = 2.25f;
         }
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("The Third Eye");
-      Tooltip.SetDefault("Predicts the locations of your enemies.");
-    }
+		public override void SetStaticDefaults()
+		{
+		  DisplayName.SetDefault("The Third Eye");
+		  Tooltip.SetDefault("Predicts the locations of your enemies.");
+		}
 
 
         public override void HoldItem(Player player)
@@ -44,15 +44,6 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             {
                 player.AddBuff(BuffID.Hunter, 2);
             }
-        }
-
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(null, "OpticBar", 12);
-            recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
         }
     }
 }

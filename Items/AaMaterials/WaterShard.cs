@@ -30,7 +30,6 @@ namespace ForgottenMemories.Items.AaMaterials
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(this, 7);
-			recipe.AddIngredient(null, "OpticBar", 9);
             recipe.AddTile(16);
             recipe.SetResult(164, 1);
             recipe.AddRecipe();

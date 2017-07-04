@@ -80,8 +80,13 @@ namespace ForgottenMemories.Items
 			
 			if (npc.type == 4 && !Main.expertMode)
 			{
-				int amountToDrop = Main.rand.Next(20,28);
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OpticBar"), amountToDrop); 
+				switch (Main.rand.Next(2))
+				{
+					case 0: Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ServantStaff"), 1); 
+						break;
+					case 1: Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ThirdEye"), 1); 
+						break;
+				}
 			}
 			
 			if (npc.type == 439)

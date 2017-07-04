@@ -15,8 +15,13 @@ namespace ForgottenMemories.Items
 			
 			if (context == "bossBag" && arg == 3319)
 			{
-				int amountToDrop = Main.rand.Next(21,28);
-				player.QuickSpawnItem(mod.ItemType("OpticBar"), amountToDrop);
+				switch (Main.rand.Next(2))
+				{
+					case 0: player.QuickSpawnItem(mod.ItemType("ServantStaff"), 1); 
+						break;
+					case 1: player.QuickSpawnItem(mod.ItemType("ThirdEye"), 1); 
+						break;
+				}
 			}
 			
 			if (context == "bossBag" && arg == 3324 && Main.rand.Next(1) == 0)

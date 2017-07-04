@@ -24,6 +24,7 @@ namespace ForgottenMemories.Projectiles.InfoA
 		public bool FrostCrystal = false;
 		public bool SnowSplit = false;
 		public bool NotSummon = false;
+		public bool Curse = false;
 		
 		public override bool InstancePerEntity {get{return true;}}
 		
@@ -32,6 +33,28 @@ namespace ForgottenMemories.Projectiles.InfoA
 			if (Flamethrower == true)
 			{
 				target.immune[projectile.owner] = 5;
+			}
+			
+			if (Curse == true && target.life < 1)
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					Vector2 vector2 = projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(360)));
+					int proj = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, vector2.X, vector2.Y, projectile.type, projectile.damage, 5f, projectile.owner);
+					Projectile memes = Main.projectile[proj];
+					memes.magic = true;
+					memes.melee = false;
+					memes.GetGlobalProjectile<Info>(mod).Curse = true;
+				}
+				
+				int num = Main.rand.Next(10, 21);
+				for (int index = 0; index < num; ++index)
+				{
+					Vector2 vector2 = new Vector2((float) Main.rand.Next(-100, 101), (float) Main.rand.Next(-100, 101));
+					vector2.Normalize();
+					vector2 = (vector2 * (float) Main.rand.Next(10, 201) * 0.01f);
+					Projectile.NewProjectile((float) projectile.Center.X, (float) projectile.Center.Y, (float) vector2.X, (float) vector2.Y, mod.ProjectileType("VileCloud1") + Main.rand.Next(3), projectile.damage, 1f, projectile.owner, 0.0f, (float) Main.rand.Next(-45, 1));
+				}
 			}
 			
 			if (SnowSplit == true || FrostCrystal == true)

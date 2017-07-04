@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 10;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("TerraBolt");
+			item.shoot = mod.ProjectileType("TrueTerraBeamxd");
 			item.shootSpeed = 20;
 		}
 
