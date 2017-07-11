@@ -29,6 +29,7 @@ namespace ForgottenMemories
 		public bool BlightOrb = false;
 		public bool ChaoticSet = false;
 		public bool stardustCrown = false;
+		public bool ghastlywood = false;
 
         public override void ResetEffects()
         {
@@ -46,6 +47,7 @@ namespace ForgottenMemories
 			BlightConserve = false;
 			ChaoticSet = false;
 			stardustCrown = false;
+			ghastlywood = false;
 		}
 		
 		public override void PreUpdate()
@@ -128,6 +130,19 @@ namespace ForgottenMemories
 			if (BlightFlameProj == true && (projectile.thrown == true || projectile.ranged == true) && Main.rand.Next(5) == 0)
 			{
 				int p = Projectile.NewProjectile (target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("BlightBoomRange"), damage, knockback, player.whoAmI);
+			}
+			
+			if (ghastlywood == true && projectile.magic == true && crit == true)
+			{
+				Player player = Main.player[projectile.owner];
+				Vector2 mouse = Main.MouseWorld;
+				Vector2 newMove = mouse - player.Center;
+				newMove.Normalize();
+				float memes = newMove.X * 3f;
+				float memes2 = newMove.Y * 3f;
+				memes += (float)Main.rand.Next(-40, 41) * 0.003f;
+				memes2 += (float)Main.rand.Next(-40, 41) * 0.003f;
+				int z = Projectile.NewProjectile(player.Center.X, player.Center.Y, memes, memes2, 206, projectile.damage, 0f, projectile.owner, 0f, 0f);
 			}
 		}
 		
