@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 
 			item.value = 30000;
 			item.rare = 1;
-			item.defense = 4;
+			item.defense = 3;
 		}
 
     public override void SetStaticDefaults()
