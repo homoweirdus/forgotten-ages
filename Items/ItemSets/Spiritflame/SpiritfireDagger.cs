@@ -42,7 +42,7 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "SpiritflameChunk", 1);
-            recipe.AddTile(16);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this, 75);
             recipe.AddRecipe();
         }

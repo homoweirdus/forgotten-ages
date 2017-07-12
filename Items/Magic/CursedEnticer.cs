@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.Magic
 			item.noMelee = true;
 			item.knockBack = 7;
 			item.value = 50000;
-			item.rare = 3;
+			item.rare = 1;
 			item.autoReuse = true;
 			item.shoot = 307;
 			item.shootSpeed = 4f;

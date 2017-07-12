@@ -194,13 +194,31 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 			
 			if (Phase2)
 			{
-				switch (Main.rand.Next(2))
+				switch (Main.rand.Next(3))
 				{
 					case 0: 
 						Type = mod.ProjectileType("BouncyBlood");
 						break;
 					case 1: 
 						Type = mod.ProjectileType("ExplosiveBlood");
+						break;
+					case 2: 
+						Type = mod.ProjectileType("BloodBoltA");
+						break;
+					default:
+						break;
+				}
+			}
+			
+			else
+			{
+				switch (Main.rand.Next(2))
+				{
+					case 0: 
+						Type = mod.ProjectileType("BouncyBlood");
+						break;
+					case 1: 
+						Type = mod.ProjectileType("BloodBoltA");
 						break;
 					default:
 						break;
@@ -218,7 +236,7 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 					float sY = direction.Y * 8f;
 					sX += (float)Main.rand.Next(-60, 60) * 0.05f;
 					sY += (float)Main.rand.Next(-60, 60) * 0.05f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX + npc.velocity.X, sY + npc.velocity.Y , Type, (int)(npc.damage / 4), 1, Main.myPlayer, 0, 0);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX + npc.velocity.X, sY + npc.velocity.Y , Type, (int)(npc.damage / 3), 1, Main.myPlayer, 0, 0);
 				}
 			}
 			
@@ -226,7 +244,7 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 			{
 				Vector2 direction = Main.player[npc.target].Center - npc.Center;
 				direction.Normalize();
-				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X*5 + npc.velocity.X, direction.Y*5 + npc.velocity.Y , Type, (int)(npc.damage / 3), 1, Main.myPlayer, 0, 0);
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X*5 + npc.velocity.X, direction.Y*5 + npc.velocity.Y , Type, (int)(npc.damage / 2), 1, Main.myPlayer, 0, 0);
 			}
 			Main.PlaySound(29, (int)npc.position.X, (int)npc.position.Y, 9);
 			npc.netUpdate = true;

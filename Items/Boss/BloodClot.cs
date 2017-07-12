@@ -24,13 +24,13 @@ namespace ForgottenMemories.Items.Boss
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Bleeding Residue");
-      Tooltip.SetDefault("Has a strong enough stench to attract a horrific being...");
+      Tooltip.SetDefault("'Has a strong enough stench to attract a horrific being...' \nOnly usable during night");
     }
 
 		
 		public override bool CanUseItem(Player player)
 		{
-			return !NPC.AnyNPCs(mod.NPCType("FaceOfInsanity"));
+			return !NPC.AnyNPCs(mod.NPCType("FaceOfInsanity")) && !Main.dayTime;
 		}
 		
 		public override bool UseItem(Player player)

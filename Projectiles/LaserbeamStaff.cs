@@ -130,7 +130,7 @@ namespace ForgottenMemories.Projectiles
 						{
 							vector15 = -Vector2.UnitY;
 						}
-						int num21 = (int)((float)projectile.damage * 3f);
+						int num21 = (int)((float)projectile.damage * 2.5f);
 						int num22 = Projectile.NewProjectile(center.X, center.Y, vector15.X, vector15.Y, mod.ProjectileType("LaserbeamBig"), num21, projectile.knockBack, projectile.owner, 0f, (float)projectile.whoAmI);
 						kek = num22;
 						projectile.netUpdate = true;

@@ -44,7 +44,14 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3783, 2);
-			recipe.AddIngredient(3261, 12);
+			recipe.AddIngredient(ItemID.AdamantiteBar, 12);
+			recipe.AddTile(134);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(3783, 2);
+			recipe.AddIngredient(ItemID.TitaniumBar, 12);
 			recipe.AddTile(134);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

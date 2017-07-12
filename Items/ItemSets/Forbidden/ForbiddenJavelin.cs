@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 
 			item.useTime = 14;
 			item.useAnimation = 14;
-			item.consumable = true;
+			//item.consumable = true;
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 666;
@@ -44,9 +44,16 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3783, 1);
-			recipe.AddIngredient(3261, 6);
+			recipe.AddIngredient(ItemID.AdamantiteBar, 12);
 			recipe.AddTile(134);
-			recipe.SetResult(this, 600);
+			recipe.SetResult(this, 1);
+			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(3783, 1);
+			recipe.AddIngredient(ItemID.TitaniumBar, 12);
+			recipe.AddTile(134);
+			recipe.SetResult(this, 1);
 			recipe.AddRecipe();
 		}
 
@@ -63,7 +70,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 				item.useTime = 16;
 				item.useAnimation = 16;
 				item.damage = 100;
-				item.consumable = false;
+				//item.consumable = false;
 				item.shoot = mod.ProjectileType("ForbiddenSpear");
 				item.shootSpeed = 12f;
 				if (player.ownedProjectileCounts[item.shoot] > 0)

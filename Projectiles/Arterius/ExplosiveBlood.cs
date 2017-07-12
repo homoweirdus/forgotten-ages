@@ -96,7 +96,7 @@ namespace ForgottenMemories.Projectiles.Arterius
 					{
 						targetAngle = num7;
 					}
-					float num8 = num7.AngleLerp(targetAngle, 0.006f);
+					float num8 = num7.AngleLerp(targetAngle, 0.008f);
 					projectile.velocity = new Vector2(projectile.velocity.Length(), 0f).RotatedBy((double)num8, default(Vector2));
 				}
 			}

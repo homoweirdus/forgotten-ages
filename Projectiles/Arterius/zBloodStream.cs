@@ -20,6 +20,7 @@ namespace ForgottenMemories.Projectiles.Arterius
 			projectile.tileCollide = false;
 			projectile.timeLeft = 180;
 			projectile.extraUpdates = 1;
+			projectile.light = 0.75f;
 			projectile.alpha = 255;
 		}
 		
