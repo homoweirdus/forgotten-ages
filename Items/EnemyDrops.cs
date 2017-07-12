@@ -99,12 +99,6 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SlimeCrystal"), 1); 
 			}
 			
-			if (npc.type == 4)
-			{
-				Main.NewText("An eerie presence is felt coming from the forests...", 53, 140, 51);
-				TGEMWorld.Cryotine = true;
-			}
-			
 			if ((npc.type == 13 || npc.type == 14 || npc.type == 15) && npc.boss == true || npc.type == 266)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CryoCrystal"), 1); 

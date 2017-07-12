@@ -5,7 +5,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.HMS
+namespace ForgottenMemories.Items.Throwing
 {
 	public class ChlorophyteKunai : ModItem
 	{

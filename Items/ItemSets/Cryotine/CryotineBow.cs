@@ -14,8 +14,8 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.ranged = true;
 			item.width = 88;
 			item.height = 88;
-			item.useTime = 20;
-			item.useAnimation = 20;
+			item.useTime = 25;
+			item.useAnimation = 25;
 
 			item.useStyle = 5;
 			item.knockBack = 3;
@@ -60,7 +60,8 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 					float sY = speedY;
 					sX += (float)Main.rand.Next(-60, 61) * 0.05f;
 					sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-					Projectile.NewProjectile(position.X, position.Y, sX, sY, ProjectileID.FrostburnArrow, damage, knockBack, player.whoAmI);
+					int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, ProjectileID.FrostburnArrow, damage, knockBack, player.whoAmI);
+					Main.projectile[p].noDropItem = true;
 				}
 			}
 			

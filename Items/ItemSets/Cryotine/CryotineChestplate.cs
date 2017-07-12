@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 
 			item.value = 180000;
 			item.rare = 2;
-			item.defense = 6;
+			item.defense = 5;
 		}
 
 		public override void SetStaticDefaults()

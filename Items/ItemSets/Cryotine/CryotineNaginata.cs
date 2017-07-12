@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(3836);
-			item.damage = 22;
+			item.damage = 17;
 
 			item.melee = true;
 			item.width = 52;
@@ -65,7 +65,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "CryotineBar", 12);
-			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

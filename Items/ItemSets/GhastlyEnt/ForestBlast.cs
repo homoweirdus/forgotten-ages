@@ -32,24 +32,8 @@ public class ForestBlast : ModItem
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Forest Blast");
-      Tooltip.SetDefault("Fires a spread of leafnados");
+      Tooltip.SetDefault("Fires an exploding leafnado");
     }
-
-	
-	public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			int amountOfProjectiles = Main.rand.Next(2, 5);
-			for (int i = 0; i < amountOfProjectiles; i++)
-			{
-				float spX = speedX;
-				float spY = speedY;
-				spX += (float)Main.rand.Next(-40, 41) * 0.05f;
-				spY += (float)Main.rand.Next(-40, 41) * 0.05f;
-				Projectile.NewProjectile(position.X, position.Y, spX, spY, type, damage, knockBack, player.whoAmI);
-			}
-			
-			return false;
-		}
 	
 			public override void AddRecipes()
 		{

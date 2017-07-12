@@ -31,6 +31,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
+			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 			int dust;
 			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 59, 0f, 0f); //create dust
 			Main.dust[dust].scale = 0.5f; //dust is 50% smaller
@@ -45,7 +46,6 @@ namespace ForgottenMemories.Projectiles
 				Vector2 newVect2 = projectile.velocity.RotatedBy(System.Math.PI / -20);
 				projectile.velocity = newVect2;
 			}			
-			projectile.rotation = projectile.velocity.ToRotation();
 		}
 		
 		public override void Kill(int timeLeft)
