@@ -1,7 +1,8 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using System;
 using Terraria.ID;
+using System.Diagnostics;
+using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
@@ -12,15 +13,13 @@ namespace ForgottenMemories.Projectiles
 		{
 			projectile.width = 80;
 			projectile.height = 48;
-			projectile.aiStyle = 1;
+			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.melee = true;
 			projectile.penetrate = 3;
-			projectile.timeLeft = 600;
-			projectile.alpha = 255;
+			projectile.timeLeft = 60;
+			projectile.alpha = 0;
 			projectile.light = 0.5f;
-			projectile.extraUpdates = 1;
-			aiType = ProjectileID.Bullet;
 			projectile.tileCollide = false;
 		}
 		
@@ -31,20 +30,22 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			if (Main.rand.Next(5) == 0)
+			if (Main.rand.Next(10) == 0)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 67, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.Next(6) == 0)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 59, projectile.velocity.X * -1f, projectile.velocity.Y * -1f);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
+			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
+			projectile.alpha += 4;
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

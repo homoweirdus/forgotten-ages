@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 		public override void SetDefaults()
 		{
 
-			item.damage = 80;
+			item.damage = 38;
 			item.thrown = true;
 			item.width = 96;
 			item.height = 88;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 666;
-			item.rare = 8;
+			item.rare = 6;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("ForbiddenJavelin");
@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Forbidden Javelin");
-      Tooltip.SetDefault("Right clicking will stab the enemy with the javelin");
+      Tooltip.SetDefault("Throws and exploding javelin");
     }
 
 
@@ -44,57 +44,17 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3783, 1);
-			recipe.AddIngredient(ItemID.AdamantiteBar, 12);
+			recipe.AddIngredient(ItemID.AdamantiteBar, 3);
 			recipe.AddTile(134);
-			recipe.SetResult(this, 1);
+			recipe.SetResult(this, 150);
 			recipe.AddRecipe();
 			
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3783, 1);
-			recipe.AddIngredient(ItemID.TitaniumBar, 12);
+			recipe.AddIngredient(ItemID.TitaniumBar, 3);
 			recipe.AddTile(134);
-			recipe.SetResult(this, 1);
+			recipe.SetResult(this, 150);
 			recipe.AddRecipe();
-		}
-
-		public override bool AltFunctionUse(Player player)
-		{
-			return true;
-		}
-
-		public override bool CanUseItem(Player player)
-		{
-			if (player.altFunctionUse == 2)
-			{
-				item.useStyle = 5;
-				item.useTime = 16;
-				item.useAnimation = 16;
-				item.damage = 100;
-				//item.consumable = false;
-				item.shoot = mod.ProjectileType("ForbiddenSpear");
-				item.shootSpeed = 12f;
-				if (player.ownedProjectileCounts[item.shoot] > 0)
-				{
-					return false;
-				}
-				return true;
-			}
-			else
-			{
-				item.useStyle = 1;
-				item.useTime = 14;
-				item.useAnimation = 14;
-				item.damage = 80;
-				item.shootSpeed = 16f;
-				item.consumable = true;
-				item.shoot = mod.ProjectileType("ForbiddenJavelin");
-				if (player.ownedProjectileCounts[mod.ProjectileType("ForbiddenSpear")] > 0)
-				{
-					return false;
-				}
-				return true;
-			}
-			return base.CanUseItem(player);
 		}
 	}
 }

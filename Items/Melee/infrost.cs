@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.Melee
 			item.width = 62;
 			item.height = 70;
 
-			item.useTime = 48;
+			item.useTime = 16;
 			item.useAnimation = 16;
 			item.useStyle = 1;
 			item.knockBack = 6;
@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Melee
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("infrost");
-			item.shootSpeed = 10;
+			item.shootSpeed = 8;
 		}
 
     public override void SetStaticDefaults()
