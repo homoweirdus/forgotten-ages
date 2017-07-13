@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 		public override void SetDefaults()
 		{
 
-			item.damage = 110;
+			item.damage = 46;
 			item.melee = true;
 			item.width = 96;
 			item.height = 88;
@@ -19,19 +19,20 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.useAnimation = 16;
 			item.useStyle = 1;
 			item.knockBack = 6;
-			item.value = 600000;
-			item.rare = 8;
+			item.value = 200000;
+			item.rare = 6;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shootSpeed = 5f;
+			item.shootSpeed = 10f;
 			item.useTurn = true;
+			item.shoot = mod.ProjectileType("ForboodenSlush");
 		}
 
 
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Forbidden Khopesh");
-      Tooltip.SetDefault("Right clicking will swing the sword slower and disarm hit enemies");
+      Tooltip.SetDefault("Slashes at enemies");
     }
 
 
@@ -50,38 +51,6 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			recipe.AddTile(134);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-		}
-
-		public override bool AltFunctionUse(Player player)
-		{
-			return true;
-		}
-
-		public override bool CanUseItem(Player player)
-		{
-			if (player.altFunctionUse == 2)
-			{
-				item.useStyle = 1;
-				item.useTime = 26;
-				item.useAnimation = 26;
-				item.damage = 130;
-			}
-			else
-			{
-				item.useStyle = 1;
-				item.useTime = 16;
-				item.useAnimation = 16;
-				item.damage = 110;
-			}
-			return base.CanUseItem(player);
-		}
-
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
-		{
-			if (player.altFunctionUse == 2)
-			{
-				target.AddBuff(mod.BuffType("Disarmed"), 120, false);
-			}
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

@@ -38,13 +38,15 @@ namespace ForgottenMemories.Items.Ranged
 		  Tooltip.SetDefault("Fires high velocity energy bolts that hit enemies twice");
 		}
 
-
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(-5, 0);
+		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Vector2 vel = new Vector2(speedX, speedY).RotatedBy(MathHelper.ToRadians(Main.rand.Next(-10, 10)));
-			Projectile.NewProjectile(position.X, position.Y, vel.X, vel.Y, mod.ProjectileType("sightarrow"), damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, vel.X, vel.Y, mod.ProjectileType("sightarrow"), damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("sightarrow"), damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("sightarrow"), damage, knockBack, player.whoAmI);
 			return false;
 		}
 		

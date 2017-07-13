@@ -18,7 +18,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.ranged = true;
 			projectile.penetrate = 6;
-			projectile.extraUpdates = 1;
 			projectile.timeLeft = 1000;
 		}
 		

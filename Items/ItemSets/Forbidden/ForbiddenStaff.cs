@@ -10,25 +10,23 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 		public override void SetDefaults()
 		{
 
-			item.damage = 110;
+			item.damage = 47;
 			item.magic = true;
 			item.width = 94;
 			item.height = 94;
-
-
 			item.useTime = 38;
 			item.useAnimation = 38;
 			item.useStyle = 5;
 			item.knockBack = 1;
-			item.value = 600000;
-			item.rare = 8;
+			item.value = 200000;
+			item.rare = 6;
 			item.UseSound = SoundID.Item5;
 			Item.staff[item.type] = true;
 			item.autoReuse = true;
 			item.mana = 60;
-			item.shoot = 656;
+			item.shoot = mod.ProjectileType("ForbiddenStaffProj");
 			item.noMelee = true;
-			item.shootSpeed = 10f;
+			item.shootSpeed = 7f;
 		}
 
 
@@ -36,7 +34,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Forbidden Staff");
-      Tooltip.SetDefault("Creates a powerful sandnado\nRight Clicking will drain magic from enemies");
+      Tooltip.SetDefault("Fires an exploding forbidden bolt");
     }
 
 
@@ -57,31 +55,6 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			recipe.AddRecipe();
 		}
 
-		public override bool AltFunctionUse(Player player)
-		{
-			return true;
-		}
-
-		public override bool CanUseItem(Player player)
-		{
-			if (player.altFunctionUse == 2)
-			{
-				item.useStyle = 5;
-				item.useTime = 2;
-				item.useAnimation = 10;
-				item.damage = 110;
-				item.mana = 0;
-			}
-			else
-			{
-				item.useStyle = 5;
-				item.useTime = 38;
-				item.useAnimation = 38;
-				item.damage = 110;
-				item.mana = 60;
-			}
-			return base.CanUseItem(player);
-		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
