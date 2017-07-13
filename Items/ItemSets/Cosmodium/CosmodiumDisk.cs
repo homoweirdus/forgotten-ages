@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.melee = true;
             item.width = 30;
             item.height = 30;
-
+			item.noMelee = true;
             item.useTime = 10;
             item.useAnimation = 10;
             item.noUseGraphic = true;
@@ -47,7 +47,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Ultra Tech Disk");
+      DisplayName.SetDefault("Ultra Tech Disc");
       Tooltip.SetDefault("Up to 20 disks can be thrown at once, explodes on collision");
     }
 
