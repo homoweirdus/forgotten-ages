@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.ItemSets.DevilFlame
 			item.useAnimation = 27;
 			item.useStyle = 1;
 			item.knockBack = 6;
-			item.value = 14000;
+			item.value = 50000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;

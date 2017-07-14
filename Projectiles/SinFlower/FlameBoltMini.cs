@@ -16,7 +16,7 @@ namespace ForgottenMemories.Projectiles.SinFlower
 			projectile.height = 20;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
-			projectile.ranged = true;
+			projectile.magic = true;
 			projectile.penetrate = 1;
 			projectile.timeLeft = 70;
 			projectile.extraUpdates = 4;
@@ -40,12 +40,12 @@ namespace ForgottenMemories.Projectiles.SinFlower
 			Main.dust[dust].scale = 1f;
 			Main.dust[dust].noGravity = true;
 
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(13) == 0)
 			{
 				Vector2 newVect = projectile.velocity.RotatedBy(System.Math.PI / 20);
 				projectile.velocity = newVect;
 			}	
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(13) == 0)
 			{
 				Vector2 newVect2 = projectile.velocity.RotatedBy(System.Math.PI / -20);
 				projectile.velocity = newVect2;

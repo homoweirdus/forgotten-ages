@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Magic
 		public override void SetDefaults()
 		{
 
-			item.damage = 17;
+			item.damage = 22;
 			item.magic = true;
 			item.mana = 10;
 			item.width = 25;
@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Magic
 			item.useStyle = 5;
 			Item.staff[item.type] = true;
 			item.noMelee = true;
-			item.knockBack = 7;
+			item.knockBack = 2;
 			item.value = 50000;
 			item.rare = 1;
 			item.autoReuse = true;

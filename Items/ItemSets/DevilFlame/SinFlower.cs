@@ -18,11 +18,11 @@ namespace ForgottenMemories.Items.ItemSets.DevilFlame
 			item.knockBack = 2f;
 			item.width = 16;
 			item.height = 16;
-			item.damage = 26;
+			item.damage = 18;
 			item.UseSound = SoundID.Item13;
 			item.shoot = mod.ProjectileType("SinFlower");
-			item.mana = 10;
-			item.value = 10000;
+			item.mana = 7;
+			item.value = 50000;
             item.rare = 2;
 			item.noMelee = true;
 			item.noUseGraphic = true;
@@ -40,7 +40,7 @@ namespace ForgottenMemories.Items.ItemSets.DevilFlame
 	public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null,"DevilFlame", 14);
+			recipe.AddIngredient(null,"DevilFlame", 15);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

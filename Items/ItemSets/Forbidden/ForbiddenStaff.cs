@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.UseSound = SoundID.Item5;
 			Item.staff[item.type] = true;
 			item.autoReuse = true;
-			item.mana = 60;
+			item.mana = 15;
 			item.shoot = mod.ProjectileType("ForbiddenStaffProj");
 			item.noMelee = true;
 			item.shootSpeed = 7f;

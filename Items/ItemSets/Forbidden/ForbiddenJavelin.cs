@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 
 			item.useTime = 14;
 			item.useAnimation = 14;
-			//item.consumable = true;
+			item.consumable = true;
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 666;

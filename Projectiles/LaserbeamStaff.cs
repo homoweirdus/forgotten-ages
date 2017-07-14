@@ -15,7 +15,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.width = 44;
 			projectile.height = 44;
 			//projectile.aiStyle = 75;
-			projectile.friendly = true;
+			projectile.friendly = false;
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
 			projectile.hide = true;

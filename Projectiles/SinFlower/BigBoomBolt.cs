@@ -18,7 +18,7 @@ namespace ForgottenMemories.Projectiles.SinFlower
 			projectile.height = 10;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
-			projectile.ranged = true;
+			projectile.magic = true;
 			projectile.penetrate = 1;
 			projectile.timeLeft = 250;
 			projectile.extraUpdates = 10;
@@ -83,7 +83,7 @@ namespace ForgottenMemories.Projectiles.SinFlower
 			projectile.position.Y -= (float) (projectile.height / 2);
 			for (int index = 0; index < 8; ++index)
 			  Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 127, 0.0f, 0.0f, 100, new Color(), 1.5f);
-			for (int index1 = 0; index1 < 32; ++index1)
+			for (int index1 = 0; index1 < 48; ++index1)
 			{
 			  int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 127, 0.0f, 0.0f, 100, new Color(), 3.5f);
 			  Main.dust[index2].noGravity = true;
@@ -104,18 +104,6 @@ namespace ForgottenMemories.Projectiles.SinFlower
 			  projectile.localAI[1] = -1f;
 			  projectile.maxPenetrate = 0;
 			  projectile.Damage();
-			}
-			for (int index1 = 0; index1 < 5; ++index1)
-			{
-			  int index2 = Dust.NewDust(projectile.position, projectile.width, projectile.height, Utils.SelectRandom<int>(Main.rand, new int[3]
-			  {
-				15,
-				176,
-				59
-			  }), 2.5f * (float) projectile.direction, -2.5f, 0, new Color(), 1f);
-			  Main.dust[index2].alpha = 200;
-			  Main.dust[index2].velocity *= 2.4f;
-			  Main.dust[index2].scale += Main.rand.NextFloat();
 			}
 		}
 	}

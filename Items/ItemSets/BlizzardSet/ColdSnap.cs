@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 			item.channel = true;
 			item.useStyle = 5;
 			item.knockBack = 0f;
-			item.value = 1000;
+			item.value = 5000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
