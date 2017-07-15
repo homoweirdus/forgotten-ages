@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.height = 18;
 
 			item.value = 210000;
-			item.rare = 4;
+			item.rare = 6;
 			item.defense = 14;
 		}
 

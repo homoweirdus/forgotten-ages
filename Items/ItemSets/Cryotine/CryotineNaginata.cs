@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.useStyle = 5;
-			item.value = 168000;
+			item.value = 16800;
 			item.rare = 2;
 			item.shoot = mod.ProjectileType("CryotineNaginata");
 			//item.shootSpeed = 42f;

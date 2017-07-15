@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.Acessory
             item.height = 34;
 
             item.value = 400000;
-            item.rare = 5;
+            item.rare = 8;
             item.accessory = true;
         }
 

@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 			item.useAmmo = 40;
 			item.knockBack = 1;
 			item.value = 50000;
-			item.rare = 2;
+			item.rare = 5;
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;
 			item.shootSpeed = 10f;

@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.knockBack = 3.75f;
 			item.damage = 45;
 			item.value = 200000;
-			item.rare = 4;
+			item.rare = 6;
 			item.maxStack = 1;
 			item.shoot = mod.ProjectileType("TheComet");
 		}

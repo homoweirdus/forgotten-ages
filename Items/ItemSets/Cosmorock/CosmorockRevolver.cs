@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.noMelee = true;
 			item.knockBack = 4;
 			item.value = 200000;
-			item.rare = 4;
+			item.rare = 6;
 			item.UseSound = SoundID.Item11;
 			item.shoot = 10;
 			item.shootSpeed = 8f;

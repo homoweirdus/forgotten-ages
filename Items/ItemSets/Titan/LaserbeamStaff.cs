@@ -22,8 +22,8 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 			item.UseSound = SoundID.Item13;
 			item.shoot = mod.ProjectileType("LaserbeamStaff");
 			item.mana = 14;
-			item.value = 10000;
-            item.rare = 2;
+			item.value = 50000;
+            item.rare = 5;
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.magic = true;

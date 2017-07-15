@@ -22,8 +22,8 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 4f;
-			item.value = 10000;
-			item.rare = 10;
+			item.value = 50000;
+			item.rare = 5;
 			item.UseSound = SoundID.Item38;
 			item.autoReuse = true;
 			//item.shoot = 134;
@@ -43,15 +43,6 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 			Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("ROCKet"), damage, knockBack, player.whoAmI);
 			return false;
 		}
-
-		public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(3456, 18);
-            recipe.AddTile(412);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-        }
 		
 		public override Vector2? HoldoutOffset()
 		{

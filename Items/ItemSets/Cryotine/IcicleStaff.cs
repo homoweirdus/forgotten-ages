@@ -25,7 +25,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.noMelee = true;
 			item.knockBack = 2;
 			Item.staff[item.type] = true;
-			item.value = 168000;
+			item.value = 16800;
 			item.rare = 2;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("IceMagic");

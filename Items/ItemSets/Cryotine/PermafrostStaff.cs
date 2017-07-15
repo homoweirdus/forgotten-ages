@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.mana = 15;   
 			item.width = 40;
 			item.height = 40;
-			item.value = 168000;
+			item.value = 16800;
 			ProjectileID.Sets.TurretFeature[item.shoot] = true;
             item.rare = 2;
             item.knockBack = 2f;

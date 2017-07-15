@@ -23,8 +23,8 @@ namespace ForgottenMemories.Items.ItemSets.Titan
             item.useStyle = 5;
             item.noMelee = true;
             item.knockBack = 4;
-            item.value = 10000;
-            item.rare = 2;
+            item.value = 50000;
+            item.rare = 5;
             item.UseSound = SoundID.Item75;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("EnergyOrb");

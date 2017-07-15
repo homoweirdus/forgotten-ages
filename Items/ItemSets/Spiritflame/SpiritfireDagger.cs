@@ -25,7 +25,7 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 			item.shoot = mod.ProjectileType("SpiritfireDagger");
 			item.knockBack = 1;
 			item.UseSound = SoundID.Item1;
-			item.value = 5000;
+			item.value = 500;
 			item.rare = 4;
 			item.consumable = true;
 			item.maxStack = 999;

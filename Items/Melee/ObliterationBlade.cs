@@ -16,11 +16,11 @@ namespace ForgottenMemories.Items.Melee
 			item.width = 62;
 			item.height = 62;
 
-			item.useTime = 5;
-			item.useAnimation = 5;
+			item.useTime = 7;
+			item.useAnimation = 7;
 			item.useStyle = 1;
 			item.knockBack = 3;
-			item.value = 10000000;
+			item.value = 2000000;
 			item.rare = 10;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;

@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Magic
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
+			item.damage = 16;
 			item.magic = true;
 			item.mana = 12;
 			item.width = 25;
@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.Magic
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Bloodbath Wand");
-      Tooltip.SetDefault("Inlficts devils flame, creates blood fountains on hit");
+      Tooltip.SetDefault("Inflicts devils flame, creates blood fountains on hit");
     }
 	
 	public override void AddRecipes()

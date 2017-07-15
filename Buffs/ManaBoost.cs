@@ -15,13 +15,13 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Magic Boost");
-			Description.SetDefault("35% increased magic damage");
+			Description.SetDefault("15% increased magic damage");
 			//Main.buffNoTimeDisplay[Type] = true;
 		}
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.magicDamage += 0.35f;
+			player.magicDamage += 0.15f;
 		}
 	}
 }

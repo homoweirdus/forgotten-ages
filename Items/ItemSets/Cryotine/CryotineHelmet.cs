@@ -17,7 +17,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 			item.width = 18;
 			item.height = 18;
 
-			item.value = 150000;
+			item.value = 15000;
 			item.rare = 2;
 			item.defense = 4;
 		}

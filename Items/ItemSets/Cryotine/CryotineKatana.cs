@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 
 			item.useStyle = 1;
 			item.knockBack = 3;
-			item.value = 168000;
+			item.value = 16800;
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;

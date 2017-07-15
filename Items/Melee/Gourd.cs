@@ -23,7 +23,7 @@ public class Gourd : ModItem
         item.shootSpeed = 16f;
         item.knockBack = 3.75f;
         item.damage = 10;
-        item.value = Item.sellPrice(0, 1, 30, 0);
+        item.value = Item.sellPrice(0, 0, 50, 0);
         item.rare = 3;
         item.shoot = mod.ProjectileType("GourdProj");
     }

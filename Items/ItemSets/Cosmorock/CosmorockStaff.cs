@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 200000;
-			item.rare = 4;
+			item.rare = 6;
 			item.mana = 5;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;

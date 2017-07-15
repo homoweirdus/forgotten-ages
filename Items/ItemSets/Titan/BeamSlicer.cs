@@ -25,8 +25,8 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 			item.shoot = mod.ProjectileType("BeamSlicer");
 			item.knockBack = 1;
 			item.UseSound = SoundID.Item1;
-			item.value = 50000;
-			item.rare = 4;
+			item.value = 900;
+			item.rare = 5;
 			item.consumable = true;
 			item.maxStack = 999;
 			item.autoReuse = true;

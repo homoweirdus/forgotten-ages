@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 			item.knockBack = 3.75f;
 			item.damage = 43;
 			item.value = Item.sellPrice(0, 1, 30, 0);
-			item.rare = 3;
+			item.rare = 5;
 			item.shoot = mod.ProjectileType("TitanSpin");
 		}
 

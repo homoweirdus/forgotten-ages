@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
 
-namespace ForgottenMemories.Items.Melee
+namespace ForgottenMemories.Items.ItemSets.Titan
 {
 	public class LaserbladeKatana : ModItem
 	{
@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Melee
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 50000;
-			item.rare = 2;
+			item.rare = 5;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = 1;

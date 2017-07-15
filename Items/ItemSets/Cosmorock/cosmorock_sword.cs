@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.useStyle = 1;
 			item.knockBack = 2;
 			item.value = 200000;
-			item.rare = 4;
+			item.rare = 6;
 			item.shoot = mod.ProjectileType("CosmirockMeteor");
 			item.shootSpeed = 5f;
 			item.useTurn = true;
