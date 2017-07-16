@@ -81,15 +81,6 @@ namespace ForgottenMemories.Projectiles.SinFlower
 				
 				projectile.ai[1] = 0f;
 			}
-			if (projectile.soundDelay <= 0 && !flag5)
-			{
-				projectile.soundDelay = num17 - num16;
-				projectile.soundDelay *= 2;
-				if (projectile.ai[0] != 1f)
-				{
-					Main.PlaySound(SoundID.Item15, projectile.position);
-				}
-			}
 			if (projectile.ai[0] > 10f && !flag5)
 			{
 				Vector2 vector13 = Vector2.UnitX * 18f;
