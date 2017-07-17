@@ -5,7 +5,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.Jungle
+namespace ForgottenMemories.Items.Ranged
 {
     public class StingerBow : ModItem
     {
