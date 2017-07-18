@@ -5,9 +5,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Projectiles.Necro
+namespace ForgottenMemories.Projectiles.Spiritflame
 {
-	public class NecroSpearP : ModProjectile
+	public class SpiritSpear : ModProjectile
 	{
 		int timer = 0;
 		public override void SetDefaults()
@@ -27,16 +27,9 @@ namespace ForgottenMemories.Projectiles.Necro
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Necro Spear");
+			DisplayName.SetDefault("Spirit Lance");
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			if (Main.rand.Next(4) == 0)
-			{
-				target.AddBuff(153, 360, false);
-			}
-		}
 
 		public override void AI()
 		{
@@ -73,7 +66,7 @@ namespace ForgottenMemories.Projectiles.Necro
 			if (Main.rand.Next(5) == 0)
 			{
 				int dust;
-				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 173, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 160, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 1.5f;
 			}
 			
@@ -98,8 +91,7 @@ namespace ForgottenMemories.Projectiles.Necro
 			timer++;
 			if (target && timer >= 7)
 			{
-				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 15f, move.Y * 15f, 585, projectile.damage, 5f, projectile.owner);
-				Main.projectile[proj].melee = true;
+				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 12f, move.Y * 12f, mod.ProjectileType("SpiritBoomer"), projectile.damage, 5f, projectile.owner);
 				timer = 0;
 			}
 		}

@@ -17,9 +17,10 @@ namespace ForgottenMemories.Projectiles.Spiritflame
             projectile.friendly = true;
             projectile.melee = true;
             projectile.penetrate = -1;
-			projectile.extraUpdates = 2;
+			projectile.extraUpdates = 3;
             projectile.timeLeft = 600;  
 			projectile.tileCollide = false;
+			projectile.alpha = 150;
         } 
 		
 		public override void SetStaticDefaults()
