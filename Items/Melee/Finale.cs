@@ -25,7 +25,6 @@ namespace ForgottenMemories.Items.Melee
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("FinaleBoom");
 			item.shootSpeed = 18;
-			item.useTurn = true;
 		}
 
     public override void SetStaticDefaults()

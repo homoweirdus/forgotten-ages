@@ -34,7 +34,7 @@ namespace ForgottenMemories.Projectiles
 				float num1 = projectile.velocity.X / 3f * (float) index1;
 				float num2 = projectile.velocity.Y / 3f * (float) index1;
 				int num3 = 0;
-				int index2 = Dust.NewDust(new Vector2(projectile.Center.X + (float) num3, projectile.Center.Y + (float) num3), projectile.width - num3 * 2, projectile.height - num3 * 2, mod.DustType("BloodDust"), Main.rand.Next(-50, 50) * 1f, -3f, 0, default(Color), 1f);
+				int index2 = Dust.NewDust(new Vector2(projectile.Center.X + (float) num3, projectile.Center.Y + (float) num3), projectile.width - num3 * 2, projectile.height - num3 * 2, mod.DustType("BloodDust2"), Main.rand.Next(-50, 50) * 1f, -3f, 0, default(Color), 1f);
 				Main.dust[index2].scale = 1.6f;
 				Main.dust[index2].noGravity = true;
 				Main.dust[index2].velocity *= 0.1f;

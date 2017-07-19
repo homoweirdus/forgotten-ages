@@ -11,15 +11,15 @@ namespace ForgottenMemories.Items.Magic
 		public override void SetDefaults()
 		{
 
-			item.damage = 16;
+			item.damage = 19;
 			item.magic = true;
 			item.mana = 12;
 			item.width = 25;
 			item.height = 26;
-			item.useTime = 28;
+			item.useTime = 39;
 			item.UseSound = SoundID.Item20;
 
-			item.useAnimation = 28;
+			item.useAnimation = 39;
 			item.useStyle = 5;
 			Item.staff[item.type] = true;
 			item.noMelee = true;
