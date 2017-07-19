@@ -25,6 +25,7 @@ namespace ForgottenMemories.Items.Melee
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("FinaleBoom");
 			item.shootSpeed = 18;
+			item.useTurn = true;
 		}
 
     public override void SetStaticDefaults()
@@ -52,6 +53,7 @@ namespace ForgottenMemories.Items.Melee
 		{
 			if (player.altFunctionUse != 2)
 			{
+				Main.PlaySound(2, (int)position.X, (int)position.Y, 62);
 				for (int i = 0; i < 12; i++)
 				{
 					Vector2 pos = new Vector2(100, 0).RotatedBy(MathHelper.ToRadians(30 * i));

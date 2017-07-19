@@ -31,6 +31,8 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
+			Player player = Main.player[projectile.owner];
+			projectile.velocity = player.velocity;
 			projectile.frameCounter++;
 			if (projectile.frameCounter >= 2)
 			{

@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 5;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("NecroflameSickleProj");
+			item.shoot = 85;
 			item.shootSpeed = 10f;
 		}
 

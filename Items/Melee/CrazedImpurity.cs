@@ -50,7 +50,6 @@ namespace ForgottenMemories.Items.Melee
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			Main.PlaySound(2, (int)position.X, (int)position.Y, 15);
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage * 2, knockBack, player.whoAmI, 1f, 0f);
 			
 			Vector2 vector13 = Main.screenPosition + new Vector2((float)Main.mouseX, (float)Main.mouseY);
 			float num119 = vector13.Y;
