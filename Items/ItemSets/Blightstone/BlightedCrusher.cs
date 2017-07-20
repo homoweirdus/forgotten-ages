@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 		public override void SetDefaults()
 		{
 
-			item.damage = 45;
+			item.damage = 49;
 			item.melee = true;
 			item.width = 60;
 			item.height = 60;
@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.crit = 16;
 			item.useAnimation = 14;
 			item.useStyle = 1;
-			item.knockBack = 4;
+			item.knockBack = 6;
 			item.value = 250000;
 			item.rare = 5;
 			item.useTurn = true;

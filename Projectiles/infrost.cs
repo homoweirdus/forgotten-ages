@@ -30,14 +30,17 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			if (Main.rand.Next(10) == 0)
+			projectile.velocity.X *= 0.975f;
+            projectile.velocity.Y *= 0.975f;
+			
+			if (Main.rand.Next(10) == 0 && projectile.alpha <= 190)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 67, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
-			if (Main.rand.Next(6) == 0)
+			if (Main.rand.Next(6) == 0 && projectile.alpha <= 190)
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 59, projectile.velocity.X * -1f, projectile.velocity.Y * -1f);

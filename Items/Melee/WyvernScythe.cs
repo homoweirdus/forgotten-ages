@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 52;
+			item.damage = 65;
 			item.melee = true;
 			item.width = 58;
 			item.height = 52;
@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.Melee
 		
 		public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            int amountOfProjectiles = Main.rand.Next(4, 7);
+            int amountOfProjectiles = Main.rand.Next(2, 4);
 			for (int i = 0; i < amountOfProjectiles; i++)
 			{
 				float spX = speedX;
@@ -56,6 +56,7 @@ namespace ForgottenMemories.Items.Melee
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SoulofFlight, 15);
+			recipe.AddIngredient(ItemID.SoulofMight, 15);
 			recipe.AddIngredient(ItemID.HallowedBar, 10);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
