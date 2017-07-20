@@ -29,6 +29,7 @@ namespace ForgottenMemories
 		public bool jungard = true;
 		public bool frostguard = false;
 		public bool ManaShard = false;
+		public int firestormCooldown = 0;
 		
 		public override void ResetEffects()
 		{
@@ -79,6 +80,7 @@ namespace ForgottenMemories
 					{
 						Player player = Main.player[projectile.owner];
 						Vector2 newMove = projectile.Center - player.Center;
+						newMove.Normalize();
 						float ok = newMove.X * 3f;
 						float ok2 = newMove.Y * 3f;
 						Projectile.NewProjectile(player.Center.X, player.Center.Y, ok, ok2, mod.ProjectileType("BoCBolt"), (int)(projectile.damage/3), 0f, projectile.owner, 0f, 0f);
@@ -148,7 +150,10 @@ namespace ForgottenMemories
 			
 			public override void PreUpdate()
 			{
-				
+				if(firestorm == true)
+				{
+					firestormCooldown++;
+				}
 				if(player.controlJump)
 				{
 					if(!player.mount.Active && canJumpFirestorm == true && firestorm == true)
@@ -162,17 +167,11 @@ namespace ForgottenMemories
 							player.velocity.X = 10f;
 						}
 						Main.PlaySound(2, (int)player.Center.X, (int)player.Center.Y, 34);
-											
-						int amountOfProjectiles = Main.rand.Next(5, 10);
-									
-						for (int i = 0; i < amountOfProjectiles; ++i)
-						{
-							float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
-							float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
-							int projectile = Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, 400, 10, 5f, player.whoAmI);
-							Main.projectile[projectile].timeLeft = 100;
-						}				
+						int projectile = Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("FireGrenadeBoom"), 15, 5f, player.whoAmI);
+						Main.projectile[projectile].thrown = false;
+						Main.projectile[projectile].timeLeft = 2;				
 						canJumpFirestorm = false;
+						firestormCooldown = 0;
 					}
 
 					bool flag = false;
@@ -198,7 +197,7 @@ namespace ForgottenMemories
 					}
 				}
 					
-				if (player.justJumped == true)
+				if (player.justJumped == true && firestormCooldown >= 10)
 				{
 					canJumpFirestorm = true;
 				}	

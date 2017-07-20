@@ -18,7 +18,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 255;
 			projectile.light = 0.5f;
 			projectile.extraUpdates = 1;
-			projectile.melee = true;
 			projectile.alpha = 255;
 			projectile.timeLeft = 10;
 		}
