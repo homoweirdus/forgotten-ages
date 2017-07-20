@@ -45,5 +45,31 @@ namespace ForgottenMemories.Projectiles
 		{
 			return new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
 		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			int thing = 153;
+			switch (Main.rand.Next(8))
+			{
+			case 0: thing = 189;
+				break;
+			case 1: thing = mod.BuffType("DevilsFlame");
+				break;
+			case 2: thing = mod.BuffType("Electrified");
+				break;
+			case 3: thing = mod.BuffType("BlightFlame");
+				break;
+			case 4: thing = 69;
+				break;
+			case 5: thing = 72;
+				break;
+			case 6: thing = 70;
+				break;
+			case 7: thing = 153;
+				break;
+			default: break;
+			}
+			target.AddBuff(thing, 360, false);
+		}
 	}
 }

@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Magic
 
 			item.damage = 37;
 			item.magic = true;
-			item.mana = 6;
+			item.mana = 8;
 			item.width = 25;
 			item.height = 26;
 

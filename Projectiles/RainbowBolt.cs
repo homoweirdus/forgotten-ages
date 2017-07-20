@@ -47,6 +47,32 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[num15].noGravity = true;
 				Main.dust[num15].scale = 1f + projectile.ai[0] / 3f;
 			}
+			
+			if (Main.rand.Next(3) == 0)
+			{
+				int thing = 153;
+				switch (Main.rand.Next(8))
+				{
+				case 0: thing = 189;
+					break;
+				case 1: thing = mod.BuffType("DevilsFlame");
+					break;
+				case 2: thing = mod.BuffType("Electrified");
+					break;
+				case 3: thing = mod.BuffType("BlightFlame");
+					break;
+				case 4: thing = 69;
+					break;
+				case 5: thing = 72;
+					break;
+				case 6: thing = 70;
+					break;
+				case 7: thing = 153;
+					break;
+				default: break;
+				}
+				target.AddBuff(thing, 360, false);
+			}
 		}
 		
 		public override Color? GetAlpha(Color lightColor)
@@ -57,7 +83,7 @@ namespace ForgottenMemories.Projectiles
 		public override void AI()
 		{
 			if (projectile.position.Y > (double) projectile.ai[1])
-				projectile.tileCollide = true;
+			projectile.tileCollide = true;
 			
 			if (Main.rand.Next(10) == 0)
 			{
@@ -113,41 +139,41 @@ namespace ForgottenMemories.Projectiles
 				projectile.Kill();
 			}
 			if ((double) projectile.velocity.Y != (double) velocity1.Y || (double) projectile.velocity.X != (double) velocity1.X)
-                {
-                  if ((double) projectile.velocity.X != (double) velocity1.X)
-                    projectile.velocity.X = -velocity1.X;
-                  if ((double) projectile.velocity.Y != (double) velocity1.Y)
-                    projectile.velocity.Y = -velocity1.Y;
-                }
+			{
+				if ((double) projectile.velocity.X != (double) velocity1.X)
+				projectile.velocity.X = -velocity1.X;
+				if ((double) projectile.velocity.Y != (double) velocity1.Y)
+				projectile.velocity.Y = -velocity1.Y;
+			}
 			if (projectile.penetrate > 0 && projectile.owner == Main.myPlayer)
 			{
-			  int[] numArray = new int[10];
-			  int maxValue = 0;
-			  int num1 = 700;
-			  int num2 = 20;
-			  for (int index = 0; index < 200; ++index)
-			  {
-				if (Main.npc[index].CanBeChasedBy((object) this, false))
+				int[] numArray = new int[10];
+				int maxValue = 0;
+				int num1 = 700;
+				int num2 = 20;
+				for (int index = 0; index < 200; ++index)
 				{
-				  float num3 = (projectile.Center - Main.npc[index].Center).Length();
-				  if ((double) num3 > (double) num2 && (double) num3 < (double) num1 && Collision.CanHitLine(projectile.Center, 1, 1, Main.npc[index].Center, 1, 1))
-				  {
-					numArray[maxValue] = index;
-					++maxValue;
-					if (maxValue >= 9)
-					  break;
-				  }
+					if (Main.npc[index].CanBeChasedBy((object) this, false))
+					{
+						float num3 = (projectile.Center - Main.npc[index].Center).Length();
+						if ((double) num3 > (double) num2 && (double) num3 < (double) num1 && Collision.CanHitLine(projectile.Center, 1, 1, Main.npc[index].Center, 1, 1))
+						{
+							numArray[maxValue] = index;
+							++maxValue;
+							if (maxValue >= 9)
+							break;
+						}
+					}
 				}
-			  }
-			  if (maxValue > 0)
-			  {
-				int index = Main.rand.Next(maxValue);
-				Vector2 vector2 = Main.npc[numArray[index]].Center - projectile.Center;
-				float num3 = projectile.velocity.Length();
-				vector2.Normalize();
-				projectile.velocity = vector2 * num3;
-				projectile.netUpdate = true;
-			  }
+				if (maxValue > 0)
+				{
+					int index = Main.rand.Next(maxValue);
+					Vector2 vector2 = Main.npc[numArray[index]].Center - projectile.Center;
+					float num3 = projectile.velocity.Length();
+					vector2.Normalize();
+					projectile.velocity = vector2 * num3;
+					projectile.netUpdate = true;
+				}
 			}
 			
 			Vector2 spinningpoint = new Vector2(0f, -3f - projectile.ai[0]).RotatedByRandom(3.1415927410125732);
