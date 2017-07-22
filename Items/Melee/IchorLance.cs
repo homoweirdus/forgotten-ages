@@ -15,21 +15,21 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.width = 65;  //The width of the .png file in pixels divided by 2.
-			item.damage = 78;  //Keep this reasonable please.
-			item.melee = true;  //Dictates whether this is a melee-class weapon.
+			item.width = 65;  
+			item.damage = 59;  
+			item.melee = true;  
 			item.noMelee = true;
 			item.noUseGraphic = true;
-			item.useAnimation = 30;
+			item.useAnimation = 10;
 			item.useStyle = 5;
-			item.useTime = 30;
-			item.knockBack = 9.5f;  //Ranges from 1 to 9.
+			item.useTime = 10;
+			item.knockBack = 2.5f;  
 			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;  //Dictates whether the weapon can be "auto-fired".
-			item.height = 96;  //The height of the .png file in pixels divided by 2.
+			item.autoReuse = true;  
+			item.height = 96;  
 			item.maxStack = 1;
-			item.value = 300000;  //Value is calculated in copper coins.
-			item.rare = 10;  //Ranges from 1 to 11.
+			item.value = 300000;  
+			item.rare = 10;  
 			item.shoot = mod.ProjectileType("IchorLanceProjectile");
 			item.shootSpeed = 7;
 		}
@@ -37,7 +37,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Ichor Lance");
-      Tooltip.SetDefault("");
+      Tooltip.SetDefault("Hitting enemies steals life and launches ichor streams");
     }
 
 		
@@ -58,7 +58,6 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(1228, 1);
 			recipe.AddIngredient(ItemID.Ichor, 20);
-			recipe.AddIngredient(ItemID.Ectoplasm, 15);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

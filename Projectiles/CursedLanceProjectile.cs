@@ -33,29 +33,28 @@ namespace ForgottenMemories.Projectiles
 
          public override void AI()
         {
+			if(projectile.ai[0] == 0f)
+        	{
+        		projectile.ai[0] = 6f;
+        		projectile.netUpdate = true;
+        	}
         	Main.player[projectile.owner].direction = projectile.direction;
         	Main.player[projectile.owner].heldProj = projectile.whoAmI;
         	Main.player[projectile.owner].itemTime = Main.player[projectile.owner].itemAnimation;
         	projectile.position.X = Main.player[projectile.owner].position.X + (float)(Main.player[projectile.owner].width / 2) - (float)(projectile.width / 2);
         	projectile.position.Y = Main.player[projectile.owner].position.Y + (float)(Main.player[projectile.owner].height / 2) - (float)(projectile.height / 2);
         	projectile.position += projectile.velocity * projectile.ai[0];
-        	if(projectile.ai[0] == 0f)
-        	{
-        		projectile.ai[0] = 3f;
-        		projectile.netUpdate = true;
-        	}
         	if(Main.player[projectile.owner].itemAnimation < Main.player[projectile.owner].itemAnimationMax / 3)
         	{
         		projectile.ai[0] -= 0.95f;
 				if (projectile.localAI[0] == 0f && Main.myPlayer == projectile.owner)
 				{
 					projectile.localAI[0] = 1f;
-					Projectile.NewProjectile(projectile.Center.X + (projectile.velocity.X * 3/4), projectile.Center.Y + (projectile.velocity.Y * 3/4), projectile.velocity.X * 1.4f, projectile.velocity.Y * 1.4f, mod.ProjectileType("CursedSpearTip"), (int)((double)projectile.damage * 0.85f), projectile.knockBack * 0.85f, projectile.owner, 0f, 0f);
 				}
         	}
         	else
         	{
-        		projectile.ai[0] += 1.2f;
+        		projectile.ai[0] += 1.5f;
         	}
         	
         	if(Main.player[projectile.owner].itemAnimation == 0)
@@ -83,6 +82,12 @@ namespace ForgottenMemories.Projectiles
 			{
 				target.AddBuff(39, 360, false);
 			}
+			float sX = (float)Main.rand.Next(-60, 61) * 0.3f;
+			float sY = (float)Main.rand.Next(-60, 61) * 0.3f;
+			int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 95, projectile.damage, 5f, projectile.owner);
+			Main.projectile[z].magic = false;
+			Main.projectile[z].melee = true;
+			Main.projectile[z].timeLeft = 100;
 		}
     }
 }

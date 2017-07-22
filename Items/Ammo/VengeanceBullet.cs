@@ -30,7 +30,7 @@ namespace ForgottenMemories.Items.Ammo
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Vengeance Bullet");
-      Tooltip.SetDefault("Homes in on an enemy it just hit, dealig a portion of the original damage");
+      Tooltip.SetDefault("Homes in on an enemy it just hit, dealing a portion of the original damage");
     }
 
 	}

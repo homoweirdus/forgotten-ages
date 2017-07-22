@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Forbidden Javelin");
-      Tooltip.SetDefault("Throws and exploding javelin");
+      Tooltip.SetDefault("Throws an exploding javelin");
     }
 
 
