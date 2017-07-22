@@ -52,6 +52,7 @@ namespace ForgottenMemories.Items.Ranged
 				sY += (float)Main.rand.Next(-50, 50) * 0.02f;
 				int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
 				Main.projectile[p].GetGlobalProjectile<Info>(mod).Shroom = true;
+				Main.projectile[p].penetrate = 1;
 			}
 			return false;
 		}

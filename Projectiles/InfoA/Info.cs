@@ -88,7 +88,7 @@ namespace ForgottenMemories.Projectiles.InfoA
 				memes += (float)Main.rand.Next(-40, 41) * 0.1f;
 				memes2 += (float)Main.rand.Next(-40, 41) * 0.1f;
 				int z = Projectile.NewProjectile(player.Center.X, player.Center.Y, memes, memes2, projectile.type, projectile.damage, 0f, projectile.owner, 0f, 0f);
-				if(Main.rand.Next(3) == 0)
+				if(Main.rand.Next(15) == 0)
 				{
 					Main.projectile[z].GetGlobalProjectile<Info>(mod).Planetary = true;
 				}

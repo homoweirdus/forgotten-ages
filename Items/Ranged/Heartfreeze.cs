@@ -52,12 +52,7 @@ namespace ForgottenMemories.Items.Ranged
 					Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("icearrow"), damage, knockBack, player.whoAmI);
 				}
 			}
-			
-			float s2X = speedX;
-			float s2Y = speedY;
-			s2X += (float)Main.rand.Next(-60, 61) * 0.03f;
-			s2Y += (float)Main.rand.Next(-60, 61) * 0.03f;
-			Projectile.NewProjectile(position.X, position.Y, s2X, s2Y, mod.ProjectileType("icearrow"), damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("icearrow"), damage, knockBack, player.whoAmI);
 			
 			return false;
 		}
