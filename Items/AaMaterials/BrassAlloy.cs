@@ -22,7 +22,7 @@ namespace ForgottenMemories.Items.AaMaterials
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Brass Alloy");
+      DisplayName.SetDefault("Bronze Alloy");
       Tooltip.SetDefault("");
     }
 

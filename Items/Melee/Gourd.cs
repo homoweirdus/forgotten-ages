@@ -30,7 +30,7 @@ public class Gourd : ModItem
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Gourd");
+      DisplayName.SetDefault("Cackle");
       Tooltip.SetDefault("");
     }
 
