@@ -39,6 +39,12 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 		  Tooltip.SetDefault("Fires a spread of 2-4 arrows that erupt into embers of ghastly fire");
 		}
 		
+		
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(-3, 0);
+		}
+		
 		public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

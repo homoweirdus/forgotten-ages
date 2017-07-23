@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Ranged
             item.useStyle = 5;
 			item.reuseDelay = 16;
             item.noMelee = true;
-            item.knockBack = 4;
+            item.knockBack = 1;
             item.value = 200000;
 			item.rare = 5;
             item.UseSound = SoundID.Item31;
@@ -36,6 +36,20 @@ namespace ForgottenMemories.Items.Ranged
       DisplayName.SetDefault("Crystal Ricochet");
       Tooltip.SetDefault("Converts musket balls into crystal bullets \nConverts crystal bullets into bouncing prism bullets");
     }
+	
+	
+	public override bool ConsumeAmmo(Player player)
+		{
+			if (Main.rand.Next(3) == 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+			
+		}
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
@@ -52,7 +66,19 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(-5, 0);
+			return new Vector2(-7, 0);
+		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.ClockworkAssaultRifle, 10);
+			recipe.AddIngredient(ItemID.HallowedBar, 7);
+			recipe.AddIngredient(ItemID.SoulofLight, 10);
+			recipe.AddIngredient(ItemID.CrystalShard, 30);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
     }
 }
