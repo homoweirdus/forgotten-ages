@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.Magic
 			item.useStyle = 5;
 			Item.staff[item.type] = true;
 			item.noMelee = true;
-			item.knockBack = 7;
+			item.knockBack = 2;
 			item.value = 50000;
 			item.rare = 1;
 			item.autoReuse = true;
