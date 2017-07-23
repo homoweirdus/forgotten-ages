@@ -43,7 +43,9 @@ namespace ForgottenMemories.Items.Throwing
 				{
 					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
 					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 90, 15, 5f, projectile.owner);
+					int p = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 90, 15, 5f, projectile.owner);
+					Main.projectile[p].thrown = true;
+					Main.projectile[p].ranged = false;
 				}
 				Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 			}
