@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Magic
 
 			item.damage = 18;
 			item.magic = true;
-			item.mana = 18;
+			item.mana = 10;
 			item.width = 25;
 			item.height = 26;
 			item.useTime = 36;
@@ -27,24 +27,14 @@ namespace ForgottenMemories.Items.Magic
 			item.value = 50000;
 			item.rare = 1;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("MagmaGlob");
+			item.shoot = mod.ProjectileType("JungleBolt");
 			item.shootSpeed = 7f;
 		}
 
 		public override void SetStaticDefaults()
 		{
 		  DisplayName.SetDefault("Basil Wand");
-		  Tooltip.SetDefault("Creates a spore that homes in on enemies and explodes");
-		}
-		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			Vector2 mouse = Main.MouseWorld;
-			mouse.X += Main.rand.Next(-20, 21);
-			mouse.Y += Main.rand.Next(-20, 21);
-			int p = Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, 567 + Main.rand.Next(2), damage, knockBack, player.whoAmI);
-			Main.projectile[p].magic = true;
-			return false;
+		  Tooltip.SetDefault("Fires a bolt that creates damaging spores");
 		}
 		
 		public override void AddRecipes()
