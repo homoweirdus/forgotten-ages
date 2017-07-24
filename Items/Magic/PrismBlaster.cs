@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.Magic
 			item.knockBack = 1;
 			item.value = 500000;
 			item.rare = 5;
-			item.UseSound = SoundID.Item5;
+			item.UseSound = SoundID.Item91;
 			item.autoReuse = true;
 			item.shootSpeed = 10f;
 			item.mana = 9;
