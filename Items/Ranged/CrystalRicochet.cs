@@ -66,13 +66,13 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(-7, 0);
+			return new Vector2(-5, 0);
 		}
 		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.ClockworkAssaultRifle, 10);
+			recipe.AddIngredient(ItemID.ClockworkAssaultRifle, 1);
 			recipe.AddIngredient(ItemID.HallowedBar, 7);
 			recipe.AddIngredient(ItemID.SoulofLight, 10);
 			recipe.AddIngredient(ItemID.CrystalShard, 30);
