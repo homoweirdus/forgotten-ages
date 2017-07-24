@@ -34,5 +34,10 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 160, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust].scale = 1.5f;
 		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{	
+			target.AddBuff(mod.BuffType("Spiritflame"), 180, false);
+		}
 	}
 }

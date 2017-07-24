@@ -12,8 +12,8 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 24;
-			projectile.height = 23;
+			projectile.width = 11;
+			projectile.height = 21;
 			projectile.aiStyle = 1;
 			projectile.thrown = true;
 			projectile.friendly = true;
@@ -22,7 +22,6 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 			projectile.tileCollide = true;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
-			projectile.scale = 0.75f;
 			projectile.timeLeft = 360;
 			projectile.light = 0.5f;
 			//projectile.scale = 0.5f;
@@ -36,7 +35,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 		
 		public override void AI()
 		{
-			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + MathHelper.PiOver4;
+			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 		}
 		
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)

@@ -95,5 +95,10 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 				timer = 0;
 			}
 		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{	
+			target.AddBuff(mod.BuffType("Spiritflame"), 180, false);
+		}
 	}
 }
