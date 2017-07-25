@@ -17,8 +17,8 @@ namespace ForgottenMemories.Items.Ranged
 			item.ranged = true;
 			item.width = 50;
 			item.height = 50;
-			item.useTime = 2;
-			item.useAnimation = 2;
+			item.useTime = 4;
+			item.useAnimation = 4;
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 500000;
