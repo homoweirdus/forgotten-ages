@@ -32,7 +32,7 @@ namespace ForgottenMemories.Projectiles
         public override void Kill(int timeLeft)
         {
             Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 43);
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("Void"), projectile.damage, projectile.knockBack, projectile.owner);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("Void"), projectile.damage, projectile.knockBack, projectile.owner, projectile.Center.X, projectile.Center.Y);
         }
 
         public override void AI()

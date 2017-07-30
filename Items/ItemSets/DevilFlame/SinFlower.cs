@@ -33,7 +33,7 @@ namespace ForgottenMemories.Items.ItemSets.DevilFlame
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Sin Flower");
-      Tooltip.SetDefault("");
+      Tooltip.SetDefault("Fires a chargable bolt of fire");
     }
 	
 	

@@ -11,8 +11,8 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.width = 7;
 			item.height = 8;
 			item.maxStack = 999;
-			item.value = 100;
-			item.rare = 1;
+			item.value = 1000;
+			item.rare = 4;
 		}
 		
 		public override void Update(ref float gravity, ref float maxFallSpeed)
@@ -22,8 +22,8 @@ namespace ForgottenMemories.Items.AaMaterials
 
 		public override void SetStaticDefaults()
 		{
-		  DisplayName.SetDefault("SpiritflameChunk");
-		  Tooltip.SetDefault("");
+		  DisplayName.SetDefault("Spiritflame Chunk");
+		  Tooltip.SetDefault("'Contains the essence of a lost soul'");
 		}
 	}
 }

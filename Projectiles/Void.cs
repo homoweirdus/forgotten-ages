@@ -9,11 +9,11 @@ namespace ForgottenMemories.Projectiles
 {
     public class Void : ModProjectile
     {
-		int dustcounter = 0;
+		int counter = 0;
         public override void SetDefaults()
         {
-            projectile.width = 32;
-			projectile.height = 32;
+            projectile.width = 80;
+			projectile.height = 80;
 			//projectile.aiStyle = 108;
 			projectile.friendly = true;
 			projectile.alpha = (int) byte.MaxValue;
@@ -37,8 +37,9 @@ namespace ForgottenMemories.Projectiles
 
         public override void AI()
         {
-			projectile.ai[0]++;
-			if ((double) projectile.ai[0] <= 50.0)
+			projectile.Center = new Vector2(projectile.ai[0], projectile.ai[1]);
+			counter++;
+			if (counter <= 50)
 			{
 				if (Main.rand.Next(4) == 0)
 				{
@@ -61,9 +62,9 @@ namespace ForgottenMemories.Projectiles
 					dust.fadeIn = 0.5f;
 				}	
 			}
-			if ((double) projectile.ai[0] <= 90.0)
+			if ((double) counter <= 90.0)
 			{
-				projectile.scale = (float) (((double) projectile.ai[0]) / 90.0);
+				projectile.scale = (float) (((double) counter) / 90.0);
 				projectile.alpha = (int) byte.MaxValue - (int) ((double) byte.MaxValue * (double) projectile.scale);
 				projectile.rotation = projectile.rotation - 0.1570796f;
 			
@@ -83,7 +84,7 @@ namespace ForgottenMemories.Projectiles
 				}
 			}
 			
-			else if ((double) projectile.ai[0] <= 180.0)
+			else if ((double) counter <= 180.0)
 			{
 				projectile.scale = 1f;
 				projectile.alpha = 0;
@@ -106,7 +107,7 @@ namespace ForgottenMemories.Projectiles
 			
 			else
 			{
-				projectile.scale = (float) (1.0 - ((double) projectile.ai[0] - 180.0) / 60.0);
+				projectile.scale = (float) (1.0 - ((double) counter - 180.0) / 60.0);
 				projectile.alpha = (int) byte.MaxValue - (int) ((double) byte.MaxValue * (double) projectile.scale);
 				projectile.rotation = projectile.rotation - (float) Math.PI / 30f;
 				if (projectile.alpha >= (int) byte.MaxValue)
@@ -130,13 +131,12 @@ namespace ForgottenMemories.Projectiles
 		
 		public override bool PreDraw (SpriteBatch spriteBatch, Color lightColor)
 		{
-			Vector2 vector60 = projectile.position + new Vector2((float)projectile.width, (float)projectile.height) / 2f + Vector2.UnitY * projectile.gfxOffY - Main.screenPosition;
+			Vector2 vector60 = projectile.Center + Vector2.UnitY * projectile.gfxOffY - Main.screenPosition;
 			Texture2D texture2D31 = Main.projectileTexture[projectile.type];
 			Microsoft.Xna.Framework.Color color25 = Lighting.GetColor((int)((double)projectile.position.X + (double)projectile.width * 0.5) / 16, (int)(((double)projectile.position.Y + (double)projectile.height * 0.5) / 16.0));
-			Microsoft.Xna.Framework.Color alpha4 = projectile.GetAlpha(color25);
-			Microsoft.Xna.Framework.Color kys1 = new Color(198, 76, 255, alpha4.A);
+			Microsoft.Xna.Framework.Color alpha4 = new Color(198, 76, 255, projectile.GetAlpha(color25).A);
 			Microsoft.Xna.Framework.Color kys2 = new Color(79, 208, 255, alpha4.A);
-			alpha4 = Microsoft.Xna.Framework.Color.Lerp(kys1, kys2, (float)(1/240));
+			alpha4 = Microsoft.Xna.Framework.Color.Lerp(alpha4, kys2, (float)(1/240));
 			Vector2 origin8 = new Vector2((float)texture2D31.Width, (float)texture2D31.Height) / 2f;
 			SpriteEffects spriteEffects = SpriteEffects.None;
 			//if (projectile.type == 578 || projectile.type == 579 || projectile.type == 641)
@@ -148,6 +148,8 @@ namespace ForgottenMemories.Projectiles
 				float num278 = 0.95f + (projectile.rotation * 0.75f).ToRotationVector2().Y * 0.1f;
 				color56 *= num278;
 				float scale12 = 0.6f + projectile.scale * 0.6f * num278;
+				projectile.height = (int)(60 * scale12);
+				projectile.width = (int)(60 * scale12);
 				SpriteBatch arg_DCA2_0 = Main.spriteBatch;
 				Texture2D arg_DCA2_1 = Main.extraTexture[50];
 				Vector2 arg_DCA2_2 = vector60;
