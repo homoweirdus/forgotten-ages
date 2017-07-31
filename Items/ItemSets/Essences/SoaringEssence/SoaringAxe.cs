@@ -13,7 +13,7 @@ public class SoaringAxe : ModItem
         item.melee = true;
         item.width = 22;
         item.height = 24;
-        item.useTime = 11;
+        item.useTime = 12;
         item.useAnimation = 15;
         item.useStyle = 1;
         item.knockBack = 1;
@@ -22,6 +22,7 @@ public class SoaringAxe : ModItem
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
 		item.axe = 7;
+		item.hammer = 35;
     }
 
     public override void SetStaticDefaults()

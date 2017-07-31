@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.useTime = 23;
 			item.useAnimation = 23;
 			item.useStyle = 5;
-			item.knockBack = 5;
+			item.knockBack = 2;
 			item.value = 30000;
             item.rare = 3;
 			item.useAmmo = 40;
@@ -34,6 +34,11 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
       DisplayName.SetDefault("Nightly Bow");
       Tooltip.SetDefault("Turns arrows into piercing night arrows");
     }
+	
+	public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(3, 0);
+		}
 
 		
 		 public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

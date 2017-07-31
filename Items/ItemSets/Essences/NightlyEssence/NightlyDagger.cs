@@ -55,10 +55,10 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
             {
                 item.CloneDefaults(ItemID.Shuriken);
 				item.shoot = mod.ProjectileType("NightlyDaggerP");
-				item.damage = 13;
+				item.damage = 11;
 				item.autoReuse = true;
-				item.useTime = 13;
-				item.useAnimation = 13;
+				item.useTime = 14;
+				item.useAnimation = 14;
 				item.rare = 1;
 				item.maxStack = 999;
 				
@@ -76,7 +76,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			recipe.AddIngredient(null,"DarkEnergy", 1);
 			recipe.AddIngredient(ItemID.Silk, 1);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
+			recipe.SetResult(this, 150);
 			recipe.AddRecipe();
 		}
         }
