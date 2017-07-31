@@ -9,6 +9,7 @@ using Terraria.GameContent.Generation;
 using System;
 using System.Linq;
 using Terraria.ModLoader.IO;
+using ForgottenMemories;
 
 namespace ForgottenMemories
 {
@@ -20,6 +21,8 @@ namespace ForgottenMemories
 		public static bool downedGhastlyEnt = false;
 		public static bool downedArterius = false;
 		public static bool downedTitanRock = false;
+		public static bool forestInvasionUp = false;
+        public static bool downedForestInvasion = false;
 		public static int TremorTime;
 		
 		public override void Initialize()
@@ -31,6 +34,9 @@ namespace ForgottenMemories
 			downedGhastlyEnt = false;
 			TremorTime = 0;
 			downedTitanRock = false;
+			Main.invasionSize = 0;
+            forestInvasionUp = false;
+            downedForestInvasion = false;
 		}
 		
 		public override TagCompound Save()
@@ -43,6 +49,7 @@ namespace ForgottenMemories
 			if (downedGhastlyEnt) downed.Add("GhastlyEnt");
 			if (downedTitanRock) downed.Add("TitanRock");
 			if (downedArterius) downed.Add("Arterius");
+			if (downedForestInvasion) downed.Add("forestInvasion");
 			
 			return new TagCompound {
 				{"downed", downed},
@@ -60,6 +67,7 @@ namespace ForgottenMemories
 			Gelatine = ore.Contains("Gelatine");
 			Cryotine = ore.Contains("Cryotine");
 			Blight = ore.Contains("Blight");
+			downedForestInvasion = downed.Contains("forestInvasion");
 		}
 		
 		public override void NetSend(BinaryWriter writer)
@@ -71,8 +79,33 @@ namespace ForgottenMemories
 			flags[3] = downedTitanRock;
 			flags[4] = Blight;
 			flags[5] = downedArterius;
+			flags[6] = downedForestInvasion;
 			writer.Write(flags);
 		}
+		
+		public override void NetReceive(BinaryReader reader)
+        {
+            BitsByte flags = reader.ReadByte();
+			Gelatine = flags[0];
+			Cryotine = flags[1];
+			downedGhastlyEnt = flags[2];
+			downedTitanRock = flags[3];
+			Blight = flags[4];
+			downedArterius = flags[5];
+            downedForestInvasion = flags[6];
+        }
+		
+		public override void PostUpdate()
+        {
+            if(forestInvasionUp)
+            {
+                if(Main.invasionX == (double)Main.spawnTileX)
+                {
+                    CustomInvasion.CheckCustomInvasionProgress();
+                }
+                CustomInvasion.UpdateCustomInvasion();
+            }
+        }
 		
         public override void PostWorldGen()
         {

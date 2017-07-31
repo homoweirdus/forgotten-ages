@@ -2,11 +2,13 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ForgottenMemories;
 
-namespace ForgottenMemories.Items.Boss {
-public class AncientLog : ModItem
+namespace ForgottenMemories.Items.Boss 
 {
-	public override void SetDefaults()
+	public class AncientLog : ModItem
+	{
+		public override void SetDefaults()
 		{
 
 			item.width = 28;
@@ -20,30 +22,41 @@ public class AncientLog : ModItem
 			item.consumable = true;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Ancient Log");
-      Tooltip.SetDefault("Summons an Ancient Guardian of the forest...");
-    }
+		public override void SetStaticDefaults()
+		{
+		  DisplayName.SetDefault("Ancient Log");
+		  Tooltip.SetDefault("Summons the forest's army");
+		}
 
 		
-		public override bool CanUseItem(Player player)
-		{
-			return !NPC.AnyNPCs(mod.NPCType("GhastlyEnt"));
-		}
-		
 		public override bool UseItem(Player player)
-		{
-			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("GhastlyEnt"));
-			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
-			return true;
-		}
+        {
+            if(!TGEMWorld.forestInvasionUp)
+            {
+                Main.NewText("The forest's army is approaching.......", 175, 75, 255, false);
+                CustomInvasion.StartCustomInvasion();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "DevilFlame", 6);
+			recipe.AddIngredient(null, "DarkEnergy", 4);
+			recipe.AddIngredient(null, "BossEnergy", 4);
+			recipe.AddRecipeGroup("AnyWood", 15);
+			recipe.AddTile(18);
+			recipe.SetResult(this);
+			recipe.AddRecipe();	
+			
+			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "ForestEnergy", 8);
-			recipe.AddIngredient(ItemID.Wood, 5);
+			recipe.AddRecipeGroup("AnyWood", 15);
 			recipe.AddTile(18);
 			recipe.SetResult(this);
 			recipe.AddRecipe();	

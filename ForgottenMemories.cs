@@ -6,6 +6,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.ModLoader;
+using ForgottenMemories;
 
 namespace ForgottenMemories
 {
@@ -84,6 +85,14 @@ namespace ForgottenMemories
 			return Transform;
 		}
 		
+		public override void UpdateMusic(ref int music)
+        {
+            if (Main.invasionX == Main.spawnTileX && TGEMWorld.forestInvasionUp)
+            {
+                music = 12;
+			}
+        }
+		
 		public override void AddRecipeGroups()
 		{
 			RecipeGroup group = new RecipeGroup(() => Lang.misc[37] + (" Phaseblade"), new int[]
@@ -96,6 +105,20 @@ namespace ForgottenMemories
 				203
 			});
 			RecipeGroup.RegisterGroup("AnyPhaseblade", group);
+			
+			RecipeGroup wood = new RecipeGroup (() => Lang.misc[37] + (" Wood"), new int[]
+			{
+				9,
+				620,
+				619,
+				911,
+				621,
+				2503,
+				2504,
+				2260,
+				1729
+			});
+			RecipeGroup.RegisterGroup("AnyWood", wood);
 		}
 		
 		public override void PostSetupContent()
