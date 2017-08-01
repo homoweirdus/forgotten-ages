@@ -14,13 +14,14 @@ namespace ForgottenMemories.Dusts
 			dust.noLight = true;
 			dust.scale *= 1.5f;
 			dust.frame = new Rectangle(0, 0, 6, 6);
+			dust.noLight = true;
 		}
 		
 		public override bool Update(Dust dust)
 		{
-			dust.position += dust.velocity / 2;
-			dust.rotation += dust.velocity.X / 2;
-			dust.scale -= 0.1f;
+			dust.position += dust.velocity / 4;
+			dust.rotation += dust.velocity.X / 8;
+			dust.scale -= 0.03f;
 			if (dust.scale < 0.2f)
 			{
 				dust.active = false;
@@ -28,7 +29,7 @@ namespace ForgottenMemories.Dusts
 			else
 			{
 				float strength = dust.scale / 2f;
-				Lighting.AddLight((int)(dust.position.X / 16f), (int)(dust.position.Y / 16f), dust.color.R / 255f * 0.5f * strength, dust.color.G / 255f * 0.5f * strength, dust.color.B / 255f * 0.5f * strength);
+				Lighting.AddLight((int)(dust.position.X / 16f), (int)(dust.position.Y / 16f), dust.color.R / 255f * 0.2f * strength, dust.color.G / 255f * 0.2f * strength, dust.color.B / 255f * 0.2f * strength);
 			}
 			return false;
 		}

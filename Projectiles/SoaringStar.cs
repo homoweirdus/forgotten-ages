@@ -8,7 +8,6 @@ namespace ForgottenMemories.Projectiles
 {
     public class SoaringStar : ModProjectile
     {
-		int timer = 0;
         public override void SetDefaults()
         {
             projectile.width = 18; 
@@ -78,5 +77,18 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[dust8].scale = 2;
 			}
 		}
+		
+		
+		public override void PostAI()
+		{
+			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
+			projectile.tileCollide = false;
+			Player player = Main.player[projectile.owner];
+			if (projectile.position.Y >= player.position.Y)
+			{
+				projectile.tileCollide = true;
+			}
+		}
+
     }
 }

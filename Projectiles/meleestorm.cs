@@ -16,9 +16,8 @@ namespace ForgottenMemories.Projectiles
 			projectile.melee = true;
 			projectile.penetrate = 3;
 			projectile.timeLeft = 30;
-			projectile.light = 0.5f;
-			projectile.extraUpdates = 30;
-			aiType = ProjectileID.Bullet;
+			projectile.extraUpdates = 2;
+			projectile.alpha = 255;
 		}
 		
 		public override void SetStaticDefaults()
@@ -29,13 +28,9 @@ namespace ForgottenMemories.Projectiles
 
 		public override void AI()
 		{
-			if (Main.rand.Next(3) == 0)
-			{
 			int dust;
 			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, mod.DustType("SoaringDust"), projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust].noGravity = true;
-			Main.dust[dust].scale = 1.5f;
-			}
 		}
 	}
 }
