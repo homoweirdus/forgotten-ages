@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 14;
+			item.damage = 21;
 			item.melee = true;
 			item.width = 22;
 			item.height = 24;

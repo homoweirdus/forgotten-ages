@@ -32,7 +32,7 @@ namespace ForgottenMemories.Projectiles
 			if (Main.rand.Next(3) == 0)
 			{
 			int dust;
-			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 20, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, mod.DustType("SoaringDust"), projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].scale = 1.5f;
 			}

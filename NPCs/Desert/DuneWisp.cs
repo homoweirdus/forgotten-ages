@@ -47,7 +47,7 @@ namespace ForgottenMemories.NPCs.Desert
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
 			int tile = (int)Main.tile[x, y].type;
-			return spawnInfo.desertCave ? 0.75f : 0f;
+			return spawnInfo.desertCave && NPC.downedBoss1 ? 0.075f : 0f;
 		}
 		
 		public override void AI()

@@ -47,7 +47,7 @@ namespace ForgottenMemories.NPCs.Sky
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
 			int tile = (int)Main.tile[x, y].type;
-			return spawnInfo.sky ? 0.075f : 0f;
+			return spawnInfo.player.ZoneSkyHeight && NPC.downedBoss2 ? 0.08f : 0f;
 		}
 		
 		public override void AI()
