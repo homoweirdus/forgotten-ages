@@ -10,12 +10,12 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 
-			item.damage = 14;
+			item.damage = 16;
 			item.thrown = true;
 			item.width = 88;
 			item.height = 88;
-			item.useTime = 18;
-			item.useAnimation = 18;
+			item.useTime = 25;
+			item.useAnimation = 25;
 			item.useStyle = 1;
 			item.knockBack = 2;
 			item.value = 50000;
