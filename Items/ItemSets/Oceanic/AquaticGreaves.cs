@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.height = 18;
 
 			item.value = 10000;
-			item.rare = 2;
+			item.rare = 3;
 			item.defense = 6;
 			item.lifeRegen = 1;
 		}

@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.useStyle = 1;
 			item.knockBack = 2;
 			item.value = 50000;
-			item.rare = 2;
+			item.rare = 3;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("splash");

@@ -25,7 +25,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			Item.staff[item.type] = true;
 			item.knockBack = 1;
 			item.value = 50000;
-			item.rare = 2;
+			item.rare = 3;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("OceanBolt");

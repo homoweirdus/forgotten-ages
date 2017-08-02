@@ -10,11 +10,11 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 60;
+			item.damage = 120;
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
-			item.useTime = 24;
+			item.useTime = 36;
 			item.useAnimation = 12;
 			item.useStyle = 1;
 			item.knockBack = 6;
@@ -23,20 +23,19 @@ namespace ForgottenMemories.Items.Melee
 			item.shoot = mod.ProjectileType("MightBeam");
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shootSpeed = 11f;
+			item.shootSpeed = 13f;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Blade of Might");
-      Tooltip.SetDefault("Fires a sword beam that flies towards your cursor's location after right-clicking \n'Enchanted with the essence of the Destroyer'");
-    }
+		public override void SetStaticDefaults()
+		{
+		  DisplayName.SetDefault("Blade of Might");
+		  Tooltip.SetDefault("Fires an explosive sword beam");
+		}
 
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.EnchantedSword, 1);
 			recipe.AddIngredient(ItemID.SoulofMight, 20);
 			recipe.AddIngredient(ItemID.HallowedBar, 15);
 			recipe.AddTile(TileID.MythrilAnvil);

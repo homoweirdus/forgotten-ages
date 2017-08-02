@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
             item.useAmmo = 40;
             item.knockBack = 1;
             item.value = 138000;
-			item.rare = 4;
+			item.rare = 1;
             item.UseSound = SoundID.Item5;
             item.autoReuse = true;
             item.shootSpeed = 6f;

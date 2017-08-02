@@ -165,7 +165,7 @@ namespace ForgottenMemories
                     }
                 }
             }
-            Main.invasionProgressNearInvasion = flag;
+            ProgressBar.invasionProgressNearInvasion = flag;
             int progressMax3 = 1;
    
             if (TGEMWorld.forestInvasionUp)
@@ -175,7 +175,7 @@ namespace ForgottenMemories
    
             if(TGEMWorld.forestInvasionUp && (Main.invasionX == (double)Main.spawnTileX))
             {
-                Main.ReportInvasionProgress(Main.invasionSizeStart - Main.invasionSize, progressMax3, icon, 0);
+                ProgressBar.ReportCustomInvasionProgress(Main.invasionSizeStart - Main.invasionSize, progressMax3, icon, 0);
             }
    
             foreach(Player p in Main.player)

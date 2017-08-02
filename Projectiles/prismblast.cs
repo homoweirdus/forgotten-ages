@@ -16,6 +16,7 @@ namespace ForgottenMemories.Projectiles
 {
     public class prismblast : ModProjectile
     {
+		Vector2 vel;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Prism Blast");
@@ -30,9 +31,11 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 3;
 			projectile.scale = 1f;
 			projectile.timeLeft = 600;
-			projectile.penetrate = 1;
+			projectile.penetrate = -1;
 			projectile.magic = true;
 			projectile.ignoreWater = true;
+			projectile.usesLocalNPCImmunity = true;
+			projectile.localNPCHitCooldown = 10;
         }
 
         public override void AI()
@@ -54,6 +57,7 @@ namespace ForgottenMemories.Projectiles
 			if ((double) projectile.ai[1] == 0.0)
 			{
 				projectile.localAI[0] += num2;
+				vel = projectile.velocity;
 				if ((double) projectile.localAI[0] > (double) num1)
 					projectile.localAI[0] = num1;
 			}
@@ -73,11 +77,27 @@ namespace ForgottenMemories.Projectiles
 			int num = Main.rand.Next(3, 7);
 			for (int index1 = 0; index1 < num; ++index1)
 			{
-				int index2 = Dust.NewDust(projectile.Center - (projectile.velocity/2f), 0, 0, 62, 0.0f, 0.0f, 100, new Color(), 2.1f);
+				int index2 = Dust.NewDust(projectile.Center - (projectile.velocity/2f), 0, 0, 255, 0.0f, 0.0f, 100, new Color(), 2.1f);
 				Dust dust = Main.dust[index2];
 				dust.velocity *= 2;
 				Main.dust[index2].noGravity = true;
 			}
+		}
+		
+		public override bool OnTileCollide(Vector2 velocity1)
+		{
+			projectile.ai[1]++;
+			projectile.velocity = Vector2.Zero;
+			vel = velocity1;
+			return false;
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			projectile.ai[1]++;
+			projectile.velocity = Vector2.Zero;
+			projectile.damage = 0;
+			vel = projectile.oldVelocity;		
 		}
 		
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
@@ -97,7 +117,7 @@ namespace ForgottenMemories.Projectiles
 				int num43;
 				for (int num177 = 1; num177 <= (int)projectile.localAI[0]; num177 = num43 + 1)
 				{
-					Vector2 value9 = Vector2.Normalize(projectile.velocity) * (float)num177 * scaleFactor;
+					Vector2 value9 = Vector2.Normalize(vel) * (float)num177 * scaleFactor;
 					Microsoft.Xna.Framework.Color color32 = projectile.GetAlpha(color25);
 					color32 *= (num176 - (float)num177) / num176;
 					color32.A = 0;

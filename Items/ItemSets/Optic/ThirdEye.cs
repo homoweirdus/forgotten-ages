@@ -21,7 +21,6 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.useAnimation = 20;
             item.useStyle = 5;
             item.noMelee = true;
-            item.noUseGraphic = true;
             item.knockBack = 4;
             item.value = 27000;
             item.rare = 1;
@@ -34,16 +33,13 @@ namespace ForgottenMemories.Items.ItemSets.Optic
 		public override void SetStaticDefaults()
 		{
 		  DisplayName.SetDefault("The Third Eye");
-		  Tooltip.SetDefault("Predicts the locations of your enemies.");
+		  Tooltip.SetDefault("'Predicts the locations of enemies'");
 		}
 
 
         public override void HoldItem(Player player)
         {
-            if (Main.rand.Next(1) == 0)
-            {
-                player.AddBuff(BuffID.Hunter, 2);
-            }
+            player.AddBuff(BuffID.Hunter, 2);
         }
     }
 }

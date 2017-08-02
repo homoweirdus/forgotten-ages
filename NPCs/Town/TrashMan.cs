@@ -39,7 +39,7 @@ namespace ForgottenMemories.NPCs.Town
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("TrashMan");
+			DisplayName.SetDefault("Trash Man");
 			Main.npcFrameCount[npc.type] = 21;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 21;
 			NPCID.Sets.AttackFrameCount[npc.type] = 2;
@@ -219,26 +219,26 @@ namespace ForgottenMemories.NPCs.Town
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
 		{
-			damage = 25;
-			knockback = 6f;
+			damage = 35 + ((Main.hardMode) ? 25 : 0) + ((NPC.downedMoonlord) ? 100 : 0);
+			knockback = 6f + ((Main.hardMode) ? 3f : 0);
 		}
 
 		public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
 		{
-			cooldown = 20;
+			cooldown = 30 - ((Main.hardMode) ? 5 : 0) - ((NPC.downedMoonlord) ? 15 : 0);
 			randExtraCooldown = 2;
 		}
 
 		public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
 		{
-			projType = 45;
+			projType = mod.ProjectileType("trashcan");
 			attackDelay = 1;
 		}
 
 		public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
 		{
-			multiplier = 17f;
-			randomOffset = 3f;
+			multiplier = 20f + ((Main.hardMode) ? 2 : 0) + ((NPC.downedMoonlord) ? 2 : 0);
+			randomOffset = 5f;
 		}
 	}
 }
