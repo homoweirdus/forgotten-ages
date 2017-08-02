@@ -26,8 +26,15 @@ namespace ForgottenMemories.NPCs.Sky
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mysterious Alien Spacecraft");
-			animationType = 93;
-			Main.npcFrameCount[npc.type] = 4;
+			Main.npcFrameCount[npc.type] = 3;
+		}
+		
+		public override void FindFrame(int frameHeight)
+		{
+			npc.frameCounter += 0.25f; 
+			npc.frameCounter %= Main.npcFrameCount[npc.type]; 
+			int frame = (int)npc.frameCounter; 
+			npc.frame.Y = frame * frameHeight; 
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
