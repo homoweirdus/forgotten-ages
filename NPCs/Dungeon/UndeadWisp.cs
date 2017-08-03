@@ -16,7 +16,7 @@ namespace ForgottenMemories.NPCs.Dungeon
 			npc.height = 40;
 			npc.damage = 14;
 			npc.defense = 8;
-			npc.lifeMax = 40;
+			npc.lifeMax = 80;
 			npc.HitSound = SoundID.NPCHit36;
 			npc.DeathSound = SoundID.NPCDeath39;
 			npc.value = 80f;

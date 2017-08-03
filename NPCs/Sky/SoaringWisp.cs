@@ -15,7 +15,7 @@ namespace ForgottenMemories.NPCs.Sky
 			npc.height = 40;
 			npc.damage = 22;
 			npc.defense = 2;
-			npc.lifeMax = 40;
+			npc.lifeMax = 80;
 			npc.HitSound = SoundID.NPCHit36;
 			npc.DeathSound = SoundID.NPCDeath39;
 			npc.value = 80f;
