@@ -28,6 +28,7 @@ namespace ForgottenMemories
 		public bool SlimyNeck = false;
 		public bool jungard = true;
 		public bool frostguard = false;
+		public bool BeeHive = false;
 		public bool ManaShard = false;
 		public int firestormCooldown = 0;
 		
@@ -46,6 +47,7 @@ namespace ForgottenMemories
 			SlimyNeck = false;
 			jungard = false;
 			frostguard = false;
+			BeeHive = false;
 		}
 		
 
@@ -117,6 +119,20 @@ namespace ForgottenMemories
 				if (frostguard == true)
 				{
 					Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("IceSlimeMinion"), (int)(12 * (player.minionDamage * player.minionDamage * player.minionDamage)), 5f, player.whoAmI);
+				}
+				
+				if (BeeHive == true)
+				{
+					player.AddBuff(48, 60 * Main.rand.Next(3, 11));
+					int num = 3;
+					if (Main.rand.Next(3) == 0)
+						++num;
+					if (Main.rand.Next(3) == 0)
+						++num;
+					if (Main.rand.Next(3) == 0)
+						++num;
+					for (int index = 0; index < num; ++index)
+						Projectile.NewProjectile((float) player.position.X, (float) player.position.Y, (float) Main.rand.Next(-35, 36) * 0.02f, (float) Main.rand.Next(-35, 36) * 0.02f, this.beeType2(), player.beeDamage(80), player.beeKB(0.0f), Main.myPlayer, 0.0f, 0.0f);
 				}
 				
 				if (pearl == true && Main.rand.Next(2) == 0 && damageTaken >= 10)
@@ -386,6 +402,22 @@ namespace ForgottenMemories
 						Main.dust[num5].position = player.Center - vector;
 					}
 				}
+			}
+			
+			public int beeType()
+			{
+				if (Main.rand.Next(2) == 0)
+				{
+					player.makeStrongBee = true;
+					return 566;
+				}
+				if (Main.rand.Next(2) == 0)
+				{
+					player.makeStrongBee = true;
+					return 189;
+				}
+				player.makeStrongBee = false;
+				return 181;
 			}
 		}
 	}
