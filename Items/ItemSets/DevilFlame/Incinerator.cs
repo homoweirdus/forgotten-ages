@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.DevilFlame
 		public override void SetDefaults()
 		{
 
-			item.damage = 22;
+			item.damage = 30;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
 
-			item.useTime = 27;
-			item.useAnimation = 27;
+			item.useTime = 25;
+			item.useAnimation = 25;
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 50000;
@@ -29,7 +29,7 @@ namespace ForgottenMemories.Items.ItemSets.DevilFlame
 		public override void SetStaticDefaults()
 		{
 		  DisplayName.SetDefault("Devil's Blade");
-		  Tooltip.SetDefault("Striking the enemy with the blade creates a fire whirl");
+		  Tooltip.SetDefault("Striking the enemy with the blade lights them ablaze and temporarily reduces defense");
 		}
 
 
@@ -52,7 +52,9 @@ namespace ForgottenMemories.Items.ItemSets.DevilFlame
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {
-			Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("FireDevil"), damage, 0f, player.whoAmI, 0f, 0f);
+			target.AddBuff(BuffID.OnFire, 360, false);
+			target.AddBuff(mod.BuffType("DevilsCurse"), 360, false);
+			target.AddBuff(mod.BuffType("DevilsFlame"), 360, false);
 		}
 	}
 }

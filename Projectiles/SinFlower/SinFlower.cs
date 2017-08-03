@@ -25,7 +25,7 @@ namespace ForgottenMemories.Projectiles.SinFlower
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sin Flower");
+			DisplayName.SetDefault("Staff of Sins");
 		}
 		
 		public override void AI()

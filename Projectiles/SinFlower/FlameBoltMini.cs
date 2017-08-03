@@ -31,6 +31,7 @@ namespace ForgottenMemories.Projectiles.SinFlower
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(BuffID.OnFire, 60, false);
+			target.AddBuff(mod.BuffType("DevilsFlame"), 60, false);
 		}
 		
 		public override void AI()
@@ -40,14 +41,14 @@ namespace ForgottenMemories.Projectiles.SinFlower
 			Main.dust[dust].scale = 1f;
 			Main.dust[dust].noGravity = true;
 
-			if (Main.rand.Next(13) == 0)
+			if (Main.rand.Next(15) == 0)
 			{
-				Vector2 newVect = projectile.velocity.RotatedBy(System.Math.PI / 20);
+				Vector2 newVect = projectile.velocity.RotatedBy(System.Math.PI / 25);
 				projectile.velocity = newVect;
 			}	
-			if (Main.rand.Next(13) == 0)
+			if (Main.rand.Next(15) == 0)
 			{
-				Vector2 newVect2 = projectile.velocity.RotatedBy(System.Math.PI / -20);
+				Vector2 newVect2 = projectile.velocity.RotatedBy(System.Math.PI / -25);
 				projectile.velocity = newVect2;
 			}			
 		}

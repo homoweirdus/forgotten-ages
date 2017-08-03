@@ -18,23 +18,23 @@ namespace ForgottenMemories.Items.ItemSets.DevilFlame
 			item.knockBack = 2f;
 			item.width = 16;
 			item.height = 16;
-			item.damage = 18;
+			item.damage = 15;
 			item.UseSound = SoundID.Item13;
 			item.shoot = mod.ProjectileType("SinFlower");
 			item.mana = 7;
 			item.value = 50000;
-            item.rare = 2;
+            item.rare = 1;
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.magic = true;
 			item.channel = true;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Staff of Sins");
-      Tooltip.SetDefault("Fires a chargable bolt of fire");
-    }
+		public override void SetStaticDefaults()
+		{
+		  DisplayName.SetDefault("Staff of Sins");
+		  Tooltip.SetDefault("Fires a chargable bolt of fire");
+		}
 	
 	
 	public override void AddRecipes()
