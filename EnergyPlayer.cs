@@ -404,19 +404,16 @@ namespace ForgottenMemories
 				}
 			}
 			
-			public int beeType()
+			public int beeType2()
 			{
 				if (Main.rand.Next(2) == 0)
 				{
-					player.makeStrongBee = true;
 					return 566;
 				}
 				if (Main.rand.Next(2) == 0)
 				{
-					player.makeStrongBee = true;
 					return 189;
 				}
-				player.makeStrongBee = false;
 				return 181;
 			}
 		}

@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 
-namespace ForgottenMemories.Items.Ammo 
+namespace ForgottenMemories.Items.Acessory 
 {
 	public class BeeHive : ModItem
 	{
@@ -43,7 +43,7 @@ namespace ForgottenMemories.Items.Ammo
 			recipe.AddIngredient(ItemID.BeeWax, 20);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 12);
 			recipe.AddIngredient(ItemID.HoneyComb, 1);
-			recipe.AddIngredient(ItemID.HivePack, 1);
+			recipe.AddIngredient(3333, 1);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this, 1);
 			recipe.AddRecipe();
