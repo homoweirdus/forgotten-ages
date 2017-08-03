@@ -12,8 +12,8 @@ namespace ForgottenMemories.Projectiles
 		bool dying = false;
 		public override void SetDefaults()
 		{
-			projectile.width = 44;
-			projectile.height = 22;
+			projectile.width = 22;
+			projectile.height = 11;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.thrown = true;
@@ -39,7 +39,7 @@ namespace ForgottenMemories.Projectiles
 			dust2 = Dust.NewDust(projectile.position, projectile.width, projectile.height, 67, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust2].noGravity = true;
 			}
-			projectile.alpha += 2;
+			projectile.alpha += 3;
 			
 			if (dying)
 			{
