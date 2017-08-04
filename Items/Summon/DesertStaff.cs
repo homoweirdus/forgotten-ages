@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Summon
 		public override void SetDefaults()
 		{
 
-			item.damage = 33;
+			item.damage = 45;
 			item.summon = true;
 			item.mana = 10;
 			item.width = 19;
@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.Summon
             item.buffType = mod.BuffType("ShadowflameSpirit");
             item.buffTime = 3600;
 			item.value = 50000;
-			item.rare = 4;
+			item.rare = 5;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("ShadowflameSpirit");
 			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.Summon
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Desert Staff");
+      DisplayName.SetDefault("Djinn Staff");
       Tooltip.SetDefault("Creates a shadowflame spirit to fight for you");
     }
 
