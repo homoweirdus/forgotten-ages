@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.Optic
+namespace ForgottenMemories.Items.Magic
 {
     public class FourthEye : ModItem
     {
@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.ItemSets.Optic
             item.mana = 8;
             item.width = 16;
             item.height = 17;
-
+			item.noUseGraphic = true;
             item.useTime = 16;
             item.useAnimation = 16;
             item.useStyle = 5;

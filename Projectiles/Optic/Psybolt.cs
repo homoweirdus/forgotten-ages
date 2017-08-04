@@ -16,8 +16,7 @@ namespace ForgottenMemories.Projectiles.Optic
             projectile.width = 8;
             projectile.height = 8;
             projectile.alpha = 255;
-            projectile.aiStyle = 51;
-            aiType = 297;
+            projectile.aiStyle = -1;
             projectile.friendly = true;
             projectile.magic = true;
             projectile.penetrate = 1;
@@ -55,6 +54,35 @@ namespace ForgottenMemories.Projectiles.Optic
             Main.dust[dust].position.X = projectile.Center.X + 4f + (float)Main.rand.Next(-2, 3);
             Main.dust[dust].position.Y = projectile.Center.Y + (float)Main.rand.Next(-2, 3);
             Main.dust[dust].noGravity = true;
+			
+			Vector2 targetPos = projectile.Center;
+            float targetDist = 350f;
+            bool targetAcquired = false;
+			
+			  for (int i = 0; i < 200; i++)
+            {
+                if (Main.npc[i].CanBeChasedBy(projectile) && Collision.CanHit(projectile.Center, 1, 1, Main.npc[i].Center, 1, 1) && Main.npc[i].immune[projectile.owner] == 0)
+                {
+                    float dist = projectile.Distance(Main.npc[i].Center);
+                    if (dist < targetDist)
+                    {
+                        targetDist = dist;
+                        targetPos = Main.npc[i].Center;
+                        targetAcquired = true;
+                    }
+                }
+            }
+			
+            if (targetAcquired)
+            {
+                float homingSpeedFactor = 4f;
+                Vector2 homingVect = targetPos - projectile.Center;
+                float dist = projectile.Distance(targetPos);
+                dist = homingSpeedFactor / dist;
+                homingVect *= dist;
+
+                projectile.velocity = (projectile.velocity * 20 + homingVect) / 21f;
+            }
         }
     }
 }

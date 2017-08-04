@@ -90,7 +90,7 @@ namespace ForgottenMemories.Projectiles
 		public override void AI()
 		{
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
-			if (Main.rand.Next(6) == 0 && projectile.alpha <= 150 && dying == false)
+			if (Main.rand.Next(6) == 0 && projectile.alpha <= 175 && dying == false)
 			{
 				Vector2 vector2 = projectile.Center + Vector2.Normalize(projectile.velocity) * 10f;
 				Dust dust1 = Main.dust[Dust.NewDust(projectile.position, projectile.width, projectile.height, 20, 0.0f, 0.0f, 0, new Color(), 1f)];

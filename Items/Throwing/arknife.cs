@@ -38,7 +38,6 @@ namespace ForgottenMemories.Items.Throwing
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.FallenStar, 10);
 			recipe.AddIngredient(ItemID.ThrowingKnife, 500);
 			recipe.AddIngredient(null,"DarkEnergy", 6);
 			recipe.AddIngredient(null,"BossEnergy", 6);

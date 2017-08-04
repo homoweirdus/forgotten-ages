@@ -12,7 +12,7 @@ using Terraria.ObjectData;
 using Terraria.Utilities;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.Optic
+namespace ForgottenMemories.Items.Summon
 {
     public class ServantStaff : ModItem
     {

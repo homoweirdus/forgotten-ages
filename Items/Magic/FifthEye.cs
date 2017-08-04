@@ -4,21 +4,21 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.Optic
+namespace ForgottenMemories.Items.Magic
 {
     public class FifthEye : ModItem
     {
         public override void SetDefaults()
         {
 
-            item.damage = 98;
+            item.damage = 107;
             item.magic = true;
             item.mana = 8;
             item.width = 16;
             item.height = 17;
-
-            item.useTime = 14;
-            item.useAnimation = 14;
+			item.noUseGraphic = true;
+            item.useTime = 23;
+            item.useAnimation = 23;
             item.useStyle = 5;
             item.noMelee = true;
             item.knockBack = 4;

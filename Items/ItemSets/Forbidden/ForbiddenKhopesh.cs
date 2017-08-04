@@ -24,7 +24,6 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shootSpeed = 10f;
-			item.useTurn = true;
 			item.shoot = mod.ProjectileType("ForboodenSlush");
 		}
 

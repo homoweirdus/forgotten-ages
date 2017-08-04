@@ -4,21 +4,21 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.Optic
+namespace ForgottenMemories.Items.Magic
 {
     public class ThirdEye : ModItem
     {
         public override void SetDefaults()
         {
 
-            item.damage = 12;
+            item.damage = 17;
             item.magic = true;
             item.mana = 5;
             item.width = 16;
             item.height = 17;
-
-            item.useTime = 20;
-            item.useAnimation = 20;
+			item.noUseGraphic = true;
+            item.useTime = 32;
+            item.useAnimation = 32;
             item.useStyle = 5;
             item.noMelee = true;
             item.knockBack = 4;

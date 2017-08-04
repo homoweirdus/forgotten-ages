@@ -21,7 +21,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.extraUpdates = 5;
 			projectile.penetrate = 1;
 			projectile.alpha = 255;
-			projectile.timeLeft = 240;
+			projectile.timeLeft = 500;
         }
 		
 		public override void SetStaticDefaults()
