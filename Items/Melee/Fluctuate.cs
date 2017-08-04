@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Projectiles
+namespace ForgottenMemories.Items.Melee
 {
 	public class Fluctuate : ModItem
 	{
