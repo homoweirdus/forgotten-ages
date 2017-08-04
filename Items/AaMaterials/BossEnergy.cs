@@ -28,7 +28,7 @@ namespace ForgottenMemories.Items.AaMaterials
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Dune Essence");
-      Tooltip.SetDefault("");
+      Tooltip.SetDefault("'The construct of an oasis'");
     }
 
 	}
