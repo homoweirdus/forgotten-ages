@@ -28,7 +28,7 @@ namespace ForgottenMemories.Items.AaMaterials
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Undead Essence");
-      Tooltip.SetDefault("");
+      Tooltip.SetDefault("'A key element in ressurection'");
     }
 
 	}
