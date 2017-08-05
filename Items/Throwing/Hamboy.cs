@@ -37,12 +37,6 @@ namespace ForgettenMemories.Items.Throwing
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Vertebrae, 8);
-			recipe.AddTile(TileID.Furnaces);
-			recipe.SetResult(this, 333);
-			recipe.AddRecipe();
-		
-			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.RottenChunk, 8);
 			recipe.AddTile(TileID.Furnaces);
 			recipe.SetResult(this, 333);
