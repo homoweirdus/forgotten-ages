@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgettenMemories.Items.Throwing
+namespace ForgottenMemories.Items.Throwing
 {
 	public class Hamboy: ModItem
 	{
