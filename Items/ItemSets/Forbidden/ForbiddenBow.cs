@@ -10,13 +10,13 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 		public override void SetDefaults()
 		{
 
-			item.damage = 31;
+			item.damage = 40;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 100;
 
-			item.useTime = 26;
-			item.useAnimation = 26;
+			item.useTime = 38;
+			item.useAnimation = 38;
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 200000;
@@ -52,6 +52,11 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
+		
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(1, 0);
+		}
 
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -63,8 +68,8 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 						float sY = speedY;
 						sX += (float)Main.rand.Next(-120, 120) * 0.02f;
 						sY += (float)Main.rand.Next(-120, 120) * 0.02f;
-						int homo = Main.rand.Next(-50, 50);
-						int gay = Main.rand.Next(-50, 50);
+						int homo = Main.rand.Next(-85, 85);
+						int gay = Main.rand.Next(-85, 85);
 						int po = Projectile.NewProjectile(position.X + homo, position.Y + gay, sX, sY, mod.ProjectileType("ForbiddenArrow"), damage, knockBack, player.whoAmI);
 						Main.projectile[po].tileCollide = false;
 						Main.projectile[po].noDropItem = true;

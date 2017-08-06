@@ -21,6 +21,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.penetrate = 1;
 			projectile.timeLeft = 1000;
 			projectile.tileCollide = false;
+			projectile.alpha = 255;
 		}
 		
 		public override void SetStaticDefaults()
@@ -64,9 +65,13 @@ namespace ForgottenMemories.Projectiles
 				int dust2 = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 32, 0f, 0f);
 			}
 			timer++;
-			if (timer >= 15)
+			if (timer >= 10)
 			{
 				projectile.tileCollide = true;
+			}
+			if (timer <= 10)
+			{
+				projectile.alpha -= 25;
 			}
 		}
 	}
