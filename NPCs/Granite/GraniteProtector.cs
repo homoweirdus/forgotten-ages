@@ -57,7 +57,7 @@ namespace ForgottenMemories.NPCs.Granite
 		public override void NPCLoot()
 		{
 			int amountToDrop = Main.rand.Next(10,25);
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GraniteBlock, amountToDrop);	
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Granite, amountToDrop);	
 
 			if (Main.rand.Next(20) == 0)
 			{
