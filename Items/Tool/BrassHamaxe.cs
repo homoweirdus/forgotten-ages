@@ -21,8 +21,8 @@ public class BrassHamaxe : ModItem
         item.rare = 4;
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
-		item.axe = 35;
-		item.hammer = 75;
+		item.axe = 30;
+		item.hammer = 80;
     }
 
     public override void SetStaticDefaults()
