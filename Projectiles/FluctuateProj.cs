@@ -57,7 +57,7 @@ namespace ForgottenMemories.Projectiles
 			if (target && timer >= 45)
 			{
 				int[] shoot = {121, 122, 123, 124, 125, 126, 597};
-				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 8f, move.Y * 8f, shoot[Main.rand.Next(0, shoot.Length)], projectile.damage, 5f, projectile.owner);
+				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 8f, move.Y * 8f, shoot[Main.rand.Next(0, shoot.Length)], projectile.damage / 2, 5f, projectile.owner);
 				Main.projectile[proj].melee = true;
 				Main.projectile[proj].magic = false;
 				timer = 0;

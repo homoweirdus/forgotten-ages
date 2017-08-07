@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.DarkSludge 
+namespace ForgottenMemories.Items.Melee
 {
 public class NightSpiral : ModItem
 {

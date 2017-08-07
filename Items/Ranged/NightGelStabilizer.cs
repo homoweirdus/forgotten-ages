@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.ItemSets.DarkSludge 
+namespace ForgottenMemories.Items.Ranged
 {
 public class NightGelStabilizer : ModItem
 {
@@ -48,7 +48,7 @@ public class NightGelStabilizer : ModItem
 	
 	public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(10, 0);
+			return new Vector2(2, 0);
 		}
 }
 }

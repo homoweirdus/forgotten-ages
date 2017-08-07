@@ -57,8 +57,8 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 				item.shoot = mod.ProjectileType("NightlyDaggerP");
 				item.damage = 11;
 				item.autoReuse = true;
-				item.useTime = 14;
-				item.useAnimation = 14;
+				item.useTime = 17;
+				item.useAnimation = 17;
 				item.rare = 1;
 				item.maxStack = 999;
 				
