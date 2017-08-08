@@ -17,7 +17,7 @@ namespace ForgottenMemories.Projectiles
             projectile.ranged = true;
             projectile.penetrate = -1;
             projectile.timeLeft = 10000;
-            projectile.light = 1f;
+            projectile.light = 0.2f;
 			projectile.extraUpdates = 1;
 			projectile.tileCollide = false;
         }

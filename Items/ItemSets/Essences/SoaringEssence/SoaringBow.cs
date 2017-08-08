@@ -32,8 +32,22 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Soaring Bow");
-			Tooltip.SetDefault("");
+			Tooltip.SetDefault("Turns wooden arrows into gravity ignoring arrows");
 		}
+		
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(2, 0);
+		}
+		
+		 public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            if (type == 1)
+            {
+                type = mod.ProjectileType("SoaringArrow");
+            }
+            return true;
+        }
 
 		
 		public override void AddRecipes()

@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 			item.melee = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 15;
+			item.useTime = 45;
 			item.useAnimation = 15;
 			item.useStyle = 1;
 			item.knockBack = 1;
