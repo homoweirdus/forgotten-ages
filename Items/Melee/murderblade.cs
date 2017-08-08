@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 85;
+			item.damage = 76;
 			item.melee = true;
 			item.width = 62;
 			item.height = 62;
@@ -50,8 +50,9 @@ namespace ForgottenMemories.Items.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.HallowedBar, 12);
 			recipe.AddIngredient(ItemID.Keybrand, 1);
+                        recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
+                        recipe.AddIngredient(ItemID.SpectreBar, 8);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
