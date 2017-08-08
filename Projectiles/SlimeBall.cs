@@ -19,6 +19,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.magic = true;
 			projectile.penetrate = 2;
 			projectile.timeLeft = 100;
+			Main.projFrames[projectile.type] = 3;
 		}
 		
 		public override void SetStaticDefaults()
@@ -26,6 +27,17 @@ namespace ForgottenMemories.Projectiles
 			DisplayName.SetDefault("Slime Ball");
 		}
 		
+		
+		public override void AI()
+		{
+			projectile.frameCounter++;
+			if (projectile.frameCounter >= 6)
+			{
+				projectile.frameCounter = 0;
+				projectile.frame = (projectile.frame + 1) % 3;
+			}
+			
+		}
 		
 		public override void Kill(int timeLeft)
 		{
