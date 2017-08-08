@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 430;
+			item.damage = 115;
 			item.melee = true;
 			item.width = 62;
 			item.height = 62;
@@ -61,9 +61,9 @@ namespace ForgottenMemories.Items.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+                        recipe.AddIngredient(null,"murderblade", 1);
 			recipe.AddIngredient(ItemID.LunarBar, 12);
-			recipe.AddIngredient(null,"murderblade", 1);
-			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.AddTile(TileID.AncientManipulator);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
