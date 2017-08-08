@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Bone, 18);
 			recipe.AddIngredient(ItemID.FragmentSolar, 8);
-			recipe.AddIngredient(ItemID.FragmentStardust, 8);
+			recipe.AddIngredient(ItemID.Sapphire, 8);
 			recipe.AddIngredient(ItemID.Ectoplasm, 10);
 			recipe.AddIngredient(ItemID.LunarBar, 8);
 			recipe.AddTile(412);
