@@ -29,7 +29,7 @@ namespace ForgottenMemories.Items.Melee
 			item.shootSpeed = 8f;
 
 			item.knockBack = 6f;
-			item.damage = 21;
+			item.damage = 24;
 			item.value = Item.sellPrice(0, 2, 50, 0);
 			item.rare = 2;
 		}
