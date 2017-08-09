@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 17;
+			item.damage = 20;
 			item.melee = true;
 			item.width = 52;
 			item.height = 52;
@@ -24,8 +24,8 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.useStyle = 5;
-			item.value = 80000;
-			item.rare = 4;
+			item.value = 5000;
+			item.rare = 1;
 			item.shoot = mod.ProjectileType("NomadsPartisan"); 
 			item.shootSpeed = 7;
 			item.autoReuse = true;
@@ -38,6 +38,16 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
       Tooltip.SetDefault("");
     }
 
+	
+	public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "BossEnergy", 6);
+			recipe.AddIngredient(ItemID.Cactus, 25);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 		
 		public override bool CanUseItem(Player player)
         {

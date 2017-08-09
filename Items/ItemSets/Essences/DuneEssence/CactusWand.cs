@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			Item.staff[item.type] = true;
 			item.noMelee = true;
 			item.knockBack = 2;
-			item.value = 50000;
+			item.value = 5000;
 			item.rare = 1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("CactusThorn");
@@ -53,7 +53,8 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null,"BossEnergy", 10);
+			recipe.AddIngredient(null,"BossEnergy", 6);
+			recipe.AddIngredient(ItemID.Cactus, 35);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
