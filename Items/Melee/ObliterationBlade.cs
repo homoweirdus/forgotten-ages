@@ -63,7 +63,7 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
                         recipe.AddIngredient(null,"murderblade", 1);
 			recipe.AddIngredient(ItemID.LunarBar, 12);
-			recipe.AddTile(TileID.AncientManipulator);
+			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
