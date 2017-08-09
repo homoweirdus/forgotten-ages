@@ -87,6 +87,22 @@ namespace ForgottenMemories
 			return Transform;
 		}
 		
+		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
+		{
+			if (TGEMWorld.forestInvasionUp)
+			{
+				int index = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Inventory"));
+				LegacyGameInterfaceLayer CustomProgress = new LegacyGameInterfaceLayer("ForgottenMemories: ProgressLayer",
+				delegate
+				{
+					ProgressBar.DrawCustomInvasionProgress();
+                    return true;
+				},
+				InterfaceScaleType.UI);
+				layers.Insert(index, CustomProgress);
+			}
+		}
+		
 		public override void UpdateMusic(ref int music)
         {
             if (Main.invasionX == Main.spawnTileX && TGEMWorld.forestInvasionUp)

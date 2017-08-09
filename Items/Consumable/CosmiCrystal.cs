@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.Consumable
 
         public override bool UseItem(Player player)
         {
-            Main.NewText("Purified space rock falls down to your planet!", 175, 167, 75);
+            Main.NewText("Your world is blessed with purified space rock!", 175, 167, 75);
 			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 14E-05); k++)
 			{
 				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);

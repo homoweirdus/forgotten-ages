@@ -4,38 +4,38 @@ using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 
 
-namespace ForgottenMemories.Items.ItemSets.Cryotine
+namespace ForgottenMemories.Items.ItemSets.DevilFlame
 {
-	public class PermafrostStaff : ModItem
+	public class DevilStaff : ModItem
 	{
 		public override void SetDefaults()
 		{
 		item.CloneDefaults(ItemID.QueenSpiderStaff); 
 
-			item.damage = 14;  
+			item.damage = 16;  
 			item.mana = 15;   
 			item.width = 40;
 			item.height = 40;
 			item.value = 16800;
 			ProjectileID.Sets.TurretFeature[item.shoot] = true;
-            item.rare = 2;
+            item.rare = 1;
             item.knockBack = 2f;
 			item.UseSound = SoundID.Item25;
-            item.shoot = mod.ProjectileType("IceCrystal");
+            item.shoot = mod.ProjectileType("DemonSigil");
 			item.shootSpeed = 0f;
 			ProjectileID.Sets.MinionTargettingFeature[item.shoot] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-		  DisplayName.SetDefault("Permafrost Stave");
-		  Tooltip.SetDefault("Summons a stationary Ice crystal");
+		  DisplayName.SetDefault("Demonic Stave");
+		  Tooltip.SetDefault("Summons a stationary demonic sigil");
 		}
 		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null,"CryotineBar", 12);
+			recipe.AddIngredient(null,"DevilFlame", 14);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

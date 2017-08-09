@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Torrent");
-			Tooltip.SetDefault("Fires two arrows\nConverts wooden arrows into torrential arrows that pierce through enemies");
+			Tooltip.SetDefault("Fires two arrows\nConverts wooden arrows into torrential arrows that ricochet off of tiles and enemies");
 		}
 
 
@@ -51,13 +51,12 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
             Vector2 spinningpoint = new Vector2(speedX, speedY);
 			spinningpoint.Normalize();
             spinningpoint *= 40f;
-            bool flag4 = Collision.CanHit(position, 0, 0, position + spinningpoint, 0, 0);
+            //bool flag4 = Collision.CanHit(position, 0, 0, position + spinningpoint, 0, 0);
             for (int index1 = 0; index1 < num4; ++index1)
             {
 				float num8 = (index1 == 0) ? -0.5f : 0.5f;
                 Vector2 vector2_5 = spinningpoint.RotatedBy((double) num3 * (double) num8);
-                if (!flag4)
-					vector2_5 += spinningpoint;
+				//vector2_5 += spinningpoint;
                 int index2 = Projectile.NewProjectile((float) (position.X + vector2_5.X), (float) (position.Y + vector2_5.Y), speedX, speedY, type, damage, knockBack, player.whoAmI, 0.0f, 0.0f);
                 Main.projectile[index2].noDropItem = true;
             }

@@ -74,7 +74,7 @@ namespace ForgottenMemories
 			}
 			float num = 0.5f + invasionProgressAlpha * 0.5f;
 			Texture2D texture2D = mod.GetTexture("TreeIcon");
-			string text = "Forest's Army";
+			string text = " Forest's Army";
 			Color c = new Color(104, 255, 167) * 0.5f;
 			/*if (Main.invasionProgressIcon == 1)
 			{

@@ -40,7 +40,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			if (crit == true)
 			{
 				target.defense -= 8;
-				Projectile.NewProjectile(target.position.X, target.position.Y, 0f, 0f, mod.ProjectileType("BlightedBoom"), damage, 5f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("BlightedBoom"), damage, 5f, player.whoAmI, 0f, 0f);
 			}
 		}
 		

@@ -32,7 +32,7 @@ namespace ForgottenMemories.NPCs.Ascension
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
 			int tile = (int)Main.tile[x, y].type;
-			return (tile == mod.TileType("Cosmodium")) ? 0.35f : 0f;
+			return (tile == mod.TileType("Cosmodium")) ? 1f : 0f;
 		}
 		
         public override void FindFrame(int frameHeight)
