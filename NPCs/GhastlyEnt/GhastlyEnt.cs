@@ -218,14 +218,14 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
             }
 			
 		}
-					public override void FindFrame(int frameHeight)
+		public override void FindFrame(int frameHeight)
 		{
 			npc.frameCounter += 0.25f; 
 			npc.frameCounter %= Main.npcFrameCount[npc.type]; 
 			int frame = (int)npc.frameCounter; 
 			npc.frame.Y = frame * frameHeight; 
 		}
-				public override void NPCLoot()
+			public override void NPCLoot()
 			{
 				TGEMWorld.downedGhastlyEnt = true;
 				if (Main.expertMode)

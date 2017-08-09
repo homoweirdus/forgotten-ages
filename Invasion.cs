@@ -23,6 +23,7 @@ namespace ForgottenMemories
 			mod.NPCType("PalmTreeMan"),
 			mod.NPCType("RichMahoganyTreeMan"),
 			mod.NPCType("PineFlyer"),
+			mod.NPCType("CharredEnt"),
         };
 		
 		public static void StartCustomInvasion()

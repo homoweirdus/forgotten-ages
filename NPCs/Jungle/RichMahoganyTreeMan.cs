@@ -39,11 +39,5 @@ namespace ForgottenMemories.NPCs.Jungle
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LivingTwig"));
 			}
 		}
-	
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = (int)(npc.lifeMax * 1.3f);
-			npc.damage = (int)(npc.damage * 1f);
-		}
 	}
 }
