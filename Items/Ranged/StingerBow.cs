@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Ranged
         public override void SetDefaults()
         {
 
-            item.damage = 17;
+            item.damage = 15;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
@@ -63,8 +63,9 @@ namespace ForgottenMemories.Items.Ranged
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Stinger, 4);
-            recipe.AddIngredient(ItemID.JungleSpores, 8);
+            recipe.AddIngredient(ItemID.Stinger, 8);
+            recipe.AddIngredient(ItemID.JungleSpores, 10);
+			recipe.AddIngredient(null, "ForestEnergy", 5);
 			recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

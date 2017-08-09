@@ -71,7 +71,7 @@ namespace ForgottenMemories.Items.Ranged
             recipe.SetResult(this);
             recipe.AddRecipe();
 			
-			new ModRecipe(mod);
+			recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.TendonBow, 1);
             recipe.AddIngredient(ItemID.MoltenFury, 1);
 			recipe.AddIngredient(null, "YoichiBow", 1);
