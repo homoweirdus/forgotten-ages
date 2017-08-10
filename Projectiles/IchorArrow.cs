@@ -19,7 +19,6 @@ namespace ForgottenMemories.Projectiles
             projectile.ranged = true; //Damage type of the projectile.
             projectile.penetrate = 1; //How many enemies it can hit.
             projectile.timeLeft = 600; //How long in ticks the projectile lasts
-            projectile.light = 0.5f; //light the projectile gives off
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
         }
@@ -41,14 +40,14 @@ namespace ForgottenMemories.Projectiles
 			Vector2 newVect6 = newVect.RotatedBy(MathHelper.ToRadians(225));
 			Vector2 newVect7 = newVect.RotatedBy(MathHelper.ToRadians(270));
 			Vector2 newVect8 = newVect.RotatedBy(MathHelper.ToRadians(315));
-			dust = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect.X, newVect.Y);
-			int dust2 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect2.X, newVect2.Y);
-			int dust3 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect3.X, newVect3.Y);
-			int dust4 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect4.X, newVect4.Y);
-			int dust5 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect5.X, newVect5.Y);
-			int dust6 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect6.X, newVect6.Y);
-			int dust7 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect7.X, newVect7.Y);
-			int dust8 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect8.X, newVect8.Y);
+			dust = Dust.NewDust(projectile.position + vector2, 0, 0, 87, newVect.X, newVect.Y);
+			int dust2 = Dust.NewDust(projectile.position + vector2, 0, 0, 87, newVect2.X, newVect2.Y);
+			int dust3 = Dust.NewDust(projectile.position + vector2, 0, 0, 87, newVect3.X, newVect3.Y);
+			int dust4 = Dust.NewDust(projectile.position + vector2, 0, 0, 87, newVect4.X, newVect4.Y);
+			int dust5 = Dust.NewDust(projectile.position + vector2, 0, 0, 87, newVect5.X, newVect5.Y);
+			int dust6 = Dust.NewDust(projectile.position + vector2, 0, 0, 87, newVect6.X, newVect6.Y);
+			int dust7 = Dust.NewDust(projectile.position + vector2, 0, 0, 87, newVect7.X, newVect7.Y);
+			int dust8 = Dust.NewDust(projectile.position + vector2, 0, 0, 87, newVect8.X, newVect8.Y);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust2].noGravity = true;
 			Main.dust[dust3].noGravity = true;
@@ -65,14 +64,13 @@ namespace ForgottenMemories.Projectiles
 			Main.dust[dust6].scale = 2;
 			Main.dust[dust7].scale = 2;
 			Main.dust[dust8].scale = 2;
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 		}
 			
 		public override void AI()
 		{
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 			int dust;
-			dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 87, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust].scale = 0.7f;
 			Main.dust[dust].noGravity = true;
 		}
@@ -111,12 +109,12 @@ namespace ForgottenMemories.Projectiles
 				num161 += num158;
 				continue;
 				IL_6899:
-				float num164 = (float)(num157 - num161);
+				float num187 = (float)(num157 - num161);
 				if (num158 < 0)
 				{
-					num164 = (float)(num159 - num161);
+					num187 = (float)(num159 - num161);
 				}
-				color26 *= num164 / ((float)ProjectileID.Sets.TrailCacheLength[projectile.type] * 1.5f);
+				color26 *= num187 / ((float)ProjectileID.Sets.TrailCacheLength[projectile.type] * 1.5f);
 				Vector2 value4 = projectile.oldPos[num161];
 				float num165 = projectile.rotation;
 				SpriteEffects effects = spriteEffects;

@@ -19,7 +19,6 @@ namespace ForgottenMemories.Projectiles
             projectile.ranged = true; //Damage type of the projectile.
             projectile.penetrate = 1; //How many enemies it can hit.
             projectile.timeLeft = 600; //How long in ticks the projectile lasts
-            projectile.light = 0.5f; //light the projectile gives off
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
         }
@@ -35,9 +34,10 @@ namespace ForgottenMemories.Projectiles
 			
 			for (int i = 0; i < amountOfProjectiles; ++i)
 				{
+					Vector2 newVect1 = new Vector2 (8, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360)));
 					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
 					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("CursedLightning"), 15, 5f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect1.X, newVect1.Y, mod.ProjectileType("CursedLightning"), 15, 5f, projectile.owner);
 				}
 		}
 			
@@ -48,6 +48,7 @@ namespace ForgottenMemories.Projectiles
 			dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 75, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust].scale = 0.7f;
 			Main.dust[dust].noGravity = true;
+			
 		}
 		
 		

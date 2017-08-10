@@ -13,12 +13,11 @@ namespace ForgottenMemories.Items.Ranged
         public override void SetDefaults()
         {
 
-            item.damage = 45;
+            item.damage = 48;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-
             item.useTime = 20;
             item.useAnimation = 20;
             item.useStyle = 5;
@@ -41,15 +40,31 @@ namespace ForgottenMemories.Items.Ranged
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-				Vector2 origVect = new Vector2(speedX, speedY);
-				Projectile.NewProjectile(position.X, position.Y, origVect.X, origVect.Y, mod.ProjectileType("TrueNightArrow"), damage, knockBack, player.whoAmI, 0, 0);
-		   return false;
+			int projectileAmount = 2;
+			for (int k = 0; k < projectileAmount; k++)
+			{
+				Vector2 velVect = new Vector2(speedX, speedY);
+				Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-12, 12)));
+				
+				Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, mod.ProjectileType("TrueNightArrow"), damage, knockBack, Main.myPlayer, 0, 0);
+			}
+            return false;
         }
+		
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(4, 0);
+		} 
+		
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "Artemis", 1);
-            recipe.AddIngredient(ItemID.CursedFlame, 20); //placeholder ingredient
+            recipe.AddIngredient(ItemID.CursedFlame, 100);
+			recipe.AddIngredient(ItemID.SoulofNight, 10);
+			recipe.AddIngredient(ItemID.SoulofFright, 3);
+			recipe.AddIngredient(ItemID.SoulofSight, 3);
+			recipe.AddIngredient(ItemID.SoulofMight, 3);
 			recipe.AddTile(134);
             recipe.SetResult(this);
             recipe.AddRecipe();

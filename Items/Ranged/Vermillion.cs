@@ -13,14 +13,14 @@ namespace ForgottenMemories.Items.Ranged
         public override void SetDefaults()
         {
 
-            item.damage = 45;
+            item.damage = 42;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
 
-            item.useTime = 20;
-            item.useAnimation = 20;
+            item.useTime = 18;
+            item.useAnimation = 18;
             item.useStyle = 5;
             item.shoot = mod.ProjectileType("IchorArrow");
             item.useAmmo = 40;
@@ -39,6 +39,11 @@ namespace ForgottenMemories.Items.Ranged
       Tooltip.SetDefault("Fires ichor arrows in a spread");
     }
 	
+	public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(2, 0);
+		}
+	
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
@@ -56,7 +61,11 @@ namespace ForgottenMemories.Items.Ranged
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "Artemis", 1);
-            recipe.AddIngredient(ItemID.Ichor, 20); 
+            recipe.AddIngredient(ItemID.Ichor, 100);
+			recipe.AddIngredient(ItemID.SoulofNight, 10);
+			recipe.AddIngredient(ItemID.SoulofFright, 3);
+			recipe.AddIngredient(ItemID.SoulofSight, 3);
+			recipe.AddIngredient(ItemID.SoulofMight, 3);			
 			recipe.AddTile(134);
             recipe.SetResult(this);
             recipe.AddRecipe();
