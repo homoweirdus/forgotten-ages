@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-    public class TrueNightArrow : ModProjectile
+    public class IchorArrow : ModProjectile
     {
         public override void SetDefaults()
         {
@@ -26,26 +26,53 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Night Arrow");
+			DisplayName.SetDefault("Ichor Arrow");
 		}
 		
 		public override void Kill(int timeLeft)
 		{
-			int amountOfProjectiles = Main.rand.Next(4) + 1;
-			
-			for (int i = 0; i < amountOfProjectiles; ++i)
-				{
-					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("CursedLightning"), 15, 5f, projectile.owner);
-				}
+			Vector2 vector2 = new Vector2(projectile.width/2, projectile.height/2);
+			int dust;
+			Vector2 newVect = new Vector2 (8, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(45)));
+			Vector2 newVect2 = newVect.RotatedBy(MathHelper.ToRadians(45));
+			Vector2 newVect3 = newVect.RotatedBy(MathHelper.ToRadians(90));
+			Vector2 newVect4 = newVect.RotatedBy(MathHelper.ToRadians(135));
+			Vector2 newVect5 = newVect.RotatedBy(MathHelper.ToRadians(180));
+			Vector2 newVect6 = newVect.RotatedBy(MathHelper.ToRadians(225));
+			Vector2 newVect7 = newVect.RotatedBy(MathHelper.ToRadians(270));
+			Vector2 newVect8 = newVect.RotatedBy(MathHelper.ToRadians(315));
+			dust = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect.X, newVect.Y);
+			int dust2 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect2.X, newVect2.Y);
+			int dust3 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect3.X, newVect3.Y);
+			int dust4 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect4.X, newVect4.Y);
+			int dust5 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect5.X, newVect5.Y);
+			int dust6 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect6.X, newVect6.Y);
+			int dust7 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect7.X, newVect7.Y);
+			int dust8 = Dust.NewDust(projectile.position + vector2, 0, 0, 64, newVect8.X, newVect8.Y);
+			Main.dust[dust].noGravity = true;
+			Main.dust[dust2].noGravity = true;
+			Main.dust[dust3].noGravity = true;
+			Main.dust[dust4].noGravity = true;
+			Main.dust[dust5].noGravity = true;
+			Main.dust[dust6].noGravity = true;
+			Main.dust[dust7].noGravity = true;
+			Main.dust[dust8].noGravity = true;
+			Main.dust[dust].scale = 2;
+			Main.dust[dust2].scale = 2;
+			Main.dust[dust3].scale = 2;
+			Main.dust[dust4].scale = 2;
+			Main.dust[dust5].scale = 2;
+			Main.dust[dust6].scale = 2;
+			Main.dust[dust7].scale = 2;
+			Main.dust[dust8].scale = 2;
+			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 		}
 			
 		public override void AI()
 		{
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 			int dust;
-			dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 75, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust].scale = 0.7f;
 			Main.dust[dust].noGravity = true;
 		}
@@ -111,7 +138,7 @@ namespace ForgottenMemories.Projectiles
         {
             if (Main.rand.Next(1) == 0)
             {
-                target.AddBuff(39, 180, false);
+                target.AddBuff(69, 180, false);
             }
         }
     }
