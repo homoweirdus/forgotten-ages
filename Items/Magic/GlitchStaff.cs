@@ -33,7 +33,7 @@ namespace ForgottenMemories.Items.Magic
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Glitch Staff");
-      Tooltip.SetDefault("Cheat Weapon! Unobtainable outside of cheat sheet.");
+      Tooltip.SetDefault("Cheat Weapon, unobtainable without inventory editors. \n'Breaks reality'");
     }
 
 	}
