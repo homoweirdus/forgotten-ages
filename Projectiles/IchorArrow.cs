@@ -32,7 +32,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			Vector2 vector2 = new Vector2(projectile.width/2, projectile.height/2);
 			int dust;
-			Vector2 newVect = new Vector2 (8, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(45)));
+			Vector2 newVect = new Vector2 (4, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(45)));
 			Vector2 newVect2 = newVect.RotatedBy(MathHelper.ToRadians(45));
 			Vector2 newVect3 = newVect.RotatedBy(MathHelper.ToRadians(90));
 			Vector2 newVect4 = newVect.RotatedBy(MathHelper.ToRadians(135));
@@ -56,23 +56,16 @@ namespace ForgottenMemories.Projectiles
 			Main.dust[dust6].noGravity = true;
 			Main.dust[dust7].noGravity = true;
 			Main.dust[dust8].noGravity = true;
-			Main.dust[dust].scale = 2;
-			Main.dust[dust2].scale = 2;
-			Main.dust[dust3].scale = 2;
-			Main.dust[dust4].scale = 2;
-			Main.dust[dust5].scale = 2;
-			Main.dust[dust6].scale = 2;
-			Main.dust[dust7].scale = 2;
-			Main.dust[dust8].scale = 2;
 		}
 			
 		public override void AI()
 		{
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 			int dust;
-			dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 87, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-			Main.dust[dust].scale = 0.7f;
+			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 87, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			Main.dust[dust].scale = 1f;
 			Main.dust[dust].noGravity = true;
+			Main.dust[dust].fadeIn = 0.5f;
 		}
 		
 		

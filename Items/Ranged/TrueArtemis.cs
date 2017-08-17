@@ -13,13 +13,13 @@ namespace ForgottenMemories.Items.Ranged
         public override void SetDefaults()
         {
 
-            item.damage = 34;
+            item.damage = 45;
             item.noMelee = true;
             item.ranged = true;
             item.width = 14;
             item.height = 21;
-            item.useTime = 22;
-            item.useAnimation = 22;
+            item.useTime = 27;
+            item.useAnimation = 27;
             item.useStyle = 5;
             item.shoot = mod.ProjectileType("TrueNightArrow");
             item.useAmmo = 40;
