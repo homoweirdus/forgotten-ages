@@ -59,6 +59,7 @@ namespace ForgottenMemories.Items.Throwing
                 item.CloneDefaults(ItemID.Shuriken);
 				item.shoot = mod.ProjectileType("CrystalShurikenP");
 				item.damage = 37;
+				item.rare = 5;
 				item.autoReuse = true;
 			}
     public override void SetStaticDefaults()

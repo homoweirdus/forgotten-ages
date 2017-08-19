@@ -26,20 +26,33 @@ namespace ForgottenMemories.Items.Throwing
 			DisplayName.SetDefault("Explosive Shuriken");
 		}
 		
+		
 		public override void Kill(int timeLeft)
 		{
-			if (Main.rand.Next(2) == 0)
+			Main.PlaySound(SoundID.Item89, projectile.position);
+			projectile.position.X += (float) (projectile.width / 4);
+			projectile.position.Y += (float) (projectile.height / 4);
+			projectile.width = (int) (64.0 * (double) projectile.scale);
+			projectile.height = (int) (64.0 * (double) projectile.scale);
+			projectile.position.X -= (float) (projectile.width / 4);
+			projectile.position.Y -= (float) (projectile.height / 4);
+			for (int index1 = 0; index1 < 16; ++index1)
 			{
-				Item.NewItem((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, mod.ItemType("HellstoneGlaive"));
+			  int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 127, 0.0f, 0.0f, 100, new Color(), 2.5f);
+			  Main.dust[index2].noGravity = true;
+			  Main.dust[index2].velocity *= 3f;
 			}
-			
-			for (int i = 0; i < 5; i++)
+			  int index3 = Gore.NewGore(projectile.position + new Vector2((float) (projectile.width * Main.rand.Next(100)) / 100f, (float) (projectile.height * Main.rand.Next(100)) / 100f) - Vector2.One * 10f, new Vector2(), Main.rand.Next(61, 64), 1f);
+			  Main.gore[index3].velocity *= 0.3f;
+			  Main.gore[index3].velocity.X += (float) Main.rand.Next(-10, 11) * 0.05f;
+			  Main.gore[index3].velocity.Y += (float) Main.rand.Next(-10, 11) * 0.05f;
+			  
+			if (projectile.owner == Main.myPlayer)
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 5);
-				Main.dust[dust].scale = 1.5f;
-				Main.dust[dust].noGravity = true;
+			  projectile.localAI[1] = -1f;
+			  projectile.maxPenetrate = 0;
+			  projectile.Damage();
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 		}
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
@@ -64,10 +77,14 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
+			 item.shoot = mod.ProjectileType("HellstoneGlaiveP");
+		item.damage = 37;
+		item.rare = 5;
+		item.autoReuse = true;
 		}
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Explosive Shuriken");
+      DisplayName.SetDefault("Hellstone Glaive");
       Tooltip.SetDefault("");
     }
 
@@ -79,73 +96,6 @@ namespace ForgottenMemories.Items.Throwing
 			recipe.AddTile(16);
 			recipe.SetResult(this, 60);
 			recipe.AddRecipe();
-		}
-	}
-
-	public class HellstoneGlaiveBoom : ModProjectile
-	{
-		public override void SetDefaults()
-		{
-			projectile.width = 100;
-			projectile.height = 100;
-			projectile.aiStyle = 2;
-		}
-		
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Explosive Shuriken");
-		}
-
-		public override bool PreAI()
-		{
-			int amountOfDust = 2;
-			for (int i = 0; i < amountOfDust; ++i)
-			{
-				Vector2 vector2 = new Vector2(projectile.width/2, projectile.height/2);
-				int dust;
-				Vector2 newVect = new Vector2 (18, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(45)));
-				Vector2 newVect2 = newVect.RotatedBy(MathHelper.ToRadians(45));
-				Vector2 newVect3 = newVect.RotatedBy(MathHelper.ToRadians(90));
-				Vector2 newVect4 = newVect.RotatedBy(MathHelper.ToRadians(135));
-				Vector2 newVect5 = newVect.RotatedBy(MathHelper.ToRadians(180));
-				Vector2 newVect6 = newVect.RotatedBy(MathHelper.ToRadians(225));
-				Vector2 newVect7 = newVect.RotatedBy(MathHelper.ToRadians(270));
-				Vector2 newVect8 = newVect.RotatedBy(MathHelper.ToRadians(315));
-				dust = Dust.NewDust(projectile.position + vector2, 0, 0, 127, newVect.X, newVect.Y);
-				int dust2 = Dust.NewDust(projectile.position + vector2, 0, 0, 127, newVect2.X, newVect2.Y);
-				int dust3 = Dust.NewDust(projectile.position + vector2, 0, 0, 127, newVect3.X, newVect3.Y);
-				int dust4 = Dust.NewDust(projectile.position + vector2, 0, 0, 127, newVect4.X, newVect4.Y);
-				int dust5 = Dust.NewDust(projectile.position + vector2, 0, 0, 127, newVect5.X, newVect5.Y);
-				int dust6 = Dust.NewDust(projectile.position + vector2, 0, 0, 127, newVect6.X, newVect6.Y);
-				int dust7 = Dust.NewDust(projectile.position + vector2, 0, 0, 127, newVect7.X, newVect7.Y);
-				int dust8 = Dust.NewDust(projectile.position + vector2, 0, 0, 127, newVect8.X, newVect8.Y);
-				Main.dust[dust].noGravity = true;
-				Main.dust[dust2].noGravity = true;
-				Main.dust[dust3].noGravity = true;
-				Main.dust[dust4].noGravity = true;
-				Main.dust[dust5].noGravity = true;
-				Main.dust[dust6].noGravity = true;
-				Main.dust[dust7].noGravity = true;
-				Main.dust[dust8].noGravity = true;
-				Main.dust[dust].scale = 2;
-				Main.dust[dust2].scale = 2;
-				Main.dust[dust3].scale = 2;
-				Main.dust[dust4].scale = 2;
-				Main.dust[dust5].scale = 2;
-				Main.dust[dust6].scale = 2;
-				Main.dust[dust7].scale = 2;
-				Main.dust[dust8].scale = 2;
-			}
-			return false;
-		}
-		public virtual bool OnTileCollide(Vector2 oldVelocity)
-		{
-			return false;
-		}
-
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			target.AddBuff(BuffID.OnFire, 180, false);
 		}
 	}
 }

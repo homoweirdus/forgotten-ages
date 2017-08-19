@@ -36,8 +36,11 @@ namespace ForgottenMemories.Projectiles.Dune
 			Main.player[projectile.owner].direction = projectile.direction;
 			Main.player[projectile.owner].heldProj = projectile.whoAmI;
 			Main.player[projectile.owner].itemTime = Main.player[projectile.owner].itemAnimation;
+			projectile.position.X = Main.player[projectile.owner].position.X + (float)(Main.player[projectile.owner].width / 2) - (float)(projectile.width / 2);
+			projectile.position.Y = Main.player[projectile.owner].position.Y + (float)(Main.player[projectile.owner].height / 2) - (float)(projectile.height / 2);
+			projectile.position += projectile.velocity * projectile.ai[0]; if (projectile.ai[0] == 0f)
 			{
-				projectile.ai[0] = 1f;
+				projectile.ai[0] = 0.5f;
 				projectile.netUpdate = true;
 			}
 			if (Main.player[projectile.owner].itemAnimation < Main.player[projectile.owner].itemAnimationMax / 3)
@@ -59,10 +62,6 @@ namespace ForgottenMemories.Projectiles.Dune
 			{
 				projectile.rotation -= 1.57f;
 			}
-			
-			projectile.position.X = Main.player[projectile.owner].position.X + (float)(Main.player[projectile.owner].width / 2) - (float)(projectile.width / 2);
-			projectile.position.Y = Main.player[projectile.owner].position.Y + (float)(Main.player[projectile.owner].height / 2) - (float)(projectile.height / 2);
-			projectile.position += projectile.velocity * projectile.ai[0]; if (projectile.ai[0] == 0f)
 			
 			if (Main.rand.Next(5) == 0)
 			{

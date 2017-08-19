@@ -68,7 +68,7 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(4, 0);
+			return new Vector2(-20, 0);
 		}
 		
 		public override bool ConsumeAmmo(Player player)
