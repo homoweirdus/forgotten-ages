@@ -16,9 +16,9 @@ namespace ForgottenMemories.Projectiles
             projectile.width = 38;
             projectile.height = 38;
             projectile.aiStyle = -1;
-			projectile.alpha = 50;
+			projectile.alpha = 255;
             projectile.friendly = true;
-            projectile.melee = true;
+            projectile.ranged = true;
 			projectile.timeLeft = 60;
             projectile.penetrate = -1;
 			projectile.tileCollide = false;
@@ -36,6 +36,11 @@ namespace ForgottenMemories.Projectiles
 			int dust;
 			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 226, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust].noGravity = true;
+			}
+			
+			if (projectile.alpha >= 50)
+			{
+				projectile.alpha -= 5;
 			}
 			
 			if (Main.rand.Next(5) == 0)
@@ -68,8 +73,8 @@ namespace ForgottenMemories.Projectiles
 			timer++;
 			if (target && timer >= 12)
 			{
-				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 15f, move.Y * 15f, 255, (int)(projectile.damage * 0.70), 5f, projectile.owner);
-				Main.projectile[proj].melee = true;
+				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 15f, move.Y * 15f, 255, (int)(projectile.damage * 0.4), 5f, projectile.owner);
+				Main.projectile[proj].ranged = true;
 				Main.projectile[proj].magic = false;
 				Main.projectile[proj].friendly = true;
 				Main.projectile[proj].hostile = false;

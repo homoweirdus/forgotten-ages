@@ -12,14 +12,12 @@ namespace ForgottenMemories.Items.Ranged
 		{
 			item.CloneDefaults(ItemID.RocketLauncher);
 
-			item.damage = 92;
+			item.damage = 48;
 			item.ranged = true;
 			item.width = 29;
 			item.height = 24;
-
-
-			item.useTime = 35;
-			item.useAnimation = 35;
+			item.useTime = 50;
+			item.useAnimation = 50;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 4f;
@@ -41,19 +39,7 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			float sX = speedX;
-			float sY = speedY;
-			if (Main.rand.Next(3) == 0)
-			{
-				int p = Projectile.NewProjectile(position.X, position.Y, sX+2f, sY+2f, 616, damage, knockBack, player.whoAmI);
-				Projectile.NewProjectile(position.X, position.Y, sX-2f, sY-2f, 616, damage, knockBack, player.whoAmI);
-			}
-			else
-			{
-				int k = Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
-				Main.projectile[k].GetGlobalProjectile<Info>(mod).Split = true;
-				Main.projectile[k].timeLeft = 25;
-			}
+			int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("VortexRocket"), damage, knockBack, player.whoAmI);
 			return false;
 		}
 
