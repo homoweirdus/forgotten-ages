@@ -107,18 +107,6 @@ namespace ForgottenMemories.Projectiles.InfoA
 		
 		public override void Kill(Projectile projectile, int timeLeft)
 		{
-			if (TrueHR == true)
-			{
-				int amountOfProjectiles = Main.rand.Next(1, 3);
-				
-				for (int i = 0; i < amountOfProjectiles; ++i)
-				{
-					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("HallowEnergy"), 12, 5f, projectile.owner);
-					
-				}
-			}
 			
 			if (Split == true && projectile.timeLeft == 0)
 			{
