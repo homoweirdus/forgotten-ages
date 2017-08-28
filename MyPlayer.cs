@@ -31,41 +31,31 @@ namespace ForgottenMemories
 		
 		public override void SetupStartInventory(IList<Item> items)
 		{
-			items.Clear();
 			Item item = new Item();
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(5) == 0)
 			{
 				item.SetDefaults(mod.ItemType("OldBlade"));
+				items.RemoveAt(0);
+				items.Insert(0, item);
 			}
-			else
-			{
-				item.SetDefaults(3507);
-			}
-			items.Add(item);
 			
 			
 			Item item2 = new Item();
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(5) == 0)
 			{
 				item2.SetDefaults(mod.ItemType("OldPick"));
+				items.RemoveAt(1);
+				items.Insert(1, item2);
 			}
-			else
-			{
-				item2.SetDefaults(3509);
-			}
-			items.Add(item2);
 			
 			
 			Item item3 = new Item();
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(5) == 0)
 			{
 				item3.SetDefaults(mod.ItemType("OldAxe"));
+				items.RemoveAt(2);
+				items.Insert(2, item3);
 			}
-			else
-			{
-				item3.SetDefaults(3506);
-			}
-			items.Add(item3);
 		}
 		
 		public override void PreUpdate() 
