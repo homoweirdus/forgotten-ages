@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 21;
+			item.damage = 19;
 			item.melee = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 9;
-			item.useAnimation = 9;
+			item.useTime = 11;
+			item.useAnimation = 11;
 			item.useStyle = 1;
 			item.knockBack = 4;
 			item.value = 10000;
@@ -27,20 +27,12 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 			item.useTurn = true;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Soaring Broadsword");
-      Tooltip.SetDefault("Swings fast, and knocks enemies upward");
-    }
-
-		
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+		public override void SetStaticDefaults()
 		{
-			if(!target.boss) 
-			{
-				target.velocity.Y -= 2; 
-			}
+			DisplayName.SetDefault("Soaring Broadsword");
+			Tooltip.SetDefault("Swings fast, and knocks enemies upward");
 		}
+
 		
 		public override void AddRecipes()
 		{

@@ -37,6 +37,11 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
       DisplayName.SetDefault("Gelatine Bow");
       Tooltip.SetDefault("Has a chance to fire gel arrows");
     }
+	
+	public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(-3, 0);
+		}
 
 
 		

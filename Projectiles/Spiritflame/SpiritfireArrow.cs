@@ -22,7 +22,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 			projectile.tileCollide = true;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
-			projectile.scale = 0.75f;
+			projectile.scale = 0.95f;
 			projectile.timeLeft = 360;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;

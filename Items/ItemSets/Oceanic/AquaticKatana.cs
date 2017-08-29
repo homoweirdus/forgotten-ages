@@ -15,23 +15,20 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
-
-			item.useTime = 28;
-			item.useAnimation = 14;
+			item.useTime = 13;
+			item.useAnimation = 13;
 			item.useStyle = 1;
 			item.knockBack = 2;
 			item.value = 50000;
 			item.rare = 3;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = 409;
-			item.shootSpeed = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
 		  DisplayName.SetDefault("Aquatic Katana");
-		  Tooltip.SetDefault("Fires a short ranged typhoon");
+		  Tooltip.SetDefault("Splashes water on hit");
 		}
 
 
@@ -53,15 +50,11 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			}
 		}
 		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			Projectile projectile = Main.projectile[Projectile.NewProjectile(position, new Vector2(speedX, speedY), type, damage, knockBack, player.whoAmI, 0f, 0f)];
-			projectile.magic = false;
-			projectile.melee = true;
-			projectile.timeLeft = 60;
-			projectile.scale = 0.75f;
-			projectile.GetGlobalProjectile<Info>(mod).WaterKatana = true;
-			return false;
-		}
+		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+        {
+			float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
+			float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
+            Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, 22, damage, 0f, player.whoAmI, 0f, 0f);
+        }
 	}
 }

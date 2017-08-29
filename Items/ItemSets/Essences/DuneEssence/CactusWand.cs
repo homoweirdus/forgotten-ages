@@ -37,7 +37,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			for (int k = 0; k < projectileAmount; k++)
 			{
 				Vector2 velVect = new Vector2(speedX, speedY);
-				Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-15, 15)));
+				Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-10, 10)));
 				
 				Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, type, damage, knockBack, Main.myPlayer, 0, 0);
 			}

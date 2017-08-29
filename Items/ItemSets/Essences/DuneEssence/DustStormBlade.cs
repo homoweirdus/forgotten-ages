@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 17;
+			item.damage = 23;
 			item.melee = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 14;
-			item.useAnimation = 14;
+			item.useTime = 20;
+			item.useAnimation = 20;
 			item.useStyle = 1;
 			item.knockBack = 4;
 			item.value = 5000;
