@@ -23,6 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.pick = 35;
+			item.useTurn = true;
 		}
 
     public override void SetStaticDefaults()

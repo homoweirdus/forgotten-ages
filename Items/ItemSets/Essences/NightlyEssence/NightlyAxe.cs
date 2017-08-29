@@ -24,6 +24,7 @@ public class NightlyAxe : ModItem
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
 		item.axe = 10;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()

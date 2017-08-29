@@ -23,6 +23,7 @@ public class GelatineHamaxe : ModItem
         item.autoReuse = true;
 		item.axe = 12;
 		item.hammer = 80;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()

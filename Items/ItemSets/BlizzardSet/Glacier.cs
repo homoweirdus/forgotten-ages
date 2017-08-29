@@ -15,18 +15,16 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
 			item.melee = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 50;
-			item.useAnimation = 25;
+			item.useTime = 37;
+			item.useAnimation = 37;
 			item.useStyle = 1;
 			item.knockBack = 3f;
 			item.value = 5000;
 			item.rare = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-
 			item.shoot = mod.ProjectileType("IceCube");
 			item.shootSpeed = 7f;
-			item.useTurn = true;
 		}
 
     public override void SetStaticDefaults()
@@ -35,9 +33,6 @@ namespace ForgottenMemories.Items.ItemSets.BlizzardSet
       Tooltip.SetDefault("Launches a sliding ice cube");
     }
 
-		
-
-		
 		
 		public override void AddRecipes()
 		{

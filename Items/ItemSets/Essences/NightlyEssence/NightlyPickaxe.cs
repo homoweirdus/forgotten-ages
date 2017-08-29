@@ -24,6 +24,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.pick = 45;
+			item.useTurn = true;
 		}
 
     public override void SetStaticDefaults()

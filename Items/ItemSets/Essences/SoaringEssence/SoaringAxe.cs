@@ -23,11 +23,12 @@ public class SoaringAxe : ModItem
         item.autoReuse = true;
 		item.axe = 7;
 		item.hammer = 35;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Soaring Axe");
+      DisplayName.SetDefault("Soaring Hamaxe");
       Tooltip.SetDefault("");
     }
 

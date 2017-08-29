@@ -22,6 +22,7 @@ public class SoaringPickaxe : ModItem
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
 		item.pick = 35;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()

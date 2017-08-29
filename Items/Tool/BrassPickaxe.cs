@@ -22,6 +22,7 @@ public class BrassPickaxe : ModItem
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
 		item.pick = 105;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()

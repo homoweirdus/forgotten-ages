@@ -24,6 +24,7 @@ public class NightlyHammer : ModItem
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
 		item.hammer = 45;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()
