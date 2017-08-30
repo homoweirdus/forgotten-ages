@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.knockBack = 1;
 			item.value = 200000;
 			item.rare = 6;
-			item.UseSound = SoundID.Item5;
+			item.UseSound = SoundID.Item20;
 			Item.staff[item.type] = true;
 			item.autoReuse = true;
 			item.mana = 15;

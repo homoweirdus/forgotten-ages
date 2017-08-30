@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Gelatine Kunai");
+      DisplayName.SetDefault("Gelatine Dagger");
       Tooltip.SetDefault("");
     }
 

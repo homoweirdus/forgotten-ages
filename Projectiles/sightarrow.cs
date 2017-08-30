@@ -160,7 +160,6 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
         {
-			Main.PlaySound(SoundID.Item89, projectile.position);
 			for (int i = 0; i < 7; i++)
 			{
 				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 74, projectile.velocity.X * 3, projectile.velocity.Y * 3, 0, new Color(), 1f);

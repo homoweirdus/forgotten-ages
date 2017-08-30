@@ -29,7 +29,7 @@ namespace ForgottenMemories.Items.Ranged
             item.rare = 2;
             item.UseSound = SoundID.Item5;
             item.autoReuse = true;
-            item.shootSpeed = 7f;
+            item.shootSpeed = 10f;
 
         }
 
@@ -46,7 +46,7 @@ namespace ForgottenMemories.Items.Ranged
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.Next(4) == 0)
 			{
 				Vector2 origVect = new Vector2(speedX, speedY);
 				Vector2 newVect = origVect.RotatedBy(System.Math.PI / 15);

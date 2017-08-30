@@ -30,7 +30,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Soaring Broadsword");
-			Tooltip.SetDefault("Swings fast, and knocks enemies upward");
+			Tooltip.SetDefault("");
 		}
 
 		
