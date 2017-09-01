@@ -41,7 +41,7 @@ namespace ForgottenMemories.Items.Hook
 		}
 		public override float GrappleRange()
 		{
-			return 250f;
+			return 400f;
 		}
 
 		public override void NumGrappleHooks(Player player, ref int numHooks)
