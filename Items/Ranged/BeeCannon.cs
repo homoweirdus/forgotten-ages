@@ -27,7 +27,6 @@ namespace ForgottenMemories.Items.Ranged
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("StingerRocket");
 			item.shootSpeed = 16f;
-			item.useAmmo = ItemID.Stinger;
 		}
 
     public override void SetStaticDefaults()
