@@ -37,30 +37,10 @@ namespace ForgottenMemories.Items.AaMaterials
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.HellstoneBar, 8);
-			recipe.AddIngredient(ItemID.ObsidianSkinPotion, 10);
+			recipe.AddIngredient(ItemID.ObsidianSkinPotion, 1);
             recipe.AddIngredient(null, "DevilFlame", 12);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(906, 1);
-            recipe.AddRecipe();
-			
-			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.HellstoneBar, 10);
-			recipe.AddIngredient(null,"WaterShard", 10);
-			recipe.AddIngredient(ItemID.DemoniteBar, 10);
-			recipe.AddIngredient(ItemID.JungleSpores, 10);
-            recipe.AddIngredient(null, "DevilFlame", 12);
-            recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(274, 1);
-            recipe.AddRecipe();
-			
-			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.HellstoneBar, 10);
-			recipe.AddIngredient(null,"WaterShard", 10);
-			recipe.AddIngredient(ItemID.TheRottedFork, 1);
-			recipe.AddIngredient(ItemID.JungleSpores, 10);
-            recipe.AddIngredient(null, "DevilFlame", 12);
-            recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(274, 1);
             recipe.AddRecipe();
 			
 			recipe = new ModRecipe(mod);

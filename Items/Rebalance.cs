@@ -361,19 +361,5 @@ namespace ForgottenMemories.Items
 				}
 			}
 		}
-		
-		public override void ModifyHitNPC(Projectile projectile, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
-		{
-			if (Config.VanillaBalance)
-			{
-				if (projectile.minion == true || ProjectileID.Sets.MinionShot[projectile.type] || ProjectileID.Sets.SentryShot[projectile.type])
-				{
-					if (Main.rand.Next(100) <= 3)
-					{
-						crit = true;
-					}
-				}
-			}
-		}
 	}
 }
