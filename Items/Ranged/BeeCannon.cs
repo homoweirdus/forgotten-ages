@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 
-			item.damage = 22;
+			item.damage = 29;
 			item.ranged = true;
 			item.width = 42;
 			item.height = 30;
@@ -32,8 +32,13 @@ namespace ForgottenMemories.Items.Ranged
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Bee Cannon");
-      Tooltip.SetDefault("Uses stingers as ammo\n80% chance not to consume stingers");
+      Tooltip.SetDefault("Fires a large exploding stinger");
     }
+	
+	public override Vector2? HoldoutOffset()
+	{
+		return new Vector2(-5, 0);
+	}
 
 
 		public override void AddRecipes()
@@ -45,14 +50,6 @@ namespace ForgottenMemories.Items.Ranged
 			recipe.AddRecipe();
 		}
 		
-		public override bool ConsumeAmmo(Player player)
-	    {
-	    	if (Main.rand.Next(0, 100) <= 80)
-			{
-	    		return false;
-			}
-	    	return true;
-	    }
 
 		public override void GetWeaponDamage(Player player, ref int damage)
 		{

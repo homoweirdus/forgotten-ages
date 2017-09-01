@@ -33,7 +33,7 @@ namespace ForgottenMemories.Items.Ranged
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Vortex Launcher");
-      Tooltip.SetDefault("Causes normal rockets to split into 5 weaker rockets midair \nHas a chance to instead fire 2 homing vortex rockets\n66% chance not to consume ammo");
+      Tooltip.SetDefault("'Fires a rocket that tears the fabric of space'");
     }
 
 		
