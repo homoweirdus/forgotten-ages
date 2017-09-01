@@ -3,30 +3,29 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
-namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
+namespace ForgottenMemories.Items.ItemSets.Oceanic
 {
-	public class NomadsPartisan : ModItem
+	public class AquaticSpear : ModItem
 	{
 		public override void SetDefaults()
 		{
 
-			item.damage = 16;
+			item.damage = 21;
 			item.melee = true;
 			item.width = 52;
 			item.height = 52;
 			item.scale = 1.1f;
 			item.maxStack = 1;
-			item.useTime = 30;
-			item.useAnimation = 30;
+			item.useTime = 25;
+			item.useAnimation = 25;
 			item.knockBack = 5f;
 			item.UseSound = SoundID.Item1;
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.useStyle = 5;
-			item.value = 5000;
-			item.rare = 1;
-			item.shoot = mod.ProjectileType("NomadsPartisan"); 
+			item.value = 50000;
+			item.rare = 3;
+			item.shoot = mod.ProjectileType("AquaticSpear"); 
 			item.shootSpeed = 7;
 			item.autoReuse = true;
 
@@ -34,16 +33,16 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Nomad's Partisan");
-      Tooltip.SetDefault("");
+      DisplayName.SetDefault("Aquatic Hunting Spear");
+      Tooltip.SetDefault("Has a chance to fire a bolt of water");
     }
 
 	
-	public override void AddRecipes()
+		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "BossEnergy", 6);
-			recipe.AddIngredient(ItemID.Cactus, 25);
+			recipe.AddIngredient(null, "WaterShard", 6);
+			recipe.AddIngredient(ItemID.SharkFin, 3);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
