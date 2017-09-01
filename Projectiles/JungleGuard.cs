@@ -16,14 +16,14 @@ namespace ForgottenMemories.Projectiles
             Main.projPet[projectile.type] = true;
             ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
             aiType = ProjectileID.BabySlime;
-            drawOffsetX = 10; 
-            drawOriginOffsetY = 10; 
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
 			projectile.minionSlots = 0;
 			projectile.friendly = false;
 			Main.projFrames[projectile.type] = 6;
 			projectile.timeLeft = 300;
+			projectile.width = 44;
+			projectile.height = 26;
         }
 		
 		public override void SetStaticDefaults()

@@ -25,12 +25,12 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LightningDagger"), 1); 
 			}
 			
-			if (npc.type == 204 && Main.rand.Next(40) == 0)
+			if (npc.type == 204 && Main.rand.Next(50) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JungleSlimePendant"), 1); 
 			}
 			
-			if (npc.type == 147 && Main.rand.Next(40) == 0 || npc.type == 184 && Main.rand.Next(40) == 0)
+			if (npc.type == 147 && Main.rand.Next(50) == 0 || npc.type == 184 && Main.rand.Next(40) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("IceSlimeNecklace"), 1); 
 			}
@@ -46,11 +46,6 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ShadowflameEmber"), amountToDrop); 
 			}
 			
-			if (Main.bloodMoon && Main.rand.Next(3) == 0)
-			{
-				int amountToDrop = Main.rand.Next(8,14);
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BloodDagger"), amountToDrop); 
-			}
 			
 			if (npc.type == NPCID.WallofFlesh && !Main.expertMode)
 			{

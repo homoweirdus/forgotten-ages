@@ -28,13 +28,13 @@ namespace ForgottenMemories.NPCs.Granite
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Granite Protector");
-			Main.npcFrameCount[npc.type] = 6;
+			Main.npcFrameCount[npc.type] = 4;
 		}
 		
 		public override void FindFrame(int frameHeight)
 		{
 			npc.frameCounter++;
-			if (npc.frameCounter >= 6)
+			if (npc.frameCounter >= 15)
 			{
 				npc.frame.Y += frameHeight;
 				
