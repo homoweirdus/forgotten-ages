@@ -1,9 +1,11 @@
-using System;
-using Terraria;
-using Terraria.ModLoader;
 using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria;
+using Microsoft.Xna.Framework;
 
-namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence {
+
+namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence 
+{
 public class SoaringAxe : ModItem
 {
     public override void SetDefaults()
@@ -31,6 +33,16 @@ public class SoaringAxe : ModItem
       DisplayName.SetDefault("Soaring Hamaxe");
       Tooltip.SetDefault("");
     }
+	
+	public override void MeleeEffects(Player player, Rectangle hitbox)
+		{
+			if (Main.rand.Next(6) == 0)
+			{
+				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, mod.DustType("SoaringDust"));
+				Main.dust[dust].noGravity = true;
+				Main.dust[dust].scale = 1.2f;
+			}
+		}
 
 	
 	
