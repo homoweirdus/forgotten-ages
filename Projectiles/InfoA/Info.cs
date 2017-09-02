@@ -41,7 +41,7 @@ namespace ForgottenMemories.Projectiles.InfoA
 			{
 				Vector2 Source = (Main.player[projectile.owner].Center);
 				Vector2 vector2 = (projectile.DirectionFrom(Source) * 6f);
-				int Damage2 = (int) ((double) projectile.damage * 0.300000011920929);
+				int Damage2 = (int) ((double) projectile.damage * 1.5);
 				Projectile.NewProjectile((float) Source.X, (float) Source.Y, (float) vector2.X, (float) vector2.Y, mod.ProjectileType("WaterBeam"), Damage2, 0.0f, projectile.owner, 0.0f, 0.0f);
 			}
 			

@@ -23,6 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.rare = 3;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
+			item.useTurn = true;
 		}
 
 		public override void SetStaticDefaults()
@@ -52,9 +53,18 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {
-			float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
-			float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
-            Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, 22, damage, 0f, player.whoAmI, 0f, 0f);
+			if (player.direction != 1)
+			{
+				float sX = (float)Main.rand.Next(-100, -50) * 0.1f;
+				float sY = (float)Main.rand.Next(-20, 20) * 0.1f;
+				Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, mod.ProjectileType("AquaBolt"), damage, 0f, player.whoAmI, 0f, 0f);
+			}
+			else
+			{
+				float sX = (float)Main.rand.Next(50, 100) * 0.1f;
+				float sY = (float)Main.rand.Next(-20, 20) * 0.1f;
+				Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, mod.ProjectileType("AquaBolt"), damage, 0f, player.whoAmI, 0f, 0f);
+			}
         }
 	}
 }
