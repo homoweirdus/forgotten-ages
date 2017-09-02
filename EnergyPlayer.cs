@@ -15,6 +15,8 @@ namespace ForgottenMemories
 		int damageTaken = 0;
 		public bool treeMinion = true;
         public bool lifesteal = false;
+		public int lifestealCap = 0;
+		public int lifestealTimer = 0;
 		public bool firestorm = false;
 		public bool doubleJumpMeteor = false;
 		public bool meteor = false;
@@ -49,31 +51,36 @@ namespace ForgottenMemories
 			frostguard = false;
 			BeeHive = false;
 		}
-		
 
             public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
             {
-                if (Main.rand.Next(4) == 0 && lifesteal == true && !target.immortal && target.lifeMax >= 20)
+                if (Main.rand.Next(4) == 0 && lifesteal == true && !target.immortal && target.lifeMax >= 20 && lifestealCap <= 4 && damage >= 15)
                 {
-                    player.HealEffect((int)(damage / 10));
-                    player.statLife += ((int)(damage / 10));
+					int quickthing = Main.rand.Next(2) + 1;
+                    player.HealEffect(quickthing);
+                    player.statLife += (quickthing);
+					lifestealCap++;
                 }
             }
 			
+			
 			public override void OnHitNPCWithProj(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 			{
+				
+				if (Main.rand.Next(4) == 0 && lifesteal == true && !target.immortal && target.lifeMax >= 20 && lifestealCap <= 4 && damage >= 15)
+                {
+					int quickthing = Main.rand.Next(2) + 1;
+                    player.HealEffect(quickthing);
+                    player.statLife += (quickthing);
+					lifestealCap++;
+                }
+				
 				if (sapBall == true && Main.rand.Next(3) == 0)
 				{
 					if (projectile.minion == true || ProjectileID.Sets.MinionShot[projectile.type] || ProjectileID.Sets.SentryShot[projectile.type])
 					{
 						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("SapSphere"), projectile.damage, 5f, player.whoAmI);
 					}
-				}
-				
-				if (lifesteal == true && Main.rand.Next(4) == 0 && target.CanBeChasedBy(projectile))
-				{
-					int p = Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, 305, damage, 5f, player.whoAmI);
-					Main.projectile[p].ai[1] = (int)(damage/15);
 				}
 				
 				if (BoCBuff == true)
@@ -111,12 +118,12 @@ namespace ForgottenMemories
 			
 			public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 			{
-				if (jungard == true)
+				if (jungard == true && Main.rand.Next(3) == 0)
 				{
 					Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("JungleGuard"), (int)(15 * (player.minionDamage * player.minionDamage * player.minionDamage)), 5f, player.whoAmI);
 				}
 				
-				if (frostguard == true)
+				if (frostguard == true && Main.rand.Next(3) == 0)
 				{
 					Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("IceSlimeMinion"), (int)(12 * (player.minionDamage * player.minionDamage * player.minionDamage)), 5f, player.whoAmI);
 				}
@@ -166,6 +173,14 @@ namespace ForgottenMemories
 			
 			public override void PreUpdate()
 			{
+				
+				lifestealTimer++;
+				if (lifestealTimer >= 60)
+				{
+					lifestealCap = 0;
+					lifestealTimer = 0;
+				}
+				
 				if(firestorm == true)
 				{
 					firestormCooldown++;

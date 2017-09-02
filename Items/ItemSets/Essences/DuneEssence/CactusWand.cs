@@ -11,14 +11,14 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 12;
+			item.damage = 10;
 			item.magic = true;
 			item.mana = 10;
 			item.width = 25;
 			item.height = 26;
-			item.useTime = 20;
+			item.useTime = 22;
 			item.UseSound = SoundID.Item43;
-			item.useAnimation = 20;
+			item.useAnimation = 22;
 			item.useStyle = 5;
 			Item.staff[item.type] = true;
 			item.noMelee = true;
