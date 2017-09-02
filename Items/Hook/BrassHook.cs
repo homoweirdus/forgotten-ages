@@ -41,7 +41,7 @@ namespace ForgottenMemories.Items.Hook
 		}
 		public override float GrappleRange()
 		{
-			return 400f;
+			return 550f;
 		}
 
 		public override void NumGrappleHooks(Player player, ref int numHooks)
@@ -51,12 +51,12 @@ namespace ForgottenMemories.Items.Hook
 
 		public override void GrappleRetreatSpeed(Player player, ref float speed)
 		{
-			speed = 25f;
+			speed = 15f;
 		}
 
 		public override void GrapplePullSpeed(Player player, ref float speed)
 		{
-			speed = 15;
+			speed = 9;
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
