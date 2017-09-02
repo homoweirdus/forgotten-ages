@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 		public override void SetDefaults()
 		{
 
-			item.damage = 19;
+			item.damage = 22;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
@@ -55,13 +55,13 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
         {
 			if (player.direction != 1)
 			{
-				float sX = (float)Main.rand.Next(-100, -50) * 0.1f;
+				float sX = (float)Main.rand.Next(-150, -50) * 0.1f;
 				float sY = (float)Main.rand.Next(-20, 20) * 0.1f;
 				Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, mod.ProjectileType("AquaBolt"), damage, 0f, player.whoAmI, 0f, 0f);
 			}
 			else
 			{
-				float sX = (float)Main.rand.Next(50, 100) * 0.1f;
+				float sX = (float)Main.rand.Next(50, 150) * 0.1f;
 				float sY = (float)Main.rand.Next(-20, 20) * 0.1f;
 				Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, mod.ProjectileType("AquaBolt"), damage, 0f, player.whoAmI, 0f, 0f);
 			}
