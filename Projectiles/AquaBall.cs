@@ -13,18 +13,32 @@ namespace ForgottenMemories.Projectiles
 		float rotate;
 		public override void SetDefaults()
 		{
-			projectile.width = 18;
-			projectile.height = 18;
+			projectile.width = 26;
+			projectile.height = 26;
 			projectile.alpha = 0;
 			projectile.friendly = true;
 			projectile.melee = true;
-			projectile.penetrate = 1;
+			projectile.penetrate = -1;
 			projectile.scale = 1.2f;
 		}
 		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Aqua Ball");
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			int amountOfProjectiles = Main.rand.Next(2, 3);
+			
+			for (int i = 0; i < amountOfProjectiles; ++i)
+				{
+					float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
+					float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
+					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("AquaBolt"), projectile.damage, 5f, projectile.owner);
+					Main.projectile[z].tileCollide = false;
+					Main.projectile[z].timeLeft = 30;
+				}
 		}
 		
 		public override void AI()

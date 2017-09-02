@@ -17,7 +17,6 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.width = 19;
 			item.height = 19;
 			item.mana = 8;
-
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 5;
@@ -29,13 +28,13 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("OceanBolt");
-			item.shootSpeed = 0f;
+			item.shootSpeed = 10f;
 		}
 
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Ocean Staff");
-      Tooltip.SetDefault("Creates a delayed explosion of water");
+      Tooltip.SetDefault("");
     }
 
 		
