@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.noMelee = true;
 			item.useAnimation = 16;
 			item.useTime = 16;
-			item.shootSpeed = 8f;
+			item.shootSpeed = 13f;
 			item.knockBack = 3.75f;
 			item.damage = 28;
 			item.value = 50000;

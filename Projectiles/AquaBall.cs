@@ -17,7 +17,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.height = 18;
 			projectile.alpha = 0;
 			projectile.friendly = true;
-			//projectile.extraUpdates = 1;
 			projectile.melee = true;
 			projectile.penetrate = 1;
 			projectile.scale = 1.2f;

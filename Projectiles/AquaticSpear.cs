@@ -39,7 +39,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.position.Y = Main.player[projectile.owner].position.Y + (float)(Main.player[projectile.owner].height / 2) - (float)(projectile.height / 2);
 			if (projectile.ai[0] == 0f)
 			{
-				projectile.ai[0] = 1f;
+				projectile.ai[0] = 3f;
 				projectile.netUpdate = true;
 			}
 			if (Main.player[projectile.owner].itemAnimation < Main.player[projectile.owner].itemAnimationMax / 3)
@@ -48,7 +48,7 @@ namespace ForgottenMemories.Projectiles
 				if (projectile.localAI[0] == 0f && Main.myPlayer == projectile.owner)
 				{
 					projectile.localAI[0] = 1f;
-					if (Main.rand.Next(3) == 0)
+					if (Main.rand.Next(2) == 0)
 					{
 						Projectile.NewProjectile(projectile.Center.X + (projectile.velocity.X * 3/4), projectile.Center.Y + (projectile.velocity.Y * 3/4), projectile.velocity.X * 1.4f, projectile.velocity.Y * 1.4f, mod.ProjectileType("AquaBolt"), (int)((double)projectile.damage * 0.85f), projectile.knockBack * 0.85f, projectile.owner, 0f, 0f);
 					}

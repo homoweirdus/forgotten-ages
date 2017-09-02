@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 		public override void SetDefaults()
 		{
 
-			item.damage = 21;
+			item.damage = 19;
 			item.melee = true;
 			item.width = 52;
 			item.height = 52;
