@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.useTime = 16;
 			item.shootSpeed = 13f;
 			item.knockBack = 3.75f;
-			item.damage = 28;
+			item.damage = 27;
 			item.value = 50000;
 			item.rare = 3;
 			item.shoot = mod.ProjectileType("AquaBall");
