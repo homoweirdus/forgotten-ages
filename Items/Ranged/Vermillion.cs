@@ -46,7 +46,7 @@ namespace ForgottenMemories.Items.Ranged
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-			int projectileAmount = 3;
+			int projectileAmount = 2;
 			for (int k = 0; k < projectileAmount; k++)
 			{
 				Vector2 velVect = new Vector2(speedX, speedY);
@@ -54,13 +54,14 @@ namespace ForgottenMemories.Items.Ranged
 				
 				Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, mod.ProjectileType("IchorArrow"), damage, knockBack, Main.myPlayer, 0, 0);
 			}
+			Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, mod.ProjectileType("IchorArrow"), damage, knockBack, Main.myPlayer, 0, 0);
             return false;
         }
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "Artemis", 1);
-            recipe.AddIngredient(ItemID.Ichor, 100);
+            recipe.AddIngredient(ItemID.Ichor, 50);
 			recipe.AddIngredient(ItemID.SoulofNight, 10);
 			recipe.AddIngredient(ItemID.SoulofFright, 3);
 			recipe.AddIngredient(ItemID.SoulofSight, 3);
