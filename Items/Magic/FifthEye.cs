@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.Magic
             item.noMelee = true;
             item.knockBack = 4;
             item.value = 27000;
-            item.rare = 1;
+            item.rare = 10;
             item.UseSound = SoundID.Item20;
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("LunarBolt");
