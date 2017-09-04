@@ -59,7 +59,7 @@ namespace ForgottenMemories.Items
 				
 				if (Main.rand.Next(4) == 1)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("NinjaEmblem"), 1); 
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ShinobiEmblem"), 1); 
 				}
 				
 				if (Main.rand.Next(4) == 2)
