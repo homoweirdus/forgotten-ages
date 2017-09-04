@@ -10,21 +10,21 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 148;
+			item.damage = 130;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
 
-			item.useTime = 10;
+			item.useTime = 9;
 			item.useAnimation = 10;
 			item.useStyle = 1;
-			item.knockBack = 6;
+			item.knockBack = 7;
 			item.value = 500000;
 			item.rare = 10;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("SolarBall");
-			item.shootSpeed = 14;
+			item.shootSpeed = 16;
 		}
 
     public override void SetStaticDefaults()
