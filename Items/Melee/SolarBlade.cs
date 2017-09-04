@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.Melee
 			item.height = 88;
 
 			item.useTime = 9;
-			item.useAnimation = 10;
+			item.useAnimation = 9;
 			item.useStyle = 1;
 			item.knockBack = 7;
 			item.value = 500000;

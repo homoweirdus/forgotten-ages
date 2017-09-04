@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.Throwing
 			item.width = 22;
 			item.height = 22;
 			item.useTime = 40;
-			item.useAnimation = 44;
+			item.useAnimation = 40;
 			item.useStyle = 1;
 			item.shootSpeed = 5f;
 			item.shoot = mod.ProjectileType("FireGrenadeProj");
