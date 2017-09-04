@@ -22,14 +22,14 @@ namespace ForgottenMemories.Items.Melee
 			item.noUseGraphic = true;
 			item.useAnimation = 10;
 			item.useStyle = 5;
-			item.useTime = 7;
+			item.useTime = 10;
 			item.knockBack = 2.5f;  
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;  
 			item.height = 96;  
 			item.maxStack = 1;
 			item.value = 300000;  
-			item.rare = 10;  
+			item.rare = 7;  
 			item.shoot = mod.ProjectileType("IchorLanceProjectile");
 			item.shootSpeed = 7;
 		}
