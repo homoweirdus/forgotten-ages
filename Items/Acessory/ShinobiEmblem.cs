@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.Acessory
 {
-    public class NinjaEmblem : ModItem
+    public class ShinobiEmblem : ModItem
     {
         public override void SetDefaults()
         {
@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.Acessory
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Ninja Emblem");
+      DisplayName.SetDefault("Shinobi Emblem");
       Tooltip.SetDefault("Increases Thrown Damage by 15%.");
     }
 
