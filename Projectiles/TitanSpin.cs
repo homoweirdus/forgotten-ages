@@ -12,17 +12,22 @@ namespace ForgottenMemories.Projectiles
 		int timer = 0;
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(ProjectileID.Chik);
-			projectile.aiStyle = 99;
+			projectile.extraUpdates = 0;
 			projectile.width = 16;
 			projectile.height = 16;
+			projectile.aiStyle = 99;
+			projectile.friendly = true;
 			projectile.penetrate = -1;
+			projectile.melee = true;
+			projectile.scale = 1f;
 		}
 		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Titan's Spin");
-			aiType = 555;
+			ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = 15f;
+			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 300;
+			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 16f;
 		}
 
 		public override void AI()
@@ -35,7 +40,7 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[dust].noGravity = true;
 			}
 			
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("TitanSpinP"), (int)(projectile.damage * 0.5), 5f, projectile.owner);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("TitanSpinP"), projectile.damage, 5f, projectile.owner);
 		}
 	}
 }

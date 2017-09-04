@@ -16,7 +16,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.melee = true;
 			projectile.penetrate = -1;
-			projectile.timeLeft = 31;
+			projectile.timeLeft = 70;
 			projectile.light = 0.5f;
 			projectile.tileCollide = false;
 			projectile.scale = 1f;
@@ -30,12 +30,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			projectile.alpha += 5;
-		}
-
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			target.immune[projectile.owner] = 5;
+			projectile.alpha += 3;
 		}
 	}
 }
