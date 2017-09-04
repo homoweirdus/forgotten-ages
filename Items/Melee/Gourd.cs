@@ -33,15 +33,4 @@ public class Gourd : ModItem
       DisplayName.SetDefault("Cackle");
       Tooltip.SetDefault("");
     }
-
-	
-	public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Pumpkin, 20);
-			recipe.AddIngredient(ItemID.PumpkinSeed, 10);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-}}
+}
