@@ -22,7 +22,7 @@ namespace ForgottenMemories.Items.Melee
 			item.noUseGraphic = true;
 			item.useAnimation = 10;
 			item.useStyle = 5;
-			item.useTime = 10;
+			item.useTime = 7;
 			item.knockBack = 2.5f;  
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;  
