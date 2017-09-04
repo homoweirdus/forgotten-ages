@@ -13,7 +13,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 		public override void SetDefaults()
 		{
 			projectile.width = 18;
-			projectile.height = 42;
+			projectile.height = 18;
 			projectile.aiStyle = 1;
 			projectile.ranged = true;
 			projectile.friendly = true;

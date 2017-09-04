@@ -13,7 +13,7 @@ namespace ForgottenMemories.Projectiles
         public override void SetDefaults()
         {
             projectile.width = 14;
-            projectile.height = 32;
+            projectile.height = 14;
             projectile.aiStyle = -1;
             projectile.friendly = true;
             projectile.ranged = true;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Projectiles
             projectile.timeLeft = 600;
             projectile.extraUpdates = 1;
             projectile.alpha = 0;
-			projectile.tileCollide = false;
+			projectile.tileCollide = true;
         }
 		
 		public override void SetStaticDefaults()
@@ -46,13 +46,6 @@ namespace ForgottenMemories.Projectiles
 			dust2.position += projectile.velocity.RotatedBy(-1.57079637050629, new Vector2()) * 0.33f;
 			dust2.fadeIn = 0.5f;
 			dust2.noGravity = true;
-			
-			timer++;
-			if (timer >= 15)
-			{
-				projectile.tileCollide = true;
-			}
-			
 		}
 		
 		public override void Kill(int timeLeft)

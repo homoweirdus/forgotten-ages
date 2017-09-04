@@ -38,20 +38,20 @@ namespace ForgottenMemories.Items.Throwing
 			projectile.position.Y -= (float) (projectile.height / 4);
 			for (int index1 = 0; index1 < 16; ++index1)
 			{
-			  int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 127, 0.0f, 0.0f, 100, new Color(), 2.5f);
-			  Main.dust[index2].noGravity = true;
-			  Main.dust[index2].velocity *= 3f;
+				int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 127, 0.0f, 0.0f, 100, new Color(), 2.5f);
+				Main.dust[index2].noGravity = true;
+				Main.dust[index2].velocity *= 3f;
 			}
-			  int index3 = Gore.NewGore(projectile.position + new Vector2((float) (projectile.width * Main.rand.Next(100)) / 100f, (float) (projectile.height * Main.rand.Next(100)) / 100f) - Vector2.One * 10f, new Vector2(), Main.rand.Next(61, 64), 1f);
-			  Main.gore[index3].velocity *= 0.3f;
-			  Main.gore[index3].velocity.X += (float) Main.rand.Next(-10, 11) * 0.05f;
-			  Main.gore[index3].velocity.Y += (float) Main.rand.Next(-10, 11) * 0.05f;
-			  
+			int index3 = Gore.NewGore(projectile.position + new Vector2((float) (projectile.width * Main.rand.Next(100)) / 100f, (float) (projectile.height * Main.rand.Next(100)) / 100f) - Vector2.One * 10f, new Vector2(), Main.rand.Next(61, 64), 1f);
+			Main.gore[index3].velocity *= 0.3f;
+			Main.gore[index3].velocity.X += (float) Main.rand.Next(-10, 11) * 0.05f;
+			Main.gore[index3].velocity.Y += (float) Main.rand.Next(-10, 11) * 0.05f;
+			
 			if (projectile.owner == Main.myPlayer)
 			{
-			  projectile.localAI[1] = -1f;
-			  projectile.maxPenetrate = 0;
-			  projectile.Damage();
+				projectile.localAI[1] = -1f;
+				projectile.maxPenetrate = 0;
+				projectile.Damage();
 			}
 		}
 
@@ -77,16 +77,17 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Shuriken);
-			 item.shoot = mod.ProjectileType("HellstoneGlaiveP");
-		item.damage = 37;
-		item.rare = 5;
-		item.autoReuse = true;
+			item.shoot = mod.ProjectileType("HellstoneGlaiveP");
+			item.damage = 28;
+			item.rare = 2;
+			item.autoReuse = true;
 		}
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Hellstone Glaive");
-      Tooltip.SetDefault("");
-    }
+		
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Hellstone Glaive");
+			Tooltip.SetDefault("");
+		}
 
 
 		public override void AddRecipes()

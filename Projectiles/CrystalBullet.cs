@@ -12,8 +12,8 @@ namespace ForgottenMemories.Projectiles
 		int bounce = 0;
         public override void SetDefaults()
         {
-            projectile.width = 1;
-            projectile.height = 20;
+            projectile.width = 2;
+            projectile.height = 2;
             projectile.aiStyle = -1;
             projectile.friendly = true;
             projectile.ranged = true;
