@@ -12,16 +12,16 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 
-			item.damage = 30;
+			item.damage = 35;
 			item.thrown = true;
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.width = 22;
 			item.height = 22;
-			item.useTime = 44;
+			item.useTime = 40;
 			item.useAnimation = 44;
 			item.useStyle = 1;
-			item.shootSpeed = 5.5f;
+			item.shootSpeed = 5f;
 			item.shoot = mod.ProjectileType("FireGrenadeProj");
 			item.knockBack = 1;
 			item.scale = 1f;
