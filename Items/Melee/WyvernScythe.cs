@@ -10,21 +10,21 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 65;
+			item.damage = 74;
 			item.melee = true;
 			item.width = 58;
 			item.height = 52;
 
-			item.useTime = 10;
+			item.useTime = 9;
 			item.useAnimation = 20;
 			item.useStyle = 1;
 			item.knockBack = 6.5f;
 			item.value = 138000;
-			item.rare = 5;
+			item.rare = 6;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = 85;
-			item.shootSpeed = 10f;
+			item.shootSpeed = 9f;
 		}
 
     public override void SetStaticDefaults()
@@ -56,8 +56,8 @@ namespace ForgottenMemories.Items.Melee
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SoulofFlight, 15);
-			recipe.AddIngredient(ItemID.SoulofMight, 15);
-			recipe.AddIngredient(ItemID.HallowedBar, 10);
+			recipe.AddIngredient(ItemID.Ectoplasm, 10);
+			recipe.AddIngredient(ItemID.SpectreBar, 12);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
