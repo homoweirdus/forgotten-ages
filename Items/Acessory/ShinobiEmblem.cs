@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.Acessory
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Shinobi Emblem");
-      Tooltip.SetDefault("Increases Thrown Damage by 15%.");
+      Tooltip.SetDefault("Increases Thrown Damage by 15%");
     }
 
 
