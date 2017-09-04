@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Magic
 			item.useTime = 38;
 			item.UseSound = SoundID.Item45;
 
-			item.useAnimation = 28;
+			item.useAnimation = 38;
 			item.useStyle = 5;
 			Item.staff[item.type] = true;
 			item.noMelee = true;
