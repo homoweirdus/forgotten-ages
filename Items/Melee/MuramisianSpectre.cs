@@ -54,7 +54,7 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Muramasa, 1);
 			recipe.AddIngredient(ItemID.Ectoplasm, 12);
-			recipe.AddIngredient(ItemID.SoulOfMight, 15);
+			recipe.AddIngredient(ItemID.SoulofMight, 15);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

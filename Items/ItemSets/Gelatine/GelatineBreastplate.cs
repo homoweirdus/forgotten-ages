@@ -21,11 +21,16 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 			item.defense = 3;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Gelatine Breastplate");
-      Tooltip.SetDefault("Increases your maxiumum minions by 1");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Gelatine Breastplate");
+			Tooltip.SetDefault("Increases your maxiumum minions by 1");
+		}
+		
+		public override bool DrawBody ()
+		{
+			return false;
+		}
 
 
 		public override void UpdateEquip(Player player)
@@ -37,7 +42,7 @@ namespace ForgottenMemories.Items.ItemSets.Gelatine
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "GelatineBar", 10);
-            recipe.AddTile(TileID.Anvils);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
