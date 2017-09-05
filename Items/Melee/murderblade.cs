@@ -28,7 +28,7 @@ namespace ForgottenMemories.Items.Melee
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Murder blade");
+      DisplayName.SetDefault("Murder Blade");
       Tooltip.SetDefault("How are your hands still on?");
     }
 
