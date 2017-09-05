@@ -27,6 +27,11 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 		  DisplayName.SetDefault("Cryotine Helmet");
 		  Tooltip.SetDefault("Increases minion damage by 10%");
 		}
+		
+		public override bool DrawHead()	
+		{
+			return false;
+		}
 
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
