@@ -49,7 +49,7 @@ namespace ForgottenMemories.Projectiles
 			}
 			else
 			{
-				projectile.ai[0] += 0.95f;
+				projectile.ai[0] += 0.90f;
 			}
 
 			if (Main.player[projectile.owner].itemAnimation == 0)
