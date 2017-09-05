@@ -30,7 +30,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Serial Inferost");
-      Tooltip.SetDefault("You should be frozen just by touching this thing!");
+      Tooltip.SetDefault("Fires a wave of extreme cold that freezes your foes");
     }
 
 
