@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 2;
-			item.value = 50000;
+			item.value = 10000;
 			item.rare = 1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("SoaringStar");
