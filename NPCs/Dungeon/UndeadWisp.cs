@@ -54,7 +54,7 @@ namespace ForgottenMemories.NPCs.Dungeon
 		public override void AI()
 		{
 			npc.ai[0]++;
-			if (Main.rand.Next(400) == 0)
+			if (Main.rand.Next(700) == 0)
 				Main.PlaySound(29, (int) npc.position.X, (int) npc.position.Y, Main.rand.Next(53, 55), 1f, 0.0f);
 			if (npc.ai[0] < 180)
 			{
@@ -116,7 +116,7 @@ namespace ForgottenMemories.NPCs.Dungeon
 				Main.npc[n2].width -= (int)(npc.width/4);
 				Main.npc[n2].height -= (int)(npc.height/4);
 				
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"), Main.rand.Next(5, 7));
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"), Main.rand.Next(2, 4));
 			}
 		}
 	}

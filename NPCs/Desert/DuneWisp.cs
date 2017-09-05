@@ -47,7 +47,7 @@ namespace ForgottenMemories.NPCs.Desert
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
 			int tile = (int)Main.tile[x, y].type;
-			return spawnInfo.desertCave && NPC.downedBoss1 ? 0.075f : 0f;
+			return spawnInfo.desertCave && NPC.downedBoss1 ? 0.05f : 0f;
 		}
 		
 		public override void AI()
@@ -100,7 +100,7 @@ namespace ForgottenMemories.NPCs.Desert
 		public override void NPCLoot()
 		{
 			Projectile.NewProjectile(npc.Center.X, npc.Center.Y, 0f, 0f, 658, (int)(npc.damage/6), 1f, npc.target, 0f, 0f);
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BossEnergy"), Main.rand.Next(5, 7));
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BossEnergy"), Main.rand.Next(2, 4));
 		}
 	}
 }
