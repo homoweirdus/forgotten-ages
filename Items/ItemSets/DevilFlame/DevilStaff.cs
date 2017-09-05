@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.ItemSets.DevilFlame
 			item.mana = 15;   
 			item.width = 40;
 			item.height = 40;
-			item.value = 16800;
+			item.value = 100000;
 			ProjectileID.Sets.TurretFeature[item.shoot] = true;
             item.rare = 1;
             item.knockBack = 2f;
