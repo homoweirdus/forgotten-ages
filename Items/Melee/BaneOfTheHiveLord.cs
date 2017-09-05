@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.Melee
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 270000;
-			item.rare = 8;
+			item.rare = 7;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shootSpeed = 5f;
@@ -39,7 +39,6 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 16);
 			recipe.AddIngredient(ItemID.BeeKeeper, 1);
-			recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
