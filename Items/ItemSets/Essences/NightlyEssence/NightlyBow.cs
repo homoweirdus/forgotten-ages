@@ -20,7 +20,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.useStyle = 5;
 			item.knockBack = 2;
 			item.value = 30000;
-            item.rare = 3;
+            item.rare = 1;
 			item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
 			item.shoot = mod.ProjectileType("LeechingArrow");
