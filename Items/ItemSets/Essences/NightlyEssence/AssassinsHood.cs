@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 
         public override void UpdateEquip(Player player)
         {
-            player.rangedCrit += 3;
+            player.rangedCrit += 5;
         }
 
 		public override void UpdateArmorSet(Player player)
