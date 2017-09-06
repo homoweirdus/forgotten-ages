@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
     public override void SetStaticDefaults()
     {
 		DisplayName.SetDefault("Assassin's Trousers");
-		Tooltip.SetDefault("3% increased ranged critical strike chance");
+		Tooltip.SetDefault("5% increased ranged critical strike chance");
     }
 
 
