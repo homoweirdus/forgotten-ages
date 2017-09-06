@@ -22,6 +22,7 @@ public class GelatinePick : ModItem
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
 		item.pick = 59;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()

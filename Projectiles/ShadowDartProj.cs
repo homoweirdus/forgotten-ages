@@ -6,19 +6,19 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-    public class ShadowDartProj : ModProjectile
-    {
+	public class ShadowDartProj : ModProjectile
+	{
 		int timer = 0;
-        public override void SetDefaults()
-        {
-            projectile.width = 14;
-            projectile.height = 28;
-            projectile.aiStyle = 1;
-            projectile.friendly = true;
-            projectile.ranged = true;
-            projectile.penetrate = -1;
-            projectile.timeLeft = 600;
-        }
+		public override void SetDefaults()
+		{
+			projectile.width = 14;
+			projectile.height = 14;
+			projectile.aiStyle = 1;
+			projectile.friendly = true;
+			projectile.ranged = true;
+			projectile.penetrate = -1;
+			projectile.timeLeft = 600;
+		}
 		
 		public override void SetStaticDefaults()
 		{
@@ -28,13 +28,16 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			for (int i = 0; i < 5; i++)
+			if(projectile.alpha != 200)
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 14);
-				Main.dust[dust].scale = 1.5f;
-				Main.dust[dust].noGravity = true;
+				for (int i = 0; i < 5; i++)
+				{
+					int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 14);
+					Main.dust[dust].scale = 1.5f;
+					Main.dust[dust].noGravity = true;
+				}
+				Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 		}
 
 
@@ -55,5 +58,5 @@ namespace ForgottenMemories.Projectiles
 				timer = 0;
 			}
 		}
-    }
+	}
 }

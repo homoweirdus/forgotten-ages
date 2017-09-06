@@ -26,11 +26,6 @@ namespace ForgottenMemories.Projectiles
 			DisplayName.SetDefault("Laser");
 		}
 		
-		public override void Kill(int timeLeft)
-        {
-            Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 43);
-        }
-		
 		public override void AI()
 		{
 			int num;

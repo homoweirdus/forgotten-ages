@@ -12,18 +12,18 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 12;
+			item.damage = 17;
 			item.magic = true;
-			item.mana = 5;
+			item.mana = 6;
 			item.width = 25;
 			item.height = 26;
-			item.useTime = 36;
+			item.useTime = 34;
 			item.UseSound = SoundID.Item43;
-			item.useAnimation = 36;
+			item.useAnimation = 34;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 2;
-			item.value = 50000;
+			item.value = 10000;
 			item.rare = 1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("SoaringStar");

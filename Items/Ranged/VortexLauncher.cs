@@ -16,8 +16,8 @@ namespace ForgottenMemories.Items.Ranged
 			item.ranged = true;
 			item.width = 29;
 			item.height = 24;
-			item.useTime = 50;
-			item.useAnimation = 50;
+			item.useTime = 45;
+			item.useAnimation = 45;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 4f;
@@ -33,7 +33,7 @@ namespace ForgottenMemories.Items.Ranged
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Vortex Launcher");
-      Tooltip.SetDefault("Causes normal rockets to split into 5 weaker rockets midair \nHas a chance to instead fire 2 homing vortex rockets\n66% chance not to consume ammo");
+      Tooltip.SetDefault("'Fires a rocket that tears the fabric of space'");
     }
 
 		

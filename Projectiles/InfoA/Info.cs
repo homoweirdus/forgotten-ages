@@ -11,11 +11,9 @@ namespace ForgottenMemories.Projectiles.InfoA
 	public class Info : GlobalProjectile
 	{
 		public bool Paradox = false;
-		public bool TrueHR = false;
 		public bool Cosmodium = false;
 		public bool Shroom = false;
 		public bool Flamethrower = false;
-		public bool Terra = false;
 		public bool Titanium = false;
 		public bool Planetary = false;
 		public bool Split = false;
@@ -41,7 +39,7 @@ namespace ForgottenMemories.Projectiles.InfoA
 			{
 				Vector2 Source = (Main.player[projectile.owner].Center);
 				Vector2 vector2 = (projectile.DirectionFrom(Source) * 6f);
-				int Damage2 = (int) ((double) projectile.damage * 0.300000011920929);
+				int Damage2 = (int) ((double) projectile.damage * 1.5);
 				Projectile.NewProjectile((float) Source.X, (float) Source.Y, (float) vector2.X, (float) vector2.Y, mod.ProjectileType("WaterBeam"), Damage2, 0.0f, projectile.owner, 0.0f, 0.0f);
 			}
 			
@@ -70,11 +68,6 @@ namespace ForgottenMemories.Projectiles.InfoA
 			if (SnowSplit == true || FrostCrystal == true)
 			{
 				target.AddBuff(BuffID.Frostburn, 180);
-			}
-			
-			if (NotSummon == true)
-			{
-				target.AddBuff(mod.BuffType("SpiderSlow"), 180);
 			}
 			
 			if (Main.rand.Next(2) == 0 && Paradox == true)
@@ -107,18 +100,6 @@ namespace ForgottenMemories.Projectiles.InfoA
 		
 		public override void Kill(Projectile projectile, int timeLeft)
 		{
-			if (TrueHR == true)
-			{
-				int amountOfProjectiles = Main.rand.Next(1, 3);
-				
-				for (int i = 0; i < amountOfProjectiles; ++i)
-				{
-					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("HallowEnergy"), 12, 5f, projectile.owner);
-					
-				}
-			}
 			
 			if (Split == true && projectile.timeLeft == 0)
 			{
@@ -177,38 +158,26 @@ namespace ForgottenMemories.Projectiles.InfoA
 					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 126, 15, 5f, projectile.owner);
 				}
 			}
-			
-			if (Terra == true)
+
+			if (Shroom == true)
 			{
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("TerraBoom"), 30, 5f, projectile.owner);
+				for (int i = 0; i < 3; ++i)
+				{
+					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
+					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
+					int B = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("ShroomCloud"), projectile.damage, 5f, projectile.owner);
+					Main.projectile[B].magic = false;
+					Main.projectile[B].ranged = true;
+				}
 			}
 		}
+		
 		public override void AI(Projectile projectile)
 		{
 			if (NotSummon == true)
 			{
 				ProjectileID.Sets.MinionShot[projectile.type] = false;
 				ProjectileID.Sets.SentryShot[projectile.type] = false;
-			}
-			
-			if (TrueHR == true)
-			{
-				int dust;
-				dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, mod.DustType("bluedust"), 0f, 0f);
-				Main.dust[dust].scale = 0.9f;
-				Main.dust[dust].noGravity = true;
-				int hitler;
-				hitler = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, mod.DustType("pinkdust"), 0f, 0f);
-				Main.dust[hitler].scale = 0.9f;
-				Main.dust[hitler].noGravity = true;
-			}
-			
-			if (Terra == true)
-			{
-				int dust;
-				dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 74, 0f, 0f);
-				Main.dust[dust].scale = 0.9f;
-				Main.dust[dust].noGravity = true;
 			}
 			
 			if (BlightedBow == true)
@@ -222,38 +191,6 @@ namespace ForgottenMemories.Projectiles.InfoA
 			if (wtf == true && projectile.velocity.X == 0 && projectile.velocity.Y == 0)
 			{
 				projectile.Kill();
-			}
-			
-			if (Shroom == true)
-			{
-				Vector2 targetPos = projectile.Center;
-				float targetDist = 350f;
-				bool targetAcquired = false;
-				
-				for (int i = 0; i < 200; i++)
-				{
-					if (Main.npc[i].CanBeChasedBy(projectile) && Collision.CanHit(projectile.Center, 1, 1, Main.npc[i].Center, 1, 1) && Main.npc[i].immune[projectile.owner] == 0)
-					{
-						float dist = projectile.Distance(Main.npc[i].Center);
-						if (dist < targetDist)
-						{
-							targetDist = dist;
-							targetPos = Main.npc[i].Center;
-							targetAcquired = true;
-						}
-					}
-				}
-				
-				if (targetAcquired)
-				{
-					float homingSpeedFactor = 4f;
-					Vector2 homingVect = targetPos - projectile.Center;
-					float dist = projectile.Distance(targetPos);
-					dist = homingSpeedFactor / dist;
-					homingVect *= dist;
-
-					projectile.velocity = (projectile.velocity * 20 + homingVect) / 21f;
-				}
 			}
 		}
 	}

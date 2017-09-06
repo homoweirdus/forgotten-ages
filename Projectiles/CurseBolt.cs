@@ -44,7 +44,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(SoundID.Item89, projectile.position);
+			Main.PlaySound(SoundID.Item14, projectile.position);
 			projectile.position.X += (float) (projectile.width / 2);
 			projectile.position.Y += (float) (projectile.height / 2);
 			projectile.width = (int) (100.0 * (double) projectile.scale);

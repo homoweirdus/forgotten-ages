@@ -24,6 +24,7 @@ public class NightlyAxe : ModItem
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
 		item.axe = 10;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()
@@ -39,7 +40,7 @@ public class NightlyAxe : ModItem
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null,"DarkEnergy", 8);
 			recipe.AddIngredient(ItemID.Silk, 8);
-			recipe.AddIngredient(ItemID.IronBar, 3);
+			recipe.AddRecipeGroup("AnyIron", 3);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -19,7 +19,11 @@ namespace ForgottenMemories
 		public bool isGlitch;
 		public bool breakShop;
 		public bool CosmicPowers;
+<<<<<<< HEAD
 		public bool hauntedCandle;
+=======
+		public float rangedVelocity;
+>>>>>>> 75d0bc04d7c02fdfd07b8f7f8f9bffcdc985d496
 		
 		public override void ResetEffects()
 		{
@@ -27,47 +31,41 @@ namespace ForgottenMemories
 			AquaPowers = false;
 			isGlitch = false;
 			CosmicPowers = false;
+<<<<<<< HEAD
 			hauntedCandle = false;
+=======
+			rangedVelocity = 1f;
+>>>>>>> 75d0bc04d7c02fdfd07b8f7f8f9bffcdc985d496
 		}
 		
 		
 		public override void SetupStartInventory(IList<Item> items)
 		{
-			items.Clear();
 			Item item = new Item();
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(5) == 0)
 			{
 				item.SetDefaults(mod.ItemType("OldBlade"));
+				items.RemoveAt(0);
+				items.Insert(0, item);
 			}
-			else
-			{
-				item.SetDefaults(3507);
-			}
-			items.Add(item);
 			
 			
 			Item item2 = new Item();
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(5) == 0)
 			{
 				item2.SetDefaults(mod.ItemType("OldPick"));
+				items.RemoveAt(1);
+				items.Insert(1, item2);
 			}
-			else
-			{
-				item2.SetDefaults(3509);
-			}
-			items.Add(item2);
 			
 			
 			Item item3 = new Item();
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(5) == 0)
 			{
 				item3.SetDefaults(mod.ItemType("OldAxe"));
+				items.RemoveAt(2);
+				items.Insert(2, item3);
 			}
-			else
-			{
-				item3.SetDefaults(3506);
-			}
-			items.Add(item3);
 		}
 		
 		public override void PreUpdate() 
@@ -109,6 +107,16 @@ namespace ForgottenMemories
 			{
 				player.AddBuff(mod.BuffType("CosmicBoon"), 2, false);
 			}
+		}
+		
+		public override bool Shoot (Item item, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			if (item.ranged == true)
+			{
+				speedX *= rangedVelocity;
+				speedY *= rangedVelocity;
+			}
+			return true;
 		}
 		
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)

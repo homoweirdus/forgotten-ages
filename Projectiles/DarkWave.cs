@@ -10,7 +10,7 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 52;
+			projectile.width = 40;
 			projectile.height = 40;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;

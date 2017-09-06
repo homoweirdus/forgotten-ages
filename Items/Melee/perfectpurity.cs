@@ -11,13 +11,13 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 120;
+			item.damage = 115;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
 
 			item.useTime = 15;
-			item.useAnimation = 10;
+			item.useAnimation = 15;
 			item.useStyle = 1;
 			item.knockBack = 6;
 			item.value = 1000000;
@@ -31,7 +31,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Perfect Purity");
-      Tooltip.SetDefault("Fires a bouncing ball of light that creates a pillar of light on hit");
+      Tooltip.SetDefault("Fires bouncing bolts of light that create pillars of light on hit");
     }
 
 

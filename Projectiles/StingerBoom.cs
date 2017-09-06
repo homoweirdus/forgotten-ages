@@ -14,7 +14,7 @@ public class StingerBoom : ModProjectile
 		projectile.aiStyle = 2;
 		projectile.penetrate = -1;
 		projectile.ranged = true;
-        projectile.timeLeft = 10;
+        projectile.timeLeft = 3;
 		projectile.friendly = true;
         projectile.alpha = 255;
         projectile.tileCollide = false;

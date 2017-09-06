@@ -30,6 +30,13 @@ namespace ForgottenMemories.Projectiles
 		{
 			target.immune[projectile.owner] = 8;
 			target.AddBuff(mod.BuffType("TitanCrush"), 420, false);
+			for (int i = 0; i < 3; ++i)
+			{
+				Vector2 newVect1 = new Vector2 (6, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360)));
+				int stalin = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect1.X, newVect1.Y, mod.ProjectileType("BallFriendly"), projectile.damage, 5f, projectile.owner);
+				Main.projectile[stalin].timeLeft = 200;
+				Main.projectile[stalin].tileCollide = true;
+			}
 		}
 		
 		public override void AI()
@@ -77,7 +84,7 @@ namespace ForgottenMemories.Projectiles
 					else if (!Main.player[projectile.owner].channel)
 					{
 						if ((double) projectile.velocity.Y < 0.0)
-							projectile.velocity.Y *= 0.9f;
+						projectile.velocity.Y *= 0.9f;
 						++projectile.velocity.Y;
 						projectile.velocity.X *= 0.9f;
 					}
@@ -90,18 +97,18 @@ namespace ForgottenMemories.Projectiles
 					double num7 = (double) Math.Abs(num1);
 					double num8 = (double) Math.Abs(num2);
 					if ((double) projectile.ai[1] == 1.0)
-						projectile.tileCollide = false;
+					projectile.tileCollide = false;
 					if (!Main.player[projectile.owner].channel || (double) num3 > (double) num6 || !projectile.tileCollide)
 					{
 						projectile.ai[1] = 1f;
 						if (projectile.tileCollide)
-							projectile.netUpdate = true;
+						projectile.netUpdate = true;
 						projectile.tileCollide = false;
 						if ((double) num3 < 20.0)
-							projectile.Kill();
+						projectile.Kill();
 					}
 					if (!projectile.tileCollide)
-						num5 *= 2f;
+					num5 *= 2f;
 					
 					int num9 = 80;
 					if ((double) num3 > (double) num9 || !projectile.tileCollide)
@@ -128,29 +135,29 @@ namespace ForgottenMemories.Projectiles
 							projectile.velocity.X *= 0.96f;
 							projectile.velocity.Y += 0.2f;
 						}
-					  if ((double) Main.player[projectile.owner].velocity.X == 0.0)
-							projectile.velocity.X *= 0.96f;
+						if ((double) Main.player[projectile.owner].velocity.X == 0.0)
+						projectile.velocity.X *= 0.96f;
 					}
 				}
 			}
 		}
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)
-        {
+		{
 			if (oldVelocity != projectile.velocity)
 			{
 				bool flag6 = false;
 				if ((double) oldVelocity.X != (double) projectile.velocity.X)
 				{
 					if ((double) Math.Abs(oldVelocity.X) > 4.0)
-						flag6 = true;
+					flag6 = true;
 					projectile.position.X += projectile.velocity.X;
 					projectile.velocity.X = (float) (-(double) oldVelocity.X * 0.200000002980232);
 				}
 				if ((double) oldVelocity.Y != (double) projectile.velocity.Y)
 				{
 					if ((double) Math.Abs(oldVelocity.Y) > 4.0)
-						flag6 = true;
+					flag6 = true;
 					projectile.position.Y += projectile.velocity.Y;
 					projectile.velocity.Y = (float) (-(double) oldVelocity.Y * 0.200000002980232);
 				}
@@ -165,6 +172,7 @@ namespace ForgottenMemories.Projectiles
 			return false;
 		}
 		
+		
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
 			Vector2 vector2 = new Vector2(projectile.position.X + (float) projectile.width * 0.5f, projectile.position.Y + (float) projectile.height * 0.5f);
@@ -175,7 +183,7 @@ namespace ForgottenMemories.Projectiles
 			{
 				int num3 = -1;
 				if ((double) projectile.position.X + (double) (projectile.width / 2) < (double) Main.player[projectile.owner].MountedCenter.X)
-					num3 = 1;
+				num3 = 1;
 				Main.player[projectile.owner].itemRotation = Main.player[projectile.owner].direction != 1 ? (float) Math.Atan2((double) num2 * (double) num3, (double) num1 * (double) num3) : (float) Math.Atan2((double) num2 * (double) num3, (double) num1 * (double) num3);
 			}
 			bool flag = true;
@@ -183,7 +191,7 @@ namespace ForgottenMemories.Projectiles
 			{
 				float f = (float) Math.Sqrt((double) num1 * (double) num1 + (double) num2 * (double) num2);
 				if ((double) f < 25.0)
-					flag = false;
+				flag = false;
 				else if (float.IsNaN(f))
 				{
 					flag = false;

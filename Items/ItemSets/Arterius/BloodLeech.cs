@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
 			item.knockBack = 2;
 			item.useTime = 18;
 			item.useAnimation = 18;
-			item.value = 140000;
+			item.value = 7500;
 			item.rare = 4;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.ItemSets.Arterius
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Blood Leech");
-      Tooltip.SetDefault("Sticks to enemies, dealing damage over time \n Creates an explosion of blood when killing an enemy");
+      Tooltip.SetDefault("Sticks to enemies, dealing damage over time \nCreates an explosion of blood when killing an enemy");
     }
 
 	}

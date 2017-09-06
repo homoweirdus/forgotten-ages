@@ -22,7 +22,7 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 			item.useAnimation = 10;
 
 			item.useStyle = 1;
-			item.knockBack = 6;
+			item.knockBack = 9;
 			item.value = 50000;
 			item.rare = 5;
 			item.UseSound = SoundID.Item1;

@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -21,6 +24,7 @@ public class CosmicTwig : ModItem
     {
       DisplayName.SetDefault("Cosmic Twig");
       Tooltip.SetDefault("Increases health and mana by 40");
+	  Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 6));
     }
 
 
@@ -29,6 +33,7 @@ public class CosmicTwig : ModItem
 		player.statLifeMax2 += 40;
         player.statManaMax2 += 40;
 	}
+	
 
     public override void AddRecipes()
     {

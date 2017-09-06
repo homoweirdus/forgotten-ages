@@ -14,11 +14,11 @@ namespace ForgottenMemories.Projectiles
 		{
 			projectile.width = 20;
 			projectile.height = 20;
-			projectile.aiStyle = -1;
+			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.magic = true;
-			projectile.penetrate = 1;
-			projectile.timeLeft = 60;
+			projectile.penetrate = 3;
+			projectile.timeLeft = 300;
 			projectile.alpha = 255;
 		}
 		
@@ -31,21 +31,26 @@ namespace ForgottenMemories.Projectiles
 		{
 			int dust;
 			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 33, 0f, 0f);
-			Main.dust[dust].scale = 2.2f;
+			Main.dust[dust].scale = 1.5f;
 			Main.dust[dust].noGravity = true;
+			Main.dust[dust].alpha = 80;
 		}
 		
-		public override void Kill(int timeLeft)
+		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
-			int amountOfProjectiles = Main.rand.Next(6, 10);
+			int amountOfProjectiles = Main.rand.Next(4, 6);
 			
 			for (int i = 0; i < amountOfProjectiles; ++i)
 				{
 					float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
 					float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
-					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 22, projectile.damage, 5f, projectile.owner);
-					Main.projectile[z].timeLeft = 100;
+					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("AquaBolt"), projectile.damage, 5f, projectile.owner);
+					Main.projectile[z].magic = true;
+					Main.projectile[z].melee = false;
+					Main.projectile[z].tileCollide = false;
+					Main.projectile[z].timeLeft = 30;
 				}
+			return true;
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 
-			item.damage = 45;
+			item.damage = 42;
 			item.ranged = true;
 			item.width = 27;
 			item.height = 54;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.useStyle = 5;
 			item.knockBack = 5;
 			item.value = 500000;
-			item.rare = 4;
+			item.rare = 6;
 			item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
 
@@ -78,7 +78,7 @@ namespace ForgottenMemories.Items.Ranged
 			recipe.AddIngredient(null, "Galactica", 1);
 			recipe.AddIngredient(null, "BlightedBow", 1);
 			recipe.AddIngredient(3052, 1);
-			recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
+			recipe.AddIngredient(547, 10);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

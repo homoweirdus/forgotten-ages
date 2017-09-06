@@ -13,7 +13,7 @@ namespace ForgottenMemories.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.width = 10;
-			projectile.height = 30;
+			projectile.height = 10;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.ranged = true;
@@ -21,7 +21,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 1000;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
-			projectile.light = 0.2f;
 		}
 		
 		public override void SetStaticDefaults()

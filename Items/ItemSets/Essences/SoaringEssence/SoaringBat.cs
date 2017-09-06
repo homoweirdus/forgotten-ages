@@ -1,8 +1,8 @@
-using System;
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria;
+using Microsoft.Xna.Framework;
+
 
 namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence 
 {
@@ -11,12 +11,12 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 21;
+			item.damage = 22;
 			item.melee = true;
 			item.width = 22;
 			item.height = 24;
-			item.useTime = 9;
-			item.useAnimation = 9;
+			item.useTime = 13;
+			item.useAnimation = 13;
 			item.useStyle = 1;
 			item.knockBack = 4;
 			item.value = 10000;
@@ -27,20 +27,22 @@ namespace ForgottenMemories.Items.ItemSets.Essences.SoaringEssence
 			item.useTurn = true;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Soaring Broadsword");
-      Tooltip.SetDefault("Swings fast, and knocks enemies upward");
-    }
-
-		
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+		public override void SetStaticDefaults()
 		{
-			if(!target.boss) 
+			DisplayName.SetDefault("Soaring Broadsword");
+			Tooltip.SetDefault("");
+		}
+		
+		public override void MeleeEffects(Player player, Rectangle hitbox)
+		{
+			if (Main.rand.Next(6) == 0)
 			{
-				target.velocity.Y -= 2; 
+				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, mod.DustType("SoaringDust"));
+				Main.dust[dust].noGravity = true;
+				Main.dust[dust].scale = 1.2f;
 			}
 		}
+
 		
 		public override void AddRecipes()
 		{

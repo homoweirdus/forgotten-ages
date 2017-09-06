@@ -23,6 +23,7 @@ public class CryotinePickaxe : ModItem
         item.UseSound = SoundID.Item1;
         item.autoReuse = true;
 		item.pick = 90;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()

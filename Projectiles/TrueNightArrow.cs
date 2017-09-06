@@ -13,7 +13,7 @@ namespace ForgottenMemories.Projectiles
         public override void SetDefaults()
         {
             projectile.width = 14; //Projectile's width in pixels
-            projectile.height = 36; //Projectile's height in pixels
+            projectile.height = 14; //Projectile's height in pixels
             projectile.aiStyle = -1; //The ai style. Info on AI styles is in the tmodloader documentation
             projectile.friendly = true; //Determines if it can damage you
             projectile.ranged = true; //Damage type of the projectile.
@@ -25,7 +25,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Night Arrow");
+			DisplayName.SetDefault("Cursed Arrow");
 		}
 		
 		public override void Kill(int timeLeft)
@@ -35,8 +35,6 @@ namespace ForgottenMemories.Projectiles
 			for (int i = 0; i < amountOfProjectiles; ++i)
 				{
 					Vector2 newVect1 = new Vector2 (8, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360)));
-					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
 					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect1.X, newVect1.Y, mod.ProjectileType("CursedLightning"), 15, 5f, projectile.owner);
 				}
 		}

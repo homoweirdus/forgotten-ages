@@ -21,11 +21,17 @@ namespace ForgottenMemories.Items.ItemSets.Cosmorock
 			item.defense = 14;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Cosmic Helmet");
-      Tooltip.SetDefault("10% reduced damage taken");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Cosmic Helmet");
+			Tooltip.SetDefault("10% reduced damage taken");
+		}
+		
+		
+		public override bool DrawHead()	
+		{
+			return false;
+		}
 
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

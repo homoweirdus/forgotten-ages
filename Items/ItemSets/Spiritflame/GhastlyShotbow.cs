@@ -20,8 +20,8 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 			item.noUseGraphic = false;
 			item.width = 22;
 			item.height = 22;
-			item.useTime = 30;
-			item.useAnimation = 30;
+			item.useTime = 23;
+			item.useAnimation = 23;
 			item.useStyle = 5;
 			item.shootSpeed = 13f;
 			item.shoot = mod.ProjectileType("SpiritfireArrow");
@@ -35,8 +35,8 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 
 		public override void SetStaticDefaults()
 		{
-		  DisplayName.SetDefault("Ghastly Shotbow");
-		  Tooltip.SetDefault("Fires a spread of 2-4 arrows that erupt into embers of ghastly fire");
+		  DisplayName.SetDefault("Ghastly Longbow");
+		  Tooltip.SetDefault("Fires an arrow that erupts into spirit fire");
 		}
 		
 		
@@ -56,15 +56,8 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-			int amount = Main.rand.Next(3) + 2;
-			for (int k = 0; k < amount; k++)
-			{
-				int spread = Main.rand.Next(-20, 21);
-				Vector2 velVect = new Vector2(speedX, speedY);
-				Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(spread));
+			Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, mod.ProjectileType("SpiritfireArrow"), damage, knockBack, Main.myPlayer, 0, 0);
 				
-				Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, mod.ProjectileType("SpiritfireArrow"), damage, knockBack, Main.myPlayer, 0, 0);
-			}
             return false;
         }
 	}

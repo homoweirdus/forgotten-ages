@@ -20,17 +20,13 @@ namespace ForgottenMemories.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.extraUpdates = 0;
-			projectile.width = 16;
-			projectile.height = 16;
+			projectile.width = 12;
+			projectile.height = 12;
 			projectile.aiStyle = 99;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
 			projectile.melee = true;
 			projectile.scale = 1f;
-		}
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-			target.AddBuff(BuffID.Slow,	120);
 		}
 		
 		public override void AI()

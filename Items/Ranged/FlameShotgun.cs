@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.Ranged
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Flame Shotgun");
-      Tooltip.SetDefault("Creates short-ranged flames");
+      Tooltip.SetDefault("Fires flaming bullets");
     }
 
 		
@@ -64,21 +64,8 @@ namespace ForgottenMemories.Items.Ranged
 				float sY = speedY;
 				sX += (float)Main.rand.Next(-60, 61) * 0.03f;
 				sY += (float)Main.rand.Next(-60, 61) * 0.03f;
-				int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, 15, damage, knockBack, player.whoAmI); //flower of fire projectile
-				Main.projectile[p].magic = false;
-				Main.projectile[p].ranged = true;
-				Main.projectile[p].timeLeft = 25;
+				int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("Flambullet"), damage, knockBack, player.whoAmI); 
 			}
-			int amountOfProjectiles = Main.rand.Next(3, 6);
-			for (int i = 0; i < amountOfProjectiles; i++)
-			{
-				float spX = speedX;
-				float spY = speedY;
-				spX += (float)Main.rand.Next(-40, 41) * 0.05f;
-				spY += (float)Main.rand.Next(-40, 41) * 0.05f;
-				Projectile.NewProjectile(position.X, position.Y, spX, spY, type, damage, knockBack, player.whoAmI);
-			}
-			
 			return false;
 		}
 	}

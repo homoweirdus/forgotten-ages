@@ -21,20 +21,19 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 			item.noMelee = true;
 			item.useAnimation = 44;
 			item.useTime = 44;
-
 			item.shootSpeed = 16f;
 			item.knockBack = 3.75f;
-			item.damage = 52;
+			item.damage = 58;
 			item.value = 140000;
 			item.rare = 5;
 			item.shoot = mod.ProjectileType("TitanicCrusher");
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Titanic Crusher");
-      Tooltip.SetDefault("Rends enemy defense and deals some damage over time on hit");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Titanic Crusher");
+			Tooltip.SetDefault("Rends enemy defense and deals some damage over time on hit \nHitting an enemy releases damaging spheres");
+		}
 
 	}
 }

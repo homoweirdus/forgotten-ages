@@ -29,7 +29,7 @@ namespace ForgottenMemories.Dusts
 			else
 			{
 				float strength = dust.scale / 2f;
-				Lighting.AddLight((int)(dust.position.X / 16f), (int)(dust.position.Y / 16f), dust.color.R / 255f * 0.2f * strength, dust.color.G / 255f * 0.2f * strength, dust.color.B / 255f * 0.2f * strength);
+				Lighting.AddLight((int)(dust.position.X / 16f), (int)(dust.position.Y / 16f), 0f, 0.1f, 0.2f);
 			}
 			return false;
 		}

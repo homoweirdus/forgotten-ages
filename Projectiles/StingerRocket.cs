@@ -10,8 +10,8 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 6;
-			projectile.height = 10;
+			projectile.width = 18;
+			projectile.height = 18;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.penetrate = 1;
@@ -43,7 +43,7 @@ namespace ForgottenMemories.Projectiles
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(20, 360, false);
-		}
-		
+			target.immune[projectile.owner] = 5;
+		}	
 	}
 }

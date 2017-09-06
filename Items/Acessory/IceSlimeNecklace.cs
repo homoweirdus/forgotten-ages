@@ -21,7 +21,7 @@ public class IceSlimeNecklace : ModItem
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Frost Necklace");
-      Tooltip.SetDefault("Getting hit releases a slime guard to protect you");
+      Tooltip.SetDefault("Has a chance to summon a frost slime when you get hit");
     }
 
 

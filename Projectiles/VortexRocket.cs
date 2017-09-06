@@ -33,12 +33,12 @@ namespace ForgottenMemories.Projectiles
 			if (Main.rand.Next(10) == 0)
 			{
 				int dust;
-				dust = Dust.NewDust(projectile.position, (int)projectile.width/4, (int)projectile.height/4, 229, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				dust = Dust.NewDust(projectile.Center, (int)projectile.width/4, (int)projectile.height/4, 229, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 0.5f;
 				Main.dust[dust].noGravity = true;
 			}
 			int dust2;
-			dust2 = Dust.NewDust(projectile.position, (int)projectile.width/4, (int)projectile.height/4, 229, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			dust2 = Dust.NewDust(projectile.Center, (int)projectile.width/4, (int)projectile.height/4, 229, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust2].scale = 0.5f;
 			Main.dust[dust2].noGravity = true;
 			
@@ -62,13 +62,13 @@ namespace ForgottenMemories.Projectiles
 			projectile.position.X -= (float) (projectile.width / 2);
 			projectile.position.Y -= (float) (projectile.height / 2);
 			for (int index = 0; index < 8; ++index)
-			  Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 229, 0.0f, 0.0f, 100, new Color(), 1.5f);
+			  Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 226, 0.0f, 0.0f, 100, new Color(), 1.5f);
 			for (int index1 = 0; index1 < 32; ++index1)
 			{
 			  int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 229, 0.0f, 0.0f, 100, new Color(), 2.5f);
 			  Main.dust[index2].noGravity = true;
 			  Main.dust[index2].velocity *= 3f;
-			  int index3 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 229, 0.0f, 0.0f, 100, new Color(), 1.5f);
+			  int index3 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 211, 0.0f, 0.0f, 100, new Color(), 1.5f);
 			  Main.dust[index3].velocity *= 2f;
 			  Main.dust[index3].noGravity = true;
 			}

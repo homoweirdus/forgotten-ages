@@ -29,7 +29,7 @@ namespace ForgottenMemories.Items.Melee
 			item.height = 96;  
 			item.maxStack = 1;
 			item.value = 300000;  
-			item.rare = 8;  
+			item.rare = 7;  
 			item.shoot = mod.ProjectileType("CursedLanceProjectile");
 			item.shootSpeed = 7;
 		}

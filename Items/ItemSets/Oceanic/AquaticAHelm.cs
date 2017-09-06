@@ -17,16 +17,21 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.width = 18;
 			item.height = 18;
 
-			item.value = 10000;
+			item.value = 50000;
 			item.rare = 3;
 			item.defense = 5;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Aquatic Helmet");
-      Tooltip.SetDefault("4% increased melee damage, increased life by 25");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Aquatic Helmet");
+			Tooltip.SetDefault("4% increased melee damage, increased life by 25");
+		}
+		
+		public override bool DrawHead()	
+		{
+			return false;
+		}
 
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

@@ -10,7 +10,6 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 	{
 		public override void SetDefaults()
 		{
-
 			item.useStyle = 5;
 			item.width = 24;
 			item.height = 24;
@@ -30,11 +29,10 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 			item.shoot = mod.ProjectileType("TitanSpin");
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Titan's Spin");
-      Tooltip.SetDefault("Occasionally fires a barrage of lasers");
-    }
-
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Titan's Spin");
+			Tooltip.SetDefault("Leaves a damaging trail");
+		}
 	}
 }

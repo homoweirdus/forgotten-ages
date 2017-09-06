@@ -21,7 +21,7 @@ public class JungleSlimePendant : ModItem
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Jungle Pendant");
-      Tooltip.SetDefault("Getting hit releases a slime guard to protect you");
+      Tooltip.SetDefault("Has a chance to summon a jungle slime when you get hit");
     }
 
 

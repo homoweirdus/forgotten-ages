@@ -22,7 +22,9 @@ namespace ForgottenMemories.Projectiles
 			projectile.minionSlots = 0;
 			projectile.friendly = false;
 			Main.projFrames[projectile.type] = 6;
-			projectile.timeLeft = 300;
+			projectile.timeLeft = 200;
+			projectile.width = 44;
+			projectile.height = 26;
         }
 		
 		public override void SetStaticDefaults()

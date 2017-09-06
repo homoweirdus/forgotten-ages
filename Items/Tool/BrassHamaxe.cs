@@ -23,6 +23,7 @@ public class BrassHamaxe : ModItem
         item.autoReuse = true;
 		item.axe = 30;
 		item.hammer = 80;
+		item.useTurn = true;
     }
 
     public override void SetStaticDefaults()

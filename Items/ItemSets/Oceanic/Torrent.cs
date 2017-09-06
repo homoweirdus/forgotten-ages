@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
         public override void SetDefaults()
         {
 
-            item.damage = 16;
+            item.damage = 14;
             item.noMelee = true;
             item.ranged = true;
             item.width = 27;

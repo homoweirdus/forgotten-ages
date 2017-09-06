@@ -24,6 +24,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.pick = 45;
+			item.useTurn = true;
 		}
 
     public override void SetStaticDefaults()
@@ -39,7 +40,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null,"DarkEnergy", 9);
 			recipe.AddIngredient(ItemID.Silk, 9);
-			recipe.AddIngredient(ItemID.IronBar, 4);
+			recipe.AddRecipeGroup("AnyIron", 4);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

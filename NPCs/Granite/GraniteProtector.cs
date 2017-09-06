@@ -35,7 +35,7 @@ namespace ForgottenMemories.NPCs.Granite
 		public override void FindFrame(int frameHeight)
 		{
 			npc.frameCounter++;
-			if (npc.frameCounter >= 6)
+			if (npc.frameCounter >= 15)
 			{
 				npc.frame.Y += frameHeight;
 				

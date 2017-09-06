@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items
 				
 				if (Main.rand.Next(4) == 1)
 				{
-					player.QuickSpawnItem(mod.ItemType("NinjaEmblem"), 1); 
+					player.QuickSpawnItem(mod.ItemType("ShinobiEmblem"), 1); 
 				}
 				
 				if (Main.rand.Next(4) == 2)
