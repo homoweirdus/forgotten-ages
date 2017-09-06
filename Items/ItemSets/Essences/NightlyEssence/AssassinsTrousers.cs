@@ -19,20 +19,20 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 
 			item.value = 25000;
 			item.rare = 1;
-			item.defense = 2;
+			item.defense = 3;
             item.lifeRegen = 3;
 		}
 
     public override void SetStaticDefaults()
     {
 		DisplayName.SetDefault("Assassin's Trousers");
-		Tooltip.SetDefault("4% increased ranged critical strike chance");
+		Tooltip.SetDefault("3% increased ranged critical strike chance");
     }
 
 
 		public override void UpdateEquip(Player player)
 		{
-           player.rangedCrit += 4;
+           player.rangedCrit += 3;
 		}
 
 		public override void AddRecipes()
