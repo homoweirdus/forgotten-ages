@@ -40,7 +40,7 @@ public class NightlyHammer : ModItem
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null,"DarkEnergy", 7);
 			recipe.AddIngredient(ItemID.Silk, 7);
-			recipe.AddIngredient(ItemID.IronBar, 5);
+			recipe.AddRecipeGroup("AnyIron", 5);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

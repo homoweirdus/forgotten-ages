@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
 			item.shoot = mod.ProjectileType("LeechingArrow");
-			item.shootSpeed = 12f;
+			item.shootSpeed = 8f;
 			item.scale = 1.1f;
 			item.noMelee = true;
 		}
@@ -55,7 +55,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null,"DarkEnergy", 8);
 			recipe.AddIngredient(ItemID.Silk, 8);
-			recipe.AddIngredient(ItemID.IronBar, 5);
+			recipe.AddRecipeGroup("AnyIron", 5);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

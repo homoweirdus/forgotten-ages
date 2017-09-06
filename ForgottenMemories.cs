@@ -113,16 +113,12 @@ namespace ForgottenMemories
 		
 		public override void AddRecipeGroups()
 		{
-			RecipeGroup group = new RecipeGroup(() => Lang.misc[37] + (" Phaseblade"), new int[]
+			RecipeGroup group = new RecipeGroup(() => Lang.misc[37] + (" Iron"), new int[]
 			{
-				198,
-				199,
-				200,
-				201,
-				202,
-				203
+				22,
+				704
 			});
-			RecipeGroup.RegisterGroup("AnyPhaseblade", group);
+			RecipeGroup.RegisterGroup("AnyIron", group);
 			
 			RecipeGroup wood = new RecipeGroup (() => Lang.misc[37] + (" Wood"), new int[]
 			{

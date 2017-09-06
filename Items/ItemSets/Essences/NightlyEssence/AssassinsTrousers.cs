@@ -16,11 +16,9 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 
 			item.width = 18;
 			item.height = 18;
-
 			item.value = 25000;
 			item.rare = 1;
 			item.defense = 3;
-            item.lifeRegen = 3;
 		}
 
     public override void SetStaticDefaults()
@@ -38,7 +36,9 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GelatineBar", 9);
+			recipe.AddIngredient(null,"DarkEnergy", 7);
+			recipe.AddIngredient(ItemID.Silk, 15);
+			recipe.AddRecipeGroup("AnyIron", 4);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

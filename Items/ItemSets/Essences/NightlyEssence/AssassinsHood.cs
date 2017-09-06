@@ -45,12 +45,14 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 		}
 
         public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(null, "GelatineBar", 7);
-            recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-        }
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null,"DarkEnergy", 8);
+			recipe.AddIngredient(ItemID.Silk, 15);
+			recipe.AddRecipeGroup("AnyIron", 3);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }
