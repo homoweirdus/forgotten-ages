@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.useTime = 23;
 			item.useAnimation = 23;
 			item.useStyle = 5;
-			item.knockBack = 2;
+			item.knockBack = 1;
 			item.value = 30000;
             item.rare = 1;
 			item.useAmmo = 40;

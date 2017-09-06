@@ -113,7 +113,7 @@ namespace ForgottenMemories
 		
 		public override void AddRecipeGroups()
 		{
-			RecipeGroup group = new RecipeGroup(() => Lang.misc[37] + (" Iron"), new int[]
+			RecipeGroup group = new RecipeGroup(() => Lang.misc[37] + " Iron Bar" + Lang.GetItemNameValue(ItemType("Iron Bar")), new int[]
 			{
 				22,
 				704
