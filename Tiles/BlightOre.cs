@@ -22,6 +22,7 @@ namespace ForgottenMemories.Tiles
 			name.SetDefault("Blighted Ore");
             AddMapEntry(new Color(98, 86, 104), name);
 			dustType = 173;
+			Main.tileSpelunker[mod.TileType("BlightOre")] = true;
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

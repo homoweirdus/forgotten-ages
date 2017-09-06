@@ -62,7 +62,7 @@ namespace ForgottenMemories.Projectiles
                 }
             }
 
-            if (targetAcquired)
+            if (targetAcquired && projectile.friendly)
             {
                 float homingSpeedFactor = 6f;
                 Vector2 homingVect = targetPos - projectile.Center;

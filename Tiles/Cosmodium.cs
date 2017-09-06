@@ -24,6 +24,7 @@ namespace ForgottenMemories.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Cosmodium Ore");
             AddMapEntry(new Color(19, 163, 189), name);
+			Main.tileSpelunker[mod.TileType("Cosmodium")] = true;
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

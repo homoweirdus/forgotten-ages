@@ -19,6 +19,7 @@ namespace ForgottenMemories
 		public bool isGlitch;
 		public bool breakShop;
 		public bool CosmicPowers;
+		public bool hauntedCandle;
 		
 		public override void ResetEffects()
 		{
@@ -26,6 +27,7 @@ namespace ForgottenMemories
 			AquaPowers = false;
 			isGlitch = false;
 			CosmicPowers = false;
+			hauntedCandle = false;
 		}
 		
 		

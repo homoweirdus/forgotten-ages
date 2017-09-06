@@ -28,6 +28,7 @@ namespace ForgottenMemories.Tiles
 			AddMapEntry(new Color(75, 206, 242), name);
 			soundType = 21;
 			minPick = 65;
+			Main.tileSpelunker[mod.TileType("CryotineOre")] = true;
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)

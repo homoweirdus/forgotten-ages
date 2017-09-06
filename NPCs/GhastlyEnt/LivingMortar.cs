@@ -10,11 +10,12 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 	public class LivingMortar : ModNPC
 	{
 		int ai;
+		float ai2;
 		bool hasShot = false;
 		public override void SetDefaults()
 		{
-			npc.width = 48;
-			npc.height = 40;
+			npc.width = 46;
+			npc.height = 44;
 			npc.damage = 28;
 			npc.defense = 12;
 			npc.lifeMax = 80;
@@ -47,19 +48,17 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			}
 			else
 			{
-				if ((double) npc.ai[1] > 0.0)
-					--npc.ai[1];
+				if (npc.ai[1] > 0)
+					npc.ai[1]--;
 				if (npc.justHit)
 				{
-					npc.ai[1] = 30f;
+					npc.ai[1] = 30;
 					npc.ai[2] = 0.0f;
 				}
-				int num3 = 60;
 				bool flag9 = false;
-				int num4 = 0;
 				if ((double) npc.ai[2] > 0.0)
 				{
-					if ((double) npc.ai[1] <= (double) num4)
+					if (npc.frame.Y >= (7 * ai))
 					{
 						float num5 = 9f;
 						Vector2 vector2 = npc.Center;
@@ -77,18 +76,21 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 						vector2.X = num16;
 						double num17 = vector2.Y + SpeedY;
 						vector2.Y = (float) num17;
-						if (Main.netMode != 1)
+						if (Main.netMode != 1 && hasShot == false)
 						{
 							Projectile.NewProjectile((float) vector2.X, (float) vector2.Y, SpeedX, SpeedY, Type, Damage, 0.0f, Main.myPlayer, 0.0f, 0.0f);
 						}
-						npc.ai[2] = (double) Math.Abs(SpeedY) <= (double) Math.Abs(SpeedX) * 2.0 ? ((double) Math.Abs(SpeedX) <= (double) Math.Abs(SpeedY) * 2.0 ? ((double) SpeedY <= 0.0 ? 4f : 2f) : 3f) : ((double) SpeedY <= 0.0 ? 5f : 1f);
 						hasShot = true;
 					}
-					if (npc.velocity.Y != 0.0 || (double) npc.ai[1] <= 0.0)
+					else
 					{
 						hasShot = false;
-						npc.ai[2] = 0.0f;
+					}
+					
+					if (npc.velocity.Y != 0.0)
+					{
 						npc.ai[1] = 0.0f;
+						npc.ai[2] = 0.0f;
 					}
 					
 					else if (!flag6 || num1 != -1 && (double) npc.ai[1] >= (double) num1 && (double) npc.ai[1] < (double) (num1 + num2) && (!flag7 || npc.velocity.Y == 0.0))
@@ -98,46 +100,27 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 						npc.spriteDirection = npc.direction;
 					}
 				}
-				else if ((double) npc.ai[2] <= 0.0 && npc.velocity.Y == 0.0 && ((double) npc.ai[1] <= 0.0 && !Main.player[npc.target].dead))
+				else if ((double) npc.ai[2] <= 0.0 && npc.velocity.Y == 0.0 && !Main.player[npc.target].dead)
 				{
-					bool flag10 = Collision.CanHit(npc.position, npc.width, npc.height, Main.player[npc.target].position, Main.player[npc.target].width, Main.player[npc.target].height);
-					if ((double) Main.player[npc.target].stealth == 0.0 && Main.player[npc.target].itemAnimation == 0)
+					bool flag10 = (npc.Distance(player.Center) <= 300);
+					if ((double) Main.player[npc.target].stealth == 0.0)
 						flag10 = false;
 					if (flag10)
 					{
-						float num5 = 10f;
-						Vector2 vector2 = npc.Center;
-						float num6 = (float) (Main.player[npc.target].position.X + (double) Main.player[npc.target].width * 0.5 - vector2.X);
-						float num7 = Math.Abs(num6) * 0.1f;
-						float num8 = (float) (Main.player[npc.target].position.Y + (double) Main.player[npc.target].height * 0.5 - vector2.Y) - num7;
-						float num9 = num6 + (float) Main.rand.Next(-40, 41);
-						float num10 = num8 + (float) Main.rand.Next(-40, 41);
-						float num11 = (float) Math.Sqrt((double) num9 * (double) num9 + (double) num10 * (double) num10);
-						float num12 = 700f;
-						if ((double) num11 < (double) num12)
-						{
-							npc.netUpdate = true;
-							float num14 = npc.velocity.X * 0.5f;
-							npc.velocity.X = num14;
-							float num15 = num5 / num11;
-							float num16 = num9 * num15;
-							float num17 = num10 * num15;
-							npc.ai[2] = 3f;
-							npc.ai[1] = (float) num3;
-							npc.ai[2] = (double) Math.Abs(num17) <= (double) Math.Abs(num16) * 2.0 ? ((double) Math.Abs(num16) <= (double) Math.Abs(num17) * 2.0 ? ((double) num17 <= 0.0 ? 4f : 2f) : 3f) : ((double) num17 <= 0.0 ? 5f : 1f);
-						}
+						npc.ai[2] = 1;
+						npc.ai[1] = 30;
 					}
 				}
-				if ((double) npc.ai[2] <= 0.0 || flag6 && (num1 == -1 || (double) npc.ai[1] < (double) num1 || (double) npc.ai[1] >= (double) (num1 + num2)))
+				if ((double) npc.ai[2] > 0.0)
 				{
 					float num5 = 1f;
 					float num6 = 0.07f;
-					float num7 = 0.8f;
-					bool flag10 = false;
+					float num7 = 0.01f;
+					bool flag10 = npc.Distance(player.Center) <= 300;
 					if (((npc.velocity.X < -(double) num5 ? 1 : (npc.velocity.X > (double) num5 ? 1 : 0)) | (flag10 ? 1 : 0)) != 0)
 					{
 						if (npc.velocity.Y == 0.0)
-							npc.velocity = (npc.velocity * num7);
+							npc.velocity *= num7;
 					}
 					else if (npc.velocity.X < (double) num5 && npc.direction == 1)
 					{
@@ -159,6 +142,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		
 		public override void FindFrame(int frameHeight)
 		{
+			ai = frameHeight;
 			int num1 = 1;
 			if (npc.velocity.Y == 0.0)
 			{
@@ -169,9 +153,9 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			}
 			if ((double) npc.ai[2] > 0.0)
 			{
-				npc.frameCounter += 0.2f; 
+				npc.frameCounter += 0.2f;
 				npc.frameCounter %= 5; 
-				int frame = (int)npc.frameCounter + 4; 
+				int frame = (int)npc.frameCounter + 4;
 				npc.frame.Y = frame * frameHeight;
 			}
 			else

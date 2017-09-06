@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 
-			item.damage = 114;
+			item.damage = 124;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 14;
@@ -48,9 +48,9 @@ namespace ForgottenMemories.Items.Ranged
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.OnyxBlaster, 1);
+			recipe.AddIngredient(ItemID.TacticalShotgun, 1);
 			recipe.AddIngredient(null,"FlameShotgun", 1);
-			recipe.AddIngredient(null, "ForestEnergy", 8);
+			recipe.AddIngredient(null, "CosmodiumBar", 8);
 			recipe.AddIngredient(3459, 12);
 			recipe.AddIngredient(3457, 12);
 			recipe.AddIngredient(3467, 10);

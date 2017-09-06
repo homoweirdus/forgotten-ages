@@ -10,6 +10,7 @@ namespace ForgottenMemories.NPCs.Granite
 	public class GraniteProtector : ModNPC
 	{
 		int counter = 0;
+		int ai;
 		public override void SetDefaults()
 		{
 			npc.width = 48;
@@ -28,7 +29,7 @@ namespace ForgottenMemories.NPCs.Granite
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Granite Protector");
-			Main.npcFrameCount[npc.type] = 6;
+			Main.npcFrameCount[npc.type] = 4;
 		}
 		
 		public override void FindFrame(int frameHeight)
@@ -44,6 +45,22 @@ namespace ForgottenMemories.NPCs.Granite
 					npc.frame.Y = 0;
 				}
 			} 
+		}
+		
+		public override void AI()
+		{
+			ai++;
+			if (ai >= 60)
+			{
+				Player player = Main.player[npc.target];
+				Vector2 vel = (player.Center - npc.Center);
+				vel.Normalize();
+				vel *= 6;
+				Projectile projectile = Main.projectile[Projectile.NewProjectile(npc.Center, vel, mod.ProjectileType("GraniteEnergy"), (int)(npc.damage/4), 0, Main.myPlayer, 0, 0)];
+				projectile.friendly = false;
+				projectile.hostile = true;
+				ai = 0;
+			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
