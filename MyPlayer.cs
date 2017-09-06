@@ -103,8 +103,11 @@ namespace ForgottenMemories
 		
 		public override bool Shoot (Item item, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			speedX *= rangedVelocity;
-			speedY *= rangedVelocity;
+			if (item.ranged == true)
+			{
+				speedX *= rangedVelocity;
+				speedY *= rangedVelocity;
+			}
 			return true;
 		}
 		
