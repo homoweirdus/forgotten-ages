@@ -18,13 +18,13 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.height = 18;
 			item.value = 35000;
 			item.rare = 1;
-			item.defense = 3;
+			item.defense = 2;
 		}
 
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Assassin's Cowl");
-      Tooltip.SetDefault("3% increased ranged critical strike chance");
+      Tooltip.SetDefault("5% increased ranged critical strike chance");
     }
 
 
@@ -40,7 +40,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Increased ranged weapon shooting speed by 50%";
+			player.setBonus = "Increased ranged weapon projetile velocity by 25%";
 			((MyPlayer)player.GetModPlayer(mod, "MyPlayer")).rangedVelocity += 0.5f;
 		}
 
