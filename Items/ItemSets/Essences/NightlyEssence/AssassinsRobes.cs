@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 			item.width = 18;
 			item.height = 18;
 
-			item.value = 30000;
+			item.value = 25000;
 			item.rare = 1;
 			item.defense = 4;
 		}
@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Assassin's Robes");
-			Tooltip.SetDefault("4% increased ranged critical strike chance");
+			Tooltip.SetDefault("7% increased ranged critical strike chance");
 		}
 		
 		public override bool DrawBody ()
