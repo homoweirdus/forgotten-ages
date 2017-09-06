@@ -41,7 +41,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Increased ranged weapon projetile velocity by 25%";
-			((MyPlayer)player.GetModPlayer(mod, "MyPlayer")).rangedVelocity += 0.5f;
+			((MyPlayer)player.GetModPlayer(mod, "MyPlayer")).rangedVelocity += 0.25f;
 		}
 
         public override void AddRecipes()
