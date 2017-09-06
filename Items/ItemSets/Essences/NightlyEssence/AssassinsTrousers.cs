@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.ID;
+
+namespace ForgottenMemories.Items.ItemSets.Essences.NightlyEssence
+{
+	[AutoloadEquip(EquipType.Legs)]
+	public class AssassinsTrousers : ModItem
+	{
+
+
+		public override void SetDefaults()
+		{
+
+			item.width = 18;
+			item.height = 18;
+
+			item.value = 25000;
+			item.rare = 1;
+			item.defense = 2;
+            item.lifeRegen = 3;
+		}
+
+    public override void SetStaticDefaults()
+    {
+		DisplayName.SetDefault("Assassin's Trousers");
+		Tooltip.SetDefault("4% increased ranged critical strike chance");
+    }
+
+
+		public override void UpdateEquip(Player player)
+		{
+           player.rangedCrit += 4;
+		}
+
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "GelatineBar", 9);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
+}

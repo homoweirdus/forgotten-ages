@@ -19,6 +19,7 @@ namespace ForgottenMemories
 		public bool isGlitch;
 		public bool breakShop;
 		public bool CosmicPowers;
+		public float rangedVelocity;
 		
 		public override void ResetEffects()
 		{
@@ -26,6 +27,7 @@ namespace ForgottenMemories
 			AquaPowers = false;
 			isGlitch = false;
 			CosmicPowers = false;
+			rangedVelocity = 1f;
 		}
 		
 		
@@ -97,6 +99,13 @@ namespace ForgottenMemories
 			{
 				player.AddBuff(mod.BuffType("CosmicBoon"), 2, false);
 			}
+		}
+		
+		public override bool Shoot (Item item, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			speedX *= rangedVelocity;
+			speedY *= rangedVelocity;
+			return true;
 		}
 		
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
