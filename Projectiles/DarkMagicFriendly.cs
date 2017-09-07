@@ -54,7 +54,7 @@ namespace ForgottenMemories.Projectiles
 				float num4 = 2000f;
 				for (int k = 0; k < 255; k = num + 1)
 				{
-					if (Main.npc[k].active && !Main.npc[k].dead && !Main.npc[k].immortal && !Main.npc[k].dontTakeDamage)
+					if (Main.npc[k].active && !Main.npc[k].immortal && !Main.npc[k].dontTakeDamage)
 					{
 						Vector2 center = Main.npc[k].Center;
 						float num5 = Vector2.Distance(center, projectile.Center);
@@ -82,7 +82,7 @@ namespace ForgottenMemories.Projectiles
 			{
 				projectile.ai[1] += 1f;
 				int num6 = (int)projectile.ai[0];
-				if (!Main.npc[num6].active || Main.npc[num6].dead)
+				if (!Main.npc[num6].active)
 				{
 					projectile.ai[1] = 1f;
 					projectile.ai[0] = 0f;
