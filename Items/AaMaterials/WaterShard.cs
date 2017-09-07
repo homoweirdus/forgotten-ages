@@ -17,6 +17,13 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.value = 6000;
 			item.rare = 2;
 			item.maxStack = 999;
+			item.consumable = true;
+			item.autoReuse = true;
+            item.createTile = mod.TileType("WaterShard");
+			item.useTurn = true;
+            item.useAnimation = 15;
+            item.useTime = 10;
+            item.useStyle = 1;
 		}
 
 		public override void SetStaticDefaults()
