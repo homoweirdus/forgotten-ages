@@ -19,11 +19,8 @@ namespace ForgottenMemories
 		public bool isGlitch;
 		public bool breakShop;
 		public bool CosmicPowers;
-<<<<<<< HEAD
 		public bool hauntedCandle;
-=======
 		public float rangedVelocity;
->>>>>>> 75d0bc04d7c02fdfd07b8f7f8f9bffcdc985d496
 		
 		public override void ResetEffects()
 		{
@@ -31,11 +28,8 @@ namespace ForgottenMemories
 			AquaPowers = false;
 			isGlitch = false;
 			CosmicPowers = false;
-<<<<<<< HEAD
 			hauntedCandle = false;
-=======
 			rangedVelocity = 1f;
->>>>>>> 75d0bc04d7c02fdfd07b8f7f8f9bffcdc985d496
 		}
 		
 		
