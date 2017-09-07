@@ -8,7 +8,7 @@ using System;
 
 namespace ForgottenMemories.Projectiles
 {
-	public class wooball : ModProjectile
+	public class wooballF : ModProjectile
 	{
 		public override void SetDefaults()
 		{
