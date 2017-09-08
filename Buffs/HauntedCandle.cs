@@ -9,7 +9,7 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Haunted Candle");
-			Description.SetDefault("Attracts monsters");
+			Description.SetDefault("Your worst fears grow in number...");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.lightPet[Type] = true;
 		}
