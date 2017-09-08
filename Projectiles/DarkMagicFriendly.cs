@@ -52,7 +52,7 @@ namespace ForgottenMemories.Projectiles
 			{
 				int num3 = -1;
 				float num4 = 2000f;
-				for (int k = 0; k < 255; k = num + 1)
+				for (int k = 0; k < 200; k = num + 1)
 				{
 					if (Main.npc[k].active && !Main.npc[k].immortal && !Main.npc[k].dontTakeDamage)
 					{

@@ -17,7 +17,7 @@ public class LivingWoodCannon : ModItem
         item.useTime = 12;
         item.useAnimation = 36;
 		item.reuseDelay = 55;
-		item.UseSound = SoundID.Item36;
+		item.UseSound = SoundID.Item38;
         item.useStyle = 5;
         item.knockBack = 3;
         item.value = 27000;
@@ -25,7 +25,7 @@ public class LivingWoodCannon : ModItem
         item.autoReuse = true;
 
         item.shoot = mod.ProjectileType("wooballF"); 
-		item.shootSpeed = 7f;
+		item.shootSpeed = 11f;
     }
 
     public override void SetStaticDefaults()
@@ -36,6 +36,6 @@ public class LivingWoodCannon : ModItem
 	
 	public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(-25, -13);
+			return new Vector2(25, 13);
 		}
 }}
