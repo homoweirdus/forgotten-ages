@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Melee
 			ItemID.Sets.Yoyo[item.type] = true;
 			ItemID.Sets.GamepadExtraRange[item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
-			Tooltip.SetDefault("Only the beginning");
+			Tooltip.SetDefault("Sandy and wet to the touch");
 		}
 
 		public override void SetDefaults()
