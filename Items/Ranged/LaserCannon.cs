@@ -60,7 +60,7 @@ namespace ForgottenMemories.Items.Ranged
 			float sY = speedY;
 			sX += (float)Main.rand.Next(-60, 61) * 0.03f;
 			sY += (float)Main.rand.Next(-60, 61) * 0.03f;
-			Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("ShotLightning"), damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("LightningChain"), damage, knockBack, player.whoAmI);
 			
 			for (int i = 0; i < 4; i++)
 			{
