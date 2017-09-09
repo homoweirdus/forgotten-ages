@@ -30,9 +30,7 @@ namespace ForgottenMemories.Projectiles.Bazaar
         {
 			target.AddBuff(BuffID.Chilled,	120);
 			target.AddBuff(BuffID.Midas,	240);
-			target.AddBuff(BuffID.Shine,	240);
 			target.AddBuff(BuffID.OnFire,	120);
-			target.AddBuff(BuffID.Bleeding,	60);
 			target.AddBuff(BuffID.Poisoned,	120);
 		}
 	}
