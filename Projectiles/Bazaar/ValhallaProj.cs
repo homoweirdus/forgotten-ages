@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Bazaar
 {
-	class ValhallaProj : ModProjectile
+	public class ValhallaProj : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -29,7 +29,7 @@ namespace ForgottenMemories.Projectiles.Bazaar
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
 			target.AddBuff(BuffID.Weak,	120);
-			target.AddBuff(BuffID.Shine,	120);			
+			target.AddBuff(BuffID.Shine, 120);			
 		}
 	}
 }

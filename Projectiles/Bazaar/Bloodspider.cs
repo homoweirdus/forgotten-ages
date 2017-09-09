@@ -9,8 +9,8 @@ namespace ForgottenMemories.Projectiles.Bazaar
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 16;
-			projectile.height = 16;
+			projectile.width = 24;
+			projectile.height = 24;
             projectile.aiStyle = 2;
             projectile.friendly = true;
             projectile.thrown = true;
@@ -19,9 +19,5 @@ namespace ForgottenMemories.Projectiles.Bazaar
 			projectile.ignoreWater = true;
 			aiType = ProjectileID.BeachBall;
 		}
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-            target.AddBuff(BuffID.Bleeding,	300);
-        }
 	}
 }

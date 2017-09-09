@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Bazaar
 {
-	class OlympusProj : ModProjectile
+	public class OlympusProj : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{

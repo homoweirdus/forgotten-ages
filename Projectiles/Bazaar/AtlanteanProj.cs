@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Bazaar
 {
-	class AtlanteanProj : ModProjectile
+	public class AtlanteanProj : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{

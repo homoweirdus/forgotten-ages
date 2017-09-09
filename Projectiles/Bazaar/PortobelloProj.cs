@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Bazaar
 {
-	class PortobelloProj : ModProjectile
+	public class PortobelloProj : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{

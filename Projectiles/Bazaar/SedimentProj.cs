@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Bazaar
 {
-	class SedimentProj : ModProjectile
+	public class SedimentProj : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{

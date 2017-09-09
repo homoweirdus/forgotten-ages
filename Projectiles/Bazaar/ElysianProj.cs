@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Bazaar
 {
-	class ElysianProj : ModProjectile
+	public class ElysianProj : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
