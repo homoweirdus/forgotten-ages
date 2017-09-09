@@ -163,8 +163,8 @@ namespace ForgottenMemories.Projectiles.InfoA
 			{
 				for (int i = 0; i < 3; ++i)
 				{
-					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
+					float sX = (float)Main.rand.Next(-30, 31) * 0.2f;
+					float sY = (float)Main.rand.Next(-30, 31) * 0.2f;
 					int B = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("ShroomCloud"), projectile.damage, 5f, projectile.owner);
 					Main.projectile[B].magic = false;
 					Main.projectile[B].ranged = true;
