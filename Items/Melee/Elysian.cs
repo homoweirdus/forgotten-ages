@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Melee
 			ItemID.Sets.Yoyo[item.type] = true;
 			ItemID.Sets.GamepadExtraRange[item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
-			Tooltip.SetDefault("Made with pure angel dust!");
+			Tooltip.SetDefault("'Found in the stream of Okeanos'");
 		}
 
 		public override void SetDefaults()
