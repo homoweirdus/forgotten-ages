@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Melee
 			ItemID.Sets.Yoyo[item.type] = true;
 			ItemID.Sets.GamepadExtraRange[item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
-			Tooltip.SetDefault("Sandy and wet to the touch");
+			Tooltip.SetDefault("'An odd mixture of the world's mystical rocks'");
 		}
 
 		public override void SetDefaults()
