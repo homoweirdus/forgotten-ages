@@ -89,11 +89,11 @@ namespace ForgottenMemories
 				
 			}
 			
-			if (AquaPowers == true && Main.rand.Next(20) == 0)
+			if (AquaPowers == true && Main.rand.Next(50) == 0)
 			{
 				float spX = (float)Main.rand.Next(-30, 30) * 0.05f;
 				float spY = (float)Main.rand.Next(-30, 30) * 0.05f;
-				int projectile2 = Projectile.NewProjectile(player.position.X, player.position.Y, spX, spY, mod.ProjectileType("buble"), 6, 0f, player.whoAmI, 0f, 0f);
+				int projectile2 = Projectile.NewProjectile(player.Center.X, player.Center.Y, spX, spY, mod.ProjectileType("buble"), 18, 0f, player.whoAmI, 0f, 0f);
 				Main.projectile[projectile2].melee = false;
 			}
 			
@@ -115,19 +115,6 @@ namespace ForgottenMemories
 		
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
-			if (AquaPowers == true)
-			{
-				int amountOfProjectiles = Main.rand.Next(4, 6);
-				for (int i = 0; i < amountOfProjectiles; ++i)
-				{
-					float sX = (float)Main.rand.Next(-40, 40) * 0.1f;
-					float sY = (float)Main.rand.Next(-120, 0) * 0.1f;
-					int projectile = Projectile.NewProjectile(player.Center.X, player.Center.Y, sX, sY, 22, 45, 5f, player.whoAmI);
-					Main.projectile[projectile].timeLeft = 100;
-					Main.projectile[projectile].magic = false;
-				}
-			}
-			
 			if (CosmicPowers == true)
 			{
 				int amountOfProjectiles = Main.rand.Next(1, 3);

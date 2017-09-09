@@ -47,7 +47,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Passively create damaging bubbles, explode into water when hurt";
+			player.setBonus = "Passively creates bubbles";
 			((MyPlayer)player.GetModPlayer(mod, "MyPlayer")).AquaPowers = true;
 		}
 
