@@ -26,10 +26,6 @@ namespace ForgottenMemories
 			};
 		}
 
-		public override void Load()
-		{
-			Config.Load();
-		}
 		
 		const int ShakeLength = 5;
 		int ShakeCount = 0;
