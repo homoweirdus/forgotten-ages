@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Melee
 			item.melee = true;
 			item.channel = true;
 			item.noMelee = true;
-			item.shoot = mod.ProjectileType("OlypmusProj");
+			item.shoot = mod.ProjectileType("OlympusProj");
 			item.useAnimation = 25;
 			item.useTime = 25;
 			item.shootSpeed = 8f;
