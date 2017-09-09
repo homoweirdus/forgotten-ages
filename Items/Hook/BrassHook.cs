@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Hook
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.AmethystHook);
-			item.shootSpeed = 50f;
+			item.shootSpeed = 9999999f;
 			item.shoot = mod.ProjectileType("BrassProjectile");
 		}
 	}
@@ -41,22 +41,22 @@ namespace ForgottenMemories.Items.Hook
 		}
 		public override float GrappleRange()
 		{
-			return 550f;
+			return 9999999f;
 		}
 
 		public override void NumGrappleHooks(Player player, ref int numHooks)
 		{
-			numHooks = 2;
+			numHooks = 999999;
 		}
 
 		public override void GrappleRetreatSpeed(Player player, ref float speed)
 		{
-			speed = 15f;
+			speed = 999999f;
 		}
 
 		public override void GrapplePullSpeed(Player player, ref float speed)
 		{
-			speed = 9;
+			speed = 999999;
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
