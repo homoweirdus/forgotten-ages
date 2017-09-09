@@ -11,6 +11,7 @@ namespace ForgottenMemories.Items.Melee
 			ItemID.Sets.Yoyo[item.type] = true;
 			ItemID.Sets.GamepadExtraRange[item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
+			Tooltip.SetDefault("Confuses hit enemies")
 		}
 
 		public override void SetDefaults()
