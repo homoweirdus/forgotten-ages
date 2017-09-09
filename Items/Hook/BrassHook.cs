@@ -52,7 +52,7 @@ namespace ForgottenMemories.Items.Hook
 
 		public override void GrappleRetreatSpeed(Player player, ref float speed)
 		{
-			speed = 18f;
+			speed = 12f;
 		}
 
 		public override void GrapplePullSpeed(Player player, ref float speed)
