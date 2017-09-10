@@ -9,12 +9,12 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetStaticDefaults()
 		{
 		DisplayName.SetDefault("Ham Shank");
-        Tooltip.SetDefault("'Shouldn't this be eaten?'");
+        Tooltip.SetDefault("'There's a reason you don't eat it...'");
 		}		
         
 		public override void SetDefaults()
 		{
-			item.damage = 15;
+			item.damage = 27;
 			item.thrown = true;
 			item.width = 30;
 			item.height = 30;
@@ -33,14 +33,4 @@ namespace ForgottenMemories.Items.Throwing
             item.shoot = mod.ProjectileType("HamboyProj");
             item.shootSpeed = 10f;
         }
-		
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.RottenChunk, 8);
-			recipe.AddTile(TileID.Furnaces);
-			recipe.SetResult(this, 333);
-			recipe.AddRecipe();
-		}
-	}
 }
