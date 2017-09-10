@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-    class PlungerProj : ModProjectile
+    public class PlungerProj : ModProjectile
 	{
         public override void SetDefaults()
 		{
@@ -20,7 +20,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 0;
 			projectile.aiStyle = 1;
 			projectile.CloneDefaults(ProjectileID.WoodenArrowFriendly);
-		}
         }
     }
 }
