@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.Melee
 			item.useTime = 5;
 			item.useAnimation = 15;
 			item.useStyle = 1;
-			item.knockBack = 0.5;
+			item.knockBack = 1;
 			item.value = 30000;
 			item.rare = -1;
 			item.UseSound = SoundID.Item1;
@@ -36,8 +36,8 @@ namespace ForgottenMemories.Items.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Dirt, 15);
-			recipe.AddIngredient(ItemID.Stone, 5);
+			recipe.AddIngredient(ItemID.DirtBlock, 15);
+			recipe.AddIngredient(ItemID.StoneBlock, 5);
 			recipe.AddIngredient(ItemID.Daybloom, 1);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
