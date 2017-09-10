@@ -19,6 +19,8 @@ namespace ForgottenMemories.Tiles
 			AddMapEntry(new Color(0, 0, 255), name);
 			soundType = 21;
 			Main.tileSpelunker[mod.TileType("GelatineOre")] = true;
+			mineResist = 2f
+
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)

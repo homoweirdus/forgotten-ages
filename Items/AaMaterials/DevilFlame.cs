@@ -25,7 +25,6 @@ namespace ForgottenMemories.Items.AaMaterials
     {
       DisplayName.SetDefault("Devil's Flame");
       Tooltip.SetDefault("Contains unholy powers");
-	  Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
     }
 	
 		public override void Update(ref float gravity, ref float maxFallSpeed)

@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Melee
 			ItemID.Sets.Yoyo[item.type] = true;
 			ItemID.Sets.GamepadExtraRange[item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
-			Tooltip.SetDefault("Shimmers with white light");
+			Tooltip.SetDefault("'Shimmers with the light of Zeus's bolt'");
 		}
 
 		public override void SetDefaults()

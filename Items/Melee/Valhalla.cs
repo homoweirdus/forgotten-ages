@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Melee
 			ItemID.Sets.Yoyo[item.type] = true;
 			ItemID.Sets.GamepadExtraRange[item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
-			Tooltip.SetDefault("Snagged right off the belt of a viking");
+			Tooltip.SetDefault("'Snagged right off of Odin's belt'");
 		}
 
 		public override void SetDefaults()
