@@ -9,7 +9,7 @@ namespace ForgottenMemories.Items.Pet
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Haunted Candle");
-			Tooltip.SetDefault("Summons a haunted candle that boosts spawn rate \nDoes not stack with water candles");
+			Tooltip.SetDefault("Summons a haunted candle that increases enemy spawn rates \nDoes not stack with water candles");
 		}
 
 		public override void SetDefaults()
