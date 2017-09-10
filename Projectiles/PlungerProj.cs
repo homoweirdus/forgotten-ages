@@ -10,10 +10,6 @@ namespace ForgottenMemories.Projectiles
 {
     class PlungerProj : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Toilet Plunger");
-        }
         public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.WoodenArrowFriendly);
@@ -21,7 +17,6 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Necro Dagger");
 		}
 		
 		   public override void AI()
