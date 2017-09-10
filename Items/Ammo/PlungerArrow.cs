@@ -33,7 +33,7 @@ namespace ForgottenMemories.Items.Ammo
             item.ranged = true;
             item.consumable = true;
 
-            item.shoot = mod.ProjectileType("DeadArrow");
+            item.shoot = mod.ProjectileType("PlungerProj");
             item.shootSpeed = 2.5f;
         }
     }
