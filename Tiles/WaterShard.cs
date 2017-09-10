@@ -15,6 +15,7 @@ namespace ForgottenMemories.Tiles
 {
 	public class WaterShard : ModTile
 	{
+		int f = new int[1];
 		public override void SetDefaults()
 		{
 			Main.tileShine[mod.TileType("WaterShard")] = 300;
@@ -29,14 +30,6 @@ namespace ForgottenMemories.Tiles
 			dustType = 253;
 			disableSmartCursor = true;
 			drop = mod.ItemType("WaterShard");
-		}
-		
-		public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
-		{
-			if (Main.rand.Next(2) == 1)
-			{
-				spriteEffects = SpriteEffects.FlipHorizontally;
-			}
 		}
 
 	/*public class WaterShardSpawn : ModWorld
