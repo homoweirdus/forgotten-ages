@@ -29,7 +29,7 @@ namespace ForgottenMemories.Tiles
 			soundType = 21;
 			minPick = 65;
 			Main.tileSpelunker[mod.TileType("CryotineOre")] = true;
-			mineResist = 4f
+			mineResist = 4f;
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)

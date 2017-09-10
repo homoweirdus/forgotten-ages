@@ -19,7 +19,7 @@ namespace ForgottenMemories.Tiles
 			AddMapEntry(new Color(0, 0, 255), name);
 			soundType = 21;
 			Main.tileSpelunker[mod.TileType("GelatineOre")] = true;
-			mineResist = 2f
+			mineResist = 2f;
 
 		}
 
