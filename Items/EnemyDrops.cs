@@ -158,13 +158,6 @@ namespace ForgottenMemories.Items
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExoticBoquet"), Main.rand.Next(1, 1));
 				}
 			}
-			if (npc.type == NPCID.GiantFungiBulb)
-			{
-				if (Main.rand.Next(25) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Portobello"), Main.rand.Next(1, 1));
-				}
-			}
 			if (npc.type == NPCID.FungoFish)
 			{
 				if (Main.rand.Next(25) == 0)
