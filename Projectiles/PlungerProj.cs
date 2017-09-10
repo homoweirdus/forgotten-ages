@@ -20,6 +20,15 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 0;
 			projectile.aiStyle = 1;
 			projectile.CloneDefaults(ProjectileID.WoodenArrowFriendly);
+                }
+		public override void Kill(int timeLeft)
+		{
+			for (int i = 0; i < 5; i++)
+			{
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 0);
+				Main.dust[dust].scale = 0.5f;
+				Main.dust[dust].noGravity = true;
+			}
+		}
         }
-    }
 }
