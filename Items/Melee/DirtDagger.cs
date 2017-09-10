@@ -32,16 +32,4 @@ namespace ForgottenMemories.Items.Melee
       DisplayName.SetDefault("Dirt Dagger");
       Tooltip.SetDefault("An awful start may lead to a great end...\nCritical strike and knockback are replaced by high damage output");
     }
-	
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DirtBlock, 15);
-			recipe.AddIngredient(ItemID.StoneBlock, 5);
-			recipe.AddIngredient(ItemID.Daybloom, 1);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
 }
