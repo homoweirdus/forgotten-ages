@@ -11,8 +11,8 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 11;
-			item.crit = -100;
+			item.damage = 10;
+			item.crit = -104;
 			item.melee = true;
 			item.width = 19;
 			item.height = 25;
@@ -30,7 +30,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Dirt Dagger");
-      Tooltip.SetDefault("An awful start may lead to a great end...");
+      Tooltip.SetDefault("An awful start may lead to a great end...\nCritical strike and knockback are replaced by high damage output");
     }
 	
 		public override void AddRecipes()
