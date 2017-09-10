@@ -65,11 +65,6 @@ namespace ForgottenMemories.Items.AaMaterials
             recipe.SetResult(this, 5);
             recipe.AddRecipe();
 			
-			recipe = new ModRecipe(mod);
-            recipe.AddIngredient(null, "ShinobiEmblem", 1);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 5);
-            recipe.AddRecipe();
 			
 			recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "PaladinEmblem", 1);

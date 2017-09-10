@@ -27,9 +27,10 @@ namespace ForgottenMemories.Items.Melee
 			item.useTurn = true;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Dirt Dagger");
-      Tooltip.SetDefault("An awful start may lead to a great end...\nCritical strike and knockback are replaced by high damage output");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Dirt Dagger");
+			Tooltip.SetDefault("Critical strike and knockback are replaced by high damage output");
+		}
+	}
 }
