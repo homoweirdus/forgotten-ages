@@ -121,7 +121,7 @@ namespace ForgottenMemories.NPCs.Town
 				shop.item[nextSlot].SetDefaults(mod.ItemType("Hamboy"));
 				nextSlot++;
 				
-				shop.item[nextSlot].SetDefaults(ItemID.BandofStarpower);
+				shop.item[nextSlot].SetDefaults(mod.ItemType("PlungerArrow"));
 				nextSlot++;
 				
 				shop.item[nextSlot].SetDefaults(ItemID.BandofRegeneration);
