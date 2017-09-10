@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.Acessory
 
 		public override void SetStaticDefaults()
 		{
-		  DisplayName.SetDefault("Mana Shard");
+		  DisplayName.SetDefault("Arcane Shard");
 		  Tooltip.SetDefault("Increases mana obtained from mana stars \nPicking up mana stars temporarily increases magic damage \n'A fragment of concentrated magic'");
 		  Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 8));
 		}
