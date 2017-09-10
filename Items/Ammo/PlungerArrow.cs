@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace ForgettenMemories.Items.Ammo
+namespace ForgottenMemories.Items.Ammo
 {
     public class PlungerArrow : ModItem
     {
