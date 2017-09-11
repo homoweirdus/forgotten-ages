@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.Acessory
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Paladin Emblem");
+      DisplayName.SetDefault("Bulwark Emblem");
       Tooltip.SetDefault("Reduces damage taken by 12%");
     }
 
