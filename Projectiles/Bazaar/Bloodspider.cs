@@ -24,7 +24,7 @@ namespace ForgottenMemories.Projectiles.Bazaar
 			for (int i = 0; i < 5; i++)
 			{
 				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 266);
-				Main.dust[dust].scale = 0.5f;
+				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
 		}

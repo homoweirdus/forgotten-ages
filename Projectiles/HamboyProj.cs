@@ -9,8 +9,8 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 16;
-			projectile.height = 16;
+			projectile.width = 26;
+			projectile.height = 26;
             projectile.aiStyle = 2;
             projectile.friendly = true;
             projectile.thrown = true;
@@ -24,7 +24,7 @@ namespace ForgottenMemories.Projectiles
 			for (int i = 0; i < 5; i++)
 			{
 				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 0);
-				Main.dust[dust].scale = 0.5f;
+				Main.dust[dust].scale = 1f;
 				Main.dust[dust].noGravity = true;
 			}
 		}

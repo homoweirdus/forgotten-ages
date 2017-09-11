@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Ammo
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Toilet Plunger");
-        Tooltip.SetDefault("Has minimal damage, but insane knockback \nFunctions as an arrow");
+			Tooltip.SetDefault("Has minimal damage, but insane knockback \nFunctions as an arrow");
 
         }
         public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.Ammo
             item.maxStack = 999;
 
             item.damage = 6;
-			item.knockBack = 18f;
+			item.knockBack = 9f;
             item.ammo = AmmoID.Arrow;
 
             item.ranged = true;
