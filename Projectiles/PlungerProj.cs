@@ -8,9 +8,9 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
-    public class PlungerProj : ModProjectile
+	public class PlungerProj : ModProjectile
 	{
-        public override void SetDefaults()
+		public override void SetDefaults()
 		{
 			projectile.width = 10;
 			projectile.height = 10;
@@ -20,7 +20,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 0;
 			projectile.aiStyle = 1;
 			projectile.CloneDefaults(ProjectileID.WoodenArrowFriendly);
-                }
+		}
 		public override void Kill(int timeLeft)
 		{
 			for (int i = 0; i < 5; i++)
@@ -29,6 +29,7 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[dust].scale = 0.5f;
 				Main.dust[dust].noGravity = true;
 			}
+			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 		}
-        }
+	}
 }
