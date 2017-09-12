@@ -23,7 +23,7 @@ namespace ForgottenMemories.Tiles
             AddMapEntry(new Color(175, 167, 75), name);
 			dustType = 15;
 			Main.tileSpelunker[mod.TileType("CosmirockTile")] = true;
-			mineResist = 5f
+			mineResist = 5f;
 
         }
 

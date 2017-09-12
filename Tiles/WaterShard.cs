@@ -15,7 +15,6 @@ namespace ForgottenMemories.Tiles
 {
 	public class WaterShard : ModTile
 	{
-		int f = new int[1];
 		public override void SetDefaults()
 		{
 			Main.tileShine[mod.TileType("WaterShard")] = 300;
