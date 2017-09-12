@@ -21,12 +21,13 @@ namespace ForgottenMemories.Projectiles.Bazaar
 		}
 		public override void Kill(int timeLeft)
 		{
-			for (int i = 0; i < 5; i++)
+			for (int i = 0; i < 10; i++)
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 266);
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 5);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
+			Main.PlaySound(4, (int)projectile.position.X, (int)projectile.position.Y, 21);
 		}
 	}
 }
