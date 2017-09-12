@@ -25,7 +25,7 @@ namespace ForgottenMemories.Items.Consumable
 			item.useAnimation = 10;
 			item.consumable = true;
 			item.value = 1000;
-			item.rare = 2;
+			item.rare = -1;
 		}
 
 		public override void UseStyle(Player player)

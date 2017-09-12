@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.Hook
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "BrassAlloy", 10);
-                      recipe.AddTile(16);
+            recipe.AddTile(16);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
         }
@@ -57,7 +57,7 @@ namespace ForgottenMemories.Items.Hook
 
 		public override void GrapplePullSpeed(Player player, ref float speed)
 		{
-			speed = 5;
+			speed = 13;
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)

@@ -8,7 +8,7 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Servant Of Cthulhu");
-			Description.SetDefault("Become the Cthulhu");
+			Description.SetDefault("You have eyes at the back of your head!");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.buffNoSave[Type] = true;
 		}

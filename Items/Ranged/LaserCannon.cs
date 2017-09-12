@@ -56,11 +56,17 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			float sX = speedX;
-			float sY = speedY;
-			sX += (float)Main.rand.Next(-60, 61) * 0.03f;
-			sY += (float)Main.rand.Next(-60, 61) * 0.03f;
-			Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("LightningChain"), damage, knockBack, player.whoAmI);
+			if (Main.rand.Next(3) == 0)
+			{
+				for (int i = 0; i < 3; i++)
+				{
+					float sX = speedX;
+					float sY = speedY;
+					sX += (float)Main.rand.Next(-60, 61) * 0.03f;
+					sY += (float)Main.rand.Next(-60, 61) * 0.03f;
+					Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("LightningChain"), damage, knockBack, player.whoAmI);
+				}
+			}
 			
 			for (int i = 0; i < 4; i++)
 			{

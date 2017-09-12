@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.Ranged
 
 			item.knockBack = 6;
 			item.value = 250000;
-			item.rare = 6;
+			item.rare = -1;
 			item.UseSound = SoundID.Item36;
 			item.autoReuse = true;
 			item.shoot = ProjectileID.Bullet;

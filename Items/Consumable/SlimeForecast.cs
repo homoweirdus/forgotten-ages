@@ -46,6 +46,7 @@ namespace ForgottenMemories.Items.Consumable
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Gel, 66);
+	    recipe.AddIngredient(null, "GelatineBar", 8);
             recipe.AddIngredient(ItemID.FallenStar, 3);
 			recipe.AddTile(TileID.Solidifier);
             recipe.SetResult(this);

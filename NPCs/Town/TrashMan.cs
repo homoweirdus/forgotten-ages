@@ -115,13 +115,13 @@ namespace ForgottenMemories.NPCs.Town
 			nextSlot++;
 			if (NPC.downedBoss3)
 			{
-				shop.item[nextSlot].SetDefaults(ItemID.FrogLeg);
+				shop.item[nextSlot].SetDefaults(mod.ItemType("DirtDagger"));
 				nextSlot++;
 				
-				shop.item[nextSlot].SetDefaults(ItemID.PanicNecklace);
+				shop.item[nextSlot].SetDefaults(mod.ItemType("Hamboy"));
 				nextSlot++;
 				
-				shop.item[nextSlot].SetDefaults(ItemID.BandofStarpower);
+				shop.item[nextSlot].SetDefaults(mod.ItemType("PlungerArrow"));
 				nextSlot++;
 				
 				shop.item[nextSlot].SetDefaults(ItemID.BandofRegeneration);
