@@ -15,7 +15,7 @@ namespace ForgottenMemories.Projectiles.Bazaar
             projectile.friendly = true;
             projectile.thrown = true;
 			projectile.timeLeft = 600;
-			projectile.penetrate = -1;
+			projectile.penetrate = 1;
 			projectile.ignoreWater = true;
 			aiType = ProjectileID.BeachBall;
 		}

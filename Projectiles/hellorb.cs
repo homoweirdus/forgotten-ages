@@ -31,25 +31,28 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			for (int index1 = 0; index1 < 7; ++index1)
+			if (projectile.timeLeft <= 995)
 			{
-				float num1 = projectile.velocity.X / 3f * (int)index1;
-				float num2 = projectile.velocity.Y / 3f * (int)index1;
-				int num3 = 4;
-				int index2 = Dust.NewDust(new Vector2(projectile.position.X + (float) num3, projectile.position.Y + (float) num3), projectile.width - num3 * 2, projectile.height - num3 * 2, 6, 0.0f, 0.0f, 0, default(Color), 1f);
-				Main.dust[index2].noGravity = true;
-				Main.dust[index2].velocity *= 0.1f;
-				Main.dust[index2].scale *= 2;
-				Main.dust[index2].velocity += projectile.velocity * 0.1f;
-				Main.dust[index2].position.X -= num1;
-				Main.dust[index2].position.Y -= num2;
-			}
-			if (Main.rand.Next(5) == 0)
-			{
-				int num = 4;
-				int index = Dust.NewDust(new Vector2(projectile.position.X + (float) num, projectile.position.Y + (float) num), projectile.width - num * 2, projectile.height - num * 2, 6, 0.0f, 0.0f, 0, default(Color), 1f);
-				Main.dust[index].velocity *= 0.25f;
-				Main.dust[index].velocity += projectile.velocity * 0.5f;
+				for (int index1 = 0; index1 < 7; ++index1)
+				{
+					float num1 = projectile.velocity.X / 3f * (int)index1;
+					float num2 = projectile.velocity.Y / 3f * (int)index1;
+					int num3 = 4;
+					int index2 = Dust.NewDust(new Vector2(projectile.position.X + (float) num3, projectile.position.Y + (float) num3), projectile.width - num3 * 2, projectile.height - num3 * 2, 6, 0.0f, 0.0f, 0, default(Color), 1f);
+					Main.dust[index2].noGravity = true;
+					Main.dust[index2].velocity *= 0.1f;
+					Main.dust[index2].scale *= 2;
+					Main.dust[index2].velocity += projectile.velocity * 0.1f;
+					Main.dust[index2].position.X -= num1;
+					Main.dust[index2].position.Y -= num2;
+				}
+				if (Main.rand.Next(5) == 0)
+				{
+					int num = 4;
+					int index = Dust.NewDust(new Vector2(projectile.position.X + (float) num, projectile.position.Y + (float) num), projectile.width - num * 2, projectile.height - num * 2, 6, 0.0f, 0.0f, 0, default(Color), 1f);
+					Main.dust[index].velocity *= 0.25f;
+					Main.dust[index].velocity += projectile.velocity * 0.5f;
+				}
 			}
 		}
 		
@@ -63,28 +66,28 @@ namespace ForgottenMemories.Projectiles
 			projectile.position.X -= (float) (projectile.width / 2);
 			projectile.position.Y -= (float) (projectile.height / 2);
 			for (int index = 0; index < 8; ++index)
-			  Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 31, 0.0f, 0.0f, 100, new Color(), 1.5f);
+			Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 31, 0.0f, 0.0f, 100, new Color(), 1.5f);
 			for (int index1 = 0; index1 < 32; ++index1)
 			{
-			  int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0.0f, 0.0f, 100, new Color(), 2.5f);
-			  Main.dust[index2].noGravity = true;
-			  Main.dust[index2].velocity *= 3f;
-			  int index3 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0.0f, 0.0f, 100, new Color(), 1.5f);
-			  Main.dust[index3].velocity *= 2f;
-			  Main.dust[index3].noGravity = true;
+				int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0.0f, 0.0f, 100, new Color(), 2.5f);
+				Main.dust[index2].noGravity = true;
+				Main.dust[index2].velocity *= 3f;
+				int index3 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0.0f, 0.0f, 100, new Color(), 1.5f);
+				Main.dust[index3].velocity *= 2f;
+				Main.dust[index3].noGravity = true;
 			}
 			for (int index1 = 0; index1 < 2; ++index1)
 			{
-			  int index2 = Gore.NewGore(projectile.position + new Vector2((float) (projectile.width * Main.rand.Next(100)) / 100f, (float) (projectile.height * Main.rand.Next(100)) / 100f) - Vector2.One * 10f, new Vector2(), Main.rand.Next(61, 64), 1f);
-			  Main.gore[index2].velocity *= 0.3f;
-			  Main.gore[index2].velocity.X += (float) Main.rand.Next(-10, 11) * 0.05f;
-			  Main.gore[index2].velocity.Y += (float) Main.rand.Next(-10, 11) * 0.05f;
+				int index2 = Gore.NewGore(projectile.position + new Vector2((float) (projectile.width * Main.rand.Next(100)) / 100f, (float) (projectile.height * Main.rand.Next(100)) / 100f) - Vector2.One * 10f, new Vector2(), Main.rand.Next(61, 64), 1f);
+				Main.gore[index2].velocity *= 0.3f;
+				Main.gore[index2].velocity.X += (float) Main.rand.Next(-10, 11) * 0.05f;
+				Main.gore[index2].velocity.Y += (float) Main.rand.Next(-10, 11) * 0.05f;
 			}
 			if (projectile.owner == Main.myPlayer)
 			{
-			  projectile.localAI[1] = -1f;
-			  projectile.maxPenetrate = 0;
-			  projectile.Damage();
+				projectile.localAI[1] = -1f;
+				projectile.maxPenetrate = 0;
+				projectile.Damage();
 			}
 			
 			for (int i = 0; i < 5; i++)
