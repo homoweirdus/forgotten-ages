@@ -31,6 +31,8 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
+			if (projectile.timeLeft > 990)
+				return;
 			for (int index1 = 0; index1 < 7; ++index1)
 			{
 				float num1 = projectile.velocity.X / 3f * (int)index1;
@@ -87,7 +89,7 @@ namespace ForgottenMemories.Projectiles
 			  projectile.Damage();
 			}
 			
-			for (int i = 0; i < 5; i++)
+			for (int i = 0; i < 2; i++)
 			{
 				Vector2 vector2 = new Vector2(4, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360)));
 				int kek = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, vector2.X, vector2.Y, ProjectileID.MolotovFire, (int)(projectile.damage/2), 5f, projectile.owner);
