@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Melee
 			item.knockBack = 6.5f;
 			item.value = 138000;
 			item.rare = 6;
-			item.UseSound = SoundID.Item1;
+			item.UseSound = SoundID.Item71;
 			item.autoReuse = true;
 			item.shoot = 85;
 			item.shootSpeed = 9f;

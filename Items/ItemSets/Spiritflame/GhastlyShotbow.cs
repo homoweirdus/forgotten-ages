@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 			item.shoot = mod.ProjectileType("SpiritfireArrow");
 			item.useAmmo = 40;
 			item.knockBack = 1;
-			item.UseSound = SoundID.Item5;
+			item.UseSound = SoundID.Item75;
 			item.value = 80000;
 			item.rare = 4;
 			item.autoReuse = true;

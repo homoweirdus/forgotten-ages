@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.useStyle = 1;
             item.useTime = 15;
             item.useAnimation = 15;
-
+            item.UseSound = SoundID.Item119;
             item.useTurn = true;
             item.autoReuse = false;
             item.consumable = true;

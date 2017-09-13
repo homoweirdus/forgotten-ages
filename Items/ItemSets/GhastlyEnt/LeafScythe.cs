@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			item.knockBack = 2.5f;
 			item.value = 27000;
 			item.rare = 2;
-			item.UseSound = SoundID.Item71;
+			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("Leaf");
 			item.shootSpeed = 10f;

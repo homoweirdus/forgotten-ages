@@ -42,7 +42,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.knockBack = 2;
             item.value = Terraria.Item.sellPrice(0, 15, 0, 0);
             item.rare = 11;
-            item.UseSound = SoundID.Item5;
+            item.UseSound = SoundID.Item75;
             item.autoReuse = true;
             item.shootSpeed = 15f;
 

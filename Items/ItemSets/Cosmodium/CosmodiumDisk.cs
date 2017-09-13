@@ -30,7 +30,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.rare = 11;
             item.shootSpeed = 16f;
             item.shoot = mod.ProjectileType ("CosmodiumDisk");
-            item.UseSound = SoundID.Item1;
+            item.UseSound = SoundID.Item37;
             item.autoReuse = true;
         }
 		
