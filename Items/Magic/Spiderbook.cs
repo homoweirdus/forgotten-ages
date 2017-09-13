@@ -20,8 +20,8 @@ namespace ForgottenMemories.Items.Magic
 	        item.mana = 5;
 			item.width = 32;
 			item.height = 32;
-            item.useAnimation = 25;
-            item.useTime = 25;
+            item.useAnimation = 22;
+            item.useTime = 22;
             item.maxStack = 1;
 			item.consumable = false;
             item.useStyle = 5;
