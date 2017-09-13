@@ -43,7 +43,7 @@ namespace ForgottenMemories.Projectiles
 			
 			if (projectile.ai[0] > 0)
 				return;
-			Main.PlaySound(SoundID.Item89, projectile.position);
+	        Main.PlaySound(89, (int)projectile.position.X, (int)projectile.position.Y, 21);;
 			projectile.position.X += (float) (projectile.width / 2);
 			projectile.position.Y += (float) (projectile.height / 2);
 			projectile.width = (int) (16.0 * (double) projectile.scale);
@@ -86,7 +86,7 @@ namespace ForgottenMemories.Projectiles
 			  Main.dust[index2].velocity *= 2.4f;
 			  Main.dust[index2].scale += Main.rand.NextFloat();
 			}
-			projectile.ai[0}++;
+		projectile.ai[0]++;
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
