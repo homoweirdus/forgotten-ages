@@ -36,7 +36,7 @@ namespace ForgottenMemories.Projectiles.Bazaar
 				for (int i = 0; i < 2; ++i)
 				{
 					Vector2 newVect1 = new Vector2 (8, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360)));
-					int proj = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect1.X, newVect1.Y, mod.ProjectileType("AtlanteanWater"), 10, 5f, projectile.owner);
+					int proj = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, newVect1.X, newVect1.Y, mod.ProjectileType("AtlanteanWater"), projectile.damage, 5f, projectile.owner);
 					Main.projectile[proj].ranged = false;
 					Main.projectile[proj].melee = true;
 				}

@@ -39,8 +39,8 @@ namespace ForgottenMemories.Items.Melee
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "Sediment", 1);
-			recipe.AddIngredient(null, "ExoticBouquet", 1);
-			recipe.AddIngredient(ItemID.Emerald, 3);
+			recipe.AddIngredient(null, "DivineBolt", 1);
+			recipe.AddIngredient(ItemID.MeteoriteBar, 12);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

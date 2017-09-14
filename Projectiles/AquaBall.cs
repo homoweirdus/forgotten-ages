@@ -19,7 +19,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.melee = true;
 			projectile.penetrate = -1;
-			projectile.scale = 1.2f;
 		}
 		
 		public override void SetStaticDefaults()

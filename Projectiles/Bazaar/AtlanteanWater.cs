@@ -28,7 +28,7 @@ namespace ForgottenMemories.Projectiles.Bazaar
 		
 		public override void AI()
 		{
-			if (projectile.timeLeft <= 95 && projectile.timeLeft >= 2)
+			if (projectile.timeLeft <= 75 && projectile.timeLeft >= 2)
 			{
 				for (int index1 = 0; index1 < 2; ++index1)
 				{

@@ -58,9 +58,9 @@ namespace ForgottenMemories.Items.Ranged
 			Vector2 origVect = new Vector2(speedX, speedY);
 			Vector2 thing1 = position;
 			Vector2 thing2 = position;
-			thing1 += origVect.RotatedBy(-1.57079637050629, new Vector2()) * 1.5f;
-            thing2 += origVect.RotatedBy(1.57079637050629, new Vector2()) * 1.5f;
-			Projectile.NewProjectile(position.X + (speedX * 3), position.Y + (speedY * 3), speedX, speedY, mod.ProjectileType("WrathArrow"), damage, knockBack, player.whoAmI);
+			thing1 += origVect.RotatedBy(-1.57079637050629, new Vector2()) * 0.9f;
+            thing2 += origVect.RotatedBy(1.57079637050629, new Vector2()) * 0.9f;
+			Projectile.NewProjectile(position.X + speedX, position.Y + speedY, speedX, speedY, mod.ProjectileType("WrathArrow"), damage, knockBack, player.whoAmI);
 			Projectile.NewProjectile(thing1.X, thing1.Y, speedX, speedY, mod.ProjectileType("WrathArrow"), damage, knockBack, player.whoAmI);
 			Projectile.NewProjectile(thing2.X, thing2.Y, speedX, speedY, mod.ProjectileType("WrathArrow"), damage, knockBack, player.whoAmI);
 			

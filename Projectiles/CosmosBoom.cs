@@ -28,8 +28,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			if (projectile.ai[0] == 0)
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 14);
+			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 14);
 		}
 		
 		public override void AI()

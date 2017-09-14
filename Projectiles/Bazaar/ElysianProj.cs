@@ -26,9 +26,18 @@ namespace ForgottenMemories.Projectiles.Bazaar
 			projectile.melee = true;
 			projectile.scale = 1f;
 		}
+		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-			target.AddBuff(BuffID.Poisoned,	120);
+		{
+			int amountOfProjectiles = Main.rand.Next(1, 4);
+			
+			for (int i = 0; i < amountOfProjectiles; ++i)
+				{
+					float sX = (float)Main.rand.Next(-60, 61) * 0.1f;
+					float sY = (float)Main.rand.Next(-60, 61) * 0.1f;
+					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, 228, projectile.damage, 5f, projectile.owner);
+				}
+				target.AddBuff(BuffID.Poisoned,	120);
 		}
 	}
 }

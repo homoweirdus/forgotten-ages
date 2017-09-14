@@ -45,20 +45,20 @@ namespace ForgottenMemories.NPCs.Sky
 			return spawnInfo.player.ZoneSkyHeight ? 0.08f : 0f;
 		}
 		
-					public override void NPCLoot()
-	{
-			if(Main.rand.Next(20) == 0)
+		public override void NPCLoot()
+		{
+			if(Main.rand.Next(10) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LightningPistol"));
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DivineBolt"));
 			}
 			
-	}
-	
+		}
+		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-	{
-		npc.lifeMax = (int)(npc.lifeMax * 1f);
-		npc.damage = (int)(npc.damage * 1f);
-	}
-	
+		{
+			npc.lifeMax = (int)(npc.lifeMax * 1f);
+			npc.damage = (int)(npc.damage * 1f);
+		}
+		
 	}
 }

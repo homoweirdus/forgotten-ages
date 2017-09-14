@@ -28,11 +28,20 @@ namespace ForgottenMemories.Items.Melee
 			item.useAnimation = 25;
 			item.useTime = 25;
 			item.shootSpeed = 8f;
-
 			item.knockBack = 5f;
-			item.damage = 45;
+			item.damage = 55;
 			item.value = Item.sellPrice(0, 3, 0, 0);
 			item.rare = 5;
+		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
+			recipe.AddIngredient(1611, 1);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

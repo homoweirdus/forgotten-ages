@@ -220,57 +220,40 @@ namespace ForgottenMemories.Items
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Atlantean"), Main.rand.Next(1, 1));
 				}
-				if (npc.type == NPCID.Demolitionist)
+			}
+			if (npc.type == NPCID.Zombie)
+			{
+				if (Main.rand.Next(6) == 0)
 				{
-					if (Main.rand.Next(4) == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HotPotatoes"), Main.rand.Next(1, 1));
-					}
+					Item.NewItem((int) npc.position.X, (int) npc.position.Y, npc.width, npc.height,ItemID.Worm, 1, false, 0, false, false);
 				}
-				if (npc.type == NPCID.Zombie)
+			}
+			if (npc.type == NPCID.Piranha)
+			{
+				if (Main.rand.Next(50) == 0)
 				{
-					if (Main.rand.Next(6) == 0)
-					{
-						Item.NewItem((int) npc.position.X, (int) npc.position.Y, npc.width, npc.height,ItemID.Worm, 1, false, 0, false, false);
-					}
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExoticBouquet"), Main.rand.Next(1, 1));
 				}
-				if (npc.type == NPCID.Piranha)
+			}
+			if (npc.type == NPCID.DiggerHead)
+			{
+				if (Main.rand.Next(30) == 0)
 				{
-					if (Main.rand.Next(50) == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExoticBouquet"), Main.rand.Next(1, 1));
-					}
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Axle"), Main.rand.Next(1, 1));
 				}
-				if (npc.type == NPCID.DiggerHead)
+			}
+			if (npc.type == NPCID.GiantBat)
+			{
+				if (Main.rand.Next(30) == 0)
 				{
-					if (Main.rand.Next(30) == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Axle"), Main.rand.Next(1, 1));
-					}
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WhackTree"), Main.rand.Next(1, 1));
 				}
-				if (npc.type == NPCID.GiantBat)
+			}
+			if (npc.type == NPCID.BloodCrawler)
+			{
+				if (Main.rand.Next(12) == 0)
 				{
-					if (Main.rand.Next(30) == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WhackTree"), Main.rand.Next(1, 1));
-					}
-				}
-				if (npc.type == NPCID.BloodCrawler)
-				{
-					if (Main.rand.Next(12) == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Spiderbook"), Main.rand.Next(1, 1));
-					}
-				}
-				if ((double) npc.value > 0.0)
-				{
-					if (Main.rand.Next(40) == 0 && NPC.downedBoss3 && Main.player[(int) Player.FindClosest(npc.position, npc.width, npc.height)].ZoneMeteor)
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Valhalla"), Main.rand.Next(1, 1));
-				}
-				if ((double) npc.value > 0.0)
-				{
-					if (Main.rand.Next(50) == 0 && Main.hardMode && Main.player[(int) Player.FindClosest(npc.position, npc.width, npc.height)].ZoneJungle)
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Elysian"), Main.rand.Next(1, 1));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Spiderbook"), Main.rand.Next(1, 1));
 				}
 			}
 		}

@@ -17,8 +17,8 @@ namespace ForgottenMemories.Items.Ranged
 			item.ranged = true;
 			item.width = 50;
 			item.height = 50;
-			item.useTime = 22;
-			item.useAnimation = 22;
+			item.useTime = 18;
+			item.useAnimation = 18;
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 10000;
@@ -54,6 +54,17 @@ namespace ForgottenMemories.Items.Ranged
 				Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("LightningChain"), damage, knockBack, player.whoAmI);
 			}
 			return true;
+		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.FlintlockPistol, 1);
+			recipe.AddIngredient(null, "DivineBolt", 1);
+			recipe.AddIngredient(ItemID.MeteoriteBar, 8);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }
