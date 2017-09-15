@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.Tool
 
 		public override void SetDefaults()
 		{
-			item.damage = 2;
+			item.damage = 8;
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
