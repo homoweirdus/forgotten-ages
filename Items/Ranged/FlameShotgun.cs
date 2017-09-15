@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.Ranged
 			item.UseSound = SoundID.Item36;
 			item.autoReuse = true;
 			item.shoot = ProjectileID.Bullet;
-			item.shootSpeed = 10f;
+			item.shootSpeed = 19f;
 			item.noMelee = true;
 			item.useAmmo =  AmmoID.Bullet;
 		}
@@ -62,8 +62,8 @@ namespace ForgottenMemories.Items.Ranged
 			{
 				float sX = speedX;
 				float sY = speedY;
-				sX += (float)Main.rand.Next(-60, 61) * 0.03f;
-				sY += (float)Main.rand.Next(-60, 61) * 0.03f;
+				sX += (float)Main.rand.Next(-60, 61) * 0.04f;
+				sY += (float)Main.rand.Next(-60, 61) * 0.04f;
 				int p = Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("Flambullet"), damage, knockBack, player.whoAmI); 
 			}
 			return false;

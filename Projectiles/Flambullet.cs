@@ -12,14 +12,12 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 20;
-			projectile.height = 20;
+			projectile.width = 8;
+			projectile.height = 8;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.ranged = true;
 			projectile.penetrate = 1;
-			projectile.timeLeft = 200;
-			projectile.alpha = 255;
 		}
 		
 		public override void SetStaticDefaults()
@@ -29,22 +27,16 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
+			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 			int dust;
 			dust = Dust.NewDust(projectile.Center + projectile.velocity, 0, 0, 127, 0f, 0f);
-			Main.dust[dust].scale = 1.5f;
 			Main.dust[dust].noGravity = true;
 		}
 		
-		public override bool OnTileCollide (Vector2 velocity1)
+		public override void Kill(int timeLeft)
 		{
-			if ((double) projectile.velocity.Y != (double) velocity1.Y || (double) projectile.velocity.X != (double) velocity1.X)
-                {
-                  if ((double) projectile.velocity.X != (double) velocity1.X)
-                    projectile.velocity.X = -velocity1.X;
-                  if ((double) projectile.velocity.Y != (double) velocity1.Y)
-                    projectile.velocity.Y = -velocity1.Y;
-                }
-			return false;
+			Projectile.NewProjectile(projectile.position.X, projectile.position.Y, projectile.velocity.X * -0.2f, projectile.velocity.Y * -0.2f, mod.ProjectileType("FlameBoom"), projectile.damage, 0f, projectile.owner, 0f, 0f);
+			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 34);
 		}
 	}
 }
