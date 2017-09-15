@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.width = 8;
 			item.height = 8;
 			item.maxStack = 999;
-			item.value = 5625;
+			item.value = 10000;
         }
 
 		public override void SetStaticDefaults()
