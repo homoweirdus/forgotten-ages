@@ -52,5 +52,15 @@ namespace ForgottenMemories.Items.Ranged
 		{
 			return new Vector2(-5, 0);
 		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.GraniteBlock, 20);
+			recipe.AddIngredient(null, "Tourmaline", 8);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
     }
 }

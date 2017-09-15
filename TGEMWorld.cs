@@ -13,8 +13,8 @@ using ForgottenMemories;
 
 namespace ForgottenMemories
 {
-    public class TGEMWorld : ModWorld
-    {
+	public class TGEMWorld : ModWorld
+	{
 		public static bool Cryotine = false;
 		public static bool Gelatine = false;
 		public static bool Blight = false;
@@ -22,11 +22,11 @@ namespace ForgottenMemories
 		public static bool downedArterius = false;
 		public static bool downedTitanRock = false;
 		public static bool forestInvasionUp = false;
-        public static bool downedForestInvasion = false;
+		public static bool downedForestInvasion = false;
 		public static int TremorTime;
 		
 		public override void Initialize()
-        {
+		{
 			Gelatine = false;
 			Blight = false;
 			downedArterius = false;
@@ -35,8 +35,8 @@ namespace ForgottenMemories
 			TremorTime = 0;
 			downedTitanRock = false;
 			Main.invasionSize = 0;
-            forestInvasionUp = false;
-            downedForestInvasion = false;
+			forestInvasionUp = false;
+			downedForestInvasion = false;
 		}
 		
 		public override TagCompound Save()
@@ -84,52 +84,53 @@ namespace ForgottenMemories
 		}
 		
 		public override void NetReceive(BinaryReader reader)
-        {
-            BitsByte flags = reader.ReadByte();
+		{
+			BitsByte flags = reader.ReadByte();
 			Gelatine = flags[0];
 			Cryotine = flags[1];
 			downedGhastlyEnt = flags[2];
 			downedTitanRock = flags[3];
 			Blight = flags[4];
 			downedArterius = flags[5];
-            downedForestInvasion = flags[6];
-        }
+			downedForestInvasion = flags[6];
+		}
 		
 		public override void PostUpdate()
-        {
-            if(forestInvasionUp)
-            {
-                if(Main.invasionX == (double)Main.spawnTileX)
-                {
-                    CustomInvasion.CheckCustomInvasionProgress();
-                }
-                CustomInvasion.UpdateCustomInvasion();
-            }
-        }
+		{
+			if(forestInvasionUp)
+			{
+				if(Main.invasionX == (double)Main.spawnTileX)
+				{
+					CustomInvasion.CheckCustomInvasionProgress();
+				}
+				CustomInvasion.UpdateCustomInvasion();
+			}
+		}
 		
-        public override void PostWorldGen()
-        {
-			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 18E-05); k++)
+		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
+		{
+			int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
+			if (ShiniesIndex != -1)
 			{
-				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
-				int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
-				Tile tile = Main.tile[i, j];
-				if ((tile.type == 367) && j > Main.worldSurface)
+				tasks.Insert(ShiniesIndex + 1, new PassLegacy("Example Mod Ores", delegate (GenerationProgress progress)
 				{
-					WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(3, 5), WorldGen.genRand.Next(3, 5), (ushort)mod.TileType("CitrineOre"));
-				}
+					progress.Message = "Gems";
+					for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 50E-05); k++)
+					{
+						int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
+						int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
+						Tile tile = Main.tile[i, j];
+						if ((tile.type == 368) && j > Main.worldSurface)
+						{
+							WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(3, 5), WorldGen.genRand.Next(3, 5), (ushort)mod.TileType("TourmalineOre"));
+						}
+						if ((tile.type == 367) && j > Main.worldSurface)
+						{
+							WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(3, 5), WorldGen.genRand.Next(3, 5), (ushort)mod.TileType("CitrineOre"));
+						}
+					}
+				}));
 			}
-			
-			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 18E-05); k++)
-			{
-				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
-				int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
-				Tile tile = Main.tile[i, j];
-				if ((tile.type == 368) && j > Main.worldSurface)
-				{
-					WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(3, 5), WorldGen.genRand.Next(3, 5), (ushort)mod.TileType("TourmalineOre"));
-				}
-			}
-        }
-    }
+		}
+	}
 }

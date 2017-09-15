@@ -85,8 +85,9 @@ namespace ForgottenMemories.Items.Magic
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MarbleBlock, 18);
 			recipe.AddIngredient(ItemID.GraniteBlock, 18);
+			recipe.AddIngredient(null, "Tourmaline", 5);
+			recipe.AddIngredient(null, "Citrine", 5);
 			recipe.AddIngredient(null, "WaterShard", 8);
-			recipe.AddIngredient(ItemID.FallenStar, 6);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

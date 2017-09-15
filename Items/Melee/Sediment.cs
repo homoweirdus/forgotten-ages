@@ -34,5 +34,15 @@ namespace ForgottenMemories.Items.Melee
 			item.value = Item.sellPrice(0, 2, 0, 0);
 			item.rare = 2;
 		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "Tourmaline", 8);
+			recipe.AddIngredient(null, "Citrine", 8);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }

@@ -8,38 +8,46 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.Melee 
 {
-    public class MarbleKatana : ModItem
-    {
-        public override void SetDefaults()
-        {
+	public class MarbleKatana : ModItem
+	{
+		public override void SetDefaults()
+		{
 
 
-            item.damage = 21; 
-            item.crit = 8;
-            item.melee = true;
-            item.knockBack = 4; 
-            item.autoReuse = true; 
-            item.useTurn = true; 
+			item.damage = 21; 
+			item.crit = 8;
+			item.melee = true;
+			item.knockBack = 4; 
+			item.autoReuse = true; 
+			item.useTurn = true; 
 
-            item.width = 32;       
-            item.height = 32;
+			item.width = 32;       
+			item.height = 32;
 
-            item.useTime = 20;
-            item.useAnimation = 20;
-            item.useStyle = 1;
-            item.UseSound = SoundID.Item1;
+			item.useTime = 20;
+			item.useAnimation = 20;
+			item.useStyle = 1;
+			item.UseSound = SoundID.Item1;
 
-            item.value = 1000;
-            item.rare = 3;
+			item.value = 1000;
+			item.rare = 3;
 
-        }
+		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Marble Katana");
-      Tooltip.SetDefault("");
-    }
-
-        
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Marble Katana");
+			Tooltip.SetDefault("");
+		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.MarbleBlock, 20);
+			recipe.AddIngredient(null, "Citrine", 8);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
 }
