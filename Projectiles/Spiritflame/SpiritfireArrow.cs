@@ -24,8 +24,6 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
 			projectile.scale = 0.95f;
 			projectile.timeLeft = 360;
-			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
-			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
 			projectile.light = 0.5f;
 			//projectile.scale = 0.5f;
 			//projectile.extraUpdates = 1;
@@ -89,7 +87,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spiritfire Dagger");
+			DisplayName.SetDefault("Spiritfire Arrow");
 		}
 		
 		public override void AI()

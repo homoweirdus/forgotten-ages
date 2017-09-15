@@ -109,43 +109,27 @@ namespace ForgottenMemories
 		
         public override void PostWorldGen()
         {
-            // Place some items in Marble Chests
-            int[] itemsToPlaceInMarbleChests = new int[] { mod.ItemType("MarbleKatana") };
-            int itemsToPlaceInMarbleChestsChoice = 0;
-            for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
-            {
-                Chest chest = Main.chest[chestIndex];
-                if (chest != null && Main.tile[chest.x, chest.y].type == TileID.Containers && Main.tile[chest.x, chest.y].frameX == 51 * 36)
-                {
-                    for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++)
-                    {
-                        if (chest.item[inventoryIndex].type == 0)
-                        {
-                            chest.item[inventoryIndex].SetDefaults(itemsToPlaceInMarbleChests[itemsToPlaceInMarbleChestsChoice]);
-                            itemsToPlaceInMarbleChestsChoice = (itemsToPlaceInMarbleChestsChoice + 1) % itemsToPlaceInMarbleChests.Length;
-                            break;
-                        }
-                    }
-                }
-            }
-			int[] itemsToPlaceInGraniteChests = new int[] { mod.ItemType("GraniteDecimator") };
-            int itemsToPlaceInGraniteChestsChoice = 0;
-            for (int chestIndex = 0; chestIndex < 1000; chestIndex++)
-            {
-                Chest chest = Main.chest[chestIndex];
-                if (chest != null && Main.tile[chest.x, chest.y].type == TileID.Containers && Main.tile[chest.x, chest.y].frameX == 51 * 36)
-                {
-                    for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++)
-                    {
-                        if (chest.item[inventoryIndex].type == 0)
-                        {
-                            chest.item[inventoryIndex].SetDefaults(itemsToPlaceInGraniteChests[itemsToPlaceInGraniteChestsChoice]);
-                            itemsToPlaceInGraniteChestsChoice = (itemsToPlaceInGraniteChestsChoice + 1) % itemsToPlaceInGraniteChests.Length;
-                            break;
-                        }
-                    }
-                }
-            }
+			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 18E-05); k++)
+			{
+				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
+				int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
+				Tile tile = Main.tile[i, j];
+				if ((tile.type == 367) && j > Main.worldSurface)
+				{
+					WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(3, 5), WorldGen.genRand.Next(3, 5), (ushort)mod.TileType("CitrineOre"));
+				}
+			}
+			
+			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 18E-05); k++)
+			{
+				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
+				int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
+				Tile tile = Main.tile[i, j];
+				if ((tile.type == 368) && j > Main.worldSurface)
+				{
+					WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(3, 5), WorldGen.genRand.Next(3, 5), (ushort)mod.TileType("TourmalineOre"));
+				}
+			}
         }
     }
 }
