@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ForgottenMemories;
+
 namespace ForgottenMemories.Items.Consumable
 {
 	public class CosmiCrystal : ModItem
