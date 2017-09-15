@@ -89,21 +89,36 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VortexSphere"), 1); 
 			}
 			
-			if (npc.type == NPCID.KingSlime)
+			if (npc.type == NPCID.KingSlime && NPC.downedBoss1 && Main.rand.Next(10) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SlimeCrystal"), 1); 
 			}
 			
-			if ((npc.type == 13 || npc.type == 14 || npc.type == 15) && npc.boss == true || npc.type == 266)
+			if (npc.type == NPCID.KingSlime && !NPC.downedBoss1)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SlimeCrystal"), 1); 
+			}
+			
+			if ((npc.type == 13 || npc.type == 14 || npc.type == 15) && npc.boss == true || npc.type == 266 && NPC.downedBoss2 && Main.rand.Next(10) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CryoCrystal"), 1); 
 			}
 			
-			if (npc.type == 134 || npc.type == 127 || npc.type == 125 && !NPC.AnyNPCs(126) || npc.type == 126 && !NPC.AnyNPCs(125))
+			if ((npc.type == 13 || npc.type == 14 || npc.type == 15) && npc.boss == true || npc.type == 266 && !NPC.downedBoss2)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CryoCrystal"), 1); 
+			}
+			
+			if (npc.type == 134 || npc.type == 127 || npc.type == 125 && !NPC.AnyNPCs(126) || npc.type == 126 && !NPC.AnyNPCs(125) && NPC.downedMechBossAny && Main.rand.Next(10) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BlightCrystal"), 1); 
 			}
 			
+			if (npc.type == 134 || npc.type == 127 || npc.type == 125 && !NPC.AnyNPCs(126) || npc.type == 126 && !NPC.AnyNPCs(125) && !NPC.downedMechBossAny)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BlightCrystal"), 1); 
+			}
+
 			if (Main.invasionType == 4 && Main.rand.Next(20) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianYoyo"), 1); 

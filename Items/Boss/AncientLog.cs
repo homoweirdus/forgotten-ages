@@ -33,7 +33,7 @@ namespace ForgottenMemories.Items.Boss
         {
             if(!TGEMWorld.forestInvasionUp)
             {
-                Main.NewText("The forest's army is approaching.......", 175, 75, 255, false);
+                Main.NewText("The forests rumble...", 175, 75, 255, false);
                 CustomInvasion.StartCustomInvasion();
                 return true;
             }

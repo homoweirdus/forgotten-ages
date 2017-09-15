@@ -66,11 +66,11 @@ namespace ForgottenMemories
             String text = "";
             if (Main.invasionX == (double)Main.spawnTileX)
             {
-               // text = "The forest's army has arrived!";
+               // text = "Hostile trees spring up from the ground!";
             }
             if(Main.invasionSize <= 0)
             {
-                text = "The forest's army has been defeated!.";
+                text = "The woodland terrors retreat to their roots!.";
             }
             if (Main.netMode == 0)
             {
