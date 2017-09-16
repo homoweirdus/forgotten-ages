@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.Consumable
 
         public override bool UseItem(Player player)
         {
-            Main.NewText("A malevolent force seeps into the crimtane and corrupt stone...", 150, 31, 242);
+            Main.NewText("A malevolent force seeps into the most pestillent stone...", 150, 31, 242);
 			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 22E-05); k++)
 			{
 				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);

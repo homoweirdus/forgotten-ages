@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.Consumable
 
         public override bool UseItem(Player player)
         {
-			Main.NewText("Gelatine grows in the underground!", 0, 29, 255);
+			Main.NewText("Gelatine seeps into the subterranean caverns!", 0, 29, 255);
 			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 18E-05); k++)
 			{
 				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);

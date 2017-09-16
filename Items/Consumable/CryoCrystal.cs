@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.Consumable
 
         public override bool UseItem(Player player)
         {
-            Main.NewText("Ice crystallizes in the underground snow!", 36, 242, 242);
+            Main.NewText("Ice crystallizes beneath the tundra!", 36, 242, 242);
 			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 22E-05); k++)
 			{
 				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
