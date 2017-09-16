@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.AaMaterials
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Divine Bolt");
-			Tooltip.SetDefault("'The essence of storms'");
+			Tooltip.SetDefault("'A fragment torn from pure thunder'");
 		}
 	}
 }
