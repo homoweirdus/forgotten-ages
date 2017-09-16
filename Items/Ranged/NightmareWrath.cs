@@ -55,14 +55,21 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			if (type == 1)
+            {
+                type = mod.ProjectileType("WrathArrow");
+            }
 			Vector2 origVect = new Vector2(speedX, speedY);
 			Vector2 thing1 = position;
 			Vector2 thing2 = position;
 			thing1 += origVect.RotatedBy(-1.57079637050629, new Vector2()) * 0.9f;
             thing2 += origVect.RotatedBy(1.57079637050629, new Vector2()) * 0.9f;
-			Projectile.NewProjectile(position.X + speedX, position.Y + speedY, speedX, speedY, mod.ProjectileType("WrathArrow"), damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(thing1.X, thing1.Y, speedX, speedY, mod.ProjectileType("WrathArrow"), damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(thing2.X, thing2.Y, speedX, speedY, mod.ProjectileType("WrathArrow"), damage, knockBack, player.whoAmI);
+			int f = Projectile.NewProjectile(position.X + speedX, position.Y + speedY, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Main.projectile[f].noDropItem = true;
+			int a = Projectile.NewProjectile(thing1.X, thing1.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Main.projectile[a].noDropItem = true;
+			int g = Projectile.NewProjectile(thing2.X, thing2.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Main.projectile[g].noDropItem = true;
 			
 			return false;
 		}

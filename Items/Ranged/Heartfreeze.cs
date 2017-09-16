@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.Ranged
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Heartfreeze");
-      Tooltip.SetDefault("Arrows can freeze enemies");
+      Tooltip.SetDefault("Turns arrows into freezing arrows");
     }
 	
 	public override Vector2? HoldoutOffset()
@@ -46,7 +46,11 @@ namespace ForgottenMemories.Items.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("icearrow"), damage, knockBack, player.whoAmI);
+			if (type == 1)
+            {
+                type = mod.ProjectileType("icearrow");
+            }
+			int f = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
 			
 			return false;
 		}

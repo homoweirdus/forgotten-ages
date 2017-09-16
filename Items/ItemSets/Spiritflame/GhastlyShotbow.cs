@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 			item.shoot = mod.ProjectileType("SpiritfireArrow");
 			item.useAmmo = 40;
 			item.knockBack = 1;
-			item.UseSound = SoundID.Item75;
+			item.UseSound = SoundID.Item102;
 			item.value = 80000;
 			item.rare = 4;
 			item.autoReuse = true;
@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 		public override void SetStaticDefaults()
 		{
 		  DisplayName.SetDefault("Ghastly Longbow");
-		  Tooltip.SetDefault("Fires an arrow that erupts into spirit fire");
+		  Tooltip.SetDefault("Turns arrows into spiritfire arrows");
 		}
 		
 		
@@ -56,7 +56,11 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, mod.ProjectileType("SpiritfireArrow"), damage, knockBack, Main.myPlayer, 0, 0);
+			if (type == 1)
+            {
+                type = mod.ProjectileType("SpiritfireArrow");
+            }
+			Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer, 0, 0);
 				
             return false;
         }

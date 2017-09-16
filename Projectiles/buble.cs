@@ -103,7 +103,6 @@ namespace ForgottenMemories.Projectiles
 			Main.dust[dust6].scale = 2;
 			Main.dust[dust7].scale = 2;
 			Main.dust[dust8].scale = 2;
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y);
 		}
 	}
 }

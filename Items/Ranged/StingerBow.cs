@@ -45,11 +45,16 @@ namespace ForgottenMemories.Items.Ranged
 			int amountOfProjectiles = Main.rand.Next(3, 6);
 			for (int i = 0; i < amountOfProjectiles; ++i)
 			{
+				if (type == 1)
+				{
+					type = mod.ProjectileType("StingerArrow");
+				}
 				float sX = speedX;
 				float sY = speedY;
 				sX += (float)Main.rand.Next(-60, 61) * 0.03f;
 				sY += (float)Main.rand.Next(-60, 61) * 0.03f;
-				Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("StingerArrow"), damage, knockBack, player.whoAmI);
+				int f = Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
+				Main.projectile[f].noDropItem = true;
 			}
 			return false;
 		}

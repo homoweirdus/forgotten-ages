@@ -35,15 +35,21 @@ namespace ForgottenMemories.Items.Ranged
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Erebus");
-      Tooltip.SetDefault("Fires a cursed arrow that splits into flames");
+      Tooltip.SetDefault("Turns regular arrows into true cursed arrows");
     }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+			if (type == 1)
+            {
+                type = mod.ProjectileType("TrueNightArrow");
+            }
 			Vector2 velVect = new Vector2(speedX, speedY);
 			Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-12, 12)));
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, mod.ProjectileType("TrueNightArrow"), damage, knockBack, Main.myPlayer, 0, 0);
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, mod.ProjectileType("TrueNightArrow"), damage, knockBack, Main.myPlayer, 0, 0);
+			int f = Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer, 0, 0);
+			Main.projectile[f].noDropItem = true;
+			int a =Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, type, damage, knockBack, Main.myPlayer, 0, 0);
+			Main.projectile[a].noDropItem = true;
             return false;
         }
 		

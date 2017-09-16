@@ -115,6 +115,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 				Vector2 vector2 = (projectile.velocity/2).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360)));
 				Projectile.NewProjectile(projectile.Center, vector2, mod.ProjectileType("SpiritfireEmber"), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 			}
+			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 34);
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.Ranged
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Vermillion");
-      Tooltip.SetDefault("Fires ichor arrows in a spread");
+      Tooltip.SetDefault("Turns regular arrows into true ichor arrows");
     }
 	
 	public override Vector2? HoldoutOffset()
@@ -46,15 +46,22 @@ namespace ForgottenMemories.Items.Ranged
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+			
+			if (type == 1)
+            {
+                type = mod.ProjectileType("IchorArrow");
+            }
 			int projectileAmount = 2;
 			for (int k = 0; k < projectileAmount; k++)
 			{
 				Vector2 velVect = new Vector2(speedX, speedY);
 				Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-12, 12)));
 				
-				Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, mod.ProjectileType("IchorArrow"), damage, knockBack, Main.myPlayer, 0, 0);
+				int f = Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, type, damage, knockBack, Main.myPlayer, 0, 0);
+				Main.projectile[f].noDropItem = true;
 			}
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, mod.ProjectileType("IchorArrow"), damage, knockBack, Main.myPlayer, 0, 0);
+			int a = Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer, 0, 0);
+			Main.projectile[a].noDropItem = true;
             return false;
         }
         public override void AddRecipes()

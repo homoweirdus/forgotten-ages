@@ -26,7 +26,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override bool? Colliding(Rectangle myRect, Rectangle targetRect)
 		{
-			loat f2 = projectile.rotation - 0.7853982f * (float)Math.Sign(projectile.velocity.X) + ((projectile.spriteDirection == -1) ? 3.14159274f : 0f);
+			float f2 = projectile.rotation - 0.7853982f * (float)Math.Sign(projectile.velocity.X) + ((projectile.spriteDirection == -1) ? 3.14159274f : 0f);
 			float num4 = 0f;
 			float scaleFactor = -95f;
 			if (Collision.CheckAABBvLineCollision(targetRect.TopLeft(), targetRect.Size(), projectile.Center, projectile.Center + f2.ToRotationVector2() * scaleFactor, 23f * projectile.scale, ref num4))
