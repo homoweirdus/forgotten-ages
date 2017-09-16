@@ -28,7 +28,7 @@ namespace ForgottenMemories.Items.Throwing
 			item.noUseGraphic = true;
 			item.knockBack = 2f;
 			item.value = Item.sellPrice(0, 0, 0, 1);
-			item.rare = 1;
+			item.rare = -1;
 			item.UseSound = SoundID.Item1;
 			item.shoot = mod.ProjectileType("HamboyProj");
 			item.shootSpeed = 10f;
