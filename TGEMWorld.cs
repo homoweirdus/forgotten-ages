@@ -112,9 +112,9 @@ namespace ForgottenMemories
 			int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
 			if (ShiniesIndex != -1)
 			{
-				tasks.Insert(ShiniesIndex + 1, new PassLegacy("Adding BTFA Gems", delegate (GenerationProgress progress)
+				tasks.Insert(ShiniesIndex + 1, new PassLegacy("Moulding forgotten gemstones", delegate (GenerationProgress progress)
 				{
-					progress.Message = "Adding BTFA Gems";
+					progress.Message = "Moulding forgotten gemstones";
 					for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 50E-05); k++)
 					{
 						int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
