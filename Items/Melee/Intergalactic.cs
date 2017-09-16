@@ -41,7 +41,7 @@ namespace ForgottenMemories.Items.Melee
 			recipe.AddIngredient(null, "Aaru", 1);
 			recipe.AddIngredient(null, "Elysian", 1);
 			recipe.AddIngredient(null, "SubmergedAshes", 1);
-			recipe.AddTile(TileID.DemonAltar);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

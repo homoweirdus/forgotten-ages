@@ -555,6 +555,10 @@ namespace ForgottenMemories.NPCs.TitanRock
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CosmiCrystal"), 1);
 			}
+			if (Main.rand.Next(10) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TitanRockTrophy"), 1);
+			}
 			TGEMWorld.downedTitanRock = true;			
 		}
 	}

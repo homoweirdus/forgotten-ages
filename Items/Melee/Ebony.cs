@@ -103,8 +103,8 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "cosmorock_sword", 1);
 			recipe.AddIngredient(null, "BlightedCrusher", 1);
-			recipe.AddIngredient(ItemID.Starfury, 1);
-			recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
+			recipe.AddIngredient(null, "SubmergedAshes", 1);
+			recipe.AddIngredient(547, 10);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

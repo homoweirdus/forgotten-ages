@@ -34,7 +34,7 @@ namespace ForgottenMemories.Projectiles
 			{
 				Vector2 vector2 = new Vector2(projectile.width/2, projectile.height/2);
 				int dust;
-				Vector2 newVect = new Vector2 (24, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(45)));
+				Vector2 newVect = new Vector2 (18, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(45)));
 				Vector2 newVect2 = newVect.RotatedBy(MathHelper.ToRadians(45));
 				Vector2 newVect3 = newVect.RotatedBy(MathHelper.ToRadians(90));
 				Vector2 newVect4 = newVect.RotatedBy(MathHelper.ToRadians(135));
@@ -58,14 +58,14 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[dust6].noGravity = true;
 				Main.dust[dust7].noGravity = true;
 				Main.dust[dust8].noGravity = true;
-				Main.dust[dust].scale = 2;
-				Main.dust[dust2].scale = 2;
-				Main.dust[dust3].scale = 2;
-				Main.dust[dust4].scale = 2;
-				Main.dust[dust5].scale = 2;
-				Main.dust[dust6].scale = 2;
-				Main.dust[dust7].scale = 2;
-				Main.dust[dust8].scale = 2;
+				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust2].scale = 1.5f;
+				Main.dust[dust3].scale = 1.5f;
+				Main.dust[dust4].scale = 1.5f;
+				Main.dust[dust5].scale = 1.5f;
+				Main.dust[dust6].scale = 1.5f;
+				Main.dust[dust7].scale = 1.5f;
+				Main.dust[dust8].scale = 1.5f;
 			}
 			return false;
 		}

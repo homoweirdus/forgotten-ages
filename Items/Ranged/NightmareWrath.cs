@@ -84,7 +84,7 @@ namespace ForgottenMemories.Items.Ranged
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "Galactica", 1);
 			recipe.AddIngredient(null, "BlightedBow", 1);
-			recipe.AddIngredient(3052, 1);
+			recipe.AddIngredient(null, "SubmergedAshes", 1);
 			recipe.AddIngredient(547, 10);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

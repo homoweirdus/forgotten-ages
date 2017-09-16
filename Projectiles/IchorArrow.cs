@@ -129,7 +129,7 @@ namespace ForgottenMemories.Projectiles
         {
             if (Main.rand.Next(1) == 0)
             {
-                target.AddBuff(69, 180, false);
+                target.AddBuff(69, 600, false);
             }
         }
     }
