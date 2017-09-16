@@ -15,7 +15,7 @@ namespace ForgottenMemories.NPCs.Granite
 		{
 			npc.width = 48;
 			npc.height = 36;
-			npc.damage = 48;
+			npc.damage = 28;
 			npc.defense = 8;
 			npc.lifeMax = 40;
 			npc.HitSound = SoundID.NPCHit1;
@@ -68,7 +68,7 @@ namespace ForgottenMemories.NPCs.Granite
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
 			int tile = (int)Main.tile[x, y].type;
-			return (tile == 368) ? 0.3f : 0f;
+			return (tile == 368) ? 0.1f : 0f;
 		}
 		
 		public override void NPCLoot()
