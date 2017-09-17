@@ -22,7 +22,7 @@ namespace ForgottenMemories.Items.Melee
             item.useStyle = 1;
             item.knockBack = 4;
             item.value = 10000;
-            item.rare = 2;
+            item.rare = -1;
             item.shootSpeed = 13f;
 			item.maxStack = 1;
             item.shoot = mod.ProjectileType ("trashlidP");

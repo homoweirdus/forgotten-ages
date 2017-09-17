@@ -145,44 +145,17 @@ namespace ForgottenMemories.Items
 				if (Main.rand.Next(4) == 0 && Main.player[(int) Player.FindClosest(npc.position, npc.width, npc.height)].ZoneDesert)
 				Item.NewItem((int) npc.position.X, (int) npc.position.Y, npc.width, npc.height, mod.ItemType("SpiritflameChunk"), 1, false, 0, false, false);
 			}
-			if (npc.type == NPCID.DoctorBones)
-			{
-				if (Main.rand.Next(3) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExoticBoquet"), Main.rand.Next(1, 1));
-				}
-			}
 			if (npc.type == NPCID.ManEater)
-			{
-				if (Main.rand.Next(20) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExoticBoquet"), Main.rand.Next(1, 1));
-				}
-			}
-			if (npc.type == NPCID.Hornet)
 			{
 				if (Main.rand.Next(30) == 0)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExoticBoquet"), Main.rand.Next(1, 1));
 				}
 			}
-			if (npc.type == NPCID.LacBeetle)
-			{
-				if (Main.rand.Next(5) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExoticBoquet"), Main.rand.Next(1, 1));
-				}
-			}
-			if (npc.type == NPCID.FungoFish)
-			{
-				if (Main.rand.Next(25) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Portobello"), Main.rand.Next(1, 1));
-				}
-			}
+			
 			if (npc.type == NPCID.Snatcher)
 			{
-				if (Main.rand.Next(20) == 0)
+				if (Main.rand.Next(50) == 0)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExoticBoquet"), Main.rand.Next(1, 1));
 				}
@@ -215,32 +188,11 @@ namespace ForgottenMemories.Items
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Axle"), Main.rand.Next(1, 1));
 				}
 			}
-			if (npc.type == NPCID.GreekSkeleton)
-			{
-				if (Main.rand.Next(50) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Sediment"), Main.rand.Next(1, 1));
-				}
-			}
-			if (npc.type == NPCID.GraniteFlyer)
-			{
-				if (Main.rand.Next(50) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Sediment"), Main.rand.Next(1, 1));
-				}
-			}
 			if (npc.type == NPCID.DarkCaster)
 			{
 				if (Main.rand.Next(18) == 0)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Atlantean"), Main.rand.Next(1, 1));
-				}
-			}
-			if (npc.type == NPCID.Zombie)
-			{
-				if (Main.rand.Next(6) == 0)
-				{
-					Item.NewItem((int) npc.position.X, (int) npc.position.Y, npc.width, npc.height,ItemID.Worm, 1, false, 0, false, false);
 				}
 			}
 			if (npc.type == NPCID.Piranha)

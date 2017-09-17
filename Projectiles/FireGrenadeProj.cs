@@ -27,5 +27,10 @@ namespace ForgottenMemories.Projectiles
 			Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 0f, mod.ProjectileType("FireGrenadeBoom"), projectile.damage, 0f, projectile.owner, 0f, 0f);
 			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 34);
 		}
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.AddBuff(BuffID.OnFire, 180, false);
+			target.immune[projectile.owner] = 8;
+		}
 	}
 }	

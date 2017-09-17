@@ -314,6 +314,10 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 						break;
 				}
 			}
+			if (Main.rand.Next(10) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ArteriusTrophy"), 1);
+			}
 			TGEMWorld.downedArterius = true;
 		}
 	}

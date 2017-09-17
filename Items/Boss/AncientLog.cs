@@ -49,6 +49,8 @@ namespace ForgottenMemories.Items.Boss
 			recipe.AddIngredient(null, "DevilFlame", 6);
 			recipe.AddIngredient(null, "DarkEnergy", 4);
 			recipe.AddIngredient(null, "BossEnergy", 4);
+			recipe.AddIngredient(null, "SoaringEnergy", 4);
+			recipe.AddIngredient(null, "UndeadEnergy", 4);
 			recipe.AddRecipeGroup("AnyWood", 15);
 			recipe.AddTile(18);
 			recipe.SetResult(this);

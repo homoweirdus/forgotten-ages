@@ -16,7 +16,7 @@ namespace ForgottenMemories.Items.Melee
 		{
 
 			item.width = 41;  //The width of the .png file in pixels divided by 2.
-			item.damage = 9;  //Keep this reasonable please.
+			item.damage = 28;  //Any post BOC weapon doing 9 damage.
 			item.melee = true;  //Dictates whether this is a melee-class weapon.
 			item.noMelee = true;
 			item.noUseGraphic = true;

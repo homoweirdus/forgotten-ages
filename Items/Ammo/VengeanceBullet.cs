@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
+using Terraria.DataStructures;
 
 namespace ForgottenMemories.Items.Ammo 
 {
@@ -31,6 +32,7 @@ namespace ForgottenMemories.Items.Ammo
     {
       DisplayName.SetDefault("Vengeance Bullet");
       Tooltip.SetDefault("Homes in on an enemy it just hit, dealing a portion of the original damage");
+	  Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(4, 4));
     }
 
 	}
