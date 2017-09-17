@@ -15,26 +15,20 @@ namespace ForgottenMemories.NPCs.TitanRock
 		int timer = 0;
 		int timer2 = 2;
 		int timer3 = 0;
-		int falltimer = 0;
+		int phase2timer = 0;
+		int shootTimer = 0;
 		bool bisexual = false;
 		bool bisexual2 = false;
 		float teleportF;
 		bool despawn = false;
-		bool phase2transition = false;
-		bool canTPAgain = false;
-		bool OnScreen = false;
-		bool spawnedMiniTitans1 = false;
-		bool spawnedMiniTitans2 = false;
-		int transgender = 0;
 		Vector2 gayvector = new Vector2(0f, -5f);
 		Vector2 homovector = new Vector2(0f, 5f);
-		Vector2 lesvector = new Vector2(-5f, 0f);
-		Vector2 bivector = new Vector2(5f, 0f);
+		Vector2 frickvector = new Vector2(0f, 10f);
 		
 		public override void SetDefaults()
 		{
 			npc.aiStyle = -1;
-			npc.lifeMax = 28000;
+			npc.lifeMax = 35000;
 			npc.damage = 60;
 			npc.defense = 15;
 			npc.knockBackResist = 0f;
@@ -64,255 +58,127 @@ namespace ForgottenMemories.NPCs.TitanRock
 		}
 		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-			{
-				npc.lifeMax = 35000 + ((numPlayers) * 4000);
-				npc.damage = 70;
-				npc.defense = 20;
-			}
+		{
+			npc.lifeMax = 35000 + ((numPlayers) * 4000);
+			npc.damage = 70;
+			npc.defense = 20;
+		}
 
-		public override void ModifyHitByProjectile (Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
-		{
-			for (int k = 0; k < 200; k++)
-				{
-					if (Main.npc[k].active && Main.npc[k].type == mod.NPCType("MiniTitan"))
-					{
-						damage = 0;
-					}
-				}
-		}
-		
-		public override void ModifyHitByItem (Player player, Item item, ref int damage, ref float knockback, ref bool crit)
-		{
-			for (int k = 0; k < 200; k++)
-				{
-					if (Main.npc[k].active && Main.npc[k].type == mod.NPCType("MiniTitan"))
-					{
-						damage = 0;
-					}
-				}
-		}
 		
 		public override void AI()
 		{
 			npc.TargetClosest(true);
 			Player player = Main.player[npc.target];
-			//TGEMWorld world = GetModWorld<TGEMWorld>();
 			
 			if (npc.life <= (int)(npc.lifeMax/2) && despawn == false)
 			{		
-				if (phase2transition == false)
+				phase2timer++;
+				if (phase2timer <= 355)
 				{
-					Main.NewText("Titan Rock enrages!", 255, 25, 0);
-					Main.PlaySound(15, (int)npc.position.X, (int)npc.position.Y, 0);
-					TGEMWorld.TremorTime = 100;
-					timer = 0;
-					phase2transition = true;
-				}
-				
-				if (falltimer <= 50 && falltimer >= 20)
-				{
-					timer++;
-				}
-				
-				if (spawnedMiniTitans1 == false) //spawn the 1st pair of mini titans
-				{
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("MiniTitan"));
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("MiniTitan"));
-					spawnedMiniTitans1 = true;
-				}
-				
-				if (spawnedMiniTitans2 == false && Main.expertMode && npc.life <= (int)(npc.lifeMax/4))
-				{ //spawn the 2nd pair
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("MiniTitan"));
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("MiniTitan"));
-					spawnedMiniTitans2 = true;
-				}
-				
-				if (timer <= 30)
-				{
-					gayvector = new Vector2(0f, -5f);
-					npc.rotation += 0.20f; //rotation
-					npc.ai[2] += 1f;
-					if (npc.ai[2] >= 800f)
+					if (phase2timer == 1 || phase2timer == 75 || phase2timer == 145 || phase2timer == 215 || phase2timer == 285 || phase2timer == 355)
 					{
-						npc.ai[2] = 0f;
-						npc.ai[1] = 1f;
-						npc.TargetClosest(true);
-						npc.netUpdate = true;
-					}
-					npc.velocity.X = 0; //make sure it doesn't break when entering the 2nd phase
-					if (falltimer == 0)//teleport above the player and create a ring of lasers
-					{
-						int A = Main.rand.Next(-250, 250) * 2;
-						npc.position.X = player.Center.X + A;
-						npc.position.Y = player.position.Y - (Main.screenHeight);
-						teleportF = player.position.Y + (Main.screenHeight);
-						canTPAgain = true;
-						
-						for (int m = 0; m <= 30; m++)
-						{
-							int dust = Dust.NewDust(npc.position, npc.width, npc.height, 60);
-							Main.dust[dust].noGravity = true;
-							Main.dust[dust].scale = 3.5f;
-						}
-						falltimer += 1;
-						Main.PlaySound(15, (int)npc.position.X, (int)npc.position.Y, 0);
-						npc.netUpdate = true;
+						Vector2 direction = Main.player[npc.target].Center - npc.Center;
+						direction.Normalize();
+						npc.velocity.Y = direction.Y * 18f;
+						npc.velocity.X = direction.X * 18f;
 					}
 					
-					if (falltimer >= 0)
+					if (phase2timer == 65 || phase2timer == 135 || phase2timer == 205 || phase2timer == 275 || phase2timer == 345)
 					{
-						if (npc.life <= (int)(npc.lifeMax / 4) && Main.expertMode)
-						{
-							npc.velocity.Y = 18f;
-						}
+						Vector2 direction = Main.player[npc.target].Center - npc.Center;
+						direction.Normalize();
+						npc.velocity.Y = direction.Y * 1f;
+						npc.velocity.X = direction.X * 1f;
 						
-						else
+						for (int i = 0; i < 10; ++i)
 						{
-							npc.velocity.Y = 17f;
-						}
-						
-						int dust = Dust.NewDust(npc.position, npc.width, npc.height, 60);
-						falltimer++;
-					}
-					
-					if (npc.position.X > player.position.X)
-					{
-						if (npc.life <= (int)(npc.lifeMax / 4))
-						{
-							npc.velocity.X = -5f;
-						}
-						
-						else
-						{
-							npc.velocity.X = -3f;
+							frickvector = frickvector.RotatedBy(System.Math.PI / 5);
+							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, frickvector.X, frickvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
 						}
 					}
-					
-					if (npc.position.X < player.position.X)
+					npc.rotation += npc.velocity.X / 5f;
+				}
+				else
+				{
+					npc.rotation = npc.velocity.X / 15f;
+					float num586 = 0.03f;
+					float num587 = 4f;
+					float num588 = 0.07f;
+					float num589 = 9.5f;
+					if (Main.expertMode)
 					{
-						if (npc.life <= (int)(npc.lifeMax / 4))
+						num586 = 0.04f;
+						num587 = 15f;
+						num588 = 0.09f;
+						num589 = 15f;
+					}
+					if (npc.position.Y > Main.player[npc.target].position.Y - 250f)
+					{
+						if (npc.velocity.Y > 0f)
 						{
-							npc.velocity.X = 5f;
+							npc.velocity.Y = npc.velocity.Y * 0.96f;
 						}
-						
-						else
+						npc.velocity.Y = npc.velocity.Y - num586;
+						if (npc.velocity.Y > num587)
 						{
-							npc.velocity.X = 3f;
+							npc.velocity.Y = num587;
+						}
+					}
+					else if (npc.position.Y < Main.player[npc.target].position.Y - 250f)
+					{
+						if (npc.velocity.Y < 0f)
+						{
+							npc.velocity.Y = npc.velocity.Y * 0.96f;
+						}
+						npc.velocity.Y = npc.velocity.Y + num586;
+						if (npc.velocity.Y < -num587)
+						{
+							npc.velocity.Y = -num587;
+						}
+					}
+					if (npc.position.X + (float)(npc.width / 2) > Main.player[npc.target].position.X + (float)(Main.player[npc.target].width / 2))
+					{
+						if (npc.velocity.X > 0f)
+						{
+							npc.velocity.X = npc.velocity.X * 0.96f;
+						}
+						npc.velocity.X = npc.velocity.X - num588;
+						if (npc.velocity.X > num589)
+						{
+							npc.velocity.X = num589;
+						}
+					}
+					if (npc.position.X + (float)(npc.width / 2) < Main.player[npc.target].position.X + (float)(Main.player[npc.target].width / 2))
+					{
+						if (npc.velocity.X < 0f)
+						{
+							npc.velocity.X = npc.velocity.X * 0.96f;
+						}
+						npc.velocity.X = npc.velocity.X + num588;
+						if (npc.velocity.X < -num589)
+						{
+							npc.velocity.X = -num589;
 						}
 					}
 					
-					
-					if (npc.Center.Y >= teleportF && canTPAgain == true && timer <= 21)
+					shootTimer++;
+					if (shootTimer == 30)
 					{
-						falltimer = 0;
-						for (int r = 0; r <= 30; r++)
-						{
-							int dust = Dust.NewDust(npc.position, npc.width, npc.height, 60);
-							Main.dust[dust].noGravity = true;
-							Main.dust[dust].scale = 2.5f;
-						}	
-						TGEMWorld.TremorTime = 100;
-						npc.netUpdate = true;
+						Vector2 direction = (Main.player[npc.target].Center + (Main.player[npc.target].velocity * 20f)) - npc.Center;
+						direction.Normalize();
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X * 6f, direction.Y * 6f, mod.ProjectileType("BallMeteor"), 30, 1, Main.myPlayer, 0, 0);
+						Main.PlaySound(SoundID.Item89, npc.position);
+						shootTimer = 0;
 					}
-				}
-				
-				if (timer >= 30 && falltimer <= 50 && falltimer >= 20 && transgender == 0)
-				{
-					timer2++;
 					
-					npc.rotation += 0.20f;
-					npc.velocity.X = 0f;
-					npc.velocity.Y = 0f;
-					
-					int dust = Dust.NewDust(npc.position, npc.width, npc.height, 60);
-					
-					if (timer2 >= 5)
+					if (phase2timer == 900)
 					{
-						Vector2 newVect = gayvector.RotatedBy(System.Math.PI / 25);
-						
-						gayvector = newVect;
-						homovector = gayvector.RotatedBy(System.Math.PI);
-						bivector = gayvector.RotatedBy(System.Math.PI / 2);
-						lesvector = gayvector.RotatedBy((3*System.Math.PI) / 2);
-						
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, gayvector.X * 1.4f, gayvector.Y * 1.4f, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, homovector.X * 1.4f, homovector.Y * 1.4f, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						if (timer <= 200 || timer >= 250 && timer <= 350|| timer >= 400)
-						{
-							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, lesvector.X * 1.4f, lesvector.Y * 1.4f, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, bivector.X * 1.4f, bivector.Y * 1.4f, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						}
-						Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
-						timer2 = 0;
-					}
-				}
-				
-				
-				if (timer >= 30 && falltimer <= 50 && falltimer >= 20 && transgender == 1)
-				{
-					timer2++;
-					
-					npc.rotation += 0.20f;
-					npc.velocity.X = 0f;
-					npc.velocity.Y = 0f;
-					
-					int dust = Dust.NewDust(npc.position, npc.width, npc.height, 60);
-					
-					if (timer2 >= 5)
-					{
-						Vector2 newVect = gayvector;
-						if (timer <= 230)
-						{
-						
-							newVect = gayvector.RotatedBy(System.Math.PI / -32);
-						}
-						else
-						{
-						
-							newVect = gayvector.RotatedBy(System.Math.PI / 32);
-						}
-						
-						gayvector = newVect;
-						homovector = gayvector.RotatedBy(System.Math.PI);
-						bivector = gayvector.RotatedBy(System.Math.PI / 2);
-						lesvector = gayvector.RotatedBy((3*System.Math.PI) / 2);
-						
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, gayvector.X, gayvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, homovector.X, homovector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, lesvector.X, lesvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, bivector.X, bivector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
-						Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
-						timer2 = 0;
-					}
-				}
-				
-				if (Main.rand.Next(400) == 0)
-				{
-					int n = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("TitanBat"));
-					npc.netUpdate = true;
-					Main.projectile[n].netUpdate = true;
-				}
-				
-				if (Main.rand.Next(500) == 0)
-				{
-					int n = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("SpikeTitan"));
-					npc.netUpdate = true;
-					Main.projectile[n].netUpdate = true;
-				}
-								
-				if (timer >= 400)
-				{
-					timer = 0;
-					transgender++;
-					if (transgender > 1)
-					{
-						transgender = 0; 
+						phase2timer = 0;
 					}
 				}
 				
 			}
-				
+			
 			else
 			{
 				timer++;
@@ -387,11 +253,6 @@ namespace ForgottenMemories.NPCs.TitanRock
 						}
 					}
 					
-					if (Main.rand.Next(500) == 0)
-					{
-						NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("TitanBat"));
-					}
-					
 					if (timer == 100 || timer == 200)
 					{	
 						for (int i = 0; i < 6; ++i)
@@ -430,12 +291,6 @@ namespace ForgottenMemories.NPCs.TitanRock
 				
 				if (timer >= 350)
 				{
-					if (timer == 300)
-					{
-						gayvector = new Vector2(0f, -5f);
-						homovector = new Vector2(0f, 5f);
-					}
-					
 					timer2++;
 					
 					npc.rotation += 0.20f;
@@ -463,25 +318,25 @@ namespace ForgottenMemories.NPCs.TitanRock
 					}
 				}
 				
-				timer3++;
-				if (Main.expertMode && timer3 == 500)
+				if (Main.rand.Next(500) == 0)
 				{
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("SpikeTitan"));
+					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("TitanBat"));
 				}
 				
-				if (npc.life <= 30000 && bisexual2 == false)
+				timer3++;
+				if (Main.expertMode && timer3 == 1200)
 				{
-					int ok = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("SpikeTitan"));
-					Main.npc[ok].lifeMax = 8000;
-					bisexual2 = true;
+					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("SpikeTitan"));
+					timer3 = 0;
 				}
+				
 				
 				if (timer >= 650)
 				{
 					timer = 0;
 				}
 			}
-				
+			
 			if (!player.active || player.dead)
 			{
 				npc.TargetClosest(false);
@@ -489,9 +344,9 @@ namespace ForgottenMemories.NPCs.TitanRock
 				timer = 0;
 				despawn = true;
 				if (npc.timeLeft > 10)
-					{
-						npc.timeLeft = 10;
-					}
+				{
+					npc.timeLeft = 10;
+				}
 			}
 		}
 
@@ -520,31 +375,31 @@ namespace ForgottenMemories.NPCs.TitanRock
 				
 				switch (Main.rand.Next (8))
 				{
-					case 0:
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserbladeKatana"), 1);
-						break;
-					case 1:
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("NeedleBow"), 1);
-						break;
-					case 2:
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserbeamStaff"), 1);
-						break;
-					case 3:
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BeamSlicer"), Main.rand.Next(210, 240));
-						break;
-					case 4:
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EnergizedBlaster"), 1);
-						break;
-					case 5:
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TitanSpin"), 1);
-						break;
-					case 6:
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TitanicCrusher"), 1);
-						break;
-					case 7:
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AncientLauncher"), 1);
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 771, Main.rand.Next(110, 140));
-						break;
+				case 0:
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserbladeKatana"), 1);
+					break;
+				case 1:
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("NeedleBow"), 1);
+					break;
+				case 2:
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserbeamStaff"), 1);
+					break;
+				case 3:
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BeamSlicer"), Main.rand.Next(210, 240));
+					break;
+				case 4:
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EnergizedBlaster"), 1);
+					break;
+				case 5:
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TitanSpin"), 1);
+					break;
+				case 6:
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TitanicCrusher"), 1);
+					break;
+				case 7:
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AncientLauncher"), 1);
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 771, Main.rand.Next(110, 140));
+					break;
 				}
 			}
 			if (!TGEMWorld.downedTitanRock)
