@@ -403,10 +403,6 @@ namespace ForgottenMemories.NPCs.TitanRock
 					break;
 				}
 			}
-<<<<<<< HEAD
-			
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CosmiCrystal"), 1);
-=======
 			if (!TGEMWorld.downedTitanRock)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CosmiCrystal"), 1);
@@ -415,11 +411,6 @@ namespace ForgottenMemories.NPCs.TitanRock
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CosmiCrystal"), 1);
 			}
-			if (Main.rand.Next(10) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TitanRockTrophy"), 1);
-			}
->>>>>>> 4ed5cbd27a6a5a607d00c7d4019010b358c7867d
 			TGEMWorld.downedTitanRock = true;			
 		}
 	}

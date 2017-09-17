@@ -120,7 +120,28 @@ namespace ForgottenMemories
 				{
 					maskType = ModLoader.GetMod("ForgottenMemories").ItemType("ArteryMask");
 				}
+				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("GhastlyEnt"))
+				{
+					maskType = ModLoader.GetMod("ForgottenMemories").ItemType("GhastlyMask");
+				}
 				Item mask = Main.item[Item.NewItem((int)center.X, (int)center.Y, 0, 0, maskType, 1)];
+			}
+			if (Main.rand.Next(10) == 0)
+			{
+				int trophyType = 0;
+				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("TitanRock"))
+				{
+					trophyType = ModLoader.GetMod("ForgottenMemories").ItemType("TitanRockTrophy");
+				}
+				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("FaceOfInsanity"))
+				{
+					trophyType = ModLoader.GetMod("ForgottenMemories").ItemType("ArteriusTrophy");
+				}
+				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("GhastlyEnt"))
+				{
+					trophyType = ModLoader.GetMod("ForgottenMemories").ItemType("GhastlyEntTrophy");
+				}
+				Item trophy = Main.item[Item.NewItem((int)center.X, (int)center.Y, 0, 0, trophyType, 1)];
 			}
 		}
 		
