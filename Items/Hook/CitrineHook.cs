@@ -69,9 +69,9 @@ namespace ForgottenMemories.Items.Hook
 			float distance = distToProj.Length();
 			while (distance > 30f && !float.IsNaN(distance))
 			{
-				distToProj.Normalize();             
-				distToProj *= 24f;               
-				center += distToProj;                 
+				distToProj.Normalize();                
+				distToProj *= 24f;                      
+				center += distToProj;                   
 				distToProj = playerCenter - center;    
 				distance = distToProj.Length();
 				Color drawColor = lightColor;
