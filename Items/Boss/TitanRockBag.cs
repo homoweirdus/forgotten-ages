@@ -38,6 +38,11 @@ namespace ForgottenMemories.Items.Boss
 			int amountToDrop = Main.rand.Next(12,16);
 			player.QuickSpawnItem(mod.ItemType("SpaceRockFragment"), amountToDrop);
 			
+			if (Main.rand.Next(7) == 0)
+			{
+				player.QuickSpawnItem(mod.ItemType("TitanMask"), 1);
+			}
+			
 			switch (Main.rand.Next (8))
 			{
 				case 0:

@@ -25,7 +25,7 @@ namespace ForgottenMemories.Projectiles
             projectile.penetrate = -1;
             projectile.timeLeft *= 5;
             projectile.minion = true;
-            aiType = 317;
+            aiType = 393;
             projectile.tileCollide = false;
         }
 		

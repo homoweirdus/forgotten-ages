@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
@@ -42,22 +43,26 @@ namespace ForgottenMemories.Items.Hook
 		public override float GrappleRange()
 		{
 		//Each F value is 0.06 blocks iirc
-			return 320f;
+			return 360f;
 		}
 
 		public override void NumGrappleHooks(Player player, ref int numHooks)
 		{
-			numHooks = 2;
+			numHooks = 1;
 		}
 
 		public override void GrappleRetreatSpeed(Player player, ref float speed)
 		{
 			speed = 22f;
 		}
+		public override bool? SingleGrappleHook(Player player)
+		{
+			return true;
+		}
 
 		public override void GrapplePullSpeed(Player player, ref float speed)
 		{
-			speed = 13;
+			speed = 14;
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)

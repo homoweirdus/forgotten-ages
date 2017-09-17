@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.Melee
 		{
 
 
-			item.damage = 21; 
+			item.damage = 19; 
 			item.crit = 8;
 			item.melee = true;
 			item.knockBack = 4; 
@@ -37,7 +37,11 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Marble Katana");
-			Tooltip.SetDefault("");
+			Tooltip.SetDefault("Hitting an enemy increases your defense by 8");
+		}
+		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+        {
+			player.AddBuff(mod.BuffType("MarbleBlock"), 3 * 60);
 		}
 		
 		public override void AddRecipes()
@@ -45,6 +49,7 @@ namespace ForgottenMemories.Items.Melee
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MarbleBlock, 20);
 			recipe.AddIngredient(null, "Citrine", 8);
+			recipe.AddIngredient(null, "BossEnergy", 8);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -10,6 +10,7 @@ namespace ForgottenMemories.Projectiles
     public class JungleGuard : ModProjectile
     {
     	int timer = 0;
+		int timer2 = 0;
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.BabySlime);
@@ -56,6 +57,12 @@ namespace ForgottenMemories.Projectiles
 			{
 				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 15f, move.Y * 15f, 374, projectile.damage, 5f, projectile.owner);
 				timer = 0;
+			}
+			
+			timer2++;
+			if (timer2 >= 200)
+			{
+				projectile.Kill();
 			}
 		}
 		

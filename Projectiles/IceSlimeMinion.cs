@@ -11,6 +11,7 @@ namespace ForgottenMemories.Projectiles
     public class IceSlimeMinion : ModProjectile
     {
 		int timer = 0;
+		int timer2 = 0;
         public override void SetDefaults()
         {
             projectile.CloneDefaults(ProjectileID.BabySlime);
@@ -70,6 +71,12 @@ namespace ForgottenMemories.Projectiles
 				Main.projectile[proj].hostile = false;
 				ProjectileID.Sets.MinionShot[Main.projectile[proj].type] = true;
 				timer = 0;
+			}
+			
+			timer2++;
+			if (timer2 >= 200)
+			{
+				projectile.Kill();
 			}
 		}
 		
