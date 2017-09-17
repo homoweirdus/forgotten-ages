@@ -42,14 +42,19 @@ namespace ForgottenMemories.Items.Hook
 		public override float GrappleRange()
 		{
 		//Each F value is 0.06 blocks iirc
-			return 350f;
+			return 380f;
 		}
 
 		public override void NumGrappleHooks(Player player, ref int numHooks)
 		{
-			numHooks = 2;
+			numHooks = 1;
 		}
 
+		public override bool? SingleGrappleHook(Player player)
+		{
+			return true;
+		}
+		
 		public override void GrappleRetreatSpeed(Player player, ref float speed)
 		{
 			speed = 22f;
