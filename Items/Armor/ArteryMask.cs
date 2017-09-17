@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.Armor
 
 		public override bool DrawHead()
 		{
-            return false;   
+            return true;   
         }
             public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
         {

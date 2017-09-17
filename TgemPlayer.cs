@@ -20,6 +20,7 @@ namespace ForgottenMemories
 		public bool BlightstoneDragon = false;
 		public bool BlightFlameProj;
 		int BlightCounter = 0;
+		public bool WoodlouseMinion = false;
 		public bool CreeperMinion = false;
 		public bool BlightConserve = false;
 		public bool ShadowflameSpirit = false;
@@ -40,6 +41,7 @@ namespace ForgottenMemories
 			BlightOrb = false;
             Servant = false;
 			cryotine1 = false;
+            WoodlouseMinion = false;
 			CreeperMinion = false;
 			ShadowflameSpirit = false;
 			EaterMinion = false;
