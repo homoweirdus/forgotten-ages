@@ -58,6 +58,7 @@ namespace ForgottenMemories.Items.Ranged
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.GraniteBlock, 20);
 			recipe.AddIngredient(null, "Tourmaline", 8);
+			recipe.AddIngredient(null, "SoaringEnergy", 8);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
