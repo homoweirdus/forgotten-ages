@@ -107,6 +107,23 @@ namespace ForgottenMemories
 			}
 		}
 		
+		public static void TryForBossMask(Vector2 center, int type)
+		{
+			if (Main.rand.Next(7) == 0 && !Main.expertMode)
+			{
+				int maskType = 0;
+				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("TitanRock"))
+				{
+					maskType = ModLoader.GetMod("ForgottenMemories").ItemType("TitanMask");
+				}
+				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("FaceOfInsanity"))
+				{
+					maskType = ModLoader.GetMod("ForgottenMemories").ItemType("ArteryMask");
+				}
+				Item mask = Main.item[Item.NewItem((int)center.X, (int)center.Y, 0, 0, maskType, 1)];
+			}
+		}
+		
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
 		{
 			int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));

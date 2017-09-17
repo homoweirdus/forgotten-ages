@@ -288,6 +288,7 @@ namespace ForgottenMemories.NPCs.FaceOfInsanity
 		
 		public override void NPCLoot()
 		{
+			TGEMWorld.TryForBossMask(npc.Center, npc.type);
 			if (Main.expertMode)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("ArteriusBag")));

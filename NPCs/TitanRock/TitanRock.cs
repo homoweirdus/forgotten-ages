@@ -509,6 +509,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 		
 		public override void NPCLoot()
 		{
+			TGEMWorld.TryForBossMask(npc.Center, npc.type);
 			if (Main.expertMode)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("TitanRockBag")));
@@ -547,14 +548,8 @@ namespace ForgottenMemories.NPCs.TitanRock
 						break;
 				}
 			}
-			if (!TGEMWorld.downedTitanRock)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CosmiCrystal"), 1);
-			}
-			if (TGEMWorld.downedTitanRock && Main.rand.Next(10) == 0)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CosmiCrystal"), 1);
-			}
+			
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CosmiCrystal"), 1);
 			TGEMWorld.downedTitanRock = true;			
 		}
 	}
