@@ -40,6 +40,10 @@ namespace ForgottenMemories.Projectiles
 			{
 				projectile.timeLeft = 2;
 			}
+			else
+			{
+				projectile.Kill();
+			}
 		}
         
 		public override bool MinionContactDamage()
