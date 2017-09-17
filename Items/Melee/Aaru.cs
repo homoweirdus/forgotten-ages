@@ -41,8 +41,9 @@ namespace ForgottenMemories.Items.Melee
 			recipe.AddIngredient(null, "Olympus", 1);
 			recipe.AddIngredient(null, "Valhalla", 1);
 			recipe.AddIngredient(null, "Atlantean", 1);
-		        recipe.AddIngredient(null, "DevilFlame", 8);
+		    recipe.AddIngredient(null, "DevilFlame", 8);
 			recipe.AddIngredient(ItemID.Amber, 3);
+		    recipe.AddIngredient(null, "Spinel", 3);
 			recipe.AddTile(TileID.DemonAltar);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
