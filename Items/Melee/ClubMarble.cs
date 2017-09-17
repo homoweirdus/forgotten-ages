@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.Melee
 
 
 			item.damage = 18; 
-			item.crit = 15;
+			item.crit = 12;
 			item.melee = true;
 			item.knockBack = 8; 
 			item.autoReuse = true; 
@@ -24,8 +24,8 @@ namespace ForgottenMemories.Items.Melee
 			item.width = 32;       
 			item.height = 32;
 
-			item.useTime = 20;
-			item.useAnimation = 20;
+			item.useTime = 19;
+			item.useAnimation = 19;
 			item.useStyle = 1;
 			item.UseSound = SoundID.Item1;
 
@@ -37,7 +37,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Marble Mace");
-			Tooltip.SetDefault("'Coated with a gorgon's blood' \nPoisons hit enemies");
+			Tooltip.SetDefault("'Coated with a gorgon's blood'");
 		}
 		
 		public override void AddRecipes()
@@ -49,9 +49,5 @@ namespace ForgottenMemories.Items.Melee
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
-        {
-			target.AddBuff(20, 120, false);
-        }
 	}
 }
