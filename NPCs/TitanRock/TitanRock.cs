@@ -83,7 +83,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 						npc.velocity.X = direction.X * 18f;
 					}
 					
-					if (phase2timer == 65 || phase2timer == 135 || phase2timer == 205 || phase2timer == 275 || phase2timer == 345)
+					if (phase2timer == 60 || phase2timer == 130 || phase2timer == 200 || phase2timer == 270 || phase2timer == 340)
 					{
 						Vector2 direction = Main.player[npc.target].Center - npc.Center;
 						direction.Normalize();
@@ -96,7 +96,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, frickvector.X, frickvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
 						}
 					}
-					npc.rotation += npc.velocity.X / 5f;
+					npc.rotation += npc.velocity.X / 15f;
 				}
 				else
 				{
