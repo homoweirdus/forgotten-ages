@@ -29,7 +29,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 		{
 			npc.aiStyle = -1;
 			npc.lifeMax = 35000;
-			npc.damage = 60;
+			npc.damage = 100;
 			npc.defense = 15;
 			npc.knockBackResist = 0f;
 			npc.width = 170;
@@ -60,7 +60,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 		{
 			npc.lifeMax = 35000 + ((numPlayers) * 4000);
-			npc.damage = 70;
+			npc.damage = 115;
 			npc.defense = 20;
 		}
 
@@ -93,7 +93,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 						for (int i = 0; i < 10; ++i)
 						{
 							frickvector = frickvector.RotatedBy(System.Math.PI / 5);
-							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, frickvector.X, frickvector.Y, mod.ProjectileType("Ball"), 20, 1, Main.myPlayer, 0, 0);
+							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, frickvector.X, frickvector.Y, mod.ProjectileType("Ball"), 30, 1, Main.myPlayer, 0, 0);
 						}
 					}
 					npc.rotation += npc.velocity.X / 15f;
@@ -162,7 +162,7 @@ namespace ForgottenMemories.NPCs.TitanRock
 					}
 					
 					shootTimer++;
-					if (shootTimer == 30)
+					if (shootTimer == 40)
 					{
 						Vector2 direction = (Main.player[npc.target].Center + (Main.player[npc.target].velocity * 20f)) - npc.Center;
 						direction.Normalize();
