@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Buffs
 {
-	public class WoodlouseMinion : ModBuff
+	public class Woodlice : ModBuff
 	{
 		public override void SetDefaults()
 		{
