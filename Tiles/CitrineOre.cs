@@ -27,7 +27,7 @@ namespace ForgottenMemories.Tiles
 			name.SetDefault("Citrine Ore");
 			AddMapEntry(new Color(75, 206, 242), name);
 			soundType = 21;
-			minPick = 65;
+			minPick = 35;
 			Main.tileSpelunker[mod.TileType("CitrineOre")] = true;
 			mineResist = 2f;
 		}
