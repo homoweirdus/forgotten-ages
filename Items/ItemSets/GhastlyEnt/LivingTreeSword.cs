@@ -10,12 +10,12 @@ public class LivingTreeSword : ModItem
     public override void SetDefaults()
     {
 
-        item.damage = 23;
+        item.damage = 52;
         item.melee = true;
         item.width = 22;
         item.height = 24;
-        item.useTime = 40;
-        item.useAnimation = 20;
+        item.useTime = 30;
+        item.useAnimation = 15;
         item.useStyle = 1;
         item.knockBack = 7.5f;
         item.value = 27000;
@@ -24,8 +24,7 @@ public class LivingTreeSword : ModItem
         item.autoReuse = true;
 
 		item.shoot = mod.ProjectileType("SapBallFriendly");
-		item.shootSpeed = 10f;
-        item.useTurn = true;
+		item.shootSpeed = 12f;
         }
 
     public override void SetStaticDefaults()

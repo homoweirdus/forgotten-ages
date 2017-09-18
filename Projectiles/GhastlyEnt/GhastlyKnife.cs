@@ -12,8 +12,8 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 10;
-			projectile.height = 30;
+			projectile.width = 18;
+			projectile.height = 18;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.thrown = true;
@@ -34,7 +34,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
         	}
 			for (int i = 0; i < 5; i++)
 			{
-				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 61, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
@@ -68,7 +68,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 			projectile.velocity.Y += 0.10f;
 			if (Main.rand.Next(5) == 0)
 			{
-				Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 61, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			}
 		}
 		

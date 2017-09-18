@@ -55,7 +55,7 @@ namespace ForgottenMemories.Items.Ranged
 			for (int k = 0; k < projectileAmount; k++)
 			{
 				Vector2 velVect = new Vector2(speedX, speedY);
-				Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-12, 12)));
+				Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-10, 10)));
 				
 				int f = Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, type, damage, knockBack, Main.myPlayer, 0, 0);
 				Main.projectile[f].noDropItem = true;
@@ -64,6 +64,7 @@ namespace ForgottenMemories.Items.Ranged
 			Main.projectile[a].noDropItem = true;
             return false;
         }
+		
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

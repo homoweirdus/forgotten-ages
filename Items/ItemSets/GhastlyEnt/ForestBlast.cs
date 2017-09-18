@@ -10,12 +10,12 @@ public class ForestBlast : ModItem
     public override void SetDefaults()
     {
 
-        item.damage = 20;
+        item.damage = 48;
         item.magic = true;
         item.width = 50;
         item.height = 50;
-        item.useTime = 28;
-        item.useAnimation = 28;
+        item.useTime = 18;
+        item.useAnimation = 18;
         item.useStyle = 5;
         item.knockBack = 5;
         item.value = 27000;
@@ -23,7 +23,7 @@ public class ForestBlast : ModItem
         item.UseSound = SoundID.Item20;
         item.autoReuse = true;
 		item.shoot = mod.ProjectileType("LeafnadoFriendly");
-		item.shootSpeed = 10f;
+		item.shootSpeed = 13f;
 		item.mana = 10;
 
 		item.noMelee = true;

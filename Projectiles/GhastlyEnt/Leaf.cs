@@ -16,7 +16,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 			projectile.tileCollide = false;
 			projectile.friendly = true;
 			projectile.melee = true;
-			projectile.timeLeft = 15;
+			projectile.timeLeft = 30;
 			projectile.hostile = false;
 			projectile.scale = 1f;
 			Main.projFrames[projectile.type] = 5;
