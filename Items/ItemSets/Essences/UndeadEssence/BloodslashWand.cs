@@ -15,25 +15,25 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 			item.magic = true;
 			item.width = 50;
 			item.height = 50;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
+			item.useTime = 18;
+			item.useAnimation = 18;
+			item.useStyle = 5;
+			Item.staff[item.type] = true;
 			item.knockBack = 10;
 			item.value = 30000;
 			item.rare = 3;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("RedSlash");
-			item.shootSpeed = 17f;
-			item.mana = 10;
-
+			item.shootSpeed = 10f;
+			item.mana = 7;
 			item.noMelee = true;
 		}
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Bloodslash Wand");
-      Tooltip.SetDefault("Creates bloodmist when an enemy is hit");
+      DisplayName.SetDefault("Bloodneedler");
+      Tooltip.SetDefault("Fires lifestealing needles");
     }
 
 		

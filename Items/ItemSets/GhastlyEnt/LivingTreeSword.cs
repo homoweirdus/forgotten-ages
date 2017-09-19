@@ -30,7 +30,7 @@ public class LivingTreeSword : ModItem
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Living Tree Sword");
-      Tooltip.SetDefault("Swings Slow, but hits heavily, fires a splitting sap ball");
+      Tooltip.SetDefault("Fires a splitting sap ball");
     }
 
 	

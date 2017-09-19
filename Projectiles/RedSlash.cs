@@ -10,20 +10,19 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 36;
-			projectile.height = 8;
+			projectile.width = 18;
+			projectile.height = 18;
 			projectile.aiStyle = 1;
-			projectile.penetrate = 3;
+			projectile.penetrate = 5;
 			projectile.magic = true;
 			projectile.friendly = true;
 			projectile.alpha = 20;
-			projectile.timeLeft = 30;
-			projectile.scale = 1.5f;
+			projectile.timeLeft = 120;
 		}
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Slash");
+			DisplayName.SetDefault("Bloodspike");
 		}
 		
 		
@@ -32,19 +31,15 @@ namespace ForgottenMemories.Projectiles
 			int dust;
 			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 5, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust].scale = 1f;
-			Main.dust[dust].noGravity = true;				
-		}
-		
-		
-		public override void Kill(int timeLeft)
-		{
-			for (int i = 0; i < 5; i++)
+			Main.dust[dust].noGravity = true;		
+
+			if (projectile.timeLeft <= 10)
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 5);
-				Main.dust[dust].scale = 1.5f;
-				Main.dust[dust].noGravity = true;
+				projectile.alpha += 25;
 			}
 		}
+		
+		
 		
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
