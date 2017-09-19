@@ -19,7 +19,7 @@ namespace ForgottenMemories.NPCs.Night
 			npc.HitSound = SoundID.NPCHit36;
 			npc.DeathSound = SoundID.NPCDeath39;
 			npc.value = 80f;
-			npc.noTileCollide = true;
+			npc.noTileCollide = false;
 			npc.noGravity = true;
 			npc.knockBackResist = 1f;
 			//npc.aiStyle = 14;
