@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 			item.useAnimation = 18;
 			item.useStyle = 5;
 			Item.staff[item.type] = true;
-			item.knockBack = 10;
+			item.knockBack = 1;
 			item.value = 30000;
 			item.rare = 3;
 			item.UseSound = SoundID.Item20;
