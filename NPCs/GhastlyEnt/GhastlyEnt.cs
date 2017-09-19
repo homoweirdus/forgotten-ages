@@ -22,35 +22,37 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
         public override void SetDefaults()
         {
             npc.aiStyle = -1;
-            npc.lifeMax = 4700;
-            npc.damage = 25;
-            npc.defense = 15;
+            npc.lifeMax = 35000;
+            npc.damage = 60;
+            npc.defense = 20;
             npc.knockBackResist = 0f;
-            npc.width = 76;
-            npc.height = 158;
-            npc.value = Item.buyPrice(0, 2, 0, 0);
+            npc.width = 202;
+            npc.height = 310;
+            npc.value = 150000;
+			npc.buffImmune[31] = true;
+			npc.buffImmune[20] = true;
+			npc.buffImmune[70] = true;
+			npc.buffImmune[186] = true;
             npc.boss = true;
             npc.lavaImmune = true;
             npc.noTileCollide = true;
             npc.noGravity = true;
             npc.HitSound = SoundID.NPCHit7;
-			npc.DeathSound = SoundID.NPCDeath3;
+			npc.DeathSound = SoundID.NPCDeath10;
             music = 12;
-			npc.scale = 1.25f;
 			npc.npcSlots = 5;
         }
 		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 			{
-				npc.lifeMax = 5400 + ((numPlayers) * 1000);
-				npc.damage = 30;
-				npc.defense = 20;
+				npc.lifeMax = 50000 + ((numPlayers) * 20000);
+				npc.damage = 90;
 			}
 		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Ghastly Ent");
-			Main.npcFrameCount[npc.type] = 6;
+			Main.npcFrameCount[npc.type] = 5;
 		}
 
         public override void AI()
@@ -58,163 +60,30 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			npc.TargetClosest(true);
 			npc.spriteDirection = npc.direction;
             Player player = Main.player[npc.target];
-			timer++;
+			npc.ai[0]++;
 			
-			
-				if (timer == 3 || timer == 100 || timer == 200 || timer == 300 || timer == 400 || timer == 500)
-				{
-					npc.alpha = 0;
-					moveSpeed = 0;
-					moveSpeedY = 0;
-					Vector2 direction = Main.player[npc.target].Center - npc.Center;
-					direction.Normalize();
-					npc.velocity.Y = direction.Y * 9f;
-					npc.velocity.X = direction.X * 9f;
-				}
-			
-				if (timer == 75 || timer == 175 || timer == 275 || timer == 375 || timer == 475)
-				{
-					Vector2 direction = Main.player[npc.target].Center - npc.Center;
-					direction.Normalize();
-					npc.velocity.Y = direction.Y * 1f;
-					npc.velocity.X = direction.X * 1f;
-					
-				}
-			
-			
-			
-			if (timer >= 600 && timer <= 1500)
+			if (npc.life > (int)(npc.lifeMax/2) && !Main.expertMode || npc.life > (int)(npc.lifeMax * 0.66) && Main.expertMode)
 			{
-				if (npc.Center.X >= player.Center.X && moveSpeed >= -50) // flies to players x position
-				{
-					moveSpeed--;
-				}
-					
-				if (npc.Center.X <= player.Center.X && moveSpeed <= 50)
-				{
-					moveSpeed++;
-				}
-				
-					npc.velocity.X = moveSpeed * 0.2f;
-				
-				if (npc.Center.Y >= player.Center.Y - 350f && moveSpeedY >= -35) //Flies to players Y position
-				{
-					moveSpeedY--;
-				}
-					
-				if (npc.Center.Y <= player.Center.Y - 350f && moveSpeedY <= 35)
-				{
-					moveSpeedY++;
-				}
-				
-
-					npc.velocity.Y = moveSpeedY * 0.1f;
-
-				
-				shootTimer++;
-				if (shootTimer == 50)
-				{
-				Vector2 direction = Main.player[npc.target].Center - npc.Center;
-				direction.Normalize();
-				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X * 12f, direction.Y * 12f, mod.ProjectileType("SapBall"), 12, 1, Main.myPlayer, 0, 0);
-				shootTimer = 0;
-				}
+				Phase1(Player);
 			}
-			
-				
-			if (timer >= 1500) //Phase 3
-				{
-					npc.velocity.X = 0f;
-					npc.velocity.Y = 0f;
-					
-				shootTimerB++;
-				
-				
-				if (shootTimerB == 80)
-					{
-						for (int i = 0; i < 50; ++i)
-						{
-						int dust = Dust.NewDust(npc.position, npc.width, npc.height, 61);      
-						Main.dust[dust].scale = 1.5f;
-						}
-						int A = Main.rand.Next(-250, 250) * 3;
-						int B = Main.rand.Next(-100, 100) - 400;
-						npc.position.X = player.Center.X + A;
-						npc.position.Y = player.Center.Y + B;
-						shootTimerB = 0;
-						for (int i = 0; i < 3; ++i)
-						{
-							Vector2 direction = Main.player[npc.target].Center - npc.Center;
-							direction.Normalize();
-							float sX = direction.X * 6.5f;
-							float sY = direction.Y * 6.5f;
-							sX += (float)Main.rand.Next(-60, 61) * 0.05f;
-							sY += (float)Main.rand.Next(-60, 61) * 0.05f;
-							int p = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("Leafnado"), 12, 1, Main.myPlayer, 0, 0);
-							npc.netUpdate = true;
-							Main.projectile[p].netUpdate = true;
-						}
-					}
-					
-					if (timer == 2300) // this is where timer resets on expert mode
-					{
-						timer = 0;
-					}
-				}
-				
-				if (Main.expertMode && npc.life <= 1750) //FINAL PHASE BOIS
-					{
-						timer = 0;
-						shootTimerC++;
-						appleTimer++;
-						
-						if (shootTimerC == 40)
-						{
-						Vector2 direction2 = Main.player[npc.target].Center + new Vector2(player.velocity.X * 2f, player.velocity.Y * 2f) - npc.Center;
-						direction2.Normalize();
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction2.X * 15f, direction2.Y * 15f, mod.ProjectileType("Air"), 12, 1, Main.myPlayer, 0, 0);
-						shootTimerC = 0;
-						}
-						
-						if (appleTimer == 150)
-						{
-							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, -10f, -1f, mod.ProjectileType("ForestPortal"), 12, 1, Main.myPlayer, 0, 0);
-							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, 10f, -1f, mod.ProjectileType("ForestPortal"), 12, 1, Main.myPlayer, 0, 0);
-							appleTimer = 0;
-						}
-						
-							if (npc.Center.X >= player.Center.X && moveSpeedx2 >= -50) // flies to players x position
-						{
-							moveSpeedx2--;
-						}
-					
-						if (npc.Center.X <= player.Center.X && moveSpeedx2 <= 50)
-						{
-							moveSpeedx2++;
-						}
-				
-						npc.velocity.X = moveSpeedx2 * 0.15f;
-				
-						if (npc.Center.Y >= player.Center.Y && moveSpeedy2 >= -35) //flies to players Y position
-						{
-							moveSpeedy2--;
-						}
-					
-						if (npc.Center.Y <= player.Center.Y && moveSpeedy2 <= 35)
-						{
-							moveSpeedy2++;
-						}
-				
-
-					npc.velocity.Y = moveSpeedy2 * 0.07f;
-					}
+			else if (!Main.expertMode || npc.life > (int)(npc.lifeMax/3) && Main.expertMode)
+			{
+				Phase2(Player);
+			}
+			else
+			{
+				Phase3(Player);
+			}
 					
 			if (!player.active || player.dead)
             {
                 npc.TargetClosest(false);
                 npc.velocity.Y = -20;
-				timer = 0;
-				shootTimerC = 0;
+				
+				if (npc.timeLeft > 10)
+				{
+					npc.timeLeft = 10;
+				}
             }
 			
 		}
@@ -227,6 +96,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		}
 			public override void NPCLoot()
 			{
+				TGEMWorld.TryForBossMask(npc.Center, npc.type);
 				TGEMWorld.downedGhastlyEnt = true;
 				if (Main.expertMode)
 				{

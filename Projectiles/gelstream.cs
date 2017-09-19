@@ -12,15 +12,15 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 35;
-			projectile.height = 35;
+			projectile.width = 20;
+			projectile.height = 20;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.ranged = true;
-			projectile.penetrate = -1;
+			projectile.penetrate = 2;
 			projectile.timeLeft = 70;
-			projectile.alpha = 255;
 			projectile.extraUpdates = 2;
+			projectile.alpha = 255;
 		}
 		
 		public override void SetStaticDefaults()
@@ -30,32 +30,76 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			if (projectile.timeLeft <= 62)
+			if (projectile.timeLeft > 60)
 			{
-				if (Main.rand.Next(4) == 0)
+				projectile.timeLeft = 60;
+			}
+			if (projectile.ai[0] > 7f)
+			{
+				
+				float num297 = 1f;
+				if (projectile.ai[0] == 8f)
 				{
-					int dust;
-					dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, mod.DustType("geldust"), 0f, 0f);
-					Main.dust[dust].scale = 1f;
+					num297 = 0.25f;
 				}
-				if (Main.rand.Next(14) == 0  && projectile.timeLeft >= 10)
+				else if (projectile.ai[0] == 9f)
 				{
-					int dust;
-					dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, mod.DustType("geldust"), 0f, 0f);
-					Main.dust[dust].scale = 1.5f;
+					num297 = 0.5f;
 				}
-				if (Main.rand.Next(18) == 0 && projectile.timeLeft >= 25)
+				else if (projectile.ai[0] == 10f)
 				{
-					int dust;
-					dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, mod.DustType("geldust"), 0f, 0f);
-					Main.dust[dust].scale = 1.7f;
+					num297 = 0.75f;
+				}
+				projectile.ai[0] += 1f;
+				int num298 = mod.DustType("GelDust");
+				if (num298 == 6 || Main.rand.Next(2) == 0)
+				{
+					int num3;
+					for (int num299 = 0; num299 < 1; num299 = num3 + 1)
+					{
+						int num300 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, num298, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100, default(Color), 1f);
+						Dust dust3;
+						if (Main.rand.Next(3) != 0 || (num298 == 75 && Main.rand.Next(3) == 0))
+						{
+							Main.dust[num300].noGravity = true;
+							dust3 = Main.dust[num300];
+							dust3.scale *= 3f;
+							Dust dust52 = Main.dust[num300];
+							dust52.velocity.X = dust52.velocity.X * 2f;
+							Dust dust53 = Main.dust[num300];
+							dust53.velocity.Y = dust53.velocity.Y * 2f;
+						}
+						else
+						{
+							dust3 = Main.dust[num300];
+							dust3.scale *= 1.5f;
+						}
+						Dust dust54 = Main.dust[num300];
+						dust54.velocity.X = dust54.velocity.X * 1.2f;
+						Dust dust55 = Main.dust[num300];
+						dust55.velocity.Y = dust55.velocity.Y * 1.2f;
+						dust3 = Main.dust[num300];
+						dust3.scale *= num297;
+						if (num298 == 75)
+						{
+							dust3 = Main.dust[num300];
+							dust3.velocity += projectile.velocity;
+							if (!Main.dust[num300].noGravity)
+							{
+								dust3 = Main.dust[num300];
+								dust3.velocity *= 0.5f;
+							}
+						}
+						num3 = num299;
+					}
 				}
 			}
-		}
-		
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			target.AddBuff(mod.BuffType("Gelled"), 60, false);
+			else
+			{
+				projectile.ai[0] += 1f;
+			}
+			projectile.rotation += 0.3f * (float)projectile.direction;
+			return;
 		}
 	}
 }

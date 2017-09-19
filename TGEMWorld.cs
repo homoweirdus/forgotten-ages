@@ -160,11 +160,11 @@ namespace ForgottenMemories
 						Tile tile = Main.tile[i, j];
 						if ((tile.type == 368) && j > Main.worldSurface)
 						{
-							WorldGen.TileRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY), (double)WorldGen.genRand.Next(2, 6), WorldGen.genRand.Next(2, 6), mod.TileType("TourmalineOre"), false, 0f, 0f, false, true);
+							WorldGen.TileRunner(i, j, (double)WorldGen.genRand.Next(2, 6), WorldGen.genRand.Next(2, 6), mod.TileType("TourmalineOre"), false, 0f, 0f, false, true);
 						}
 						if ((tile.type == 367) && j > Main.worldSurface)
 						{
-							WorldGen.TileRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY), (double)WorldGen.genRand.Next(2, 6), WorldGen.genRand.Next(2, 6), mod.TileType("CitrineOre"), false, 0f, 0f, false, true);
+							WorldGen.TileRunner(i, j, (double)WorldGen.genRand.Next(2, 6), WorldGen.genRand.Next(2, 6), mod.TileType("CitrineOre"), false, 0f, 0f, false, true);
 						}
 					}
 				}));
