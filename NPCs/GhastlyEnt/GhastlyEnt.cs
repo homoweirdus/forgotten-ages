@@ -87,6 +87,22 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
             }
 			
 		}
+		
+		public static void Phase1(Player player)
+		{
+			
+		}
+		
+		public static void Phase2(Player player)
+		{
+			
+		}
+		
+		public static void Phase3(Player player)
+		{
+			
+		}
+		
 		public override void FindFrame(int frameHeight)
 		{
 			npc.frameCounter += 0.25f; 
