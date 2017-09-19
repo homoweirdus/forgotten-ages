@@ -64,15 +64,15 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			
 			if (npc.life > (int)(npc.lifeMax/2) && !Main.expertMode || npc.life > (int)(npc.lifeMax * 0.66) && Main.expertMode)
 			{
-				Phase1(Player);
+				Phase1(player);
 			}
 			else if (!Main.expertMode || npc.life > (int)(npc.lifeMax/3) && Main.expertMode)
 			{
-				Phase2(Player);
+				Phase2(player);
 			}
 			else
 			{
-				Phase3(Player);
+				Phase3(player);
 			}
 					
 			if (!player.active || player.dead)
