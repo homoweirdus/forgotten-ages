@@ -83,25 +83,25 @@ namespace ForgottenMemories.NPCs.Town
 
 		public override string GetChat()
 		{
-			int wizard = NPC.FindFirstNPC(NPCID.Demolitionist);
+			int wizard = NPC.FindFirstNPC(NPCID.Wizard);
 			if (wizard >= 0 && Main.rand.Next(4) == 0)
 			{
-				return "I remember when " + Main.npc[wizard].GivenName + " was a little kid... how time flies.";
+				return "I remember when " + Main.npc[wizard].GivenName + " was a merely a child... how time flies.";
 			}
 			if (WorldGen.crimson && Main.rand.Next(4) == 0)
 			{
-				return "I was exploring the Crimson, then i saw this strange Eye... then there were about 495 of them!";
+				return "I was exploring the Crimson, then I saw this strange retina... I touched it and it sprouted into about five hundred!";
 			}
-if (WorldGen.corruption && Main.rand.Next(4) == 0)
+            if (WorldGen.crimson && Main.rand.Next(4) == 0)
 			{
 				return "One time I went to the Corruption to research rumors of great pits. Then I fell into one of those pits. Wasn't very pleasant.";
 			}
 			switch (Main.rand.Next(2))
 			{
 				case 0:
-                    return "I promise won't burn down your house, but I can't guarantee that there will be no accidents";
+                    return "This land has existed for many years, I suggest you visit some of them!";
 				default:
-					return "Fire is great, isn't it!";
+					return "Its about time!";
 			}
 		}
 
