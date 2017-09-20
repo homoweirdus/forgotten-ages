@@ -74,6 +74,8 @@ namespace ForgottenMemories.NPCs.Town
                     return "Delilah";
                 case 4:
                     return "Julie";
+                case 5
+                    return "Sarah";
                 default:
                     return "Carol";
 			}
@@ -88,7 +90,11 @@ namespace ForgottenMemories.NPCs.Town
 			}
 			if (WorldGen.crimson && Main.rand.Next(4) == 0)
 			{
-				return "I was exploring the Crimson, then i saw this strange Eye... Then there were about 495 of them!";
+				return "I was exploring the Crimson, then i saw this strange Eye... then there were about 495 of them!";
+			}
+if (WorldGen.corruption && Main.rand.Next(4) == 0)
+			{
+				return "One time I went to the Corruption to research rumors of great pits. Then I fell into one of those pits. Wasn't very pleasant.";
 			}
 			switch (Main.rand.Next(2))
 			{
