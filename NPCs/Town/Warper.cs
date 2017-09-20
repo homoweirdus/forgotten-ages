@@ -74,7 +74,7 @@ namespace ForgottenMemories.NPCs.Town
                     return "Delilah";
                 case 4:
                     return "Julie";
-                case 5
+                case 5:
                     return "Sarah";
                 default:
                     return "Carol";
