@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.Melee
 			item.useAnimation = 14;
 			item.useStyle = 1;
 			item.knockBack = 2;
-			item.value = 6000000;
+			item.value = 2500000;
 			item.rare = 9;
 			item.shoot = mod.ProjectileType("CosmirockMeteor");
 			item.shootSpeed = 15f;
