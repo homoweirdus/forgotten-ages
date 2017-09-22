@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Events;
 
-namespace ForgottenMemories.NPCs.Snow
+namespace ForgottenMemories.NPCs.GhastlyEnt
 {
 	public class PineFlyer : ModNPC
 	{

@@ -50,7 +50,7 @@ namespace ForgottenMemories.NPCs.Granite
 		public override void AI()
 		{
 			ai++;
-			if (ai >= 60)
+			if (ai >= 120)
 			{
 				Player player = Main.player[npc.target];
 				Vector2 vel = (player.Center - npc.Center);

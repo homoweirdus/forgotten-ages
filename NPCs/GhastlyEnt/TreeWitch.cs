@@ -36,7 +36,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		public override void AI()
 		{
 			ai++;
-			if (ai >= 60)
+			if (ai >= 80)
 			{
 				Player player = Main.player[npc.target];
 				Vector2 vel = (player.Center - npc.Center);

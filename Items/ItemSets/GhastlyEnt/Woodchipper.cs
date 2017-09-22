@@ -19,7 +19,7 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			item.useAnimation = 12;
 			item.UseSound = SoundID.Item36;
 			item.useStyle = 5;
-			item.knockBack = 3;
+			item.knockBack = 1;
 			item.value = 27000;
 			item.rare = 2;
 			item.autoReuse = true;

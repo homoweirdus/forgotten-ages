@@ -1,20 +1,20 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.GameContent.Events;
+using Terraria.ModLoader;
 
-namespace ForgottenMemories.NPCs.Snow
+namespace ForgottenMemories.NPCs.GhastlyEnt
 {
-	public class BorealTreeMan : ModNPC
+	public class PalmTreeMan : ModNPC
 	{
 		public override void SetDefaults()
 		{
 			npc.width = 16;
 			npc.height = 40;
-			npc.damage = 25;
-			npc.defense = 8;
-			npc.lifeMax = 100;
+			npc.damage = 28;
+			npc.defense = 10;
+			npc.lifeMax = 80;
 			npc.HitSound = SoundID.NPCHit7;
 			npc.DeathSound = SoundID.NPCDeath3;
 			npc.value = 60f;
@@ -25,7 +25,7 @@ namespace ForgottenMemories.NPCs.Snow
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pine Ent");
+			DisplayName.SetDefault("Palm Ent");
 			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Zombie];
 			animationType = NPCID.Zombie;
 		}
@@ -33,7 +33,7 @@ namespace ForgottenMemories.NPCs.Snow
 		public override void NPCLoot()
 		{
 			int amountToDrop = Main.rand.Next(3,10);
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BorealWood, amountToDrop);
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PalmWood, amountToDrop);
 			if(Main.rand.Next(30) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LivingTwig"));
