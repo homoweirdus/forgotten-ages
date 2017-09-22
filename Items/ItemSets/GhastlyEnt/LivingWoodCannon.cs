@@ -36,6 +36,6 @@ public class LivingWoodCannon : ModItem
 	
 	public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(25, 13);
+			return new Vector2(-5, -2);
 		}
 }}
