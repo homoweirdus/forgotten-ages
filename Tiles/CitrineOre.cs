@@ -24,7 +24,7 @@ namespace ForgottenMemories.Tiles
 			dustType = 236;
 			drop = mod.ItemType("Citrine");
 			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Citrine Ore");
+			name.SetDefault("Citrine");
 			AddMapEntry(new Color(75, 206, 242), name);
 			soundType = 21;
 			minPick = 35;
