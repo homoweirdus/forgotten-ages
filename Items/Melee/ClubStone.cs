@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Melee
 			item.width = 32;       
 			item.height = 32;
 
-			item.useTime = 20;
+			item.useTime = 65;
 			item.useAnimation = 20;
 			item.useStyle = 1;
 			item.UseSound = SoundID.Item1;
