@@ -16,9 +16,9 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		{
 			npc.width = 74;
 			npc.height = 70;
-			npc.damage = 28;
-			npc.defense = 12;
-			npc.lifeMax = 80;
+			npc.damage = 45;
+			npc.defense = 15;
+			npc.lifeMax = 350;
 			npc.HitSound = SoundID.NPCHit7;
 			npc.DeathSound = SoundID.NPCDeath3;
 			npc.value = 60f;
