@@ -44,7 +44,7 @@ namespace ForgottenMemories.Items.Summon
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Servant Staff");
-      Tooltip.SetDefault("Summons Cthulhu's Servants to fight");
+      Tooltip.SetDefault("Summons Cthulhu's Servants to fight for you");
     }
 
 
