@@ -27,8 +27,8 @@ namespace ForgottenMemories.NPCs.Sky
 			directional = true;
 			minLength = 10;
 			maxLength = 20;
-			speed = 8f;
-			turnSpeed = 0.1f;
+			speed = 10f;
+			turnSpeed = 10f;
 			headType = mod.NPCType("CosmowyvernHead");
 			bodyType = mod.NPCType("CosmowyvernBody");
 			tailType = mod.NPCType("CosmowyvernTail");
