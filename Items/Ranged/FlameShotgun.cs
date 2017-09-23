@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Ranged
 		public override void SetDefaults()
 		{
 
-			item.damage = 28;
+			item.damage = 20;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 14;

@@ -23,7 +23,6 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 8;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("SpectreWave");
 			item.shootSpeed = 15f;
 			item.useTurn = true;
 		}
@@ -31,7 +30,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Muramisian Spectre");
-      Tooltip.SetDefault("Creates a wall of spectre waves");
+      Tooltip.SetDefault("Fires spectre bolts on hit");
     }
 
 		
@@ -52,40 +51,21 @@ namespace ForgottenMemories.Items.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Muramasa, 1);
-			recipe.AddIngredient(ItemID.Ectoplasm, 12);
+			recipe.AddIngredient(ItemID.SpectreBar, 12);
+			recipe.AddIngredient(null,"SpiritflameChunk", 12);
 			recipe.AddIngredient(ItemID.SoulofMight, 15);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
 		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
-			int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
-			Main.projectile[p].timeLeft = 20;
-			for (int i = 0; i < 2; ++i)
-			{
-				Vector2 mouse = Main.MouseWorld;
-				mouse.X += Main.rand.Next(-20, 21);
-				float sX = 0;
-				float sY = 25;
-				sX += (float)Main.rand.Next(-10, 10) * 0.2f;
-				sY += (float)Main.rand.Next(-20, 20) * 0.2f;
-				Projectile.NewProjectile(mouse.X, (position.Y-1000), sX, sY, type, (int)(damage*0.4), knockBack, player.whoAmI);
-			}
-			for (int i = 0; i < 2; ++i)
-			{
-				Vector2 mouse = Main.MouseWorld;
-				mouse.X += Main.rand.Next(-20, 21);
-				float s2X = 0;
-				float s2Y = -25;
-				s2X += (float)Main.rand.Next(-10, 10) * 0.2f;
-				s2Y += (float)Main.rand.Next(-20, 20) * 0.2f;
-				Projectile.NewProjectile(mouse.X, (position.Y+1000), s2X, s2Y, type, (int)(damage*0.4), knockBack, player.whoAmI);
-			}
-			return false;
-		}
-		
+			float sXv = player.velocity.X * 2f;
+			float sYv = player.velocity.Y * 2f;
+			float sX = (float)Main.rand.Next(-50, 50) * 0.1f;
+			float sY = (float)Main.rand.Next(-50, 50) * 0.1f;
+			Projectile.NewProjectile(player.Center.X, player.Center.Y, sX + sXv, sY + sYv, mod.ProjectileType("SpectreWave"), damage, 0f, player.whoAmI, 0f, 0f);
+        }	
 	}
 }
