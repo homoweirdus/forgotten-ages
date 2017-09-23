@@ -7,7 +7,7 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Woodlice");
+			DisplayName.SetDefault("Woodlouse");
 			Description.SetDefault("It decimates your rivals!");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.buffNoSave[Type] = true;

@@ -14,13 +14,12 @@ namespace ForgottenMemories.Projectiles.Summon
         {
 			projectile.width = 50;
             projectile.height = 42;
-            projectile.timeLeft = 5000;
+            projectile.timeLeft = Projectile.SentryLifeTime;
 			projectile.friendly = false;
 			projectile.hostile = false;
             projectile.penetrate = -1;
             projectile.ignoreWater = true;
-			projectile.minion = true;
-			projectile.minionSlots = 0;
+			projectile.sentry = true;
         }
 		
 		public override void SetStaticDefaults()
@@ -50,7 +49,7 @@ namespace ForgottenMemories.Projectiles.Summon
             {
                 NPC npc = Main.npc[i];
                 //if npc is a valid target (active, not friendly, and not a critter)
-                if (npc.active && npc.CanBeChasedBy(projectile))
+                if (npc.active && npc.CanBeChasedBy(projectile) && Collision.CanHitLine(projectile.Center, 0, 0, npc.Center, 0, 0))
                 {
                     //if npc is within 50 blocks
                     float dist = projectile.Distance(npc.Center);
@@ -105,7 +104,7 @@ namespace ForgottenMemories.Projectiles.Summon
                 direction.Normalize();
                 direction.X *= shootVelocity;
                 direction.Y *= shootVelocity;
-                int proj2 = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, direction.X, direction.Y, 14, projectile.damage, 0, Main.myPlayer);
+                int proj2 = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, direction.X, direction.Y, mod.ProjectileType("Nail"), projectile.damage, 0, Main.myPlayer);
                 Main.PlaySound(2, projectile.Center, 11);  //make bow shooty sound
                 shot = true;
 
