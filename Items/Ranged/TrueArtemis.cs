@@ -45,7 +45,7 @@ namespace ForgottenMemories.Items.Ranged
                 type = mod.ProjectileType("TrueNightArrow");
             }
 			Vector2 velVect = new Vector2(speedX, speedY);
-			Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-12, 12)));
+			Vector2 velVect2 = velVect.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-9, 9)));
 			int f = Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer, 0, 0);
 			Main.projectile[f].noDropItem = true;
 			int a =Projectile.NewProjectile(player.Center.X, player.Center.Y, velVect2.X, velVect2.Y, type, damage, knockBack, Main.myPlayer, 0, 0);
