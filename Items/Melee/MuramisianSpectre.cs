@@ -51,6 +51,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Muramasa, 1);
 			recipe.AddIngredient(ItemID.SpectreBar, 12);
 			recipe.AddIngredient(null,"SpiritflameChunk", 12);
 			recipe.AddIngredient(ItemID.SoulofMight, 15);
