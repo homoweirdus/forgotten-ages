@@ -8,14 +8,14 @@ using System;
 
 namespace ForgottenMemories.Projectiles
 {
-	public class wooballcherry : ModProjectile
+	public class CherryBomb : ModProjectile
 	{
 		public override void SetDefaults()
 		{
 			projectile.width = 20;
 			projectile.height = 20;
 			projectile.aiStyle = 2;
-			projectile.hostile = true;
+			projectile.friendly = true;
 			projectile.penetrate = 1;
 			Main.projFrames[projectile.type] = 2;
 		}
@@ -37,7 +37,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 0f, mod.ProjectileType("wooboom"), projectile.damage, 0f, projectile.owner, 0f, 0f);
+			Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 0f, mod.ProjectileType("wooboomfriendly"), projectile.damage, 0f, projectile.owner, 0f, 0f);
 			Main.PlaySound(SoundID.Item89, projectile.position);
 		}
 	}
