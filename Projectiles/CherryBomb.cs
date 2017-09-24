@@ -12,8 +12,8 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 20;
-			projectile.height = 20;
+			projectile.width = 36;
+			projectile.height = 36;
 			projectile.aiStyle = 2;
 			projectile.friendly = true;
 			projectile.penetrate = 1;
@@ -37,8 +37,13 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 0f, mod.ProjectileType("wooboomfriendly"), projectile.damage, 0f, projectile.owner, 0f, 0f);
+			Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y + 20, 0f, 0f, mod.ProjectileType("wooboomfriendly"), projectile.damage, 0f, projectile.owner, 0f, 0f);
 			Main.PlaySound(SoundID.Item89, projectile.position);
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.immune[projectile.owner] = 11;
 		}
 	}
 }
