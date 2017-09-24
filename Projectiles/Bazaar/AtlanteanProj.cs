@@ -12,7 +12,7 @@ namespace ForgottenMemories.Projectiles.Bazaar
 		public override void SetStaticDefaults()
 		{
 			ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = 10f;
-			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 250;
+			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 200f;
 			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 10f;
 		}
 
