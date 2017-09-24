@@ -15,11 +15,12 @@ namespace ForgottenMemories.Projectiles
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.penetrate = 3;
-			projectile.timeLeft = 10;
+			projectile.timeLeft = 12;
 			projectile.light = 0.5f;
 			projectile.tileCollide = false;
 			Main.projFrames[projectile.type] = 6;
 			projectile.scale = 1.25f;
+			projectile.thrown = true;
 		}
 		
 		public override void SetStaticDefaults()
@@ -30,10 +31,10 @@ namespace ForgottenMemories.Projectiles
 		public override void AI()
 		{
 			projectile.frameCounter++;
-			if (projectile.frameCounter >= 4)
+			if (projectile.frameCounter >= 2)
 			{
 				projectile.frameCounter = 0;
-				projectile.frame = (projectile.frame + 1) % 4;
+				projectile.frame = (projectile.frame + 1) % 6;
 			} 
 		}
 	}

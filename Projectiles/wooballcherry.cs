@@ -33,6 +33,15 @@ namespace ForgottenMemories.Projectiles
 				projectile.frameCounter = 0;
 				projectile.frame = (projectile.frame + 1) % 2;
 			} 
+			
+			if (projectile.velocity.X > 0f)
+			{
+				projectile.spriteDirection = (projectile.direction = -1);
+			}
+			else if (projectile.velocity.X < 0f)
+			{
+				projectile.spriteDirection = (projectile.direction = 1);
+			}
 		}
 		
 		public override void Kill(int timeLeft)

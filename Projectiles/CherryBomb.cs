@@ -18,6 +18,7 @@ namespace ForgottenMemories.Projectiles
 			projectile.friendly = true;
 			projectile.penetrate = 1;
 			Main.projFrames[projectile.type] = 2;
+			projectile.thrown = true;
 		}
 		
 		public override void SetStaticDefaults()
@@ -33,6 +34,15 @@ namespace ForgottenMemories.Projectiles
 				projectile.frameCounter = 0;
 				projectile.frame = (projectile.frame + 1) % 2;
 			} 
+			
+			if (projectile.velocity.X > 0f)
+			{
+				projectile.spriteDirection = (projectile.direction = -1);
+			}
+			else if (projectile.velocity.X < 0f)
+			{
+				projectile.spriteDirection = (projectile.direction = 1);
+			}
 		}
 		
 		public override void Kill(int timeLeft)
@@ -43,7 +53,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			target.immune[projectile.owner] = 11;
+			target.immune[projectile.owner] = 13;
 		}
 	}
 }
