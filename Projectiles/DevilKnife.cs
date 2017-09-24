@@ -55,16 +55,14 @@ namespace ForgottenMemories.Projectiles
 			target.AddBuff(mod.BuffType("DevilsFlame"), 360, false);
 		}
 		
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
 			Texture2D texture2D3 = Main.projectileTexture[projectile.type];
 			int num156 = Main.projectileTexture[projectile.type].Height / Main.projFrames[projectile.type];
 			int y3 = num156 * projectile.frame;
 			Microsoft.Xna.Framework.Rectangle rectangle = new Microsoft.Xna.Framework.Rectangle(0, y3, texture2D3.Width, num156);
 			Vector2 origin2 = rectangle.Size() / 2f;
-			Main.spriteBatch.Draw(Main.projectileTexture[projectile.type], projectile.position + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), lightColor, projectile.rotation, origin2, projectile.scale, SpriteEffects.None, 0f);
-			Main.spriteBatch.Draw(mod.GetTexture("GlowMasks/DevilKnifeMask"), projectile.position + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), Color.White, projectile.rotation, origin2, projectile.scale, SpriteEffects.None, 0f);
-			return false;
+			Main.spriteBatch.Draw(mod.GetTexture("GlowMasks/DevilKnifeMask"), projectile.position + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, 0f), new Microsoft.Xna.Framework.Rectangle?(rectangle), Color.White, projectile.rotation, origin2, projectile.scale, SpriteEffects.None, 0f);
 		}
 		
 		public override void AI()
