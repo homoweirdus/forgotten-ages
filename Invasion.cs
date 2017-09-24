@@ -26,6 +26,7 @@ namespace ForgottenMemories
 			mod.NPCType("CharredEnt"),
 			mod.NPCType("LivingMortar"),
 			mod.NPCType("TreeWitch"),
+			mod.NPCType("BlossomBomber"),
         };
 		
 		public static void StartCustomInvasion()

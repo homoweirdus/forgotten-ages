@@ -28,7 +28,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ent Witch");
+			DisplayName.SetDefault("Wooden Witch");
 			Main.npcFrameCount[npc.type] = 4;
 			animationType = NPCID.Zombie;
 		}
