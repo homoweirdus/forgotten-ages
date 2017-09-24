@@ -73,6 +73,14 @@ namespace ForgottenMemories.Items
 				}
 			}
 			
+			if (npc.type == NPCID.WallofFlesh && !Main.expertMode)
+			{
+				if (Main.rand.Next(4) == 0)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ClubMeat"), 1); 
+				}
+			}
+			
 			if (npc.type == 4 && !Main.expertMode)
 			{
 				switch (Main.rand.Next(2))
