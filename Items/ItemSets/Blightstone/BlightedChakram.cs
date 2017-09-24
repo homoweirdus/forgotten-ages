@@ -12,7 +12,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
         {
 
             item.damage = 51;            
-            item.thrown = true;
+            item.melee = true;
             item.width = 30;
             item.height = 30;
 
@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
             item.knockBack = 3;
             item.value = 250000;
             item.rare = 5;
-            item.shootSpeed = 15f;
+            item.shootSpeed = 12f;
             item.shoot = mod.ProjectileType ("BlightedChakram");
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
