@@ -70,7 +70,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			
 			
 			int num161 = num159;
-			while ((num158 > 0 && num161 < num157) || (num158 < 0 && num161 > num157))
+			while (npc.velocity != Vector2.Zero &&((num158 > 0 && num161 < num157) || (num158 < 0 && num161 > num157)))
 			{
 				Microsoft.Xna.Framework.Color color26 = color25;
 				color26 = npc.GetAlpha(color26);		
@@ -188,9 +188,9 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				npc.velocity = Vector2.Lerp(npc.velocity, Vector2.Zero, 0.03f); //slowly reduce velocity
 				
 				if (npc.ai[0] <= 360)
-					npc.alpha += 4; //make it look more invisible over time so that teleports look better
+					npc.alpha += 5; //make it look more invisible over time so that teleports look better
 			}
-			if (npc.ai[0] > 180 && npc.ai[0] <= 360 && npc.ai[1] == 0)
+			if (npc.ai[0] > 180 && npc.ai[0] <= 384 && npc.ai[1] == 0)
 			{ //DASH
 				float num4 = 17f;
 				Vector2 vector2 = new Vector2(npc.position.X + (float) npc.width * 0.5f, npc.position.Y + (float) npc.height * 0.5f);
@@ -209,10 +209,27 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				npc.Center = player.Center + vector;
 				npc.ai[1] = 0;
 				npc.alpha = 0;
+				npc.netUpdate = true;
 			}
 			
-			if (npc.ai[0] > 360)
-			{ //restart ai
+			if (npc.ai[0] > 384 && npc.ai[0] <= 420)
+			{ //MAGIK
+				npc.alpha = 0;
+				npc.velocity = Vector2.Zero;
+				int attackType = 0;
+				switch(Main.rand.Next(3))
+				{
+					case 0: attackType = 1; //Druidic Circle
+						break;
+					case 1: attackType = 2; //Razor Leaves
+						break;
+					case 3: attackType = 3; //Branches
+						break;
+				}
+			}
+			
+			if (npc.ai[0] > 420)
+			{
 				npc.ai[0] = 0;
 				npc.ai[1] = 0;
 			}
