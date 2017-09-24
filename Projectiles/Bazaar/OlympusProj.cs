@@ -53,7 +53,7 @@ namespace ForgottenMemories.Projectiles.Bazaar
 			timer++;
 			if (target && timer >= 50)
 			{
-				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 8f, move.Y * 8f, mod.ProjectileType("LightningChain"), projectile.damage / 2, 5f, projectile.owner);
+				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 8f, move.Y * 8f, mod.ProjectileType("LightningChain"), projectile.damage, 5f, projectile.owner);
 				Main.projectile[proj].melee = true;
 				Main.projectile[proj].ranged = false;
 				timer = 0;

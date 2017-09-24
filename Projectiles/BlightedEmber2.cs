@@ -33,7 +33,7 @@ namespace ForgottenMemories.Projectiles
 		public override void AI()
 		{
 			float num7 = projectile.velocity.ToRotation();
-			Gayer = projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-80, 80)));
+			Gayer = projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-50, 50)));
 			float num8 = num7.AngleLerp(Gayer.ToRotation(), 0.1f);
 			projectile.velocity = new Vector2(projectile.velocity.Length(), 0f).RotatedBy((double)num8, default(Vector2));
 			

@@ -61,7 +61,6 @@ namespace ForgottenMemories.Items.Ranged
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.FlintlockPistol, 1);
 			recipe.AddIngredient(null, "DivineBolt", 1);
-			recipe.AddIngredient(ItemID.MeteoriteBar, 8);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

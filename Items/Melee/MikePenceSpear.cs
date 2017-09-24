@@ -57,17 +57,17 @@ namespace ForgottenMemories.Items.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CopperBar, 10);
-			recipe.AddIngredient(ItemID.MeteoriteBar, 4);
 			recipe.AddIngredient(null, "DivineBolt", 1);
+			recipe.AddIngredient(ItemID.CopperBar, 10);
+			recipe.AddIngredient(ItemID.MeteoriteBar, 5);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 			
 			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "DivineBolt", 1);
 			recipe.AddIngredient(ItemID.TinBar, 10);
 			recipe.AddIngredient(ItemID.MeteoriteBar, 5);
-			recipe.AddIngredient(null, "DivineBolt", 1);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
