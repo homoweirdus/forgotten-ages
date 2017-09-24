@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Melee
 		public override void SetDefaults()
 		{
 
-			item.damage = 70;
+			item.damage = 90;
 			item.melee = true;
 			item.width = 62;
 			item.height = 62;
@@ -51,7 +51,6 @@ namespace ForgottenMemories.Items.Melee
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Muramasa, 1);
 			recipe.AddIngredient(ItemID.SpectreBar, 12);
 			recipe.AddIngredient(null,"SpiritflameChunk", 12);
 			recipe.AddIngredient(ItemID.SoulofMight, 15);
