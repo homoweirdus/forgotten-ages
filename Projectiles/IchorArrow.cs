@@ -10,6 +10,7 @@ namespace ForgottenMemories.Projectiles
 {
     public class IchorArrow : ModProjectile
     {
+		bool fireDust = false;
         public override void SetDefaults()
         {
             projectile.width = 14; //Projectile's width in pixels
@@ -60,6 +61,19 @@ namespace ForgottenMemories.Projectiles
 			
 		public override void AI()
 		{
+			
+			if (fireDust == false)
+			{
+				for (int i = 0; i < 10; ++i)
+				{
+					Vector2 newVect1 = projectile.velocity.RotatedBy(MathHelper.ToRadians(Main.rand.Next(-30, 30)));
+					int dust1;
+					dust1 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 87, newVect1.X * 0.5f, newVect1.Y * 0.5f);
+					Main.dust[dust1].scale = 1f;
+					Main.dust[dust1].noGravity = true;
+				}
+				fireDust = true;
+			}
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 			int dust;
 			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 87, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
