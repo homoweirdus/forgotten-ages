@@ -43,6 +43,13 @@ namespace ForgottenMemories.Items.Melee
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(mod.BuffType("Bleeding"), 580, false);
+			Main.PlaySound(3, (int)target.position.X, (int)target.position.Y, 9);
+			for (int i = 0; i < 10; i++)
+			{
+				int dust = Dust.NewDust(target.position, target.width, target.height, 5);
+				Main.dust[dust].scale = 1f;
+				Main.dust[dust].noGravity = true;
+			}
 		}
 	}
 }
