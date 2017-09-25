@@ -37,5 +37,9 @@ namespace ForgottenMemories.Projectiles
 				projectile.frame = (projectile.frame + 1) % 6;
 			} 
 		}
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.immune[projectile.owner] = 12;
+		}
 	}
 }
