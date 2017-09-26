@@ -5,15 +5,14 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Projectiles.Spiritflame
+namespace ForgottenMemories.Projectiles
 {
-	public class SpiritSpear : ModProjectile
+	public class RedwoodPike : ModProjectile
 	{
-		int timer = 0;
 		public override void SetDefaults()
 		{
-			projectile.width = 19;
-			projectile.height = 19;
+			projectile.width = 40;
+			projectile.height = 40;
 			projectile.scale = 1.1f;
 			projectile.aiStyle = 19;
 			projectile.friendly = true;
@@ -27,7 +26,12 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spirit Lance");
+			DisplayName.SetDefault("Redwood Pike");
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{	
+			target.immune[projectile.owner] = 11;
 		}
 
 
@@ -38,18 +42,22 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 			Main.player[projectile.owner].itemTime = Main.player[projectile.owner].itemAnimation;
 			projectile.position.X = Main.player[projectile.owner].position.X + (float)(Main.player[projectile.owner].width / 2) - (float)(projectile.width / 2);
 			projectile.position.Y = Main.player[projectile.owner].position.Y + (float)(Main.player[projectile.owner].height / 2) - (float)(projectile.height / 2);
-			projectile.position += projectile.velocity * projectile.ai[0]; if (projectile.ai[0] == 0f)
+			if (projectile.ai[0] == 0f)
 			{
 				projectile.ai[0] = 3f;
 				projectile.netUpdate = true;
 			}
 			if (Main.player[projectile.owner].itemAnimation < Main.player[projectile.owner].itemAnimationMax / 3)
 			{
-				projectile.ai[0] -= 1.1f;
-			}
+				projectile.ai[0] -= 1f;
+				if (projectile.localAI[0] == 0f && Main.myPlayer == projectile.owner)
+				{
+					projectile.localAI[0] = 1f;
+				}
+        	}
 			else
 			{
-				projectile.ai[0] += 0.95f;
+				projectile.ai[0] += 1.2f;
 			}
 
 			if (Main.player[projectile.owner].itemAnimation == 0)
@@ -66,39 +74,10 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 			if (Main.rand.Next(5) == 0)
 			{
 				int dust;
-				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 160, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-				Main.dust[dust].scale = 1.5f;
+				dust = Dust.NewDust(projectile.Center + (projectile.velocity * 9f), projectile.width, projectile.height, 7, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				Main.dust[dust].scale = 0.7f;
 			}
-			
-			Vector2 move = Vector2.Zero;
-			float distance = 190f;
-			bool target = false;
-			for (int k = 0; k < 200; k++)
-			{
-				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5 && Main.npc[k].type != 488)
-				{
-					Vector2 newMove = Main.npc[k].Center - projectile.Center;
-					float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
-					if (distanceTo < distance)
-					{
-						newMove.Normalize();
-						move = newMove;
-						distance = distanceTo;
-						target = true;
-					}
-				}
-			}
-			timer++;
-			if (target && timer >= 7)
-			{
-				int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, move.X * 12f, move.Y * 12f, mod.ProjectileType("SpiritBoomer"), projectile.damage, 5f, projectile.owner);
-				timer = 0;
-			}
-		}
-		
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{	
-			target.AddBuff(mod.BuffType("Spiritflame"), 180, false);
+			projectile.position += projectile.velocity * projectile.ai[0];
 		}
 	}
 }

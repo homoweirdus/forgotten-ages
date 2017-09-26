@@ -32,21 +32,26 @@ namespace ForgottenMemories.Items.Ranged
 			item.useAmmo =  AmmoID.Bullet;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Psychic Pistol");
-      Tooltip.SetDefault("Fires an additional bullet at the closest enemy");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Psychic Pistol");
+			Tooltip.SetDefault("Fires an additional bullet at the closest enemy");
+		}
+		
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(2, 0);
+		}
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			Vector2 move = Vector2.Zero;
-			float distance = 3200f;
+			float distance = 1000f;
 			bool target = false;
 			for (int k = 0; k < 200; k++)
 			{
-				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
+				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5 && Collision.CanHitLine(player.Center, 0, 0, Main.npc[k].Center, 0, 0) && Main.npc[k].type != 488)
 				{
 					Vector2 newMove = Main.npc[k].Center - player.Center;
 					float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);

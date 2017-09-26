@@ -77,7 +77,7 @@ namespace ForgottenMemories.Projectiles
 			bool xd = false;
 			for (int k = 0; k < 200; k++)
 			{
-				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5
+				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5 && Main.npc[k].type != 488
 				&& Main.npc[k].whoAmI != npc1.whoAmI && Main.npc[k].whoAmI != npc2.whoAmI && Main.npc[k].whoAmI != npc3.whoAmI && Main.npc[k].whoAmI != npc4.whoAmI)
 				{
 					Vector2 newMove = Main.npc[k].Center - projectile.Center;
