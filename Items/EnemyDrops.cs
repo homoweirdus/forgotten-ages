@@ -97,12 +97,12 @@ namespace ForgottenMemories.Items
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VortexSphere"), 1); 
 			}
 			
-			if (npc.type == NPCID.KingSlime && NPC.downedBoss1 && Main.rand.Next(10) == 0)
+			if (npc.type == NPCID.KingSlime && NPC.downedSlimeKing && Main.rand.Next(10) == 0)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SlimeCrystal"), 1); 
 			}
 			
-			if (npc.type == NPCID.KingSlime && !NPC.downedBoss1)
+			if (npc.type == NPCID.KingSlime && !NPC.downedSlimeKing)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SlimeCrystal"), 1); 
 			}
