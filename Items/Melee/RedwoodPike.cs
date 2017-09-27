@@ -31,20 +31,8 @@ namespace ForgottenMemories.Items.Melee
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Redwood Pike");
-    }
-
-	
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WaterShard", 6);
-			recipe.AddIngredient(ItemID.SharkFin, 3);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-		
+      DisplayName.SetDefault("Sequoia Stab");
+    }		
 		public override bool CanUseItem(Player player)
         {
             for (int i = 0; i < 1000; ++i)
