@@ -147,15 +147,6 @@ namespace ForgottenMemories
 					shop.item[nextSlot].SetDefaults(mod.ItemType("VengeanceBullet"));
 					nextSlot++;
 				}
-				for (int i = 0; i < 200; i++) // loop through 200 players
-				{
-					Player player = Main.player[i];
-					if (player.HasItem(mod.ItemType("LightningPistol")) || player.HasItem(mod.ItemType("LaserCannon")) || player.HasItem(mod.ItemType("LightningChaingun")))
-					{ // check if the player has a lightning pistol or upgrade in their inventory
-						shop.item[nextSlot].SetDefaults(mod.ItemType("LightningArrow")); //sell the lightning arrow
-						nextSlot++;
-					}
-				}
 				
 				for (int i = 0; i < 200; i++)
 				{

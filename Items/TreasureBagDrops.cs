@@ -49,6 +49,15 @@ namespace ForgottenMemories.Items
 					player.QuickSpawnItem(mod.ItemType("PaladinEmblem"), 1); 
 				}
 			}
+			
+		    if (context == "bossBag" && arg == 3324 && Main.rand.Next(1) == 0)
+			{
+			
+				if (Main.rand.Next(4) == 0)
+				{
+					player.QuickSpawnItem(mod.ItemType("ClubMeat"), 1); 
+				}
+			}
 		}
 	}
 }

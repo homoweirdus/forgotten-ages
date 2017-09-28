@@ -27,11 +27,20 @@ namespace ForgottenMemories.Items.Ammo
 			item.consumable = true;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Lightning Arrow");
-      Tooltip.SetDefault("Moves somewhat randomly, but has insane velocity");
-    }
-
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Lightning Arrow");
+			Tooltip.SetDefault("Moves somewhat randomly, but has insane velocity");
+		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(40, 500);
+			recipe.AddIngredient(null, "DivineBolt", 1);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this, 500);
+			recipe.AddRecipe();
+		}
 	}
 }

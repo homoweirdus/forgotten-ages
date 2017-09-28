@@ -17,8 +17,8 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.value = 50000;
             item.rare = 11;
             item.useStyle = 1;
-            item.useTime = 15;
-            item.useAnimation = 15;
+            item.useTime = 80;
+            item.useAnimation = 80;
             item.UseSound = SoundID.Item119;
             item.useTurn = true;
             item.autoReuse = false;

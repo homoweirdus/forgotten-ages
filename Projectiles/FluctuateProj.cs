@@ -13,7 +13,7 @@ namespace ForgottenMemories.Projectiles
 		public override void SetStaticDefaults()
 		{
 			ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = 15f;
-			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 300;
+			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 250f;
 			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 8f;
 		}
 
@@ -36,7 +36,7 @@ namespace ForgottenMemories.Projectiles
 			bool target = false;
 			for (int k = 0; k < 200; k++)
 			{
-				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
+				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5 && Main.npc[k].type != 488)
 				{
 					Vector2 newMove = Main.npc[k].Center - projectile.Center;
 					float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);

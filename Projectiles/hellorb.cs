@@ -31,7 +31,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			if (projectile.timeLeft > 990)
+			if (projectile.timeLeft > 995)
 				return;
 			for (int index1 = 0; index1 < 7; ++index1)
 			{

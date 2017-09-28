@@ -67,7 +67,7 @@ namespace ForgottenMemories.Projectiles
 			{
 				int dust;
 				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 226, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].scale = 0.9f;
 			}
         }
 		
