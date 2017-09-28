@@ -216,15 +216,18 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			{ //MAGIK
 				npc.alpha = 0;
 				npc.velocity = Vector2.Zero;
-				int attackType = 0;
-				switch(Main.rand.Next(3))
+				
+				if (npc.ai[0] == 420)
 				{
-					case 0: attackType = 1; //Druidic Circle
-						break;
-					case 1: attackType = 2; //Razor Leaves
-						break;
-					case 3: attackType = 3; //Branches
-						break;
+					switch(Main.rand.Next(1))
+					{
+						case 0: DruidCircle(player, 0); //Druidic Circle
+							break;
+						/*case 1: attackType = 2; //Razor Leaves
+							break;
+						case 3: attackType = 3; //Branches
+							break;*/
+					}
 				}
 			}
 			
@@ -243,6 +246,12 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		public void Phase3(Player player)
 		{
 			
+		}
+		
+		public void DruidCircle(Player player, int Dist)
+		{
+			Vector2 Pos = (new Vector2(0, Dist).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360))) + npc.Center);
+			Projectile.NewProjectile(Pos.X, Pos.Y, 0, 0, mod.ProjectileType("DruidicCircle"), 0, 0, Main.myPlayer, player.whoAmI, npc.whoAmI);
 		}
 		
 		public override void FindFrame(int frameHeight)
