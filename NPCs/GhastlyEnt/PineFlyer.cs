@@ -25,7 +25,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pine Flyer");
+			DisplayName.SetDefault("Pine Flier");
 			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 			animationType = NPCID.GiantBat;
 		}
