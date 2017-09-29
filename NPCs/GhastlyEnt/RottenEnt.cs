@@ -26,7 +26,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rotten Ent");
+			DisplayName.SetDefault("Rottenwood Goliath");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 		
