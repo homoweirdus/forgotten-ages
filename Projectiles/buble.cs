@@ -36,7 +36,7 @@ namespace ForgottenMemories.Projectiles
 			
 			if (timer >= 30)
 			{
-				Vector2 targetPos = projectile.Center;
+			Vector2 targetPos = projectile.Center;
             float targetDist = 350f;
             bool targetAcquired = false;
 			

@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -45,11 +48,11 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 			}
 			if (Main.player[projectile.owner].itemAnimation < Main.player[projectile.owner].itemAnimationMax / 3)
 			{
-				projectile.ai[0] -= 1.1f;
+				projectile.ai[0] -= 0.8f;
 			}
 			else
 			{
-				projectile.ai[0] += 0.95f;
+				projectile.ai[0] += 0.7f;
 			}
 
 			if (Main.player[projectile.owner].itemAnimation == 0)
@@ -99,6 +102,18 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{	
 			target.AddBuff(mod.BuffType("Spiritflame"), 180, false);
+		}
+		
+		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		{
+			Texture2D texture2D3 = Main.projectileTexture[projectile.type];
+			int num156 = Main.projectileTexture[projectile.type].Height / Main.projFrames[projectile.type];
+			int y3 = num156 * projectile.frame;
+			Microsoft.Xna.Framework.Rectangle rectangle = new Microsoft.Xna.Framework.Rectangle(0, y3, texture2D3.Width, num156);
+			Vector2 origin2 = rectangle.Size() / 2f;
+			Main.spriteBatch.Draw(Main.projectileTexture[projectile.type], projectile.position - (7 * projectile.velocity) + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), lightColor, projectile.rotation, origin2, projectile.scale, SpriteEffects.None, 0f);
+			Main.spriteBatch.Draw(mod.GetTexture("GlowMasks/SpiritSpear"), projectile.position - (7 * projectile.velocity) + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), Color.White, projectile.rotation, origin2, projectile.scale, SpriteEffects.None, 0f);
+			return false;
 		}
 	}
 }

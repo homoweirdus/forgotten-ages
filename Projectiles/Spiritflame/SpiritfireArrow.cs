@@ -82,6 +82,7 @@ namespace ForgottenMemories.Projectiles.Spiritflame
 					
 			Microsoft.Xna.Framework.Color color29 = projectile.GetAlpha(color25);
 			Main.spriteBatch.Draw(texture2D3, projectile.Center - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color29, projectile.rotation, origin2, projectile.scale, spriteEffects, 0f);
+			Main.spriteBatch.Draw(mod.GetTexture("GlowMasks/SpiritfireArrow"), projectile.Center - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), Color.White, projectile.rotation, origin2, projectile.scale, spriteEffects, 0f);
 			return false;
 		}
 		

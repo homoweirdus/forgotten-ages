@@ -1,8 +1,12 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ModLoader;
+using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles
 {
@@ -54,29 +58,46 @@ namespace ForgottenMemories.Projectiles
 				Main.dust[dust3].scale = 1.5f;
 				Main.dust[dust3].noGravity = true;
 			}
-			Vector2 perturbedSpeed = new Vector2(projectile.velocity.X, projectile.velocity.Y).RotatedBy(MathHelper.Lerp(-(.5f/3.14f), (.5f / 3.14f), (1f / (3f - 1f))));
-			Vector2 move = Vector2.Zero;
-			float distance = 200f;
-			bool target = false;
-			for (int k = 0; k < 200; k++)
-			{
-				if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
-				{
-					Vector2 newMove = Main.npc[k].Center - projectile.Center;
-					float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
-					if (distanceTo < distance)
-					{
-						newMove.Normalize();
-						move = newMove;
-						distance = distanceTo;
-						target = true;
-					}
-				}
-			}
-			if (target)
-			{
-				projectile.velocity = (projectile.velocity*12f + move)/13f;
-			}
+			Vector2 targetPos = projectile.Center;
+            float targetDist = 350f;
+            bool targetAcquired = false;
+			
+            for (int i = 0; i < 200; i++)
+            {
+                if (Main.npc[i].CanBeChasedBy(projectile) && Collision.CanHit(projectile.Center, 1, 1, Main.npc[i].Center, 1, 1) && Main.npc[i].immune[projectile.owner] == 0)
+                {
+                    float dist = projectile.Distance(Main.npc[i].Center);
+                    if (dist < targetDist)
+                    {
+                        targetDist = dist;
+                        targetPos = Main.npc[i].Center;
+                        targetAcquired = true;
+						projectile.aiStyle = -1;
+                    }
+                }
+            }
+			
+            if (targetAcquired)
+            {
+                float homingSpeedFactor = 12f;
+                Vector2 homingVect = targetPos - projectile.Center;
+                float dist = projectile.Distance(targetPos);
+                dist = homingSpeedFactor / dist;
+                homingVect *= dist;
+				projectile.rotation += projectile.velocity.X / 2f;
+                projectile.velocity = (projectile.velocity * 20 + homingVect) / 21f;
+            }
+		}
+		
+		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		{
+			Texture2D texture2D3 = Main.projectileTexture[projectile.type];
+			int num156 = Main.projectileTexture[projectile.type].Height / Main.projFrames[projectile.type];
+			int y3 = num156 * projectile.frame;
+			Microsoft.Xna.Framework.Rectangle rectangle = new Microsoft.Xna.Framework.Rectangle(0, y3, texture2D3.Width, num156);
+			Vector2 origin2 = rectangle.Size() / 2f;
+			Main.spriteBatch.Draw(Main.projectileTexture[projectile.type], projectile.position + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), Color.White, projectile.rotation, origin2, projectile.scale, SpriteEffects.None, 0f);
+			return false;
 		}
 	}
 }	

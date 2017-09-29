@@ -29,14 +29,6 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.GiantBat];
 			animationType = NPCID.GiantBat;
 		}
-
-		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = (int)Main.tile[x, y].type;
-			return (tile == 147) && !Main.bloodMoon && spawnInfo.player.ZoneSnow && spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.05f : 0f;
-		}
 		
 		public override void NPCLoot()
 		{

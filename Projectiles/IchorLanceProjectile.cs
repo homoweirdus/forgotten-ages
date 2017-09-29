@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -67,13 +70,6 @@ namespace ForgottenMemories.Projectiles
         	{
         		projectile.rotation -= 1.57f;
         	}
-			
-			if (Main.rand.Next(5) == 0)
-			{
-				int dust;
-				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-				Main.dust[dust].scale = 1.5f;
-			}
         }
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
@@ -94,6 +90,18 @@ namespace ForgottenMemories.Projectiles
 				player.HealEffect(2);
 				player.statLife += 2;
 			}
+		}
+		
+		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		{
+			Texture2D texture2D3 = Main.projectileTexture[projectile.type];
+			int num156 = Main.projectileTexture[projectile.type].Height / Main.projFrames[projectile.type];
+			int y3 = num156 * projectile.frame;
+			Microsoft.Xna.Framework.Rectangle rectangle = new Microsoft.Xna.Framework.Rectangle(0, y3, texture2D3.Width, num156);
+			Vector2 origin2 = rectangle.Size() / 2f;
+			Main.spriteBatch.Draw(Main.projectileTexture[projectile.type], projectile.position - (7 * projectile.velocity) + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), lightColor, projectile.rotation, origin2, projectile.scale, SpriteEffects.None, 0f);
+			Main.spriteBatch.Draw(mod.GetTexture("GlowMasks/CrimSpearMask"), projectile.position - (7 * projectile.velocity) + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), Color.White, projectile.rotation, origin2, projectile.scale, SpriteEffects.None, 0f);
+			return false;
 		}
     }
 }
