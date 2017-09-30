@@ -20,6 +20,10 @@ namespace ForgottenMemories.Items.Fishing
             {
                 caughtType = mod.ItemType("ForgottenCrate");
             }
+			if (liquidType == 0 && Main.rand.Next(35) == 0) 
+            {
+                caughtType = mod.ItemType("AmmoBag");
+            }
         }
  
     }
