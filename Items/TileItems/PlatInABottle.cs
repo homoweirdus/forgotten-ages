@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.TileItems
 {
-	public class GoldInABottle : ModItem
+	public class PlatInABottle : ModItem
 	{
 		public override void SetDefaults()
 		{
@@ -19,20 +19,20 @@ namespace ForgottenMemories.Items.TileItems
 			item.useTime = 10;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createTile = mod.TileType("GoldBottleTile");
+			item.createTile = mod.TileType("PlatBottleTile");
 			item.value = 1000;
 		}
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Gold in a bottle");
+      DisplayName.SetDefault("Plat in a bottle");
       Tooltip.SetDefault("");
     }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(13, 1);
+            recipe.AddIngredient(702, 1);
             recipe.AddIngredient(31, 1);
             recipe.AddTile(16);
             recipe.SetResult(this, 1);
