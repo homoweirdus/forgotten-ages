@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
 
 namespace ForgottenMemories.Items.AaMaterials
 {
@@ -24,6 +25,7 @@ namespace ForgottenMemories.Items.AaMaterials
     {
       DisplayName.SetDefault("Nightly Essence");
       Tooltip.SetDefault("'Embroidered with stars'");
+	  Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(4, 4));
     }
 	
 	public override void Update(ref float gravity, ref float maxFallSpeed)

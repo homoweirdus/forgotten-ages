@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
+
 
 namespace ForgottenMemories.Items.AaMaterials
 {
@@ -29,6 +31,7 @@ namespace ForgottenMemories.Items.AaMaterials
     {
       DisplayName.SetDefault("Dune Essence");
       Tooltip.SetDefault("'The construct of an oasis'");
+	  Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(4, 4));
     }
 
 	}

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
 
 namespace ForgottenMemories.Items.AaMaterials
 {
@@ -29,6 +30,7 @@ namespace ForgottenMemories.Items.AaMaterials
     {
       DisplayName.SetDefault("Undead Essence");
       Tooltip.SetDefault("'A key element in ressurection'");
+	  Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(4, 4));
     }
 
 	}
