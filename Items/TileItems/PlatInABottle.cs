@@ -25,7 +25,7 @@ namespace ForgottenMemories.Items.TileItems
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Plat in a bottle");
+      DisplayName.SetDefault("Platinum in a bottle");
       Tooltip.SetDefault("");
     }
 
