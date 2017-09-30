@@ -25,7 +25,7 @@ namespace ForgottenMemories.Tiles
 			drop = mod.ItemType("Citrine");
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Citrine");
-			AddMapEntry(new Color(75, 206, 242), name);
+			AddMapEntry(new Color(238, 170, 55), name);
 			soundType = 21;
 			minPick = 35;
 			Main.tileSpelunker[mod.TileType("CitrineOre")] = true;
