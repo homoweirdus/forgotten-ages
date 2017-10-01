@@ -17,6 +17,7 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.maxStack = 999;
 			item.value = 20000;
 			item.rare = 5;
+            //item.createTile = mod.TileType("BarBlight");
 
         }
 

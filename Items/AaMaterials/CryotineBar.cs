@@ -17,6 +17,7 @@ namespace ForgottenMemories.Items.AaMaterials
 			item.maxStack = 999;
 			item.value = 14000;
 			item.rare = 2;
+            //item.createTile = mod.TileType("BarCryotine");
 
         }
 

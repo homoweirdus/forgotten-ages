@@ -41,7 +41,6 @@ namespace ForgottenMemories.Items.Magic
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.RichMahogany, 18);
-			recipe.AddIngredient(null,"ForestEnergy", 10);
 			recipe.AddIngredient(ItemID.JungleSpores, 8);
 			recipe.AddIngredient(ItemID.Vine, 2);
 			recipe.AddTile(TileID.Anvils);

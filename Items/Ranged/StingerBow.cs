@@ -70,7 +70,6 @@ namespace ForgottenMemories.Items.Ranged
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Stinger, 8);
             recipe.AddIngredient(ItemID.JungleSpores, 10);
-			recipe.AddIngredient(null, "ForestEnergy", 5);
 			recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

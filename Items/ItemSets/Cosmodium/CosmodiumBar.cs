@@ -18,6 +18,7 @@ namespace ForgottenMemories.Items.ItemSets.Cosmodium
             item.value = 50000;
             item.rare = 11;
             item.maxStack = 999;
+            //item.createTile = mod.TileType("BarCosmodium");
         }
 
     public override void SetStaticDefaults()

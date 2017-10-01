@@ -23,6 +23,7 @@ namespace ForgottenMemories.Tiles
 			Main.tileFrameImportant[mod.TileType("WaterShard")] = true;
 			Main.tileObsidianKill[mod.TileType("WaterShard")] = true;
 			minPick = 65;
+            Main.tileNoAttach[Type] = true;
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Water Shard");
 			AddMapEntry(new Color(53, 201, 255), name);
