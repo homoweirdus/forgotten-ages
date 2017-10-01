@@ -27,6 +27,8 @@ namespace ForgottenMemories.Projectiles
 			projectile.alpha = 255;
 			projectile.tileCollide = true;
 			projectile.extraUpdates = 400;
+			projectile.usesLocalNPCImmunity = true;
+			projectile.localNPCHitCooldown = 10;
 		}
 		
 		public override void SetStaticDefaults()

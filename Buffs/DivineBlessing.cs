@@ -10,18 +10,18 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Buffs
 {
-	public class MarbleBlock : ModBuff
+	public class DivineBlessing : ModBuff
 	{
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Marble Skin");
-			Description.SetDefault("Increases defense by 8");
+			DisplayName.SetDefault("Divine Blessing");
+			Description.SetDefault("Attacks have a chance to create chain lightning");
 			//Main.buffNoTimeDisplay[Type] = true;
 		}
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.statDefense += 8;
+			((EnergyPlayer)player.GetModPlayer(mod, "EnergyPlayer")).DivineBlessing = true;
 		}
 	}
 }

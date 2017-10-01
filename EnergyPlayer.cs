@@ -32,6 +32,7 @@ namespace ForgottenMemories
 		public bool frostguard = false;
 		public bool BeeHive = false;
 		public bool ManaShard = false;
+		public bool DivineBlessing = false;
 		public int firestormCooldown = 0;
 		
 		public override void ResetEffects()
@@ -50,6 +51,7 @@ namespace ForgottenMemories
 			jungard = false;
 			frostguard = false;
 			BeeHive = false;
+			DivineBlessing = false;
 		}
 
             public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
@@ -60,6 +62,11 @@ namespace ForgottenMemories
                     player.HealEffect(quickthing);
                     player.statLife += (quickthing);
 					lifestealCap++;
+                }
+				
+				if (Main.rand.Next(6) == 0 && DivineBlessing == true)
+                {
+					Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("LightningChain"), damage / 2, 2f, player.whoAmI);
                 }
             }
 			
@@ -73,6 +80,11 @@ namespace ForgottenMemories
                     player.HealEffect(quickthing);
                     player.statLife += (quickthing);
 					lifestealCap++;
+                }
+				
+				if (Main.rand.Next(6) == 0 && DivineBlessing == true)
+                {
+					Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("LightningChain"), damage / 2, 2f, player.whoAmI);
                 }
 				
 				if (sapBall == true && Main.rand.Next(3) == 0)
