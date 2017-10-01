@@ -39,7 +39,6 @@ namespace ForgottenMemories.Projectiles
 				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 269);
 				Main.dust[dust].noGravity = true;
 			}
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 43);
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
@@ -60,7 +59,9 @@ namespace ForgottenMemories.Projectiles
         {
 			int num;
 			int num2 = 3;
-			for (int num164 = 0; num164 < 5; num164 = num + 1)
+			if (projectile.timeLeft <= 296)
+			{
+				for (int num164 = 0; num164 < 5; num164 = num + 1)
 				{
 					float x2 = projectile.position.X - projectile.velocity.X / 10f * (float)(num164 * 2);
 					float y2 = projectile.position.Y - projectile.velocity.Y / 10f * (float)(num164 * 2);
@@ -72,6 +73,7 @@ namespace ForgottenMemories.Projectiles
 					Main.dust[num165].noGravity = true;
 					num = num164;
 				}
+			}
 			
 			Vector2 targetPos = projectile.Center;
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
