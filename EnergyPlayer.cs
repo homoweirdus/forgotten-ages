@@ -66,7 +66,9 @@ namespace ForgottenMemories
 				
 				if (Main.rand.Next(6) == 0 && DivineBlessing == true)
                 {
-					Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("LightningChain"), damage / 2, 2f, player.whoAmI);
+					Vector2 newVect1 = new Vector2 (12, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360)));
+					int proj = Projectile.NewProjectile(target.Center.X, target.Center.Y, newVect1.X, newVect1.Y, mod.ProjectileType("LightningChain"), damage, 2f, player.whoAmI);
+					Main.projectile[proj].ranged = false;
                 }
             }
 			
@@ -84,7 +86,8 @@ namespace ForgottenMemories
 				
 				if (Main.rand.Next(6) == 0 && DivineBlessing == true)
                 {
-					Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("LightningChain"), damage / 2, 2f, player.whoAmI);
+					int proj = Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("LightningChain"), damage / 2, 2f, player.whoAmI);
+					Main.projectile[proj].ranged = false;
                 }
 				
 				if (sapBall == true && Main.rand.Next(3) == 0)
