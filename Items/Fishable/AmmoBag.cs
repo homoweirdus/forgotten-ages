@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.Fishable
 		public override void SetStaticDefaults()
 		
 		{
-			DisplayName.SetDefault("Ammo Bag");
+			DisplayName.SetDefault("Ammo Pouch");
 			Tooltip.SetDefault("Right Click To Open");
 		}
 		public override void SetDefaults()
@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.Fishable
 			item.width = 34;  
 			item.height = 34;   
 			item.rare = 4;
-			item.createTile = mod.TileType("ForgottenCrateTile"); 
+			item.createTile = mod.TileType("AmmoPouchTile"); 
 			item.placeStyle = 0;
 			item.useAnimation = 10; 
 			item.useTime = 10;  
