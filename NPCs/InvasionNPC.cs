@@ -28,7 +28,7 @@ namespace ForgottenMemories.NPCs
         {
             if(TGEMWorld.forestInvasionUp && (Main.invasionX == (double)Main.spawnTileX))
             {
-                spawnRate = 100; 
+                spawnRate = 250; 
                 maxSpawns = 10000; 
             }
         }

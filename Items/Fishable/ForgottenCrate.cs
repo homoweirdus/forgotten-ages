@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using System.Collections.Generic;
  
 namespace ForgottenMemories.Items.Fishable
 {
@@ -38,118 +39,34 @@ namespace ForgottenMemories.Items.Fishable
  
         public override void RightClick(Player player)
         {
- 
+			List<int> Valuable = new List<int>();
+			Valuable.Add(mod.ItemType("Tourmaline"));
+			Valuable.Add(mod.ItemType("DarkEnergy"));
+			Valuable.Add(mod.ItemType("Citrine"));
+			Valuable.Add(mod.ItemType("Galeshard"));
  
             if (NPC.downedBoss1)
             {
-                int Choose = Main.rand.Next(5);         
-                if (Choose == 0)                                               
-                {
-                    player.QuickSpawnItem(mod.ItemType("Citrine"), Main.rand.Next(1, 4));
-                }
-                if (Choose == 1)                                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("Tourmaline"), Main.rand.Next(1, 4));
-                }
-                if (Choose == 2)                                       
-                {
-                    player.QuickSpawnItem(mod.ItemType("GelatineBar"), Main.rand.Next(3, 6));
-                }
-                if (Choose == 3)                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("DesertEnergy"), Main.rand.Next(1, 9));
-                }
-                if (Choose == 4)                  
-                {
-                    player.QuickSpawnItem(mod.ItemType("LightningArrow"), Main.rand.Next(30, 60)); 
-                }
-                player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(2, 5));  
+                Valuable.Add(mod.ItemType("GelatineBar"));
+				Valuable.Add(mod.ItemType("BossEnergy"));
             }				
             if (NPC.downedBoss2)
             {
-                int Choose = Main.rand.Next(5);         
-                if (Choose == 0)                                               
-                {
-                    player.QuickSpawnItem(mod.ItemType("Citrine"), Main.rand.Next(1, 2));
-                }
-                if (Choose == 1)                                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("Tourmaline"), Main.rand.Next(1, 2));
-                }
-                if (Choose == 2)                                       
-                {
-                    player.QuickSpawnItem(mod.ItemType("DarkSludge"), Main.rand.Next(3, 9));
-                }
-                if (Choose == 3)                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("CryotineBar"), Main.rand.Next(3, 10));
-                }
-                if (Choose == 4)                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("SoaringEnergy"), Main.rand.Next(1, 9));
-                }
-                if (Choose == 5)                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("DivineBolt"));
-                }
-                if (Choose == 6)                  
-                {
-                    player.QuickSpawnItem(mod.ItemType("LightningArrow"), Main.rand.Next(70, 240)); 
-                }
-                player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(4, 7));  
+                Valuable.Add(mod.ItemType("DarkSludge")); 
+				Valuable.Add(mod.ItemType("CryotineBar"));
+				Valuable.Add(mod.ItemType("SoaringEnergy"));
             }	
             if (NPC.downedBoss3)
             {
-                int Choose = Main.rand.Next(5);         
-                if (Choose == 0)                                               
-                {
-                    player.QuickSpawnItem(mod.ItemType("Citrine"), Main.rand.Next(3, 6));
-                }
-                if (Choose == 1)                                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("Tourmaline"), Main.rand.Next(3, 6));
-                }
-                if (Choose == 2)                                       
-                {
-                    player.QuickSpawnItem(mod.ItemType("DevilFlame"), Main.rand.Next(3, 9));
-                }
-                if (Choose == 3)                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("WaterShard"), Main.rand.Next(1, 8));
-                }
-                if (Choose == 4)                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("UndeadEnergy"), Main.rand.Next(1, 9));
-                }
-                if (Choose == 5)                                
-                {
-                    player.QuickSpawnItem(mod.ItemType("DivineBolt"), Main.rand.Next(1, 2));
-                }
-                if (Choose == 6)                  
-                {
-                    player.QuickSpawnItem(mod.ItemType("Spinel"), Main.rand.Next(1, 6)); 
-                }
-                player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(5, 10));  
+				Valuable.Add(mod.ItemType("UndeadEnergy"));
+				Valuable.Add(mod.ItemType("DevilFlame"));
+				Valuable.Add(mod.ItemType("WaterShard"));
+				Valuable.Add(mod.ItemType("Spinel"));
             }	
-            else 
-            {
-                int Choose = Main.rand.Next(3);
-                if (Choose == 0)                                        
-                {
-                    player.QuickSpawnItem(mod.ItemType("GaleShard"), Main.rand.Next(1, 17));
-                }
-                if (Choose == 1)                                           
-                {
-                    player.QuickSpawnItem(mod.ItemType("DarkEnergy"), Main.rand.Next(1, 9));
-                }
-                if (Choose == 2)                               
-                {
-                    player.QuickSpawnItem(mod.ItemType("PlungerArrow"), Main.rand.Next(30, 60)); 
-                }
-                player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(1, 3));
- 
-            }
- 
+			Valuable.ToArray();
+			player.QuickSpawnItem(Valuable[Main.rand.Next(0, Valuable.Count)], Main.rand.Next(10, 17));
+			player.QuickSpawnItem(Valuable[Main.rand.Next(0, Valuable.Count)], Main.rand.Next(10, 17));
+			player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(3, 5));  
  
         }
  
