@@ -21,6 +21,8 @@ namespace ForgottenMemories.NPCs.Mushroom
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 1;
 			aiType = NPCID.BlueSlime;
+			banner = npc.type;
+			bannerItem = mod.ItemType("ShroomSlimeBannerItem");
 		}
 		
 		public override void SetStaticDefaults()
