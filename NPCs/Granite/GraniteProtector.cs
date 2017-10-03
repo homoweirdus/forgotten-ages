@@ -24,6 +24,8 @@ namespace ForgottenMemories.NPCs.Granite
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 14;
 			aiType = -1;
+			banner = npc.type;
+			bannerItem = mod.ItemType("ProtectorBannerItem");
 		}
 		
 		public override void SetStaticDefaults()
