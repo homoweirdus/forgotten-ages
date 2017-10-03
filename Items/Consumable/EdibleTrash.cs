@@ -26,6 +26,7 @@ namespace ForgottenMemories.Items.Consumable
 			item.consumable = true;
 			item.value = 1000;
 			item.rare = -1;
+			item.maxStack = 999;
 		}
 
 		public override void UseStyle(Player player)
