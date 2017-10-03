@@ -20,22 +20,27 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 			item.useStyle = 5;
 			item.knockBack = 5;
 			item.value = 30000;
-            item.rare = 3;
+			item.rare = 3;
 			item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
 			item.shoot = mod.ProjectileType("LeechingArrow");
-			item.shootSpeed = 15f;
+			item.shootSpeed = 12f;
 			item.scale = 1.1f;
 
 			item.noMelee = true;
 			item.autoReuse = true;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Leeching Bow");
-      Tooltip.SetDefault("Shoots life leeching arrows");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Leeching Bow");
+			Tooltip.SetDefault("Shoots life leeching arrows");
+		}
+		
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(-1, 0);
+		}
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
