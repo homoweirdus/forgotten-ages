@@ -18,7 +18,7 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			item.value = 300000;
 			item.rare = 5;
 			item.defense = 13;
-			item.lifeRegen = 3;
+			item.lifeRegen = 2;
 		}
 
     public override void SetStaticDefaults()

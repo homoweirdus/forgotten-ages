@@ -11,7 +11,7 @@ public class BloodShuriken : ModItem
     public override void SetDefaults()
     {
 
-        item.damage = 13;
+        item.damage = 19;
         item.thrown = true;
 		item.noMelee = true;
 		item.noUseGraphic = true;
@@ -36,7 +36,7 @@ public class BloodShuriken : ModItem
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Blood Shuriken");
-      Tooltip.SetDefault("Leeches life");
+      Tooltip.SetDefault("Enemy hits steal life");
     }
 
 

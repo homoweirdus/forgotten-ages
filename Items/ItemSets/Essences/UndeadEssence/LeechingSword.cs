@@ -9,7 +9,7 @@ public class LeechingSword : ModItem
         public override void SetDefaults()
         {
 
-            item.damage = 30;
+            item.damage = 25;
             item.melee = true;
             item.width = 22;
             item.height = 24;

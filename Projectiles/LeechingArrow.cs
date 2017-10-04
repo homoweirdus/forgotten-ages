@@ -10,8 +10,8 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 10;
-			projectile.height = 10;
+			projectile.width = 14;
+			projectile.height = 14;
 			projectile.penetrate = 1;
 			projectile.ranged = true;
 			projectile.friendly = true;
@@ -28,7 +28,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			int dust;
 			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 5, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
-			Main.dust[dust].scale = 0.5f;
+			Main.dust[dust].scale = 0.9f;
 			Main.dust[dust].noGravity = true;				
 		}
 		
