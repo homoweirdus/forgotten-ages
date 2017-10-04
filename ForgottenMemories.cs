@@ -136,8 +136,8 @@ namespace ForgottenMemories
             Mod bossChecklist = ModLoader.GetMod("BossChecklist");
             if(bossChecklist != null)
             {
-                // To include a description:
-                bossChecklist.Call("AddBossWithInfo", "Ghastly Ent", 3.2f, (Func<bool>)(() => TGEMWorld.downedGhastlyEnt), "Use a [i:" + ItemType("AncientLog") + "] that drops uncommonly from Tree Men post-Eye of Cthulhu");
+                // To include a description JK MEME TAG:
+                bossChecklist.Call("AddBossWithInfo", "Ghastly Ent", 9.4f, (Func<bool>)(() => TGEMWorld.downedGhastlyEnt), "Summon the forest's army using [i:" + ItemType("AncientLog") + "] and defeat it after all mech bosses are defeated");
 				bossChecklist.Call("AddBossWithInfo", "Arterius", 6.3f, (Func<bool>)(() => TGEMWorld.downedArterius), "Use a [i:" + ItemType("BloodClot") + "] at night");
 				bossChecklist.Call("AddBossWithInfo", "Titan Rock", 6.9f, (Func<bool>)(() => TGEMWorld.downedTitanRock), "Use a [i:" + ItemType("anomalydetector") + "]");
 			}
