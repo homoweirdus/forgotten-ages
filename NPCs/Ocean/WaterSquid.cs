@@ -22,6 +22,8 @@ namespace ForgottenMemories.NPCs.Ocean
 			npc.knockBackResist = 5f;
 			npc.aiStyle = 18;
 			aiType = NPCID.BlueJellyfish;
+			banner = npc.type;
+			bannerItem = mod.ItemType("SquidBannerItem");
 		}
 		
 		public override void SetStaticDefaults()
