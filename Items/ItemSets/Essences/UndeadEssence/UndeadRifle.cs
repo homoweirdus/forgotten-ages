@@ -21,8 +21,8 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 			item.useAnimation = 12;
 			item.useStyle = 5;
 			item.knockBack = 1;
-			item.value = 10000;
-			item.rare = 2;
+			item.value = 30000;
+			item.rare = 3;
 			item.UseSound = SoundID.Item11;
 			item.shoot = ProjectileID.Bullet;
 			item.shootSpeed = 10f;
