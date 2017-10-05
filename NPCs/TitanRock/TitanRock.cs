@@ -95,6 +95,8 @@ namespace ForgottenMemories.NPCs.TitanRock
 							frickvector = frickvector.RotatedBy(System.Math.PI / 5);
 							Projectile.NewProjectile(npc.Center.X, npc.Center.Y, frickvector.X, frickvector.Y, mod.ProjectileType("Ball"), 30, 1, Main.myPlayer, 0, 0);
 						}
+						
+						Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
 					}
 					npc.rotation += npc.velocity.X / 15f;
 				}
