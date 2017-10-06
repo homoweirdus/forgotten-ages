@@ -96,7 +96,7 @@ namespace ForgottenMemories.Projectiles
 				{
 					Player player = Main.player[Main.myPlayer];
 					if (player.active && !player.dead && ((double) projectile.Distance(player.Center) <= (double) num1 && player.FindBuffIndex(mod.BuffType("DruidBane")) == -1))
-						player.AddBuff(mod.BuffType("DruidBane"), 240, true);
+						player.AddBuff(mod.BuffType("DruidBane"), 1, true);
 				}
 				
 				if ((double) ai >= 30.0 && (double) ai % 10.0 == 0.0 && Main.netMode != 1)
@@ -107,7 +107,7 @@ namespace ForgottenMemories.Projectiles
 						if (npc.type != 488 && npc.active && (double) projectile.Distance(npc.Center) <= (double) num1)
 						{
 							if (npc.townNPC && (npc.FindBuffIndex(mod.BuffType("DruidBane")) == -1 || npc.buffTime[npc.FindBuffIndex(mod.BuffType("DruidBane"))] <= 20))
-							  npc.AddBuff(mod.BuffType("DruidBane"), 240, false);
+							  npc.AddBuff(mod.BuffType("DruidBane"), 1, false);
 						}
 					}
 				}

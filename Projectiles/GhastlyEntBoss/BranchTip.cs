@@ -55,8 +55,8 @@ namespace ForgottenMemories.Projectiles.GhastlyEntBoss
 				if (projectile.alpha < 170 && projectile.alpha + 5 >= 170)
 				{
 					for (int index = 0; index < 3; ++index)
-						Dust.NewDust(projectile.position, projectile.width, projectile.height, 74, (float) (projectile.velocity.X * 0.025000000372529), (float) (projectile.velocity.Y * 0.025000000372529), 170, new Color(), 1.2f);
-					Dust.NewDust(projectile.position, projectile.width, projectile.height, 14, 0.0f, 0.0f, 170, new Color(), 1.1f);
+						Dust.NewDust(projectile.position, projectile.width, projectile.height, 14, (float) (projectile.velocity.X * 0.025000000372529), (float) (projectile.velocity.Y * 0.025000000372529), 170, new Color(), 1.2f);
+					Dust.NewDust(projectile.position, projectile.width, projectile.height, 163, 0.0f, 0.0f, 170, new Color(), 1.1f);
 				}
 				projectile.alpha += 3;;
 				if (projectile.alpha < (int) byte.MaxValue)

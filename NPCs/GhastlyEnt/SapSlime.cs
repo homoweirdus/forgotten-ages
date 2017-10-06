@@ -203,7 +203,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		
 		public override void HitEffect(int hitDirection, double damage)
 		{
-			
+			NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("SmolSap"));
 		}
 		
 		public override void SetStaticDefaults()
