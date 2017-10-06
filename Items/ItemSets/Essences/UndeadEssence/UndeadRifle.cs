@@ -50,7 +50,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 				speedX /= 2;
 				speedY /= 2;
 				
-				int num5 = Dust.NewDust(player.position, player.width, player.height, mod.DustType("UndeadDust"), 0f, 0f, 100, default(Color), 0.5f);
+				int num5 = Dust.NewDust(player.position, player.width, player.height, mod.DustType("UndeadDust"), 0f, 0f, 100, default(Color), 1.2f);
 				Main.dust[num5].noGravity = true;
 				Main.dust[num5].velocity *= 0.75f;
 				Main.dust[num5].fadeIn = 1.3f;
@@ -77,7 +77,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 		
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(2, 0);
+			return new Vector2(2, 2);
 		}
 	}
 }
