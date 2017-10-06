@@ -9,6 +9,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEntBoss
 
 	public class BranchBody : ModProjectile
 	{
+		int dist = -60;
 		public override void SetDefaults()
 		{
 			projectile.width = 30;
@@ -27,7 +28,9 @@ namespace ForgottenMemories.Projectiles.GhastlyEntBoss
 		
 		public override void AI()
 		{
-			Vector2 position = new Vector2(0, -60).RotatedBy(projectile.rotation);
+			if (projectile.ai[1] == 12)
+				dist += 10;
+			Vector2 position = new Vector2(0, dist).RotatedBy(projectile.rotation);
 			if ((double) projectile.ai[0] == 0.0)
 			{
 				projectile.alpha = projectile.alpha - 50;
