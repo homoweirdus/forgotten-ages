@@ -15,12 +15,22 @@ public class MiniSap : ModProjectile
 		projectile.friendly = false;
 		projectile.hostile = true;
 		projectile.alpha = 0;
-		projectile.timeLeft = 100;
+		projectile.timeLeft = 6000;
 	}
 	
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Corrosive Sap");
+		}
+		
+		public override void Kill(int timeLeft)
+		{
+			for (int i = 0; i < 5; i++)
+			{
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64);
+				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].noGravity = true;
+			}
 		}
 	
 			public override void AI()
