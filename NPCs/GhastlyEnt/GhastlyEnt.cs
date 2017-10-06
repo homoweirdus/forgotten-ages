@@ -219,13 +219,13 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				
 				if (npc.ai[0] == 420)
 				{
-					switch(Main.rand.Next(1))
+					switch(Main.rand.Next(2))
 					{
 						case 0: DruidCircle(player, 0); //Druidic Circle
 							break;
-						/*case 1: attackType = 2; //Razor Leaves
+						case 1: Branches(player, 2); //Branches
 							break;
-						case 3: attackType = 3; //Branches
+						/*case 3: attackType = 3; //Leaves
 							break;*/
 					}
 				}
@@ -252,6 +252,19 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		{
 			Vector2 Pos = (new Vector2(0, Dist).RotatedBy(MathHelper.ToRadians(Main.rand.Next(360))) + npc.Center);
 			Projectile.NewProjectile(Pos.X, Pos.Y, 0, 0, mod.ProjectileType("DruidicCircle"), 0, 0, Main.myPlayer, player.whoAmI, npc.whoAmI);
+		}
+		
+		public void Branches(Player player, int num)
+		{
+			for(int index = 0; index < num; index++)
+			{
+				Vector2 Pos = new Vector2(0, 300).RotatedBy(MathHelper.ToRadians(Main.rand.Next(-30, 31))) + player.Center;
+				Vector2 Vel = player.Center - Pos;
+				Vel.Normalize();
+				int p = Projectile.NewProjectile(Pos.X, Pos.Y, 0, 0, mod.ProjectileType("BranchBody"), npc.damage, 1, Main.myPlayer, 0, 0);
+				
+				Main.projectile[p].rotation = (float) Math.Atan2((double) Vel.Y, (double) Vel.X) + 1.57f;
+			}
 		}
 		
 		public override void FindFrame(int frameHeight)

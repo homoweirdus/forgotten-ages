@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace ForgottenMemories.Projectiles.GhastlyEntBoss {
 public class SapBall : ModProjectile
