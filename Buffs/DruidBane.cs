@@ -15,13 +15,13 @@ namespace ForgottenMemories.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Druidic Bane");
-			Description.SetDefault("Losing life rapidly and lowered damage");
+			Description.SetDefault("Losing life rapidly and lowered stats");
 			Main.buffNoTimeDisplay[Type] = true;
 		}
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.lifeRegen -= 10;
+			player.lifeRegen -= 20;
 			
 			player.magicDamage -= 0.1f;
 			player.meleeDamage -= 0.1f;
@@ -29,10 +29,11 @@ namespace ForgottenMemories.Buffs
 			player.minionDamage -= 0.1f;
 			player.thrownDamage -= 0.1f;
 			player.moveSpeed -= 0.35f;
+			player.endurance -= 0.1f;
 			
 			if (Main.rand.Next(5) == 0)
 			{
-				int num5 = Dust.NewDust(player.position, player.width, player.height, 15, 0f, 0f, 163, default(Color), 0.5f);
+				int num5 = Dust.NewDust(player.position, player.width, player.height, 163, 0f, 0f, 163, default(Color), 0.5f);
 				Main.dust[num5].noGravity = true;
 				Main.dust[num5].velocity *= 0.75f;
 				Main.dust[num5].fadeIn = 1.3f;

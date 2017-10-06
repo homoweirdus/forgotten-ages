@@ -34,14 +34,18 @@ namespace ForgottenMemories.Items.Consumable
 
         public override bool UseItem(Player player)
         {
-            Main.NewText("Your world is blessed with extraterrestrial clumps!", 175, 167, 75);
-			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 14E-05); k++)
+			
+			if (player.whoAmI == Main.myPlayer)
 			{
-				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
-				int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
-				if (j > Main.worldSurface)
+				Main.NewText("Your world is blessed with extraterrestrial clumps!", 175, 167, 75);
+				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 14E-05); k++)
 				{
-					WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(3, 4), WorldGen.genRand.Next(4, 5), (ushort)mod.TileType("CosmirockTile"));
+					int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
+					int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
+					if (j > Main.worldSurface)
+					{
+						WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(3, 4), WorldGen.genRand.Next(4, 5), (ushort)mod.TileType("CosmirockTile"));
+					}
 				}
 			}
             return true;

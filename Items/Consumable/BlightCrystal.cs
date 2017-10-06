@@ -34,15 +34,18 @@ namespace ForgottenMemories.Items.Consumable
 
         public override bool UseItem(Player player)
         {
-            Main.NewText("A malevolent force seeps into the most pestillent stone...", 150, 31, 242);
-			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 22E-05); k++)
+			if (player.whoAmI == Main.myPlayer)
 			{
-				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
-				int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
-				Tile tile = Main.tile[i, j];
-				if ((tile.type == 203 || tile.type == 204 || tile.type == 22 || tile.type == 25 || tile.type == 112 || tile.type == 398 || tile.type == 400 || tile.type == 399 || tile.type == 401 || tile.type == 234 || tile.type == 163 || tile.type == 200) && j > Main.worldSurface)
+				Main.NewText("A malevolent force seeps into the most pestillent stone...", 150, 31, 242);
+				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 22E-05); k++)
 				{
-					WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("BlightOre"));
+					int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
+					int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
+					Tile tile = Main.tile[i, j];
+					if ((tile.type == 203 || tile.type == 204 || tile.type == 22 || tile.type == 25 || tile.type == 112 || tile.type == 398 || tile.type == 400 || tile.type == 399 || tile.type == 401 || tile.type == 234 || tile.type == 163 || tile.type == 200) && j > Main.worldSurface)
+					{
+						WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("BlightOre"));
+					}
 				}
 			}
             return true;

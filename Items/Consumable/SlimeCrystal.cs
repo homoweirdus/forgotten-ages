@@ -34,15 +34,18 @@ namespace ForgottenMemories.Items.Consumable
 
         public override bool UseItem(Player player)
         {
-			Main.NewText("Gelatine seeps into the subterranean caverns!", 0, 29, 255);
-			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 18E-05); k++)
+			if (player.whoAmI == Main.myPlayer)
 			{
-				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
-				int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
-				Tile tile = Main.tile[i, j];
-				if ((tile.type == 0 || tile.type == 1) && j > Main.worldSurface)
+				Main.NewText("Gelatine seeps into the subterranean caverns!", 0, 29, 255);
+				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 18E-05); k++)
 				{
-					WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("GelatineOre"));
+					int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
+					int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
+					Tile tile = Main.tile[i, j];
+					if ((tile.type == 0 || tile.type == 1) && j > Main.worldSurface)
+					{
+						WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("GelatineOre"));
+					}
 				}
 			}
             return true;

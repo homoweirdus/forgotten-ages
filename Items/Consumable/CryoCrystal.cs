@@ -34,15 +34,18 @@ namespace ForgottenMemories.Items.Consumable
 
         public override bool UseItem(Player player)
         {
-            Main.NewText("Ice crystallizes beneath the tundra!", 36, 242, 242);
-			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 22E-05); k++)
+			if (player.whoAmI == Main.myPlayer)
 			{
-				int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
-				int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
-				Tile tile = Main.tile[i, j];
-				if ((tile.type == 147 || tile.type == 161) && j > Main.worldSurface)
+				Main.NewText("Ice crystallizes beneath the tundra!", 36, 242, 242);
+				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 22E-05); k++)
 				{
-					WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("CryotineOre"));
+					int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
+					int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
+					Tile tile = Main.tile[i, j];
+					if ((tile.type == 147 || tile.type == 161) && j > Main.worldSurface)
+					{
+						WorldGen.OreRunner(i, j, (double)WorldGen.genRand.Next(6, 7), WorldGen.genRand.Next(6, 7), (ushort)mod.TileType("CryotineOre"));
+					}
 				}
 			}
             return true;

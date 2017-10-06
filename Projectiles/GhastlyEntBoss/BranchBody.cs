@@ -28,9 +28,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEntBoss
 		
 		public override void AI()
 		{
-			if (projectile.ai[1] == 12)
-				dist += 10;
-			Vector2 position = new Vector2(0, dist).RotatedBy(projectile.rotation);
+			Vector2 position = new Vector2(0, dist + ((projectile.ai[1] >= 12f) ? 10 : 0)).RotatedBy(projectile.rotation);
 			if ((double) projectile.ai[0] == 0.0)
 			{
 				projectile.alpha = projectile.alpha - 50;
