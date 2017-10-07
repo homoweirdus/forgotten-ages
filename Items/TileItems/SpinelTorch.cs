@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgottenMemories.Items.TileITems
+namespace ForgottenMemories.Items.TileItems
 {
 	public class SpinelTorch : ModItem
 	{
