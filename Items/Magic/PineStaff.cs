@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Magic
 		public override void SetDefaults()
 		{
 
-			item.damage = 12;
+			item.damage = 38;
 			item.magic = true;
 			item.mana = 3;
 			item.width = 25;
