@@ -219,14 +219,14 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				
 				if (npc.ai[0] == 420)
 				{
-					switch(Main.rand.Next(2))
+					switch(Main.rand.Next(3))
 					{
 						case 0: DruidCircle(player, 0); //Druidic Circle
 							break;
 						case 1: Branches(player, 2); //Branches
 							break;
-						/*case 3: attackType = 3; //Leaves
-							break;*/
+						case 2: Portals();
+							break;
 					}
 				}
 			}
@@ -264,6 +264,18 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				int p = Projectile.NewProjectile(Pos.X, Pos.Y, 0, 0, mod.ProjectileType("BranchBody"), npc.damage, 1, Main.myPlayer, 0, 0);
 				
 				Main.projectile[p].rotation = (float) Math.Atan2((double) Vel.Y, (double) Vel.X) + 1.57f;
+				Main.projectile[p].netUpdate = true;
+			}
+		}
+		
+		public void Portals()
+		{
+			for (int index = 0; index < 3; index++)
+			{
+				Vector2 Pos = new Vector2(0, -150).RotatedBy(MathHelper.ToRadians(Main.rand.Next(-30, 31))) + npc.Center;
+				int p = Projectile.NewProjectile(Pos.X, Pos.Y, 0, 0, mod.ProjectileType("ForestPortal"), (int)(npc.damage/2), 1, Main.myPlayer, Pos.X, Pos.Y);
+				
+				Main.projectile[p].netUpdate = true;
 			}
 		}
 		

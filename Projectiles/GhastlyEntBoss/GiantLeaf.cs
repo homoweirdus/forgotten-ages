@@ -1,30 +1,30 @@
 using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
-using Microsoft.Xna.Framework.Graphics;
 
-namespace ForgottenMemories.Projectiles.GhastlyEntBoss {
-public class SapBall : ModProjectile
+namespace ForgottenMemories.Projectiles.GhastlyEntBoss
 {
-	public override void SetDefaults()
+	public class GiantLeaf : ModProjectile
 	{
-		projectile.width = 18;
-		projectile.height = 30;
-		projectile.penetrate = 1;
-		projectile.friendly = false;
-		projectile.hostile = true;
-		projectile.alpha = 0;
-		projectile.aiStyle = 1;
+		public override void SetDefaults()
+		{
+			projectile.width = 26;
+			projectile.height = 26;
+			projectile.penetrate = -1;
+			projectile.tileCollide = true;
+			projectile.hostile = true;
+			projectile.friendly = false;
+			Main.projFrames[projectile.type] = 1;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
-	}
-	
+		}
+		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("CorrosiveSap");
-			aiType = ProjectileID.Bullet;
+			DisplayName.SetDefault("Leaf");
 		}
 		
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
@@ -54,7 +54,7 @@ public class SapBall : ModProjectile
 				{
 					goto IL_6899;
 				}
-				color26 = Microsoft.Xna.Framework.Color.Lerp(color26, Microsoft.Xna.Framework.Color.Orange, 0.5f);
+				color26 = Microsoft.Xna.Framework.Color.Lerp(color26, Microsoft.Xna.Framework.Color.Green, 0.5f);
 				
 				IL_6881:
 				num161 += num158;
@@ -82,28 +82,36 @@ public class SapBall : ModProjectile
 			Main.spriteBatch.Draw(texture2D3, projectile.Center - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color29, projectile.rotation, origin2, projectile.scale, spriteEffects, 0f);
 			return false;
 		}
-	
-	
+		
 		public override void AI()
 		{
-			if (Main.rand.Next(3) == 0)
+			projectile.rotation = projectile.velocity.ToRotation() + 1.57f;
+			projectile.frameCounter++;
+			if (projectile.frameCounter >= 3)
 			{
-				Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				projectile.frameCounter = 0;
+				projectile.frame = (projectile.frame + 1) % 1;
+			} 
+			if (Main.rand.Next(6) == 0)
+			{
+				int d = Dust.NewDust(new Vector2((float) projectile.position.X, (float) projectile.position.Y), projectile.width, projectile.height, 163, 0.0f, 0.0f, 100, new Color(), 1.5f);
+				Main.dust[d].noGravity = true;
 			}
 		}
-	
-		   public override void Kill(int timeLeft)
+		
+		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(3, (int)projectile.position.X, (int)projectile.position.Y, 1);
-			int amountOfProjectiles = Main.rand.Next(1, 5);
-			
-			for (int i = 0; i < amountOfProjectiles; ++i)
-				{
-					float sX = (float)Main.rand.Next(-60, 61) * 0.2f;
-					float sY = (float)Main.rand.Next(-60, 61) * 0.2f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, sX, sY, mod.ProjectileType("MiniSap"), projectile.damage, 5f, projectile.owner);
-				}
+			for (int i = 0; i < 5; i++)
+			{
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 3);
+				Main.dust[dust].scale = 1.5f;
+				Main.dust[dust].noGravity = true;
+			}
 		}
-	
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			target.AddBuff(186, 500, false);
+		}
+	}
 }	
-}
