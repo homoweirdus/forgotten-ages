@@ -8,8 +8,8 @@ public class MiniSap : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.width = 10;
-		projectile.height = 10;
+		projectile.width = 8;
+		projectile.height = 8;
 		projectile.aiStyle = 2;
 		projectile.penetrate = 5;
 		projectile.friendly = false;
@@ -44,7 +44,6 @@ public class MiniSap : ModProjectile
 	public override bool OnTileCollide(Vector2 oldVelocity)
 	{
 		projectile.velocity *= 0;
-		projectile.aiStyle = 0;
 		return false;
 	}
 }}

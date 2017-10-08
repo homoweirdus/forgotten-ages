@@ -14,7 +14,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		{
 			npc.width = 60;
 			npc.height = 48;
-			npc.damage = 120;
+			npc.damage = 100;
 			npc.defense = 28;
 			npc.buffImmune[31] = true;
 			npc.buffImmune[20] = true;
@@ -160,7 +160,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				meem.Y = meem.Y * (1f + (float) Main.rand.Next(-50, 51) * 0.0199999995529652f);
 				meem.Normalize();
 				meem = (meem * (float) (5.0 + (float) Main.rand.Next(-50, 51) * 0.00999999977648258f));
-				int p = Projectile.NewProjectile((float) npc.Center.X, (float) npc.Center.Y, (float) meem.X, (float) meem.Y, type, (int)(npc.damage/2), 0.0f, Main.myPlayer, 0.0f, 0.0f);
+				int p = Projectile.NewProjectile((float) npc.Center.X, (float) npc.Center.Y, (float) meem.X, (float) meem.Y, type, (int)(npc.damage/4), 0.0f, Main.myPlayer, 0.0f, 0.0f);
 				Main.PlaySound(SoundID.NPCHit1, npc.position);
 				Main.projectile[p].netUpdate = true;
 			}
