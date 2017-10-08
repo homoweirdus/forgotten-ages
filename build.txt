@@ -10,6 +10,6 @@ hideCode = false
 
 hideResources = false
 
-includeSource = true
+includeSource = false
 
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, .git\*
