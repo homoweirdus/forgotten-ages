@@ -33,13 +33,15 @@ public class MiniSap : ModProjectile
 			}
 		}
 	
-			public override void AI()
-	{
-		if (Main.rand.Next(3) == 0)
+	public override void AI()
 		{
-			Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 64, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			projectile.ai[0]++;
+			if (projectile.ai[0] > 600)
+				projectile.alpha += 5;
+			
+			if (projectile.alpha >= 255)
+				projectile.Kill();
 		}
-	}
 	
 	public override bool OnTileCollide(Vector2 oldVelocity)
 	{

@@ -92,6 +92,16 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				npc.alpha = 0;
 		
 			Player player = Main.player[npc.target];
+			if (!player.active || player.dead)
+            {
+                npc.TargetClosest(false);
+                npc.velocity.Y = 20;
+				
+				if (npc.timeLeft > 10)
+				{
+					npc.timeLeft = 10;
+				}
+            }
 			npc.ai[0]++;
 			npc.noTileCollide = false;
 			npc.noGravity = false;

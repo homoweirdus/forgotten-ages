@@ -374,7 +374,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				Vector2 Pos = new Vector2(0, 300).RotatedBy(MathHelper.ToRadians(Main.rand.Next(-30, 31))) + player.Center;
 				Vector2 Vel = player.Center - Pos;
 				Vel.Normalize();
-				int p = Projectile.NewProjectile(Pos.X, Pos.Y, 0, 0, mod.ProjectileType("BranchBody"), npc.damage, 1, Main.myPlayer, 0, 0);
+				int p = Projectile.NewProjectile(Pos.X, Pos.Y, 0, 0, mod.ProjectileType("BranchBody"), (int)(npc.damage/2), 1, Main.myPlayer, 0, 0);
 				
 				Main.projectile[p].rotation = (float) Math.Atan2((double) Vel.Y, (double) Vel.X) + 1.57f;
 				Main.projectile[p].netUpdate = true;
