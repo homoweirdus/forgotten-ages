@@ -66,7 +66,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEntBoss
 					num164 = (float)(num159 - num161);
 				}
 				color26 *= num164 / ((float)ProjectileID.Sets.TrailCacheLength[projectile.type] * 1.5f);
-				Vector2 value4 = projectile.oldPos[num161];
+				Vector2 value4 = (projectile.oldPos[num161] + (2 * projectile.Center))/3;
 				float num165 = projectile.rotation;
 				SpriteEffects effects = spriteEffects;
 				if (ProjectileID.Sets.TrailingMode[projectile.type] == 2)

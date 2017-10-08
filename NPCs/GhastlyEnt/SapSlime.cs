@@ -87,6 +87,10 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		
 		public override void AI()
         {
+			npc.alpha -= 25;
+			if (npc.alpha < 0)
+				npc.alpha = 0;
+		
 			Player player = Main.player[npc.target];
 			npc.ai[0]++;
 			npc.noTileCollide = false;
