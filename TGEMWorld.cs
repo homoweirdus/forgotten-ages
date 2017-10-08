@@ -150,10 +150,10 @@ namespace ForgottenMemories
 			int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
 			if (ShiniesIndex != -1)
 			{
-				tasks.Insert(ShiniesIndex + 1, new PassLegacy("Moulding forgotten gemstones", delegate (GenerationProgress progress)
+				tasks.Insert(ShiniesIndex + 1, new PassLegacy("Adding BTFA Gems", delegate (GenerationProgress progress)
 				{
 					progress.Message = "Moulding forgotten gemstones";
-					for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 50E-05); k++)
+					for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 60E-05); k++)
 					{
 						int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
 						int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
@@ -165,6 +165,16 @@ namespace ForgottenMemories
 						if ((tile.type == 367) && j > Main.worldSurface)
 						{
 							WorldGen.TileRunner(i, j, (double)WorldGen.genRand.Next(2, 6), WorldGen.genRand.Next(2, 6), mod.TileType("CitrineOre"), false, 0f, 0f, false, true);
+						}
+					}
+					for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 22-05); k++)
+					{
+						int i = WorldGen.genRand.Next(10, Main.maxTilesX - 10);
+						int j = WorldGen.genRand.Next((int) Main.worldSurface - 1, Main.maxTilesY - 10);
+						Tile tile = Main.tile[i, j];
+						if ((tile.type == 57) && j > Main.worldSurface)
+						{
+							WorldGen.TileRunner(i, j, (double)WorldGen.genRand.Next(2, 6), WorldGen.genRand.Next(2, 6), mod.TileType("SpinelOre"), false, 0f, 0f, false, true);
 						}
 					}
 				}));

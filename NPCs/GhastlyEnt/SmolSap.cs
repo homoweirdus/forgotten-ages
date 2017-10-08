@@ -27,7 +27,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		{
 			for (int i = 0; i < 5; i++)
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 64);
+				int dust = Dust.NewDust(npc.position, npc.width, npc.height, 64);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}		

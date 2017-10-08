@@ -13,24 +13,24 @@ using Terraria.ID;
 
 namespace ForgottenMemories.Tiles
 {
-	public class CryotineOre : ModTile
+	public class SpinelOre : ModTile
 	{
 		public override void SetDefaults()
 		{
 			Main.tileSpelunker[Type] = true;
 			Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
+			Main.tileMerge[Type][57] = true;
+            Main.tileMerge[57][Type] = true;
 			Main.tileLighted[Type] = true;
-			dustType = 67;
-			drop = mod.ItemType("CryotineOreItem");
+			dustType = 203;
+			drop = mod.ItemType("Spinel");
 			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Cryotine Ore");
-			AddMapEntry(new Color(75, 206, 242), name);
+			name.SetDefault("Spinel Ore");
+			AddMapEntry(new Color(78, 132, 236), name);
 			soundType = 21;
-			minPick = 65;
-			Main.tileSpelunker[mod.TileType("CryotineOre")] = true;
-			mineResist = 4f;
+			minPick = 35;
+			mineResist = 2f;
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)
