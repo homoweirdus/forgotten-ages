@@ -366,6 +366,12 @@ namespace ForgottenMemories.NPCs.TitanRock
 		
 		public override void NPCLoot()
 		{
+			Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TitanGore1"), 1f);
+			Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TitanGore2"), 1f);
+			Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TitanGore3"), 1f);
+			Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TitanGore4"), 1f);
+			Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TitanGore5"), 1f);
+			
 			TGEMWorld.TryForBossMask(npc.Center, npc.type);
 			if (Main.expertMode)
 			{
