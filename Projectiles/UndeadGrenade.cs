@@ -33,7 +33,7 @@ namespace ForgottenMemories.Projectiles
 		public override void AI()
 		{
 			projectile.rotation += 0.5f;
-			Dust dust1 = Main.dust[Dust.NewDust(projectile.Center, projectile.width, projectile.height, mod.DustType("UndeadDust"), 0.0f, 0.0f, 0, new Color(), 1.2f)];
+			Dust dust1 = Main.dust[Dust.NewDust(projectile.Center, 0, 0, mod.DustType("UndeadDust"), 0.0f, 0.0f, 0, new Color(), 1.2f)];
 			//dust1.fadeIn = 0.5f;
 			dust1.noGravity = true;
 		}

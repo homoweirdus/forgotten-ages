@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace ForgottenMemories
 {
@@ -22,6 +23,7 @@ namespace ForgottenMemories
 		public bool hauntedCandle;
 		public bool duneBonus;
 		public float rangedVelocity;
+		public bool boneHearts;
 		
 		public override void ResetEffects()
 		{
@@ -31,7 +33,20 @@ namespace ForgottenMemories
 			CosmicPowers = false;
 			hauntedCandle = false;
 			duneBonus = false;
+			boneHearts = false;
 			rangedVelocity = 1f;
+		}
+		
+		public override void OnHitNPCWithProj(Projectile projectile, NPC target, int damage, float knockBack, bool Crit)
+		{
+			if (projectile.thrown == true && Main.rand.Next(5) == 0 && !target.immortal)
+			{
+				int number = Item.NewItem((int) target.position.X, (int) target.position.Y, target.width, target.height, mod.ItemType("BoneHeart"), 1, false, 0, false, false);
+				Main.item[number].velocity.Y = (float)((double) Main.rand.Next(-20, 1) * 0.200000002980232);
+				Main.item[number].velocity.X = (float)((double) Main.rand.Next(10, 31) * 0.200000002980232 * (double) projectile.direction);
+				if (Main.netMode == 1)
+					NetMessage.SendData(21, -1, -1, (NetworkText) null, number, 0.0f, 0.0f, 0.0f, 0, 0, 0);
+			}
 		}
 		
 		
