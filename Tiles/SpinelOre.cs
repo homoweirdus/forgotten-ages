@@ -26,8 +26,8 @@ namespace ForgottenMemories.Tiles
 			dustType = 203;
 			drop = mod.ItemType("Spinel");
 			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Spinel Ore");
-			AddMapEntry(new Color(78, 132, 236), name);
+			name.SetDefault("Spinel");
+			AddMapEntry(new Color(229, 94, 95), name);
 			soundType = 21;
 			minPick = 35;
 			mineResist = 2f;
