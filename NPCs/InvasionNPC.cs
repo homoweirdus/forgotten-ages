@@ -58,6 +58,10 @@ namespace ForgottenMemories.NPCs
                     if(npc.type == invader)
                     {
                         Main.invasionSize -= 1;
+						if (Main.rand.Next(3) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AncientFoliage"), 1); 
+						}
                     }
                 }
             }

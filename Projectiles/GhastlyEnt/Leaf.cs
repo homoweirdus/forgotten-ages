@@ -12,11 +12,10 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 		{
 			projectile.width = 20;
 			projectile.height = 20;
-			projectile.penetrate = -1;
-			projectile.tileCollide = false;
+			projectile.penetrate = 1;
+			projectile.tileCollide = true;
 			projectile.friendly = true;
 			projectile.melee = true;
-			projectile.timeLeft = 30;
 			projectile.hostile = false;
 			projectile.scale = 1f;
 			Main.projFrames[projectile.type] = 5;

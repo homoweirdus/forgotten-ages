@@ -34,20 +34,10 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			item.UseSound = SoundID.Item1;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Ghastly Knife");
-      Tooltip.SetDefault("Splits into woodchips when destroyed");
-    }
-
-
-		public override void AddRecipes()
+		public override void SetStaticDefaults()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ForestEnergy", 1);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this, 70);
-			recipe.AddRecipe();
+		  DisplayName.SetDefault("Ghastly Knife");
+		  Tooltip.SetDefault("Splits into woodchips when destroyed");
 		}
 	}
 }
