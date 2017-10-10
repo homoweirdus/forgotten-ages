@@ -8,13 +8,13 @@ namespace ForgottenMemories.Items.Consumable
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ambrosial Tonic");
-			Tooltip.SetDefault("Attacks have a chance to create chain lightning");
+			DisplayName.SetDefault("Bottled Sludge");
+			Tooltip.SetDefault("Lowers movement speed, but increases max life and defense \n'Smells and tastes awful'");
 		}
 
 		public override void SetDefaults()
 		{
-			item.buffType = mod.BuffType("DivineBlessing");
+			item.buffType = mod.BuffType("SludgeGuard");
 			item.width = 20;
 			item.height = 10;
 			item.useStyle = 2;
@@ -33,8 +33,8 @@ namespace ForgottenMemories.Items.Consumable
         {
             ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater, 1);
-            recipe.AddIngredient(null, "DivineBolt", 1);
-			recipe.AddIngredient(317, 1);
+            recipe.AddIngredient(null, "DarkSludge", 1);
+			recipe.AddIngredient(ItemID.Deathweed, 1);
             recipe.AddTile(TileID.Bottles);
             recipe.SetResult(this);
             recipe.AddRecipe();

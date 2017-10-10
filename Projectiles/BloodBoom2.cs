@@ -69,18 +69,6 @@ namespace ForgottenMemories.Projectiles
 			  projectile.maxPenetrate = 0;
 			  projectile.Damage();
 			}
-			for (int index1 = 0; index1 < 5; ++index1)
-			{
-			  int index2 = Dust.NewDust(projectile.position, projectile.width, projectile.height, Utils.SelectRandom<int>(Main.rand, new int[3]
-			  {
-				15,
-				176,
-				59
-			  }), 2.5f * (float) projectile.direction, -2.5f, 0, new Color(), 1f);
-			  Main.dust[index2].alpha = 200;
-			  Main.dust[index2].velocity *= 2.4f;
-			  Main.dust[index2].scale += Main.rand.NextFloat();
-			}
 		projectile.ai[0]++;
 		}
 	}
