@@ -35,6 +35,20 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		
 		public override void AI()
 		{
+			Player playerA = Main.player[npc.target];
+			Vector2 newMove = npc.Center - playerA.Center;
+			float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
+			
+			if (!playerA.active || playerA.dead || distanceTo >= 1000)
+            {
+                npc.TargetClosest(false);
+				
+				if (npc.timeLeft > 60)
+				{
+					npc.timeLeft = 60;
+				}
+            }
+			
 			ai++;
 			if (ai >= 80)
 			{
@@ -43,8 +57,6 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				vel.Normalize();
 				vel *= 6;
 				Projectile projectile = Main.projectile[Projectile.NewProjectile(npc.Center, vel, mod.ProjectileType("DarkMagic"), (int)(npc.damage/4), 0, Main.myPlayer, 0, 0)];
-				projectile.friendly = false;
-				projectile.hostile = true;
 				ai = 0;
 			}
 		}

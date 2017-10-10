@@ -28,6 +28,12 @@ namespace ForgottenMemories
 			mod.NPCType("TreeWitch"),
         };
 		
+		public static int[] hmInvaders = {
+            mod.NPCType("RedwoodRam"),
+			mod.NPCType("RottenEnt"),
+			mod.NPCType("BlossomBomber"),
+        };
+		
 		public static void StartCustomInvasion()
         {
             if (Main.invasionType != 0 && Main.invasionSize == 0)
@@ -56,7 +62,7 @@ namespace ForgottenMemories
                     Main.invasionProgressWave = 0;
                     Main.invasionProgressMax = Main.invasionSizeStart;
                     Main.invasionWarn = 3600;
-                    Main.invasionX = Main.spawnTileX + 60;
+                    Main.invasionX = Main.spawnTileX;
                 }
             }
         }

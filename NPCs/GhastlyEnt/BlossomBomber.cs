@@ -42,6 +42,16 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			Vector2 newMove = npc.Center - player.Center;
 			float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
 			
+			if (!player.active || player.dead || distanceTo >= 1000)
+            {
+                npc.TargetClosest(false);
+				
+				if (npc.timeLeft > 60)
+				{
+					npc.timeLeft = 60;
+				}
+            }
+			
 			if (timer >= 120 && npc.velocity.Y == 0f && distanceTo < distance && !player.dead)
 			{
 				Vector2 vel = (player.Center - npc.Center);

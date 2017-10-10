@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.Events;
 using Terraria.ModLoader;
+using System;
 
 namespace ForgottenMemories.NPCs.GhastlyEnt
 {
@@ -39,6 +40,19 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("Woodlouse"));
 				ai = 0;
 			}
+			
+			Vector2 newMove = npc.Center - player.Center;
+			float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
+			
+			if (!player.active || player.dead || distanceTo >= 1000)
+            {
+                npc.TargetClosest(false);
+				
+				if (npc.timeLeft > 60)
+				{
+					npc.timeLeft = 60;
+				}
+            }
 			
 			if (npc.position.X > player.position.X)
 			{

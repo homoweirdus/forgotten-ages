@@ -1,15 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Linq;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.Enums;
 using Terraria.ID;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using System.Collections.Generic;
-using Terraria.World.Generation;
-using Terraria.GameContent.Generation;
 
 namespace ForgottenMemories.Tiles
 {
@@ -18,12 +14,26 @@ namespace ForgottenMemories.Tiles
 		public override void SetDefaults()
 		{
 			Main.tileShine[mod.TileType("WaterShard")] = 300;
-			Main.tileNoFail[mod.TileType("WaterShard")] = true;
-			Main.tileLighted[mod.TileType("WaterShard")] = true;
-			Main.tileFrameImportant[mod.TileType("WaterShard")] = true;
+			Main.tileFrameImportant[Type] = true;
+			Main.tileSolid[Type] = false;
+			Main.tileNoAttach[Type] = true;
+			Main.tileNoFail[Type] = true;
+			Main.tileLavaDeath[Type] = false;
 			Main.tileObsidianKill[mod.TileType("WaterShard")] = true;
+			TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
+			TileObjectData.newTile.AnchorWall = false;
+			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
+			TileObjectData.newAlternate.CopyFrom(TileObjectData.Style1x1);
+			TileObjectData.newAlternate.AnchorLeft = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
+			TileObjectData.addAlternate(3);
+			TileObjectData.newAlternate.CopyFrom(TileObjectData.Style1x1);
+			TileObjectData.newAlternate.AnchorRight = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide | AnchorType.Tree | AnchorType.AlternateTile, TileObjectData.newTile.Height, 0);
+			TileObjectData.addAlternate(2);
+			TileObjectData.newAlternate.CopyFrom(TileObjectData.Style1x1);
+			TileObjectData.newAlternate.AnchorTop = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
+			TileObjectData.addAlternate(1);
+			TileObjectData.addTile(Type);
 			minPick = 65;
-            Main.tileNoAttach[Type] = true;
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Water Shard");
 			AddMapEntry(new Color(53, 201, 255), name);

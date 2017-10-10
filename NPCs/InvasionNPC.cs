@@ -21,6 +21,14 @@ namespace ForgottenMemories.NPCs
                 {
                     pool.Add(i, 1f);
                 }
+				
+				if (Main.hardMode)
+				{
+					foreach(int i in CustomInvasion.hmInvaders)
+					{
+						pool.Add(i, 1f);
+					}
+				}
             }
         }
 
@@ -28,7 +36,7 @@ namespace ForgottenMemories.NPCs
         {
             if(TGEMWorld.forestInvasionUp && (Main.invasionX == (double)Main.spawnTileX))
             {
-                spawnRate = 250; 
+                spawnRate = 270; 
                 maxSpawns = 10000; 
             }
         }
