@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Items.Consumable
 {
-	public class PotionOfDivinity : ModItem
+	public class ShadowMucus: ModItem
 	{
 		public override void SetStaticDefaults()
 		{
