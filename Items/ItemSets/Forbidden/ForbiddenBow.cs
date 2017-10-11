@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.width = 40;
 			item.height = 100;
 
-			item.useTime = 38;
-			item.useAnimation = 38;
+			item.useTime = 25;
+			item.useAnimation = 25;
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 200000;
@@ -26,13 +26,13 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.useAmmo = 40;
 			item.shoot = mod.ProjectileType("ForbiddenArrow");
 			item.noMelee = true;
-			item.shootSpeed = 10f;
+			item.shootSpeed = 8f;
 		}
 
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Forbidden Bow");
-      Tooltip.SetDefault("Fires 3 forbidden arrows");
+      Tooltip.SetDefault("Fires an exploding forbidden arrow");
     }
 
 
@@ -60,21 +60,14 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-				int amountOfProjectiles = 3;
-				for (int i = 0; i < amountOfProjectiles; ++i)
-					{
-						float sX = speedX;
-						float sY = speedY;
-						sX += (float)Main.rand.Next(-120, 120) * 0.02f;
-						sY += (float)Main.rand.Next(-120, 120) * 0.02f;
-						int homo = Main.rand.Next(-85, 85);
-						int gay = Main.rand.Next(-85, 85);
-						int po = Projectile.NewProjectile(position.X + homo, position.Y + gay, sX, sY, mod.ProjectileType("ForbiddenArrow"), damage, knockBack, player.whoAmI);
-						Main.projectile[po].tileCollide = false;
-						Main.projectile[po].noDropItem = true;
-					}
-			return false;
-		}
+        {
+			if (type == 1)
+            {
+                type = mod.ProjectileType("ForbiddenArrow");
+            }
+			Projectile.NewProjectile(player.Center.X, player.Center.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer, 0, 0);
+				
+            return false;
+        }
 	}
 }
