@@ -160,12 +160,12 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 				return false;
 		}
 		
-		public bool AnyNPCs()
+		public bool AnyNPCs() //Any dev
 		{
 			bool nousir = false;
 			for (int index = 0; index < 200; ++index)
 			{
-				if (Main.npc[index].active !Main.npc[index].dontTakeDamage && !Main.npc[index].immortal && Collision.CanHit(projectile.Center, 1, 1, Main.npc[index].Center, 1, 1))
+				if (Main.npc[index].active && !Main.npc[index].dontTakeDamage && !Main.npc[index].immortal && Collision.CanHit(projectile.Center, 1, 1, Main.npc[index].Center, 1, 1))
 				{
 					nousir = true;
 				}
