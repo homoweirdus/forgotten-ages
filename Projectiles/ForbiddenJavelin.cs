@@ -86,7 +86,7 @@ namespace ForgottenMemories.Projectiles
 			int y3 = num156 * projectile.frame;
 			Microsoft.Xna.Framework.Rectangle rectangle = new Microsoft.Xna.Framework.Rectangle(0, y3, texture2D3.Width, num156);
 			Vector2 origin2 = rectangle.Size() / 2f;
-			if (timer >= 3)
+			if (timer >= 5)
 			{
 				if (!reverse)
 				{
