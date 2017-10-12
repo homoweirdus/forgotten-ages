@@ -11,7 +11,8 @@ namespace ForgottenMemories.Projectiles
 	public class ForbiddenArrow : ModProjectile
 	{
 		int timer = 5;
-		Vector2 gayvector = new Vector2(0f, 0f);
+		float frick = 1f;
+		bool reverse;
 		public override void SetDefaults()
 		{
 			projectile.width = 14;
@@ -86,12 +87,27 @@ namespace ForgottenMemories.Projectiles
 			Vector2 origin2 = rectangle.Size() / 2f;
 			if (timer >= 3)
 			{
-				gayvector = new Vector2((float)Main.rand.Next(-2, 3), (float)Main.rand.Next(-2, 3));
+				if (!reverse)
+				{
+					frick += 0.1f;
+				}
+				else 
+				{
+					frick -= 0.1f;
+				}
 				timer = 0;
 			}
+			if (frick >= 1.8f)
+			{
+				reverse = true;
+			}
+			if (frick <= 1f)
+			{
+				reverse = false;
+			}
 			timer++;
+			Main.spriteBatch.Draw(Main.projectileTexture[projectile.type], projectile.position + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color25, projectile.rotation, origin2, frick, SpriteEffects.None, 0f);
 			Main.spriteBatch.Draw(Main.projectileTexture[projectile.type], projectile.position + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), lightColor, projectile.rotation, origin2, projectile.scale, SpriteEffects.None, 0f);
-			Main.spriteBatch.Draw(Main.projectileTexture[projectile.type], projectile.position + gayvector + projectile.Size / 2f - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color25, projectile.rotation, origin2, projectile.scale * 1.2f, SpriteEffects.None, 0f);
 			return false;
 		}
 	}
