@@ -45,7 +45,7 @@ namespace ForgottenMemories.NPCs.Acheron
             npc.noGravity = true;
             npc.HitSound = SoundID.NPCHit49;
 			npc.DeathSound = SoundID.NPCDeath6;
-            music = 14;
+            music = MusicID.Boss3;
 			npc.npcSlots = 5;
 			NPCID.Sets.TrailCacheLength[npc.type] = 10;
 			NPCID.Sets.TrailingMode[npc.type] = 1;
