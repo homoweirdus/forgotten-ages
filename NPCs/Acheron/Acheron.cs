@@ -179,6 +179,7 @@ namespace ForgottenMemories.NPCs.Acheron
 			if (npc.ai[2] == 0)
 			{
 				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("AcheronGhost"));
+				npc.ai[2]++;
 			}
 		}
 		
