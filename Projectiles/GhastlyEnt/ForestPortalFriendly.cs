@@ -165,7 +165,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 			bool nousir = false;
 			for (int index = 0; index < 200; ++index)
 			{
-				if (Main.npc[index].active && !Main.npc[index].dontTakeDamage && !Main.npc[index].immortal && Collision.CanHit(projectile.Center, 1, 1, Main.npc[index].Center, 1, 1))
+				if (Main.npc[index].active && !Main.npc[index].dontTakeDamage && !Main.npc[index].immortal && !Main.npc[index].friendly && Collision.CanHit(projectile.Center, 1, 1, Main.npc[index].Center, 1, 1))
 				{
 					nousir = true;
 				}
@@ -187,7 +187,7 @@ namespace ForgottenMemories.Projectiles.GhastlyEnt
 			float num2 = -1f;
 			for (int index = 0; index < 200; ++index)
 			{
-				if (Main.npc[index].active && !Main.npc[index].dontTakeDamage && !Main.npc[index].immortal && Collision.CanHit(projectile.Center, 1, 1, Main.npc[index].Center, 1, 1))
+				if (Main.npc[index].active && !Main.npc[index].friendly && !Main.npc[index].dontTakeDamage && !Main.npc[index].immortal && Collision.CanHit(projectile.Center, 1, 1, Main.npc[index].Center, 1, 1))
 				{
 					float num3 = Math.Abs((float) (Main.npc[index].position.X + (double) (Main.npc[index].width / 2) - (Position.X + (double) (Width / 2)))) + Math.Abs((float) (Main.npc[index].position.Y + (double) (Main.npc[index].height / 2) - (Position.Y + (double) (Height / 2))));
 					if ((double) num2 == -1.0 || (double) num3 < (double) num2)
