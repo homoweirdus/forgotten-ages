@@ -15,8 +15,8 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			item.width = 40;
 			item.height = 100;
 
-			item.useTime = 25;
-			item.useAnimation = 25;
+			item.useTime = 21;
+			item.useAnimation = 21;
 			item.useStyle = 5;
 			item.knockBack = 1;
 			item.value = 200000;

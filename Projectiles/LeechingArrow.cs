@@ -27,7 +27,7 @@ namespace ForgottenMemories.Projectiles
 		   public override void AI()
 		{
 			int dust;
-			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 5, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+			dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, mod.DustType("UndeadDust"), projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 			Main.dust[dust].scale = 0.9f;
 			Main.dust[dust].noGravity = true;				
 		}
@@ -36,7 +36,7 @@ namespace ForgottenMemories.Projectiles
 		{
 			for (int i = 0; i < 5; i++)
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 5);
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, mod.DustType("UndeadDust"));
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}

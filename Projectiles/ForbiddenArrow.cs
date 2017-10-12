@@ -33,7 +33,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(SoundID.Item89, projectile.position);
+			Main.PlaySound(SoundID.Item14, projectile.position);
 			projectile.position.X += (float) (projectile.width / 4);
 			projectile.position.Y += (float) (projectile.height / 4);
 			projectile.width = (int) (64.0 * (double) projectile.scale);
@@ -60,6 +60,11 @@ namespace ForgottenMemories.Projectiles
 			}
 			
 			
+		}
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{	
+			target.immune[projectile.owner] = 5;
 		}
 		
 		public override void AI()
@@ -133,7 +138,7 @@ namespace ForgottenMemories.Projectiles
 			Microsoft.Xna.Framework.Color color29 = projectile.GetAlpha(color25);
 			Main.spriteBatch.Draw(texture2D3, projectile.Center - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color29, projectile.rotation, origin2, projectile.scale, spriteEffects, 0f);
 			color29 *= 0.25f;
-			Main.spriteBatch.Draw(texture2D3, projectile.Center - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color29, projectile.rotation, origin2, projectile.scale * 1.5f, spriteEffects, 0f);
+			Main.spriteBatch.Draw(texture2D3, projectile.Center - Main.screenPosition - (projectile.velocity / 2) + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color29, projectile.rotation, origin2, projectile.scale * 1.7f, spriteEffects, 0f);
 			return false;
 		}
 	}

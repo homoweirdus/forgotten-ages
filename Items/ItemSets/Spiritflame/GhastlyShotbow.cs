@@ -23,7 +23,7 @@ namespace ForgottenMemories.Items.ItemSets.Spiritflame
 			item.useTime = 23;
 			item.useAnimation = 23;
 			item.useStyle = 5;
-			item.shootSpeed = 13f;
+			item.shootSpeed = 10f;
 			item.shoot = mod.ProjectileType("SpiritfireArrow");
 			item.useAmmo = 40;
 			item.knockBack = 1;
