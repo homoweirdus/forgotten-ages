@@ -16,6 +16,7 @@ namespace ForgottenMemories.Tiles
             Main.tileFrameImportant[Type] = true;
             Main.tileSolid[Type] = false;
             Main.tileLavaDeath[Type] = true;
+			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
 
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
 			TileObjectData.addTile(Type);
