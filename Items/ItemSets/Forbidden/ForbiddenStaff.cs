@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 		public override void SetDefaults()
 		{
 
-			item.damage = 47;
+			item.damage = 70;
 			item.magic = true;
 			item.width = 94;
 			item.height = 94;
@@ -53,22 +53,6 @@ namespace ForgottenMemories.Items.ItemSets.Forbidden
 			recipe.AddTile(134);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-		}
-
-
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			if (player.altFunctionUse == 2)
-			{
-				Vector2 mouse = Main.MouseWorld;
-				
-				Projectile.NewProjectile(mouse.X, mouse.Y, 0f, 0f, mod.ProjectileType("ForbiddenStaff"), 1, 0.1f, player.whoAmI);
-			}
-			else
-			{
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
-			}
-			return false;
 		}
 	}
 }
