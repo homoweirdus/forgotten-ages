@@ -52,7 +52,7 @@ namespace ForgottenMemories.NPCs.Acheron
 		public override void ModifyHitByProjectile(Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection )		
 		{
 			if (!projectile.minion)
-				projectile.Kill();
+				projectile.penetrate = 0;
 			
 			damage = 0;
 			npc.life++;
