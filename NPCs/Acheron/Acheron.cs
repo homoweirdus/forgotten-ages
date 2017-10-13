@@ -125,6 +125,23 @@ namespace ForgottenMemories.NPCs.Acheron
 			if (npc.alpha > 255)
 				npc.alpha = 255;
 			
+			if (npc.ai[1] == 0)
+			{
+				if(Main.expertMode)
+				{
+					int u = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + (int)(npc.height/2), mod.NPCType("AcheronBarrier"));
+					int uu = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + (int)(npc.height/2), mod.NPCType("AcheronBarrier"));
+					int uuu = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + (int)(npc.height/2), mod.NPCType("AcheronBarrier"));
+					Main.npc[u].Center += new Vector2(0, 150);
+					Main.npc[uu].Center += new Vector2(0, 150).RotatedBy(MathHelper.ToRadians(120));
+					Main.npc[uuu].Center += new Vector2(0, 150).RotatedBy(MathHelper.ToRadians(240));
+					Main.npc[u].ai[1] = npc.whoAmI;
+					Main.npc[uu].ai[1] = npc.whoAmI;
+					Main.npc[uuu].ai[1] = npc.whoAmI;
+				}
+				npc.ai[1]++;
+			}
+			
 			if (npc.ai[0] < 120)
 			{
 				Move(player);
