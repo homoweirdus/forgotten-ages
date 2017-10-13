@@ -203,29 +203,14 @@ namespace ForgottenMemories.NPCs.Acheron
 		public void Souls(Player player)
 		{
 			npc.velocity = Vector2.Zero;
-			if (npc.ai[0] == 150)
+			if (npc.ai[0] == 150 || npc.ai[0] == 155 || npc.ai[0] == 160 || npc.ai[0] == 170 || npc.ai[0] == 165)
 			{
-				for (int index = 0; index < 4; index++)
-				{
-					Vector2 Position = new Vector2(npc.Center.X + Main.rand.Next(-15, 16), npc.Center.Y + Main.rand.Next(-6, 7));
-					Vector2 Vel = player.Center - Position;
-					Vel.Normalize();
-					Vel *= 10;
-					Projectile.NewProjectile(Position.X, Position.Y, Vel.X, Vel.Y, mod.ProjectileType("HomingSoul"), (int)(npc.damage/2), 1, Main.myPlayer, 0, 0);
-				}
-			}
-			
-			if (npc.ai[0] == 170)
-			{
-				for (int index = 0; index < 2; index++)
-				{
-					Vector2 Position = new Vector2(npc.Center.X + Main.rand.Next(-15, 16), npc.Center.Y + Main.rand.Next(-6, 7));
-					Vector2 Vel = player.Center - Position;
-					Vel.Normalize();
-					Vel *= 10;
-					Vel += player.velocity;
-					Projectile.NewProjectile(Position.X, Position.Y, Vel.X, Vel.Y, mod.ProjectileType("HomingSoul"), (int)(npc.damage/2), 1, Main.myPlayer, 0, 0);
-				}
+				Vector2 Position = new Vector2(npc.Center.X + (320 - 2*npc.ai[0]), npc.Center.Y);
+				Vector2 Vel = player.Center - Position;
+				Vel.Normalize();
+				Vel *= 10;
+				Vel += player.velocity;
+				Projectile.NewProjectile(Position.X, Position.Y, Vel.X, Vel.Y, mod.ProjectileType("HomingSoul"), (int)(npc.damage/2), 1, Main.myPlayer, 0, 0);
 			}
 		}
 		
