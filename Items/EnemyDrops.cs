@@ -231,6 +231,13 @@ namespace ForgottenMemories.Items
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Spiderbook"), Main.rand.Next(1, 1));
 				}
 			}
+			if (npc.type == NPCID.Crab)
+			{
+				if (Main.rand.Next(36) == 0)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ClubFish"), Main.rand.Next(1, 1));
+				}
+			}
 		}
 	}
 }
