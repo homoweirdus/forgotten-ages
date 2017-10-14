@@ -147,7 +147,7 @@ namespace ForgottenMemories
 				}
 				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("Acheron"))
 				{
-					maskType = ModLoader.GetMod("ForgottenMemories").ItemType("AcheronTrophy");
+					trophyType = ModLoader.GetMod("ForgottenMemories").ItemType("AcheronTrophy");
 				}
 				Item trophy = Main.item[Item.NewItem((int)center.X, (int)center.Y, 0, 0, trophyType, 1)];
 			}
