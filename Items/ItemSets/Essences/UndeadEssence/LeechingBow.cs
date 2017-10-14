@@ -24,7 +24,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 			item.useAmmo = 40;
 			item.UseSound = SoundID.Item5;
 			item.shoot = mod.ProjectileType("LeechingArrow");
-			item.shootSpeed = 12f;
+			item.shootSpeed = 8f;
 			item.scale = 1.1f;
 
 			item.noMelee = true;
@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Leeching Bow");
-			Tooltip.SetDefault("Shoots life leeching arrows");
+			Tooltip.SetDefault("Converts regular arrows into more powerful blood arrows");
 		}
 		
 		public override Vector2? HoldoutOffset()
@@ -45,14 +45,19 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			if (type == 1)
+            {
+                type = mod.ProjectileType("LeechingArrow");
+				damage = (int)(damage * 1.25);
+            }
 			int amountOfProjectiles = 2;
 			for (int i = 0; i < amountOfProjectiles; ++i)
 			{
 				float sX = speedX;
 				float sY = speedY;
-				sX += (float)Main.rand.Next(-60, 61) * 0.02f;
-				sY += (float)Main.rand.Next(-60, 61) * 0.02f;
-				Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("LeechingArrow"), damage, knockBack, player.whoAmI);
+				sX += (float)Main.rand.Next(-60, 61) * 0.01f;
+				sY += (float)Main.rand.Next(-60, 61) * 0.01f;
+				Projectile.NewProjectile(position.X, position.Y, sX, sY, type, damage, knockBack, player.whoAmI);
 			}
 			return false;
 		}
