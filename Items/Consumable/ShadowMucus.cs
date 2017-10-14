@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.Consumable
 
 		public override void SetDefaults()
 		{
-			item.buffType = mod.BuffType("SludgeGuard");
+			item.buffType = mod.BuffType("MucusGuard");
 			item.width = 20;
 			item.height = 10;
 			item.useStyle = 2;
