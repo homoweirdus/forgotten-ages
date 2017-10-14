@@ -23,28 +23,21 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
+		}
 
-			item.shoot = mod.ProjectileType("SapBallFriendly");
-			item.shootSpeed = 12f;
-			}
-
-			public override void SetStaticDefaults()
-			{
-			  DisplayName.SetDefault("Living Tree Sword");
-			  Tooltip.SetDefault("Fires a splitting sap ball");
-			}
-
+		public override void SetStaticDefaults()
+		{
+		  DisplayName.SetDefault("Living Tree Sword");
+		  Tooltip.SetDefault("Creates druidic energy blades on hit");
+		}
 		
-
-		
-		
-		public override void AddRecipes()
-			{
-				ModRecipe recipe = new ModRecipe(mod);
-				recipe.AddIngredient(null, "ForestEnergy", 10);
-				recipe.AddTile(TileID.Anvils);
-				recipe.SetResult(this);
-				recipe.AddRecipe();
-			}
+		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+        {
+			Vector2 Center = (new Vector2(150, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(-30, 31))) * player.direction) + target.Center;
+			Vector2 Velocity = target.Center - Center;
+			Velocity.Normalize();
+			Velocity *= 12;
+			Projectile.NewProjectile(Center, Velocity, mod.ProjectileType("DruidBlade"), damage, 0f, player.whoAmI);
+        }
 	}
 }

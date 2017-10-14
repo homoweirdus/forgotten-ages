@@ -4,6 +4,7 @@ using Terraria.ID;
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
+using ForgottenMemories.Projectiles.InfoA;
 
 namespace ForgottenMemories.Items.ItemSets.Blightstone
 {
@@ -35,26 +36,21 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Blight Pistol");
-      Tooltip.SetDefault("Creates a blighted ember every 4 uses");
+		  Tooltip.SetDefault("Critical hits cause you to fire a beam of high-pressure blighted fire");
     }
 
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			counter++;
-			if (counter > 3)
-			{
-				float sX = speedX + (Main.rand.Next(-60, 60) * 0.02f);
-				float sY = speedY + (Main.rand.Next(-60, 60) * 0.02f);
-				Projectile.NewProjectile(position.X, position.Y, sX, sY, mod.ProjectileType("BlightedEmber"), damage, knockBack, player.whoAmI);
-				counter = 0;
-			}
-			return true;
+			Projectile projectile = Main.projectile[Projectile.NewProjectile(position, new Vector2(speedX, speedY), type, damage, knockBack, player.whoAmI, 0f, 0f)];
+			projectile.GetGlobalProjectile<Info>(mod).Blight = true;
+			return false;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "OceanPistol", 12);
 			recipe.AddIngredient(null, "blight_bar", 12);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
