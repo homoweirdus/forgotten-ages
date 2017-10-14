@@ -158,27 +158,6 @@ namespace ForgottenMemories
 					}
 				}
 			}
-			
-			if (type == NPCID.Merchant)
-			{
-				if (TGEMWorld.downedGhastlyEnt)
-				{
-					shop.item[nextSlot].SetDefaults(mod.ItemType("GhastlyKnife"));
-					nextSlot++;
-				}
-				
-				if (TGEMWorld.downedArterius)
-				{
-					shop.item[nextSlot].SetDefaults(mod.ItemType("BloodLeech"));
-					nextSlot++;
-				}
-				
-				if (TGEMWorld.downedTitanRock)
-				{
-					shop.item[nextSlot].SetDefaults(mod.ItemType("BeamSlicer"));
-					nextSlot++;
-				}
-			}
 		}
 		
 		public override void NPCLoot(NPC npc)

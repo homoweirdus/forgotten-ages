@@ -33,7 +33,7 @@ public class CryotineShuriken : ModItem
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Cryotine Shuriken");
+      DisplayName.SetDefault("Cryotine Razorblade");
       Tooltip.SetDefault("");
     }
 

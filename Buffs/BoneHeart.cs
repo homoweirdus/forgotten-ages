@@ -14,8 +14,8 @@ namespace ForgottenMemories.Buffs
 	{
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Undead Regen");
-			Description.SetDefault("Increased life regen");
+			DisplayName.SetDefault("Carnivorous Aura");
+			Description.SetDefault("Increased life regenation");
 			//Main.buffNoTimeDisplay[Type] = true;
 		}
 		

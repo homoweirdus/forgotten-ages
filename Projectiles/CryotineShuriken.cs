@@ -20,7 +20,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cryotine Shuriken");
+			DisplayName.SetDefault("Cryotine Razorblade");
 		}
 		
 		public override void Kill(int timeLeft)
