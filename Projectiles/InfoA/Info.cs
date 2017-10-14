@@ -20,6 +20,7 @@ namespace ForgottenMemories.Projectiles.InfoA
 		public bool wtf = false;
 		public bool BlightedBow = false;
 		public bool FrostCrystal = false;
+		public bool Blight = false;
 		public bool SnowSplit = false;
 		public bool NotSummon = false;
 		public bool Curse = false;
@@ -41,6 +42,14 @@ namespace ForgottenMemories.Projectiles.InfoA
 				Vector2 vector2 = (projectile.DirectionFrom(Source) * 6f);
 				int Damage2 = (int) ((double) projectile.damage * 1.5);
 				Projectile.NewProjectile((float) Source.X, (float) Source.Y, (float) vector2.X, (float) vector2.Y, mod.ProjectileType("WaterBeam"), Damage2, 0.0f, projectile.owner, 0.0f, 0.0f);
+			}
+			
+			if (Blight && crit)
+			{
+				Vector2 Source = (Main.player[projectile.owner].Center);
+				Vector2 vector2 = (projectile.DirectionFrom(Source) * 6f);
+				int Damage2 = (int) ((double) projectile.damage * 1.5);
+				Projectile.NewProjectile((float) Source.X, (float) Source.Y, (float) vector2.X, (float) vector2.Y, mod.ProjectileType("BlightBeam"), Damage2, 0.0f, projectile.owner, 0.0f, 0.0f);
 			}
 			
 			if (Curse == true && target.life < 1)
