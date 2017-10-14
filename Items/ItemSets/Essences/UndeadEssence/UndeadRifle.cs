@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Vampire's Bane");
-			Tooltip.SetDefault("Consumes health to convert bullets into homing death energy\nOnly converts bullets while your health is above 50%");
+			Tooltip.SetDefault("Fires homing death energy when below 25% life");
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -42,11 +42,9 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 			Vector2 Accuracy = new Vector2(speedX, speedY).RotatedBy(MathHelper.ToRadians(Main.rand.Next(-5, 5)));
 			speedX = Accuracy.X;
 			speedY = Accuracy.Y;
-			if (player.statLife >= (int)(player.statLifeMax2 / 2))
+			if (player.statLife <= (int)(player.statLifeMax2 / 4))
 			{
 				type = mod.ProjectileType("DeathEnergy");
-				player.statLife -= (int)(damage/4);
-				damage = (int)(damage * 1.5);
 				speedX /= 2;
 				speedY /= 2;
 				

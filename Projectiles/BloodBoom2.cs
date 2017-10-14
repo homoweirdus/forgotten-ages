@@ -18,7 +18,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.timeLeft = 10;
 			Main.projFrames[projectile.type] = 5;
 			projectile.tileCollide = false;
-			projectile.light = 0.5f;
 			projectile.alpha = 255;
 		}
 		

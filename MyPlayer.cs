@@ -39,7 +39,7 @@ namespace ForgottenMemories
 		
 		public override void OnHitNPCWithProj(Projectile projectile, NPC target, int damage, float knockBack, bool Crit)
 		{
-			if (projectile.thrown == true && Main.rand.Next(5) == 0 && !target.immortal)
+			if (projectile.thrown == true && Main.rand.Next(5) == 0 && !target.immortal && boneHearts)
 			{
 				int number = Item.NewItem((int) target.position.X, (int) target.position.Y, target.width, target.height, mod.ItemType("BoneHeart"), 1, false, 0, false, false);
 				Main.item[number].velocity.Y = (float)((double) Main.rand.Next(-20, 1) * 0.200000002980232);

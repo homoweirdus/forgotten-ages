@@ -22,7 +22,6 @@ namespace ForgottenMemories.Projectiles
 			projectile.tileCollide = false;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
-			projectile.light = 0.7f;
 			projectile.usesLocalNPCImmunity = true;
 			projectile.localNPCHitCooldown = 10;
 		}

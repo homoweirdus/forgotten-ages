@@ -16,7 +16,7 @@ namespace ForgottenMemories.Projectiles.Dune
 			projectile.height = 12;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
-			projectile.thrown = true;
+			projectile.magic = true;
 			projectile.penetrate = 1;
 			projectile.timeLeft = 200;
 			projectile.extraUpdates = 2;

@@ -26,7 +26,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Torrential Arrow");
+			DisplayName.SetDefault("Undead Grenade");
 		}
 		
 		
@@ -34,8 +34,8 @@ namespace ForgottenMemories.Projectiles
 		{
 			projectile.rotation += 0.5f;
 			Dust dust1 = Main.dust[Dust.NewDust(projectile.Center, 0, 0, mod.DustType("UndeadDust"), 0.0f, 0.0f, 0, new Color(), 1.2f)];
-			//dust1.fadeIn = 0.5f;
 			dust1.noGravity = true;
+			projectile.velocity.Y += 0.1f;
 		}
 		
 		public override bool OnTileCollide (Vector2 velocity1)
@@ -46,6 +46,7 @@ namespace ForgottenMemories.Projectiles
 			if (projectile.penetrate == 0)
 			{
 				projectile.Kill();
+				Main.PlaySound(SoundID.Item89, projectile.position);
 			}
 			
 			else

@@ -11,17 +11,17 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 28;
+			item.damage = 65;
 			item.thrown = true;
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.width = 22;
 			item.height = 22;
 
-			item.useTime = 25;
-			item.useAnimation = 25;
+			item.useTime = 50;
+			item.useAnimation = 50;
 			item.useStyle = 1;
-			item.shootSpeed = 10f;
+			item.shootSpeed = 8f;
 			item.shoot = mod.ProjectileType("UndeadGrenade");
 			item.knockBack = 1;
 			item.UseSound = SoundID.Item1;
