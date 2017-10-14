@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.Melee
 		{
 
 
-			item.damage = 18; 
+			item.damage = 32; 
 			item.crit = 12;
 			item.melee = true;
 			item.knockBack = 8; 
@@ -24,8 +24,8 @@ namespace ForgottenMemories.Items.Melee
 			item.width = 32;       
 			item.height = 32;
 
-			item.useTime = 19;
-			item.useAnimation = 19;
+			item.useTime = 38;
+			item.useAnimation = 38;
 			item.useStyle = 1;
 			item.UseSound = SoundID.Item1;
 
