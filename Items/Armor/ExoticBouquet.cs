@@ -8,7 +8,7 @@ namespace ForgottenMemories.Items.Armor
 	    public override void SetStaticDefaults()
 		{
 		DisplayName.SetDefault("Exotic Boquet");
-        Tooltip.SetDefault("A collection of assorted jungle plants");
+        Tooltip.SetDefault("'A collection of assorted jungle plants'");
 		}		
 		
 		public override void SetDefaults()
