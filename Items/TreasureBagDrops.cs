@@ -64,6 +64,7 @@ namespace ForgottenMemories.Items
 				if (Main.rand.Next(1) == 0)
 				{
 					player.QuickSpawnItem(mod.ItemType("ClubMechEye"), 1); 
+					player.QuickSpawnItem(mod.ItemType("ClubGreeneye"), 1); 
 				}
 			}
 		}

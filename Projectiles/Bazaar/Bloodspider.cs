@@ -13,7 +13,7 @@ namespace ForgottenMemories.Projectiles.Bazaar
 			projectile.height = 24;
             projectile.aiStyle = 2;
             projectile.friendly = true;
-            projectile.thrown = true;
+            projectile.magic = true;
 			projectile.timeLeft = 600;
 			projectile.penetrate = 1;
 			projectile.ignoreWater = true;
