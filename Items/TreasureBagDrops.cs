@@ -58,6 +58,14 @@ namespace ForgottenMemories.Items
 					player.QuickSpawnItem(mod.ItemType("ClubMeat"), 1); 
 				}
 			}
+		    if (context == "bossBag" && arg == 3326 && Main.rand.Next(1) == 0)
+			{
+			
+				if (Main.rand.Next(1) == 0)
+				{
+					player.QuickSpawnItem(mod.ItemType("ClubMechEye"), 1); 
+				}
+			}
 		}
 	}
 }
