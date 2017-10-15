@@ -22,6 +22,7 @@ namespace ForgottenMemories.Items.Melee
 			item.rare = 7;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
+			item.shoot = mod.ProjectileType("ArchSting");
 			item.shootSpeed = 5f;
 			item.useTurn = true;
 		}
@@ -29,7 +30,7 @@ namespace ForgottenMemories.Items.Melee
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Bane of the Hive Lord");
-      Tooltip.SetDefault("Striking an enemy with the blade will unleash bees and wasps");
+      Tooltip.SetDefault("Striking an enemy with the blade will unleash bees and wasps \nSwinging the blade releases an arch stinger, inflicting a damaging irritation");
     }
 
 
