@@ -128,6 +128,10 @@ namespace ForgottenMemories
 				{
 					maskType = ModLoader.GetMod("ForgottenMemories").ItemType("picklerick");
 				}
+				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("Magnoliac"))
+				{
+					maskType = ModLoader.GetMod("ForgottenMemories").ItemType("birdman");
+				}
 				Item mask = Main.item[Item.NewItem((int)center.X, (int)center.Y, 0, 0, maskType, 1)];
 			}
 			if (Main.rand.Next(10) == 0)
@@ -148,6 +152,10 @@ namespace ForgottenMemories
 				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("Acheron"))
 				{
 					trophyType = ModLoader.GetMod("ForgottenMemories").ItemType("AcheronTrophy");
+				}
+				if (type == ModLoader.GetMod("ForgottenMemories").NPCType("Magnoliac"))
+				{
+					trophyType = ModLoader.GetMod("ForgottenMemories").ItemType("MagnoliacTrophy");
 				}
 				Item trophy = Main.item[Item.NewItem((int)center.X, (int)center.Y, 0, 0, trophyType, 1)];
 			}

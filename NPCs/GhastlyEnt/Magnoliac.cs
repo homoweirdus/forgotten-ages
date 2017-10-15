@@ -137,7 +137,6 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 		public override void NPCLoot()
 		{
 			TGEMWorld.TryForBossMask(npc.Center, npc.type);
-			TGEMWorld.downedGhastlyEnt = true;
 			if (Main.expertMode)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, (mod.ItemType("MegaTreeBag")));
