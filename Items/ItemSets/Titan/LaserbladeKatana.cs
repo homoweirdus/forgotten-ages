@@ -14,7 +14,7 @@ namespace ForgottenMemories.Items.ItemSets.Titan
 		public override void SetDefaults()
 		{
 
-			item.damage = 58;
+			item.damage = 49;
 			item.melee = true;
 			item.width = 88;
 			item.height = 88;
@@ -34,7 +34,7 @@ namespace ForgottenMemories.Items.ItemSets.Titan
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Laserblade Katana");
-      Tooltip.SetDefault("Unleashes a spiral of lasers around you");
+      Tooltip.SetDefault("Unleashes a spiral of energy comets around you");
     }
 
 
