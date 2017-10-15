@@ -13,24 +13,24 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 		int counter = 0;
 		public override void SetDefaults()
 		{
-
 			item.damage = 40;
 			item.ranged = true;
-			item.width = 23;
-			item.height = 13;
+			item.width = 32;
+			item.height = 20;
 
-			item.useTime = 12;
-			item.useAnimation = 12;
+			item.useTime = 10;
+			item.useAnimation = 10;
 			item.useStyle = 5;
-			item.autoReuse = true;
 			item.noMelee = true;
-			item.knockBack = 4;
-			item.value = 250000;
-			item.rare = 5;
+			item.knockBack = 1;
+			item.value = 50000;
+			item.rare = 3;
 			item.UseSound = SoundID.Item11;
+			item.autoReuse = false;
 			item.shoot = 10;
-			item.shootSpeed = 17f;
+			item.shootSpeed = 5.25f;
 			item.useAmmo = AmmoID.Bullet;
+			item.crit = 16;
 		}
 
     public override void SetStaticDefaults()
@@ -45,6 +45,11 @@ namespace ForgottenMemories.Items.ItemSets.Blightstone
 			Projectile projectile = Main.projectile[Projectile.NewProjectile(position, new Vector2(speedX, speedY), type, damage, knockBack, player.whoAmI, 0f, 0f)];
 			projectile.GetGlobalProjectile<Info>(mod).Blight = true;
 			return false;
+		}
+		
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(-6, -4);
 		}
 
 		public override void AddRecipes()
