@@ -8,14 +8,12 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.Projectiles.Magnoliac
 {
-	public class AirslashWhite : ModProjectile
+	public class AirslashGreen : ModProjectile
 	{
-		bool check;
-		int heck = 1;
 		public override void SetDefaults()
 		{
-			projectile.width = 32;
-			projectile.height = 32;
+			projectile.width = 40;
+			projectile.height = 40;
 			projectile.aiStyle = -1;
 			projectile.friendly = false; 
 			projectile.hostile = true;
@@ -24,7 +22,6 @@ namespace ForgottenMemories.Projectiles.Magnoliac
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 1;
 			projectile.extraUpdates = 1;
-			projectile.light = 0.25f;
 			projectile.timeLeft = 6000;
 		}
 		
@@ -33,23 +30,31 @@ namespace ForgottenMemories.Projectiles.Magnoliac
 			DisplayName.SetDefault("Air Slash");
 		}
 		
+		
 		public override void AI()
 		{
-			if (Main.rand.Next(2) == 1 && check == false)
-			{
-				heck = -1;
-			}
-			check = true;
 			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
-			Vector2 newVect = projectile.velocity.RotatedBy(System.Math.PI / (heck * 800));
-			projectile.velocity = newVect; 			
+			if (Main.rand.Next(15) == 0)
+			{
+				int dust;
+				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 89, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				Main.dust[dust].scale = 1f;
+				Main.dust[dust].noGravity = true;
+			}
+			if (Main.rand.Next(15) == 0)
+			{
+				int dust;
+				dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 3, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				Main.dust[dust].scale = 1f;
+				Main.dust[dust].noGravity = true;
+			}
 		}
 		
 		public override void Kill(int timeLeft)
 		{
 			for (int i = 0; i < 5; i++) 
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 16);
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 89);
 				Main.dust[dust].scale = 1.5f;
 				Main.dust[dust].noGravity = true;
 			}
@@ -107,7 +112,6 @@ namespace ForgottenMemories.Projectiles.Magnoliac
 			}
 					
 			Microsoft.Xna.Framework.Color color29 = projectile.GetAlpha(color25);
-			Main.spriteBatch.Draw(texture2D3, projectile.Center - Main.screenPosition + new Vector2(0f, projectile.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color29, projectile.rotation, origin2, projectile.scale, spriteEffects, 0f);
 			return true;
 		}
 	}

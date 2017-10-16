@@ -9,8 +9,6 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 {
 	public class Magnoliac : ModNPC
 	{
-		int directionY;
-		
 		public override void SetDefaults()
 		{
 			npc.aiStyle = -1;
@@ -56,7 +54,6 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 			npc.TargetClosest(true);
 			npc.spriteDirection = npc.direction;
 			Player player = Main.player[npc.target];
-			directionY = (npc.Center.Y <= player.Center.Y) ? 1 : -1;
 			npc.ai[0]++;
 			
 			Phase1(player);
@@ -125,7 +122,7 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				}
 			}
 			
-			if ((npc.ai[0] % 50) == 0)
+			if ((npc.ai[0] % 50) == 0 && npc.ai[0] < 750)
 			{
 				Vector2 direction = Main.player[npc.target].Center - npc.Center;
 				direction.Normalize();
@@ -134,6 +131,25 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 				int p = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("AirslashWhite"), 25, 1, Main.myPlayer, 0, 0);
 				Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
 				Main.projectile[p].netUpdate = true;
+			}
+			
+			if (npc.ai[0] == 750)
+			{
+				Vector2 direction = Main.player[npc.target].Center - npc.Center;
+				direction.Normalize();
+				direction.X *= 5f;
+				direction.Y *= 5f;
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X, direction.Y, mod.ProjectileType("AirslashGreen"), 25, 1, Main.myPlayer, 0, 0);
+				direction = direction.RotatedBy(MathHelper.ToRadians(30));
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X, direction.Y, mod.ProjectileType("AirslashGreen"), 25, 1, Main.myPlayer, 0, 0);
+				direction = direction.RotatedBy(MathHelper.ToRadians(30));
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X, direction.Y, mod.ProjectileType("AirslashGreen"), 25, 1, Main.myPlayer, 0, 0);
+				direction = direction.RotatedBy(MathHelper.ToRadians(-90));
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X, direction.Y, mod.ProjectileType("AirslashGreen"), 25, 1, Main.myPlayer, 0, 0);
+				direction = direction.RotatedBy(MathHelper.ToRadians(-30));
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X, direction.Y, mod.ProjectileType("AirslashGreen"), 25, 1, Main.myPlayer, 0, 0);
+				Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
+				npc.ai[0] = 0;
 			}
 		}
 		
