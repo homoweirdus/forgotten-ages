@@ -124,6 +124,17 @@ namespace ForgottenMemories.NPCs.GhastlyEnt
 					npc.velocity.X = -num589;
 				}
 			}
+			
+			if ((npc.ai[0] % 50) == 0)
+			{
+				Vector2 direction = Main.player[npc.target].Center - npc.Center;
+				direction.Normalize();
+				float sX = direction.X * 7f;
+				float sY = direction.Y * 7f;
+				int p = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, sX, sY, mod.ProjectileType("AirslashWhite"), 25, 1, Main.myPlayer, 0, 0);
+				Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 75);
+				Main.projectile[p].netUpdate = true;
+			}
 		}
 		
 		
