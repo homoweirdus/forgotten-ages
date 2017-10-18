@@ -12,8 +12,8 @@ namespace ForgottenMemories.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 5;
-			projectile.height = 5;
+			projectile.width = 6;
+			projectile.height = 6;
 			projectile.aiStyle = -1;
 			projectile.hostile = true;
 			projectile.friendly = false;
@@ -66,11 +66,6 @@ namespace ForgottenMemories.Projectiles
 					}
 					num = k;
 				}
-				if (num4 < 20f)
-				{
-					projectile.Kill();
-					return;
-				}
 				if (num3 != -1)
 				{
 					projectile.ai[1] = 21f;
@@ -92,11 +87,6 @@ namespace ForgottenMemories.Projectiles
 				{
 					float num7 = projectile.velocity.ToRotation();
 					Vector2 vector2 = Main.player[num6].Center - projectile.Center;
-					if (vector2.Length() < 20f)
-					{
-						projectile.Kill();
-						return;
-					}
 					float targetAngle = vector2.ToRotation();
 					if (vector2 == Vector2.Zero)
 					{
