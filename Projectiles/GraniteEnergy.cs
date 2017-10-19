@@ -76,13 +76,17 @@ namespace ForgottenMemories.Projectiles
 		public override bool OnTileCollide (Vector2 velocity1)
 		{
 			
-			if ((double) projectile.velocity.Y != (double) velocity1.Y || (double) projectile.velocity.X != (double) velocity1.X)
+			if (projectile.friendly && ((double) projectile.velocity.Y != (double) velocity1.Y || (double) projectile.velocity.X != (double) velocity1.X))
                 {
                   if ((double) projectile.velocity.X != (double) velocity1.X)
                     projectile.velocity.X = -velocity1.X;
                   if ((double) projectile.velocity.Y != (double) velocity1.Y)
                     projectile.velocity.Y = -velocity1.Y;
                 }
+			else
+			{
+				return true;
+			}
 			return false;
 		}
 	}
