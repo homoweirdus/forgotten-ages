@@ -10,11 +10,11 @@ namespace ForgottenMemories.Items.ItemSets.OldGear
 		public override void SetDefaults()
 		{
 
-			item.damage = 10;
+			item.damage = 8;
 			item.melee = true;
 			item.width = 62;
 			item.height = 70;
-			item.useTime = 25;
+			item.useTime = 22;
 			item.useAnimation = 25;
 			item.useStyle = 1;
 			item.knockBack = 2;
