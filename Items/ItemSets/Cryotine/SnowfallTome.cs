@@ -13,13 +13,13 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 		public override void SetDefaults()
 		{
 
-			item.damage = 12;
-			item.mana = 12;
+			item.damage = 13;
+			item.mana = 8;
 			item.magic = true;
 			item.width = 88;
 			item.height = 88;
-			item.useTime = 13;
-			item.useAnimation = 13;
+			item.useTime = 11;
+			item.useAnimation = 11;
 
 			item.useStyle = 5;
 			item.knockBack = 3;
