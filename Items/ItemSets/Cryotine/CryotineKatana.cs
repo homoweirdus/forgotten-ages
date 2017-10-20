@@ -10,9 +10,9 @@ namespace ForgottenMemories.Items.ItemSets.Cryotine
 		public override void SetDefaults()
 		{
 
-			item.damage = 14;
+			item.damage = 17;
 			item.melee = true;
-			item.crit = 25;
+			item.crit = 23;
 			item.width = 88;
 			item.height = 88;
 			item.useTime = 12;
