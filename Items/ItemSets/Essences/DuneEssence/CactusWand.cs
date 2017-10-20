@@ -11,9 +11,9 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 10;
+			item.damage = 11;
 			item.magic = true;
-			item.mana = 10;
+			item.mana = 7;
 			item.width = 25;
 			item.height = 26;
 			item.useTime = 22;
