@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.Magic
 
 			item.damage = 12;
 			item.magic = true;
-			item.mana = 8;
+			item.mana = 11;
 			item.width = 25;
 			item.height = 26;
 
@@ -35,7 +35,7 @@ namespace ForgottenMemories.Items.Magic
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Slime Rod");
-      Tooltip.SetDefault("Fires slime balls");
+      Tooltip.SetDefault("Fires bouncing slime balls");
     }
 
 		
