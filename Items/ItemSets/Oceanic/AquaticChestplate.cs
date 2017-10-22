@@ -19,27 +19,27 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 
 			item.value = 50000;
 			item.rare = 3;
-			item.defense = 7;
+			item.defense = 8;
 		}
 
     public override void SetStaticDefaults()
     {
       DisplayName.SetDefault("Aquatic Chestplate");
-      Tooltip.SetDefault("3% increased melee damage and critical strike chance");
+      Tooltip.SetDefault("6% increased melee damage and critical strike chance");
     }
 
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeCrit += 3;
-			player.meleeDamage += 0.03f;
+			player.meleeCrit += 6;
+			player.meleeDamage += 0.06f;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "WaterShard", 10);
-			recipe.AddIngredient(ItemID.SharkFin, 5);
+			recipe.AddIngredient(ItemID.SharkFin, 1);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
