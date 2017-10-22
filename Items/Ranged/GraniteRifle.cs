@@ -16,10 +16,10 @@ namespace ForgottenMemories.Items.Ranged
             item.ranged = true;
             item.width = 31;
             item.height = 32;
-            item.crit = 15;
+            item.crit = 17;
 
-            item.useTime = 35;
-            item.useAnimation = 35;
+            item.useTime = 45;
+            item.useAnimation = 45;
             item.useStyle = 5;
             item.noMelee = true;
             item.knockBack = 4;
