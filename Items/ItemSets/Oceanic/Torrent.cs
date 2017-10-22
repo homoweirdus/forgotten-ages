@@ -13,7 +13,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
         public override void SetDefaults()
         {
 
-            item.damage = 14;
+            item.damage = 16;
             item.noMelee = true;
             item.ranged = true;
             item.width = 27;
@@ -29,7 +29,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.rare = 3;
             item.UseSound = SoundID.Item5;
             item.autoReuse = true;
-            item.shootSpeed = 6f;
+            item.shootSpeed = 9f;
         }
 
 		public override void SetStaticDefaults()
