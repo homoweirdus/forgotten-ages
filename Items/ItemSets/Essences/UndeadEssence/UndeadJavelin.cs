@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 		public override void SetDefaults()
 		{
 
-			item.damage = 19;
+			item.damage = 18;
 			item.thrown = true;
 			item.noMelee = true;
 			item.noUseGraphic = true;
@@ -21,7 +21,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.UndeadEssence
 			item.useTime = 14;
 			item.useAnimation = 14;
 			item.useStyle = 1;
-			item.shootSpeed = 10f;
+			item.shootSpeed = 9f;
 			item.shoot = mod.ProjectileType("UndeadJavelin");
 			item.knockBack = 1;
 			item.UseSound = SoundID.Item1;
