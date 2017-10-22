@@ -10,7 +10,7 @@ namespace ForgottenMemories.Items.Throwing
 		public override void SetDefaults()
 		{
 
-			item.damage = 19;
+			item.damage = 23;
 			item.thrown = true;
 			item.width = 88;
 			item.height = 88;
@@ -38,11 +38,11 @@ namespace ForgottenMemories.Items.Throwing
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.ThrowingKnife, 500);
-			recipe.AddIngredient(null,"DarkEnergy", 6);
-			recipe.AddIngredient(null,"BossEnergy", 6);
-			recipe.AddIngredient(null,"SoaringEnergy", 6);
-			recipe.AddIngredient(null,"UndeadEnergy", 6);
+			recipe.AddIngredient(ItemID.ThrowingKnife, 250);
+			recipe.AddIngredient(null,"DarkEnergy", 4);
+			recipe.AddIngredient(null,"BossEnergy", 4);
+			recipe.AddIngredient(null,"SoaringEnergy", 4);
+			recipe.AddIngredient(null,"UndeadEnergy", 4);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
