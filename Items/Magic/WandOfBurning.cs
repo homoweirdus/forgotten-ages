@@ -11,7 +11,7 @@ namespace ForgottenMemories.Items.Magic
 		public override void SetDefaults()
 		{
 
-			item.damage = 22;
+			item.damage = 23;
 			item.magic = true;
 			item.mana = 8;
 			item.width = 25;
@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.Magic
 			item.rare = 3;
 			item.autoReuse = false;
 			item.shoot = 504;
-			item.shootSpeed = 15f;
+			item.shootSpeed = 11f;
 		}
 
     public override void SetStaticDefaults()
