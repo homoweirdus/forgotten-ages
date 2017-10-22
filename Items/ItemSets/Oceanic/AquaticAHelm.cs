@@ -19,13 +19,13 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 
 			item.value = 50000;
 			item.rare = 3;
-			item.defense = 5;
+			item.defense = 6;
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Aquatic Helmet");
-			Tooltip.SetDefault("4% increased melee damage, increased life by 25");
+			Tooltip.SetDefault("7% increased melee damage, increased life by 25");
 		}
 		
 		public override bool DrawHead()	
@@ -41,7 +41,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.04f;
+			player.meleeDamage += 0.07f;
 			player.statLifeMax2 += 25;
 		}
 
@@ -55,7 +55,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "WaterShard", 7);
-			recipe.AddIngredient(ItemID.SharkFin, 4);
+			recipe.AddIngredient(ItemID.SharkFin, 1);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
