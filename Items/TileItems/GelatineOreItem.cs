@@ -15,7 +15,7 @@ namespace ForgottenMemories.Items.TileItems
 			item.useAnimation = 15;
 			item.useTime = 10;
 			item.useStyle = 1;
-			item.value = 4500;
+			item.value = 1500;
 			item.rare = 1;
 			item.consumable = true;
 			item.autoReuse = true;
