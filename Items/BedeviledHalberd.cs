@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.Melee
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Cursed Lance");
+      DisplayName.SetDefault("Bedeviled Halberd");
       Tooltip.SetDefault("Hitting enemies launches cursed fireballs");
     }
 
