@@ -128,7 +128,7 @@ namespace ForgottenMemories.Projectiles
 		
 		public override void AI()
 		{
-			projectile.rotation += MathHelper.Pi / 120;
+			projectile.rotation += MathHelper.Pi / 60;
 			cap--;
 		}
 		

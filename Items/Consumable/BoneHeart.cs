@@ -29,7 +29,10 @@ namespace ForgottenMemories.Items.Consumable
 		{
 			if (player.whoAmI == Main.myPlayer)
 			{
-				player.AddBuff(item.buffType, 600, true);
+				player.AddBuff(item.buffType, 300, true);
+				int quickthing = Main.rand.Next(2) + 1;
+                player.HealEffect(quickthing);
+                player.statLife += (quickthing);
 			}
 			return false;
 		}
