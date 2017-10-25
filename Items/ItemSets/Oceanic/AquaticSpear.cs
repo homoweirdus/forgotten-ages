@@ -26,7 +26,7 @@ namespace ForgottenMemories.Items.ItemSets.Oceanic
 			item.value = 50000;
 			item.rare = 3;
 			item.shoot = mod.ProjectileType("AquaticSpear"); 
-			item.shootSpeed = 7;
+			item.shootSpeed = 9f;
 			item.autoReuse = true;
 
 		}

@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.ItemSets.Essences.DuneEssence
 			item.value = 5000;
 			item.rare = 1;
 			item.shoot = mod.ProjectileType("NomadsPartisan"); 
-			item.shootSpeed = 7;
+			item.shootSpeed = 9f;
 			item.autoReuse = true;
 
 		}
