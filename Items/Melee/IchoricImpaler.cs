@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.Melee
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Ichor Lance");
+      DisplayName.SetDefault("Ichoric Impaler");
       Tooltip.SetDefault("Hitting enemies steals life and launches ichor streams");
     }
 
