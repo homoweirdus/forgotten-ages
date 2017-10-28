@@ -22,7 +22,7 @@ namespace ForgottenMemories.Items.Ammo
 			item.knockBack = 1.2f;
 			item.UseSound = SoundID.Item1;
 			item.value = 100;
-			item.rare = 9;
+			item.rare = 10;
 			item.ammo = AmmoID.Bullet;
 			item.maxStack = 999;
 			item.consumable = true;
