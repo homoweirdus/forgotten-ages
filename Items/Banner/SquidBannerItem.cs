@@ -1,6 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
-
+//meme
 namespace ForgottenMemories.Items.Banner
 {
 	public class SquidBannerItem : ModItem
