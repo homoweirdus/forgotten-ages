@@ -27,7 +27,7 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 
 		public override void SetStaticDefaults()
 		{
-		  DisplayName.SetDefault("Living Tree Sword");
+		  DisplayName.SetDefault("Willow Wood Blade");
 		  Tooltip.SetDefault("Creates druidic energy blades on hit");
 		}
 		

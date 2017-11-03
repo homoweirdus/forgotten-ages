@@ -36,7 +36,7 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 
 		public override void SetStaticDefaults()
 		{
-		  DisplayName.SetDefault("Ghastly Knife");
+		  DisplayName.SetDefault("Timber Kunai");
 		  Tooltip.SetDefault("Splits into woodchips when destroyed");
 		}
 	}

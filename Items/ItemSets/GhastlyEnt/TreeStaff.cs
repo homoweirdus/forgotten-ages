@@ -42,7 +42,7 @@ namespace ForgottenMemories.Items.ItemSets.GhastlyEnt
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Tree Staff");
+      DisplayName.SetDefault("Ent Staff");
       Tooltip.SetDefault("Summons a ghastly tree to fight for you");
     }
 
