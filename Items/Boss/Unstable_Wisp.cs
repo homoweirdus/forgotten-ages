@@ -29,7 +29,7 @@ namespace ForgottenMemories.Items.Boss
 		}
 
 		
-		public override bool UseItem(Player player)
+		public override bool CanUseItem(Player player)
         {
             return !NPC.AnyNPCs(mod.NPCType("Acheron")) && player.ZoneUnderworldHeight;
         }
