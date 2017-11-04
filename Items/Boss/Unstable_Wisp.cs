@@ -48,7 +48,7 @@ namespace ForgottenMemories.Items.Boss
 			recipe.AddIngredient(null, "BossEnergy", 3);
 			recipe.AddIngredient(null, "SoaringEnergy", 3);
 			recipe.AddIngredient(null, "UndeadEnergy", 3);
-			recipe.AddTile(TileID.DemonAltars);
+			recipe.AddTile(TileID.DemonAltar);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
