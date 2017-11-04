@@ -21,7 +21,7 @@ using Terraria.ModLoader;
 
 namespace ForgottenMemories.NPCs.Acheron
 {
-	//[AutoloadBossHead]
+	[AutoloadBossHead]
     public class Acheron : ModNPC
     {
 		Vector2 TPLocation;
