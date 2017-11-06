@@ -82,12 +82,6 @@ namespace ForgottenMemories.NPCs.Acheron
 				Location = Location2;
 				npc.Center = Location + Main.npc[(int)npc.ai[1]].Center;
 			}
-			
-			if (!NPC.AnyNPCs(mod.NPCType("Acheron")))
-			{
-				npc.life = 0;
-				NPCLoot();
-			}
 		}
 		
 		public override void FindFrame(int frameHeight)

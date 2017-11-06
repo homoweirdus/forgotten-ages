@@ -25,7 +25,6 @@ namespace ForgottenMemories.NPCs.Acheron
     public class Acheron : ModNPC
     {
 		Vector2 TPLocation;
-		bool phase2;
         public override void SetDefaults()
         {
             npc.aiStyle = -1;
@@ -54,7 +53,7 @@ namespace ForgottenMemories.NPCs.Acheron
 		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 			{
-				npc.lifeMax = 8500 + ((numPlayers) * 3000);
+				npc.lifeMax = 9500 + ((numPlayers) * 3000);
 				npc.damage = 38;
 			}
 		
@@ -111,19 +110,8 @@ namespace ForgottenMemories.NPCs.Acheron
 				Main.spriteBatch.Draw(texture2D3, value4 + npc.Size / 2f - Main.screenPosition + new Vector2(-15f, npc.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle), color26, num165 + npc.rotation * num160 * (float)(num161 - 1) * -(float)spriteEffects.HasFlag(SpriteEffects.FlipHorizontally).ToDirectionInt(), origin2, npc.scale, effects, 0f);
 				goto IL_6881;
 			}
-			if (phase2)
-			{
-				Texture2D texture2D4 = mod.GetTexture("NPCs/Acheron/AcheronP2");
-				int num1561 = texture2D4.Height / Main.npcFrameCount[npc.type];
-				int y31 = num1561 * (int)npc.frameCounter;
-				Microsoft.Xna.Framework.Rectangle rectangle2 = new Microsoft.Xna.Framework.Rectangle(0, y31, texture2D4.Width, num1561);
-				Vector2 origin3 = rectangle2.Size() / 2f;
-				SpriteEffects effects = spriteEffects;
-				float num165 = npc.rotation;
-				Microsoft.Xna.Framework.Color color29 = npc.GetAlpha(color25);
-				Main.spriteBatch.Draw(texture2D4, npc.position + npc.Size / 2f - Main.screenPosition + new Vector2(0f, npc.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle2), color29, num165 + npc.rotation * num160 * (float)(num161 - 1) * -(float)spriteEffects.HasFlag(SpriteEffects.FlipHorizontally).ToDirectionInt(), origin3, npc.scale, effects, 0f);
-				return false;
-			}
+					
+			Microsoft.Xna.Framework.Color color29 = npc.GetAlpha(color25);
 			return true;
 		}
 
@@ -132,11 +120,6 @@ namespace ForgottenMemories.NPCs.Acheron
 			npc.TargetClosest(true);
 			npc.spriteDirection = npc.direction;
             Player player = Main.player[npc.target];
-			if (npc.life < (int)(npc.lifeMax * 0.4))
-			{
-				phase2 = true;
-			}
-			
 			npc.ai[0]++;
 			
 			if (npc.alpha > 255)

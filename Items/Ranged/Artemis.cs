@@ -35,8 +35,8 @@ namespace ForgottenMemories.Items.Ranged
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nil");
-			Tooltip.SetDefault("Creates 2 voids near you that fire a homing void bolt towards your cursor \n'");
+			DisplayName.SetDefault("Artemis");
+			Tooltip.SetDefault("Fires a night arrow that splits into stars\nThe Envoy Of The Darkness");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -67,12 +67,18 @@ namespace ForgottenMemories.Items.Ranged
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Torrent", 1);
-			recipe.AddIngredient(null, "DevilBow", 1);
-			recipe.AddIngredient(null, "UndeadEnergy", 8);
-			recipe.AddIngredient(null, "SoaringEnergy", 8);
-			recipe.AddIngredient(null, "BossEnergy", 8);
-			recipe.AddIngredient(null, "DarkEnergy", 8);
+			recipe.AddIngredient(ItemID.DemonBow, 1);
+			recipe.AddIngredient(ItemID.MoltenFury, 1);
+			recipe.AddIngredient(null, "YoichiBow", 1);
+			recipe.AddIngredient(null, "StingerBow", 1);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.TendonBow, 1);
+			recipe.AddIngredient(ItemID.MoltenFury, 1);
+			recipe.AddIngredient(null, "YoichiBow", 1);
+			recipe.AddIngredient(null, "StingerBow", 1);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
