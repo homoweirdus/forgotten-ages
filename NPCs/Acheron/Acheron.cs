@@ -26,6 +26,7 @@ namespace ForgottenMemories.NPCs.Acheron
     {
 		Vector2 TPLocation;
 		bool phase2;
+		bool transitioned = false;
         public override void SetDefaults()
         {
             npc.aiStyle = -1;
@@ -119,6 +120,10 @@ namespace ForgottenMemories.NPCs.Acheron
 				Microsoft.Xna.Framework.Rectangle rectangle2 = new Microsoft.Xna.Framework.Rectangle(0, y31, texture2D4.Width, num1561);
 				Vector2 origin3 = rectangle2.Size() / 2f;
 				SpriteEffects effects = spriteEffects;
+				if (npc.spriteDirection > 0)
+				{
+					effects = SpriteEffects.FlipHorizontally;
+				}
 				float num165 = npc.rotation;
 				Microsoft.Xna.Framework.Color color29 = npc.GetAlpha(color25);
 				Main.spriteBatch.Draw(texture2D4, npc.position + npc.Size / 2f - Main.screenPosition + new Vector2(0f, npc.gfxOffY), new Microsoft.Xna.Framework.Rectangle?(rectangle2), color29, num165 + npc.rotation * num160 * (float)(num161 - 1) * -(float)spriteEffects.HasFlag(SpriteEffects.FlipHorizontally).ToDirectionInt(), origin3, npc.scale, effects, 0f);
@@ -135,6 +140,49 @@ namespace ForgottenMemories.NPCs.Acheron
 			if (npc.life < (int)(npc.lifeMax * 0.4))
 			{
 				phase2 = true;
+				npc.ai[3]++;
+			}
+			
+			if (!transitioned && phase2)
+			{
+				for (int index1 = 0; index1 < 5; ++index1)
+				{
+					int dust;
+					Vector2 newVect = new Vector2 (8, 0).RotatedBy(MathHelper.ToRadians(Main.rand.Next(45)));
+					Vector2 newVect2 = newVect.RotatedBy(MathHelper.ToRadians(45));
+					Vector2 newVect3 = newVect.RotatedBy(MathHelper.ToRadians(90));
+					Vector2 newVect4 = newVect.RotatedBy(MathHelper.ToRadians(135));
+					Vector2 newVect5 = newVect.RotatedBy(MathHelper.ToRadians(180));
+					Vector2 newVect6 = newVect.RotatedBy(MathHelper.ToRadians(225));
+					Vector2 newVect7 = newVect.RotatedBy(MathHelper.ToRadians(270));
+					Vector2 newVect8 = newVect.RotatedBy(MathHelper.ToRadians(315));
+					dust = Dust.NewDust(npc.Center, 0, 0, 20, newVect.X, newVect.Y);
+					int dust2 = Dust.NewDust(npc.Center, 0, 0, 20, newVect2.X, newVect2.Y);
+					int dust3 = Dust.NewDust(npc.Center, 0, 0, 20, newVect3.X, newVect3.Y);
+					int dust4 = Dust.NewDust(npc.Center, 0, 0, 20, newVect4.X, newVect4.Y);
+					int dust5 = Dust.NewDust(npc.Center, 0, 0, 20, newVect5.X, newVect5.Y);
+					int dust6 = Dust.NewDust(npc.Center, 0, 0, 20, newVect6.X, newVect6.Y);
+					int dust7 = Dust.NewDust(npc.Center, 0, 0, 20, newVect7.X, newVect7.Y);
+					int dust8 = Dust.NewDust(npc.Center, 0, 0, 20, newVect8.X, newVect8.Y);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust2].noGravity = true;
+					Main.dust[dust3].noGravity = true;
+					Main.dust[dust4].noGravity = true;
+					Main.dust[dust5].noGravity = true;
+					Main.dust[dust6].noGravity = true;
+					Main.dust[dust7].noGravity = true;
+					Main.dust[dust8].noGravity = true;
+					Main.dust[dust].scale = 2;
+					Main.dust[dust2].scale = 2;
+					Main.dust[dust3].scale = 2;
+					Main.dust[dust4].scale = 2;
+					Main.dust[dust5].scale = 2;
+					Main.dust[dust6].scale = 2;
+					Main.dust[dust7].scale = 2;
+					Main.dust[dust8].scale = 2;
+				}
+				Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
+				transitioned = true;
 			}
 			
 			npc.ai[0]++;
@@ -175,6 +223,12 @@ namespace ForgottenMemories.NPCs.Acheron
 			{
 				npc.ai[0] = 0;
 				npc.ai[2] = 0;
+			}
+			
+			if (npc.ai[3] > 75 && phase2)
+			{
+				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + (npc.height/2), mod.NPCType("AcheronGhost"));
+				npc.ai[3] = 0;
 			}
 					
 			if (!player.active || player.dead)
@@ -220,7 +274,7 @@ namespace ForgottenMemories.NPCs.Acheron
 		public void Souls(Player player)
 		{
 			npc.velocity = Vector2.Zero;
-			if (npc.ai[0] == 150 || npc.ai[0] == 155 || npc.ai[0] == 160 || npc.ai[0] == 170 || npc.ai[0] == 165)
+			if (!phase2 && (npc.ai[0] == 150 || npc.ai[0] == 155 || npc.ai[0] == 160 || npc.ai[0] == 170 || npc.ai[0] == 165))
 			{
 				Vector2 Position = new Vector2(npc.Center.X + (320 - 2*npc.ai[0]), npc.Center.Y);
 				Vector2 Vel = player.Center - Position;
@@ -228,6 +282,15 @@ namespace ForgottenMemories.NPCs.Acheron
 				Vel *= 10;
 				Vel += player.velocity;
 				Projectile.NewProjectile(Position.X, Position.Y, Vel.X, Vel.Y, mod.ProjectileType("HomingSoul"), (int)(npc.damage/2), 1, Main.myPlayer, 0, 0);
+			}
+			
+			else if (npc.ai[0] == 160 || npc.ai[0] == 170)
+			{
+				for (int index = 0; index < 5; index++)
+				{
+					Vector2 Vel = new Vector2(0, -10).RotatedBy(index * (2*MathHelper.Pi/5));
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Vel.X, Vel.Y, mod.ProjectileType("HomingSoul2"), (int)(npc.damage/2), 1, Main.myPlayer, 0, 0);
+				}
 			}
 		}
 		
