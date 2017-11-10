@@ -39,8 +39,8 @@ namespace ForgottenMemories.Projectiles.Archeron
 					Vector2 Vel = (Main.player[Player.FindClosest(projectile.Center, 0, 0)].Center - projectile.Center);
 					Vel.Normalize();
 					Vel *= 10;
-					Vector2 Vel2 = Vel.RotatedBy(MathHelper.PiOver4);
-					Vector2 Vel3 = Vel.RotatedBy(-MathHelper.PiOver4);
+					Vector2 Vel2 = Vel.RotatedBy(MathHelper.Pi / 6);
+					Vector2 Vel3 = Vel.RotatedBy(-MathHelper.Pi / 6);
 					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Vel3.X, Vel3.Y, mod.ProjectileType("HomingSoul2"), projectile.damage, 5f, projectile.owner);
 					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Vel2.X, Vel2.Y, mod.ProjectileType("HomingSoul2"), projectile.damage, 5f, projectile.owner);
 					projectile.ai[1] = 0;
