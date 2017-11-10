@@ -30,9 +30,9 @@ namespace ForgottenMemories.NPCs.Acheron
         public override void SetDefaults()
         {
             npc.aiStyle = -1;
-            npc.lifeMax = 7800;
+            npc.lifeMax = 6800;
             npc.damage = 28;
-            npc.defense = 28;
+            npc.defense = 22;
             npc.knockBackResist = 0f;
             npc.width = 98;
             npc.height = 112;
@@ -55,7 +55,7 @@ namespace ForgottenMemories.NPCs.Acheron
 		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 			{
-				npc.lifeMax = 8500 + ((numPlayers) * 3000);
+				npc.lifeMax = 7000 + ((numPlayers) * 3000);
 				npc.damage = 38;
 			}
 		
@@ -225,10 +225,11 @@ namespace ForgottenMemories.NPCs.Acheron
 				npc.ai[2] = 0;
 			}
 			
-			if (npc.ai[3] > 75 && phase2)
+			if (npc.ai[3] > 600 && phase2)
 			{
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + (npc.height/2), mod.NPCType("AcheronGhost"));
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, 0, 0, mod.ProjectileType("SoulWell"), (int)(npc.damage/2), 0, Main.myPlayer, 0, 0);
 				npc.ai[3] = 0;
+				npc.netUpdate = true;
 			}
 					
 			if (!player.active || player.dead)
@@ -274,7 +275,7 @@ namespace ForgottenMemories.NPCs.Acheron
 		public void Souls(Player player)
 		{
 			npc.velocity = Vector2.Zero;
-			if (!phase2 && (npc.ai[0] == 150 || npc.ai[0] == 155 || npc.ai[0] == 160 || npc.ai[0] == 170 || npc.ai[0] == 165))
+			if (!phase2 && (npc.ai[0] == 155 || npc.ai[0] == 160 || npc.ai[0] == 170))
 			{
 				Vector2 Position = new Vector2(npc.Center.X + (320 - 2*npc.ai[0]), npc.Center.Y);
 				Vector2 Vel = player.Center - Position;
@@ -284,7 +285,7 @@ namespace ForgottenMemories.NPCs.Acheron
 				Projectile.NewProjectile(Position.X, Position.Y, Vel.X, Vel.Y, mod.ProjectileType("HomingSoul"), (int)(npc.damage/2), 1, Main.myPlayer, 0, 0);
 			}
 			
-			else if (npc.ai[0] == 160 || npc.ai[0] == 170)
+			else if (npc.ai[0] == 160)
 			{
 				for (int index = 0; index < 5; index++)
 				{

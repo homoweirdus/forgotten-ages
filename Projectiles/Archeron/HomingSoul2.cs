@@ -16,6 +16,7 @@ namespace ForgottenMemories.Projectiles.Archeron
 			projectile.penetrate = 1;
 			projectile.timeLeft = 175;
 			projectile.alpha = 255;
+			projectile.tileCollide = false;
 		}
 		
 		public override void SetStaticDefaults()
