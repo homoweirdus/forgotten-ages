@@ -32,7 +32,7 @@ namespace ForgottenMemories.NPCs.Acheron
             npc.aiStyle = -1;
             npc.lifeMax = 6800;
             npc.damage = 28;
-            npc.defense = 22;
+            npc.defense = 18;
             npc.knockBackResist = 0f;
             npc.width = 98;
             npc.height = 112;
@@ -140,6 +140,7 @@ namespace ForgottenMemories.NPCs.Acheron
 			if (npc.life < (int)(npc.lifeMax * 0.4))
 			{
 				phase2 = true;
+				npc.defense = 0;
 				npc.ai[3]++;
 			}
 			
